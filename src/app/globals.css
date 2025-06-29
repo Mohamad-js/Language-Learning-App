@@ -1,0 +1,22 @@
+@font-face {
+   font-family: vazirl;
+   src: url('../../public/fonts/Vazir-Thin.ttf');
+}
+
+@font-face {
+   font-family: vazirb;
+   src: url('../../public/fonts/Vazir-Bold.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: vazirl;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
