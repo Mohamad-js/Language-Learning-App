@@ -1,28 +1,28 @@
 "use client";
 import { useEffect, useReducer, useRef, useState } from "react";
-import { useStudyPlan } from "@/context/StudyPlanContext";
-import moment from "moment-jalaali";
-import DatePicker from "@/components/DatePicker/DatePicker";
 import Image from "next/image";
 import { IoIosArrowRoundBack , IoIosArrowDown  } from "react-icons/io";
-import { SlOptionsVertical } from "react-icons/sl";
+import { CiMenuFries } from "react-icons/ci";
+import { MdClass } from "react-icons/md";
+import { IoBookOutline, IoReaderOutline  } from "react-icons/io5";
+import { BiConversation } from "react-icons/bi";
+import { FaAssistiveListeningSystems } from "react-icons/fa";
 import styles from './page.module.css'
 
 
 
 const StudyPlan = () => {
-   const { startDate, currentDay, setCurrentDay } = useStudyPlan();
-   const [persianDate, setPersianDate] = useState("");
+   const [startApp, setStartApp] = useState('startup');
+   const [done, setDone] = useState([]);
    const [info, setInfo] = useState([]);
    const [watch, setWatch] = useState(false);
-   const [time, setTime] = useState();
-   const [done,setDone] = useState([])
    const [expand, setExpand] = useState([])
    const [note, setNote] = useState('')
    const [allNotes, setAllNotes] = useState([])
    const [menu,setMenu] = useState(false)
    const [warning,setWarning] = useState(false)
    const [delNotes, setDelNotes] = useState(false)
+   const [pages, setPages] = useState('home')
    const optionRef = useRef(null)
 
 
@@ -1950,11 +1950,9 @@ const StudyPlan = () => {
 
    function restartApp(){
       if(delNotes) {
-         localStorage.removeItem('startDate')
          localStorage.removeItem('notes')
          window.location.reload()
       } else {
-         localStorage.removeItem('startDate')
          window.location.reload()
       }
    }
@@ -1963,23 +1961,16 @@ const StudyPlan = () => {
       setWarning(false)
    }
 
+   const start = () => {
+      setStartApp('running')
+   }
 
-   useEffect(() => {
-      const updateDateTime = () => {
-         setPersianDate(moment().format("jYYYY/jMM/jDD"));
-         const currentTime = moment().format("HH:mm");
-         setTime(currentTime);
-      }
-
-      updateDateTime();
-      const intervalId = setInterval(updateDateTime, 1000)
-
-      return () => clearInterval(intervalId);
-   }, []);
+   const toggleHome = () => {
+      setStartApp('running')
+   }
 
 
-
-   if (!startDate) {
+   if (startApp === 'startup') {
       return (
       <div className={styles.container}>
          <Image className={styles.image}
@@ -1989,21 +1980,17 @@ const StudyPlan = () => {
          />
          <div className={styles.layer}>
             <div className={styles.intro}>
-               <h1 className={styles.title}>Welcome Fatemeh :)</h1>
+               <h1 className={styles.title}>Welcome My Love :)</h1>
                <p className={styles.welcome}>Start Your English Journey Here</p>
             </div>
-            <DatePicker /> {/* Render the DatePicker component */}
+            <div className={styles.startBtn} onClick={start}>Start Your Learning</div>
          </div>
          <div className={styles.programmer}>Powered by: Mohamad Gomar</div>
       </div>
       );
    }
 
-   const baseDate = moment(startDate, "jYYYY/jMM/jDD").add(currentDay - 1, "days");
-   const displayedDate = baseDate.format("jYYYY/jMM/jDD");
-
-
-   if(currentDay < 23){
+   if(startApp === 'running'){
       return (
          <div className={styles.bigMom}>
    
@@ -2015,150 +2002,62 @@ const StudyPlan = () => {
             
             <div className={styles.holder}>
                <div className={styles.dates}>
-                  <div className={styles.date}>Tasks for day {currentDay}: {displayedDate}</div>
+                  <div className={styles.date} onClick={() => setPages('home')}>Home</div>
                   <div className={styles.menuHolder}>
                      <div className={styles.dotHolder} onClick={toggleMenu} ref={optionRef}>
-                        <SlOptionsVertical className={styles.hamIcon} />
+                        <CiMenuFries className={styles.hamIcon} />
                      </div>
                      {
                         menu ?
                         <div className={styles.menu}>
                            <div className={styles.item} onClick={showWarning}>Restart</div>
-                           <div className={styles.item}>About</div>
-                           <div className={styles.item}>Accent</div>
-                           <div className={styles.item}>All-Days Plan</div>
+                           <div className={styles.item}>Saves</div>
+                           <div className={styles.item}>Dictionary</div>
+                           <div className={styles.item}>Tests</div>
+                           <div className={styles.item}>Review</div>
                         </div>
                         : null
    
                      }
                   </div>
                </div>
-                  {
-                     info.length > 0 ?
-                     <>
-                        <div className={styles.picsHolder} onClick={showPic}>
-                           {
-                              info[currentDay - 1]?.images?.map((img, index) => (
-                                 <div className={styles.picFrame} key={index}>
-                                    <img className={styles.pics}
-                                       src={img}
-                                       alt="book"
-                                    />
-                                    <div className={styles.infoLayer}>
-                                       <div className={styles.book}>{info[currentDay - 1].book}</div>
-                                       <div className={styles.pages}>pages
-                                          {
-                                             info[currentDay - 1].pages.map((page, index) => (
-                                                <div key={index}>{page}</div>
-                                             ))
-                                          }
-                                       </div>
-                                    </div>
-                                 </div>
-                              ))
-                           }
-                        </div>
-                        <div className={styles.tasks}>
-                           {
-                              info[currentDay - 1].instructions.map((task, index) => (
-                                 <div className={`${styles.task} ${expand.length > 0 &&
-                                    expand.some((state) => state.day == currentDay && state.index == index) ? styles.open : null}`}
-                                    key={index} 
-                                 >
-                                    <div className={styles.top}
-                                       onClick={() => taskClick(currentDay, index)}
-                                    >
-                                       <div className={styles.topic}>
-                                          {task.title}
-                                       </div>
-                                       
-                                       <IoIosArrowDown className={`${styles.icon} ${expand.length > 0 &&
-                                       expand.some((state) => state.day == currentDay && state.index == index) ? styles.turn : null}`}
-                                       />
-                                    </div>
-                                    <div className={styles.todo}>
-                                       {task.todo}
-                                    </div>
-                                    <div className={styles.extra}>
-                                       <div className={styles.input}>
-                                          <input className={styles.textarea}
-                                             placeholder="Need a note?"
-                                             type="text"
-                                             value={note}
-                                             onInput={(e) => setNote(e.target.value)}
-                                          />
-                                          <button className={styles.save}
-                                             onClick={() => saveNotes(currentDay, index)}
-                                          >save</button>
-                                       </div>
-                                       <div className={styles.notes}>
-                                          {
-   
-                                             allNotes.map((item) => (
-                                                item.day == currentDay && item.index == index ?
-                                                <div className={styles.note}
-                                                   key={item.note}
-                                                >
-                                                   {
-                                                      item.note
-                                                   }
-                                                </div>
-                                                : null
-                                             ))
-                                          }
-                                       </div>
-                                    </div>
-   
-                                    
-                                    {/* {
-                                       done.length > 0 &&
-                                       done.some((task) => task.day == currentDay && task.index == index) ? (
-                                          <div className={styles.done}>Done!</div> 
-                                       )  : null
-                                    } */}
-                                 </div>
-                              ))
-                           }
-                        </div>
-                        {
-                           watch ?
-                           <div className={styles.hiddenPic}>
-                              <div className={styles.closeHolder} onClick={showPic}>
-                                 <IoIosArrowRoundBack  className={styles.icon}/> back
-                              </div>
-                              <div className={styles.prevHolder}>
-                                 {
-                                    info[currentDay - 1].images.map((img, index) => (
-                                          <img className={styles.prevPic}
-                                             key={index}
-                                             src={img}
-                                             alt="book"
-                                          />
-                                    ))
-                                 }
-                              </div>
-                           </div>
-                           : null
-                        }
-                     </>
-                     : <div>Data Available in Next Update</div>
-                  }
-               
-   
-               <div className={styles.buttonHolder}>
-                  <button className={styles.btn}
-                     disabled={currentDay === 1}
-                     onClick={() => setCurrentDay(currentDay - 1)}
-                  >
-                     Previous Day
-                  </button>
-                  <button className={styles.btn}
-                     disabled={currentDay === 700}
-                     onClick={() => setCurrentDay(currentDay + 1)}
-                  >
-                     Next Day
-                  </button>
-               </div>         
+            </div>
+
+            {
+               pages === 'home' ? <>
+                  <div className={styles.pageHolder}>The Home Page</div>
+               </> :
+               pages === 'read' ? <>
+                  <div className={styles.pageHolder}>The Reading Page</div>
+               </> :
+               pages === 'speak' ? <>
+                  <div className={styles.pageHolder}>The Speaking Page</div>
+               </> :
+               pages === 'write' ? <>
+                  <div className={styles.pageHolder}>The Writing Page</div>
+               </> :
+               pages === 'listen' ? <>
+                  <div className={styles.pageHolder}>The Listening Page</div>
+               </> : <div>THIS IS AN ERROR</div>
+            }
+            
+            <div className={styles.navigation}>
+               <div className={styles.iconHolder} onClick={() => setPages('read')}>
+                  <IoBookOutline className={`${styles.navIcons} ${pages === 'read' && styles.selected}`} />
+                  <div className={`${styles.savesTitle} ${pages === 'read' && styles.selected}`}>Read</div>
+               </div>
+               <div className={styles.iconHolder} onClick={() => setPages('speak')}>
+                  <BiConversation className={`${styles.navIcons} ${pages === 'speak' && styles.selected}`} />
+                  <div className={`${styles.savesTitle} ${pages === 'speak' && styles.selected}`}>Speak</div>
+               </div>
+               <div className={styles.iconHolder} onClick={() => setPages('write')}>
+                  <IoReaderOutline  className={`${styles.navIcons} ${pages === 'write' && styles.selected}`} />
+                  <div className={`${styles.savesTitle} ${pages === 'write' && styles.selected}`}>Write</div>
+               </div>
+               <div className={styles.iconHolder} onClick={() => setPages('listen')}>
+                  <FaAssistiveListeningSystems  className={`${styles.navIcons} ${pages === 'listen' && styles.selected}`} />
+                  <div className={`${styles.savesTitle} ${pages === 'listen' && styles.selected}`}>Listen</div>
+               </div>
             </div>
    
             {
