@@ -2007,21 +2007,21 @@ const StudyPlan = () => {
                      <div className={styles.dotHolder} onClick={toggleMenu} ref={optionRef}>
                         <CiMenuFries className={styles.hamIcon} />
                      </div>
-                     {
-                        menu ?
-                        <div className={styles.menu}>
-                           <div className={styles.item} onClick={showWarning}>Restart</div>
-                           <div className={styles.item}>Saves</div>
-                           <div className={styles.item}>Dictionary</div>
-                           <div className={styles.item}>Tests</div>
-                           <div className={styles.item}>Review</div>
-                        </div>
-                        : null
-   
-                     }
                   </div>
                </div>
             </div>
+            {
+               menu ?
+               <div className={styles.menu}>
+                  <div className={styles.item} onClick={showWarning}>Restart</div>
+                  <div className={styles.item}>Saves</div>
+                  <div className={styles.item}>Dictionary</div>
+                  <div className={styles.item}>Tests</div>
+                  <div className={styles.item}>Review</div>
+               </div>
+               : null
+
+            }
 
             {
                pages === 'home' ? <>

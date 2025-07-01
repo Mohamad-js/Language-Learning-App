@@ -214,41 +214,7 @@
 
 
 
-            & .menu {
-               position: absolute;
-               z-index: 2;
-               top: 30px;
-               font-size: 18px;
-               width: 150px;
-               height: fit-content;
-               background-color: white;
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               flex-direction: column;
-               border-radius: 10px;
-               box-shadow: 1px 1px 10px 0px black;
-               overflow: hidden;
-
-               @media (390px < width < 700px){
-                  top: 20px;
-                  font-size: 15px;
-               }
-
-               @media (width < 390px){
-                  top: 10px;
-               }
-
-               & .item {
-                  padding: 10px;
-                  width: 100%;
-                  text-align: center;
-
-                  &:active {
-                     background-color: rgb(247, 247, 247);
-                  }
-               }
-            }
+           
          }
 
       }
@@ -543,64 +509,7 @@
                height: 230px;
             }
          }
-      }
-
-      & .hiddenPic {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100vh;
-         display: flex;
-         justify-content: center;
-         align-items: flex-start;
-         flex-direction: column;
-         padding: 70px 10px 10px 10px;
-         background-color: rgba(0, 0, 0, 0.7);
-         z-index: 2;
-
-
-         & .closeHolder {
-            position: fixed;
-            top: 0;
-            width: 99%;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            z-index: 2;
-            color: white;
-            font: 25px arial;
-
-            @media (390px < width < 700px){
-               font: 20px arial;
-            }
-            
-            & .icon {
-               font-size: 70px;
-               color: white;
-
-               @media (390px < width < 700px){
-                  font-size: 50px;
-               }
-            }
-         }
-
-         & .prevHolder {
-            width: 100%;
-            height: 100%;
-            overflow-y: scroll;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-         }
-
-         & .prevPic {
-            position: relative;
-            width: 100%;
-         }
-      }
-      
+      }      
 
       & .buttonHolder {
          position: relative;
@@ -627,11 +536,48 @@
       }
 
    }
+   & .menu {
+      position: absolute;
+      z-index: 2;
+      top: 30px;
+      right: 20px;
+      font-size: 18px;
+      width: 150px;
+      height: fit-content;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px 0px black;
+      overflow: hidden;
+
+      @media (390px < width < 700px){
+         top: 20px;
+         font-size: 15px;
+      }
+
+      @media (width < 390px){
+         top: 10px;
+      }
+
+      & .item {
+         padding: 10px;
+         width: 100%;
+         text-align: center;
+
+         &:active {
+            background-color: rgb(247, 247, 247);
+         }
+      }
+   }
 
    & .pageHolder {
       z-index: 1;
-      height: 60%;
-      background-color: white;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(240, 11, 11);
    }
 
    & .navigation {
