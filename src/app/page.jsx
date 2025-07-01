@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { use, useEffect, useReducer, useRef, useState } from "react";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Image from "next/image";
 import { IoIosArrowRoundBack , IoIosArrowDown  } from "react-icons/io";
 import { CiMenuFries } from "react-icons/ci";
@@ -13,28 +14,27 @@ import styles from './page.module.css'
 
 const StudyPlan = () => {
    const [startApp, setStartApp] = useState('startup');
-   const [done, setDone] = useState([]);
    const [info, setInfo] = useState([]);
-   const [watch, setWatch] = useState(false);
-   const [expand, setExpand] = useState([])
-   const [note, setNote] = useState('')
-   const [allNotes, setAllNotes] = useState([])
    const [menu,setMenu] = useState(false)
    const [warning,setWarning] = useState(false)
-   const [delNotes, setDelNotes] = useState(false)
    const [pages, setPages] = useState('home')
    const optionRef = useRef(null)
+   const [aveProgress,setAveProgress] = useState(38)
+   const [readProgress,setReadProgress] = useState(42)
+   const [writeProgress,setWriteProgress] = useState(18)
+   const [listenProgress,setListenProgress] = useState(29)
+   const [speakProgress,setSpeakProgress] = useState(57)
 
+   useEffect(()=>{
+      const appStatus = localStorage.getItem('app state');
+      appStatus && setStartApp(JSON.parse(appStatus));
+
+   }, [startApp])
 
 
    useEffect(() => {
       document.addEventListener('click', closeOption)
 
-      const savedTasks = localStorage.getItem('doneTasks');
-      setDone(savedTasks ? JSON.parse(savedTasks) : []);
-
-      const savedNotes = localStorage.getItem('notes');
-      setAllNotes(savedNotes ? JSON.parse(savedNotes) : []);
 
       setInfo([
          {
@@ -1889,46 +1889,7 @@ const StudyPlan = () => {
 
    }, [])
 
-   function showPic() {
-      setWatch(!watch)
-   }
-
-   function taskClick(day, index) {
-      // setDone((prev) => {
-      //    const isTaskDone = prev.some((task) => task.day === day && task.index === index);
-      //    let result;
-      //    if (isTaskDone) {
-      //       // Remove the task from the done list
-      //       result = prev.filter((task) => !(task.day === day && task.index === index));
-      //    } else {
-      //       // Add the task to the done list
-      //       result = [...prev, { day, index }];
-      //    }
-      //    // Save the updated state to localStorage
-      //    localStorage.setItem("doneTasks", JSON.stringify(result));
-      //    return result
-      // });
-
-      setExpand((prev) => {
-         const isOpen = prev.some((state) => state.day === day && state.index === index);
-         let result;
-         if (isOpen) {
-            // Remove the state from the done list
-            result = prev.filter((state) => !(state.day === day && state.index === index));
-         } else {
-            // Add the state to the done list
-            result = [...prev, { day, index }];
-         }
-         // Save the updated state to localStorage
-         return result
-      });
-   }
-
-   function saveNotes(day, index) {
-      allNotes.push({note, day, index});
-      setNote('');
-      localStorage.setItem("notes", JSON.stringify(allNotes));
-   }
+  
 
    function toggleMenu(){
       setMenu(!menu)
@@ -1944,17 +1905,9 @@ const StudyPlan = () => {
       setWarning(true)
    }
 
-   function deleteNotes(event){
-      setDelNotes(event.target.checked)
-   }
-
    function restartApp(){
-      if(delNotes) {
-         localStorage.removeItem('notes')
-         window.location.reload()
-      } else {
-         window.location.reload()
-      }
+      localStorage.setItem('app state', JSON.stringify('startup'));
+      window.location.reload()
    }
 
    function cancelRestart(){
@@ -1962,11 +1915,14 @@ const StudyPlan = () => {
    }
 
    const start = () => {
-      setStartApp('running')
+      localStorage.setItem('app state', JSON.stringify('running'));
+
+      const appStatus = localStorage.getItem('app state');
+      appStatus && setStartApp(JSON.parse(appStatus));
    }
 
    const toggleHome = () => {
-      setStartApp('running')
+      setStartApp('running');
    }
 
 
@@ -2025,7 +1981,42 @@ const StudyPlan = () => {
 
             {
                pages === 'home' ? <>
-                  <div className={styles.pageHolder}>The Home Page</div>
+                  <div className={styles.pageHolder}>
+                     <div className={styles.progress}>
+                        <div className={styles.mainTitle}>Your Progress</div>
+                        <div className={styles.illHolder}>
+                           <Image className={styles.progPic}
+                              src='../images/illustrations/progress.png'
+                              alt="progress"
+                              fill
+                           />
+                        </div>
+                        <div className={styles.aveProgress}>
+                           <ProgressBar inputNumber={aveProgress}/>
+                           <div className={styles.aveTitle}>Completed</div>
+                        </div>
+                        <div className={styles.progBarHolder}>
+                           <div className={styles.progBar}>
+                              <div className={styles.progHolder}>
+                                 <div className={styles.progNumber}>{speakProgress}%</div>
+                                 <div className={styles.progTitle}>SPEAKING</div>
+                              </div>
+                              <div className={styles.progHolder}>
+                                 <div className={styles.progNumber}>{writeProgress}%</div>
+                                 <div className={styles.progTitle}>WRITING</div>
+                              </div>
+                              <div className={styles.progHolder}>
+                                 <div className={styles.progNumber}>{listenProgress}%</div>
+                                 <div className={styles.progTitle}>LISTENING</div>
+                              </div>
+                              <div className={styles.progHolder}>
+                                 <div className={styles.progNumber}>{readProgress}%</div>
+                                 <div className={styles.progTitle}>READING</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </> :
                pages === 'read' ? <>
                   <div className={styles.pageHolder}>The Reading Page</div>
@@ -2067,16 +2058,6 @@ const StudyPlan = () => {
                   <div className={styles.btns}>
                      <button className={styles.yes} onClick={restartApp}>Yes</button>
                      <button className={styles.no} onClick={cancelRestart}>No</button>
-                  </div>
-                  <div className={styles.delNotes}>
-                     <label className={styles.label}>
-                        <input className={styles.checkbox}
-                           type="checkbox"
-                           checked={delNotes}
-                           onChange={deleteNotes}
-                        />
-                        Delete my notes, too.
-                     </label>
                   </div>
                </div>
                : null

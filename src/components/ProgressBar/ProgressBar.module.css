@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+}
+
+.progressRing {
+  transform: rotate(-90deg); /* Start the progress from the top */
+}
+
+.progressRingBackground {
+  fill: none;
+  stroke: #ffffff; /* Light gray background circle */
+  stroke-width: 10;
+}
+
+.progressRingFill {
+  fill: none;
+  stroke: purple; /* Green progress circle */
+  stroke-width: 10;
+  transition: stroke-dashoffset 0.3s ease; /* Smooth animation */
+}
+
+.progressText {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}

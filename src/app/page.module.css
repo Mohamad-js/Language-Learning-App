@@ -577,7 +577,94 @@
       z-index: 1;
       width: 100%;
       height: 100%;
-      background-color: rgb(240, 11, 11);
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      & .progress {
+         position: relative;
+         width: 100%;
+         height: 340px;
+         border-radius: 20px;
+         background-color: rgba(255, 255, 255, 0.397);
+         overflow: hidden;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-wrap: wrap;
+
+
+         & .mainTitle {
+            width: 100vw;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+         }
+
+
+         & .illHolder {
+            position: relative;
+            height: 170px;
+            width: 50%;
+
+
+            & .progPic {
+               width: 10%;
+               object-fit:fill;
+            }
+         }
+
+         & .aveProgress {
+            height: 170px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+
+            & .aveTitle {
+               font-size: 18px;
+            }
+         }
+
+         & .progBarHolder {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            & .progBar {
+               width: 100%;
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: space-evenly;
+               
+               
+               & .progHolder {
+                  width: 90px;
+                  height: 80px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+
+
+                  & .progTitle {
+                     font: 13px arial;
+                  }
+
+                  & .progNumber {
+                     font-size: 30px;
+                  }
+               }
+            }
+         }
+
+
+      }
    }
 
    & .navigation {
