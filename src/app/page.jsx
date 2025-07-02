@@ -1938,7 +1938,8 @@ const StudyPlan = () => {
                <h1 className={styles.title}>Welcome My Love :)</h1>
                <p className={styles.welcome}>Start Your English Journey Here</p>
             </div>
-            <div className={styles.startBtn} onClick={start}>Start Your Learning</div>
+            {/* <div className={styles.startBtn} onClick={start}>Start Learning</div> */}
+            <div className={styles.startBtn}>Start Learning</div>
          </div>
          <div className={styles.programmer}>Powered by: Mohamad Gomar</div>
       </div>
@@ -2028,14 +2029,6 @@ const StudyPlan = () => {
                                  fill
                               />
                            </div>
-                           <div className={styles.activity}></div>
-                        </div>
-                        <div className={styles.pair}>
-                           <div className={styles.activity}></div>
-                           <div className={styles.activity}></div>
-                        </div>
-                        <div className={styles.pair}>
-                           <div className={styles.activity}></div>
                            <div className={styles.activity}></div>
                         </div>
                      </div>
