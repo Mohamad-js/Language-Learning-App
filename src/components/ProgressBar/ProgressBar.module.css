@@ -19,7 +19,7 @@
 
 .progressRingFill {
   fill: none;
-  stroke: purple; /* Green progress circle */
+  stroke: rgb(66, 0, 128); /* Green progress circle */
   stroke-width: 10;
   transition: stroke-dashoffset 0.3s ease; /* Smooth animation */
 }

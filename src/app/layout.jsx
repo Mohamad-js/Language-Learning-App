@@ -4,7 +4,7 @@ import "./globals.css";
 
 
 export const metadata = {
-  title: "Fatemeh App",
+  title: "Ghazalim English App",
   description: "Powered by Mohamad Gomar",
   viewport: {
       width: 'device-width',

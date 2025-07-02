@@ -2,9 +2,8 @@
 import { use, useEffect, useReducer, useRef, useState } from "react";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Image from "next/image";
-import { IoIosArrowRoundBack , IoIosArrowDown  } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import { CiMenuFries } from "react-icons/ci";
-import { MdClass } from "react-icons/md";
 import { IoBookOutline, IoReaderOutline  } from "react-icons/io5";
 import { BiConversation } from "react-icons/bi";
 import { FaAssistiveListeningSystems } from "react-icons/fa";
@@ -1958,7 +1957,10 @@ const StudyPlan = () => {
             
             <div className={styles.holder}>
                <div className={styles.dates}>
-                  <div className={styles.date} onClick={() => setPages('home')}>Home</div>
+                  <div className={styles.backHolder}>
+                     <IoIosArrowDown className={styles.backBtn}/>
+                     <div className={styles.date} onClick={() => setPages('home')}>Home</div>
+                  </div>
                   <div className={styles.menuHolder}>
                      <div className={styles.dotHolder} onClick={toggleMenu} ref={optionRef}>
                         <CiMenuFries className={styles.hamIcon} />
@@ -1970,7 +1972,7 @@ const StudyPlan = () => {
                menu ?
                <div className={styles.menu}>
                   <div className={styles.item} onClick={showWarning}>Restart</div>
-                  <div className={styles.item}>Saves</div>
+                  <div className={styles.item}>Saved</div>
                   <div className={styles.item}>Dictionary</div>
                   <div className={styles.item}>Tests</div>
                   <div className={styles.item}>Review</div>
@@ -2014,6 +2016,27 @@ const StudyPlan = () => {
                                  <div className={styles.progTitle}>READING</div>
                               </div>
                            </div>
+                        </div>
+                     </div>
+                     <div className={styles.activityHolder}>
+                        <div className={styles.activityTitle}>Start From Here</div>
+                        <div className={styles.pair}>
+                           <div className={styles.activity}>
+                              <Image className={styles.actPic}
+                                 src='../images/illustrations/activity.jpg'
+                                 alt="progress"
+                                 fill
+                              />
+                           </div>
+                           <div className={styles.activity}></div>
+                        </div>
+                        <div className={styles.pair}>
+                           <div className={styles.activity}></div>
+                           <div className={styles.activity}></div>
+                        </div>
+                        <div className={styles.pair}>
+                           <div className={styles.activity}></div>
+                           <div className={styles.activity}></div>
                         </div>
                      </div>
                   </div>

@@ -21,7 +21,7 @@
       width: 30%;
       min-width: 330px;
       height: 15%;
-      min-height: 300px;
+      min-height: 200px;
       background-color: rgba(255, 255, 255, 0.4);
       border-radius: 20px;
       display: flex;
@@ -86,9 +86,9 @@
    }
 
    & .programmer {
-      position: absolute;
+      /* position: absolute; */
       font: 20px arial;
-      height: 100vh;
+      height: 50px;
       display: flex;
       align-items: flex-end;
       padding-bottom: 50px;
@@ -162,24 +162,38 @@
             padding-left: 5px;
          }
 
-         
-         
-         & .date {
-            color: rgb(0, 0, 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            font-size: 27px;
 
-            @media (390px < width < 700px){
-               font: 17px arial;
+         & .backHolder {
+            display: flex;
+            width: 70px;
+            align-items: center;
+            justify-content: space-between;
+
+
+            & .backBtn {
+               rotate: 90deg;
+               font-size: 20px;
             }
             
-            @media (height < 1080px) {
-               font: 17px arial;
+            
+            & .date {
+               color: rgb(0, 0, 0);
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               font-size: 30px;
+   
+               @media (390px < width < 700px){
+                  font: 17px arial;
+               }
+               
+               @media (height < 1080px) {
+                  font: 17px arial;
+               }
             }
          }
+
+
 
          & .menuHolder {
             width: 10%;
@@ -587,7 +601,7 @@
          width: 100%;
          height: 340px;
          border-radius: 20px;
-         background-color: rgba(255, 255, 255, 0.397);
+         background-color: rgba(255, 255, 255, 0.4);
          overflow: hidden;
          display: flex;
          justify-content: space-between;
@@ -611,7 +625,7 @@
 
             & .progPic {
                width: 10%;
-               object-fit:fill;
+               object-fit: fill;
             }
          }
 
@@ -665,6 +679,48 @@
 
 
       }
+
+      & .activityHolder {
+         height: 350px;
+         width: 100%;
+         display: flex;
+         flex-wrap: wrap;
+
+
+         & .activityTitle {
+            width: 100%;
+            text-align: center;
+            height: 20px;
+            font-weight: 700;
+         }
+
+
+         & .pair {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            
+
+            & .activity {
+               position: relative;
+               width: 49%;
+               height: 100px;
+               border-radius: 10px;
+               background-color: rgba(255, 255, 255, 0.4);
+               overflow: hidden;
+
+
+               & .actPic {
+                  object-fit: fill;
+                  width: 10%;
+               }
+            }
+         }
+
+
+
+      }
    }
 
    & .navigation {
@@ -699,9 +755,9 @@
          }
 
          & .selected {
-            scale: 1.1;
+            scale: 1.2;
             color: purple;
-            transition: 1s;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
          }
       }
    }
