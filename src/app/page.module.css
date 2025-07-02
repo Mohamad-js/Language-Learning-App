@@ -564,7 +564,7 @@
       justify-content: center;
       flex-direction: column;
       border-radius: 10px;
-      box-shadow: 1px 1px 10px 0px black;
+      box-shadow: 0px 0px 5px 0px rgb(134, 134, 134);
       overflow: hidden;
 
       @media (390px < width < 700px){
@@ -681,16 +681,19 @@
       }
 
       & .activityHolder {
-         height: 350px;
+         height: 360px;
          width: 100%;
          display: flex;
-         flex-wrap: wrap;
+         flex-direction: column;
+         gap: 10px;
 
 
          & .activityTitle {
             width: 100%;
+            margin-bottom: 10px;
             text-align: center;
-            height: 20px;
+            height: 19px;
+            font-size: 20px;
             font-weight: 700;
          }
 
@@ -709,11 +712,29 @@
                border-radius: 10px;
                background-color: rgba(255, 255, 255, 0.4);
                overflow: hidden;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               box-shadow: 0px 0px 7px 0px rgb(85, 85, 85);
 
 
                & .actPic {
                   object-fit: fill;
                   width: 10%;
+               }
+
+
+               & .actBtn {
+                  position: absolute;
+                  padding: 5px 10px;
+                  border-radius: 10px;
+                  background-color: rgba(255, 255, 255, 0);
+                  border: none;
+                  font: 19px tahoma;
+               }
+
+               & .light {
+                  color: white;
                }
             }
          }
@@ -725,13 +746,14 @@
 
    & .navigation {
       width: 100%;
-      height: 100px;
-      background-color: white;
-      border-radius: 20px;
+      height: 120px;
+      background-color: rgb(83, 0, 131);
+      border-radius: 30px;
       z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      box-shadow: 0px 0px 5px 0px rgb(0, 0, 0);
 
 
       & .iconHolder {
@@ -743,20 +765,22 @@
          justify-content: end;
          
          & .navIcons {
-            color: gray;
+            color: rgb(185, 185, 185);
             font-size: 30px;
             width: 100%;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
          }
 
          & .savesTitle {
-            color: gray;
+            color: rgb(185, 185, 185);
             width: 100%;
             text-align: center;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
          }
 
          & .selected {
             scale: 1.2;
-            color: purple;
+            color: white;
             transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
          }
       }

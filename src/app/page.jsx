@@ -7,6 +7,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoBookOutline, IoReaderOutline  } from "react-icons/io5";
 import { BiConversation } from "react-icons/bi";
 import { FaAssistiveListeningSystems } from "react-icons/fa";
+import { GoHome } from "react-icons/go";
 import styles from './page.module.css'
 
 
@@ -1938,8 +1939,7 @@ const StudyPlan = () => {
                <h1 className={styles.title}>Welcome My Love :)</h1>
                <p className={styles.welcome}>Start Your English Journey Here</p>
             </div>
-            {/* <div className={styles.startBtn} onClick={start}>Start Learning</div> */}
-            <div className={styles.startBtn}>Start Learning</div>
+            <div className={styles.startBtn} onClick={start}>Start Learning</div>
          </div>
          <div className={styles.programmer}>Powered by: Mohamad Gomar</div>
       </div>
@@ -1959,8 +1959,13 @@ const StudyPlan = () => {
             <div className={styles.holder}>
                <div className={styles.dates}>
                   <div className={styles.backHolder}>
-                     <IoIosArrowDown className={styles.backBtn}/>
-                     <div className={styles.date} onClick={() => setPages('home')}>Home</div>
+                     {
+                        pages !== 'home' ? <>
+                           <IoIosArrowDown className={styles.backBtn}/>
+                           <div className={styles.date} onClick={() => setPages('home')}>Home</div>
+                        </>
+                        : ''
+                     }
                   </div>
                   <div className={styles.menuHolder}>
                      <div className={styles.dotHolder} onClick={toggleMenu} ref={optionRef}>
@@ -1975,8 +1980,9 @@ const StudyPlan = () => {
                   <div className={styles.item} onClick={showWarning}>Restart</div>
                   <div className={styles.item}>Saved</div>
                   <div className={styles.item}>Dictionary</div>
-                  <div className={styles.item}>Tests</div>
-                  <div className={styles.item}>Review</div>
+                  <div className={styles.item}>My Errors</div>
+                  <div className={styles.item}>About</div>
+                  <div className={styles.item}></div>
                </div>
                : null
 
@@ -2024,12 +2030,56 @@ const StudyPlan = () => {
                         <div className={styles.pair}>
                            <div className={styles.activity}>
                               <Image className={styles.actPic}
-                                 src='../images/illustrations/activity.jpg'
+                                 src='../images/illustrations/act1.jpg'
                                  alt="progress"
                                  fill
                               />
+                              <button className={styles.actBtn}>Vocabulary</button>
                            </div>
-                           <div className={styles.activity}></div>
+                           <div className={styles.activity}>
+                              <Image className={styles.actPic}
+                                 src='../images/illustrations/act2.jpg'
+                                 alt="progress"
+                                 fill
+                              />
+                              <button className={styles.actBtn}>Grammar</button>
+                           </div>
+                        </div>
+                        <div className={styles.pair}>
+                           <div className={styles.activity}>
+                              <Image className={styles.actPic}
+                                 src='../images/illustrations/act3.jpg'
+                                 alt="progress"
+                                 fill
+                              />
+                              <button className={`${styles.actBtn} ${styles.light}`}>Expressions</button>
+                           </div>
+                           <div className={styles.activity}>
+                              <Image className={styles.actPic}
+                                 src='../images/illustrations/act4.jpg'
+                                 alt="progress"
+                                 fill
+                              />
+                              <button className={`${styles.actBtn} ${styles.light}`}>Synonyms</button>
+                           </div>
+                        </div>
+                        <div className={styles.pair}>
+                           <div className={styles.activity}>
+                              <Image className={styles.actPic}
+                                 src='../images/illustrations/act5.jpg'
+                                 alt="progress"
+                                 fill
+                              />
+                              <button className={styles.actBtn}>Tests</button>
+                           </div>
+                           <div className={styles.activity}>
+                              <Image className={styles.actPic}
+                                 src='../images/illustrations/act6.jpg'
+                                 alt="progress"
+                                 fill
+                              />
+                              <button className={`${styles.actBtn} ${styles.light}`}>Review</button>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -2056,6 +2106,10 @@ const StudyPlan = () => {
                <div className={styles.iconHolder} onClick={() => setPages('speak')}>
                   <BiConversation className={`${styles.navIcons} ${pages === 'speak' && styles.selected}`} />
                   <div className={`${styles.savesTitle} ${pages === 'speak' && styles.selected}`}>Speak</div>
+               </div>
+               <div className={styles.iconHolder} onClick={() => setPages('home')}>
+                  <GoHome  className={`${styles.navIcons} ${pages === 'home' && styles.selected}`} />
+                  <div className={`${styles.savesTitle} ${pages === 'home' && styles.selected}`}>Home</div>
                </div>
                <div className={styles.iconHolder} onClick={() => setPages('write')}>
                   <IoReaderOutline  className={`${styles.navIcons} ${pages === 'write' && styles.selected}`} />
