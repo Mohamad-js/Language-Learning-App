@@ -2025,6 +2025,8 @@ const StudyPlan = () => {
                            </div>
                         </div>
                      </div>
+
+                     
                      <div className={styles.activityHolder}>
                         <div className={styles.activityTitle}>Start From Here</div>
                         <div className={styles.pair}>
