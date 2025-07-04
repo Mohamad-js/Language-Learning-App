@@ -1,40 +1,42 @@
 "use client";
-import { use, useEffect, useReducer, useRef, useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Image from "next/image";
-import { IoIosArrowDown } from "react-icons/io";
-import { CiMenuFries } from "react-icons/ci";
-import { IoBookOutline, IoReaderOutline  } from "react-icons/io5";
-import { BiConversation } from "react-icons/bi";
-import { FaAssistiveListeningSystems } from "react-icons/fa";
-import { GoHome } from "react-icons/go";
+import Loader from "@/components/loading/loading";
 import styles from './page.module.css'
 
 
 
 const StudyPlan = () => {
-   const [startApp, setStartApp] = useState('startup');
    const [info, setInfo] = useState([]);
-   const [menu,setMenu] = useState(false)
-   const [warning,setWarning] = useState(false)
    const [pages, setPages] = useState('home')
-   const optionRef = useRef(null)
    const [aveProgress,setAveProgress] = useState(38)
    const [readProgress,setReadProgress] = useState(42)
    const [writeProgress,setWriteProgress] = useState(18)
    const [listenProgress,setListenProgress] = useState(29)
    const [speakProgress,setSpeakProgress] = useState(57)
+   const [isLoading, setIsLoading] = useState(true);
+   const [loadedImages, setLoadedImages] = useState(0);
+   const totalImages = 7;
 
-   useEffect(()=>{
-      const appStatus = localStorage.getItem('app state');
-      appStatus && setStartApp(JSON.parse(appStatus));
-
-   }, [startApp])
-
+   const handleImageLoad = () => {
+      setLoadedImages((prev) => {
+      const newCount = prev + 1;
+      if (newCount >= totalImages) {
+        setIsLoading(false);
+      }
+      return newCount;
+    });
+   };
 
    useEffect(() => {
-      document.addEventListener('click', closeOption)
+      if (loadedImages >= totalImages) {
+         setIsLoading(false);
+      }
+   }, [loadedImages]);
 
+   useEffect(() => {
 
       setInfo([
          {
@@ -1886,267 +1888,148 @@ const StudyPlan = () => {
          // }
       ]);
 
-
    }, [])
 
-  
+   return (
+      <div className={styles.bigMom}>
 
-   function toggleMenu(){
-      setMenu(!menu)
-   }
-
-   function closeOption(event){
-      if (optionRef.current && !optionRef.current.contains(event.target)) {
-         setMenu(false)
-      }
-   }
-
-   function showWarning(){
-      setWarning(true)
-   }
-
-   function restartApp(){
-      localStorage.setItem('app state', JSON.stringify('startup'));
-      window.location.reload()
-   }
-
-   function cancelRestart(){
-      setWarning(false)
-   }
-
-   const start = () => {
-      localStorage.setItem('app state', JSON.stringify('running'));
-
-      const appStatus = localStorage.getItem('app state');
-      appStatus && setStartApp(JSON.parse(appStatus));
-   }
-
-   const toggleHome = () => {
-      setStartApp('running');
-   }
-
-
-   if (startApp === 'startup') {
-      return (
-      <div className={styles.container}>
-         <Image className={styles.image}
-            src='../images/back/background.jpg'
+         <Image className={styles.back}
+            src='../images/back/mainBack.jpg'
             fill
-            alt='background'
+            alt="background"
+            onLoad={handleImageLoad}
          />
-         <div className={styles.layer}>
-            <div className={styles.intro}>
-               <h1 className={styles.title}>Welcome My Love :)</h1>
-               <p className={styles.welcome}>Start Your English Journey Here</p>
-            </div>
-            <div className={styles.startBtn} onClick={start}>Start Learning</div>
-         </div>
-         <div className={styles.programmer}>Powered by: Mohamad Gomar</div>
-      </div>
-      );
-   }
+         
+ 
 
-   if(startApp === 'running'){
-      return (
-         <div className={styles.bigMom}>
-   
-            <Image className={styles.back}
-               src='../images/back/mainBack.jpg'
-               fill
-               alt="background"
-            />
-            
-            <div className={styles.holder}>
-               <div className={styles.dates}>
-                  <div className={styles.backHolder}>
-                     {
-                        pages !== 'home' ? <>
-                           <IoIosArrowDown className={styles.backBtn}/>
-                           <div className={styles.date} onClick={() => setPages('home')}>Home</div>
-                        </>
-                        : ''
-                     }
-                  </div>
-                  <div className={styles.menuHolder}>
-                     <div className={styles.dotHolder} onClick={toggleMenu} ref={optionRef}>
-                        <CiMenuFries className={styles.hamIcon} />
+         {
+            pages === 'home' ? <>
+               <div className={styles.pageHolder}>
+                  <div className={styles.progress}>
+                     <div className={styles.mainTitle}>Your Progress</div>
+                     <div className={styles.illHolder}>
+                        <Image className={styles.progPic}
+                           src='../images/illustrations/progress.png'
+                           alt="progress"
+                           fill
+                           onLoad={handleImageLoad}
+                        />
+                     </div>
+                     <div className={styles.aveProgress}>
+                        <ProgressBar inputNumber={aveProgress}/>
+                        <div className={styles.aveTitle}>Completed</div>
+                     </div>
+                     <div className={styles.progBarHolder}>
+                        <div className={styles.progBar}>
+                           <div className={styles.progHolder}>
+                              <div className={styles.progNumber}>{speakProgress}%</div>
+                              <div className={styles.progTitle}>SPEAKING</div>
+                           </div>
+                           <div className={styles.progHolder}>
+                              <div className={styles.progNumber}>{writeProgress}%</div>
+                              <div className={styles.progTitle}>WRITING</div>
+                           </div>
+                           <div className={styles.progHolder}>
+                              <div className={styles.progNumber}>{listenProgress}%</div>
+                              <div className={styles.progTitle}>LISTENING</div>
+                           </div>
+                           <div className={styles.progHolder}>
+                              <div className={styles.progNumber}>{readProgress}%</div>
+                              <div className={styles.progTitle}>READING</div>
+                           </div>
+                        </div>
                      </div>
                   </div>
-               </div>
-            </div>
-            {
-               menu ?
-               <div className={styles.menu}>
-                  <div className={styles.item} onClick={showWarning}>Restart</div>
-                  <div className={styles.item}>Saved</div>
-                  <div className={styles.item}>Dictionary</div>
-                  <div className={styles.item}>My Errors</div>
-                  <div className={styles.item}>About</div>
-                  <div className={styles.item}></div>
-               </div>
-               : null
 
-            }
 
-            {
-               pages === 'home' ? <>
-                  <div className={styles.pageHolder}>
-                     <div className={styles.progress}>
-                        <div className={styles.mainTitle}>Your Progress</div>
-                        <div className={styles.illHolder}>
-                           <Image className={styles.progPic}
-                              src='../images/illustrations/progress.png'
+                  <div className={styles.activityHolder}>
+                     <div className={styles.activityTitle}>Start From Here</div>
+                     <div className={styles.pair}>
+                        <Link href='/words' className={styles.activity}>
+                           <Image className={styles.actPic}
+                              src='../images/illustrations/act1.jpg'
                               alt="progress"
                               fill
+                              onLoad={handleImageLoad}
                            />
-                        </div>
-                        <div className={styles.aveProgress}>
-                           <ProgressBar inputNumber={aveProgress}/>
-                           <div className={styles.aveTitle}>Completed</div>
-                        </div>
-                        <div className={styles.progBarHolder}>
-                           <div className={styles.progBar}>
-                              <div className={styles.progHolder}>
-                                 <div className={styles.progNumber}>{speakProgress}%</div>
-                                 <div className={styles.progTitle}>SPEAKING</div>
-                              </div>
-                              <div className={styles.progHolder}>
-                                 <div className={styles.progNumber}>{writeProgress}%</div>
-                                 <div className={styles.progTitle}>WRITING</div>
-                              </div>
-                              <div className={styles.progHolder}>
-                                 <div className={styles.progNumber}>{listenProgress}%</div>
-                                 <div className={styles.progTitle}>LISTENING</div>
-                              </div>
-                              <div className={styles.progHolder}>
-                                 <div className={styles.progNumber}>{readProgress}%</div>
-                                 <div className={styles.progTitle}>READING</div>
-                              </div>
-                           </div>
+                           <button className={styles.actBtn}>Vocabulary</button>
+                        </Link>
+                        <div className={styles.activity}>
+                           <Image className={styles.actPic}
+                              src='../images/illustrations/act2.jpg'
+                              alt="progress"
+                              fill
+                              onLoad={handleImageLoad}
+                           />
+                           <button className={styles.actBtn}>Grammar</button>
                         </div>
                      </div>
-
-                     
-                     <div className={styles.activityHolder}>
-                        <div className={styles.activityTitle}>Start From Here</div>
-                        <div className={styles.pair}>
-                           <div className={styles.activity}>
-                              <Image className={styles.actPic}
-                                 src='../images/illustrations/act1.jpg'
-                                 alt="progress"
-                                 fill
-                              />
-                              <button className={styles.actBtn}>Vocabulary</button>
-                           </div>
-                           <div className={styles.activity}>
-                              <Image className={styles.actPic}
-                                 src='../images/illustrations/act2.jpg'
-                                 alt="progress"
-                                 fill
-                              />
-                              <button className={styles.actBtn}>Grammar</button>
-                           </div>
+                     <div className={styles.pair}>
+                        <div className={styles.activity}>
+                           <Image className={styles.actPic}
+                              src='../images/illustrations/act3.jpg'
+                              alt="progress"
+                              fill
+                              onLoad={handleImageLoad}
+                           />
+                           <button className={`${styles.actBtn} ${styles.light}`}>Expressions</button>
                         </div>
-                        <div className={styles.pair}>
-                           <div className={styles.activity}>
-                              <Image className={styles.actPic}
-                                 src='../images/illustrations/act3.jpg'
-                                 alt="progress"
-                                 fill
-                              />
-                              <button className={`${styles.actBtn} ${styles.light}`}>Expressions</button>
-                           </div>
-                           <div className={styles.activity}>
-                              <Image className={styles.actPic}
-                                 src='../images/illustrations/act4.jpg'
-                                 alt="progress"
-                                 fill
-                              />
-                              <button className={`${styles.actBtn} ${styles.light}`}>Synonyms</button>
-                           </div>
+                        <div className={styles.activity}>
+                           <Image className={styles.actPic}
+                              src='../images/illustrations/act4.jpg'
+                              alt="progress"
+                              fill
+                              onLoad={handleImageLoad}
+                           />
+                           <button className={`${styles.actBtn} ${styles.light}`}>Synonyms</button>
                         </div>
-                        <div className={styles.pair}>
-                           <div className={styles.activity}>
-                              <Image className={styles.actPic}
-                                 src='../images/illustrations/act5.jpg'
-                                 alt="progress"
-                                 fill
-                              />
-                              <button className={styles.actBtn}>Tests</button>
-                           </div>
-                           <div className={styles.activity}>
-                              <Image className={styles.actPic}
-                                 src='../images/illustrations/act6.jpg'
-                                 alt="progress"
-                                 fill
-                              />
-                              <button className={`${styles.actBtn} ${styles.light}`}>Review</button>
-                           </div>
+                     </div>
+                     <div className={styles.pair}>
+                        <div className={styles.activity}>
+                           <Image className={styles.actPic}
+                              src='../images/illustrations/act5.jpg'
+                              alt="progress"
+                              fill
+                              onLoad={handleImageLoad}
+                           />
+                           <button className={styles.actBtn}>Tests</button>
+                        </div>
+                        <div className={styles.activity}>
+                           <Image className={styles.actPic}
+                              src='../images/illustrations/act6.jpg'
+                              alt="progress"
+                              fill
+                              onLoad={handleImageLoad}
+                           />
+                           <button className={`${styles.actBtn} ${styles.light}`}>Review</button>
                         </div>
                      </div>
                   </div>
-               </> :
-               pages === 'read' ? <>
-                  <div className={styles.pageHolder}>The Reading Page</div>
-               </> :
-               pages === 'speak' ? <>
-                  <div className={styles.pageHolder}>The Speaking Page</div>
-               </> :
-               pages === 'write' ? <>
-                  <div className={styles.pageHolder}>The Writing Page</div>
-               </> :
-               pages === 'listen' ? <>
-                  <div className={styles.pageHolder}>The Listening Page</div>
-               </> : <div>THIS IS AN ERROR</div>
-            }
-            
-            <div className={styles.navigation}>
-               <div className={styles.iconHolder} onClick={() => setPages('read')}>
-                  <IoBookOutline className={`${styles.navIcons} ${pages === 'read' && styles.selected}`} />
-                  <div className={`${styles.savesTitle} ${pages === 'read' && styles.selected}`}>Read</div>
                </div>
-               <div className={styles.iconHolder} onClick={() => setPages('speak')}>
-                  <BiConversation className={`${styles.navIcons} ${pages === 'speak' && styles.selected}`} />
-                  <div className={`${styles.savesTitle} ${pages === 'speak' && styles.selected}`}>Speak</div>
-               </div>
-               <div className={styles.iconHolder} onClick={() => setPages('home')}>
-                  <GoHome  className={`${styles.navIcons} ${pages === 'home' && styles.selected}`} />
-                  <div className={`${styles.savesTitle} ${pages === 'home' && styles.selected}`}>Home</div>
-               </div>
-               <div className={styles.iconHolder} onClick={() => setPages('write')}>
-                  <IoReaderOutline  className={`${styles.navIcons} ${pages === 'write' && styles.selected}`} />
-                  <div className={`${styles.savesTitle} ${pages === 'write' && styles.selected}`}>Write</div>
-               </div>
-               <div className={styles.iconHolder} onClick={() => setPages('listen')}>
-                  <FaAssistiveListeningSystems  className={`${styles.navIcons} ${pages === 'listen' && styles.selected}`} />
-                  <div className={`${styles.savesTitle} ${pages === 'listen' && styles.selected}`}>Listen</div>
-               </div>
+            </> :
+            pages === 'read' ? <>
+               <div className={styles.pageHolder}>The Reading Page</div>
+            </> :
+            pages === 'speak' ? <>
+               <div className={styles.pageHolder}>The Speaking Page</div>
+            </> :
+            pages === 'write' ? <>
+               <div className={styles.pageHolder}>The Writing Page</div>
+            </> :
+            pages === 'listen' ? <>
+               <div className={styles.pageHolder}>The Listening Page</div>
+            </> : <div>THIS IS AN ERROR</div>
+         }
+         
+         {
+            isLoading ?
+            <div className={styles.bottomLayer}>
+               <Loader /> 
             </div>
-   
-            {
-               warning ?
-               <div className={styles.warning}>
-                  <div>Are you sure you want to restart?</div>
-                  <div className={styles.btns}>
-                     <button className={styles.yes} onClick={restartApp}>Yes</button>
-                     <button className={styles.no} onClick={cancelRestart}>No</button>
-                  </div>
-               </div>
-               : null
-            }
-         </div>
-      );
-   } else {
-      return (
-         <div className={styles.bigMom}>
-            <h2>Data Available Soon</h2>
-            <button
-               className={styles.btn}
-               onClick={() => setCurrentDay(currentDay - 1)}
-            >Go Back</button>
-         </div>
-      )
-   }
+            : ''
+         }
+      </div>
+   );
 };
 
 export default StudyPlan;

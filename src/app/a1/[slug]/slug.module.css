@@ -1,0 +1,104 @@
+.container {
+   min-height: 100vh;
+   background-color: #f0f0f0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 1rem;
+
+   & .card {
+      position: fixed;
+      overflow-y: auto;
+      background-color: white;
+      height: 85vh;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      padding-bottom: 100px;
+
+
+
+      & .title {
+         font-size: 18px;
+         margin-bottom: 1rem;
+      }
+
+      & .prompt {
+         margin-bottom: 1rem;
+      }
+
+      & .buttonGroup {
+         display: flex;
+         flex-direction: column;
+         gap: 0.5rem;
+
+         & .button {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            & .buttonKnown {
+               background-color: #22c55e;
+               &:hover {
+               background-color: #16a34a;
+               }
+            }
+
+            &.buttonPartial {
+               background-color: #eab308;
+               &:hover {
+               background-color: #ca8a04;
+               }
+            }
+
+            &.buttonUnknown {
+               background-color: #ef4444;
+               &:hover {
+               background-color: #dc2626;
+               }
+            }
+
+            &.buttonNext {
+               background-color: #3b82f6;
+               margin-top: 1rem;
+               &:hover {
+               background-color: #2563eb;
+               }
+            }
+         }
+      }
+
+      & .wordBlock {
+         margin-bottom: 50px;
+
+         & .wordTitle {
+            font-size: 50px;
+            font-weight: 500;
+         }
+
+         .exampleList {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+         }
+      }
+   }
+
+   & .done {
+      width: 100vw;
+      height: 100vh;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      background-color: green;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+}

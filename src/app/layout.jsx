@@ -1,6 +1,8 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
+import Navigation from "@/components/Navigation/navigation";
+import Menu from "@/components/menu/menu";
 
 
 export const metadata = {
@@ -18,7 +20,9 @@ export default function RootLayout({ children }) {
   return (
       <html lang="en">
          <body>
+            <Menu />
             {children}
+            <Navigation />
             <SpeedInsights />
             <Analytics />
          </body>

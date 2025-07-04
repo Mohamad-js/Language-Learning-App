@@ -20,3 +20,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, button, [role="button"]):active {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
