@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import styles from './slug.module.css';
 import Link from 'next/link';import { IoIosArrowBack } from "react-icons/io";
-import OxfordLearner from '@/components/iframe/oxfordLearner';
 
 
 
@@ -15,23 +14,50 @@ export default function Lessons({ params }) {
    const [partialWords, setPartialWords] = useState([]);
    const [unknownWords, setUnknownWords] = useState([]);
    const [btn, setBtn] = useState(false)
-   const [oxford,setOxford] = useState(false)
+   const [lessonNumber, setLessonNumber] = useState(null)
 
+   const { slug } = params;
 
    useEffect(() => {
-      localStorage.setItem('knownWords', JSON.stringify(knownWords));
-      localStorage.setItem('partialWords', JSON.stringify(partialWords));
-      localStorage.setItem('unknownWords', JSON.stringify(unknownWords));
-   }, [knownWords, partialWords, unknownWords]);
+      setLessonNumber(Number(slug))
+   }, [slug])
+
+// Retrieve data from localStorage on mount
+   useEffect(() => {
+      try {
+         const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}`) || '[]');
+         const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}`) || '[]');
+         const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}`) || '[]');
+
+         setKnownWords(savedKnowns);
+         setUnknownWords(savedUnknowns);
+         setPartialWords(savedPartials);
+      } catch (e) {
+         console.error('Error parsing localStorage data:', e);
+      }
+   }, [slug]); // Depend on slug to reload when lesson changes
+
+   // Save data to localStorage when state changes
+   useEffect(() => {
+      try {
+         localStorage.setItem(`knownWords-${slug}`, JSON.stringify(knownWords));
+         localStorage.setItem(`partialWords-${slug}`, JSON.stringify(partialWords));
+         localStorage.setItem(`unknownWords-${slug}`, JSON.stringify(unknownWords));
+      } catch (e) {
+         console.error('Error saving to localStorage:', e);
+      }
+   }, [knownWords, partialWords, unknownWords, slug]);
 
    const handleAnswer = (status) => {
       const currentWord = specificLessonWords[currentWordIndex];
       if (status === 'known') {
-         setKnownWords([...knownWords, { word: currentWord, status }]);
+         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+
       } else if (status === 'partial') {
-         setPartialWords([...partialWords, { word: currentWord, status }]);
+         setPartialWords([...partialWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+
       } else {
-         setUnknownWords([...unknownWords, { word: currentWord, status }]);
+         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber }]);
       }
 
       if (currentWordIndex + 1 < specificLessonWords.length) {
@@ -59,8 +85,17 @@ export default function Lessons({ params }) {
       }
    };
 
+   const reset = () => {
+      setKnownWords([]);
+      setUnknownWords([]);
+      setPartialWords([]);
+
+      localStorage.setItem(`knownWords-${slug}`, JSON.stringify(knownWords));
+      localStorage.setItem(`partialWords-${slug}`, JSON.stringify(partialWords));
+      localStorage.setItem(`unknownWords-${slug}`, JSON.stringify(unknownWords));
+   }
+
    // Access the slug from the URL
-   const { slug } = params;
 
    const data = {
       slug,
@@ -6820,18 +6855,14 @@ export default function Lessons({ params }) {
       return item.id == slug
    })
 
-   console.log(specificLessonWords);
-
-   
-
    return (
       <div className={styles.container}>
-         <Link href='/a1' className={styles.backHolder}>
+         <Link href='/a1' className={styles.backHolder} onClick={reset}>
             <IoIosArrowBack className={styles.backSign}/>
             <div className={styles.backText}>Back</div>
          </Link>
 
-         <div className={styles.lessonTitle}>Lesson {slug}</div>
+         <div className={styles.lessonTitle}>Lesson {lessonNumber}</div>
 
          {stage === 'assessment' && (
             <div className={styles.assessCard}>
@@ -6843,20 +6874,20 @@ export default function Lessons({ params }) {
                </div>
                <div className={styles.buttonGroup}>
                   <button
-                  className={`${styles.button} ${styles.buttonKnown}`}
-                  onClick={() => handleAnswer('known')}
+                     className={`${styles.button} ${styles.buttonKnown}`}
+                     onClick={() => handleAnswer('known')}
                   >
                   I know it and use it a lot
                   </button>
                   <button
-                  className={`${styles.button} ${styles.buttonPartial}`}
-                  onClick={() => handleAnswer('partial')}
+                     className={`${styles.button} ${styles.buttonPartial}`}
+                     onClick={() => handleAnswer('partial')}
                   >
                   I know it but can’t use it
                   </button>
                   <button
-                  className={`${styles.button} ${styles.buttonUnknown}`}
-                  onClick={() => handleAnswer('unknown')}
+                     className={`${styles.button} ${styles.buttonUnknown}`}
+                     onClick={() => handleAnswer('unknown')}
                   >
                   I don’t know it 
                   </button>
@@ -6874,8 +6905,8 @@ export default function Lessons({ params }) {
                <div className={styles.doneTitle}>All done. Brilliant :)</div>
                <Link href='/a1' className={styles.back}>Done</Link>
                {
-                  slug < 52 ?
-                  <Link href={`/a1/${slug + 1}`} className={styles.back}>Next Lesson</Link>
+                  lessonNumber < 52 ?
+                  <Link href={`/a1/${lessonNumber + 1}`} className={styles.back}>Next Lesson</Link>
                   :
                   <Link href='/a2' className={styles.back}>Start A2</Link>
                }
@@ -6885,7 +6916,6 @@ export default function Lessons({ params }) {
                return (
                <div className={styles.wordBlock}>
                   <div className={styles.wordHolder}>
-                     <div className={styles.more} onClick={() => setOxford(true)}>more</div>
                      <p className={styles.wordTitle}>{ws.word.word}</p>
                      <div className={styles.infoHolder}>
                         <p className={styles.phonetics}>{ws.word.AmE}</p>
@@ -6912,8 +6942,8 @@ export default function Lessons({ params }) {
                               Review Again
                            </button>
                            {
-                           slug < 52 ?
-                              <Link href={`/a1/${slug + 1}`} className={styles.button}>Next Lesson</Link>
+                           lessonNumber < 52 ?
+                              <Link href={`/a1/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
                               :
                               <Link href='/a2' className={styles.button}>Start A2</Link>  
                            }
@@ -6971,8 +7001,8 @@ export default function Lessons({ params }) {
             })()}
             <div className={styles.btnHolder}>
                {
-                  slug < 52 ?
-                  <Link href={`/a1/${slug + 1}`} className={styles.button}>Next Lesson</Link>
+                  lessonNumber < 52 ?
+                  <Link href={`/a1/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
                   :
                   <Link href='/a2' className={styles.button}>Start A2</Link>
                }

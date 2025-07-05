@@ -24,11 +24,12 @@ const StudyPlan = () => {
       setLoadedImages((prev) => {
       const newCount = prev + 1;
       if (newCount >= totalImages) {
-        setIsLoading(false);
+         setIsLoading(false);
       }
-      return newCount;
-    });
+         return newCount;
+      });
    };
+
 
    useEffect(() => {
       if (loadedImages >= totalImages) {
@@ -1994,7 +1995,7 @@ const StudyPlan = () => {
                            />
                            <button className={styles.actBtn}>Tests</button>
                         </div>
-                        <div className={styles.activity}>
+                        <Link href='/review' className={styles.activity}>
                            <Image className={styles.actPic}
                               src='../images/illustrations/act6.jpg'
                               alt="progress"
@@ -2002,7 +2003,7 @@ const StudyPlan = () => {
                               onLoad={handleImageLoad}
                            />
                            <button className={`${styles.actBtn} ${styles.light}`}>Review</button>
-                        </div>
+                        </Link>
                      </div>
                   </div>
                </div>

@@ -120,9 +120,19 @@
                font-weight: 700;
             }
             
-            & .lessonStatus {
+            & .lessonDone {
                font-size: 13px;
+               color: green;
             }
+            
+            & .lessonWaiting {
+               font-size: 13px;
+               color: red;
+            }
+         }
+
+         & .disabled {
+            opacity: 0.5;
          }
    
       }
