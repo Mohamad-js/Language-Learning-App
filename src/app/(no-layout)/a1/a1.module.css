@@ -109,23 +109,25 @@
             flex-direction: column;
             padding: 15px;
 
-            &:active {
-               background-color: black;
-               color: white;
-            }
-
             
             & .lesson {
                font-size: 15px;
                font-weight: 700;
+               color: rgb(133, 133, 133);
             }
             
             & .lessonDone {
                font-size: 13px;
                color: green;
+               font-weight: 700;
+
+               & .tick {
+                  font-size: 20px;
+               }
             }
             
             & .lessonWaiting {
+               font-weight: 700;
                font-size: 13px;
                color: red;
             }
@@ -133,6 +135,16 @@
 
          & .disabled {
             opacity: 0.5;
+         }
+         
+         & .newLesson {
+            color: green;
+            font-weight: 700;
+
+            &:active {
+               background-color: black;
+               color: white;
+            }
          }
    
       }

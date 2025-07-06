@@ -1,0 +1,448 @@
+.container {
+   height: 100vh;
+   background-color: #d19ff1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 1rem;
+   padding-bottom: 100px;
+
+
+   & .backHolder {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 50px;
+      width: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      z-index: 3;
+
+      &:active {
+         opacity: 0.5;
+      }
+      
+      & .backSign {
+         color: black;
+         font-size: 25px;
+      }
+      
+      
+      & .backText {
+         padding-top: 5px;
+         font-size: 15px;
+         color: black;
+      }
+   }
+   
+   
+   & .lessonTitle {
+      position: absolute;
+      top: 0;
+      height: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   & .lessonLevel {
+      position: absolute;
+      top: 0;
+      left: 8px;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   & .assessCard {
+      position: fixed;
+      top: 50px;
+      background-color: rgba(98, 0, 163, 0.295);
+      height: 90dvh;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+
+      & .titleHolder {
+         width: 100%;
+         height: fit-content;
+
+
+         & .check {
+            color: rgb(72, 0, 90);
+            text-align: center;
+         }
+   
+               
+         & .prompt {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: rgb(72, 0, 90);
+            font-weight: 600;
+         }
+      }
+
+      
+      & .vocabHolder {
+         width: 100%;
+         height: fit-content;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         color: white;
+         margin-bottom: 20px;
+
+
+         & .vocab {
+            font-size: 50px;
+         }
+
+         & .role {
+            font-size: 15px;
+         }
+      }
+
+      & .buttonGroup {
+         display: flex;
+         flex-direction: column;
+         gap: 0.5rem;
+         color: white;
+
+
+         & .button {
+            padding: 10px 30px;
+            font-size: 15px;
+            font-weight: 800;
+            border: none;
+            border-radius: 0.25rem;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: background-color 0.2s;
+            
+            
+            &.buttonKnown {
+               background-color: #00ff5e;
+               border-radius: 10px;
+               
+               &:active {
+                  background-color: #00c448;
+               }
+            }
+
+            &.buttonPartial {
+               background-color: #ffbf00;
+               border-radius: 10px;
+               
+               &:active {
+                  background-color: #c09000;
+               }
+            }
+
+            &.buttonUnknown {
+               background-color: #ff0000;
+               border-radius: 10px;
+               
+               &:active {
+                  background-color: #b80000;
+               }
+            }
+         }
+      }
+
+      & .wordBlock {
+         margin-bottom: 50px;
+
+         & .wordTitle {
+            font-size: 50px;
+            font-weight: 500;
+         }
+
+         .exampleList {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+         }
+      }
+   }
+
+   & .learnCard {
+      position: fixed;
+      top: 50px;
+      background-color: rgb(22, 0, 43);
+      height: 90dvh;
+      padding: 15px;
+      border-radius: 10px;
+      width: 90%;
+      color: white;
+
+
+
+      & .title {
+         font-size: 15px;
+         font-weight: 700;
+      }
+
+      & .wordBlock {
+         margin-bottom: 50px;
+         height: 80%;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-content: start;
+         align-items: start;
+         gap: 30px;
+
+
+         & .wordHolder {
+            width: 100%;
+            display: flex;
+            height: fit-content;
+            flex-direction: column;
+            align-items: start;
+
+            
+            & .wordTitle {
+               font-size: 50px;
+               height: 70px;
+               color: #d19ff1;
+
+            }
+
+            & .infoHolder {
+               width: 100%;
+               display: flex;
+               gap: 10px;
+
+               
+               & .phonetics {
+                  font-size: 15px;
+               }
+               
+               & .role {
+                  font-size: 15px;
+               }
+            }
+            
+         }
+         
+         & .btnHolder {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+
+            & .button {
+               padding: 5px 30px;
+               font-size: 13px;
+               font-weight: 700;
+               border: 1px solid white;
+               border-radius: 10px;
+               color: white;
+               background-color: rgba(240, 248, 255, 0);
+               cursor: pointer;
+               bottom: 0;
+               transition: background-color 0.2s;
+
+               &:active {
+                  background-color: white;
+                  color: black;
+               }
+            }
+         }
+         
+         & .definition {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+         }
+         
+         & .examplesHolder {
+            width: 100%;
+            height: fit-content;
+            
+            .examplesList {
+               display: flex;
+               flex-direction: column;
+               gap: 10px;
+               list-style-type: disc;
+               padding-left: 1.25rem;
+            }
+         }
+
+
+      }
+   }
+
+   & .revisionCard {
+      position: fixed;
+      top: 50px;
+      background-color: rgb(22, 0, 43);
+      height: 90dvh;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      padding-bottom: 100px;
+      color: white;
+      overflow-y: auto;
+
+
+      & .title {
+         font-size: 18px;
+         margin-bottom: 10px;
+      }
+
+
+      & .wordBlock {
+         margin-bottom: 50px;
+         padding: 10px;
+         border-radius: 10px;
+         height: fit-content;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: start;
+         border: 1px solid white;
+
+
+         & .wordHolder {
+            width: 100%;
+            display: flex;
+            height: fit-content;
+            flex-direction: column;
+            align-items: start;
+
+            
+            & .wordTitle {
+               font-size: 50px;
+               height: 70px;
+            }
+
+            & .infoHolder {
+               width: 100%;
+               display: flex;
+               gap: 20px;
+
+               
+               & .phonetics {
+                  font-size: 20px;
+               }
+               
+               & .role {
+                  font-size: 20px;
+               }
+            }
+            
+         }
+
+         & .definition {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+         }
+         
+         & .examplesHolder {
+            width: 100%;
+            height: fit-content;
+            
+            .examplesList {
+               list-style-type: disc;
+               padding-left: 1.25rem;
+   
+            }
+         }
+      }
+   }
+
+   & .btnHolder {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 10px;
+
+
+      & .button {
+         padding: 5px 30px;
+         font-size: 13px;
+         font-weight: 700;
+         border-radius: 10px;
+         border: none;
+         color: rgb(80, 0, 146);
+         background-color: rgb(255, 255, 255);
+         cursor: pointer;
+         bottom: 0;
+         transition: background-color 0.2s;
+
+         &:active {
+            opacity: 0.5;
+         }
+      }
+   }
+
+
+   & .done {
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #d19ff1;
+      border: 5px solid #d19ff1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      & .doneTitle {
+         font-size: 20px;
+         color: rgb(63, 0, 82);
+      }
+
+      & .btnHolder {
+         width: 100%;
+         height: fit-content;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 10px;
+
+   
+         & .back {
+            padding: 5px 20px;
+            border-radius: 10px;
+            background-color: #b53dff;
+            color: rgb(255, 255, 255);
+   
+            &:active {
+               opacity: 0.5;
+            }
+         }
+      }
+   }
+}

@@ -6,9 +6,9 @@ import Menu from "@/components/menu/menu";
 
 
 export const metadata = {
-  title: "Ghazalim English App",
-  description: "Powered by Mohamad Gomar",
-  viewport: {
+   title: "Ghazalim English App",
+   description: "Powered by Mohamad Gomar",
+   viewport: {
       width: 'device-width',
       initialScale: 1.0,
       maximumScale: 1.0,

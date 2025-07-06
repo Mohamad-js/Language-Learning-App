@@ -22,7 +22,7 @@ function Menu(){
                <div className={styles.menu}>
                   <div className={styles.item}>Restart</div>
                   <div className={styles.item}>Saved</div>
-                  <div className={styles.item}>Dictionary</div>
+                  <div className={styles.item}>Statistics</div>
                   <div className={styles.item}>My Errors</div>
                   <div className={styles.item}>About</div>
                </div>

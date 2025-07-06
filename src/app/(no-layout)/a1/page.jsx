@@ -1,6 +1,7 @@
 'use client';
 import styles from './a1.module.css';
 import { IoIosArrowBack } from 'react-icons/io';
+import { TiTick } from "react-icons/ti";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -15,9 +16,9 @@ function A1() {
   useEffect(() => {
     const newSwitches = Array(52).fill(false);
     for (let i = 1; i <= 52; i++) {
-      const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}`)) || [];
-      const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}`)) || [];
-      const partials = JSON.parse(localStorage.getItem(`partialWords-${i}`)) || [];
+      const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A1`)) || [];
+      const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A1`)) || [];
+      const partials = JSON.parse(localStorage.getItem(`partialWords-${i}-A1`)) || [];
       if (knowns.length > 0 || unknowns.length > 0 || partials.length > 0) {
         newSwitches[i - 1] = true;
       }
@@ -34,6 +35,10 @@ function A1() {
       return newCount;
     });
   };
+
+  // Find the index of the first non-done lesson to mark it as "new"
+  const firstNonDoneIndex = switches.findIndex((switchState) => !switchState);
+  const newLessonIndex = firstNonDoneIndex === -1 ? null : firstNonDoneIndex;
 
   return (
     <>
@@ -62,7 +67,10 @@ function A1() {
           <div className={styles.learningHolder}>
             {switches.map((switchState, index) => {
               const lessonNumber = index + 1;
-              const isSelectable = index === 0 || switches[index - 1]; // Lesson 1 is always selectable, others depend on previous lesson
+              const isDone = switchState;
+              const isNew = index === newLessonIndex;
+              const isSelectable = (index === 0 && !isDone) || (index > 0 && switches[index - 1] && !isDone);
+
               return isSelectable ? (
                 <Link
                   href={`/a1/${lessonNumber}`}
@@ -70,16 +78,22 @@ function A1() {
                   key={lessonNumber}
                 >
                   <div className={styles.lesson}>Lesson {lessonNumber}</div>
-                  {switchState ? (
-                    <div className={styles.lessonDone}>Done</div>
+                  {isNew ? (
+                    <div className={styles.newLesson}>New Lesson</div>
                   ) : (
-                    <div className={styles.lessonWaiting}>New Lesson</div>
+                    <div className={styles.lessonWaiting}>Locked</div>
                   )}
                 </Link>
               ) : (
                 <div className={`${styles.lessonsHolder} ${styles.disabled}`} key={lessonNumber}>
                   <div className={styles.lesson}>Lesson {lessonNumber}</div>
-                  <div className={styles.lessonWaiting}>Locked</div>
+                  {isDone ? (
+                    <div className={styles.lessonDone}><TiTick className={styles.tick}/></div>
+                  ) : isNew ? (
+                    <div className={styles.newLesson}>New Lesson</div>
+                  ) : (
+                    <div className={styles.lessonWaiting}>Locked</div>
+                  )}
                 </div>
               );
             })}

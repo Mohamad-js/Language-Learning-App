@@ -1,8 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import styles from './slug.module.css';
-import Link from 'next/link';import { IoIosArrowBack } from "react-icons/io";
-
+import Link from 'next/link';
 
 
 
@@ -25,9 +24,9 @@ export default function Lessons({ params }) {
 // Retrieve data from localStorage on mount
    useEffect(() => {
       try {
-         const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}`) || '[]');
-         const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}`) || '[]');
-         const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}`) || '[]');
+         const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A1`) || '[]');
+         const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A1`) || '[]');
+         const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-A1`) || '[]');
 
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
@@ -40,9 +39,9 @@ export default function Lessons({ params }) {
    // Save data to localStorage when state changes
    useEffect(() => {
       try {
-         localStorage.setItem(`knownWords-${slug}`, JSON.stringify(knownWords));
-         localStorage.setItem(`partialWords-${slug}`, JSON.stringify(partialWords));
-         localStorage.setItem(`unknownWords-${slug}`, JSON.stringify(unknownWords));
+         localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
+         localStorage.setItem(`partialWords-${slug}-A1`, JSON.stringify(partialWords));
+         localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
@@ -84,16 +83,6 @@ export default function Lessons({ params }) {
          alert('This is the first word');
       }
    };
-
-   const reset = () => {
-      setKnownWords([]);
-      setUnknownWords([]);
-      setPartialWords([]);
-
-      localStorage.setItem(`knownWords-${slug}`, JSON.stringify(knownWords));
-      localStorage.setItem(`partialWords-${slug}`, JSON.stringify(partialWords));
-      localStorage.setItem(`unknownWords-${slug}`, JSON.stringify(unknownWords));
-   }
 
    // Access the slug from the URL
 
@@ -6857,20 +6846,19 @@ export default function Lessons({ params }) {
 
    return (
       <div className={styles.container}>
-         <Link href='/a1' className={styles.backHolder} onClick={reset}>
-            <IoIosArrowBack className={styles.backSign}/>
-            <div className={styles.backText}>Back</div>
-         </Link>
 
          <div className={styles.lessonTitle}>Lesson {lessonNumber}</div>
+         <div className={styles.lessonLevel}>A1</div>
 
          {stage === 'assessment' && (
             <div className={styles.assessCard}>
-               <h2 className={styles.check}>Knowledge Check</h2>
-               <p className={styles.prompt}>How much do you know:</p>
+               <div className={styles.titleHolder}>
+                  <h2 className={styles.check}>Knowledge Check</h2>
+                  <p className={styles.prompt}>checking how much control do you have over each word in this lesson.</p>
+               </div>
                <div className={styles.vocabHolder}>
                   <p className={styles.vocab}>{specificLessonWords[currentWordIndex].word}</p>
-                  <p className={styles.role}>({specificLessonWords[currentWordIndex].role})</p>
+                  <p className={styles.role}>{specificLessonWords[currentWordIndex].role}</p>
                </div>
                <div className={styles.buttonGroup}>
                   <button
@@ -6903,13 +6891,15 @@ export default function Lessons({ params }) {
                if (learningWords.length === 0) {
                   return <div className={styles.done}>
                <div className={styles.doneTitle}>All done. Brilliant :)</div>
-               <Link href='/a1' className={styles.back}>Done</Link>
-               {
-                  lessonNumber < 52 ?
-                  <Link href={`/a1/${lessonNumber + 1}`} className={styles.back}>Next Lesson</Link>
-                  :
-                  <Link href='/a2' className={styles.back}>Start A2</Link>
-               }
+               <div className={styles.btnHolder}>
+                  <Link href='/a1' className={styles.back}>Done</Link>
+                  {
+                     lessonNumber < 52 ?
+                     <Link href={`/a1/${lessonNumber + 1}`} className={styles.back}>Next Lesson</Link>
+                     :
+                     <Link href='/a2' className={styles.back}>Start A2</Link>
+                  }
+               </div>
             </div>
                }
                const ws = learningWords[learningWordIndex];
