@@ -68,6 +68,7 @@
    
       
       & .level {
+         position: relative;
          width: 150px;
          height: 150px;
          background-color: rgba(255, 255, 255, 0.7);
@@ -76,8 +77,8 @@
          border-radius: 30px;
          font-weight: 700;
          display: flex;
-         align-items: center;
          justify-content: center;
+         align-items: center;
 
          &:active {
             background-color: white;
