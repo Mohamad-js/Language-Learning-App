@@ -67,7 +67,7 @@
       }
    
       
-      & a {
+      & .level {
          width: 150px;
          height: 150px;
          background-color: rgba(255, 255, 255, 0.7);
