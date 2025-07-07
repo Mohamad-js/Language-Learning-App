@@ -60,14 +60,14 @@
       z-index: 1;
 
 
-      & .title {
+      &.title {
          width: 100%;
          font: 20px tahoma;
          text-align: center;
       }
    
       
-      & .level {
+      &.level {
          width: 150px;
          height: 150px;
          background-color: rgba(255, 255, 255, 0.7);
