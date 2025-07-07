@@ -47,12 +47,12 @@ function Words(){
 
             <div className={styles.mother}>
                <div className={styles.title}>Choose Your Level</div>
-               <div href='/a1' className={styles.level}>A1</div>
-               <div href='/a2' className={styles.level}>A2</div>
-               <div href='/b1' className={styles.level}>B1</div>
-               <div href='/b2' className={styles.level}>B2</div>
-               <div href='/c1' className={styles.level}>C1</div>
-               <div href='/c2' className={styles.level}>C2</div>
+               <Link href='/a1' className={styles.level}>A1</Link>
+               <Link href='/a2' className={styles.level}>A2</Link>
+               <Link href='/b1' className={styles.level}>B1</Link>
+               <Link href='/b2' className={styles.level}>B2</Link>
+               <Link href='/c1' className={styles.level}>C1</Link>
+               <Link href='/c2' className={styles.level}>C2</Link>
             </div>
 
             {
