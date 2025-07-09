@@ -11830,7 +11830,7 @@ export default function Lessons({ params }) {
                      <div className={styles.infoHolder}>
                         <p className={styles.phonetics}>{ws.word.AmE}</p>
                         <p className={styles.phonetics}>{ws.word.BrE}</p>
-                        <div className={styles.role}>{specificLessonWords[currentWordIndex].role}</div>
+                        <div className={styles.role}>{ws.word.role}</div>
                      </div>
                   </div>
                   <div className={styles.definition}>{ws.word.definition}</div>
@@ -11894,7 +11894,7 @@ export default function Lessons({ params }) {
                      <div className={styles.infoHolder}>
                         <p className={styles.phonetics}>{ws.word.AmE}</p>
                         <p className={styles.phonetics}>{ws.word.BrE}</p>
-                        <div className={styles.role}>{specificLessonWords[currentWordIndex].role}</div>
+                        <div className={styles.role}>{ws.word.role}</div>
                      </div>
                   </div>
                   <div className={styles.definition}>{ws.word.definition}</div>

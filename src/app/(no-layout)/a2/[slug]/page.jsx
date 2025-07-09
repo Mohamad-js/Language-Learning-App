@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import styles from './slug.module.css';
 import Link from 'next/link';
-
+import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 
 
 export default function Lessons({ params }) {
@@ -14,6 +14,7 @@ export default function Lessons({ params }) {
    const [unknownWords, setUnknownWords] = useState([]);
    const [btn, setBtn] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
+   const [savedA2Vocabs, setSavedA2Vocabs] = useState([])
 
    const { slug } = params;
 
@@ -42,10 +43,21 @@ export default function Lessons({ params }) {
          localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-A2`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
+
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
    }, [knownWords, partialWords, unknownWords, slug]);
+
+   // Save data to localStorage when state changes
+   useEffect(() => {
+      try {
+         localStorage.setItem(`savedA2Vocabs-${slug}-A2`, JSON.stringify(savedA2Vocabs));
+
+      } catch (e) {
+         console.error('Error saving to localStorage:', e);
+      }
+   }, [savedA2Vocabs, slug]);
 
    const handleAnswer = (status) => {
       const currentWord = specificLessonWords[currentWordIndex];
@@ -85,7 +97,6 @@ export default function Lessons({ params }) {
    };
 
    // Access the slug from the URL
-
    const data = {
       slug,
       wordList: [
@@ -95,11 +106,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/əˈbɪləti/",
             "AmE": "/əˈbɪləti/",
-            "definition": "the mental or physical power or skill that makes it possible to do something",
+            "definition": "the mental or physical capacity, power or skill required to do something",
             "examples": [
-               "She has the ability to draw well.",
-               "His ability to solve problems quickly is impressive.",
-               "The ability to adapt to new technologies is essential in this job."
+               "She has the ability to sing.",
+               "His ability to solve puzzles is great.",
+               "Her ability to speak two languages helps at work."
             ]
          },
          {
@@ -108,11 +119,11 @@ export default function Lessons({ params }) {
             "role": "adjective",
             "BrE": "/ˈeɪbl/",
             "AmE": "/ˈeɪbl/",
-            "definition": "having the skill, strength, or knowledge to do something",
+            "definition": "having the skill, strength, time, etc. to do something",
             "examples": [
-               "She is able to swim fast.",
-               "He was able to finish the project on time.",
-               "Being able to communicate effectively is crucial for teamwork."
+               "I am able to read.",
+               "She is able to cook well.",
+               "He was able to finish the project early."
             ]
          },
          {
@@ -121,11 +132,11 @@ export default function Lessons({ params }) {
             "role": "adverb",
             "BrE": "/əˈbrɔːd/",
             "AmE": "/əˈbrɔːd/",
-            "definition": "to or in another country",
+            "definition": "in or to a foreign country",
             "examples": [
-               "She went abroad for her holidays.",
-               "He studies abroad in France every summer.",
-               "Living abroad can broaden your understanding of different cultures."
+               "She lives abroad.",
+               "He travels abroad every year.",
+               "Studying abroad improved her language skills."
             ]
          },
          {
@@ -134,11 +145,11 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/əkˈsept/",
             "AmE": "/əkˈsept/",
-            "definition": "to receive or take something offered",
+            "definition": "to agree to take something that is offered",
             "examples": [
-               "She accepted the gift happily.",
-               "He accepted the job offer after thinking about it.",
-               "The school does not accept responsibility for lost items."
+               "I accept your gift.",
+               "She accepted the job offer.",
+               "He accepted the invitation to the party."
             ]
          },
          {
@@ -147,11 +158,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/ˈæksɪdənt/",
             "AmE": "/ˈæksɪdənt/",
-            "definition": "an unpleasant event that happens unexpectedly and causes injury or damage",
+            "definition": "a sudden event that is not planned and causes damage or injury",
             "examples": [
-               "The car accident was scary.",
-               "She broke her leg in a skiing accident.",
-               "The accident caused a long delay on the motorway."
+               "The car had an accident.",
+               "She saw an accident on the road.",
+               "The accident caused a traffic jam."
             ]
          },
          {
@@ -160,11 +171,11 @@ export default function Lessons({ params }) {
             "role": "preposition",
             "BrE": "/əˈkɔːdɪŋ tə/",
             "AmE": "/əˈkɔːrdɪŋ tə/",
-            "definition": "as stated or reported by somebody/something",
+            "definition": "as stated by someone or something",
             "examples": [
-               "According to the news, it will rain today.",
-               "According to the teacher, the test is tomorrow.",
-               "According to the survey, most people prefer coffee to tea."
+               "According to her, it’s true.",
+               "According to the news, it will rain.",
+               "According to the teacher, we must study."
             ]
          },
          {
@@ -173,11 +184,11 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/əˈtʃiːv/",
             "AmE": "/əˈtʃiːv/",
-            "definition": "to succeed in doing or having something by working hard",
+            "definition": "to succeed in doing something by effort",
             "examples": [
-               "She achieved good marks in her exam.",
-               "He achieved his goal of running a marathon.",
-               "The team achieved significant progress in the project."
+               "I want to achieve my goal.",
+               "She achieved high marks in the test.",
+               "He achieved his dream of becoming a doctor."
             ]
          },
          {
@@ -186,11 +197,11 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/ækt/",
             "AmE": "/ækt/",
-            "definition": "to do something for a particular purpose or to deal with a situation",
+            "definition": "to do something for a particular purpose",
             "examples": [
-               "You need to act fast in an emergency.",
-               "She acted quickly to solve the problem.",
-               "The government must act to reduce pollution levels."
+               "You must act now.",
+               "She acted quickly to help.",
+               "He acted bravely during the emergency."
             ]
          },
          {
@@ -199,11 +210,11 @@ export default function Lessons({ params }) {
             "role": "adjective",
             "BrE": "/ˈæktɪv/",
             "AmE": "/ˈæktɪv/",
-            "definition": "always doing things, often moving or working",
+            "definition": "always doing things or moving",
             "examples": [
-               "He is an active boy who loves sports.",
-               "She stays active by walking every day.",
-               "The active participation of students improves learning."
+               "The dog is active.",
+               "She is an active student in class.",
+               "He stays active by running daily."
             ]
          },
          {
@@ -212,24 +223,24 @@ export default function Lessons({ params }) {
             "role": "adverb",
             "BrE": "/ˈæktʃuəli/",
             "AmE": "/ˈæktʃuəli/",
-            "definition": "used to emphasize something that is true or to correct a mistake",
+            "definition": "used to give surprising information or to correct someone",
             "examples": [
-               "I actually like this song.",
-               "He’s actually much older than he looks.",
-               "The meeting was actually more productive than expected."
+               "It’s actually quite easy.",
+               "She actually lives next door.",
+               "Actually, he finished the work early."
             ]
          },
          {
             "id": 2,
             "word": "adult",
-            "role": "noun",
+            "role": "adjective",
             "BrE": "/ˈædʌlt/",
             "AmE": "/əˈdʌlt/",
-            "definition": "a fully grown person who is legally responsible for their actions",
+            "definition": "fully grown or developed",
             "examples": [
-               "The movie is for adults only.",
-               "She became an adult at the age of 18.",
-               "As an adult, he is responsible for his own decisions."
+               "This is an adult class.",
+               "Adult tickets cost more.",
+               "The adult section is for older readers."
             ]
          },
          {
@@ -238,11 +249,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/ədˈvɑːntɪdʒ/",
             "AmE": "/ədˈvæntɪdʒ/",
-            "definition": "something that helps you to be more successful than others",
+            "definition": "something that helps you or is useful",
             "examples": [
+               "It’s an advantage to know English.",
                "Her height is an advantage in basketball.",
-               "Knowing two languages is a big advantage.",
-               "The team’s experience gave them a competitive advantage."
+               "The advantage of living here is the park."
             ]
          },
          {
@@ -251,11 +262,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/ədˈventʃə(r)/",
             "AmE": "/ədˈventʃər/",
-            "definition": "an unusual, exciting, or dangerous experience",
+            "definition": "an exciting or unusual experience",
             "examples": [
-               "They went on an adventure in the forest.",
-               "Her trip to Africa was a great adventure.",
-               "The book describes the adventures of a young explorer."
+               "I want an adventure.",
+               "She went on an adventure in the forest.",
+               "His adventure in the mountains was thrilling."
             ]
          },
          {
@@ -264,11 +275,11 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/ˈædvətaɪz/",
             "AmE": "/ˈædvərtaɪz/",
-            "definition": "to tell people about a product or service, for example in newspapers or on television",
+            "definition": "to tell people about a product or service",
             "examples": [
-               "They advertise their shop on TV.",
-               "The company advertised its new product online.",
-               "We need to advertise the event to attract more people."
+               "They advertise new cars.",
+               "She advertises her shop online.",
+               "The company advertised the sale on TV."
             ]
          },
          {
@@ -277,11 +288,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/ədˈvɜːtɪsmənt/",
             "AmE": "/ˌædvərˈtaɪzmənt/",
-            "definition": "a notice, picture, or film telling people about a product, job, or service",
+            "definition": "a notice or announcement about a product or service",
             "examples": [
-               "I saw an advertisement for a new phone.",
+               "I saw an advertisement.",
                "The advertisement was in the newspaper.",
-               "A creative advertisement can attract many customers."
+               "An advertisement for shoes is on the wall."
             ]
          },
          {
@@ -290,11 +301,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/ˈædvətaɪzɪŋ/",
             "AmE": "/ˈædvərtaɪzɪŋ/",
-            "definition": "the activity or business of telling people about products or services to persuade them to buy or use them",
+            "definition": "the activity of making advertisements",
             "examples": [
-               "Advertising helps sell products.",
-               "She works in the advertising industry.",
-               "Effective advertising can increase a company’s sales."
+               "Advertising is expensive.",
+               "She works in advertising.",
+               "Advertising helps sell products."
             ]
          },
          {
@@ -303,24 +314,37 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/əˈfekt/",
             "AmE": "/əˈfekt/",
-            "definition": "to produce a change in somebody/something",
+            "definition": "to produce a change in someone or something",
             "examples": [
-               "The weather affects my mood.",
-               "Pollution affects the environment badly.",
-               "The new law will affect how businesses operate."
+               "Rain can affect plans.",
+               "The news affected her deeply.",
+               "His decision affected the whole team."
             ]
          },
          {
             "id": 2,
             "word": "after",
-            "role": "preposition",
+            "role": "adverb",
             "BrE": "/ˈɑːftə(r)/",
             "AmE": "/ˈæftər/",
-            "definition": "following something in time or order",
+            "definition": "later than something",
             "examples": [
-               "We’ll meet after school.",
-               "She ate dessert after dinner.",
-               "The meeting is scheduled after the lunch break."
+               "I’ll call you after.",
+               "She arrived after lunch.",
+               "They met after the meeting ended."
+            ]
+         },
+         {
+            "id": 2,
+            "word": "after",
+            "role": "conjunction",
+            "BrE": "/ˈɑːftə(r)/",
+            "AmE": "/ˈæftər/",
+            "definition": "at a time later than something else happens",
+            "examples": [
+               "After school, I play.",
+               "She left after we talked.",
+               "After finishing work, he went home."
             ]
          },
          {
@@ -329,24 +353,24 @@ export default function Lessons({ params }) {
             "role": "preposition",
             "BrE": "/əˈɡenst/",
             "AmE": "/əˈɡenst/",
-            "definition": "in opposition to something or somebody",
+            "definition": "opposing or not supporting something",
             "examples": [
-               "I’m against eating too much sugar.",
-               "She voted against the new rule.",
-               "The team played against a strong opponent."
+               "I’m against the idea.",
+               "She voted against the plan.",
+               "They played against a strong team."
             ]
          },
          {
-            "id": 2,
+            "id": 3,
             "word": "ah",
             "role": "exclamation",
             "BrE": "/ɑː/",
             "AmE": "/ɑː/",
             "definition": "used to express surprise, pleasure, or understanding",
             "examples": [
-               "Ah, you’re here!",
-               "Ah, I understand now.",
-               "Ah, what a beautiful sunset!"
+               "Ah, I understand!",
+               "Ah, that’s a nice view!",
+               "Ah, you solved the problem!"
             ]
          },
          {
@@ -355,11 +379,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/ˈeəlaɪn/",
             "AmE": "/ˈerlaɪn/",
-            "definition": "a company that provides regular flights to take passengers and goods to different places",
+            "definition": "a company that provides air transport",
             "examples": [
-               "The airline has cheap tickets.",
-               "She works for a famous airline.",
-               "This airline offers flights to over 50 countries."
+               "The airline is good.",
+               "She works for an airline.",
+               "This airline flies to many countries."
             ]
          },
          {
@@ -370,22 +394,22 @@ export default function Lessons({ params }) {
             "AmE": "/əˈlaɪv/",
             "definition": "living, not dead",
             "examples": [
-               "The fish is still alive.",
-               "He felt alive after the run.",
-               "The forest is alive with many animals."
+               "The fish is alive.",
+               "She felt alive after the run.",
+               "The plants stayed alive in winter."
             ]
          },
          {
             "id": 3,
             "word": "all",
-            "role": "determiner",
+            "role": "adverb",
             "BrE": "/ɔːl/",
             "AmE": "/ɔːl/",
-            "definition": "the whole number or amount of something",
+            "definition": "completely or entirely",
             "examples": [
-               "All my friends came to the party.",
-               "She spent all her money on books.",
-               "All the students passed the final exam."
+               "I’m all tired.",
+               "She ate all the cake.",
+               "They were all excited about the trip."
             ]
          },
          {
@@ -394,11 +418,37 @@ export default function Lessons({ params }) {
             "role": "adjective",
             "BrE": "/ˌɔːl ˈraɪt/",
             "AmE": "/ˌɔːl ˈraɪt/",
-            "definition": "satisfactory or acceptable; not bad",
+            "definition": "satisfactory, but not very good",
             "examples": [
-               "The food was all right.",
-               "Is everything all right with you?",
-               "The plan seems all right, but we need more details."
+               "The food is all right.",
+               "Her work is all right.",
+               "The film was all right, not great."
+            ]
+         },
+         {
+            "id": 3,
+            "word": "all right",
+            "role": "adverb",
+            "BrE": "/ˌɔːl ˈraɪt/",
+            "AmE": "/ˌɔːl ˈraɪt/",
+            "definition": "in a way that is satisfactory",
+            "examples": [
+               "It works all right.",
+               "She did all right in the test.",
+               "The plan went all right."
+            ]
+         },
+         {
+            "id": 3,
+            "word": "all right",
+            "role": "exclamation",
+            "BrE": "/ˌɔːl ˈraɪt/",
+            "AmE": "/ˌɔːl ˈraɪt/",
+            "definition": "used to agree or check if someone is okay",
+            "examples": [
+               "All right, let’s go!",
+               "All right, I’ll help you.",
+               "All right, are you ready?"
             ]
          },
          {
@@ -407,11 +457,11 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/əˈlaʊ/",
             "AmE": "/əˈlaʊ/",
-            "definition": "to let somebody do something or let something happen",
+            "definition": "to let someone do or have something",
             "examples": [
-               "They allow pets in the hotel.",
-               "The teacher allows us to use dictionaries.",
-               "The rules do not allow smoking in this area."
+               "They allow pets.",
+               "She allows us to play here.",
+               "The teacher allowed extra time."
             ]
          },
          {
@@ -420,11 +470,11 @@ export default function Lessons({ params }) {
             "role": "adverb",
             "BrE": "/ˈɔːlməʊst/",
             "AmE": "/ˈɔːlmoʊst/",
-            "definition": "nearly but not completely",
+            "definition": "nearly, but not completely",
             "examples": [
-               "I’m almost ready to go.",
+               "I’m almost finished.",
                "She almost missed the bus.",
-               "The project is almost finished, just a few details left."
+               "He almost won the race."
             ]
          },
          {
@@ -433,50 +483,76 @@ export default function Lessons({ params }) {
             "role": "adjective",
             "BrE": "/əˈləʊn/",
             "AmE": "/əˈloʊn/",
-            "definition": "without any other people",
+            "definition": "without other people",
             "examples": [
-               "She lives alone in a small house.",
-               "He felt alone without his friends.",
-               "She prefers to work alone on difficult tasks."
+               "I am alone now.",
+               "She feels alone at home.",
+               "He was alone during the trip."
             ]
          },
          {
-            "id": 3,
+            "id": 4,
+            "word": "alone",
+            "role": "adverb",
+            "BrE": "/əˈləʊn/",
+            "AmE": "/əˈloʊn/",
+            "definition": "without anyone else",
+            "examples": [
+               "I live alone.",
+               "She travels alone often.",
+               "He completed the project alone."
+            ]
+         },
+         {
+            "id": 4,
+            "word": "along",
+            "role": "adverb",
+            "BrE": "/əˈlɒŋ/",
+            "AmE": "/əˈlɔːŋ/",
+            "definition": "forward or continuing in a direction",
+            "examples": [
+               "Move along, please.",
+               "She walked along the path.",
+               "They drove along the coast."
+            ]
+         },
+         {
+            "id": 4,
             "word": "along",
             "role": "preposition",
             "BrE": "/əˈlɒŋ/",
             "AmE": "/əˈlɔːŋ/",
-            "definition": "from one end to or towards the other end of something",
+            "definition": "by the side of something long",
             "examples": [
-               "We walked along the river.",
-               "There are trees along the road.",
-               "Shops are built along the main street."
+               "Trees are along the road.",
+               "She runs along the river.",
+               "Shops are along the main street."
             ]
          },
          {
-            "id": 3,
+            "id": 4,
             "word": "already",
             "role": "adverb",
             "BrE": "/ɔːlˈredi/",
             "AmE": "/ɔːlˈredi/",
-            "definition": "used to say that something has happened earlier than expected",
+            "definition": "before now or earlier than expected",
             "examples": [
-               "I’ve already finished my homework.",
-               "She’s already left for the airport.",
-               "The event has already attracted a large audience."
+               "I’m already here.",
+               "She has already finished.",
+               "They already booked the tickets."
             ]
          },
          {
-            "id": 3,
+            "id": 4,
             "word": "alternative",
             "role": "noun",
             "BrE": "/ɔːlˈtɜːnətɪv/",
             "AmE": "/ɔːlˈtɜːrnətɪv/",
-            "definition": "something you can choose to do or use instead of something else",
+            "definition": "something you can choose instead",
             "examples": [
-               "Sugar is bad for health. Any other alternative?",
-               "There is no alternative for money in life.",
-               "The alternative that we need should have all the requirments."
+               "I need an alternative.",
+               "She chose an alternative plan.",
+               "This is a good alternative to meat."
             ]
          },
          {
@@ -485,11 +561,11 @@ export default function Lessons({ params }) {
             "role": "conjunction",
             "BrE": "/ɔːlˈðəʊ/",
             "AmE": "/ɔːlˈðoʊ/",
-            "definition": "despite the fact that; used to introduce a statement that contrasts with something that has been mentioned before",
+            "definition": "despite the fact that",
             "examples": [
-               "She went out, although it was raining.",
-               "Although he was tired, he finished his work.",
-               "Although the task was difficult, they completed it successfully."
+               "Although it’s cold, I’ll go.",
+               "She smiled, although she was tired.",
+               "Although he studied, he failed."
             ]
          },
          {
@@ -498,11 +574,11 @@ export default function Lessons({ params }) {
             "role": "preposition",
             "BrE": "/əˈmʌŋ/",
             "AmE": "/əˈmʌŋ/",
-            "definition": "in the middle of or surrounded by other things or people",
+            "definition": "in the middle of or surrounded by",
             "examples": [
-               "She stood among her friends.",
-               "The book was hidden among the papers.",
-               "He felt comfortable among people from different cultures."
+               "She’s among friends.",
+               "The book is among the papers.",
+               "He stood among the tall trees."
             ]
          },
          {
@@ -511,24 +587,24 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/əˈmaʊnt/",
             "AmE": "/əˈmaʊnt/",
-            "definition": "a quantity of something, such as money or time",
+            "definition": "a quantity of something",
             "examples": [
-               "She spent a large amount on clothes.",
-               "The amount of work was overwhelming.",
-               "A significant amount of time was spent on research."
+               "I have a small amount.",
+               "The amount of work is big.",
+               "A large amount of money was spent."
             ]
          },
          {
             "id": 4,
             "word": "ancient",
             "role": "adjective",
-            "BrE": "/ˈeɪnʃnt/",
-            "AmE": "/ˈeɪnʃnt/",
-            "definition": "belonging to a time long ago in history",
+            "BrE": "/ˈeɪnʃənt/",
+            "AmE": "/ˈeɪnʃənt/",
+            "definition": "very old or from a long time ago",
             "examples": [
-               "The ancient castle is beautiful.",
-               "They visited an ancient temple in Egypt.",
-               "Ancient civilizations left behind many mysteries."
+               "This is an ancient book.",
+               "She visited an ancient temple.",
+               "The ancient ruins are famous."
             ]
          },
          {
@@ -537,76 +613,89 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/ˈæŋkl/",
             "AmE": "/ˈæŋkl/",
-            "definition": "the joint between the foot and the leg",
+            "definition": "the joint connecting the foot to the leg",
             "examples": [
-               "She hurt her ankle playing football.",
-               "His ankle was swollen after the fall.",
-               "The injury to her ankle required medical attention."
+               "My ankle hurts.",
+               "She twisted her ankle.",
+               "His ankle swelled after the game."
             ]
          },
          {
-            "id": 4,
+            "id": 5,
             "word": "any",
-            "role": "determiner",
+            "role": "adverb",
             "BrE": "/ˈeni/",
             "AmE": "/ˈeni/",
-            "definition": "used to refer to one, some, or all of a group of things or people, when it does not matter which",
+            "definition": "used to emphasize how small an amount is",
             "examples": [
-               "Do you have any questions?",
-               "Any student can join the club.",
-               "She didn’t have any trouble finding the place."
+               "Is there any water?",
+               "She didn’t eat any cake.",
+               "He hasn’t got any time today."
             ]
          },
          {
-            "id": 4,
+            "id": 5,
             "word": "any more",
             "role": "adverb",
             "BrE": "/ˌeni ˈmɔː(r)/",
             "AmE": "/ˌeni ˈmɔːr/",
-            "definition": "no longer; not now as before",
+            "definition": "no longer or not now",
             "examples": [
-               "I don’t live there any more.",
-               "She doesn’t play tennis any more.",
-               "They don’t sell that product any more."
+               "I don’t go any more.",
+               "She doesn’t live here any more.",
+               "They don’t talk any more."
             ]
          },
          {
-            "id": 4,
+            "id": 5,
             "word": "anybody",
             "role": "pronoun",
             "BrE": "/ˈenibɒdi/",
             "AmE": "/ˈenibɑːdi/",
-            "definition": "any person; it does not matter who",
+            "definition": "any person",
             "examples": [
-               "Does anybody want coffee?",
-               "Anybody can join the team.",
-               "I didn’t see anybody in the park."
+               "Is anybody home?",
+               "Anybody can join the club.",
+               "Did anybody see my phone?"
             ]
          },
          {
-            "id": 4,
+            "id": 5,
             "word": "anyway",
             "role": "adverb",
             "BrE": "/ˈeniweɪ/",
             "AmE": "/ˈeniweɪ/",
-            "definition": "used to change the subject or return to an earlier subject",
+            "definition": "used to change topic or return to an idea",
             "examples": [
-               "I’m tired, but I’ll go anyway.",
-               "Anyway, let’s talk about the plan.",
-               "It was late, but she finished the work anyway."
+               "Anyway, let’s go.",
+               "I’m tired, but anyway, I’ll finish.",
+               "Anyway, we decided to stay."
             ]
          },
          {
-            "id": 4,
+            "id": 5,
             "word": "anywhere",
             "role": "adverb",
             "BrE": "/ˈeniweə(r)/",
             "AmE": "/ˈeniwer/",
-            "definition": "in, at, or to any place",
+            "definition": "in or to any place",
             "examples": [
-               "You can sit anywhere.",
-               "I couldn’t find my keys anywhere.",
-               "She travels anywhere her job takes her."
+               "I can’t find it anywhere.",
+               "She goes anywhere she wants.",
+               "Is there a shop anywhere near?"
+            ]
+         },
+         {
+            "id": 5,
+            "word": "anywhere",
+            "role": "pronoun",
+            "BrE": "/ˈeniweə(r)/",
+            "AmE": "/ˈeniwer/",
+            "definition": "any place",
+            "examples": [
+               "Anywhere is fine.",
+               "Choose anywhere for the picnic.",
+               "We can meet anywhere you like."
             ]
          },
          {
@@ -615,11 +704,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/æp/",
             "AmE": "/æp/",
-            "definition": "a small program that you can download and use on a mobile phone or computer",
+            "definition": "a program for a computer or phone",
             "examples": [
-               "I use an app to learn English.",
-               "This app helps me track my exercise.",
-               "The new app simplifies online shopping."
+               "I use a map app.",
+               "She downloaded a new app.",
+               "This app helps with learning."
             ]
          },
          {
@@ -628,11 +717,11 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/əˈpɪə(r)/",
             "AmE": "/əˈpɪr/",
-            "definition": "to start to be seen or to be noticed",
+            "definition": "to seem or to become visible",
             "examples": [
-               "The sun appeared after the rain.",
-               "She appeared nervous before the speech.",
-               "New problems appeared during the project."
+               "You appear tired.",
+               "She appeared happy at the party.",
+               "The sun appeared after the rain."
             ]
          },
          {
@@ -641,11 +730,11 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/əˈpɪərəns/",
             "AmE": "/əˈpɪrəns/",
-            "definition": "the way that somebody/something looks or seems",
+            "definition": "the way someone or something looks",
             "examples": [
-               "Her appearance was tidy and clean.",
-               "The appearance of the house was beautiful.",
-               "His confident appearance impressed the audience."
+               "Her appearance is nice.",
+               "His appearance changed a lot.",
+               "The appearance of the house is modern."
             ]
          },
          {
@@ -654,89 +743,89 @@ export default function Lessons({ params }) {
             "role": "verb",
             "BrE": "/əˈplaɪ/",
             "AmE": "/əˈplaɪ/",
-            "definition": "to make a formal request, usually in writing, for something such as a job",
+            "definition": "to ask formally for something, like a job",
             "examples": [
-               "She applied for a new job.",
-               "He applied to study at the university.",
-               "They applied for a permit to build a house."
+               "I apply for a job.",
+               "She applied to a university.",
+               "He applied for a new position."
             ]
          },
          {
-            "id": 5,
+            "id": 6,
             "word": "architect",
             "role": "noun",
             "BrE": "/ˈɑːkɪtekt/",
             "AmE": "/ˈɑːrkɪtekt/",
             "definition": "a person who designs buildings",
             "examples": [
-               "The architect drew a house plan.",
-               "She is a famous architect in the city.",
-               "The architect’s design won an award."
+               "The architect is busy.",
+               "She is a famous architect.",
+               "The architect drew the house plans."
             ]
          },
          {
-            "id": 5,
+            "id": 6,
             "word": "architecture",
             "role": "noun",
             "BrE": "/ˈɑːkɪtektʃə(r)/",
             "AmE": "/ˈɑːrkɪtektʃər/",
-            "definition": "the art and science of designing and making buildings",
+            "definition": "the art or practice of designing buildings",
             "examples": [
-               "I study architecture at university.",
-               "The city has beautiful modern architecture.",
-               "Architecture from the 18th century is fascinating."
+               "I like architecture.",
+               "She studies architecture.",
+               "The city’s architecture is beautiful."
             ]
          },
          {
-            "id": 5,
+            "id": 6,
             "word": "argue",
             "role": "verb",
             "BrE": "/ˈɑːɡjuː/",
             "AmE": "/ˈɑːrɡjuː/",
-            "definition": "to speak angrily to somebody because you disagree with them",
+            "definition": "to speak angrily to someone because you disagree",
             "examples": [
-               "They argue about money often.",
-               "She argued with her brother yesterday.",
-               "The team argued over the best strategy."
+               "They argue a lot.",
+               "She argued with her friend.",
+               "He argued about the project."
             ]
          },
          {
-            "id": 5,
+            "id": 6,
             "word": "argument",
             "role": "noun",
             "BrE": "/ˈɑːɡjumənt/",
             "AmE": "/ˈɑːrɡjumənt/",
-            "definition": "an angry discussion with somebody when you disagree",
+            "definition": "a discussion in which people disagree, often angrily",
             "examples": [
-               "They had an argument about homework.",
-               "The argument with her friend upset her.",
-               "A heated argument broke out during the meeting."
+               "They had an argument.",
+               "The argument was about money.",
+               "An argument started in the meeting."
             ]
          },
          {
-            "id": 5,
+            "id": 6,
             "word": "army",
             "role": "noun",
             "BrE": "/ˈɑːmi/",
             "AmE": "/ˈɑːrmi/",
-            "definition": "a large organized group of soldiers who are trained to fight",
+            "definition": "a large group of soldiers who fight on land",
             "examples": [
+               "The army is strong.",
                "He joined the army last year.",
-               "The army trained in the desert.",
-               "The army was sent to maintain peace."
+               "The army trained in the mountains."
             ]
          },
          {
-            "id": 5,
+            "id": 6,
             "word": "arrange",
             "role": "verb",
             "BrE": "/əˈreɪndʒ/",
             "AmE": "/əˈreɪndʒ/",
-            "definition": "to plan or organize something in advance",
+            "definition": "to plan or organize something",
             "examples": [
-               "She arranged a party for her friends.",
-               "He arranged a meeting with his boss.",
-               "They arranged transport for the school trip."
+               "I arrange a meeting.",
+               "She arranged a party.",
+               "They arranged the books neatly."
             ]
          },
          {
@@ -745,24 +834,37 @@ export default function Lessons({ params }) {
             "role": "noun",
             "BrE": "/əˈreɪndʒmənt/",
             "AmE": "/əˈreɪndʒmənt/",
-            "definition": "a plan or preparation that you make so that something can happen",
+            "definition": "a plan or preparation for something",
             "examples": [
-               "She made an arrangement to meet him.",
-               "The arrangement for the trip was perfect.",
-               "Special arrangements were made for the event."
+               "The arrangement is ready.",
+               "She made an arrangement for dinner.",
+               "The arrangement of the trip was easy."
             ]
          },
          {
             "id": 6,
             "word": "as",
-            "role": "preposition",
+            "role": "adverb",
             "BrE": "/əz/",
             "AmE": "/əz/",
-            "definition": "used to describe the function, role, or job of somebody/something",
+            "definition": "used to compare or describe something",
             "examples": [
-               "She works as a teacher.",
-               "He acted as the team leader.",
-               "The room was used as a study area."
+               "She sings as well.",
+               "He runs as fast as me.",
+               "It’s not as easy as it looks."
+            ]
+         },
+         {
+            "id": 6,
+            "word": "as",
+            "role": "conjunction",
+            "BrE": "/əz/",
+            "AmE": "/əz/",
+            "definition": "used to show the reason or time of something",
+            "examples": [
+               "As it’s late, I’ll go.",
+               "She smiled as he spoke.",
+               "As it was raining, we stayed home."
             ]
          },
          {
@@ -771,1913 +873,2030 @@ export default function Lessons({ params }) {
             "role": "adjective",
             "BrE": "/əˈsliːp/",
             "AmE": "/əˈsliːp/",
-            "definition": "sleeping; not awake",
+            "definition": "sleeping",
             "examples": [
-               "The baby is asleep in bed.",
-               "She fell asleep during the movie.",
-               "He was asleep when the phone rang."
-            ]
-         },
-         {
-            "id": 6,
-            "word": "assistant",
-            "role": "noun",
-            "BrE": "/əˈsɪstənt/",
-            "AmE": "/əˈsɪstənt/",
-            "definition": "a person who helps someone in their work",
-            "examples": [
-               "She works as a shop assistant.",
-               "The assistant helped with the project.",
-               "He hired a personal assistant for his office."
-            ]
-         },
-         {
-            "id": 6,
-            "word": "athlete",
-            "role": "noun",
-            "BrE": "/ˈæθliːt/",
-            "AmE": "/ˈæθliːt/",
-            "definition": "a person who competes in sports",
-            "examples": [
-               "He is a great athlete at school.",
-               "The athlete won a gold medal.",
-               "Professional athletes train every day."
-            ]
-         },
-         {
-            "id": 6,
-            "word": "attack",
-            "role": "verb",
-            "BrE": "/əˈtæk/",
-            "AmE": "/əˈtæk/",
-            "definition": "to use violence to try to hurt or kill somebody",
-            "examples": [
-               "The dog attacked the stranger.",
-               "They were attacked during the hike.",
-               "The army attacked the enemy’s position."
-            ]
-         },
-         {
-            "id": 6,
-            "word": "attend",
-            "role": "verb",
-            "BrE": "/əˈtend/",
-            "AmE": "/əˈtend/",
-            "definition": "to go to an event, such as a meeting or a class",
-            "examples": [
-               "She attends school every day.",
-               "He attended a concert last night.",
-               "They attended an important business meeting."
-            ]
-         },
-         {
-            "id": 6,
-            "word": "attention",
-            "role": "noun",
-            "BrE": "/əˈtenʃn/",
-            "AmE": "/əˈtenʃn/",
-            "definition": "the act of watching or listening to something carefully",
-            "examples": [
-               "Pay attention in class!",
-               "The teacher asked for our attention.",
-               "Her speech captured everyone’s attention."
-            ]
-         },
-         {
-            "id": 6,
-            "word": "attractive",
-            "role": "adjective",
-            "BrE": "/əˈtræktɪv/",
-            "AmE": "/əˈtræktɪv/",
-            "definition": "pleasing to look at; appealing",
-            "examples": [
-               "She wore an attractive dress.",
-               "The house has an attractive garden.",
-               "The shop’s attractive display drew customers."
-            ]
-         },
-         {
-            "id": 6,
-            "word": "audience",
-            "role": "noun",
-            "BrE": "/ˈɔːdiəns/",
-            "AmE": "/ˈɔːdiəns/",
-            "definition": "a group of people who watch or listen to something, such as a play or speech",
-            "examples": [
-               "The audience clapped loudly.",
-               "The movie had a large audience.",
-               "The speaker addressed an enthusiastic audience."
+               "The baby is asleep.",
+               "She was asleep during the film.",
+               "He fell asleep in the car."
             ]
          },
          {
             "id": 7,
+            "word": "assistant",
+            "role": "adjective",
+            "BrE": "/əˈsɪstənt/",
+            "AmE": "/əˈsɪstənt/",
+            "definition": "helping or supporting someone in a job",
+            "examples": [
+               "She is an assistant teacher.",
+               "He works as an assistant manager.",
+               "The assistant coach helped the team."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "assistant",
+            "role": "noun",
+            "BrE": "/əˈsɪstənt/",
+            "AmE": "/əˈsɪstənt/",
+            "definition": "a person who helps someone in a job",
+            "examples": [
+               "The assistant is kind.",
+               "She is a shop assistant.",
+               "The assistant helped with the project."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "athlete",
+            "role": "noun",
+            "BrE": "/ˈæθliːt/",
+            "AmE": "/ˈæθliːt/",
+            "definition": "a person who is good at sports",
+            "examples": [
+               "He is an athlete.",
+               "The athlete won a medal.",
+               "She trains as an athlete every day."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "attack",
+            "role": "noun",
+            "BrE": "/əˈtæk/",
+            "AmE": "/əˈtæk/",
+            "definition": "a sudden act of violence",
+            "examples": [
+               "The attack was quick.",
+               "An attack happened in the city.",
+               "The attack caused a lot of fear."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "attack",
+            "role": "verb",
+            "BrE": "/əˈtæk/",
+            "AmE": "/əˈtæk/",
+            "definition": "to use violence to try to hurt someone",
+            "examples": [
+               "The dog didn’t attack.",
+               "They attacked the enemy.",
+               "He was attacked while walking home."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "attend",
+            "role": "verb",
+            "BrE": "/əˈtend/",
+            "AmE": "/əˈtend/",
+            "definition": "to go to an event or place",
+            "examples": [
+               "I attend school.",
+               "She attended a concert.",
+               "He attends meetings every week."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "attention",
+            "role": "exclamation",
+            "BrE": "/əˈtenʃn/",
+            "AmE": "/əˈtenʃn/",
+            "definition": "used to ask people to listen or focus",
+            "examples": [
+               "Attention, please!",
+               "Attention, the class starts now!",
+               "Attention, we need your help!"
+            ]
+         },
+         {
+            "id": 7,
+            "word": "attention",
+            "role": "noun",
+            "BrE": "/əˈtenʃn/",
+            "AmE": "/əˈtenʃn/",
+            "definition": "the act of watching or listening carefully",
+            "examples": [
+               "Pay attention in class.",
+               "She gave him her full attention.",
+               "The speech got everyone’s attention."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "attractive",
+            "role": "adjective",
+            "BrE": "/əˈtræktɪv/",
+            "AmE": "/əˈtræktɪv/",
+            "definition": "pleasant to look at",
+            "examples": [
+               "The house is attractive.",
+               "She wore an attractive dress.",
+               "The park is attractive in spring."
+            ]
+         },
+         {
+            "id": 7,
+            "word": "audience",
+            "role": "noun",
+            "BrE": "/ˈɔːdiəns/",
+            "AmE": "/ˈɔːdiəns/",
+            "definition": "the people watching or listening to something",
+            "examples": [
+               "The audience clapped.",
+               "She spoke to a large audience.",
+               "The audience enjoyed the show."
+            ]
+         },
+         {
+            "id": 8,
             "word": "author",
             "role": "noun",
             "BrE": "/ˈɔːθə(r)/",
             "AmE": "/ˈɔːθər/",
             "definition": "a person who writes a book, article, etc.",
             "examples": [
-               "She is the author of a novel.",
-               "The author signed my book.",
-               "The author’s new book is very popular."
+               "The author is famous.",
+               "She is the author of this book.",
+               "The author signed my copy."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
             "word": "available",
             "role": "adjective",
             "BrE": "/əˈveɪləbl/",
             "AmE": "/əˈveɪləbl/",
             "definition": "able to be used or obtained",
             "examples": [
-               "Tickets are available at the door.",
-               "The book is available in the library.",
-               "Free parking is available near the mall."
+               "Tickets are available.",
+               "Is the doctor available now?",
+               "The book is available in shops."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
             "word": "average",
             "role": "adjective",
             "BrE": "/ˈævərɪdʒ/",
             "AmE": "/ˈævərɪdʒ/",
-            "definition": "typical or normal; not special",
+            "definition": "typical or normal",
             "examples": [
                "He is an average student.",
-               "The weather was average for July.",
-               "Her test score was above average."
+               "The weather is average today.",
+               "Her height is average for her age."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
+            "word": "average",
+            "role": "noun",
+            "BrE": "/ˈævərɪdʒ/",
+            "AmE": "/ˈævərɪdʒ/",
+            "definition": "the result of adding amounts and dividing",
+            "examples": [
+               "The average is ten.",
+               "Her test average was high.",
+               "The average of the scores was 80."
+            ]
+         },
+         {
+            "id": 8,
             "word": "avoid",
             "role": "verb",
             "BrE": "/əˈvɔɪd/",
             "AmE": "/əˈvɔɪd/",
-            "definition": "to prevent something from happening or to try not to do something",
+            "definition": "to prevent something or stay away from it",
             "examples": [
-               "I avoid eating too much sugar.",
-               "She avoided the busy road.",
-               "He avoided answering the difficult question."
+               "Avoid the busy road.",
+               "She avoids eating sugar.",
+               "He avoided answering the question."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
             "word": "award",
             "role": "noun",
             "BrE": "/əˈwɔːd/",
             "AmE": "/əˈwɔːrd/",
-            "definition": "a prize or other recognition given for something well done",
+            "definition": "a prize given for achievement",
             "examples": [
-               "She won an award for her essay.",
-               "The film received many awards.",
-               "The award for best actor was surprising."
+               "She won an award.",
+               "The award was for best student.",
+               "He received an award for his work."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
             "word": "awful",
             "role": "adjective",
             "BrE": "/ˈɔːfl/",
             "AmE": "/ˈɔːfl/",
             "definition": "very bad or unpleasant",
             "examples": [
-               "The weather was awful today.",
-               "She had an awful day at work.",
-               "The smell in the room was truly awful."
+               "The weather is awful.",
+               "She had an awful day.",
+               "The awful smell made us leave."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
             "word": "back",
-            "role": "noun",
+            "role": "adjective",
             "BrE": "/bæk/",
             "AmE": "/bæk/",
-            "definition": "the part of the body from the neck to the bottom of the spine",
+            "definition": "at the rear of something",
             "examples": [
-               "My back hurts after sitting.",
-               "He carried a bag on his back.",
-               "She injured her back while exercising."
+               "The back door is open.",
+               "She sat in the back seat.",
+               "The back garden is beautiful."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
             "word": "background",
             "role": "noun",
             "BrE": "/ˈbækɡraʊnd/",
             "AmE": "/ˈbækɡraʊnd/",
-            "definition": "the things behind something, or the part of a picture or scene that is furthest from you",
+            "definition": "the part behind the main thing",
             "examples": [
-               "The photo has a nice background.",
-               "There’s a mountain in the background.",
-               "The painting’s background adds to its beauty."
+               "The background is blue.",
+               "She stood against a green background.",
+               "The background of the photo is nice."
             ]
          },
          {
-            "id": 7,
+            "id": 8,
             "word": "badly",
             "role": "adverb",
             "BrE": "/ˈbædli/",
             "AmE": "/ˈbædli/",
-            "definition": "in a way that is not good or not successful",
+            "definition": "in a poor or unsatisfactory way",
             "examples": [
-               "He sang badly in the show.",
-               "The team played badly yesterday.",
-               "The project was managed badly."
+               "He sings badly.",
+               "She played badly in the game.",
+               "The car was badly damaged."
             ]
          },
          {
-            "id": 7,
+            "id": 9,
             "word": "bar",
             "role": "noun",
             "BrE": "/bɑː(r)/",
             "AmE": "/bɑːr/",
-            "definition": "a place where you can buy and drink alcoholic drinks",
+            "definition": "a place where drinks are served",
             "examples": [
-               "Let’s meet at the bar.",
-               "The bar was crowded last night.",
-               "They enjoyed drinks at the hotel bar."
+               "The bar is open.",
+               "She works in a bar.",
+               "They met at the bar last night."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "baseball",
             "role": "noun",
             "BrE": "/ˈbeɪsbɔːl/",
             "AmE": "/ˈbeɪsbɔːl/",
-            "definition": "a game played with a bat and ball between two teams",
+            "definition": "a game played with a bat and ball",
             "examples": [
-               "He plays baseball at school.",
-               "Baseball is popular in America.",
-               "The baseball match lasted three hours."
+               "I like baseball.",
+               "He plays baseball every weekend.",
+               "The baseball match was exciting."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "based",
             "role": "adjective",
             "BrE": "/beɪst/",
             "AmE": "/beɪst/",
-            "definition": "having something as its main part or origin",
+            "definition": "using something as the foundation",
             "examples": [
-               "The movie is based on a book.",
-               "Her decision was based on facts.",
-               "The story is based on real events."
+               "The story is based on a book.",
+               "Her film is based on a true story.",
+               "The game is based on history."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "basketball",
             "role": "noun",
             "BrE": "/ˈbɑːskɪtbɔːl/",
             "AmE": "/ˈbæskɪtbɔːl/",
-            "definition": "a game played by two teams who try to throw a ball through a high net",
+            "definition": "a game where players throw a ball into a net",
             "examples": [
-               "I play basketball with friends.",
-               "Basketball is her favourite sport.",
-               "The basketball team won the championship."
+               "I play basketball.",
+               "She joined a basketball team.",
+               "The basketball game was close."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "bean",
             "role": "noun",
             "BrE": "/biːn/",
             "AmE": "/biːn/",
             "definition": "a seed or pod used as food",
             "examples": [
+               "I eat beans.",
                "She cooked beans for dinner.",
-               "He likes green beans with rice.",
-               "The recipe includes black beans."
+               "The beans in the soup were tasty."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "bear",
             "role": "noun",
             "BrE": "/beə(r)/",
             "AmE": "/ber/",
             "definition": "a large, heavy animal with thick fur",
             "examples": [
-               "I saw a bear in the zoo.",
-               "The bear was fishing in the river.",
-               "Polar bears live in cold climates."
+               "I saw a bear.",
+               "The bear lives in the forest.",
+               "A bear was near the river."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "beat",
             "role": "verb",
             "BrE": "/biːt/",
             "AmE": "/biːt/",
-            "definition": "to defeat somebody in a game or competition",
+            "definition": "to defeat someone in a game or competition",
             "examples": [
-               "Our team beat the others.",
+               "We beat the team.",
                "She beat him at chess.",
-               "They beat their rivals in the final."
+               "They beat the record time."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "beef",
             "role": "noun",
             "BrE": "/biːf/",
             "AmE": "/biːf/",
-            "definition": "the meat from a cow",
+            "definition": "meat from a cow",
             "examples": [
-               "We ate beef for dinner.",
-               "The beef was cooked perfectly.",
-               "She prepared a beef stew."
+               "I like beef.",
+               "She cooked beef for dinner.",
+               "The beef was tender and juicy."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
             "word": "before",
-            "role": "preposition",
+            "role": "adverb",
             "BrE": "/bɪˈfɔː(r)/",
             "AmE": "/bɪˈfɔːr/",
-            "definition": "earlier than a particular time or event",
+            "definition": "at an earlier time",
             "examples": [
-               "I’ll call you before lunch.",
-               "She finished her work before noon.",
-               "Check the details before signing."
+               "I saw him before.",
+               "She called me before lunch.",
+               "They met before the meeting."
             ]
          },
          {
-            "id": 8,
+            "id": 9,
+            "word": "before",
+            "role": "conjunction",
+            "BrE": "/bɪˈfɔː(r)/",
+            "AmE": "/bɪˈfɔːr/",
+            "definition": "earlier than the time when something happens",
+            "examples": [
+               "I’ll finish before you go.",
+               "She left before it rained.",
+               "He ate before the class started."
+            ]
+         },
+         {
+            "id": 10,
             "word": "behave",
             "role": "verb",
             "BrE": "/bɪˈheɪv/",
             "AmE": "/bɪˈheɪv/",
             "definition": "to act in a particular way",
             "examples": [
-               "The children behave well.",
-               "He behaved badly at the party.",
-               "She always behaves politely in public."
+               "You must behave well.",
+               "She behaves politely in class.",
+               "He didn’t behave during the lesson."
             ]
          },
          {
-            "id": 8,
+            "id": 10,
             "word": "behaviour",
             "role": "noun",
             "BrE": "/bɪˈheɪvjə(r)/",
             "AmE": "/bɪˈheɪvjər/",
-            "definition": "the way that somebody acts or behaves",
+            "definition": "the way someone acts",
             "examples": [
-               "His behaviour was very good.",
-               "Her behaviour surprised everyone.",
-               "The teacher praised their good behaviour."
+               "Her behaviour is good.",
+               "His behaviour upset the teacher.",
+               "The behaviour of the dog was strange."
             ]
          },
          {
-            "id": 9,
+            "id": 10,
             "word": "belong",
             "role": "verb",
             "BrE": "/bɪˈlɒŋ/",
             "AmE": "/bɪˈlɔːŋ/",
-            "definition": "to be in the right place or to be owned by someone",
+            "definition": "to be owned by someone or be in the right place",
             "examples": [
                "This book belongs to me.",
-               "She belongs to the music club.",
-               "These items belong in the kitchen."
+               "She belongs to the club.",
+               "The bag belongs in the closet."
             ]
          },
          {
-            "id": 9,
+            "id": 10,
             "word": "belt",
             "role": "noun",
             "BrE": "/belt/",
             "AmE": "/belt/",
-            "definition": "a long, narrow piece of leather or cloth worn around the waist",
+            "definition": "a strip of material worn around the waist",
             "examples": [
-               "He wore a black belt.",
-               "The belt matches her dress.",
-               "She tightened her belt before running."
+               "I wear a belt.",
+               "Her belt is black.",
+               "The belt matches his shoes."
             ]
          },
          {
-            "id": 9,
+            "id": 10,
             "word": "benefit",
             "role": "noun",
             "BrE": "/ˈbenɪfɪt/",
             "AmE": "/ˈbenɪfɪt/",
-            "definition": "an advantage or useful effect that something has",
+            "definition": "an advantage or good effect",
             "examples": [
-               "Exercise has many benefits.",
-               "The job offers health benefits.",
-               "Learning a language has long-term benefits."
+               "Exercise has benefits.",
+               "The job has good benefits.",
+               "The benefit of studying is success."
             ]
          },
          {
-            "id": 9,
+            "id": 10,
             "word": "best",
-            "role": "adjective",
+            "role": "adverb",
             "BrE": "/best/",
             "AmE": "/best/",
-            "definition": "better than all others in quality or ability",
+            "definition": "in the most excellent way",
             "examples": [
-               "She is my best friend.",
-               "This is the best cake ever.",
-               "He was the best candidate for the job."
+               "She sings best.",
+               "He runs best in the team.",
+               "They work best under pressure."
             ]
          },
          {
-            "id": 9,
+            "id": 10,
+            "word": "best",
+            "role": "noun",
+            "BrE": "/best/",
+            "AmE": "/best/",
+            "definition": "the most excellent person or thing",
+            "examples": [
+               "She is the best.",
+               "This is the best book.",
+               "He did his best in the exam."
+            ]
+         },
+         {
+            "id": 10,
             "word": "better",
-            "role": "adjective",
+            "role": "adverb",
             "BrE": "/ˈbetə(r)/",
             "AmE": "/ˈbetər/",
-            "definition": "of a higher quality or standard than something else",
+            "definition": "in a more excellent way",
             "examples": [
-               "This book is better than that one.",
-               "She feels better after resting.",
-               "His grades are better this year."
+               "She sings better now.",
+               "He plays better than me.",
+               "They work better as a team."
             ]
          },
          {
-            "id": 9,
+            "id": 10,
             "word": "between",
-            "role": "preposition",
+            "role": "adverb",
             "BrE": "/bɪˈtwiːn/",
             "AmE": "/bɪˈtwiːn/",
-            "definition": "in or into the space or time that separates two things or people",
+            "definition": "in or into the space separating things",
             "examples": [
-               "The shop is between the bank and the school.",
-               "We’ll meet between 2 and 3 p.m.",
-               "The choice is between two good options."
+               "The book is between them.",
+               "She sat between her friends.",
+               "The ball rolled between the chairs."
             ]
          },
          {
-            "id": 9,
+            "id": 10,
             "word": "billion",
             "role": "number",
             "BrE": "/ˈbɪljən/",
             "AmE": "/ˈbɪljən/",
             "definition": "the number 1,000,000,000",
             "examples": [
-               "The company is worth a billion.",
-               "A billion people live in the country.",
-               "The project cost over a billion dollars."
+               "A billion is big.",
+               "The company earned a billion.",
+               "A billion stars shone at night."
             ]
          },
          {
-            "id": 9,
+            "id": 11,
             "word": "bin",
             "role": "noun",
             "BrE": "/bɪn/",
             "AmE": "/bɪn/",
-            "definition": "a container for putting rubbish in",
+            "definition": "a container for rubbish or storage",
             "examples": [
-               "Throw the paper in the bin.",
-               "The bin is full of rubbish.",
-               "Please empty the recycling bin."
+               "Throw it in the bin.",
+               "She put paper in the bin.",
+               "The bin is full of rubbish."
             ]
          },
          {
-            "id": 9,
+            "id": 11,
             "word": "biology",
             "role": "noun",
             "BrE": "/baɪˈɒlədʒi/",
             "AmE": "/baɪˈɑːlədʒi/",
             "definition": "the scientific study of living things",
             "examples": [
-               "She studies biology at school.",
-               "Biology is her favourite subject.",
-               "The biology class learned about plants."
+               "I study biology.",
+               "She loves biology class.",
+               "Biology teaches us about plants."
             ]
          },
          {
-            "id": 9,
+            "id": 11,
             "word": "birth",
             "role": "noun",
             "BrE": "/bɜːθ/",
             "AmE": "/bɜːrθ/",
             "definition": "the time when a baby is born",
             "examples": [
-               "The baby’s birth was yesterday.",
-               "Her birth was in a hospital.",
-               "The birth of her son was joyful."
+               "Her birth was in June.",
+               "The birth of the baby was quick.",
+               "His birth certificate is here."
             ]
          },
          {
-            "id": 10,
+            "id": 11,
             "word": "biscuit",
             "role": "noun",
             "BrE": "/ˈbɪskɪt/",
             "AmE": "/ˈbɪskɪt/",
-            "definition": "a small, flat cake that is usually sweet",
+            "definition": "a small, flat, sweet baked food",
             "examples": [
-               "I ate a chocolate biscuit.",
-               "She offered biscuits with tea.",
-               "Homemade biscuits are the best."
+               "I eat a biscuit.",
+               "She gave me a biscuit.",
+               "The biscuit was chocolate-flavoured."
             ]
          },
          {
-            "id": 10,
+            "id": 11,
             "word": "bit",
             "role": "noun",
             "BrE": "/bɪt/",
             "AmE": "/bɪt/",
-            "definition": "a small amount or piece of something",
+            "definition": "a small piece or amount of something",
             "examples": [
-               "Add a bit of salt.",
-               "I’m a bit tired today.",
-               "She ate a bit of the cake."
+               "I want a bit of cake.",
+               "She ate a bit of bread.",
+               "He gave me a bit of advice."
             ]
          },
          {
-            "id": 10,
+            "id": 11,
             "word": "blank",
             "role": "adjective",
             "BrE": "/blæŋk/",
             "AmE": "/blæŋk/",
-            "definition": "empty or with nothing written or drawn on it",
+            "definition": "empty or with no writing or marks",
             "examples": [
-               "The page was blank.",
-               "She handed me a blank paper.",
-               "His mind went blank during the test."
+               "The page is blank.",
+               "She gave a blank look.",
+               "The blank paper is on the desk."
             ]
          },
          {
-            "id": 10,
+            "id": 11,
+            "word": "blank",
+            "role": "noun",
+            "BrE": "/blæŋk/",
+            "AmE": "/blæŋk/",
+            "definition": "an empty space",
+            "examples": [
+               "Fill in the blank.",
+               "The form has a blank.",
+               "She left a blank in her answer."
+            ]
+         },
+         {
+            "id": 11,
             "word": "blood",
             "role": "noun",
             "BrE": "/blʌd/",
             "AmE": "/blʌd/",
-            "definition": "the red liquid that flows through the body",
+            "definition": "the red liquid in the body",
             "examples": [
-               "There was blood on his hand.",
-               "The doctor checked her blood pressure.",
-               "Blood tests showed no problems."
+               "Blood is red.",
+               "He lost some blood.",
+               "The doctor checked her blood."
             ]
          },
          {
-            "id": 10,
+            "id": 11,
             "word": "blow",
             "role": "verb",
             "BrE": "/bləʊ/",
             "AmE": "/bloʊ/",
             "definition": "to send out air from the mouth",
             "examples": [
-               "Blow out the candles!",
-               "She blew on her soup to cool it.",
-               "The wind blew strongly last night."
+               "Blow the candle out.",
+               "She blew on her soup.",
+               "He blew air into the balloon."
             ]
          },
          {
-            "id": 10,
+            "id": 11,
             "word": "board",
             "role": "noun",
             "BrE": "/bɔːd/",
             "AmE": "/bɔːrd/",
-            "definition": "a flat piece of wood or other material used for a particular purpose",
+            "definition": "a flat piece of wood or other material",
             "examples": [
-               "Write on the board.",
-               "The board has a new message.",
-               "They posted notices on the board."
+               "The board is strong.",
+               "She wrote on the board.",
+               "The board was used for the sign."
             ]
          },
          {
-            "id": 10,
+            "id": 12,
             "word": "boil",
             "role": "verb",
             "BrE": "/bɔɪl/",
             "AmE": "/bɔɪl/",
-            "definition": "to heat a liquid, such as water, until it reaches a high temperature",
+            "definition": "to heat a liquid until it bubbles",
             "examples": [
-               "Boil water for tea.",
-               "She boiled the eggs for breakfast.",
-               "The soup is boiling on the stove."
+               "Boil the water.",
+               "She boiled some eggs.",
+               "He boiled the soup for dinner."
             ]
          },
          {
-            "id": 10,
+            "id": 12,
             "word": "bone",
             "role": "noun",
             "BrE": "/bəʊn/",
             "AmE": "/boʊn/",
-            "definition": "one of the hard parts that form the skeleton of a body",
+            "definition": "a hard part inside the body",
             "examples": [
-               "The dog chewed a bone.",
-               "He broke a bone in his arm.",
-               "The fish bone got stuck in her throat."
+               "The dog ate a bone.",
+               "She broke a bone.",
+               "The bone was found in the park."
             ]
          },
          {
-            "id": 10,
+            "id": 12,
             "word": "book",
-            "role": "noun",
+            "role": "verb",
             "BrE": "/bʊk/",
             "AmE": "/bʊk/",
-            "definition": "a set of printed pages that are held together in a cover",
+            "definition": "to arrange to have or use something",
             "examples": [
-               "I read a good book.",
-               "She wrote a book about history.",
-               "The library has many new books."
+               "I book a ticket.",
+               "She booked a hotel room.",
+               "He booked a table for dinner."
             ]
          },
          {
-            "id": 10,
+            "id": 12,
             "word": "borrow",
             "role": "verb",
             "BrE": "/ˈbɒrəʊ/",
             "AmE": "/ˈbɑːroʊ/",
-            "definition": "to take and use something that belongs to someone else, with the intention of returning it",
+            "definition": "to take something from someone, planning to return it",
             "examples": [
-               "Can I borrow your pen?",
-               "She borrowed a book from me.",
+               "I borrow a book.",
+               "She borrowed my pen.",
                "He borrowed money from his friend."
             ]
          },
          {
-            "id": 11,
+            "id": 12,
             "word": "boss",
             "role": "noun",
             "BrE": "/bɒs/",
             "AmE": "/bɔːs/",
-            "definition": "a person who is in charge of others at work",
+            "definition": "a person who is in charge of others",
             "examples": [
-               "My boss is very kind.",
-               "The boss gave us a new task.",
-               "She discussed the project with her boss."
+               "My boss is kind.",
+               "She spoke to her boss.",
+               "The boss gave us a task."
             ]
          },
          {
-            "id": 11,
+            "id": 12,
+            "word": "bottom",
+            "role": "adjective",
+            "BrE": "/ˈbɒtəm/",
+            "AmE": "/ˈbɑːtəm/",
+            "definition": "in the lowest position",
+            "examples": [
+               "The bottom shelf is full.",
+               "She sat on the bottom step.",
+               "The bottom drawer is empty."
+            ]
+         },
+         {
+            "id": 12,
             "word": "bottom",
             "role": "noun",
             "BrE": "/ˈbɒtəm/",
             "AmE": "/ˈbɑːtəm/",
             "definition": "the lowest part of something",
             "examples": [
-               "The book is at the bottom of the bag.",
-               "She sat at the bottom of the stairs.",
-               "The ship sank to the bottom of the sea."
+               "The bottom is wet.",
+               "The book is at the bottom.",
+               "She reached the bottom of the hill."
             ]
          },
          {
-            "id": 11,
+            "id": 12,
             "word": "bowl",
             "role": "noun",
             "BrE": "/bəʊl/",
             "AmE": "/boʊl/",
-            "definition": "a deep, round container used for holding food",
+            "definition": "a deep, round container for food",
             "examples": [
-               "Put the soup in a bowl.",
-               "She ate cereal from a bowl.",
-               "The bowl was filled with fruit."
+               "I eat from a bowl.",
+               "She filled the bowl with soup.",
+               "The bowl of fruit is on the table."
             ]
          },
          {
-            "id": 11,
+            "id": 12,
             "word": "brain",
             "role": "noun",
             "BrE": "/breɪn/",
             "AmE": "/breɪn/",
-            "definition": "the organ inside the head that controls thought, memory, and feeling",
+            "definition": "the organ in the head used for thinking",
             "examples": [
-               "The brain is very important.",
-               "Her brain works quickly in tests.",
-               "Scientists study how the brain functions."
+               "The brain is important.",
+               "Her brain works fast.",
+               "The doctor studied the brain."
             ]
          },
          {
-            "id": 11,
+            "id": 12,
             "word": "bridge",
             "role": "noun",
             "BrE": "/brɪdʒ/",
             "AmE": "/brɪdʒ/",
-            "definition": "a structure built over a river or road to allow people to cross",
+            "definition": "a structure built over a river or road",
             "examples": [
-               "We crossed the bridge to the town.",
-               "The bridge is old but strong.",
-               "A new bridge was built last year."
+               "The bridge is old.",
+               "She crossed the bridge.",
+               "The bridge connects two towns."
             ]
          },
          {
-            "id": 11,
+            "id": 13,
             "word": "bright",
             "role": "adjective",
             "BrE": "/braɪt/",
             "AmE": "/braɪt/",
-            "definition": "full of light or shining strongly",
+            "definition": "full of light or shining",
             "examples": [
-               "The sun is bright today.",
-               "She wore a bright red dress.",
-               "The bright lights lit up the stage."
+               "The room is bright.",
+               "Her bright smile cheered me.",
+               "The bright sun warmed the day."
             ]
          },
          {
-            "id": 11,
+            "id": 13,
             "word": "brilliant",
             "role": "adjective",
             "BrE": "/ˈbrɪliənt/",
             "AmE": "/ˈbrɪliənt/",
             "definition": "extremely clever or impressive",
             "examples": [
-               "She had a brilliant idea.",
-               "His speech was absolutely brilliant.",
-               "The scientist made a brilliant discovery."
+               "Her idea is brilliant.",
+               "He wrote a brilliant essay.",
+               "The brilliant plan worked perfectly."
             ]
          },
          {
-            "id": 11,
+            "id": 13,
             "word": "broken",
             "role": "adjective",
             "BrE": "/ˈbrəʊkən/",
             "AmE": "/ˈbroʊkən/",
-            "definition": "damaged and no longer working or whole",
+            "definition": "damaged or in pieces",
             "examples": [
-               "The cup is broken.",
-               "He fixed the broken chair.",
-               "The broken machine was replaced."
+               "The glass is broken.",
+               "She fixed the broken chair.",
+               "His broken phone needs repair."
             ]
          },
          {
-            "id": 11,
+            "id": 13,
             "word": "brush",
             "role": "noun",
             "BrE": "/brʌʃ/",
             "AmE": "/brʌʃ/",
-            "definition": "an object with bristles used for cleaning or painting",
+            "definition": "a tool with hairs used for cleaning or painting",
             "examples": [
-               "I need a brush for my hair.",
-               "She used a brush to paint.",
-               "The brush cleaned the shoes well."
+               "I need a brush.",
+               "She used a brush for painting.",
+               "The brush cleaned the shoes."
             ]
          },
          {
-            "id": 11,
+            "id": 13,
+            "word": "brush",
+            "role": "verb",
+            "BrE": "/brʌʃ/",
+            "AmE": "/brʌʃ/",
+            "definition": "to clean or tidy with a brush",
+            "examples": [
+               "I brush my hair.",
+               "She brushed her teeth.",
+               "He brushed the dirt off his coat."
+            ]
+         },
+         {
+            "id": 13,
             "word": "burn",
             "role": "verb",
             "BrE": "/bɜːn/",
             "AmE": "/bɜːrn/",
-            "definition": "to be on fire or to destroy something with fire",
+            "definition": "to destroy or damage by fire",
             "examples": [
-               "The candle burned brightly.",
-               "She burned her hand on the stove.",
-               "The fire burned all the papers."
+               "The fire burns wood.",
+               "She burned the old papers.",
+               "He burned his hand on the stove."
             ]
          },
          {
-            "id": 12,
+            "id": 13,
             "word": "businessman",
             "role": "noun",
-            "BrE": "/ˈbɪznəsmən/",
-            "AmE": "/ˈbɪznəsmən/",
-            "definition": "a man who works in business, especially at a high level",
+            "BrE": "/ˈbɪznəsmæn/",
+            "AmE": "/ˈbɪznəsmæn/",
+            "definition": "a man who works in business",
             "examples": [
-               "He is a successful businessman.",
-               "The businessman travelled to London.",
-               "The businessman invested in new projects."
+               "He is a businessman.",
+               "The businessman travels often.",
+               "A businessman started the company."
             ]
          },
          {
-            "id": 12,
+            "id": 13,
             "word": "button",
             "role": "noun",
             "BrE": "/ˈbʌtn/",
             "AmE": "/ˈbʌtn/",
-            "definition": "a small, usually round object used to fasten clothes",
+            "definition": "a small object used to fasten clothes",
             "examples": [
-               "My shirt lost a button.",
-               "She sewed a button on her coat.",
-               "The button on his jacket was shiny."
+               "My button is loose.",
+               "She sewed a button on.",
+               "The button fell off his shirt."
             ]
          },
          {
-            "id": 12,
+            "id": 13,
             "word": "camp",
             "role": "noun",
             "BrE": "/kæmp/",
             "AmE": "/kæmp/",
-            "definition": "a place where people stay in tents or temporary shelters",
+            "definition": "a place where people stay in tents",
             "examples": [
-               "We stayed at a camp by the lake.",
-               "The camp was fun for kids.",
-               "They set up a camp in the forest."
+               "We stayed at a camp.",
+               "The camp is near the lake.",
+               "The summer camp was fun."
             ]
          },
          {
-            "id": 12,
+            "id": 13,
+            "word": "camp",
+            "role": "verb",
+            "BrE": "/kæmp/",
+            "AmE": "/kæmp/",
+            "definition": "to stay in a tent or temporary shelter",
+            "examples": [
+               "We camp in summer.",
+               "She camped by the river.",
+               "They camped in the mountains."
+            ]
+         },
+         {
+            "id": 14,
             "word": "camping",
             "role": "noun",
             "BrE": "/ˈkæmpɪŋ/",
             "AmE": "/ˈkæmpɪŋ/",
-            "definition": "the activity of staying in a tent or temporary shelter",
+            "definition": "the activity of staying in a tent",
             "examples": [
-               "Camping is fun in summer.",
-               "We went camping in the mountains.",
-               "Camping requires good planning."
+               "Camping is fun.",
+               "She loves camping with friends.",
+               "Camping in the forest was exciting."
             ]
          },
          {
-            "id": 12,
+            "id": 14,
             "word": "can",
-            "role": "modal verb",
-            "BrE": "/kən/",
-            "AmE": "/kən/",
-            "definition": "used to show that something is possible or allowed",
+            "role": "noun",
+            "BrE": "/kæn/",
+            "AmE": "/kæn/",
+            "definition": "a metal container for food or drink",
             "examples": [
-               "I can swim very well.",
-               "Can you come to the party?",
-               "She can speak three languages fluently."
+               "I opened a can.",
+               "She bought a can of soda.",
+               "The can of soup is in the kitchen."
             ]
          },
          {
-            "id": 12,
+            "id": 14,
+            "word": "care",
+            "role": "noun",
+            "BrE": "/keə(r)/",
+            "AmE": "/ker/",
+            "definition": "the process of looking after someone or something",
+            "examples": [
+               "She needs care.",
+               "He takes care of his dog.",
+               "The care of the garden is hard."
+            ]
+         },
+         {
+            "id": 14,
             "word": "care",
             "role": "verb",
             "BrE": "/keə(r)/",
             "AmE": "/ker/",
-            "definition": "to feel interested in or concerned about something",
+            "definition": "to feel concerned about someone or something",
             "examples": [
-               "I care about my family.",
-               "She cares deeply about the environment.",
-               "He doesn’t care about the new rules."
+               "I care about you.",
+               "She cares for her family.",
+               "He cares about the environment."
             ]
          },
          {
-            "id": 12,
+            "id": 14,
             "word": "careful",
             "role": "adjective",
             "BrE": "/ˈkeəfl/",
             "AmE": "/ˈkerfl/",
-            "definition": "taking care to avoid mistakes or danger",
+            "definition": "taking care to avoid problems",
             "examples": [
-               "Be careful with the knife.",
-               "She was careful crossing the road.",
-               "Careful planning led to success."
+               "Be careful with knives.",
+               "She is careful when driving.",
+               "He was careful with his homework."
             ]
          },
          {
-            "id": 12,
+            "id": 14,
             "word": "carefully",
             "role": "adverb",
             "BrE": "/ˈkeəfəli/",
             "AmE": "/ˈkerfəli/",
-            "definition": "in a way that shows care to avoid mistakes or danger",
+            "definition": "in a way that avoids problems",
             "examples": [
-               "Drive carefully in the rain.",
-               "She read the instructions carefully.",
+               "Drive carefully.",
+               "She writes carefully.",
                "He carefully checked his work."
             ]
          },
          {
-            "id": 12,
+            "id": 14,
             "word": "carpet",
             "role": "noun",
             "BrE": "/ˈkɑːpɪt/",
             "AmE": "/ˈkɑːrpɪt/",
-            "definition": "a thick material used to cover floors",
+            "definition": "a thick woven material covering a floor",
             "examples": [
-               "The carpet is soft and warm.",
-               "We bought a new carpet for the room.",
-               "The red carpet matched the curtains."
+               "The carpet is soft.",
+               "She bought a red carpet.",
+               "The carpet in the room is new."
             ]
          },
          {
-            "id": 12,
+            "id": 14,
             "word": "cartoon",
             "role": "noun",
             "BrE": "/kɑːˈtuːn/",
             "AmE": "/kɑːrˈtuːn/",
-            "definition": "a film or TV programme made by photographing a series of drawings",
+            "definition": "a funny drawing or animated film",
             "examples": [
-               "Kids love watching cartoons.",
-               "The cartoon was funny and colorful.",
-               "The cartoon series is popular worldwide."
+               "I watch a cartoon.",
+               "She loves cartoon shows.",
+               "The cartoon made us laugh."
             ]
          },
          {
-            "id": 13,
+            "id": 14,
             "word": "case",
             "role": "noun",
             "BrE": "/keɪs/",
             "AmE": "/keɪs/",
-            "definition": "a particular situation or example of something",
+            "definition": "a particular situation or example",
             "examples": [
-               "This is a special case.",
-               "In this case, we need more time.",
-               "In some cases, the rules don’t apply."
+               "This is a bad case.",
+               "In her case, she was late.",
+               "The case of missing keys was solved."
             ]
          },
          {
-            "id": 13,
+            "id": 14,
             "word": "cash",
             "role": "noun",
             "BrE": "/kæʃ/",
             "AmE": "/kæʃ/",
-            "definition": "money in the form of coins or notes",
+            "definition": "money in coins or notes",
             "examples": [
-               "I paid with cash.",
-               "She carries cash in her wallet.",
-               "The shop only accepts cash payments."
+               "I need cash.",
+               "She paid with cash.",
+               "The shop only accepts cash."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
             "word": "castle",
             "role": "noun",
             "BrE": "/ˈkɑːsl/",
             "AmE": "/ˈkæsl/",
-            "definition": "a large building with thick walls, often built in the past to protect people",
+            "definition": "a large, strong building, often from the past",
             "examples": [
-               "The castle is very old.",
-               "We visited a castle in Scotland.",
-               "The castle was built in the 12th century."
+               "The castle is old.",
+               "She visited a castle.",
+               "The castle has a big tower."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
             "word": "catch",
             "role": "verb",
             "BrE": "/kætʃ/",
             "AmE": "/kætʃ/",
-            "definition": "to take hold of something that is moving through the air",
+            "definition": "to take and hold something moving",
             "examples": [
                "Catch the ball!",
-               "She caught the keys he threw.",
-               "He caught a fish in the lake."
+               "She caught the bus.",
+               "He caught a fish in the river."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
+            "word": "cause",
+            "role": "noun",
+            "BrE": "/kɔːz/",
+            "AmE": "/kɔːz/",
+            "definition": "the reason why something happens",
+            "examples": [
+               "What’s the cause?",
+               "The cause of the fire was unknown.",
+               "Rain was the cause of the delay."
+            ]
+         },
+         {
+            "id": 15,
             "word": "cause",
             "role": "verb",
             "BrE": "/kɔːz/",
             "AmE": "/kɔːz/",
             "definition": "to make something happen",
             "examples": [
-               "Rain caused the delay.",
-               "His words caused her to cry.",
-               "The storm caused damage to the house."
+               "Rain causes floods.",
+               "She caused a big problem.",
+               "His mistake caused the accident."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
             "word": "celebrate",
             "role": "verb",
             "BrE": "/ˈselɪbreɪt/",
             "AmE": "/ˈselɪbreɪt/",
-            "definition": "to do something enjoyable because of a special occasion",
+            "definition": "to do something special for an event",
             "examples": [
-               "We celebrate Christmas every year.",
-               "They celebrated their wedding anniversary.",
-               "The team celebrated their victory."
+               "We celebrate birthdays.",
+               "She celebrated her new job.",
+               "They celebrated with a big party."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
             "word": "celebrity",
             "role": "noun",
             "BrE": "/səˈlebrəti/",
             "AmE": "/səˈlebrəti/",
-            "definition": "a famous person, especially in entertainment or sport",
+            "definition": "a famous person",
             "examples": [
-               "She’s a celebrity on TV.",
-               "The celebrity signed autographs for fans.",
-               "Celebrities attended the film premiere."
+               "He’s a celebrity.",
+               "She met a celebrity at the event.",
+               "The celebrity signed autographs."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
             "word": "certain",
             "role": "adjective",
             "BrE": "/ˈsɜːtn/",
             "AmE": "/ˈsɜːrtn/",
-            "definition": "completely sure; without doubt",
+            "definition": "sure or definite",
             "examples": [
-               "I’m certain he’s coming.",
-               "She’s certain about her decision.",
-               "We’re certain the plan will work."
+               "I’m certain it’s true.",
+               "She’s certain about the answer.",
+               "He’s certain of his success."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
             "word": "certainly",
             "role": "adverb",
             "BrE": "/ˈsɜːtnli/",
             "AmE": "/ˈsɜːrtnli/",
-            "definition": "without doubt; definitely",
+            "definition": "without doubt",
             "examples": [
-               "I’ll certainly help you.",
+               "I’ll certainly come.",
                "She certainly knows a lot.",
-               "The event will certainly attract visitors."
+               "He certainly passed the test."
             ]
          },
          {
-            "id": 13,
+            "id": 15,
             "word": "chance",
             "role": "noun",
             "BrE": "/tʃɑːns/",
             "AmE": "/tʃæns/",
-            "definition": "an opportunity or possibility of something happening",
+            "definition": "an opportunity or possibility",
             "examples": [
-               "Give me a chance to try.",
-               "There’s a chance it might rain.",
-               "He got a chance to meet the star."
+               "Give me a chance.",
+               "She got a chance to sing.",
+               "There’s a chance it will rain."
             ]
          },
          {
-            "id": 14,
+            "id": 15,
             "word": "character",
             "role": "noun",
             "BrE": "/ˈkærəktə(r)/",
             "AmE": "/ˈkærəktər/",
-            "definition": "a person in a story, film, or play",
+            "definition": "a person in a story or film",
             "examples": [
-               "The book has funny characters.",
-               "Her favourite character is the hero.",
-               "The main character faces many challenges."
+               "The character is funny.",
+               "She plays a character in the film.",
+               "The main character solves the mystery."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "charity",
             "role": "noun",
             "BrE": "/ˈtʃærəti/",
             "AmE": "/ˈtʃærəti/",
-            "definition": "an organization that collects money to help people in need",
+            "definition": "an organization that helps people in need",
             "examples": [
-               "She gave money to charity.",
-               "The charity helps homeless people.",
-               "They ran a race for charity."
+               "I give to charity.",
+               "She works for a charity.",
+               "The charity helps poor children."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
+            "word": "chat",
+            "role": "noun",
+            "BrE": "/tʃæt/",
+            "AmE": "/tʃæt/",
+            "definition": "a friendly, informal conversation",
+            "examples": [
+               "Let’s have a chat.",
+               "She had a chat with her friend.",
+               "The chat was about the holiday."
+            ]
+         },
+         {
+            "id": 16,
             "word": "chat",
             "role": "verb",
             "BrE": "/tʃæt/",
             "AmE": "/tʃæt/",
             "definition": "to talk in a friendly, informal way",
             "examples": [
-               "We chatted about the weather.",
-               "She chatted with her friend online.",
-               "They chatted happily during lunch."
+               "We chat every day.",
+               "She chatted with her teacher.",
+               "They chatted about the news."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "check",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/tʃek/",
             "AmE": "/tʃek/",
-            "definition": "to examine something to see if it is correct or safe",
+            "definition": "an examination to see if something is correct",
             "examples": [
-               "Check your answers carefully.",
-               "He checked the car’s oil level.",
-               "Please check the list for errors."
+               "Do a quick check.",
+               "She did a check of her work.",
+               "The teacher gave a spelling check."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "chef",
             "role": "noun",
             "BrE": "/ʃef/",
             "AmE": "/ʃef/",
-            "definition": "a professional cook, especially the main cook in a restaurant",
+            "definition": "a professional cook",
             "examples": [
-               "The chef cooked a great meal.",
-               "She’s a chef at a famous restaurant.",
-               "The chef created a new dessert."
+               "The chef is cooking.",
+               "She is a famous chef.",
+               "The chef made a delicious meal."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "chemistry",
             "role": "noun",
             "BrE": "/ˈkemɪstri/",
             "AmE": "/ˈkemɪstri/",
-            "definition": "the scientific study of substances and how they change",
+            "definition": "the scientific study of substances",
             "examples": [
-               "I study chemistry at school.",
-               "Chemistry is a difficult subject.",
-               "The chemistry experiment was exciting."
+               "I study chemistry.",
+               "She likes chemistry lessons.",
+               "Chemistry explains how things mix."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "chip",
             "role": "noun",
             "BrE": "/tʃɪp/",
             "AmE": "/tʃɪp/",
-            "definition": "a thin piece of potato fried until crisp",
+            "definition": "a thin piece of fried potato",
             "examples": [
-               "I ate chips with my lunch.",
+               "I eat chips.",
                "She bought a bag of chips.",
-               "The chips were salty and crunchy."
+               "The chips were salty and crispy."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "choice",
             "role": "noun",
             "BrE": "/tʃɔɪs/",
             "AmE": "/tʃɔɪs/",
-            "definition": "the act of choosing between two or more possibilities",
+            "definition": "the act of choosing or an option",
             "examples": [
-               "You have a choice of colors.",
-               "Her choice of dress was perfect.",
-               "Making the right choice was difficult."
+               "Make a choice.",
+               "She made a good choice.",
+               "His choice of clothes was nice."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "church",
             "role": "noun",
             "BrE": "/tʃɜːtʃ/",
             "AmE": "/tʃɜːrtʃ/",
-            "definition": "a building where Christians go to pray",
+            "definition": "a building for Christian religious activities",
             "examples": [
-               "The church is very old.",
-               "She goes to church every Sunday.",
-               "The church has beautiful stained glass."
+               "The church is old.",
+               "She goes to church on Sunday.",
+               "The church has a tall tower."
             ]
          },
          {
-            "id": 14,
+            "id": 16,
             "word": "cigarette",
             "role": "noun",
             "BrE": "/ˌsɪɡəˈret/",
             "AmE": "/ˈsɪɡəret/",
-            "definition": "a small roll of tobacco wrapped in paper, used for smoking",
+            "definition": "a small roll of tobacco smoked",
             "examples": [
-               "He smoked a cigarette outside.",
-               "Cigarettes are bad for health.",
-               "She quit smoking cigarettes last year."
+               "He smokes a cigarette.",
+               "She bought a pack of cigarettes.",
+               "Cigarettes are bad for health."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
             "word": "circle",
             "role": "noun",
             "BrE": "/ˈsɜːkl/",
             "AmE": "/ˈsɜːrkl/",
             "definition": "a round shape",
             "examples": [
-               "Draw a circle on the paper.",
-               "The kids sat in a circle.",
-               "The circle of friends was small."
+               "Draw a circle.",
+               "She stood in a circle.",
+               "The circle on the paper is red."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
+            "word": "circle",
+            "role": "verb",
+            "BrE": "/ˈsɜːkl/",
+            "AmE": "/ˈsɜːrkl/",
+            "definition": "to move in a circle around something",
+            "examples": [
+               "Birds circle the sky.",
+               "She circled the correct answer.",
+               "The plane circled the airport."
+            ]
+         },
+         {
+            "id": 17,
             "word": "classical",
             "role": "adjective",
             "BrE": "/ˈklæsɪkl/",
             "AmE": "/ˈklæsɪkl/",
-            "definition": "relating to music, art, or literature of a traditional and serious style",
+            "definition": "relating to traditional or serious music",
             "examples": [
-               "She loves classical music.",
-               "The concert played classical pieces.",
-               "Classical literature is studied in school."
+               "I like classical music.",
+               "She plays classical piano.",
+               "The classical concert was amazing."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
             "word": "clear",
             "role": "adjective",
             "BrE": "/klɪə(r)/",
             "AmE": "/klɪr/",
-            "definition": "easy to understand, see, or hear",
+            "definition": "easy to see, hear, or understand",
             "examples": [
-               "Her voice is clear and loud.",
-               "The instructions were clear enough.",
-               "The water in the lake was clear."
+               "The water is clear.",
+               "Her voice is clear.",
+               "The instructions were very clear."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
             "word": "clearly",
             "role": "adverb",
             "BrE": "/ˈklɪəli/",
             "AmE": "/ˈklɪrli/",
-            "definition": "in a way that is easy to see, hear, or understand",
+            "definition": "in a way that is easy to understand",
             "examples": [
                "Speak clearly, please.",
-               "She explained the problem clearly.",
-               "The rules were clearly stated."
+               "She explained it clearly.",
+               "He clearly understood the task."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
             "word": "clever",
             "role": "adjective",
             "BrE": "/ˈklevə(r)/",
             "AmE": "/ˈklevər/",
-            "definition": "quick at learning and understanding things",
+            "definition": "quick at learning or understanding things",
             "examples": [
-               "He’s a clever student.",
-               "Her clever idea saved time.",
-               "The clever design won an award."
+               "She is a clever girl.",
+               "His clever idea worked.",
+               "The clever student solved the puzzle."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
             "word": "climate",
             "role": "noun",
             "BrE": "/ˈklaɪmət/",
             "AmE": "/ˈklaɪmət/",
-            "definition": "the typical weather conditions in a particular area",
+            "definition": "the typical weather conditions in an area",
             "examples": [
-               "The climate here is warm.",
-               "The climate affects farming.",
-               "Climate change is a global issue."
+               "The climate is warm.",
+               "She likes a sunny climate.",
+               "The climate here is good for plants."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
             "word": "close",
-            "role": "verb",
-            "BrE": "/kləʊz/",
-            "AmE": "/kloʊz/",
-            "definition": "to shut something",
+            "role": "adjective",
+            "BrE": "/kləʊs/",
+            "AmE": "/kloʊs/",
+            "definition": "near in distance or time",
             "examples": [
-               "Close the door, please.",
-               "She closed her book and slept.",
-               "He closed the shop early today."
+               "The shop is close.",
+               "She lives close to me.",
+               "The close distance made it easy."
             ]
          },
          {
-            "id": 15,
+            "id": 17,
             "word": "closed",
             "role": "adjective",
             "BrE": "/kləʊzd/",
             "AmE": "/kloʊzd/",
             "definition": "not open",
             "examples": [
+               "The door is closed.",
                "The shop is closed now.",
-               "The road was closed for repairs.",
-               "Her eyes were closed during the song."
+               "Her eyes were closed during sleep."
             ]
          },
          {
-            "id": 15,
-            "word": "clothing",
-            "role": "noun",
-            "BrE": "/ˈkləʊðɪŋ/",
-            "AmE": "/ˈkloʊðɪŋ/",
-            "definition": "the things that people wear to cover their body",
-            "examples": [
-               "She bought new clothing.",
-               "The store sells winter clothing.",
-               "His clothing was wet from rain."
-            ]
-         },
-         {
-            "id": 15,
-            "word": "cloud",
-            "role": "noun",
-            "BrE": "/klaʊd/",
-            "AmE": "/klaʊd/",
-            "definition": "a white or grey mass in the sky that is made of tiny drops of water",
-            "examples": [
-               "The sky has many clouds.",
-               "A cloud covered the sun.",
-               "Dark clouds brought heavy rain."
-            ]
-         },
-         {
-            "id": 16,
-            "word": "coach",
-            "role": "noun",
-            "BrE": "/kəʊtʃ/",
-            "AmE": "/koʊtʃ/",
-            "definition": "a person who trains a team or person in a sport",
-            "examples": [
-               "The coach helped the team win.",
-               "She’s a great swimming coach.",
-               "The coach gave advice to players."
-            ]
-         },
-         {
-            "id": 16,
-            "word": "coast",
-            "role": "noun",
-            "BrE": "/kəʊst/",
-            "AmE": "/koʊst/",
-            "definition": "the land next to the sea",
-            "examples": [
-               "We walked along the coast.",
-               "The coast has beautiful beaches.",
-               "The town is on the south coast."
-            ]
-         },
-         {
-            "id": 16,
-            "word": "code",
-            "role": "noun",
-            "BrE": "/kəʊd/",
-            "AmE": "/koʊd/",
-            "definition": "a system of words, numbers, or signs used to represent information",
-            "examples": [
-               "Enter the code to unlock it.",
-               "The code was hard to crack.",
-               "She learned a new computer code."
-            ]
-         },
-         {
-            "id": 16,
-            "word": "colleague",
-            "role": "noun",
-            "BrE": "/ˈkɒliːɡ/",
-            "AmE": "/ˈkɑːliːɡ/",
-            "definition": "a person you work with",
-            "examples": [
-               "My colleague helped me today.",
-               "She met her colleague for lunch.",
-               "His colleagues respect his work."
-            ]
-         },
-         {
-            "id": 16,
-            "word": "collect",
-            "role": "verb",
-            "BrE": "/kəˈlekt/",
-            "AmE": "/kəˈlekt/",
-            "definition": "to bring things together or gather them",
-            "examples": [
-               "I collect old coins.",
-               "She collected shells on the beach.",
-               "He collects data for his research."
-            ]
-         },
-         {
-            "id": 16,
-            "word": "column",
-            "role": "noun",
-            "BrE": "/ˈkɒləm/",
-            "AmE": "/ˈkɑːləm/",
-            "definition": "a tall, vertical post, or a section of writing in a newspaper",
-            "examples": [
-               "The column supports the roof.",
-               "She writes a column for the paper.",
-               "The temple has marble columns."
-            ]
-         },
-         {
-            "id": 16,
-            "word": "comedy",
-            "role": "noun",
-            "BrE": "/ˈkɒmədi/",
-            "AmE": "/ˈkɑːmədi/",
-            "definition": "a play, film, or programme that makes people laugh",
-            "examples": [
-               "I watched a funny comedy.",
-               "The comedy show was hilarious.",
-               "Her favourite comedy is on TV tonight."
-            ]
-         },
-         {
-            "id": 16,
+            "id": 17,
             "word": "comfortable",
             "role": "adjective",
             "BrE": "/ˈkʌmftəbl/",
             "AmE": "/ˈkʌmfərtəbl/",
-            "definition": "feeling physically relaxed and at ease",
+            "definition": "feeling relaxed and at ease",
             "examples": [
-               "This chair is very comfortable.",
-               "She felt comfortable in her new home.",
-               "The comfortable bed helped her sleep."
+               "The chair is comfortable.",
+               "She felt comfortable in bed.",
+               "This jacket is very comfortable."
             ]
          },
          {
-            "id": 16,
+            "id": 18,
             "word": "comment",
             "role": "noun",
             "BrE": "/ˈkɒment/",
             "AmE": "/ˈkɑːment/",
-            "definition": "something you say or write that gives your opinion",
+            "definition": "something you say or write giving an opinion",
             "examples": [
-               "He made a funny comment.",
-               "Her comment about the food was kind.",
-               "The teacher wrote comments on my essay."
+               "He made a comment.",
+               "Her comment was helpful.",
+               "The teacher’s comment was kind."
             ]
          },
          {
-            "id": 16,
+            "id": 18,
             "word": "communicate",
             "role": "verb",
             "BrE": "/kəˈmjuːnɪkeɪt/",
             "AmE": "/kəˈmjuːnɪkeɪt/",
-            "definition": "to exchange information or ideas with someone, usually by speaking or writing",
+            "definition": "to share information with others",
             "examples": [
-               "We communicate by phone.",
-               "She communicates well with her team.",
-               "They communicate through emails daily."
+               "We communicate daily.",
+               "She communicates by email.",
+               "He communicated his ideas clearly."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "community",
             "role": "noun",
             "BrE": "/kəˈmjuːnəti/",
             "AmE": "/kəˈmjuːnəti/",
-            "definition": "a group of people who live in the same area or share interests",
+            "definition": "a group of people living in the same area",
             "examples": [
-               "Our community is very friendly.",
-               "The community helped build the park.",
-               "She’s active in the local community."
+               "Our community is small.",
+               "She helps the community.",
+               "The community built a park."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "compete",
             "role": "verb",
             "BrE": "/kəmˈpiːt/",
             "AmE": "/kəmˈpiːt/",
-            "definition": "to try to win something by being better than others",
+            "definition": "to try to win against others",
             "examples": [
-               "They compete in sports.",
-               "She competed in a race yesterday.",
-               "Teams compete for the championship."
+               "I compete in races.",
+               "She competed in the quiz.",
+               "He competes in swimming events."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "competition",
             "role": "noun",
             "BrE": "/ˌkɒmpəˈtɪʃn/",
             "AmE": "/ˌkɑːmpəˈtɪʃn/",
-            "definition": "an event in which people try to win by being the best",
+            "definition": "an event where people try to win",
             "examples": [
                "The competition was fun.",
-               "He won the singing competition.",
-               "The competition attracted many participants."
+               "She won the competition.",
+               "The competition had many players."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "complain",
             "role": "verb",
             "BrE": "/kəmˈpleɪn/",
             "AmE": "/kəmˈpleɪn/",
-            "definition": "to say that you are unhappy or not satisfied with something",
+            "definition": "to say you are not happy about something",
             "examples": [
+               "Don’t complain!",
                "She complained about the food.",
-               "He complained to the manager.",
-               "They complained about the noisy neighbors."
+               "He complained to the manager."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "completely",
             "role": "adverb",
             "BrE": "/kəmˈpliːtli/",
             "AmE": "/kəmˈpliːtli/",
-            "definition": "in every way; totally",
+            "definition": "totally or in every way",
             "examples": [
                "I’m completely tired.",
-               "The room was completely empty.",
-               "She completely forgot the meeting."
+               "She completely forgot the time.",
+               "The room was completely dark."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "condition",
             "role": "noun",
             "BrE": "/kənˈdɪʃn/",
             "AmE": "/kənˈdɪʃn/",
-            "definition": "the state that something is in",
+            "definition": "the state something or someone is in",
             "examples": [
-               "The car is in good condition.",
-               "His health condition is improving.",
-               "The house was in poor condition."
+               "The car’s condition is good.",
+               "Her health condition is better.",
+               "The house is in bad condition."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "conference",
             "role": "noun",
             "BrE": "/ˈkɒnfərəns/",
             "AmE": "/ˈkɑːnfərəns/",
-            "definition": "a large meeting where people discuss ideas or work",
+            "definition": "a large meeting for discussion",
             "examples": [
-               "She went to a conference.",
-               "The conference was about science.",
-               "Experts spoke at the annual conference."
+               "I attended a conference.",
+               "She spoke at the conference.",
+               "The conference was about science."
             ]
          },
          {
-            "id": 17,
+            "id": 18,
             "word": "connect",
             "role": "verb",
             "BrE": "/kəˈnekt/",
             "AmE": "/kəˈnekt/",
-            "definition": "to join two things or places together",
+            "definition": "to join things together",
             "examples": [
-               "Connect the cables now.",
-               "This road connects two towns.",
-               "The app connects users worldwide."
+               "Connect the wires.",
+               "She connected the printer.",
+               "He connected the phone to Wi-Fi."
             ]
          },
          {
-            "id": 17,
+            "id": 19,
             "word": "connected",
             "role": "adjective",
             "BrE": "/kəˈnektɪd/",
             "AmE": "/kəˈnektɪd/",
-            "definition": "joined or linked to something",
+            "definition": "joined together or related",
             "examples": [
-               "The towns are connected.",
-               "My phone is connected to Wi-Fi.",
-               "The cities are connected by trains."
+               "The rooms are connected.",
+               "She is connected to the team.",
+               "The cities are connected by train."
             ]
          },
          {
-            "id": 17,
+            "id": 19,
             "word": "consider",
             "role": "verb",
             "BrE": "/kənˈsɪdə(r)/",
             "AmE": "/kənˈsɪdər/",
-            "definition": "to think about something carefully before deciding",
+            "definition": "to think carefully about something",
             "examples": [
-               "I’ll consider your idea.",
-               "She considered moving to a new city.",
-               "He considered all options before choosing."
+               "I’ll consider it.",
+               "She considered the offer.",
+               "He considered moving to London."
             ]
          },
          {
-            "id": 18,
+            "id": 19,
             "word": "contain",
             "role": "verb",
             "BrE": "/kənˈteɪn/",
             "AmE": "/kənˈteɪn/",
-            "definition": "to have something inside or as part of it",
+            "definition": "to have something inside",
             "examples": [
-               "This box contains books.",
-               "The drink contains sugar.",
-               "The report contains useful information."
+               "The box contains toys.",
+               "This drink contains sugar.",
+               "The bag contains her books."
             ]
          },
          {
-            "id": 18,
+            "id": 19,
             "word": "context",
             "role": "noun",
             "BrE": "/ˈkɒntekst/",
             "AmE": "/ˈkɑːntekst/",
             "definition": "the situation in which something happens",
             "examples": [
-               "The word depends on context.",
-               "She explained it in context.",
-               "Understanding the context helps learning."
+               "The context is important.",
+               "She explained the context.",
+               "The context of the story was clear."
             ]
          },
          {
-            "id": 18,
+            "id": 19,
             "word": "continent",
             "role": "noun",
             "BrE": "/ˈkɒntɪnənt/",
             "AmE": "/ˈkɑːntɪnənt/",
-            "definition": "one of the large land masses of the Earth, such as Africa or Asia",
+            "definition": "a large land mass, like Europe or Asia",
             "examples": [
                "Africa is a continent.",
-               "He travelled across the continent.",
-               "The continent of Europe is diverse."
+               "She visited another continent.",
+               "The continent has many countries."
             ]
          },
          {
-            "id": 18,
+            "id": 19,
             "word": "continue",
             "role": "verb",
             "BrE": "/kənˈtɪnjuː/",
             "AmE": "/kənˈtɪnjuː/",
-            "definition": "to keep doing something without stopping",
+            "definition": "to keep doing something",
             "examples": [
-               "Continue writing, please.",
-               "She continued her studies abroad.",
-               "The rain continued all afternoon."
+               "Continue your work.",
+               "She continued studying late.",
+               "He continued to play after the rain."
             ]
          },
          {
-            "id": 18,
+            "id": 19,
+            "word": "control",
+            "role": "noun",
+            "BrE": "/kənˈtrəʊl/",
+            "AmE": "/kənˈtroʊl/",
+            "definition": "the power to make decisions",
+            "examples": [
+               "She has control.",
+               "He lost control of the car.",
+               "The teacher has control of the class."
+            ]
+         },
+         {
+            "id": 19,
             "word": "control",
             "role": "verb",
             "BrE": "/kənˈtrəʊl/",
             "AmE": "/kənˈtroʊl/",
-            "definition": "to have power over something or to manage it",
+            "definition": "to have power over something",
             "examples": [
-               "She controls her anger well.",
-               "He controls the company’s budget.",
-               "They tried to control the fire."
+               "Control the dog.",
+               "She controls her emotions.",
+               "He controlled the meeting well."
             ]
          },
          {
-            "id": 18,
+            "id": 19,
             "word": "cook",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/kʊk/",
             "AmE": "/kʊk/",
-            "definition": "to prepare food by heating it",
+            "definition": "a person who prepares food",
             "examples": [
-               "I cook dinner every night.",
-               "She cooked a delicious meal.",
-               "He’s learning to cook Italian food."
+               "The cook is busy.",
+               "She is a great cook.",
+               "The cook made a tasty meal."
             ]
          },
          {
-            "id": 18,
+            "id": 19,
             "word": "cooker",
             "role": "noun",
             "BrE": "/ˈkʊkə(r)/",
             "AmE": "/ˈkʊkər/",
-            "definition": "a machine used for cooking food",
+            "definition": "a device used for cooking food",
             "examples": [
-               "The cooker is in the kitchen.",
-               "She bought a new electric cooker.",
-               "The cooker broke down yesterday."
+               "The cooker is new.",
+               "She used the cooker for soup.",
+               "The cooker broke yesterday."
             ]
          },
          {
-            "id": 18,
+            "id": 20,
             "word": "copy",
             "role": "noun",
             "BrE": "/ˈkɒpi/",
             "AmE": "/ˈkɑːpi/",
-            "definition": "something that is made to be the same as another thing",
+            "definition": "something made to be like another thing",
             "examples": [
-               "I need a copy of this book.",
+               "I need a copy.",
                "She made a copy of the letter.",
-               "He kept a copy of the contract."
+               "The copy of the book is cheap."
             ]
          },
          {
-            "id": 18,
+            "id": 20,
+            "word": "copy",
+            "role": "verb",
+            "BrE": "/ˈkɒpi/",
+            "AmE": "/ˈkɑːpi/",
+            "definition": "to make something exactly like another thing",
+            "examples": [
+               "Copy this picture.",
+               "She copied the homework.",
+               "He copied the design perfectly."
+            ]
+         },
+         {
+            "id": 20,
             "word": "corner",
             "role": "noun",
             "BrE": "/ˈkɔːnə(r)/",
             "AmE": "/ˈkɔːrnər/",
-            "definition": "a place where two lines, roads, or edges meet",
+            "definition": "the point where two lines or surfaces meet",
             "examples": [
                "The shop is on the corner.",
-               "Turn left at the corner.",
-               "The table stood in the corner."
+               "She stood in the corner.",
+               "The ball rolled to the corner."
             ]
          },
          {
-            "id": 18,
+            "id": 20,
             "word": "correctly",
             "role": "adverb",
             "BrE": "/kəˈrektli/",
             "AmE": "/kəˈrektli/",
-            "definition": "in a way that is right or accurate",
+            "definition": "in a way that is right",
             "examples": [
-               "She answered correctly.",
-               "He spelled the word correctly.",
-               "Follow the instructions correctly."
+               "Answer correctly.",
+               "She spelled it correctly.",
+               "He correctly solved the puzzle."
             ]
          },
          {
-            "id": 19,
+            "id": 20,
             "word": "count",
             "role": "verb",
             "BrE": "/kaʊnt/",
             "AmE": "/kaʊnt/",
-            "definition": "to calculate the total number of things or people",
+            "definition": "to calculate the number of something",
             "examples": [
-               "Count the books on the shelf.",
-               "She counted the money carefully.",
-               "They counted the votes after the election."
+               "Count the books.",
+               "She counted her money.",
+               "He counted the people in the room."
             ]
          },
          {
-            "id": 19,
+            "id": 20,
             "word": "couple",
             "role": "noun",
             "BrE": "/ˈkʌpl/",
             "AmE": "/ˈkʌpl/",
-            "definition": "two people who are married or in a relationship",
+            "definition": "two people who are together",
             "examples": [
-               "The couple danced together.",
-               "A young couple moved next door.",
-               "The couple celebrated their anniversary."
+               "The couple is happy.",
+               "A couple danced at the party.",
+               "The couple bought a new house."
             ]
          },
          {
-            "id": 19,
+            "id": 20,
             "word": "cover",
             "role": "verb",
             "BrE": "/ˈkʌvə(r)/",
             "AmE": "/ˈkʌvər/",
-            "definition": "to put something over or on top of something else",
+            "definition": "to put something over another thing",
             "examples": [
-               "Cover the food with a plate.",
-               "She covered the table with a cloth.",
-               "Snow covered the ground completely."
+               "Cover the food.",
+               "She covered the book with paper.",
+               "He covered his face with a scarf."
             ]
          },
          {
-            "id": 19,
+            "id": 20,
             "word": "crazy",
             "role": "adjective",
             "BrE": "/ˈkreɪzi/",
             "AmE": "/ˈkreɪzi/",
             "definition": "very strange or not sensible",
             "examples": [
-               "That’s a crazy idea!",
-               "He has a crazy sense of humor.",
-               "Her crazy plan actually worked."
-            ]
-         },
-         {
-            "id": 19,
-            "word": "creative",
-            "role": "adjective",
-            "BrE": "/kriˈeɪtɪv/",
-            "AmE": "/kriˈeɪtɪv/",
-            "definition": "able to produce new ideas or things",
-            "examples": [
-               "She’s a creative artist.",
-               "His creative writing is excellent.",
-               "The team found a creative solution."
-            ]
-         },
-         {
-            "id": 19,
-            "word": "credit",
-            "role": "noun",
-            "BrE": "/ˈkredɪt/",
-            "AmE": "/ˈkredɪt/",
-            "definition": "a way of buying something now and paying for it later",
-            "examples": [
-               "I used credit to buy a phone.",
-               "She has a credit card.",
-               "The store offers credit to customers."
-            ]
-         },
-         {
-            "id": 19,
-            "word": "crime",
-            "role": "noun",
-            "BrE": "/kraɪm/",
-            "AmE": "/kraɪm/",
-            "definition": "an act that breaks the law",
-            "examples": [
-               "Stealing is a crime.",
-               "Crime is a problem in the city.",
-               "The police are fighting crime."
-            ]
-         },
-         {
-            "id": 19,
-            "word": "criminal",
-            "role": "noun",
-            "BrE": "/ˈkrɪmɪnl/",
-            "AmE": "/ˈkrɪmɪnl/",
-            "definition": "a person who has committed a crime",
-            "examples": [
-               "The criminal was caught.",
-               "He’s a dangerous criminal.",
-               "The police arrested the criminal."
-            ]
-         },
-         {
-            "id": 19,
-            "word": "cross",
-            "role": "verb",
-            "BrE": "/krɒs/",
-            "AmE": "/krɔːs/",
-            "definition": "to go from one side of something to the other",
-            "examples": [
-               "Cross the street carefully.",
-               "She crossed the bridge to the park.",
-               "They crossed the river by boat."
-            ]
-         },
-         {
-            "id": 19,
-            "word": "crowd",
-            "role": "noun",
-            "BrE": "/kraʊd/",
-            "AmE": "/kraʊd/",
-            "definition": "a large group of people in one place",
-            "examples": [
-               "A crowd watched the game.",
-               "The crowd cheered loudly.",
-               "The crowd gathered for the concert."
+               "That’s a crazy idea.",
+               "She wore a crazy hat.",
+               "His crazy plan actually worked."
             ]
          },
          {
             "id": 20,
+            "word": "creative",
+            "role": "adjective",
+            "BrE": "/kriˈeɪtɪv/",
+            "AmE": "/kriˈeɪtɪv/",
+            "definition": "able to create new ideas or things",
+            "examples": [
+               "She is very creative.",
+               "His creative story was fun.",
+               "The creative design won a prize."
+            ]
+         },
+         {
+            "id": 20,
+            "word": "credit",
+            "role": "noun",
+            "BrE": "/ˈkredɪt/",
+            "AmE": "/ˈkredɪt/",
+            "definition": "a way to buy now and pay later",
+            "examples": [
+               "I use credit to pay.",
+               "She bought it on credit.",
+               "The shop accepts credit cards."
+            ]
+         },
+         {
+            "id": 21,
+            "word": "crime",
+            "role": "noun",
+            "BrE": "/kraɪm/",
+            "AmE": "/kraɪm/",
+            "definition": "an illegal act",
+            "examples": [
+               "Crime is bad.",
+               "She reported a crime.",
+               "The crime happened at night."
+            ]
+         },
+         {
+            "id": 21,
+            "word": "criminal",
+            "role": "noun",
+            "BrE": "/ˈkrɪmɪnl/",
+            "AmE": "/ˈkrɪmɪnl/",
+            "definition": "a person who commits a crime",
+            "examples": [
+               "The criminal was caught.",
+               "She saw the criminal run.",
+               "The criminal stole her bag."
+            ]
+         },
+         {
+            "id": 21,
+            "word": "cross",
+            "role": "noun",
+            "BrE": "/krɒs/",
+            "AmE": "/krɔːs/",
+            "definition": "a mark like an X or +",
+            "examples": [
+               "Mark a cross here.",
+               "She drew a cross on the map.",
+               "The cross shows the wrong answer."
+            ]
+         },
+         {
+            "id": 21,
+            "word": "cross",
+            "role": "verb",
+            "BrE": "/krɒs/",
+            "AmE": "/krɔːs/",
+            "definition": "to go from one side to the other",
+            "examples": [
+               "Cross the road.",
+               "She crossed the bridge.",
+               "He crossed the river by boat."
+            ]
+         },
+         {
+            "id": 21,
+            "word": "crowd",
+            "role": "noun",
+            "BrE": "/kraʊd/",
+            "AmE": "/kraʊd/",
+            "definition": "a large group of people",
+            "examples": [
+               "The crowd is big.",
+               "She joined the crowd.",
+               "The crowd cheered for the team."
+            ]
+         },
+         {
+            "id": 21,
             "word": "crowded",
             "role": "adjective",
             "BrE": "/ˈkraʊdɪd/",
             "AmE": "/ˈkraʊdɪd/",
             "definition": "full of people",
             "examples": [
-               "The bus was crowded.",
-               "The crowded market was noisy.",
-               "The room was too crowded to move."
+               "The bus is crowded.",
+               "The shop was crowded today.",
+               "The crowded room was noisy."
             ]
          },
          {
-            "id": 20,
+            "id": 21,
             "word": "cry",
             "role": "verb",
             "BrE": "/kraɪ/",
             "AmE": "/kraɪ/",
-            "definition": "to produce tears from your eyes, usually because you are sad",
+            "definition": "to produce tears when sad or hurt",
             "examples": [
-               "The baby cried loudly.",
-               "She cried when she heard the news.",
-               "He cried during the sad movie."
+               "The baby cries.",
+               "She cried during the film.",
+               "He cried when he heard the news."
             ]
          },
          {
-            "id": 20,
+            "id": 21,
             "word": "cupboard",
             "role": "noun",
             "BrE": "/ˈkʌbəd/",
             "AmE": "/ˈkʌbərd/",
-            "definition": "a piece of furniture or a small space used for storing things",
+            "definition": "a piece of furniture for storage",
             "examples": [
-               "The plates are in the cupboard.",
-               "She opened the kitchen cupboard.",
-               "The cupboard was full of clothes."
+               "The cupboard is full.",
+               "She opened the cupboard.",
+               "The cupboard holds all the plates."
             ]
          },
          {
-            "id": 20,
+            "id": 21,
             "word": "curly",
             "role": "adjective",
             "BrE": "/ˈkɜːli/",
             "AmE": "/ˈkɜːrli/",
-            "definition": "having curls or a curved shape",
+            "definition": "having curls or waves",
             "examples": [
-               "She has curly hair.",
-               "His curly hair is hard to manage.",
-               "The plant has curly leaves."
+               "Her hair is curly.",
+               "He likes her curly hair.",
+               "The curly ribbon looked nice."
             ]
          },
          {
-            "id": 20,
+            "id": 21,
+            "word": "cycle",
+            "role": "noun",
+            "BrE": "/ˈsaɪkl/",
+            "AmE": "/ˈsaɪkl/",
+            "definition": "a bicycle",
+            "examples": [
+               "I have a cycle.",
+               "She rides her cycle to school.",
+               "The cycle has a new tire."
+            ]
+         },
+         {
+            "id": 22,
             "word": "cycle",
             "role": "verb",
             "BrE": "/ˈsaɪkl/",
             "AmE": "/ˈsaɪkl/",
             "definition": "to ride a bicycle",
             "examples": [
-               "I cycle to school.",
-               "She cycled through the park.",
-               "They cycle to stay healthy."
+               "I cycle to work.",
+               "She cycles every morning.",
+               "He cycled across the park."
             ]
          },
          {
-            "id": 20,
+            "id": 22,
             "word": "daily",
             "role": "adjective",
             "BrE": "/ˈdeɪli/",
             "AmE": "/ˈdeɪli/",
-            "definition": "happening or done every day",
+            "definition": "happening every day",
             "examples": [
                "I read the daily news.",
-               "She has a daily exercise routine.",
-               "The daily meetings are tiring."
+               "She has a daily routine.",
+               "Daily exercise is good for you."
             ]
          },
          {
-            "id": 20,
+            "id": 22,
             "word": "danger",
             "role": "noun",
             "BrE": "/ˈdeɪndʒə(r)/",
             "AmE": "/ˈdeɪndʒər/",
-            "definition": "the possibility of something bad happening",
+            "definition": "the possibility of harm",
             "examples": [
-               "The sign warned of danger.",
-               "There’s danger in crossing here.",
-               "The danger of fire was high."
+               "There’s danger here.",
+               "The danger was the storm.",
+               "He escaped the danger quickly."
             ]
          },
          {
-            "id": 20,
+            "id": 22,
             "word": "dark",
-            "role": "adjective",
+            "role": "noun",
             "BrE": "/dɑːk/",
             "AmE": "/dɑːrk/",
-            "definition": "having little or no light",
+            "definition": "the absence of light",
             "examples": [
-               "The room was dark.",
-               "It’s getting dark outside.",
-               "The dark forest was scary."
+               "I’m scared of the dark.",
+               "The dark made it hard to see.",
+               "She waited until the dark was gone."
             ]
          },
          {
-            "id": 20,
+            "id": 22,
             "word": "data",
             "role": "noun",
             "BrE": "/ˈdeɪtə/",
             "AmE": "/ˈdeɪtə/",
-            "definition": "facts or information used for making decisions",
+            "definition": "facts or information",
             "examples": [
-               "The data shows sales increased.",
-               "She analyzed the data carefully.",
-               "We need more data for the report."
+               "We need data.",
+               "She collects data for school.",
+               "The data shows the results."
             ]
          },
          {
-            "id": 20,
+            "id": 22,
             "word": "dead",
             "role": "adjective",
             "BrE": "/ded/",
@@ -2685,233 +2904,233 @@ export default function Lessons({ params }) {
             "definition": "no longer alive",
             "examples": [
                "The plant is dead.",
-               "They found a dead bird.",
-               "The dead tree was removed."
+               "She found a dead bird.",
+               "The dead tree fell over."
             ]
          },
-            {
-            "id": 21,
+         {
+            "id": 22,
             "word": "deal",
-            "role": "noun",
+            "role": "verb",
             "BrE": "/diːl/",
             "AmE": "/diːl/",
-            "definition": "an agreement, especially in business, on particular conditions",
+            "definition": "to give out or handle something",
             "examples": [
-               "We made a deal to share.",
-               "The deal saved us money.",
-               "They signed a deal with the company."
+               "Deal the cards.",
+               "She dealt with the problem.",
+               "He deals with customers daily."
             ]
          },
          {
-            "id": 21,
+            "id": 22,
             "word": "dear",
-            "role": "adjective",
+            "role": "exclamation",
             "BrE": "/dɪə(r)/",
             "AmE": "/dɪr/",
-            "definition": "loved or valued very much",
+            "definition": "used to express surprise or worry",
             "examples": [
-               "She’s my dear friend.",
-               "His dear dog ran away.",
-               "Her dear memories made her smile."
+               "Dear, it’s late!",
+               "Oh dear, I forgot my keys!",
+               "Dear, what happened to your shirt?"
             ]
          },
          {
-            "id": 21,
+            "id": 22,
             "word": "death",
             "role": "noun",
             "BrE": "/deθ/",
             "AmE": "/deθ/",
             "definition": "the end of life",
             "examples": [
-               "The death of the tree was sad.",
-               "His death shocked everyone.",
-               "The death rate decreased this year."
+               "Death is sad.",
+               "The death was unexpected.",
+               "Her death shocked the town."
             ]
          },
          {
-            "id": 21,
+            "id": 22,
             "word": "decision",
             "role": "noun",
             "BrE": "/dɪˈsɪʒn/",
             "AmE": "/dɪˈsɪʒn/",
-            "definition": "a choice you make after thinking",
+            "definition": "a choice made after thinking",
             "examples": [
-               "I made a decision to stay.",
-               "Her decision was to study abroad.",
-               "The decision affected the whole team."
+               "I made a decision.",
+               "Her decision was to stay.",
+               "The decision to move was hard."
             ]
          },
          {
-            "id": 21,
+            "id": 23,
             "word": "deep",
             "role": "adjective",
             "BrE": "/diːp/",
             "AmE": "/diːp/",
             "definition": "going far down from the surface",
             "examples": [
-               "The water is deep here.",
+               "The water is deep.",
                "She took a deep breath.",
-               "The deep ocean is full of life."
+               "The deep pool was cold."
             ]
          },
          {
-            "id": 21,
+            "id": 23,
             "word": "definitely",
             "role": "adverb",
             "BrE": "/ˈdefɪnətli/",
             "AmE": "/ˈdefɪnətli/",
-            "definition": "without any doubt; certainly",
+            "definition": "without any doubt",
             "examples": [
-               "I’ll definitely come tomorrow.",
+               "I’ll definitely come.",
                "She definitely knows the answer.",
-               "The plan will definitely succeed."
+               "He definitely won the game."
             ]
          },
          {
-            "id": 21,
+            "id": 23,
             "word": "degree",
             "role": "noun",
             "BrE": "/dɪˈɡriː/",
             "AmE": "/dɪˈɡriː/",
-            "definition": "a qualification given for completing a university course",
+            "definition": "a qualification from a university",
             "examples": [
-               "She has a degree in biology.",
-               "He earned a degree last year.",
-               "Her degree opened new job opportunities."
+               "She has a degree.",
+               "He earned a degree in science.",
+               "Her degree helped her get a job."
             ]
          },
          {
-            "id": 21,
+            "id": 23,
             "word": "dentist",
             "role": "noun",
             "BrE": "/ˈdentɪst/",
             "AmE": "/ˈdentɪst/",
-            "definition": "a person whose job is to treat teeth",
+            "definition": "a person who treats teeth",
             "examples": [
-               "I visit the dentist yearly.",
-               "The dentist fixed her tooth.",
-               "The dentist recommended brushing twice daily."
+               "I visit the dentist.",
+               "The dentist checked my teeth.",
+               "She went to the dentist today."
             ]
          },
          {
-            "id": 21,
+            "id": 23,
             "word": "department",
             "role": "noun",
             "BrE": "/dɪˈpɑːtmənt/",
             "AmE": "/dɪˈpɑːrtmənt/",
-            "definition": "a section of a large organization, such as a company or university",
+            "definition": "a section of an organization",
             "examples": [
-               "She works in the sales department.",
-               "The department organized a meeting.",
-               "The history department is very popular."
+               "I work in the department.",
+               "She leads the sales department.",
+               "The department handles complaints."
             ]
          },
          {
-            "id": 21,
+            "id": 23,
             "word": "depend",
             "role": "verb",
             "BrE": "/dɪˈpend/",
             "AmE": "/dɪˈpend/",
             "definition": "to rely on someone or something",
             "examples": [
-               "I depend on my parents.",
-               "The plan depends on the weather.",
-               "Her success depends on hard work."
+               "I depend on you.",
+               "She depends on her phone.",
+               "He depends on his parents for money."
             ]
          },
          {
-            "id": 22,
+            "id": 23,
             "word": "desert",
             "role": "noun",
             "BrE": "/ˈdezət/",
             "AmE": "/ˈdezərt/",
-            "definition": "a large area of land with little water and few plants",
+            "definition": "a large area with little rain",
             "examples": [
-               "The desert is very hot.",
-               "Camels live in the desert.",
-               "The Sahara Desert is vast."
+               "The desert is hot.",
+               "She crossed the desert.",
+               "The desert has little water."
             ]
          },
          {
-            "id": 22,
+            "id": 23,
             "word": "designer",
             "role": "noun",
             "BrE": "/dɪˈzaɪnə(r)/",
             "AmE": "/dɪˈzaɪnər/",
-            "definition": "a person who plans how something will look",
+            "definition": "a person who creates plans for things",
             "examples": [
+               "He’s a designer.",
                "She’s a fashion designer.",
-               "The designer created a new logo.",
-               "A famous designer made her dress."
+               "The designer made a new dress."
             ]
          },
          {
-            "id": 22,
+            "id": 23,
             "word": "destroy",
             "role": "verb",
             "BrE": "/dɪˈstrɔɪ/",
             "AmE": "/dɪˈstrɔɪ/",
-            "definition": "to damage something so badly that it cannot be used",
+            "definition": "to damage something completely",
             "examples": [
-               "The fire destroyed the house.",
-               "They destroyed the old bridge.",
-               "The storm destroyed many crops."
+               "Fire destroyed the house.",
+               "She destroyed the old photo.",
+               "The storm destroyed the garden."
             ]
          },
          {
-            "id": 22,
+            "id": 23,
             "word": "detective",
             "role": "noun",
             "BrE": "/dɪˈtektɪv/",
             "AmE": "/dɪˈtektɪv/",
-            "definition": "a person, often a police officer, who investigates crimes",
+            "definition": "a person who investigates crimes",
             "examples": [
-               "The detective solved the case.",
-               "She reads detective stories.",
-               "The detective found new clues."
+               "The detective is smart.",
+               "She’s a famous detective.",
+               "The detective solved the case."
             ]
          },
          {
-            "id": 22,
+            "id": 24,
             "word": "develop",
             "role": "verb",
             "BrE": "/dɪˈveləp/",
             "AmE": "/dɪˈveləp/",
-            "definition": "to grow or change into a more advanced form",
+            "definition": "to grow or improve",
             "examples": [
-               "The baby is developing fast.",
-               "She developed new skills.",
-               "The company developed a new product."
+               "The town will develop.",
+               "She developed her skills.",
+               "He developed a new app."
             ]
          },
          {
-            "id": 22,
+            "id": 24,
             "word": "device",
             "role": "noun",
             "BrE": "/dɪˈvaɪs/",
             "AmE": "/dɪˈvaɪs/",
-            "definition": "a tool or piece of equipment made for a particular purpose",
+            "definition": "a tool or piece of equipment",
             "examples": [
-               "This device saves energy.",
-               "Her device tracks steps daily.",
-               "The new device improves safety."
+               "This device is new.",
+               "She uses a device to count steps.",
+               "The device helps with cooking."
             ]
          },
          {
-            "id": 22,
+            "id": 24,
             "word": "diary",
             "role": "noun",
             "BrE": "/ˈdaɪəri/",
             "AmE": "/ˈdaɪəri/",
-            "definition": "a book where you write about your life or plans",
+            "definition": "a book for recording daily events",
             "examples": [
-               "I write in my diary daily.",
-               "Her diary is full of secrets.",
-               "The diary helped her plan tasks."
+               "I write in my diary.",
+               "She keeps a daily diary.",
+               "Her diary is full of stories."
             ]
          },
          {
-            "id": 22,
+            "id": 24,
             "word": "differently",
             "role": "adverb",
             "BrE": "/ˈdɪfrəntli/",
@@ -2919,194 +3138,194 @@ export default function Lessons({ params }) {
             "definition": "in a way that is not the same",
             "examples": [
                "She thinks differently.",
-               "He dresses differently from others.",
-               "They solved the problem differently."
+               "He acts differently now.",
+               "They solved it differently."
             ]
          },
          {
-            "id": 22,
+            "id": 24,
             "word": "digital",
             "role": "adjective",
             "BrE": "/ˈdɪdʒɪtl/",
             "AmE": "/ˈdɪdʒɪtl/",
-            "definition": "using electronic technology to store or show information",
+            "definition": "using electronic signals",
             "examples": [
                "I have a digital watch.",
-               "The digital camera takes great photos.",
-               "Digital books are popular now."
+               "She uses a digital camera.",
+               "The digital clock is accurate."
             ]
          },
          {
-            "id": 22,
+            "id": 24,
             "word": "direct",
             "role": "adjective",
-            "BrE": "/dɪˈrekt/",
-            "AmE": "/dɪˈrekt/",
-            "definition": "going straight from one place to another without stopping",
+            "BrE": "/dəˈrekt/",
+            "AmE": "/dəˈrekt/",
+            "definition": "going straight to a place",
             "examples": [
                "Take the direct route.",
-               "She booked a direct flight.",
-               "The direct train saves time."
+               "She took a direct flight.",
+               "The direct path is shorter."
             ]
          },
          {
-            "id": 23,
+            "id": 24,
             "word": "direction",
             "role": "noun",
-            "BrE": "/dɪˈrekʃn/",
-            "AmE": "/dɪˈrekʃn/",
-            "definition": "the way something or someone moves or faces",
+            "BrE": "/dəˈrekʃn/",
+            "AmE": "/dəˈrekʃn/",
+            "definition": "the way something or someone moves",
             "examples": [
-               "Which direction is the park?",
-               "Follow the direction of the arrow.",
-               "The wind changed direction suddenly."
+               "Which direction is it?",
+               "She walked in that direction.",
+               "The direction of the wind changed."
             ]
          },
          {
-            "id": 23,
+            "id": 24,
             "word": "director",
             "role": "noun",
-            "BrE": "/dɪˈrektə(r)/",
-            "AmE": "/dɪˈrektər/",
-            "definition": "a person who manages a company or an important activity",
+            "BrE": "/dəˈrektə(r)/",
+            "AmE": "/dəˈrektər/",
+            "definition": "a person who manages or directs",
             "examples": [
-               "He’s the director of the school.",
-               "The director led the project.",
-               "She’s a film director."
+               "He’s the director.",
+               "She’s a film director.",
+               "The director led the meeting."
             ]
          },
          {
-            "id": 23,
+            "id": 24,
             "word": "disagree",
             "role": "verb",
             "BrE": "/ˌdɪsəˈɡriː/",
             "AmE": "/ˌdɪsəˈɡriː/",
-            "definition": "to have a different opinion from someone else",
+            "definition": "to have a different opinion",
             "examples": [
                "I disagree with you.",
-               "They disagreed about the plan.",
-               "She disagrees with her boss often."
+               "She disagrees with her boss.",
+               "They disagreed about the plan."
             ]
          },
          {
-            "id": 23,
+            "id": 24,
             "word": "disappear",
             "role": "verb",
             "BrE": "/ˌdɪsəˈpɪə(r)/",
             "AmE": "/ˌdɪsəˈpɪr/",
             "definition": "to become impossible to see or find",
             "examples": [
-               "The cat disappeared suddenly.",
-               "Her keys disappeared from the table.",
-               "The fog disappeared by noon."
+               "The cat disappeared.",
+               "Her keys disappeared again.",
+               "The sun disappeared behind clouds."
             ]
          },
          {
-            "id": 23,
+            "id": 25,
             "word": "disaster",
             "role": "noun",
             "BrE": "/dɪˈzɑːstə(r)/",
             "AmE": "/dɪˈzæstər/",
-            "definition": "a very bad event that causes harm or damage",
+            "definition": "a sudden event causing great damage",
             "examples": [
                "The flood was a disaster.",
-               "The disaster affected many people.",
-               "It was a disaster for the team."
+               "She described the fire as a disaster.",
+               "The disaster destroyed the village."
             ]
          },
          {
-            "id": 23,
+            "id": 25,
             "word": "discover",
             "role": "verb",
             "BrE": "/dɪˈskʌvə(r)/",
             "AmE": "/dɪˈskʌvər/",
-            "definition": "to find or learn something new",
+            "definition": "to find something for the first time",
             "examples": [
-               "I discovered a new park.",
-               "She discovered a great book.",
-               "Scientists discovered a new species."
+               "I discovered a book.",
+               "She discovered a new park.",
+               "He discovered an old letter."
             ]
          },
          {
-            "id": 23,
+            "id": 25,
             "word": "discovery",
             "role": "noun",
             "BrE": "/dɪˈskʌvəri/",
             "AmE": "/dɪˈskʌvəri/",
-            "definition": "the act of finding or learning something new",
+            "definition": "the act of finding something new",
             "examples": [
-               "The discovery was exciting.",
-               "Her discovery changed science.",
-               "The discovery of gold caused a rush."
+               "It’s a great discovery.",
+               "Her discovery was a treasure.",
+               "The discovery changed science."
             ]
          },
          {
-            "id": 23,
+            "id": 25,
             "word": "discussion",
             "role": "noun",
             "BrE": "/dɪˈskʌʃn/",
             "AmE": "/dɪˈskʌʃn/",
-            "definition": "the act of talking about something with others",
+            "definition": "a conversation about something",
             "examples": [
-               "We had a discussion about school.",
-               "The discussion was very useful.",
-               "The team held a long discussion."
+               "We had a discussion.",
+               "The discussion was about school.",
+               "Their discussion lasted an hour."
             ]
          },
          {
-            "id": 23,
+            "id": 25,
             "word": "disease",
             "role": "noun",
             "BrE": "/dɪˈziːz/",
             "AmE": "/dɪˈziːz/",
-            "definition": "an illness affecting humans, animals, or plants",
+            "definition": "an illness caused by infection or poor health",
             "examples": [
-               "The disease made her weak.",
-               "This disease spreads quickly.",
-               "Doctors are studying the disease."
+               "The disease is serious.",
+               "She caught a disease abroad.",
+               "The disease spread quickly."
             ]
          },
          {
-            "id": 23,
+            "id": 25,
             "word": "distance",
             "role": "noun",
             "BrE": "/ˈdɪstəns/",
             "AmE": "/ˈdɪstəns/",
             "definition": "the amount of space between two places",
             "examples": [
-               "The distance to school is short.",
+               "The distance is short.",
                "She ran a long distance.",
-               "The distance between cities is 200 miles."
+               "The distance to the city is 10 miles."
             ]
          },
          {
-            "id": 24,
+            "id": 25,
             "word": "divorced",
             "role": "adjective",
             "BrE": "/dɪˈvɔːst/",
             "AmE": "/dɪˈvɔːrst/",
             "definition": "no longer married",
             "examples": [
+               "He is divorced.",
                "Her parents are divorced.",
-               "He’s a divorced father of two.",
                "The divorced couple remained friends."
             ]
          },
          {
-            "id": 24,
+            "id": 25,
             "word": "document",
             "role": "noun",
             "BrE": "/ˈdɒkjumənt/",
             "AmE": "/ˈdɑːkjumənt/",
-            "definition": "an official paper or file with information",
+            "definition": "an official paper or record",
             "examples": [
-               "I signed the document.",
-               "The document is on my desk.",
-               "She submitted an important document."
+               "I need a document.",
+               "She signed the document.",
+               "The document proves ownership."
             ]
          },
          {
-            "id": 24,
+            "id": 25,
             "word": "double",
             "role": "adjective",
             "BrE": "/ˈdʌbl/",
@@ -3114,558 +3333,662 @@ export default function Lessons({ params }) {
             "definition": "twice as much or as many",
             "examples": [
                "I want a double coffee.",
-               "The room has a double bed.",
-               "Her salary doubled this year."
+               "She has a double room.",
+               "The double portion was too much."
             ]
          },
          {
-            "id": 24,
+            "id": 25,
+            "word": "double",
+            "role": "determiner",
+            "BrE": "/ˈdʌbl/",
+            "AmE": "/ˈdʌbl/",
+            "definition": "twice the amount",
+            "examples": [
+               "Double the money.",
+               "She ate double the cake.",
+               "He paid double the price."
+            ]
+         },
+         {
+            "id": 26,
+            "word": "double",
+            "role": "pronoun",
+            "BrE": "/ˈdʌbl/",
+            "AmE": "/ˈdʌbl/",
+            "definition": "twice as much",
+            "examples": [
+               "Double is enough.",
+               "She took double of it.",
+               "Double the amount was needed."
+            ]
+         },
+         {
+            "id": 26,
+            "word": "double",
+            "role": "verb",
+            "BrE": "/ˈdʌbl/",
+            "AmE": "/ˈdʌbl/",
+            "definition": "to make something twice as big",
+            "examples": [
+               "Double the recipe.",
+               "She doubled her score.",
+               "He doubled his efforts."
+            ]
+         },
+         {
+            "id": 26,
+            "word": "download",
+            "role": "noun",
+            "BrE": "/ˈdaʊnləʊd/",
+            "AmE": "/ˈdaʊnloʊd/",
+            "definition": "a file transferred from the internet",
+            "examples": [
+               "I got a download.",
+               "She saved the download.",
+               "The download took ten minutes."
+            ]
+         },
+         {
+            "id": 26,
             "word": "download",
             "role": "verb",
-            "BrE": "/ˌdaʊnˈləʊd/",
-            "AmE": "/ˌdaʊnˈloʊd/",
-            "definition": "to copy or move data from the internet to a device",
+            "BrE": "/ˈdaʊnləʊd/",
+            "AmE": "/ˈdaʊnloʊd/",
+            "definition": "to transfer a file from the internet",
             "examples": [
-               "I download music often.",
-               "She downloaded a new app.",
-               "He downloaded the file quickly."
+               "Download this song.",
+               "She downloaded an app.",
+               "He downloaded a new game."
             ]
          },
          {
-            "id": 24,
+            "id": 26,
             "word": "downstairs",
-            "role": "adverb",
+            "role": "adjective",
             "BrE": "/ˌdaʊnˈsteəz/",
             "AmE": "/ˌdaʊnˈsterz/",
-            "definition": "to or on a lower floor of a building",
+            "definition": "on a lower floor",
             "examples": [
-               "She went downstairs to eat.",
-               "The kitchen is downstairs.",
-               "He ran downstairs to answer the door."
+               "The downstairs room is big.",
+               "She left her bag downstairs.",
+               "The downstairs kitchen is clean."
             ]
          },
          {
-            "id": 24,
+            "id": 26,
             "word": "drama",
             "role": "noun",
             "BrE": "/ˈdrɑːmə/",
-            "AmE": "/ˈdrɑːmə/",
-            "definition": "a play for the theatre, radio, or television",
+            "AmE": "/ˈdræmə/",
+            "definition": "a play or serious story",
             "examples": [
-               "I watched a drama on TV.",
-               "The drama was very exciting.",
-               "She stars in a new drama series."
+               "I like drama.",
+               "She watched a drama on TV.",
+               "The drama was about a family."
             ]
          },
          {
-            "id": 24,
+            "id": 26,
             "word": "drawing",
             "role": "noun",
             "BrE": "/ˈdrɔːɪŋ/",
             "AmE": "/ˈdrɔːɪŋ/",
-            "definition": "a picture or diagram made with a pencil or pen",
+            "definition": "a picture made with a pencil or pen",
             "examples": [
-               "Her drawing is beautiful.",
+               "Her drawing is nice.",
                "He made a drawing of a tree.",
-               "The drawing showed the house plan."
+               "The drawing won a prize."
             ]
          },
          {
-            "id": 24,
+            "id": 26,
             "word": "dream",
             "role": "noun",
             "BrE": "/driːm/",
             "AmE": "/driːm/",
-            "definition": "a series of thoughts or images that happen in your mind when you sleep",
+            "definition": "thoughts or images during sleep",
             "examples": [
-               "I had a strange dream.",
-               "Her dream was about flying.",
+               "I had a dream.",
+               "Her dream was strange.",
                "The dream felt very real."
             ]
          },
          {
-            "id": 24,
-            "word": "drive",
+            "id": 26,
+            "word": "dream",
             "role": "verb",
-            "BrE": "/draɪv/",
-            "AmE": "/draɪv/",
-            "definition": "to control a vehicle such as a car",
+            "BrE": "/driːm/",
+            "AmE": "/driːm/",
+            "definition": "to see images or thoughts while sleeping",
             "examples": [
-               "I drive to work daily.",
-               "She drives a fast car.",
-               "He learned to drive last year."
+               "I dream at night.",
+               "She dreamt of flying.",
+               "He dreamt about his old home."
             ]
          },
          {
-            "id": 24,
+            "id": 26,
+            "word": "drive",
+            "role": "noun",
+            "BrE": "/draɪv/",
+            "AmE": "/draɪv/",
+            "definition": "a trip in a car",
+            "examples": [
+               "Let’s go for a drive.",
+               "She enjoyed the long drive.",
+               "The drive to the beach was fun."
+            ]
+         },
+         {
+            "id": 27,
             "word": "driving",
             "role": "noun",
             "BrE": "/ˈdraɪvɪŋ/",
             "AmE": "/ˈdraɪvɪŋ/",
-            "definition": "the act of controlling a vehicle",
+            "definition": "the act of operating a vehicle",
             "examples": [
-               "Driving is fun for her.",
-               "Safe driving saves lives.",
-               "His driving improved with practice."
+               "Driving is fun.",
+               "She passed her driving test.",
+               "Driving in the rain is hard."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
             "word": "drop",
             "role": "verb",
             "BrE": "/drɒp/",
             "AmE": "/drɑːp/",
-            "definition": "to fall or let something fall",
+            "definition": "to let something fall",
             "examples": [
-               "The glass dropped and broke.",
-               "She dropped her book on the floor.",
-               "The temperature dropped suddenly."
+               "Don’t drop the glass.",
+               "She dropped her book.",
+               "He dropped his phone on the floor."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
             "word": "drug",
             "role": "noun",
             "BrE": "/drʌɡ/",
             "AmE": "/drʌɡ/",
-            "definition": "a medicine or substance used to treat an illness",
+            "definition": "a medicine or illegal substance",
             "examples": [
+               "I need a drug.",
                "The drug helped her pain.",
-               "This drug treats colds.",
-               "Doctors prescribed a new drug."
+               "Some drugs are dangerous."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
             "word": "dry",
             "role": "adjective",
             "BrE": "/draɪ/",
             "AmE": "/draɪ/",
-            "definition": "having no water or other liquid",
+            "definition": "having no water or liquid",
             "examples": [
-               "My clothes are dry now.",
-               "The desert is very dry.",
-               "Her dry skin needed cream."
+               "The towel is dry.",
+               "Her clothes are dry now.",
+               "The dry desert has no rain."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
+            "word": "dry",
+            "role": "verb",
+            "BrE": "/draɪ/",
+            "AmE": "/draɪ/",
+            "definition": "to remove water or liquid",
+            "examples": [
+               "Dry your hands.",
+               "She dried the dishes.",
+               "He dried his hair with a towel."
+            ]
+         },
+         {
+            "id": 27,
             "word": "earn",
             "role": "verb",
             "BrE": "/ɜːn/",
             "AmE": "/ɜːrn/",
-            "definition": "to receive money for work that you do",
+            "definition": "to get money for work",
             "examples": [
+               "I earn money.",
                "She earns a good salary.",
-               "He earns money by teaching.",
-               "They earn extra by working weekends."
+               "He earned extra cash last week."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
             "word": "earth",
             "role": "noun",
             "BrE": "/ɜːθ/",
             "AmE": "/ɜːrθ/",
             "definition": "the planet we live on",
             "examples": [
-               "The Earth is round.",
-               "We must protect the Earth.",
-               "Life on Earth is diverse."
+               "The earth is big.",
+               "She studies the earth.",
+               "The earth orbits the sun."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
             "word": "easily",
             "role": "adverb",
             "BrE": "/ˈiːzɪli/",
             "AmE": "/ˈiːzɪli/",
             "definition": "without difficulty",
             "examples": [
-               "She learns easily.",
-               "He won the game easily.",
-               "The problem was solved easily."
+               "I can do it easily.",
+               "She learns languages easily.",
+               "He easily won the race."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
             "word": "education",
             "role": "noun",
             "BrE": "/ˌedʒuˈkeɪʃn/",
             "AmE": "/ˌedʒuˈkeɪʃn/",
-            "definition": "the process of teaching and learning, usually in a school",
+            "definition": "the process of teaching and learning",
             "examples": [
-               "Education is important for all.",
-               "She studies education at university.",
-               "Good education leads to better jobs."
+               "Education is important.",
+               "She got a good education.",
+               "His education helped his career."
             ]
          },
          {
-            "id": 25,
+            "id": 27,
             "word": "effect",
             "role": "noun",
             "BrE": "/ɪˈfekt/",
             "AmE": "/ɪˈfekt/",
-            "definition": "a change that happens because of something",
+            "definition": "the result of something",
             "examples": [
+               "The effect was good.",
                "The medicine had an effect.",
-               "Her speech had a big effect.",
-               "The effect of the law was clear."
+               "Her words had a big effect."
             ]
          },
          {
-            "id": 25,
+            "id": 28,
+            "word": "either",
+            "role": "adverb",
+            "BrE": "/ˈaɪðə(r)/",
+            "AmE": "/ˈiːðər/",
+            "definition": "used after a negative to mean both",
+            "examples": [
+               "I don’t like either.",
+               "She didn’t choose either option.",
+               "He didn’t call either of us."
+            ]
+         },
+         {
+            "id": 28,
             "word": "either",
             "role": "determiner",
             "BrE": "/ˈaɪðə(r)/",
             "AmE": "/ˈiːðər/",
-            "definition": "one or the other of two things or people",
+            "definition": "one or the other of two",
             "examples": [
-               "Choose either book.",
-               "Either path leads to the park.",
-               "You can sit on either side."
+               "Either book is fine.",
+               "Choose either one.",
+               "Either path leads to the park."
             ]
          },
          {
-            "id": 25,
+            "id": 28,
+            "word": "either",
+            "role": "pronoun",
+            "BrE": "/ˈaɪðə(r)/",
+            "AmE": "/ˈiːðər/",
+            "definition": "one or the other",
+            "examples": [
+               "Either is okay.",
+               "She can take either.",
+               "Either of them can help."
+            ]
+         },
+         {
+            "id": 28,
             "word": "electric",
             "role": "adjective",
             "BrE": "/ɪˈlektrɪk/",
             "AmE": "/ɪˈlektrɪk/",
             "definition": "using or producing electricity",
             "examples": [
-               "I have an electric car.",
-               "The electric light is bright.",
-               "Electric power saves energy."
+               "It’s an electric car.",
+               "She bought an electric fan.",
+               "The electric light is bright."
             ]
          },
          {
-            "id": 26,
+            "id": 28,
             "word": "electrical",
             "role": "adjective",
             "BrE": "/ɪˈlektrɪkl/",
             "AmE": "/ɪˈlektrɪkl/",
-            "definition": "relating to electricity",
+            "definition": "related to electricity",
             "examples": [
-               "The electrical system broke.",
-               "He fixed the electrical wires.",
-               "Electrical faults caused the blackout."
+               "The electrical system failed.",
+               "She fixed the electrical wire.",
+               "The electrical fault was repaired."
             ]
          },
          {
-            "id": 26,
+            "id": 28,
             "word": "electricity",
             "role": "noun",
             "BrE": "/ɪˌlekˈtrɪsəti/",
             "AmE": "/ɪˌlekˈtrɪsəti/",
-            "definition": "a form of energy used for power or light",
+            "definition": "a form of energy used for power",
             "examples": [
-               "Electricity powers our home.",
-               "The storm cut the electricity.",
-               "Electricity bills are high."
+               "We need electricity.",
+               "The electricity went out.",
+               "Electricity powers the house."
             ]
          },
          {
-            "id": 26,
+            "id": 28,
             "word": "electronic",
             "role": "adjective",
             "BrE": "/ɪˌlekˈtrɒnɪk/",
             "AmE": "/ɪˌlekˈtrɑːnɪk/",
-            "definition": "using electronic devices or technology",
+            "definition": "using electronic technology",
             "examples": [
-               "I use an electronic dictionary.",
-               "Electronic games are fun.",
-               "The electronic system failed."
+               "It’s an electronic device.",
+               "She uses an electronic book.",
+               "The electronic game is fun."
             ]
          },
          {
-            "id": 26,
+            "id": 28,
             "word": "employ",
             "role": "verb",
             "BrE": "/ɪmˈplɔɪ/",
             "AmE": "/ɪmˈplɔɪ/",
-            "definition": "to give someone a job",
+            "definition": "to give work to someone",
             "examples": [
-               "They employ ten workers.",
+               "They employ me.",
                "She was employed as a teacher.",
-               "The company employs many engineers."
+               "The company employs many people."
             ]
          },
          {
-            "id": 26,
+            "id": 28,
             "word": "employee",
             "role": "noun",
             "BrE": "/ɪmˈplɔɪiː/",
             "AmE": "/ɪmˈplɔɪiː/",
-            "definition": "a person who works for someone else",
+            "definition": "a person who works for someone",
             "examples": [
-               "He’s a new employee.",
-               "The employee works hard.",
-               "Employees received a bonus."
+               "I’m an employee.",
+               "She’s a new employee.",
+               "The employee works in sales."
             ]
          },
          {
-            "id": 26,
+            "id": 28,
             "word": "employer",
             "role": "noun",
             "BrE": "/ɪmˈplɔɪə(r)/",
             "AmE": "/ɪmˈplɔɪər/",
-            "definition": "a person or company that pays people to work for them",
+            "definition": "a person or company that employs people",
             "examples": [
-               "Her employer is kind.",
-               "The employer offered a raise.",
+               "My employer is nice.",
+               "Her employer gave a bonus.",
                "The employer hired new staff."
             ]
          },
          {
-            "id": 26,
+            "id": 29,
             "word": "empty",
             "role": "adjective",
             "BrE": "/ˈempti/",
             "AmE": "/ˈempti/",
             "definition": "having nothing inside",
             "examples": [
-               "The bottle is empty.",
-               "The room was completely empty.",
-               "The empty box was thrown away."
+               "The box is empty.",
+               "Her glass was empty.",
+               "The empty room felt cold."
             ]
          },
          {
-            "id": 26,
+            "id": 29,
             "word": "ending",
             "role": "noun",
             "BrE": "/ˈendɪŋ/",
             "AmE": "/ˈendɪŋ/",
-            "definition": "the way a story, film, or event finishes",
+            "definition": "the way something finishes",
             "examples": [
-               "The movie has a happy ending.",
-               "The book’s ending was surprising.",
-               "The ending of the play was sad."
+               "The film’s ending was sad.",
+               "She liked the book’s ending.",
+               "The ending of the story was happy."
             ]
          },
          {
-            "id": 26,
+            "id": 29,
             "word": "energy",
             "role": "noun",
             "BrE": "/ˈenədʒi/",
             "AmE": "/ˈenərdʒi/",
-            "definition": "the power or ability to be active",
+            "definition": "the ability to do work or be active",
             "examples": [
-               "Kids have a lot of energy.",
-               "She has energy to run daily.",
-               "We need energy to finish this."
+               "I have no energy.",
+               "She’s full of energy today.",
+               "The energy in the room was high."
             ]
          },
          {
-            "id": 26,
+            "id": 29,
             "word": "engine",
             "role": "noun",
             "BrE": "/ˈendʒɪn/",
             "AmE": "/ˈendʒɪn/",
-            "definition": "a machine that produces power to make something move",
+            "definition": "a machine that powers something",
             "examples": [
                "The car’s engine is loud.",
-               "The engine stopped working.",
-               "The boat has a powerful engine."
+               "She fixed the engine.",
+               "The engine stopped working."
             ]
          },
          {
-            "id": 27,
+            "id": 29,
             "word": "engineer",
             "role": "noun",
             "BrE": "/ˌendʒɪˈnɪə(r)/",
             "AmE": "/ˌendʒɪˈnɪr/",
-            "definition": "a person who designs or builds machines, roads, or bridges",
+            "definition": "a person who designs or builds machines",
             "examples": [
-               "He’s an engineer at the factory.",
-               "The engineer designed a bridge.",
-               "Engineers fixed the machine."
+               "He’s an engineer.",
+               "She’s a skilled engineer.",
+               "The engineer built a bridge."
             ]
          },
          {
-            "id": 27,
+            "id": 29,
             "word": "enormous",
             "role": "adjective",
             "BrE": "/ɪˈnɔːməs/",
             "AmE": "/ɪˈnɔːrməs/",
-            "definition": "very large in size or amount",
+            "definition": "extremely large",
             "examples": [
-               "The elephant is enormous.",
-               "She has an enormous house.",
-               "The enormous crowd cheered loudly."
+               "The house is enormous.",
+               "She saw an enormous dog.",
+               "The enormous tree fell over."
             ]
          },
          {
-            "id": 27,
+            "id": 29,
             "word": "enter",
             "role": "verb",
             "BrE": "/ˈentə(r)/",
             "AmE": "/ˈentər/",
             "definition": "to go or come into a place",
             "examples": [
-               "Enter the room quietly.",
-               "He entered the building quickly.",
-               "She entered the competition."
+               "Enter the room.",
+               "She entered the building.",
+               "He entered the shop quietly."
             ]
          },
          {
-            "id": 27,
+            "id": 29,
             "word": "environment",
             "role": "noun",
             "BrE": "/ɪnˈvaɪrənmənt/",
             "AmE": "/ɪnˈvaɪrənmənt/",
-            "definition": "the natural world, such as air, water, and land",
+            "definition": "the natural world around us",
             "examples": [
-               "We must protect the environment.",
-               "The environment is cleaner now.",
-               "Pollution harms the environment."
+               "Protect the environment.",
+               "She cares about the environment.",
+               "The environment needs clean air."
             ]
          },
          {
-            "id": 27,
+            "id": 29,
             "word": "equipment",
             "role": "noun",
             "BrE": "/ɪˈkwɪpmənt/",
             "AmE": "/ɪˈkwɪpmənt/",
-            "definition": "the things needed for a particular activity",
+            "definition": "things needed for an activity",
             "examples": [
-               "We need sports equipment.",
-               "The equipment is new.",
-               "They bought camping equipment."
+               "We need equipment.",
+               "She bought sports equipment.",
+               "The equipment for camping is ready."
             ]
          },
          {
-            "id": 27,
+            "id": 29,
             "word": "error",
             "role": "noun",
             "BrE": "/ˈerə(r)/",
             "AmE": "/ˈerər/",
             "definition": "a mistake",
             "examples": [
-               "I made an error in math.",
-               "The error was in the report.",
-               "Her error caused a delay."
+               "I made an error.",
+               "She found an error in the book.",
+               "The error caused a delay."
             ]
          },
          {
-            "id": 27,
+            "id": 30,
             "word": "especially",
             "role": "adverb",
             "BrE": "/ɪˈspeʃəli/",
             "AmE": "/ɪˈspeʃəli/",
-            "definition": "more than other things or people",
+            "definition": "more than usual or more than others",
             "examples": [
-               "I like coffee, especially in the morning.",
-               "She loves animals, especially dogs.",
-               "This is especially important for kids."
+               "I like it, especially today.",
+               "She loves dogs, especially small ones.",
+               "He’s tired, especially after work."
             ]
          },
          {
-            "id": 27,
+            "id": 30,
             "word": "essay",
             "role": "noun",
             "BrE": "/ˈeseɪ/",
             "AmE": "/ˈeseɪ/",
-            "definition": "a short piece of writing on a particular subject",
+            "definition": "a short piece of writing on a topic",
             "examples": [
-               "I wrote an essay for school.",
-               "Her essay was about history.",
-               "The essay won a prize."
+               "I wrote an essay.",
+               "Her essay was very good.",
+               "The essay was about history."
             ]
          },
          {
-            "id": 27,
+            "id": 30,
             "word": "everyday",
             "role": "adjective",
             "BrE": "/ˈevrideɪ/",
             "AmE": "/ˈevrideɪ/",
-            "definition": "normal and used or happening every day",
+            "definition": "normal or happening every day",
             "examples": [
-               "I wear everyday clothes.",
-               "It’s an everyday problem.",
-               "Everyday tasks take time."
+               "It’s an everyday task.",
+               "She wears everyday clothes.",
+               "Everyday life can be boring."
             ]
          },
          {
-            "id": 27,
+            "id": 30,
             "word": "everywhere",
             "role": "adverb",
             "BrE": "/ˈevriweə(r)/",
             "AmE": "/ˈevriwer/",
-            "definition": "in or to all places",
+            "definition": "in all places",
             "examples": [
-               "Books are everywhere in her room.",
+               "Books are everywhere.",
                "She looked everywhere for her keys.",
                "Flowers grow everywhere in spring."
             ]
          },
          {
-            "id": 28,
+            "id": 30,
             "word": "evidence",
             "role": "noun",
             "BrE": "/ˈevɪdəns/",
             "AmE": "/ˈevɪdəns/",
-            "definition": "facts or information that show something is true",
+            "definition": "facts that show something is true",
             "examples": [
-               "There’s evidence of rain.",
-               "The evidence proved his guilt.",
-               "Scientists found evidence of life."
+               "We need evidence.",
+               "She found evidence of a crime.",
+               "The evidence proved he was right."
             ]
          },
          {
-            "id": 28,
+            "id": 30,
             "word": "exact",
             "role": "adjective",
             "BrE": "/ɪɡˈzækt/",
             "AmE": "/ɪɡˈzækt/",
-            "definition": "completely correct in every detail",
+            "definition": "completely correct",
             "examples": [
-               "Give me the exact time.",
-               "The exact location is unknown.",
-               "Her exact words were recorded."
+               "The exact time is 3 PM.",
+               "She gave the exact answer.",
+               "His exact words were clear."
             ]
          },
          {
-            "id": 28,
+            "id": 30,
             "word": "exactly",
             "role": "adverb",
             "BrE": "/ɪɡˈzæktli/",
             "AmE": "/ɪɡˈzæktli/",
-            "definition": "in a way that is completely correct",
+            "definition": "in a completely correct way",
             "examples": [
-               "I know exactly where it is.",
-               "She followed the instructions exactly.",
-               "He arrived exactly on time."
+               "Do it exactly like this.",
+               "She followed the rules exactly.",
+               "He explained it exactly right."
             ]
          },
          {
-            "id": 28,
+            "id": 30,
             "word": "excellent",
             "role": "adjective",
             "BrE": "/ˈeksələnt/",
             "AmE": "/ˈeksələnt/",
             "definition": "extremely good",
             "examples": [
-               "The food was excellent.",
+               "The food is excellent.",
                "She did an excellent job.",
                "His excellent work was praised."
             ]
          },
          {
-            "id": 28,
+            "id": 30,
             "word": "except",
             "role": "preposition",
             "BrE": "/ɪkˈsept/",
             "AmE": "/ɪkˈsept/",
-            "definition": "not including; apart from",
+            "definition": "not including",
             "examples": [
-               "Everyone came except Tom.",
-               "The shop is open except Sundays.",
-               "All passed except two students."
+               "All came except him.",
+               "Everyone except her agreed.",
+               "The shop is open except Sundays."
             ]
          },
          {
-            "id": 28,
+            "id": 30,
             "word": "exist",
             "role": "verb",
             "BrE": "/ɪɡˈzɪst/",
@@ -3673,519 +3996,506 @@ export default function Lessons({ params }) {
             "definition": "to be real or alive",
             "examples": [
                "Ghosts don’t exist.",
-               "This species still exists.",
-               "Solutions exist for this problem."
+               "This plant exists in Asia.",
+               "The problem still exists."
             ]
          },
          {
-            "id": 28,
-            "word": "expect",
-            "role": "verb",
-            "BrE": "/ɪkˈspekt/",
-            "AmE": "/ɪkˈspekt/",
-            "definition": "to think or believe something will happen",
+            "id": 31,
+            "word": "expensive",
+            "role": "adjective",
+            "BrE": "/ɪkˈspensɪv/",
+            "AmE": "/ɪkˈspensɪv/",
+            "definition": "costing a lot of money",
             "examples": [
-               "I expect she’ll call soon.",
-               "They expect rain this afternoon.",
-               "We expect good results this year."
+               "This bag is expensive.",
+               "She bought an expensive dress.",
+               "The expensive car broke down."
             ]
          },
          {
-            "id": 28,
+            "id": 31,
             "word": "experience",
             "role": "noun",
             "BrE": "/ɪkˈspɪəriəns/",
             "AmE": "/ɪkˈspɪriəns/",
-            "definition": "knowledge or skill gained by doing something",
+            "definition": "something that happens to you",
             "examples": [
-               "She has teaching experience.",
-               "His experience helped the team.",
-               "Travel is a great experience."
+               "It was a good experience.",
+               "She shared her travel experience.",
+               "The experience taught him a lot."
             ]
          },
          {
-            "id": 28,
+            "id": 31,
             "word": "experiment",
             "role": "noun",
             "BrE": "/ɪkˈsperɪmənt/",
             "AmE": "/ɪkˈsperɪmənt/",
-            "definition": "a scientific test to find out something",
+            "definition": "a scientific test to learn something",
             "examples": [
-               "We did an experiment in class.",
-               "The experiment tested water quality.",
+               "We did an experiment.",
+               "The experiment was in class.",
                "Her experiment showed new results."
             ]
          },
          {
-            "id": 28,
-            "word": "expert",
-            "role": "noun",
-            "BrE": "/ˈekspɜːt/",
-            "AmE": "/ˈekspɜːrt/",
-            "definition": "a person with special knowledge or skill",
+            "id": 31,
+            "word": "explain",
+            "role": "verb",
+            "BrE": "/ɪkˈspleɪn/",
+            "AmE": "/ɪkˈspleɪn/",
+            "definition": "to make something clear or understandable",
             "examples": [
-               "He’s an expert in math.",
-               "The expert fixed the computer.",
-               "She’s an expert on animals."
+               "Explain the rule.",
+               "She explained the game to us.",
+               "He explained his idea carefully."
             ]
          },
          {
-            "id": 29,
+            "id": 31,
             "word": "explanation",
             "role": "noun",
             "BrE": "/ˌekspləˈneɪʃn/",
             "AmE": "/ˌekspləˈneɪʃn/",
             "definition": "a statement that makes something clear",
             "examples": [
-               "She gave a clear explanation.",
-               "His explanation was helpful.",
-               "The teacher’s explanation was simple."
+               "I need an explanation.",
+               "Her explanation was simple.",
+               "The explanation helped us understand."
             ]
          },
          {
-            "id": 29,
+            "id": 31,
             "word": "express",
             "role": "verb",
             "BrE": "/ɪkˈspres/",
             "AmE": "/ɪkˈspres/",
             "definition": "to show a feeling or opinion",
             "examples": [
-               "She expressed her joy.",
-               "He expressed his ideas clearly.",
-               "They expressed concern about safety."
+               "Express your thoughts.",
+               "She expressed her happiness.",
+               "He expressed concern about the plan."
             ]
          },
          {
-            "id": 29,
-            "word": "expression",
-            "role": "noun",
-            "BrE": "/ɪkˈspreʃn/",
-            "AmE": "/ɪkˈspreʃn/",
-            "definition": "the look on someone’s face that shows their feelings",
+            "id": 31,
+            "word": "extra",
+            "role": "adjective",
+            "BrE": "/ˈekstrə/",
+            "AmE": "/ˈekstrə/",
+            "definition": "more than what is usual",
             "examples": [
-               "Her expression was happy.",
-               "His sad expression worried me.",
-               "The expression on her face was calm."
+               "I need extra time.",
+               "She bought extra food.",
+               "He carried an extra bag."
             ]
          },
          {
-            "id": 29,
+            "id": 31,
             "word": "extreme",
             "role": "adjective",
             "BrE": "/ɪkˈstriːm/",
             "AmE": "/ɪkˈstriːm/",
-            "definition": "very great in degree; not ordinary",
+            "definition": "very great in degree",
             "examples": [
-               "The heat is extreme today.",
-               "Extreme sports are exciting.",
-               "She faced extreme weather conditions."
+               "The weather is extreme.",
+               "She loves extreme sports.",
+               "The extreme cold stopped the game."
             ]
          },
          {
-            "id": 29,
+            "id": 31,
             "word": "extremely",
             "role": "adverb",
             "BrE": "/ɪkˈstriːmli/",
             "AmE": "/ɪkˈstriːmli/",
             "definition": "to a very great degree",
             "examples": [
-               "I’m extremely tired.",
-               "She’s extremely good at singing.",
-               "The situation is extremely serious."
+               "It’s extremely hot.",
+               "She was extremely tired.",
+               "He worked extremely hard."
             ]
          },
          {
-            "id": 29,
-            "word": "factor",
+            "id": 31,
+            "word": "fact",
             "role": "noun",
-            "BrE": "/ˈfæktə(r)/",
-            "AmE": "/ˈfæktər/",
-            "definition": "one of several things that cause or influence something",
+            "BrE": "/fækt/",
+            "AmE": "/fækt/",
+            "definition": "something known to be true",
             "examples": [
-               "Weather is a factor in travel.",
-               "Cost was a key factor.",
-               "Many factors affect the decision."
+               "It’s a fact.",
+               "She told me a fact.",
+               "The fact about stars is interesting."
             ]
          },
          {
-            "id": 29,
-            "word": "factory",
-            "role": "noun",
-            "BrE": "/ˈfæktri/",
-            "AmE": "/ˈfæktri/",
-            "definition": "a building where goods are made in large quantities",
-            "examples": [
-               "The factory makes cars.",
-               "She works in a shoe factory.",
-               "The factory produces 100 units daily."
-            ]
-         },
-         {
-            "id": 29,
+            "id": 32,
             "word": "fail",
             "role": "verb",
             "BrE": "/feɪl/",
             "AmE": "/feɪl/",
-            "definition": "to not succeed in something",
+            "definition": "to not succeed",
             "examples": [
                "I failed the test.",
-               "He failed to finish on time.",
-               "The plan failed due to errors."
+               "She failed to arrive on time.",
+               "He failed in his first attempt."
             ]
          },
          {
-            "id": 29,
-            "word": "fair",
+            "id": 32,
+            "word": "famous",
             "role": "adjective",
-            "BrE": "/feə(r)/",
-            "AmE": "/fer/",
-            "definition": "treating everyone equally or reasonably",
+            "BrE": "/ˈfeɪməs/",
+            "AmE": "/ˈfeɪməs/",
+            "definition": "known by many people",
             "examples": [
-               "The game was fair.",
-               "She wants a fair chance.",
-               "The teacher’s rules are fair."
+               "He’s a famous singer.",
+               "She visited a famous city.",
+               "The famous actor signed my book."
             ]
          },
          {
-            "id": 29,
-            "word": "fall",
-            "role": "verb",
-            "BrE": "/fɔːl/",
-            "AmE": "/fɔːl/",
-            "definition": "to move quickly downwards",
+            "id": 32,
+            "word": "far",
+            "role": "adverb",
+            "BrE": "/fɑː(r)/",
+            "AmE": "/fɑːr/",
+            "definition": "at or to a great distance",
             "examples": [
-               "The leaf fell from the tree.",
-               "She fell and hurt her knee.",
-               "Prices fell sharply this month."
+               "I live far away.",
+               "She walked far from home.",
+               "He didn’t go far yesterday."
             ]
          },
          {
-            "id": 30,
-            "word": "fan",
-            "role": "noun",
-            "BrE": "/fæn/",
-            "AmE": "/fæn/",
-            "definition": "a person who likes something or someone very much",
-            "examples": [
-               "I’m a fan of football.",
-               "She’s a big fan of the band.",
-               "The fans cheered for their team."
-            ]
-         },
-         {
-            "id": 30,
-            "word": "farm",
-            "role": "noun",
-            "BrE": "/fɑːm/",
-            "AmE": "/fɑːrm/",
-            "definition": "an area of land used for growing crops or keeping animals",
-            "examples": [
-               "They live on a farm.",
-               "The farm grows vegetables.",
-               "The farm has cows and sheep."
-            ]
-         },
-         {
-            "id": 30,
-            "word": "farming",
-            "role": "noun",
-            "BrE": "/ˈfɑːmɪŋ/",
-            "AmE": "/ˈfɑːrmɪŋ/",
-            "definition": "the activity of working on a farm",
-            "examples": [
-               "Farming is hard work.",
-               "He studied modern farming.",
-               "Farming supports the village."
-            ]
-         },
-         {
-            "id": 30,
+            "id": 32,
             "word": "fashion",
             "role": "noun",
             "BrE": "/ˈfæʃn/",
             "AmE": "/ˈfæʃn/",
-            "definition": "the style of clothes or behaviour popular at a particular time",
+            "definition": "a popular style of clothes",
             "examples": [
-               "She loves fashion.",
-               "The fashion show was exciting.",
-               "New fashion trends change yearly."
+               "Fashion changes fast.",
+               "She loves fashion magazines.",
+               "The fashion show was exciting."
             ]
          },
          {
-            "id": 30,
-            "word": "fat",
-            "role": "adjective",
-            "BrE": "/fæt/",
-            "AmE": "/fæt/",
-            "definition": "having too much weight on the body",
+            "id": 32,
+            "word": "fault",
+            "role": "noun",
+            "BrE": "/fɔːlt/",
+            "AmE": "/fɔːlt/",
+            "definition": "a mistake or something wrong",
             "examples": [
-               "The cat is fat.",
-               "He ate fat-free food.",
-               "The fat dog needs exercise."
+               "It’s my fault.",
+               "The fault was in the machine.",
+               "She found a fault in the plan."
             ]
          },
          {
-            "id": 30,
+            "id": 32,
             "word": "fear",
             "role": "noun",
             "BrE": "/fɪə(r)/",
             "AmE": "/fɪr/",
-            "definition": "the feeling of being afraid",
+            "definition": "a feeling of being afraid",
             "examples": [
-               "She has a fear of spiders.",
-               "His fear stopped him from trying.",
-               "Fear of failure affects many people."
+               "I have a fear.",
+               "Her fear was of spiders.",
+               "The fear stopped him from trying."
             ]
          },
          {
-            "id": 30,
+            "id": 32,
             "word": "feature",
             "role": "noun",
             "BrE": "/ˈfiːtʃə(r)/",
             "AmE": "/ˈfiːtʃər/",
-            "definition": "an important or noticeable part of something",
+            "definition": "an important or interesting part",
             "examples": [
                "The phone has new features.",
-               "Safety is a key feature.",
-               "The app’s best feature is its design."
+               "She likes the car’s features.",
+               "The main feature is the camera."
             ]
          },
          {
-            "id": 30,
-            "word": "feed",
-            "role": "verb",
-            "BrE": "/fiːd/",
-            "AmE": "/fiːd/",
-            "definition": "to give food to a person or animal",
-            "examples": [
-               "I feed my dog twice daily.",
-               "She fed the birds bread.",
-               "They feed the animals at the zoo."
-            ]
-         },
-         {
-            "id": 30,
+            "id": 32,
             "word": "female",
             "role": "adjective",
             "BrE": "/ˈfiːmeɪl/",
             "AmE": "/ˈfiːmeɪl/",
-            "definition": "belonging to the sex that can have babies",
+            "definition": "relating to women or girls",
             "examples": [
-               "The female cat is small.",
-               "She’s a female athlete.",
-               "Female students joined the club."
+               "She’s a female student.",
+               "The female team won.",
+               "The female doctor was kind."
             ]
          },
          {
-            "id": 30,
-            "word": "fiction",
+            "id": 32,
+            "word": "fence",
             "role": "noun",
-            "BrE": "/ˈfɪkʃn/",
-            "AmE": "/ˈfɪkʃn/",
-            "definition": "stories that are not true or real",
+            "BrE": "/fens/",
+            "AmE": "/fens/",
+            "definition": "a structure around a garden or area",
             "examples": [
-               "I read fiction books.",
-               "Her favourite genre is fiction.",
-               "The fiction story was exciting."
+               "The fence is tall.",
+               "She painted the fence.",
+               "The fence keeps the dog in."
             ]
          },
-            {
-            "id": 31,
+         {
+            "id": 32,
+            "word": "fever",
+            "role": "noun",
+            "BrE": "/ˈfiːvə(r)/",
+            "AmE": "/ˈfiːvər/",
+            "definition": "a high body temperature",
+            "examples": [
+               "He has a fever.",
+               "Her fever lasted two days.",
+               "The fever made her feel weak."
+            ]
+         },
+         {
+            "id": 33,
             "word": "field",
             "role": "noun",
             "BrE": "/fiːld/",
             "AmE": "/fiːld/",
-            "definition": "an open area of land, often used for growing crops or sports",
+            "definition": "an open area of land",
             "examples": [
-               "The field is full of flowers.",
-               "They played football in the field.",
-               "The farmer worked in the field."
+               "The field is green.",
+               "She ran across the field.",
+               "The field is full of flowers."
             ]
          },
          {
-            "id": 31,
+            "id": 33,
+            "word": "fight",
+            "role": "noun",
+            "BrE": "/faɪt/",
+            "AmE": "/faɪt/",
+            "definition": "a physical struggle",
+            "examples": [
+               "The fight was quick.",
+               "They saw a fight at school.",
+               "The fight caused a big noise."
+            ]
+         },
+         {
+            "id": 33,
             "word": "fight",
             "role": "verb",
             "BrE": "/faɪt/",
             "AmE": "/faɪt/",
-            "definition": "to use physical force to try to defeat someone",
+            "definition": "to use physical force",
             "examples": [
-               "They fight in the game.",
-               "He fought with his friend.",
-               "The soldiers fought bravely."
+               "Don’t fight with him.",
+               "She fought for her team.",
+               "They fought over the toy."
             ]
          },
          {
-            "id": 31,
+            "id": 33,
             "word": "figure",
             "role": "noun",
             "BrE": "/ˈfɪɡə(r)/",
             "AmE": "/ˈfɪɡjər/",
-            "definition": "a number or amount",
+            "definition": "a number or shape",
             "examples": [
-               "The figure is ten.",
-               "Sales figures increased this year.",
-               "The figure on the chart is wrong."
+               "Write the figure down.",
+               "The figure was a circle.",
+               "She checked the sales figure."
             ]
          },
          {
-            "id": 31,
-            "word": "fill",
-            "role": "verb",
-            "BrE": "/fɪl/",
-            "AmE": "/fɪl/",
-            "definition": "to make something full",
-            "examples": [
-               "Fill the cup with water.",
-               "She filled the bag with clothes.",
-               "He filled the form with details."
-            ]
-         },
-         {
-            "id": 31,
+            "id": 33,
             "word": "final",
             "role": "adjective",
             "BrE": "/ˈfaɪnl/",
             "AmE": "/ˈfaɪnl/",
-            "definition": "being the last in a series or process",
+            "definition": "the last in a series",
             "examples": [
-               "This is the final test.",
-               "The final score was close.",
-               "Her final decision surprised us."
+               "It’s the final game.",
+               "She passed the final test.",
+               "The final chapter was exciting."
             ]
          },
          {
-            "id": 31,
+            "id": 33,
             "word": "finally",
             "role": "adverb",
             "BrE": "/ˈfaɪnəli/",
             "AmE": "/ˈfaɪnəli/",
-            "definition": "after a long time or at the end",
+            "definition": "after a long time",
             "examples": [
-               "She finally arrived home.",
-               "He finally finished his homework.",
-               "The team finally won the game."
+               "I’m finally here.",
+               "She finally finished her work.",
+               "He finally found his keys."
             ]
          },
          {
-            "id": 31,
+            "id": 33,
             "word": "finger",
             "role": "noun",
             "BrE": "/ˈfɪŋɡə(r)/",
             "AmE": "/ˈfɪŋɡər/",
-            "definition": "one of the five parts at the end of your hand",
+            "definition": "a part of the hand",
             "examples": [
-               "She cut her finger.",
-               "He pointed with his finger.",
+               "My finger hurts.",
+               "She pointed with her finger.",
                "The ring is on her finger."
             ]
          },
          {
-            "id": 31,
-            "word": "fire",
+            "id": 33,
+            "word": "finish",
             "role": "noun",
+            "BrE": "/ˈfɪnɪʃ/",
+            "AmE": "/ˈfɪnɪʃ/",
+            "definition": "the end of something",
+            "examples": [
+               "The race has a finish.",
+               "She saw the finish of the game.",
+               "The finish was very close."
+            ]
+         },
+         {
+            "id": 33,
+            "word": "fire",
+            "role": "verb",
             "BrE": "/ˈfaɪə(r)/",
             "AmE": "/ˈfaɪr/",
-            "definition": "the heat and flames produced when something burns",
+            "definition": "to shoot a gun",
             "examples": [
-               "The fire is warm.",
-               "A fire started in the kitchen.",
-               "They sat by the fire at night."
+               "Don’t fire the gun.",
+               "He fired at the target.",
+               "She fired a warning shot."
             ]
          },
          {
-            "id": 31,
-            "word": "fish",
+            "id": 33,
+            "word": "firm",
             "role": "noun",
-            "BrE": "/fɪʃ/",
-            "AmE": "/fɪʃ/",
-            "definition": "an animal that lives in water and swims",
+            "BrE": "/fɜːm/",
+            "AmE": "/fɜːrm/",
+            "definition": "a business or company",
             "examples": [
-               "I saw a fish in the river.",
-               "She caught a big fish.",
-               "Fish swim in the aquarium."
+               "She works for a firm.",
+               "The firm sells cars.",
+               "He joined a law firm."
             ]
          },
          {
-            "id": 31,
+            "id": 34,
+            "word": "firstly",
+            "role": "adverb",
+            "BrE": "/ˈfɜːstli/",
+            "AmE": "/ˈfɜːrstli/",
+            "definition": "used to introduce the first point",
+            "examples": [
+               "Firstly, we need food.",
+               "Firstly, she checked her bag.",
+               "Firstly, let’s discuss the plan."
+            ]
+         },
+         {
+            "id": 34,
+            "word": "fit",
+            "role": "adjective",
+            "BrE": "/fɪt/",
+            "AmE": "/fɪt/",
+            "definition": "healthy and strong",
+            "examples": [
+               "He is very fit.",
+               "She stays fit by running.",
+               "The fit athlete won the race."
+            ]
+         },
+         {
+            "id": 34,
             "word": "fit",
             "role": "verb",
             "BrE": "/fɪt/",
             "AmE": "/fɪt/",
-            "definition": "to be the right size or shape for something",
+            "definition": "to be the right size or shape",
             "examples": [
-               "These shoes fit well.",
-               "The dress fits her perfectly.",
-               "The box didn’t fit in the car."
+               "This shirt fits me.",
+               "The key fits the lock.",
+               "Her shoes fit perfectly."
             ]
          },
          {
-            "id": 32,
+            "id": 34,
             "word": "fix",
             "role": "verb",
             "BrE": "/fɪks/",
             "AmE": "/fɪks/",
-            "definition": "to repair something that is broken",
+            "definition": "to repair something",
             "examples": [
-               "He fixed the broken chair.",
-               "She fixed the computer quickly.",
-               "They fixed the leak in the pipe."
+               "Fix the broken chair.",
+               "She fixed her bike.",
+               "He fixed the leaky pipe."
             ]
          },
          {
-            "id": 32,
+            "id": 34,
             "word": "flat",
-            "role": "noun",
+            "role": "adjective",
             "BrE": "/flæt/",
             "AmE": "/flæt/",
-            "definition": "a set of rooms for living in, usually on one floor",
+            "definition": "smooth and level",
             "examples": [
-               "She lives in a flat.",
-               "The flat has two bedrooms.",
-               "They rented a modern flat."
+               "The table is flat.",
+               "She walked on flat ground.",
+               "The flat surface was clean."
             ]
          },
          {
-            "id": 32,
+            "id": 34,
             "word": "flight",
             "role": "noun",
             "BrE": "/flaɪt/",
             "AmE": "/flaɪt/",
-            "definition": "a journey made by an aeroplane",
+            "definition": "a journey in an aircraft",
             "examples": [
-               "My flight is at noon.",
-               "The flight was very smooth.",
-               "Her flight landed early."
+               "I booked a flight.",
+               "Her flight was delayed.",
+               "The flight to London was long."
             ]
          },
          {
-            "id": 32,
+            "id": 34,
             "word": "float",
             "role": "verb",
             "BrE": "/fləʊt/",
             "AmE": "/floʊt/",
-            "definition": "to stay on the surface of a liquid",
+            "definition": "to stay on the surface of water",
             "examples": [
-               "The boat floats on water.",
-               "Leaves float on the river.",
-               "The balloon floated high above."
+               "The boat floats.",
+               "She floated in the pool.",
+               "The leaf floated on the river."
             ]
          },
          {
-            "id": 32,
-            "word": "floor",
+            "id": 34,
+            "word": "flood",
             "role": "noun",
-            "BrE": "/flɔː(r)/",
-            "AmE": "/flɔːr/",
-            "definition": "the flat surface of a room that you walk on",
+            "BrE": "/flʌd/",
+            "AmE": "/flʌd/",
+            "definition": "a large amount of water covering an area",
             "examples": [
-               "The floor is clean.",
-               "She dropped her pen on the floor.",
-               "The floor was made of wood."
+               "The flood was bad.",
+               "The flood damaged the town.",
+               "She escaped the flood."
             ]
          },
          {
-            "id": 32,
+            "id": 34,
             "word": "flow",
             "role": "verb",
             "BrE": "/fləʊ/",
@@ -4193,129 +4503,155 @@ export default function Lessons({ params }) {
             "definition": "to move smoothly, like water",
             "examples": [
                "The river flows fast.",
-               "Traffic flowed smoothly today.",
-               "Water flows through the pipe."
+               "Water flowed into the room.",
+               "Traffic flows well today."
             ]
          },
          {
-            "id": 32,
+            "id": 34,
             "word": "flower",
             "role": "noun",
             "BrE": "/ˈflaʊə(r)/",
             "AmE": "/ˈflaʊər/",
-            "definition": "the colourful part of a plant",
+            "definition": "the colorful part of a plant",
             "examples": [
                "The flower is red.",
-               "She picked a flower from the garden.",
-               "Flowers bloom in spring."
+               "She picked a flower.",
+               "The flower smells nice."
             ]
          },
          {
-            "id": 32,
+            "id": 35,
             "word": "fly",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/flaɪ/",
             "AmE": "/flaɪ/",
-            "definition": "to move through the air, like a bird or plane",
+            "definition": "an insect with wings",
             "examples": [
-               "Birds fly in the sky.",
-               "She flew to Paris yesterday.",
-               "The plane flies at night."
+               "A fly is on the wall.",
+               "She swatted the fly.",
+               "The fly buzzed around the room."
             ]
          },
          {
-            "id": 32,
+            "id": 35,
+            "word": "focus",
+            "role": "noun",
+            "BrE": "/ˈfəʊkəs/",
+            "AmE": "/ˈfoʊkəs/",
+            "definition": "the main thing you pay attention to",
+            "examples": [
+               "The focus is study.",
+               "Her focus was on work.",
+               "The focus of the talk was health."
+            ]
+         },
+         {
+            "id": 35,
             "word": "focus",
             "role": "verb",
             "BrE": "/ˈfəʊkəs/",
             "AmE": "/ˈfoʊkəs/",
-            "definition": "to give attention to one particular thing",
+            "definition": "to give attention to one thing",
             "examples": [
-               "Focus on your work.",
+               "Focus on the book.",
                "She focused on her studies.",
-               "He focused on solving the problem."
+               "He focused the camera on her."
             ]
          },
          {
-            "id": 32,
+            "id": 35,
+            "word": "fog",
+            "role": "noun",
+            "BrE": "/fɒɡ/",
+            "AmE": "/fɑːɡ/",
+            "definition": "thick cloud near the ground",
+            "examples": [
+               "The fog is thick.",
+               "She drove in the fog.",
+               "The fog made it hard to see."
+            ]
+         },
+         {
+            "id": 35,
+            "word": "fold",
+            "role": "verb",
+            "BrE": "/fəʊld/",
+            "AmE": "/foʊld/",
+            "definition": "to bend something like paper or cloth",
+            "examples": [
+               "Fold the paper.",
+               "She folded her clothes.",
+               "He folded the letter neatly."
+            ]
+         },
+         {
+            "id": 35,
+            "word": "folk",
+            "role": "noun",
+            "BrE": "/fəʊk/",
+            "AmE": "/foʊk/",
+            "definition": "people in general",
+            "examples": [
+               "Folk like to dance.",
+               "She met some folk at the party.",
+               "The folk in the village are kind."
+            ]
+         },
+         {
+            "id": 35,
             "word": "follow",
             "role": "verb",
             "BrE": "/ˈfɒləʊ/",
             "AmE": "/ˈfɑːloʊ/",
             "definition": "to go after someone or something",
             "examples": [
-               "Follow me to the park.",
-               "He followed the teacher’s advice.",
-               "They followed the path to the river."
+               "Follow me.",
+               "She followed the path.",
+               "He followed the teacher’s advice."
             ]
          },
          {
-            "id": 33,
-            "word": "food",
-            "role": "noun",
-            "BrE": "/fuːd/",
-            "AmE": "/fuːd/",
-            "definition": "things that people or animals eat",
+            "id": 35,
+            "word": "following",
+            "role": "adjective",
+            "BrE": "/ˈfɒləʊɪŋ/",
+            "AmE": "/ˈfɑːloʊɪŋ/",
+            "definition": "coming next or after",
             "examples": [
-               "I like Italian food.",
-               "She cooked delicious food.",
-               "Healthy food is good for you."
+               "The following day was sunny.",
+               "She read the following page.",
+               "The following steps are easy."
             ]
          },
          {
-            "id": 33,
-            "word": "foot",
-            "role": "noun",
-            "BrE": "/fʊt/",
-            "AmE": "/fʊt/",
-            "definition": "the part of the body below the ankle",
-            "examples": [
-               "My foot hurts.",
-               "He injured his left foot.",
-               "She walked on foot to school."
-            ]
-         },
-         {
-            "id": 33,
-            "word": "football",
-            "role": "noun",
-            "BrE": "/ˈfʊtbɔːl/",
-            "AmE": "/ˈfʊtbɑːl/",
-            "definition": "a game played by two teams who kick a ball",
-            "examples": [
-               "I play football with friends.",
-               "The football match was exciting.",
-               "He watches football every weekend."
-            ]
-         },
-         {
-            "id": 33,
+            "id": 35,
             "word": "foreign",
             "role": "adjective",
             "BrE": "/ˈfɒrən/",
             "AmE": "/ˈfɔːrən/",
-            "definition": "from or relating to another country",
+            "definition": "from another country",
             "examples": [
-               "She speaks a foreign language.",
-               "He loves foreign films.",
-               "They visited a foreign country."
+               "He speaks a foreign language.",
+               "She met a foreign student.",
+               "The foreign film was good."
             ]
          },
          {
-            "id": 33,
+            "id": 35,
             "word": "forest",
             "role": "noun",
             "BrE": "/ˈfɒrɪst/",
             "AmE": "/ˈfɔːrɪst/",
-            "definition": "a large area covered with trees",
+            "definition": "a large area with many trees",
             "examples": [
-               "The forest is beautiful.",
-               "We walked through the forest.",
-               "Animals live in the forest."
+               "The forest is big.",
+               "She walked in the forest.",
+               "The forest is home to animals."
             ]
          },
          {
-            "id": 33,
+            "id": 36,
             "word": "forever",
             "role": "adverb",
             "BrE": "/fəˈrevə(r)/",
@@ -4323,480 +4659,480 @@ export default function Lessons({ params }) {
             "definition": "for all time",
             "examples": [
                "I’ll love you forever.",
-               "The moment felt like forever.",
-               "This book will stay forever."
+               "She waited forever for the bus.",
+               "The memory will last forever."
             ]
          },
          {
-            "id": 33,
-            "word": "forget",
+            "id": 36,
+            "word": "forgive",
             "role": "verb",
-            "BrE": "/fəˈɡet/",
-            "AmE": "/fərˈɡet/",
-            "definition": "to be unable to remember something",
+            "BrE": "/fəˈɡɪv/",
+            "AmE": "/fərˈɡɪv/",
+            "definition": "to stop being angry with someone",
             "examples": [
-               "I forgot my keys.",
-               "She forgot his name.",
-               "Don’t forget to call me."
+               "Please forgive me.",
+               "She forgave her friend.",
+               "He forgave her for the mistake."
             ]
          },
          {
-            "id": 33,
+            "id": 36,
             "word": "fork",
             "role": "noun",
             "BrE": "/fɔːk/",
             "AmE": "/fɔːrk/",
             "definition": "a tool with points used for eating",
             "examples": [
-               "I need a fork to eat.",
+               "I need a fork.",
                "She dropped her fork.",
-               "The fork was on the table."
+               "The fork is next to the plate."
             ]
          },
          {
-            "id": 33,
-            "word": "form",
-            "role": "noun",
-            "BrE": "/fɔːm/",
-            "AmE": "/fɔːrm/",
-            "definition": "a document with spaces to write information",
-            "examples": [
-               "Fill out the form.",
-               "The form asked for my name.",
-               "She completed the application form."
-            ]
-         },
-         {
-            "id": 33,
+            "id": 36,
             "word": "formal",
             "role": "adjective",
             "BrE": "/ˈfɔːml/",
             "AmE": "/ˈfɔːrml/",
-            "definition": "serious or official in manner or style",
+            "definition": "serious or official in style",
             "examples": [
-               "Wear formal clothes tonight.",
-               "The letter was very formal.",
-               "She gave a formal speech."
+               "Wear formal clothes.",
+               "She wrote a formal letter.",
+               "The formal meeting was long."
             ]
          },
          {
-            "id": 34,
+            "id": 36,
+            "word": "fortunately",
+            "role": "adverb",
+            "BrE": "/ˈfɔːtʃənətli/",
+            "AmE": "/ˈfɔːrtʃənətli/",
+            "definition": "luckily",
+            "examples": [
+               "Fortunately, I found it.",
+               "She arrived, fortunately, on time.",
+               "Fortunately, the rain stopped."
+            ]
+         },
+         {
+            "id": 36,
             "word": "forward",
             "role": "adverb",
             "BrE": "/ˈfɔːwəd/",
             "AmE": "/ˈfɔːrwərd/",
-            "definition": "towards a place or position ahead",
+            "definition": "towards the front or future",
             "examples": [
-               "Move forward slowly.",
-               "He stepped forward to speak.",
-               "The car moved forward quickly."
+               "Move forward.",
+               "She stepped forward to speak.",
+               "He looks forward to the holiday."
             ]
          },
          {
-            "id": 34,
+            "id": 36,
             "word": "free",
-            "role": "adjective",
+            "role": "adverb",
             "BrE": "/friː/",
             "AmE": "/friː/",
-            "definition": "costing nothing or not controlled",
+            "definition": "without cost",
             "examples": [
-               "The museum is free.",
-               "She’s free this afternoon.",
-               "Free tickets were given out."
+               "It’s free to enter.",
+               "She got a free ticket.",
+               "The app is free to download."
             ]
          },
          {
-            "id": 34,
-            "word": "freedom",
-            "role": "noun",
-            "BrE": "/ˈfriːdəm/",
-            "AmE": "/ˈfriːdəm/",
-            "definition": "the state of being able to do what you want",
+            "id": 36,
+            "word": "freeze",
+            "role": "verb",
+            "BrE": "/friːz/",
+            "AmE": "/friːz/",
+            "definition": "to become very cold or turn to ice",
             "examples": [
-               "I love my freedom.",
-               "Freedom is important to her.",
-               "They fought for their freedom."
+               "Water can freeze.",
+               "She froze in the cold.",
+               "The lake froze last night."
             ]
          },
          {
-            "id": 34,
+            "id": 36,
+            "word": "frequent",
+            "role": "adjective",
+            "BrE": "/ˈfriːkwənt/",
+            "AmE": "/ˈfriːkwənt/",
+            "definition": "happening often",
+            "examples": [
+               "Frequent rain is normal.",
+               "She makes frequent visits.",
+               "His frequent calls annoyed her."
+            ]
+         },
+         {
+            "id": 36,
             "word": "fresh",
             "role": "adjective",
             "BrE": "/freʃ/",
             "AmE": "/freʃ/",
-            "definition": "new, clean, or not old",
+            "definition": "new or not spoiled",
             "examples": [
-               "I bought fresh fruit.",
-               "The air smells fresh today.",
-               "She ate fresh bread this morning."
+               "The fruit is fresh.",
+               "She bought fresh bread.",
+               "The fresh air felt good."
             ]
          },
          {
-            "id": 34,
-            "word": "friendship",
+            "id": 37,
+            "word": "fridge",
             "role": "noun",
-            "BrE": "/ˈfrendʃɪp/",
-            "AmE": "/ˈfrendʃɪp/",
-            "definition": "a relationship between friends",
+            "BrE": "/frɪdʒ/",
+            "AmE": "/frɪdʒ/",
+            "definition": "a machine for keeping food cold",
             "examples": [
-               "Their friendship is strong.",
-               "She values her childhood friendship.",
-               "Friendship makes life better."
+               "The fridge is full.",
+               "She opened the fridge.",
+               "The milk is in the fridge."
             ]
          },
          {
-            "id": 34,
-            "word": "front",
-            "role": "noun",
-            "BrE": "/frʌnt/",
-            "AmE": "/frʌnt/",
-            "definition": "the part or side of something that faces forward",
+            "id": 37,
+            "word": "fry",
+            "role": "verb",
+            "BrE": "/fraɪ/",
+            "AmE": "/fraɪ/",
+            "definition": "to cook in hot oil",
             "examples": [
-               "The front of the house is white.",
-               "Sit in the front of the class.",
-               "The front door was open."
+               "Fry the eggs.",
+               "She fried some potatoes.",
+               "He fried fish for dinner."
             ]
          },
          {
-            "id": 34,
-            "word": "frozen",
-            "role": "adjective",
-            "BrE": "/ˈfrəʊzn/",
-            "AmE": "/ˈfroʊzn/",
-            "definition": "very cold or turned into ice",
-            "examples": [
-               "The lake is frozen.",
-               "She bought frozen food.",
-               "The frozen ground was hard."
-            ]
-         },
-         {
-            "id": 34,
-            "word": "fruit",
-            "role": "noun",
-            "BrE": "/fruːt/",
-            "AmE": "/fruːt/",
-            "definition": "the part of a plant that contains seeds and is eaten",
-            "examples": [
-               "I eat fruit every day.",
-               "She likes tropical fruit.",
-               "The fruit was sweet and juicy."
-            ]
-         },
-         {
-            "id": 34,
+            "id": 37,
             "word": "fuel",
             "role": "noun",
             "BrE": "/fjuːəl/",
             "AmE": "/fjuːəl/",
-            "definition": "a material used to produce energy or power",
+            "definition": "material used to produce energy",
             "examples": [
                "The car needs fuel.",
-               "Fuel prices are high.",
-               "They used wood as fuel."
+               "She bought fuel for the trip.",
+               "Fuel prices are high now."
             ]
          },
          {
-            "id": 34,
+            "id": 37,
             "word": "funny",
             "role": "adjective",
             "BrE": "/ˈfʌni/",
             "AmE": "/ˈfʌni/",
-            "definition": "making you laugh or smile",
+            "definition": "making you laugh",
             "examples": [
-               "The joke was funny.",
-               "He’s a funny person.",
-               "The funny movie made us laugh."
+               "The joke is funny.",
+               "She told a funny story.",
+               "His funny face made us laugh."
             ]
          },
          {
-            "id": 35,
-            "word": "furniture",
-            "role": "noun",
-            "BrE": "/ˈfɜːnɪtʃə(r)/",
-            "AmE": "/ˈfɜːrnɪtʃər/",
-            "definition": "objects like chairs, tables, or beds in a room",
+            "id": 37,
+            "word": "future",
+            "role": "adjective",
+            "BrE": "/ˈfjuːtʃə(r)/",
+            "AmE": "/ˈfjuːtʃər/",
+            "definition": "happening later",
             "examples": [
-               "The furniture is new.",
-               "She bought furniture for her flat.",
-               "The room has modern furniture."
+               "My future plan is ready.",
+               "She dreams of her future job.",
+               "Future events are exciting."
             ]
          },
          {
-            "id": 35,
+            "id": 37,
             "word": "future",
             "role": "noun",
             "BrE": "/ˈfjuːtʃə(r)/",
             "AmE": "/ˈfjuːtʃər/",
             "definition": "the time that will come",
             "examples": [
-               "I plan for the future.",
-               "Her future looks bright.",
-               "The future of the project is clear."
+               "The future is bright.",
+               "She plans for the future.",
+               "The future of the town is good."
             ]
          },
          {
-            "id": 35,
+            "id": 37,
             "word": "gallery",
             "role": "noun",
             "BrE": "/ˈɡæləri/",
             "AmE": "/ˈɡæləri/",
-            "definition": "a place where art or other objects are shown",
+            "definition": "a place for showing art",
             "examples": [
-               "We visited an art gallery.",
-               "The gallery has new paintings.",
-               "Her photos are in the gallery."
+               "The gallery is open.",
+               "She visited an art gallery.",
+               "The gallery has new paintings."
             ]
          },
          {
-            "id": 35,
-            "word": "game",
-            "role": "noun",
-            "BrE": "/ɡeɪm/",
-            "AmE": "/ɡeɪm/",
-            "definition": "an activity or sport with rules, often for fun",
-            "examples": [
-               "Let’s play a game.",
-               "The game was very exciting.",
-               "She won the chess game."
-            ]
-         },
-         {
-            "id": 35,
+            "id": 37,
             "word": "gap",
             "role": "noun",
             "BrE": "/ɡæp/",
             "AmE": "/ɡæp/",
-            "definition": "an empty space or difference between things",
+            "definition": "an empty space between things",
             "examples": [
-               "There’s a gap in the wall.",
-               "The gap between them grew.",
-               "Mind the gap on the platform."
+               "There’s a gap here.",
+               "She filled the gap.",
+               "The gap between the trees is wide."
             ]
          },
          {
-            "id": 35,
-            "word": "garden",
-            "role": "noun",
-            "BrE": "/ˈɡɑːdn/",
-            "AmE": "/ˈɡɑːrdn/",
-            "definition": "an area of land where plants or flowers are grown",
-            "examples": [
-               "The garden has roses.",
-               "She works in the garden daily.",
-               "Their garden is full of vegetables."
-            ]
-         },
-         {
-            "id": 35,
+            "id": 37,
             "word": "gate",
             "role": "noun",
             "BrE": "/ɡeɪt/",
             "AmE": "/ɡeɪt/",
             "definition": "a door in a fence or wall",
             "examples": [
-               "Open the gate, please.",
-               "The gate leads to the park.",
-               "The wooden gate was locked."
+               "Open the gate.",
+               "She closed the gate.",
+               "The gate to the garden is green."
             ]
          },
          {
-            "id": 35,
+            "id": 37,
             "word": "general",
             "role": "adjective",
             "BrE": "/ˈdʒenrəl/",
             "AmE": "/ˈdʒenrəl/",
-            "definition": "affecting or involving most people or things",
+            "definition": "affecting most people or things",
             "examples": [
                "It’s a general rule.",
-               "The general opinion was positive.",
-               "He has general knowledge of science."
+               "She has general knowledge.",
+               "The general idea is clear."
             ]
          },
          {
-            "id": 35,
+            "id": 38,
             "word": "gentle",
             "role": "adjective",
             "BrE": "/ˈdʒentl/",
             "AmE": "/ˈdʒentl/",
-            "definition": "kind, soft, or not strong",
+            "definition": "kind or soft",
             "examples": [
+               "Be gentle with the cat.",
                "She has a gentle voice.",
-               "The gentle breeze felt nice.",
-               "He was gentle with the puppy."
+               "The gentle wind felt nice."
             ]
          },
          {
-            "id": 35,
-            "word": "get",
-            "role": "verb",
-            "Br drawingE": "/ɡet/",
-            "AmE": "/ɡet/",
-            "definition": "to receive, obtain, or buy something",
-            "examples": [
-               "I got a new phone.",
-               "She got a gift from him.",
-               "He got tired after work."
-            ]
-         },
-         {
-            "id": 36,
+            "id": 38,
             "word": "gift",
             "role": "noun",
             "BrE": "/ɡɪft/",
             "AmE": "/ɡɪft/",
-            "definition": "something given to someone without expecting payment",
+            "definition": "something given to someone",
             "examples": [
-               "She gave me a gift.",
-               "The gift was a book.",
-               "He bought a gift for her birthday."
+               "I got a gift.",
+               "She gave him a gift.",
+               "The gift was a book."
             ]
          },
          {
-            "id": 36,
-            "word": "girl",
-            "role": "noun",
-            "BrE": "/ɡɜːl/",
-            "AmE": "/ɡɜːrl/",
-            "definition": "a female child",
+            "id": 38,
+            "word": "glad",
+            "role": "adjective",
+            "BrE": "/ɡlæd/",
+            "AmE": "/ɡlæd/",
+            "definition": "happy or pleased",
             "examples": [
-               "The girl is playing.",
-               "She’s a smart young girl.",
-               "The girl won the race."
+               "I’m glad you came.",
+               "She’s glad about the news.",
+               "He was glad to see her."
             ]
          },
          {
-            "id": 36,
-            "word": "give",
-            "role": "verb",
-            "BrE": "/ɡɪv/",
-            "AmE": "/ɡɪv/",
-            "definition": "to provide someone with something",
+            "id": 38,
+            "word": "global",
+            "role": "adjective",
+            "BrE": "/ˈɡləʊbl/",
+            "AmE": "/ˈɡloʊbl/",
+            "definition": "relating to the whole world",
             "examples": [
-               "Give me the book.",
-               "She gave him a smile.",
-               "They gave food to the poor."
+               "It’s a global problem.",
+               "She works for a global company.",
+               "Global warming affects everyone."
             ]
          },
          {
-            "id": 36,
-            "word": "glass",
-            "role": "noun",
-            "BrE": "/ɡlɑːs/",
-            "AmE": "/ɡlæs/",
-            "definition": "a hard, transparent material or a container for drinking",
-            "examples": [
-               "The glass is full.",
-               "She broke a glass cup.",
-               "The window is made of glass."
-            ]
-         },
-         {
-            "id": 36,
-            "word": "go",
-            "role": "verb",
-            "BrE": "/ɡəʊ/",
-            "AmE": "/ɡoʊ/",
-            "definition": "to move or travel to a place",
-            "examples": [
-               "I go to school daily.",
-               "She went to the shop.",
-               "They’re going on holiday tomorrow."
-            ]
-         },
-         {
-            "id": 36,
+            "id": 38,
             "word": "goal",
             "role": "noun",
             "BrE": "/ɡəʊl/",
             "AmE": "/ɡoʊl/",
             "definition": "something you want to achieve",
             "examples": [
-               "My goal is to learn English.",
-               "Her goal was to run faster.",
-               "The team reached its goal."
+               "My goal is to learn.",
+               "She scored a goal in football.",
+               "His goal is to travel abroad."
             ]
          },
          {
-            "id": 36,
+            "id": 38,
+            "word": "god",
+            "role": "noun",
+            "BrE": "/ɡɒd/",
+            "AmE": "/ɡɑːd/",
+            "definition": "a being believed to have power over the world",
+            "examples": [
+               "They pray to God.",
+               "She believes in God.",
+               "The statue of a god is old."
+            ]
+         },
+         {
+            "id": 38,
             "word": "gold",
             "role": "noun",
             "BrE": "/ɡəʊld/",
             "AmE": "/ɡoʊld/",
             "definition": "a valuable yellow metal",
             "examples": [
-               "She wears a gold ring.",
-               "The gold medal was hers.",
-               "Gold is expensive this year."
+               "Gold is expensive.",
+               "She wore a gold ring.",
+               "The gold necklace was shiny."
             ]
          },
          {
-            "id": 36,
-            "word": "good",
-            "role": "adjective",
-            "BrE": "/ɡʊd/",
-            "AmE": "/ɡʊd/",
-            "definition": "of high quality or pleasant",
+            "id": 38,
+            "word": "golf",
+            "role": "noun",
+            "BrE": "/ɡɒlf/",
+            "AmE": "/ɡɑːlf/",
+            "definition": "a game played with a small ball and clubs",
             "examples": [
-               "This is a good book.",
-               "He’s a good student.",
-               "The weather was good today."
+               "I play golf.",
+               "She watched a golf match.",
+               "Golf is popular in the town."
             ]
          },
          {
-            "id": 36,
+            "id": 38,
+            "word": "goodness",
+            "role": "exclamation",
+            "BrE": "/ˈɡʊdnəs/",
+            "AmE": "/ˈɡʊdnəs/",
+            "definition": "used to express surprise or relief",
+            "examples": [
+               "Goodness, it’s late!",
+               "Goodness, you scared me!",
+               "Goodness, that was close!"
+            ]
+         },
+         {
+            "id": 38,
             "word": "government",
             "role": "noun",
             "BrE": "/ˈɡʌvənmənt/",
             "AmE": "/ˈɡʌvərnmənt/",
-            "definition": "the group of people who control a country",
+            "definition": "the group of people who rule a country",
             "examples": [
-               "The government makes laws.",
+               "The government is new.",
                "She works for the government.",
-               "The government built new schools."
+               "The government made a new law."
             ]
          },
          {
-            "id": 36,
-            "word": "great",
-            "role": "adjective",
-            "BrE": "/ɡreɪt/",
-            "AmE": "/ɡreɪt/",
-            "definition": "very good or large in amount",
+            "id": 39,
+            "word": "grade",
+            "role": "noun",
+            "BrE": "/ɡreɪd/",
+            "AmE": "/ɡreɪd/",
+            "definition": "a mark given for schoolwork",
             "examples": [
-               "It’s a great day.",
-               "She did a great job.",
-               "He has a great love for music."
+               "I got a good grade.",
+               "Her grade was excellent.",
+               "The grade on the test was high."
             ]
          },
          {
-            "id": 37,
-            "word": "green",
+            "id": 39,
+            "word": "gradually",
+            "role": "adverb",
+            "BrE": "/ˈɡrædʒuəli/",
+            "AmE": "/ˈɡrædʒuəli/",
+            "definition": "slowly over time",
+            "examples": [
+               "It got dark gradually.",
+               "She improved gradually.",
+               "The noise grew gradually louder."
+            ]
+         },
+         {
+            "id": 39,
+            "word": "grammar",
+            "role": "noun",
+            "BrE": "/ˈɡræmə(r)/",
+            "AmE": "/ˈɡræmər/",
+            "definition": "the rules of a language",
+            "examples": [
+               "I study grammar.",
+               "Her grammar is very good.",
+               "The grammar lesson was hard."
+            ]
+         },
+         {
+            "id": 39,
+            "word": "grand",
             "role": "adjective",
-            "BrE": "/ɡriːn/",
-            "AmE": "/ɡriːn/",
-            "definition": "having the colour of grass or limes",
+            "BrE": "/ɡrænd/",
+            "AmE": "/ɡrænd/",
+            "definition": "large and impressive",
+            "examples": [
+               "The house is grand.",
+               "She saw a grand castle.",
+               "The grand party was fun."
+            ]
+         },
+         {
+            "id": 39,
+            "word": "grass",
+            "role": "noun",
+            "BrE": "/ɡrɑːs/",
+            "AmE": "/ɡræs/",
+            "definition": "a common green plant",
             "examples": [
                "The grass is green.",
-               "She wore a green dress.",
-               "The green forest was beautiful."
+               "She sat on the grass.",
+               "The grass needs cutting."
             ]
          },
          {
-            "id": 37,
+            "id": 39,
+            "word": "greatly",
+            "role": "adverb",
+            "BrE": "/ˈɡreɪtli/",
+            "AmE": "/ˈɡreɪtli/",
+            "definition": "to a large degree",
+            "examples": [
+               "I greatly enjoyed it.",
+               "She greatly improved her work.",
+               "He greatly admired her courage."
+            ]
+         },
+         {
+            "id": 39,
             "word": "grey",
             "role": "adjective",
             "BrE": "/ɡreɪ/",
             "AmE": "/ɡreɪ/",
-            "definition": "having the colour between black and white",
+            "definition": "the color between black and white",
             "examples": [
                "Her hair is grey.",
-               "The grey clouds brought rain.",
-               "He bought a grey jacket."
+               "He wore a grey jacket.",
+               "The grey clouds brought rain."
             ]
          },
          {
-            "id": 37,
+            "id": 39,
             "word": "ground",
             "role": "noun",
             "BrE": "/ɡraʊnd/",
@@ -4804,480 +5140,493 @@ export default function Lessons({ params }) {
             "definition": "the surface of the earth",
             "examples": [
                "The ground is wet.",
-               "He sat on the ground.",
-               "Leaves covered the ground."
+               "She fell to the ground.",
+               "The ground was covered in snow."
             ]
          },
          {
-            "id": 37,
-            "word": "group",
-            "role": "noun",
-            "BrE": "/ɡruːp/",
-            "AmE": "/ɡruːp/",
-            "definition": "a number of people or things together",
-            "examples": [
-               "A group of friends met.",
-               "The group studied together.",
-               "The group discussed the project."
-            ]
-         },
-         {
-            "id": 37,
+            "id": 39,
             "word": "grow",
             "role": "verb",
             "BrE": "/ɡrəʊ/",
             "AmE": "/ɡroʊ/",
-            "definition": "to increase in size or develop",
+            "definition": "to become bigger or taller",
             "examples": [
-               "Plants grow in the garden.",
+               "Plants grow fast.",
                "She grew taller this year.",
-               "The company grew quickly."
+               "The tree grew in the garden."
             ]
          },
          {
-            "id": 37,
+            "id": 39,
+            "word": "guard",
+            "role": "noun",
+            "BrE": "/ɡɑːd/",
+            "AmE": "/ɡɑːrd/",
+            "definition": "a person who protects something",
+            "examples": [
+               "The guard is at the gate.",
+               "She saw a security guard.",
+               "The guard watched the building."
+            ]
+         },
+         {
+            "id": 40,
             "word": "guess",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/ɡes/",
             "AmE": "/ɡes/",
-            "definition": "to try to give an answer without knowing if it is correct",
+            "definition": "an attempt to give the right answer",
             "examples": [
-               "Guess my age!",
-               "She guessed the right answer.",
-               "I can only guess what happened."
+               "Make a guess.",
+               "Her guess was correct.",
+               "My guess is it will rain."
             ]
          },
          {
-            "id": 37,
+            "id": 40,
             "word": "guest",
             "role": "noun",
             "BrE": "/ɡest/",
             "AmE": "/ɡest/",
-            "definition": "a person invited to a place or event",
+            "definition": "a person invited to a place",
             "examples": [
-               "We have a guest tonight.",
-               "The guest spoke at the event.",
-               "Guests arrived for the party."
+               "We have a guest.",
+               "She was a guest at the party.",
+               "The guest stayed for dinner."
             ]
          },
          {
-            "id": 37,
+            "id": 40,
             "word": "guide",
             "role": "noun",
             "BrE": "/ɡaɪd/",
             "AmE": "/ɡaɪd/",
-            "definition": "a person who shows others the way or gives information",
+            "definition": "a person who shows the way",
             "examples": [
-               "The guide showed us the city.",
-               "Our guide was very helpful.",
-               "She’s a guide at the museum."
+               "The guide was helpful.",
+               "She followed the tour guide.",
+               "The guide explained the history."
             ]
          },
          {
-            "id": 37,
+            "id": 40,
             "word": "gun",
             "role": "noun",
             "BrE": "/ɡʌn/",
             "AmE": "/ɡʌn/",
             "definition": "a weapon that shoots bullets",
             "examples": [
-               "The soldier carried a gun.",
-               "Guns are dangerous weapons.",
-               "He saw a gun in the movie."
+               "He held a gun.",
+               "The gun was not loaded.",
+               "She saw a gun in the movie."
             ]
          },
          {
-            "id": 37,
-            "word": "hair",
+            "id": 40,
+            "word": "guy",
             "role": "noun",
-            "BrE": "/heə(r)/",
-            "AmE": "/her/",
-            "definition": "the thin strands that grow on your head",
+            "BrE": "/ɡaɪ/",
+            "AmE": "/ɡaɪ/",
+            "definition": "a man or person (informal)",
             "examples": [
-               "Her hair is long.",
-               "He brushed his hair.",
-               "She dyed her hair red."
+               "He’s a nice guy.",
+               "She met a guy at school.",
+               "That guy helped me yesterday."
             ]
          },
          {
-            "id": 38,
-            "word": "half",
+            "id": 40,
+            "word": "habit",
             "role": "noun",
-            "BrE": "/hɑːf/",
-            "AmE": "/hæf/",
-            "definition": "one of two equal parts of something",
+            "BrE": "/ˈhæbɪt/",
+            "AmE": "/ˈhæbɪt/",
+            "definition": "something you do regularly",
             "examples": [
-               "I ate half the cake.",
-               "She worked for half a day.",
-               "Half of the class was absent."
+               "I have a bad habit.",
+               "She broke her habit of smoking.",
+               "His habit is to wake up early."
             ]
          },
          {
-            "id": 38,
+            "id": 40,
+            "word": "haircut",
+            "role": "noun",
+            "BrE": "/ˈheəkʌt/",
+            "AmE": "/ˈherkʌt/",
+            "definition": "the act of cutting hair",
+            "examples": [
+               "I need a haircut.",
+               "She got a new haircut.",
+               "The haircut made her look different."
+            ]
+         },
+         {
+            "id": 40,
             "word": "hall",
             "role": "noun",
             "BrE": "/hɔːl/",
             "AmE": "/hɔːl/",
-            "definition": "a large room or building for events or meetings",
+            "definition": "a large room or building for events",
             "examples": [
-               "The hall was full.",
-               "The meeting is in the hall.",
-               "The concert hall was beautiful."
+               "The hall is big.",
+               "She danced in the hall.",
+               "The meeting was in the hall."
             ]
          },
          {
-            "id": 38,
+            "id": 40,
             "word": "hand",
-            "role": "noun",
+            "role": "verb",
             "BrE": "/hænd/",
             "AmE": "/hænd/",
-            "definition": "the part of the body at the end of the arm",
+            "definition": "to give something to someone",
             "examples": [
-               "Raise your hand.",
-               "She held his hand tightly.",
-               "He wrote with his left hand."
+               "Hand me the book.",
+               "She handed him a pen.",
+               "He handed out the papers."
             ]
          },
          {
-            "id": 38,
+            "id": 40,
+            "word": "hang",
+            "role": "verb",
+            "BrE": "/hæŋ/",
+            "AmE": "/hæŋ/",
+            "definition": "to attach something so it stays up",
+            "examples": [
+               "Hang the picture.",
+               "She hung her coat on the hook.",
+               "He hung the lights on the tree."
+            ]
+         },
+         {
+            "id": 41,
             "word": "happen",
             "role": "verb",
             "BrE": "/ˈhæpən/",
             "AmE": "/ˈhæpən/",
-            "definition": "to take place, often by chance",
+            "definition": "to take place or occur",
             "examples": [
-               "What happened at school?",
-               "The accident happened yesterday.",
-               "Good things happen when you try."
+               "What happened here?",
+               "She saw it happen.",
+               "The accident happened yesterday."
             ]
          },
          {
-            "id": 38,
-            "word": "happy",
-            "role": "adjective",
-            "BrE": "/ˈhæpi/",
-            "AmE": "/ˈhæpi/",
-            "definition": "feeling or showing pleasure",
+            "id": 41,
+            "word": "hardly",
+            "role": "adverb",
+            "BrE": "/ˈhɑːdli/",
+            "AmE": "/ˈhɑːrdli/",
+            "definition": "almost not",
             "examples": [
-               "She’s happy today.",
-               "He was happy with his gift.",
-               "The happy children played outside."
+               "I hardly know her.",
+               "She hardly ate anything.",
+               "He hardly speaks in class."
             ]
          },
          {
-            "id": 38,
-            "word": "hard",
-            "role": "adjective",
-            "BrE": "/hɑːd/",
-            "AmE": "/hɑːrd/",
-            "definition": "difficult or not soft",
-            "examples": [
-               "This test is hard.",
-               "The ground was hard and cold.",
-               "She worked hard all day."
-            ]
-         },
-         {
-            "id": 38,
-            "word": "hat",
-            "role": "noun",
-            "BrE": "/hæt/",
-            "AmE": "/hæt/",
-            "definition": "a covering for the head",
-            "examples": [
-               "She wore a red hat.",
-               "The hat kept her warm.",
-               "He lost his favourite hat."
-            ]
-         },
-         {
-            "id": 38,
+            "id": 41,
             "word": "hate",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/heɪt/",
             "AmE": "/heɪt/",
-            "definition": "to strongly dislike something or someone",
+            "definition": "a strong feeling of dislike",
             "examples": [
-               "I hate cold weather.",
-               "She hates doing homework.",
-               "He hates waiting for buses."
+               "Hate is not good.",
+               "She felt hate for the bully.",
+               "His hate caused problems."
             ]
          },
          {
-            "id": 38,
-            "word": "head",
+            "id": 41,
+            "word": "headache",
             "role": "noun",
-            "BrE": "/hed/",
-            "AmE": "/hed/",
-            "definition": "the part of the body above the neck",
+            "BrE": "/ˈhedeɪk/",
+            "AmE": "/ˈhedeɪk/",
+            "definition": "a pain in the head",
             "examples": [
-               "My head hurts.",
-               "She nodded her head.",
-               "He hit his head on the door."
+               "I have a headache.",
+               "She took medicine for her headache.",
+               "The headache lasted all day."
             ]
          },
          {
-            "id": 38,
+            "id": 41,
             "word": "health",
             "role": "noun",
             "BrE": "/helθ/",
             "AmE": "/helθ/",
-            "definition": "the condition of your body",
+            "definition": "the condition of the body or mind",
             "examples": [
-               "Her health is good.",
-               "He takes care of his health.",
-               "Poor health stopped her working."
+               "Health is important.",
+               "She cares about her health.",
+               "Good health helps you work."
             ]
          },
          {
-            "id": 39,
+            "id": 41,
             "word": "healthy",
             "role": "adjective",
             "BrE": "/ˈhelθi/",
             "AmE": "/ˈhelθi/",
-            "definition": "good for your health or physically well",
+            "definition": "good for your health",
             "examples": [
-               "She eats healthy food.",
-               "He’s a healthy young man.",
+               "Eat healthy food.",
+               "She feels healthy now.",
                "A healthy diet includes fruit."
             ]
          },
          {
-            "id": 39,
-            "word": "hear",
-            "role": "verb",
-            "BrE": "/hɪə(r)/",
-            "AmE": "/hɪr/",
-            "definition": "to receive sounds with your ears",
-            "examples": [
-               "I hear a bird.",
-               "She heard a loud noise.",
-               "He heard the news on TV."
-            ]
-         },
-         {
-            "id": 39,
+            "id": 41,
             "word": "heart",
             "role": "noun",
             "BrE": "/hɑːt/",
             "AmE": "/hɑːrt/",
-            "definition": "the organ in your chest that pumps blood",
+            "definition": "the organ that pumps blood",
             "examples": [
-               "My heart is beating fast.",
-               "She has a kind heart.",
-               "His heart was checked by a doctor."
+               "The heart beats fast.",
+               "Her heart was checked.",
+               "A strong heart helps athletes."
             ]
          },
          {
-            "id": 39,
+            "id": 41,
             "word": "heat",
             "role": "noun",
             "BrE": "/hiːt/",
             "AmE": "/hiːt/",
             "definition": "the quality of being hot",
             "examples": [
-               "The heat is strong today.",
-               "She felt the heat of the fire.",
-               "The heat made him tired."
+               "The heat is strong.",
+               "She felt the heat outside.",
+               "The heat of the fire warmed us."
             ]
          },
          {
-            "id": 39,
-            "word": "heavy",
-            "role": "adjective",
-            "BrE": "/ˈhevi/",
-            "AmE": "/ˈhevi/",
-            "definition": "having a lot of weight",
+            "id": 41,
+            "word": "heat",
+            "role": "verb",
+            "BrE": "/hiːt/",
+            "AmE": "/hiːt/",
+            "definition": "to make something hot",
             "examples": [
-               "The bag is heavy.",
-               "He lifted a heavy box.",
-               "The heavy rain caused floods."
+               "Heat the water.",
+               "She heated the soup.",
+               "He heated his coffee again."
             ]
          },
          {
-            "id": 39,
+            "id": 41,
+            "word": "heaven",
+            "role": "noun",
+            "BrE": "/ˈhevn/",
+            "AmE": "/ˈhevn/",
+            "definition": "a place believed to be perfect",
+            "examples": [
+               "Heaven sounds nice.",
+               "She believes in heaven.",
+               "The view was like heaven."
+            ]
+         },
+         {
+            "id": 42,
             "word": "height",
             "role": "noun",
             "BrE": "/haɪt/",
             "AmE": "/haɪt/",
             "definition": "how tall or high something is",
             "examples": [
-               "Her height is 1.7 meters.",
-               "The height of the tree is amazing.",
-               "The wall’s height was measured."
+               "Her height is tall.",
+               "The height of the tree is big.",
+               "He measured the height of the wall."
             ]
          },
          {
-            "id": 39,
-            "word": "help",
-            "role": "verb",
-            "BrE": "/help/",
-            "AmE": "/help/",
-            "definition": "to make something easier or better for someone",
-            "examples": [
-               "Can you help me?",
-               "She helped him with homework.",
-               "They helped clean the park."
-            ]
-         },
-         {
-            "id": 39,
+            "id": 42,
             "word": "hide",
             "role": "verb",
             "BrE": "/haɪd/",
             "AmE": "/haɪd/",
-            "definition": "to put or keep something where it cannot be seen",
+            "definition": "to put or keep out of sight",
             "examples": [
-               "Hide the gift quickly.",
+               "Hide the gift.",
                "She hid behind the door.",
-               "He hid his feelings well."
+               "He hid his keys in the bag."
             ]
          },
          {
-            "id": 39,
+            "id": 42,
             "word": "high",
-            "role": "adjective",
+            "role": "adverb",
             "BrE": "/haɪ/",
             "AmE": "/haɪ/",
-            "definition": "having a large distance from top to bottom or far above the ground",
+            "definition": "at or to a great height",
             "examples": [
-               "The mountain is high.",
-               "She climbed a high wall.",
-               "The high tower was visible."
+               "The bird flew high.",
+               "She climbed high up the hill.",
+               "He jumped high in the air."
             ]
          },
          {
-            "id": 39,
+            "id": 42,
             "word": "hill",
             "role": "noun",
             "BrE": "/hɪl/",
             "AmE": "/hɪl/",
-            "definition": "a raised area of land, smaller than a mountain",
+            "definition": "a raised area of land",
             "examples": [
-               "The house is on a hill.",
-               "We walked up the hill.",
-               "The hill was covered in grass."
+               "The hill is steep.",
+               "She ran down the hill.",
+               "The hill has a great view."
             ]
          },
          {
-            "id": 40,
-            "word": "history",
-            "role": "noun",
-            "BrE": "/ˈhɪstri/",
-            "AmE": "/ˈhɪstri/",
-            "definition": "the study of past events",
-            "examples": [
-               "I study history at school.",
-               "She loves reading about history.",
-               "The history of the city is old."
-            ]
-         },
-         {
-            "id": 40,
-            "word": "hit",
+            "id": 42,
+            "word": "hire",
             "role": "verb",
+            "BrE": "/ˈhaɪə(r)/",
+            "AmE": "/ˈhaɪr/",
+            "definition": "to give someone a job",
+            "examples": [
+               "They hired me.",
+               "She hired a new assistant.",
+               "He was hired for the project."
+            ]
+         },
+         {
+            "id": 42,
+            "word": "hit",
+            "role": "noun",
             "BrE": "/hɪt/",
             "AmE": "/hɪt/",
-            "definition": "to strike something or someone",
+            "definition": "a successful song or film",
             "examples": [
-               "He hit the ball.",
-               "She hit her hand on the table.",
-               "The car hit a tree."
+               "The song is a hit.",
+               "Her movie was a big hit.",
+               "The hit song played on the radio."
             ]
          },
          {
-            "id": 40,
+            "id": 42,
             "word": "hobby",
             "role": "noun",
             "BrE": "/ˈhɒbi/",
             "AmE": "/ˈhɑːbi/",
-            "definition": "an activity done for enjoyment in your free time",
+            "definition": "an activity done for pleasure",
             "examples": [
-               "My hobby is painting.",
-               "He has a new hobby.",
-               "Her hobby is collecting stamps."
+               "My hobby is reading.",
+               "She has a hobby of painting.",
+               "His hobby is collecting coins."
             ]
          },
          {
-            "id": 40,
+            "id": 42,
             "word": "hold",
             "role": "verb",
             "BrE": "/həʊld/",
             "AmE": "/hoʊld/",
-            "definition": "to carry or keep something in your hands",
+            "definition": "to keep something in your hand",
             "examples": [
-               "Hold the book tightly.",
-               "She held her baby carefully.",
-               "He held the prize proudly."
+               "Hold the book.",
+               "She held her baby tightly.",
+               "He held the bag for her."
             ]
          },
          {
-            "id": 40,
+            "id": 42,
             "word": "hole",
             "role": "noun",
             "BrE": "/həʊl/",
             "AmE": "/hoʊl/",
-            "definition": "an empty space in something solid",
+            "definition": "an empty space in something",
             "examples": [
                "There’s a hole in my shoe.",
-               "The dog dug a hole.",
-               "A hole appeared in the wall."
+               "She fell into a hole.",
+               "The hole was full of water."
             ]
          },
          {
-            "id": 40,
+            "id": 42,
             "word": "holiday",
             "role": "noun",
             "BrE": "/ˈhɒlədeɪ/",
             "AmE": "/ˈhɑːlədeɪ/",
-            "definition": "a time when you do not go to work or school",
+            "definition": "a time of rest or travel",
             "examples": [
-               "We’re on holiday now.",
-               "She planned a holiday abroad.",
-               "The holiday was relaxing."
+               "I love holidays.",
+               "She went on holiday to Spain.",
+               "The holiday was very relaxing."
             ]
          },
          {
-            "id": 40,
-            "word": "home",
+            "id": 43,
+            "word": "homework",
             "role": "noun",
-            "BrE": "/həʊm/",
-            "AmE": "/hoʊm/",
-            "definition": "the place where you live",
+            "BrE": "/ˈhəʊmwɜːk/",
+            "AmE": "/ˈhoʊmwɜːrk/",
+            "definition": "schoolwork done at home",
             "examples": [
-               "I’m going home now.",
-               "Her home is in London.",
-               "They built a new home."
+               "I have homework.",
+               "She finished her homework early.",
+               "The homework was about math."
             ]
          },
          {
-            "id": 40,
+            "id": 43,
             "word": "hope",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/həʊp/",
             "AmE": "/hoʊp/",
-            "definition": "to want something to happen",
+            "definition": "a feeling that something good will happen",
             "examples": [
-               "I hope it’s sunny.",
-               "She hopes to pass the test.",
-               "He hoped for a better job."
+               "I have hope.",
+               "She gave me hope.",
+               "His hope is to win the race."
             ]
          },
          {
-            "id": 40,
+            "id": 43,
+            "word": "horrible",
+            "role": "adjective",
+            "BrE": "/ˈhɒrəbl/",
+            "AmE": "/ˈhɔːrəbl/",
+            "definition": "very bad or unpleasant",
+            "examples": [
+               "The smell was horrible.",
+               "She had a horrible day.",
+               "The horrible noise woke him."
+            ]
+         },
+         {
+            "id": 43,
+            "word": "horse",
+            "role": "noun",
+            "BrE": "/hɔːs/",
+            "AmE": "/hɔːrs/",
+            "definition": "a large animal used for riding",
+            "examples": [
+               "The horse is fast.",
+               "She rode a horse.",
+               "The horse ran in the field."
+            ]
+         },
+         {
+            "id": 43,
             "word": "hospital",
             "role": "noun",
             "BrE": "/ˈhɒspɪtl/",
             "AmE": "/ˈhɑːspɪtl/",
-            "definition": "a place where sick or injured people are treated",
+            "definition": "a place where sick people are treated",
             "examples": [
-               "He’s in the hospital.",
-               "The hospital is very big.",
-               "She visited her friend in hospital."
+               "The hospital is near.",
+               "She visited the hospital.",
+               "He stayed in the hospital overnight."
             ]
          },
          {
-            "id": 40,
+            "id": 43,
             "word": "hot",
             "role": "adjective",
             "BrE": "/hɒt/",
@@ -5285,77 +5634,90 @@ export default function Lessons({ params }) {
             "definition": "having a high temperature",
             "examples": [
                "The soup is hot.",
-               "It’s a hot summer day.",
-               "The hot water burned his hand."
+               "She felt hot in the sun.",
+               "The hot weather lasted all week."
             ]
          },
-            {
-            "id": 41,
+         {
+            "id": 43,
             "word": "hotel",
             "role": "noun",
             "BrE": "/həʊˈtel/",
             "AmE": "/hoʊˈtel/",
-            "definition": "a building where people stay and pay for rooms and meals",
+            "definition": "a place where people stay and pay",
             "examples": [
-               "We stayed in a hotel.",
-               "The hotel has a pool.",
-               "The hotel was near the beach."
+               "The hotel is nice.",
+               "She booked a hotel room.",
+               "The hotel has a big pool."
             ]
          },
          {
-            "id": 41,
-            "word": "hour",
-            "role": "noun",
-            "BrE": "/aʊə(r)/",
-            "AmE": "/aʊr/",
-            "definition": "a period of 60 minutes",
+            "id": 43,
+            "word": "hourly",
+            "role": "adjective",
+            "BrE": "/ˈaʊəli/",
+            "AmE": "/ˈaʊrli/",
+            "definition": "happening every hour",
             "examples": [
-               "The class is one hour.",
-               "She waited for an hour.",
-               "The journey takes two hours."
+               "The bus is hourly.",
+               "She checks her phone hourly.",
+               "Hourly updates were given."
             ]
          },
          {
-            "id": 41,
-            "word": "house",
-            "role": "noun",
-            "BrE": "/haʊs/",
-            "AmE": "/haʊs/",
-            "definition": "a building where people live",
-            "examples": [
-               "My house is big.",
-               "They bought a new house.",
-               "Her house has a garden."
-            ]
-         },
-         {
-            "id": 41,
+            "id": 43,
             "word": "huge",
             "role": "adjective",
             "BrE": "/hjuːdʒ/",
             "AmE": "/hjuːdʒ/",
-            "definition": "extremely large in size or amount",
+            "definition": "very large",
             "examples": [
-               "The elephant is huge.",
-               "He has a huge dog.",
-               "The huge crowd cheered loudly."
+               "The house is huge.",
+               "She saw a huge dog.",
+               "The huge tree blocked the sun."
             ]
          },
          {
-            "id": 41,
+            "id": 43,
             "word": "human",
             "role": "noun",
             "BrE": "/ˈhjuːmən/",
             "AmE": "/ˈhjuːmən/",
             "definition": "a person",
             "examples": [
-               "Humans need water.",
-               "She’s a kind human.",
-               "Humans created this technology."
+               "Humans live here.",
+               "She studies human behavior.",
+               "The human helped the animal."
             ]
          },
          {
-            "id": 41,
+            "id": 44,
+            "word": "humid",
+            "role": "adjective",
+            "BrE": "/ˈhjuːmɪd/",
+            "AmE": "/ˈhjuːmɪd/",
+            "definition": "wet and warm, like the air",
+            "examples": [
+               "The weather is humid.",
+               "She felt humid in the forest.",
+               "The humid air was heavy."
+            ]
+         },
+         {
+            "id": 44,
+            "word": "hunger",
+            "role": "noun",
+            "BrE": "/ˈhʌŋɡə(r)/",
+            "AmE": "/ˈhʌŋɡər/",
+            "definition": "the feeling of needing food",
+            "examples": [
+               "Hunger makes me tired.",
+               "She felt hunger after work.",
+               "The hunger was hard to ignore."
+            ]
+         },
+         {
+            "id": 44,
             "word": "hungry",
             "role": "adjective",
             "BrE": "/ˈhʌŋɡri/",
@@ -5363,25 +5725,51 @@ export default function Lessons({ params }) {
             "definition": "wanting or needing food",
             "examples": [
                "I’m hungry now.",
-               "The hungry cat ate quickly.",
-               "They were hungry after the trip."
+               "She felt hungry after school.",
+               "The hungry child ate quickly."
             ]
          },
          {
-            "id": 41,
+            "id": 44,
+            "word": "hunt",
+            "role": "verb",
+            "BrE": "/hʌnt/",
+            "AmE": "/hʌnt/",
+            "definition": "to chase animals to catch them",
+            "examples": [
+               "They hunt in the forest.",
+               "She hunted for food.",
+               "He hunts with his dog."
+            ]
+         },
+         {
+            "id": 44,
+            "word": "hurry",
+            "role": "noun",
+            "BrE": "/ˈhʌri/",
+            "AmE": "/ˈhɜːri/",
+            "definition": "the need to move quickly",
+            "examples": [
+               "I’m in a hurry.",
+               "She left in a hurry.",
+               "There’s no hurry to finish."
+            ]
+         },
+         {
+            "id": 44,
             "word": "hurry",
             "role": "verb",
             "BrE": "/ˈhʌri/",
             "AmE": "/ˈhɜːri/",
-            "definition": "to move or do something quickly",
+            "definition": "to move or act quickly",
             "examples": [
                "Hurry, we’re late!",
-               "She hurried to catch the bus.",
-               "He hurried through his homework."
+               "She hurried to the bus.",
+               "He hurried to finish his work."
             ]
          },
          {
-            "id": 41,
+            "id": 44,
             "word": "hurt",
             "role": "verb",
             "BrE": "/hɜːt/",
@@ -5389,1013 +5777,1416 @@ export default function Lessons({ params }) {
             "definition": "to cause pain or injury",
             "examples": [
                "My leg hurts.",
-               "She hurt her arm playing.",
-               "His words hurt her feelings."
+               "She hurt her arm.",
+               "He didn’t mean to hurt her."
             ]
          },
          {
-            "id": 41,
-            "word": "ice",
-            "role": "noun",
-            "BrE": "/aɪs/",
-            "AmE": "/aɪs/",
-            "definition": "frozen water",
+            "id": 44,
+            "word": "ideal",
+            "role": "adjective",
+            "BrE": "/aɪˈdiːəl/",
+            "AmE": "/aɪˈdiːəl/",
+            "definition": "perfect or the best possible",
             "examples": [
-               "The ice is cold.",
-               "She put ice in her drink.",
-               "The lake was covered in ice."
+               "It’s an ideal place.",
+               "She found the ideal job.",
+               "The weather was ideal for a picnic."
             ]
          },
          {
-            "id": 41,
-            "word": "idea",
-            "role": "noun",
-            "BrE": "/aɪˈdɪə/",
-            "AmE": "/aɪˈdiːə/",
-            "definition": "a plan or suggestion in your mind",
-            "examples": [
-               "I have an idea.",
-               "Her idea was brilliant.",
-               "The idea came to him suddenly."
-            ]
-         },
-         {
-            "id": 42,
+            "id": 44,
             "word": "identify",
             "role": "verb",
             "BrE": "/aɪˈdentɪfaɪ/",
             "AmE": "/aɪˈdentɪfaɪ/",
-            "definition": "to recognize or name something or someone",
+            "definition": "to recognize or name something",
             "examples": [
-               "Can you identify this bird?",
-               "She identified the thief.",
-               "He identified the problem quickly."
+               "Identify the picture.",
+               "She identified the bird.",
+               "He identified the correct answer."
             ]
          },
          {
-            "id": 42,
+            "id": 44,
             "word": "ill",
             "role": "adjective",
             "BrE": "/ɪl/",
             "AmE": "/ɪl/",
-            "definition": "not healthy; sick",
+            "definition": "not healthy or sick",
             "examples": [
-               "She’s ill today.",
+               "She is ill today.",
                "He felt ill after lunch.",
-               "The ill patient needed rest."
+               "The ill child stayed home."
             ]
          },
          {
-            "id": 42,
+            "id": 45,
+            "word": "illegal",
+            "role": "adjective",
+            "BrE": "/ɪˈliːɡl/",
+            "AmE": "/ɪˈliːɡl/",
+            "definition": "against the law",
+            "examples": [
+               "It’s an illegal act.",
+               "She saw an illegal sign.",
+               "The illegal parking caused a fine."
+            ]
+         },
+         {
+            "id": 45,
+            "word": "illness",
+            "role": "noun",
+            "BrE": "/ˈɪlnəs/",
+            "AmE": "/ˈɪlnəs/",
+            "definition": "the state of being ill",
+            "examples": [
+               "She has an illness.",
+               "His illness was short.",
+               "The illness kept her in bed."
+            ]
+         },
+         {
+            "id": 45,
             "word": "image",
             "role": "noun",
             "BrE": "/ˈɪmɪdʒ/",
             "AmE": "/ˈɪmɪdʒ/",
             "definition": "a picture or photograph",
             "examples": [
-               "This image is clear.",
-               "She took an image of the sunset.",
-               "The image was on the screen."
+               "I saw an image.",
+               "She took an image of the tree.",
+               "The image on the wall is nice."
             ]
          },
          {
-            "id": 42,
+            "id": 45,
             "word": "imagine",
             "role": "verb",
             "BrE": "/ɪˈmædʒɪn/",
             "AmE": "/ɪˈmædʒɪn/",
-            "definition": "to form a picture or idea in your mind",
+            "definition": "to form a picture in your mind",
             "examples": [
-               "Imagine a big castle.",
-               "She imagined living by the sea.",
-               "He imagined a world without cars."
+               "Imagine a big house.",
+               "She imagined a fun holiday.",
+               "He imagined living in a city."
             ]
          },
          {
-            "id": 42,
-            "word": "important",
+            "id": 45,
+            "word": "immediately",
+            "role": "adverb",
+            "BrE": "/ɪˈmiːdiətli/",
+            "AmE": "/ɪˈmiːdiətli/",
+            "definition": "at once or without delay",
+            "examples": [
+               "Come immediately!",
+               "She answered immediately.",
+               "He left immediately after class."
+            ]
+         },
+         {
+            "id": 45,
+            "word": "impossible",
             "role": "adjective",
-            "BrE": "/ɪmˈpɔːtnt/",
-            "AmE": "/ɪmˈpɔːrtnt/",
-            "definition": "having a lot of value or influence",
+            "BrE": "/ɪmˈpɒsəbl/",
+            "AmE": "/ɪmˈpɑːsəbl/",
+            "definition": "not able to happen",
             "examples": [
-               "This test is important.",
-               "Her role is very important.",
-               "The meeting was important for all."
+               "It’s impossible to fly.",
+               "She found it impossible to sleep.",
+               "The task was impossible for him."
             ]
          },
          {
-            "id": 42,
+            "id": 45,
             "word": "improve",
             "role": "verb",
             "BrE": "/ɪmˈpruːv/",
             "AmE": "/ɪmˈpruːv/",
-            "definition": "to make something better",
+            "definition": "to make or become better",
             "examples": [
-               "I want to improve my English.",
-               "She improved her grades.",
-               "The team improved their skills."
+               "Improve your work.",
+               "She improved her English.",
+               "He improved the design."
             ]
          },
          {
-            "id": 42,
+            "id": 45,
+            "word": "improvement",
+            "role": "noun",
+            "BrE": "/ɪmˈpruːvmənt/",
+            "AmE": "/ɪmˈpruːvmənt/",
+            "definition": "the act of making something better",
+            "examples": [
+               "I see improvement.",
+               "Her improvement was clear.",
+               "The improvement in sales was big."
+            ]
+         },
+         {
+            "id": 45,
             "word": "include",
             "role": "verb",
             "BrE": "/ɪnˈkluːd/",
             "AmE": "/ɪnˈkluːd/",
-            "definition": "to have something as part of a group or set",
+            "definition": "to have something as a part",
             "examples": [
-               "The price includes tax.",
-               "The list includes her name.",
-               "The menu includes dessert."
+               "Include me in the plan.",
+               "She included a photo.",
+               "The price includes food."
             ]
          },
          {
-            "id": 42,
+            "id": 45,
+            "word": "including",
+            "role": "preposition",
+            "BrE": "/ɪnˈkluːdɪŋ/",
+            "AmE": "/ɪnˈkluːdɪŋ/",
+            "definition": "having something as part of a group",
+            "examples": [
+               "Everyone, including me, came.",
+               "She invited friends, including him.",
+               "The team, including her, won."
+            ]
+         },
+         {
+            "id": 46,
+            "word": "increase",
+            "role": "noun",
+            "BrE": "/ˈɪnkriːs/",
+            "AmE": "/ˈɪnkriːs/",
+            "definition": "a rise in amount or size",
+            "examples": [
+               "There’s an increase in price.",
+               "She noticed an increase in sales.",
+               "The increase in traffic was big."
+            ]
+         },
+         {
+            "id": 46,
             "word": "increase",
             "role": "verb",
             "BrE": "/ɪnˈkriːs/",
             "AmE": "/ɪnˈkriːs/",
-            "definition": "to become or make something larger",
+            "definition": "to make or become larger",
             "examples": [
-               "Prices increase every year.",
+               "Increase the heat.",
                "She increased her speed.",
-               "They increased the team’s budget."
+               "He increased his study time."
             ]
          },
          {
-            "id": 42,
+            "id": 46,
+            "word": "independent",
+            "role": "adjective",
+            "BrE": "/ˌɪndɪˈpendənt/",
+            "AmE": "/ˌɪndɪˈpendənt/",
+            "definition": "not needing other people’s help",
+            "examples": [
+               "She is independent.",
+               "He lives an independent life.",
+               "The independent shop is small."
+            ]
+         },
+         {
+            "id": 46,
+            "word": "individual",
+            "role": "adjective",
+            "BrE": "/ˌɪndɪˈvɪdʒuəl/",
+            "AmE": "/ˌɪndɪˈvɪdʒuəl/",
+            "definition": "relating to one person or thing",
+            "examples": [
+               "Each individual task is easy.",
+               "She has individual style.",
+               "The individual books were numbered."
+            ]
+         },
+         {
+            "id": 46,
             "word": "individual",
             "role": "noun",
             "BrE": "/ˌɪndɪˈvɪdʒuəl/",
             "AmE": "/ˌɪndɪˈvɪdʒuəl/",
             "definition": "a single person",
             "examples": [
-               "Each individual has a vote.",
-               "She’s a talented individual.",
-               "The individual completed the task."
+               "Each individual must try.",
+               "She helped every individual.",
+               "The individual won a prize."
             ]
          },
          {
-            "id": 42,
+            "id": 46,
             "word": "industry",
             "role": "noun",
             "BrE": "/ˈɪndəstri/",
             "AmE": "/ˈɪndəstri/",
-            "definition": "the production of goods in factories",
+            "definition": "the production of goods",
             "examples": [
-               "The industry makes cars.",
-               "She works in the fashion industry.",
-               "The industry grew this year."
+               "Industry is growing.",
+               "She works in the car industry.",
+               "The industry needs new workers."
             ]
          },
          {
-            "id": 43,
+            "id": 46,
+            "word": "inform",
+            "role": "verb",
+            "BrE": "/ɪnˈfɔːm/",
+            "AmE": "/ɪnˈfɔːrm/",
+            "definition": "to tell someone something",
+            "examples": [
+               "Inform me later.",
+               "She informed the team.",
+               "He informed her about the plan."
+            ]
+         },
+         {
+            "id": 46,
             "word": "information",
             "role": "noun",
             "BrE": "/ˌɪnfəˈmeɪʃn/",
             "AmE": "/ˌɪnfərˈmeɪʃn/",
-            "definition": "facts or details about something",
+            "definition": "facts about something",
             "examples": [
-               "I need more information.",
-               "The information was helpful.",
-               "She shared information about the event."
+               "I need information.",
+               "She gave me information.",
+               "The information was helpful."
             ]
          },
          {
-            "id": 43,
+            "id": 46,
+            "word": "ingredient",
+            "role": "noun",
+            "BrE": "/ɪnˈɡriːdiənt/",
+            "AmE": "/ɪnˈɡriːdiənt/",
+            "definition": "a part of a mixture, especially in cooking",
+            "examples": [
+               "Sugar is an ingredient.",
+               "She added ingredients to the cake.",
+               "The recipe needs five ingredients."
+            ]
+         },
+         {
+            "id": 46,
+            "word": "injury",
+            "role": "noun",
+            "BrE": "/ˈɪndʒəri/",
+            "AmE": "/ˈɪndʒəri/",
+            "definition": "harm or damage to the body",
+            "examples": [
+               "He has an injury.",
+               "Her injury was from sports.",
+               "The injury healed quickly."
+            ]
+         },
+         {
+            "id": 47,
+            "word": "inside",
+            "role": "adverb",
+            "BrE": "/ɪnˈsaɪd/",
+            "AmE": "/ɪnˈsaɪd/",
+            "definition": "into or within a place",
+            "examples": [
+               "Go inside now.",
+               "She waited inside the house.",
+               "He left his bag inside."
+            ]
+         },
+         {
+            "id": 47,
+            "word": "inside",
+            "role": "noun",
+            "BrE": "/ˈɪnsaɪd/",
+            "AmE": "/ˈɪnsaɪd/",
+            "definition": "the inner part of something",
+            "examples": [
+               "The inside is clean.",
+               "She checked the inside of the box.",
+               "The inside of the car was warm."
+            ]
+         },
+         {
+            "id": 47,
             "word": "inside",
             "role": "preposition",
             "BrE": "/ɪnˈsaɪd/",
             "AmE": "/ɪnˈsaɪd/",
             "definition": "within something",
             "examples": [
-               "The keys are inside the bag.",
-               "He stayed inside the house.",
-               "The gift was inside the box."
+               "It’s inside the bag.",
+               "She put it inside the box.",
+               "He found it inside the drawer."
             ]
          },
          {
-            "id": 43,
+            "id": 47,
+            "word": "install",
+            "role": "verb",
+            "BrE": "/ɪnˈstɔːl/",
+            "AmE": "/ɪnˈstɔːl/",
+            "definition": "to put equipment in place",
+            "examples": [
+               "Install the app.",
+               "She installed a new light.",
+               "He installed the software."
+            ]
+         },
+         {
+            "id": 47,
             "word": "instead",
             "role": "adverb",
             "BrE": "/ɪnˈsted/",
             "AmE": "/ɪnˈsted/",
-            "definition": "in place of something or someone",
+            "definition": "in place of something else",
             "examples": [
                "I’ll go instead.",
                "She chose tea instead of coffee.",
-               "He walked instead of driving."
+               "He stayed home instead of going out."
             ]
          },
          {
-            "id": 43,
+            "id": 47,
             "word": "instruction",
             "role": "noun",
             "BrE": "/ɪnˈstrʌkʃn/",
             "AmE": "/ɪnˈstrʌkʃn/",
             "definition": "information on how to do something",
             "examples": [
-               "Follow the instructions.",
-               "The instructions were clear.",
-               "She read the instructions carefully."
+               "Follow the instruction.",
+               "She read the instructions.",
+               "The instruction was clear."
             ]
          },
          {
-            "id": 43,
-            "word": "interest",
+            "id": 47,
+            "word": "instrument",
             "role": "noun",
-            "BrE": "/ˈɪntrəst/",
-            "AmE": "/ˈɪntrəst/",
-            "definition": "a feeling of wanting to know or learn about something",
+            "BrE": "/ˈɪnstrəmənt/",
+            "AmE": "/ˈɪnstrəmənt/",
+            "definition": "a tool or device for a purpose",
             "examples": [
-               "I have an interest in art.",
-               "Her interest is music.",
-               "His interest in history grew."
+               "The instrument is sharp.",
+               "She plays a musical instrument.",
+               "The instrument helped in surgery."
             ]
          },
          {
-            "id": 43,
-            "word": "interested",
+            "id": 47,
+            "word": "intelligent",
             "role": "adjective",
-            "BrE": "/ˈɪntrəstɪd/",
-            "AmE": "/ˈɪntrəstɪd/",
-            "definition": "wanting to know or learn about something",
+            "BrE": "/ɪnˈtelɪdʒənt/",
+            "AmE": "/ɪnˈtelɪdʒənt/",
+            "definition": "able to learn and understand quickly",
             "examples": [
-               "I’m interested in books.",
-               "She’s interested in science.",
-               "He’s interested in learning Spanish."
+               "She is intelligent.",
+               "He gave an intelligent answer.",
+               "The intelligent student won."
             ]
          },
          {
-            "id": 43,
+            "id": 47,
             "word": "international",
             "role": "adjective",
             "BrE": "/ˌɪntəˈnæʃnəl/",
             "AmE": "/ˌɪntərˈnæʃnəl/",
             "definition": "involving more than one country",
             "examples": [
-               "It’s an international school.",
-               "She travels to international cities.",
+               "It’s an international event.",
+               "She works for an international firm.",
                "The international team won."
             ]
          },
          {
-            "id": 43,
+            "id": 47,
             "word": "internet",
             "role": "noun",
             "BrE": "/ˈɪntənet/",
             "AmE": "/ˈɪntərnet/",
-            "definition": "a global computer network for sharing information",
+            "definition": "a global computer network",
             "examples": [
-               "I use the internet daily.",
-               "The internet is very fast.",
-               "She found the answer on the internet."
+               "I use the internet.",
+               "She found it on the internet.",
+               "The internet is very useful."
             ]
          },
          {
-            "id": 43,
+            "id": 48,
             "word": "interview",
             "role": "noun",
             "BrE": "/ˈɪntəvjuː/",
             "AmE": "/ˈɪntərvjuː/",
-            "definition": "a meeting where someone is asked questions",
+            "definition": "a formal meeting to ask questions",
             "examples": [
-               "I have a job interview.",
-               "The interview was on TV.",
-               "She prepared for her interview."
+               "I have an interview.",
+               "She prepared for the interview.",
+               "The job interview went well."
             ]
          },
          {
-            "id": 43,
-            "word": "into",
-            "role": "preposition",
-            "BrE": "/ˈɪntə/",
-            "AmE": "/ˈɪntu/",
-            "definition": "moving towards the inside of something",
+            "id": 48,
+            "word": "interview",
+            "role": "verb",
+            "BrE": "/ˈɪntəvjuː/",
+            "AmE": "/ˈɪntərvjuː/",
+            "definition": "to ask someone questions formally",
             "examples": [
-               "She went into the room.",
-               "He jumped into the pool.",
-               "The car crashed into a tree."
+               "They will interview me.",
+               "She interviewed the singer.",
+               "He was interviewed for the job."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
             "word": "introduce",
             "role": "verb",
             "BrE": "/ˌɪntrəˈdjuːs/",
             "AmE": "/ˌɪntrəˈduːs/",
-            "definition": "to present someone or something to others",
+            "definition": "to present someone or something",
             "examples": [
-               "I’ll introduce my friend.",
-               "She introduced her new idea.",
-               "He introduced the speaker to the crowd."
+               "Introduce your friend.",
+               "She introduced her brother.",
+               "He introduced a new idea."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
             "word": "introduction",
             "role": "noun",
             "BrE": "/ˌɪntrəˈdʌkʃn/",
             "AmE": "/ˌɪntrəˈdʌkʃn/",
-            "definition": "the act of presenting someone or something",
+            "definition": "the act of presenting something or someone",
             "examples": [
                "The introduction was short.",
-               "Her introduction was clear.",
-               "The book’s introduction was interesting."
+               "She gave an introduction to the book.",
+               "His introduction of the guest was kind."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
             "word": "invent",
             "role": "verb",
             "BrE": "/ɪnˈvent/",
             "AmE": "/ɪnˈvent/",
             "definition": "to create something new",
             "examples": [
-               "He invented a new game.",
-               "She invented a useful tool.",
-               "They invented the telephone."
+               "He invented a game.",
+               "She invented a new tool.",
+               "They invented a faster machine."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
             "word": "invention",
             "role": "noun",
             "BrE": "/ɪnˈvenʃn/",
             "AmE": "/ɪnˈvenʃn/",
-            "definition": "something that has been created for the first time",
+            "definition": "something created for the first time",
             "examples": [
-               "The invention changed lives.",
-               "His invention was successful.",
-               "The new invention saves time."
+               "The invention is useful.",
+               "Her invention won a prize.",
+               "The invention changed our lives."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
+            "word": "invitation",
+            "role": "noun",
+            "BrE": "/ˌɪnvɪˈteɪʃn/",
+            "AmE": "/ˌɪnvɪˈteɪʃn/",
+            "definition": "a request to join an event",
+            "examples": [
+               "I got an invitation.",
+               "She sent an invitation to the party.",
+               "The invitation was for dinner."
+            ]
+         },
+         {
+            "id": 48,
             "word": "invite",
             "role": "verb",
             "BrE": "/ɪnˈvaɪt/",
             "AmE": "/ɪnˈvaɪt/",
             "definition": "to ask someone to come to an event",
             "examples": [
-               "Invite her to the party.",
-               "They invited us for dinner.",
-               "She was invited to speak."
+               "Invite your friend.",
+               "She invited me to her house.",
+               "He invited them to the wedding."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
             "word": "involve",
             "role": "verb",
             "BrE": "/ɪnˈvɒlv/",
             "AmE": "/ɪnˈvɑːlv/",
-            "definition": "to include someone or something in an activity",
+            "definition": "to include someone or something",
             "examples": [
-               "The game involves teams.",
-               "She involved everyone in the plan.",
-               "The project involves hard work."
+               "Involve me in the plan.",
+               "She involved her team in the project.",
+               "The game involves two players."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
             "word": "island",
             "role": "noun",
             "BrE": "/ˈaɪlənd/",
             "AmE": "/ˈaɪlənd/",
             "definition": "a piece of land surrounded by water",
             "examples": [
-               "We visited an island.",
-               "The island has a beach.",
-               "She lives on a small island."
+               "The island is small.",
+               "She visited a tropical island.",
+               "The island has beautiful beaches."
             ]
          },
          {
-            "id": 44,
-            "word": "issue",
-            "role": "noun",
-            "BrE": "/ˈɪʃuː/",
-            "AmE": "/ˈɪʃuː/",
-            "definition": "an important topic or problem",
-            "examples": [
-               "The issue is serious.",
-               "They discussed the issue.",
-               "The issue was solved quickly."
-            ]
-         },
-         {
-            "id": 44,
+            "id": 48,
             "word": "item",
             "role": "noun",
             "BrE": "/ˈaɪtəm/",
             "AmE": "/ˈaɪtəm/",
             "definition": "a single thing in a list or group",
             "examples": [
-               "I bought one item.",
-               "The item was expensive.",
-               "Each item was checked."
+               "I bought an item.",
+               "She checked each item on the list.",
+               "The item was missing from the bag."
             ]
          },
          {
-            "id": 44,
+            "id": 48,
+            "word": "jacket",
+            "role": "noun",
+            "BrE": "/ˈdʒækɪt/",
+            "AmE": "/ˈdʒækɪt/",
+            "definition": "a short coat",
+            "examples": [
+               "My jacket is blue.",
+               "She wore a warm jacket.",
+               "The jacket has a big pocket."
+            ]
+         },
+         {
+            "id": 48,
+            "word": "jeans",
+            "role": "noun",
+            "BrE": "/dʒiːnz/",
+            "AmE": "/dʒiːnz/",
+            "definition": "casual trousers made of denim",
+            "examples": [
+               "I wear jeans.",
+               "She bought new jeans.",
+               "The jeans are comfortable."
+            ]
+         },
+         {
+            "id": 49,
+            "word": "jewellery",
+            "role": "noun",
+            "BrE": "/ˈdʒuːəlri/",
+            "AmE": "/ˈdʒuːəlri/",
+            "definition": "decorative objects like rings or necklaces",
+            "examples": [
+               "Her jewellery is shiny.",
+               "She wears jewellery every day.",
+               "The jewellery was a gift."
+            ]
+         },
+         {
+            "id": 49,
             "word": "job",
             "role": "noun",
             "BrE": "/dʒɒb/",
             "AmE": "/dʒɑːb/",
-            "definition": "work that you do for money",
+            "definition": "work that you are paid for",
             "examples": [
-               "She has a new job.",
-               "His job is teaching.",
-               "The job requires long hours."
+               "I have a job.",
+               "She found a new job.",
+               "His job is at the bank."
             ]
          },
          {
-            "id": 45,
+            "id": 49,
             "word": "join",
             "role": "verb",
             "BrE": "/dʒɔɪn/",
             "AmE": "/dʒɔɪn/",
-            "definition": "to become a member of a group or to connect things",
+            "definition": "to become part of a group",
             "examples": [
-               "Join our club!",
-               "She joined the team.",
-               "He joined the wires together."
+               "Join the team.",
+               "She joined the club.",
+               "He joined the class late."
             ]
          },
          {
-            "id": 45,
+            "id": 49,
             "word": "joke",
             "role": "noun",
             "BrE": "/dʒəʊk/",
             "AmE": "/dʒoʊk/",
             "definition": "something said to make people laugh",
             "examples": [
-               "He told a funny joke.",
-               "The joke made her smile.",
-               "His joke was about dogs."
+               "Tell me a joke.",
+               "His joke was funny.",
+               "She laughed at the joke."
             ]
          },
          {
-            "id": 45,
-            "word": "journalist",
-            "role": "noun",
-            "BrE": "/ˈdʒɜːnəlɪst/",
-            "AmE": "/ˈdʒɜːrnəlɪst/",
-            "definition": "a person who writes or reports news",
-            "examples": [
-               "She’s a journalist.",
-               "The journalist wrote a story.",
-               "He’s a famous journalist."
-            ]
-         },
-         {
-            "id": 45,
+            "id": 49,
             "word": "journey",
             "role": "noun",
             "BrE": "/ˈdʒɜːni/",
             "AmE": "/ˈdʒɜːrni/",
-            "definition": "the act of travelling from one place to another",
+            "definition": "a trip from one place to another",
             "examples": [
                "The journey was long.",
-               "Her journey took five hours.",
-               "Their journey was an adventure."
+               "She enjoyed her journey.",
+               "The journey took three hours."
             ]
          },
          {
-            "id": 45,
+            "id": 49,
+            "word": "jump",
+            "role": "noun",
+            "BrE": "/dʒʌmp/",
+            "AmE": "/dʒʌmp/",
+            "definition": "an act of moving off the ground",
+            "examples": [
+               "His jump was high.",
+               "She made a big jump.",
+               "The jump over the wall was hard."
+            ]
+         },
+         {
+            "id": 49,
             "word": "jump",
             "role": "verb",
             "BrE": "/dʒʌmp/",
             "AmE": "/dʒʌmp/",
-            "definition": "to move quickly off the ground using your legs",
+            "definition": "to move quickly off the ground",
             "examples": [
-               "The cat can jump.",
-               "She jumped over the fence.",
-               "He jumped high in the game."
+               "Jump over the rope.",
+               "She jumped into the pool.",
+               "He jumped to catch the ball."
             ]
          },
          {
-            "id": 45,
-            "word": "keep",
-            "role": "verb",
-            "BrE": "/kiːp/",
-            "AmE": "/kiːp/",
-            "definition": "to have something and not give it away",
-            "examples": [
-               "Keep this book safe.",
-               "She kept the letter for years.",
-               "He keeps his room clean."
-            ]
-         },
-         {
-            "id": 45,
+            "id": 49,
             "word": "key",
             "role": "noun",
             "BrE": "/kiː/",
             "AmE": "/kiː/",
-            "definition": "a piece of metal used to lock or unlock something",
+            "definition": "a metal object used to open a lock",
             "examples": [
                "I lost my key.",
-               "The key opens the door.",
-               "She found the car key."
+               "She found the car key.",
+               "The key opened the door."
             ]
          },
          {
-            "id": 45,
+            "id": 49,
+            "word": "keyboard",
+            "role": "noun",
+            "BrE": "/ˈkiːbɔːd/",
+            "AmE": "/ˈkiːbɔːrd/",
+            "definition": "the part of a computer for typing",
+            "examples": [
+               "The keyboard is new.",
+               "She typed on the keyboard.",
+               "The keyboard has many buttons."
+            ]
+         },
+         {
+            "id": 49,
+            "word": "kick",
+            "role": "noun",
+            "BrE": "/kɪk/",
+            "AmE": "/kɪk/",
+            "definition": "an act of hitting with the foot",
+            "examples": [
+               "His kick was strong.",
+               "She gave the ball a kick.",
+               "The kick scored a goal."
+            ]
+         },
+         {
+            "id": 50,
             "word": "kick",
             "role": "verb",
             "BrE": "/kɪk/",
             "AmE": "/kɪk/",
             "definition": "to hit something with your foot",
             "examples": [
-               "He kicked the ball.",
+               "Kick the ball.",
                "She kicked the door open.",
-               "They kicked stones on the path."
+               "He kicked the stone away."
             ]
          },
          {
-            "id": 45,
+            "id": 50,
             "word": "kid",
             "role": "noun",
             "BrE": "/kɪd/",
             "AmE": "/kɪd/",
-            "definition": "a child",
+            "definition": "a child (informal)",
             "examples": [
                "The kid is playing.",
-               "She’s a happy kid.",
-               "The kids enjoyed the park."
+               "She helped the kid with homework.",
+               "The kid laughed at the joke."
             ]
          },
          {
-            "id": 45,
+            "id": 50,
             "word": "kill",
             "role": "verb",
             "BrE": "/kɪl/",
             "AmE": "/kɪl/",
-            "definition": "to make someone or something die",
+            "definition": "to cause something to die",
             "examples": [
-               "The cold killed the plants.",
-               "He killed a spider.",
-               "The storm killed many trees."
+               "Don’t kill the plant.",
+               "She killed a spider.",
+               "He killed the bug on the wall."
             ]
          },
          {
-            "id": 46,
+            "id": 50,
             "word": "kind",
             "role": "adjective",
             "BrE": "/kaɪnd/",
             "AmE": "/kaɪnd/",
             "definition": "friendly and helpful",
             "examples": [
-               "She’s a kind person.",
+               "She is very kind.",
                "He was kind to the dog.",
                "Her kind words helped me."
             ]
          },
          {
-            "id": 46,
+            "id": 50,
+            "word": "kind",
+            "role": "noun",
+            "BrE": "/kaɪnd/",
+            "AmE": "/kaɪnd/",
+            "definition": "a type or sort of something",
+            "examples": [
+               "What kind of food?",
+               "She likes this kind of music.",
+               "He bought a new kind of phone."
+            ]
+         },
+         {
+            "id": 50,
             "word": "king",
             "role": "noun",
             "BrE": "/kɪŋ/",
             "AmE": "/kɪŋ/",
-            "definition": "a man who rules a country",
+            "definition": "a male ruler of a country",
             "examples": [
-               "The king lives in a palace.",
-               "The king made a speech.",
-               "He read about a famous king."
+               "The king is old.",
+               "She read about a king.",
+               "The king lived in a castle."
             ]
          },
          {
-            "id": 46,
+            "id": 50,
+            "word": "kiss",
+            "role": "noun",
+            "BrE": "/kɪs/",
+            "AmE": "/kɪs/",
+            "definition": "a touch with the lips",
+            "examples": [
+               "She gave a kiss.",
+               "He got a kiss from her.",
+               "The kiss was a surprise."
+            ]
+         },
+         {
+            "id": 50,
+            "word": "kiss",
+            "role": "verb",
+            "BrE": "/kɪs/",
+            "AmE": "/kɪs/",
+            "definition": "to touch someone with your lips",
+            "examples": [
+               "Kiss your mom.",
+               "She kissed her friend goodbye.",
+               "He kissed her on the cheek."
+            ]
+         },
+         {
+            "id": 50,
             "word": "kitchen",
             "role": "noun",
             "BrE": "/ˈkɪtʃɪn/",
             "AmE": "/ˈkɪtʃɪn/",
-            "definition": "a room where food is prepared and cooked",
+            "definition": "a room for cooking",
             "examples": [
                "The kitchen is clean.",
                "She cooked in the kitchen.",
-               "The kitchen has new appliances."
+               "The kitchen has a big table."
             ]
          },
          {
-            "id": 46,
+            "id": 50,
             "word": "knee",
             "role": "noun",
             "BrE": "/niː/",
             "AmE": "/niː/",
-            "definition": "the joint between the upper and lower leg",
+            "definition": "the joint in the middle of the leg",
             "examples": [
                "My knee hurts.",
                "She fell on her knee.",
-               "He bent his knee to sit."
+               "The knee was swollen after running."
             ]
          },
          {
-            "id": 46,
+            "id": 51,
             "word": "knife",
             "role": "noun",
             "BrE": "/naɪf/",
             "AmE": "/naɪf/",
-            "definition": "a tool with a sharp blade for cutting",
+            "definition": "a sharp tool for cutting",
             "examples": [
-               "I need a knife to cut.",
-               "The knife is in the kitchen.",
-               "She used a sharp knife."
+               "I need a knife.",
+               "She cut bread with a knife.",
+               "The knife is in the kitchen."
             ]
          },
          {
-            "id": 46,
+            "id": 51,
+            "word": "knock",
+            "role": "noun",
+            "BrE": "/nɒk/",
+            "AmE": "/nɑːk/",
+            "definition": "the sound of hitting a door",
+            "examples": [
+               "I heard a knock.",
+               "She gave a loud knock.",
+               "The knock woke him up."
+            ]
+         },
+         {
+            "id": 51,
             "word": "knock",
             "role": "verb",
             "BrE": "/nɒk/",
             "AmE": "/nɑːk/",
-            "definition": "to hit something, like a door, to make a sound",
+            "definition": "to hit something to make a sound",
             "examples": [
                "Knock on the door.",
-               "He knocked and entered.",
-               "She knocked over the glass."
+               "She knocked on the wall.",
+               "He knocked before entering."
             ]
          },
          {
-            "id": 46,
-            "word": "know",
-            "role": "verb",
-            "BrE": "/nəʊ/",
-            "AmE": "/noʊ/",
-            "definition": "to have information in your mind",
-            "examples": [
-               "I know her name.",
-               "She knows the answer.",
-               "He knows a lot about history."
-            ]
-         },
-         {
-            "id": 46,
+            "id": 51,
             "word": "knowledge",
             "role": "noun",
             "BrE": "/ˈnɒlɪdʒ/",
             "AmE": "/ˈnɑːlɪdʒ/",
-            "definition": "information and understanding about a subject",
+            "definition": "information or understanding",
             "examples": [
-               "She has good knowledge.",
-               "His knowledge of math is strong.",
-               "Knowledge helps in life."
+               "I have some knowledge.",
+               "She has knowledge of history.",
+               "His knowledge helped the team."
             ]
          },
          {
-            "id": 46,
+            "id": 51,
             "word": "lake",
             "role": "noun",
             "BrE": "/leɪk/",
             "AmE": "/leɪk/",
             "definition": "a large area of water surrounded by land",
             "examples": [
-               "The lake is beautiful.",
-               "We swam in the lake.",
-               "The lake was calm and clear."
+               "The lake is big.",
+               "She swam in the lake.",
+               "The lake has many fish."
             ]
          },
          {
-            "id": 46,
+            "id": 51,
+            "word": "lamp",
+            "role": "noun",
+            "BrE": "/læmp/",
+            "AmE": "/læmp/",
+            "definition": "a device that produces light",
+            "examples": [
+               "The lamp is bright.",
+               "She turned on the lamp.",
+               "The lamp is on the table."
+            ]
+         },
+         {
+            "id": 51,
             "word": "land",
             "role": "noun",
             "BrE": "/lænd/",
             "AmE": "/lænd/",
-            "definition": "the surface of the earth that is not water",
+            "definition": "the surface of the earth not covered by water",
             "examples": [
                "The land is green.",
-               "They bought land to build.",
-               "The plane landed on the land."
+               "She bought some land.",
+               "The land is good for farming."
             ]
          },
          {
-            "id": 47,
+            "id": 51,
+            "word": "land",
+            "role": "verb",
+            "BrE": "/lænd/",
+            "AmE": "/lænd/",
+            "definition": "to arrive on the ground",
+            "examples": [
+               "The plane will land.",
+               "She landed safely.",
+               "He landed the helicopter."
+            ]
+         },
+         {
+            "id": 51,
             "word": "language",
             "role": "noun",
             "BrE": "/ˈlæŋɡwɪdʒ/",
             "AmE": "/ˈlæŋɡwɪdʒ/",
             "definition": "a system of communication using words",
             "examples": [
-               "English is my language.",
+               "I learn a language.",
                "She speaks two languages.",
-               "Learning a language is fun."
+               "The language class is fun."
             ]
          },
          {
-            "id": 47,
+            "id": 51,
             "word": "large",
             "role": "adjective",
             "BrE": "/lɑːdʒ/",
             "AmE": "/lɑːrdʒ/",
             "definition": "big in size or amount",
             "examples": [
-               "The house is large.",
-               "He has a large family.",
-               "A large crowd watched the game."
+               "The room is large.",
+               "She has a large bag.",
+               "The large dog ran fast."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
             "word": "last",
-            "role": "adjective",
+            "role": "determiner",
             "BrE": "/lɑːst/",
             "AmE": "/læst/",
-            "definition": "coming after all others",
+            "definition": "the most recent or final",
             "examples": [
-               "This is the last book.",
-               "She was the last to arrive.",
-               "The last day was sunny."
+               "Last week was busy.",
+               "She saw him last night.",
+               "The last bus left early."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
             "word": "late",
-            "role": "adjective",
+            "role": "adverb",
             "BrE": "/leɪt/",
             "AmE": "/leɪt/",
-            "definition": "happening or arriving after the expected time",
+            "definition": "after the expected time",
             "examples": [
-               "I’m late for school.",
-               "The train was late today.",
-               "She arrived late to the meeting."
+               "I arrived late.",
+               "She stayed late at school.",
+               "He worked late yesterday."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
             "word": "laugh",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/lɑːf/",
             "AmE": "/læf/",
-            "definition": "to make sounds showing you are happy or amused",
+            "definition": "the sound of laughing",
             "examples": [
-               "We laugh at jokes.",
-               "She laughed at his story.",
-               "They laughed during the movie."
+               "Her laugh is loud.",
+               "I heard a funny laugh.",
+               "The laugh came from the room."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
             "word": "law",
             "role": "noun",
             "BrE": "/lɔː/",
             "AmE": "/lɔː/",
             "definition": "a rule made by a government",
             "examples": [
-               "Follow the law.",
-               "The law protects people.",
-               "Breaking the law is wrong."
+               "The law is strict.",
+               "She follows the law.",
+               "The new law helps people."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
             "word": "lawyer",
             "role": "noun",
             "BrE": "/ˈlɔɪə(r)/",
             "AmE": "/ˈlɔɪər/",
-            "definition": "a person who gives legal advice or represents people in court",
+            "definition": "a person who works with laws",
             "examples": [
-               "She’s a lawyer.",
-               "The lawyer helped her case.",
-               "He hired a famous lawyer."
+               "The lawyer is busy.",
+               "She hired a lawyer.",
+               "The lawyer helped with the case."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
             "word": "lazy",
             "role": "adjective",
             "BrE": "/ˈleɪzi/",
             "AmE": "/ˈleɪzi/",
-            "definition": "not wanting to work or make an effort",
+            "definition": "not wanting to work hard",
             "examples": [
-               "He’s a lazy student.",
+               "He is very lazy.",
                "She felt lazy today.",
-               "The lazy dog slept all day."
+               "The lazy student didn’t study."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
+            "word": "lead",
+            "role": "noun",
+            "BrE": "/liːd/",
+            "AmE": "/liːd/",
+            "definition": "the position of being in front",
+            "examples": [
+               "She took the lead.",
+               "He has the lead in the race.",
+               "The lead in the game was hers."
+            ]
+         },
+         {
+            "id": 52,
             "word": "lead",
             "role": "verb",
             "BrE": "/liːd/",
             "AmE": "/liːd/",
             "definition": "to guide or show the way",
             "examples": [
-               "Lead us to the park.",
+               "Lead the way.",
                "She led the team to victory.",
-               "This road leads to the city."
+               "He leads the group every day."
             ]
          },
          {
-            "id": 47,
+            "id": 52,
             "word": "leader",
             "role": "noun",
             "BrE": "/ˈliːdə(r)/",
             "AmE": "/ˈliːdər/",
-            "definition": "a person who is in charge of a group",
+            "definition": "a person who leads",
             "examples": [
-               "She’s the team leader.",
-               "The leader made a decision.",
-               "He’s a strong leader."
+               "She is a leader.",
+               "The leader spoke clearly.",
+               "He’s the leader of the club."
             ]
          },
          {
-            "id": 48,
+            "id": 52,
+            "word": "leaf",
+            "role": "noun",
+            "BrE": "/liːf/",
+            "AmE": "/liːf/",
+            "definition": "a flat green part of a plant",
+            "examples": [
+               "The leaf is green.",
+               "She picked a leaf from the tree.",
+               "The leaf fell in autumn."
+            ]
+         },
+         {
+            "id": 53,
             "word": "learn",
             "role": "verb",
             "BrE": "/lɜːn/",
             "AmE": "/lɜːrn/",
             "definition": "to gain knowledge or a skill",
             "examples": [
-               "I learn English daily.",
-               "She learned to play guitar.",
-               "He’s learning about history."
+               "I learn English.",
+               "She learned to swim.",
+               "He learned about animals."
             ]
          },
          {
-            "id": 48,
+            "id": 53,
             "word": "least",
             "role": "adverb",
             "BrE": "/liːst/",
             "AmE": "/liːst/",
             "definition": "to the smallest degree",
             "examples": [
-               "She’s the least shy.",
-               "He cares the least about sports.",
-               "This is the least expensive option."
+               "I like it least.",
+               "She talks the least in class.",
+               "He was the least tired."
             ]
          },
          {
-            "id": 48,
+            "id": 53,
+            "word": "leather",
+            "role": "noun",
+            "BrE": "/ˈleðə(r)/",
+            "AmE": "/ˈleðər/",
+            "definition": "material made from animal skin",
+            "examples": [
+               "The bag is leather.",
+               "She wore a leather jacket.",
+               "The leather shoes are new."
+            ]
+         },
+         {
+            "id": 53,
             "word": "leave",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/liːv/",
             "AmE": "/liːv/",
-            "definition": "to go away from a place or person",
+            "definition": "time away from work",
             "examples": [
-               "I leave home at 8.",
-               "She left the room quietly.",
-               "They left for Paris yesterday."
+               "She’s on leave.",
+               "He took leave for a week.",
+               "Her leave starts tomorrow."
             ]
          },
          {
-            "id": 48,
+            "id": 53,
+            "word": "lecture",
+            "role": "noun",
+            "BrE": "/ˈlektʃə(r)/",
+            "AmE": "/ˈlektʃər/",
+            "definition": "a talk to teach something",
+            "examples": [
+               "The lecture was long.",
+               "She attended a lecture.",
+               "The lecture was about science."
+            ]
+         },
+         {
+            "id": 53,
             "word": "left",
-            "role": "adjective",
+            "role": "noun",
             "BrE": "/left/",
             "AmE": "/left/",
-            "definition": "on or towards the side of the body where the heart is",
+            "definition": "the side opposite to right",
             "examples": [
-               "My left hand hurts.",
-               "Turn left at the corner.",
-               "She writes with her left hand."
+               "Turn to the left.",
+               "She held it in her left hand.",
+               "The left side is blocked."
             ]
          },
          {
-            "id": 48,
+            "id": 53,
             "word": "leg",
             "role": "noun",
             "BrE": "/leɡ/",
             "AmE": "/leɡ/",
-            "definition": "one of the long parts of the body used for walking",
+            "definition": "a part of the body used for walking",
             "examples": [
-               "My leg is tired.",
-               "He broke his leg skiing.",
-               "The dog has short legs."
+               "My leg hurts.",
+               "She broke her leg.",
+               "The dog’s leg is strong."
             ]
          },
          {
-            "id": 48,
+            "id": 53,
             "word": "legal",
             "role": "adjective",
             "BrE": "/ˈliːɡl/",
             "AmE": "/ˈliːɡl/",
             "definition": "allowed by the law",
             "examples": [
-               "It’s a legal document.",
-               "Her action was legal.",
+               "It’s a legal rule.",
+               "She has a legal document.",
                "The legal age to drive is 17."
             ]
          },
          {
-            "id": 48,
+            "id": 53,
+            "word": "leisure",
+            "role": "noun",
+            "BrE": "/ˈleʒə(r)/",
+            "AmE": "/ˈliːʒər/",
+            "definition": "free time for enjoyment",
+            "examples": [
+               "I enjoy leisure.",
+               "She reads in her leisure time.",
+               "Leisure activities are fun."
+            ]
+         },
+         {
+            "id": 53,
+            "word": "lend",
+            "role": "verb",
+            "BrE": "/lend/",
+            "AmE": "/lend/",
+            "definition": "to give something temporarily",
+            "examples": [
+               "Lend me a pen.",
+               "She lent her book to him.",
+               "He lends money to friends."
+            ]
+         },
+         {
+            "id": 54,
+            "word": "length",
+            "role": "noun",
+            "BrE": "/leŋθ/",
+            "AmE": "/leŋθ/",
+            "definition": "the measurement of something long",
+            "examples": [
+               "The length is short.",
+               "She measured the length of the table.",
+               "The length of the road is 5 miles."
+            ]
+         },
+         {
+            "id": 54,
+            "word": "less",
+            "role": "adverb",
+            "BrE": "/les/",
+            "AmE": "/les/",
+            "definition": "to a smaller degree",
+            "examples": [
+               "I eat less now.",
+               "She talks less than him.",
+               "He works less on weekends."
+            ]
+         },
+         {
+            "id": 54,
             "word": "lesson",
             "role": "noun",
             "BrE": "/ˈlesn/",
             "AmE": "/ˈlesn/",
-            "definition": "a period of time when you learn something",
+            "definition": "a period of learning or teaching",
             "examples": [
-               "I have a piano lesson.",
-               "The lesson was about math.",
-               "She attended an English lesson."
+               "The lesson was fun.",
+               "She had a piano lesson.",
+               "The lesson helped her learn."
             ]
          },
          {
-            "id": 48,
+            "id": 54,
             "word": "letter",
             "role": "noun",
             "BrE": "/ˈletə(r)/",
             "AmE": "/ˈletər/",
-            "definition": "a written message sent to someone",
+            "definition": "a written message",
             "examples": [
                "I wrote a letter.",
-               "She received a letter today.",
-               "The letter was from her friend."
+               "She sent a letter to her friend.",
+               "The letter arrived yesterday."
             ]
          },
          {
-            "id": 48,
+            "id": 54,
             "word": "level",
             "role": "noun",
             "BrE": "/ˈlevl/",
             "AmE": "/ˈlevl/",
-            "definition": "the amount, size, or position of something",
+            "definition": "a position or stage",
             "examples": [
-               "The water level is high.",
-               "Her English level is good.",
+               "The level is high.",
+               "She reached a new level.",
                "The game has many levels."
             ]
          },
          {
-            "id": 48,
+            "id": 54,
             "word": "library",
             "role": "noun",
             "BrE": "/ˈlaɪbrəri/",
             "AmE": "/ˈlaɪbreri/",
-            "definition": "a place where books are kept for borrowing",
+            "definition": "a place with books to read or borrow",
             "examples": [
-               "I go to the library.",
-               "The library has many books.",
-               "She studied in the library."
+               "The library is quiet.",
+               "She studies in the library.",
+               "The library has many books."
             ]
          },
          {
-            "id": 49,
+            "id": 54,
+            "word": "lie",
+            "role": "noun",
+            "BrE": "/laɪ/",
+            "AmE": "/laɪ/",
+            "definition": "a statement that is not true",
+            "examples": [
+               "Don’t tell a lie.",
+               "She knew it was a lie.",
+               "The lie caused problems."
+            ]
+         },
+         {
+            "id": 54,
             "word": "lie",
             "role": "verb",
             "BrE": "/laɪ/",
             "AmE": "/laɪ/",
-            "definition": "to say something that is not true",
+            "definition": "to say something not true",
             "examples": [
                "Don’t lie to me.",
                "She lied about her age.",
-               "He lied to avoid trouble."
+               "He lied to his teacher."
             ]
          },
          {
-            "id": 49,
-            "word": "life",
+            "id": 54,
+            "word": "lift",
             "role": "noun",
-            "BrE": "/laɪf/",
-            "AmE": "/laɪf/",
-            "definition": "the state of being alive or the way someone lives",
+            "BrE": "/lɪft/",
+            "AmE": "/lɪft/",
+            "definition": "a machine that carries people up or down",
             "examples": [
-               "Life is beautiful.",
-               "Her life is very busy.",
-               "He enjoys a simple life."
+               "Take the lift.",
+               "She used the lift to go up.",
+               "The lift is out of order."
             ]
          },
          {
-            "id": 49,
+            "id": 54,
             "word": "lift",
             "role": "verb",
             "BrE": "/lɪft/",
             "AmE": "/lɪft/",
-            "definition": "to raise something to a higher position",
+            "definition": "to raise something",
             "examples": [
-               "Lift the box carefully.",
-               "She lifted her hand to wave.",
-               "He lifted the heavy bag."
+               "Lift the box.",
+               "She lifted her bag.",
+               "He lifted the heavy chair."
             ]
          },
          {
-            "id": 49,
+            "id": 55,
             "word": "light",
-            "role": "noun",
+            "role": "adjective",
             "BrE": "/laɪt/",
             "AmE": "/laɪt/",
-            "definition": "the energy that makes things visible",
+            "definition": "not heavy",
             "examples": [
-               "Turn on the light.",
-               "The light is very bright.",
-               "Sunlight filled the room."
+               "The bag is light.",
+               "She carried a light box.",
+               "The light jacket is comfortable."
             ]
          },
          {
-            "id": 49,
-            "word": "like",
+            "id": 55,
+            "word": "light",
             "role": "verb",
-            "BrE": "/laɪk/",
-            "AmE": "/laɪk/",
-            "definition": "to enjoy or find something pleasant",
+            "BrE": "/laɪt/",
+            "AmE": "/laɪt/",
+            "definition": "to start something burning",
             "examples": [
-               "I like to read.",
-               "She likes chocolate ice cream.",
-               "They like watching movies."
+               "Light the candle.",
+               "She lit the fire.",
+               "He lit the lamp at night."
             ]
          },
          {
-            "id": 49,
+            "id": 55,
             "word": "likely",
             "role": "adjective",
             "BrE": "/ˈlaɪkli/",
@@ -6404,63 +7195,102 @@ export default function Lessons({ params }) {
             "examples": [
                "It’s likely to rain.",
                "She’s likely to win.",
-               "The team is likely to succeed."
+               "He’s likely to come late."
             ]
          },
          {
-            "id": 49,
+            "id": 55,
             "word": "limit",
             "role": "noun",
             "BrE": "/ˈlɪmɪt/",
             "AmE": "/ˈlɪmɪt/",
-            "definition": "the greatest amount or level allowed",
+            "definition": "a point that cannot be passed",
             "examples": [
                "There’s a speed limit.",
-               "The limit is 50 people.",
-               "She reached her limit."
+               "She reached her limit.",
+               "The limit of the class is 20."
             ]
          },
          {
-            "id": 49,
+            "id": 55,
             "word": "line",
             "role": "noun",
             "BrE": "/laɪn/",
             "AmE": "/laɪn/",
             "definition": "a long, thin mark",
             "examples": [
-               "Draw a straight line.",
-               "The line was very long.",
-               "She wrote a line of poetry."
+               "Draw a line.",
+               "She stood in a line.",
+               "The line on the paper is straight."
             ]
          },
          {
-            "id": 49,
+            "id": 55,
             "word": "link",
             "role": "noun",
             "BrE": "/lɪŋk/",
             "AmE": "/lɪŋk/",
-            "definition": "a connection between two things",
+            "definition": "a connection between things",
             "examples": [
-               "There’s a link to the site.",
-               "The link between them is strong.",
-               "This link explains the topic."
+               "There’s a link.",
+               "She found a link to the site.",
+               "The link between them is strong."
             ]
          },
          {
-            "id": 49,
+            "id": 55,
+            "word": "link",
+            "role": "verb",
+            "BrE": "/lɪŋk/",
+            "AmE": "/lɪŋk/",
+            "definition": "to connect things",
+            "examples": [
+               "Link the pages.",
+               "She linked the ideas.",
+               "He linked the computer to the printer."
+            ]
+         },
+         {
+            "id": 55,
+            "word": "liquid",
+            "role": "noun",
+            "BrE": "/ˈlɪkwɪd/",
+            "AmE": "/ˈlɪkwɪd/",
+            "definition": "a substance that flows, like water",
+            "examples": [
+               "Water is a liquid.",
+               "She spilled the liquid.",
+               "The liquid in the bottle is juice."
+            ]
+         },
+         {
+            "id": 55,
             "word": "list",
             "role": "noun",
             "BrE": "/lɪst/",
             "AmE": "/lɪst/",
-            "definition": "a series of items written or spoken",
+            "definition": "a series of items written down",
             "examples": [
-               "I made a shopping list.",
-               "Her name is on the list.",
-               "The list includes ten items."
+               "I made a list.",
+               "She checked her shopping list.",
+               "The list has ten names."
             ]
          },
          {
-            "id": 50,
+            "id": 55,
+            "word": "list",
+            "role": "verb",
+            "BrE": "/lɪst/",
+            "AmE": "/lɪst/",
+            "definition": "to write items in order",
+            "examples": [
+               "List the names.",
+               "She listed her favorite books.",
+               "He listed the things to buy."
+            ]
+         },
+         {
+            "id": 56,
             "word": "listen",
             "role": "verb",
             "BrE": "/ˈlɪsn/",
@@ -6469,128 +7299,206 @@ export default function Lessons({ params }) {
             "examples": [
                "Listen to the music.",
                "She listened to the teacher.",
-               "He listened carefully to the story."
+               "He listens to the radio daily."
             ]
          },
          {
-            "id": 50,
-            "word": "little",
-            "role": "adjective",
-            "BrE": "/ˈlɪtl/",
-            "AmE": "/ˈlɪtl/",
-            "definition": "small in size or amount",
+            "id": 56,
+            "word": "literature",
+            "role": "noun",
+            "BrE": "/ˈlɪtrətʃə(r)/",
+            "AmE": "/ˈlɪtərətʃər/",
+            "definition": "books and writings, especially of high quality",
             "examples": [
-               "It’s a little dog.",
-               "She has little time to rest.",
-               "The little house was cozy."
+               "I study literature.",
+               "She loves reading literature.",
+               "The literature class was interesting."
             ]
          },
          {
-            "id": 50,
+            "id": 56,
             "word": "live",
-            "role": "verb",
-            "BrE": "/lɪv/",
-            "AmE": "/lɪv/",
-            "definition": "to have your home in a particular place",
+            "role": "adjective",
+            "BrE": "/laɪv/",
+            "AmE": "/laɪv/",
+            "definition": "happening now, not recorded",
             "examples": [
-               "I live in a city.",
-               "She lives with her parents.",
-               "They live near the school."
+               "It’s a live show.",
+               "She watched a live concert.",
+               "The live broadcast was exciting."
             ]
          },
          {
-            "id": 50,
+            "id": 56,
             "word": "local",
             "role": "adjective",
             "BrE": "/ˈləʊkl/",
             "AmE": "/ˈloʊkl/",
-            "definition": "relating to a particular area or place",
+            "definition": "relating to a nearby area",
             "examples": [
                "The local shop is open.",
-               "He reads the local news.",
-               "Local people helped the event."
+               "She reads the local news.",
+               "He joined the local team."
             ]
          },
          {
-            "id": 50,
+            "id": 56,
+            "word": "lock",
+            "role": "noun",
+            "BrE": "/lɒk/",
+            "AmE": "/lɑːk/",
+            "definition": "a device to keep something closed",
+            "examples": [
+               "The lock is strong.",
+               "She broke the lock.",
+               "The lock on the door is new."
+            ]
+         },
+         {
+            "id": 56,
             "word": "lock",
             "role": "verb",
             "BrE": "/lɒk/",
             "AmE": "/lɑːk/",
             "definition": "to close something with a key",
             "examples": [
-               "Lock the door, please.",
-               "She locked her bike outside.",
-               "He locked the car carefully."
+               "Lock the door.",
+               "She locked her bike.",
+               "He locked the box safely."
             ]
          },
          {
-            "id": 50,
-            "word": "long",
+            "id": 56,
+            "word": "lonely",
             "role": "adjective",
+            "BrE": "/ˈləʊnli/",
+            "AmE": "/ˈloʊnli/",
+            "definition": "sad because alone",
+            "examples": [
+               "She feels lonely.",
+               "He was lonely without friends.",
+               "The lonely dog waited for her."
+            ]
+         },
+         {
+            "id": 56,
+            "word": "long",
+            "role": "adverb",
             "BrE": "/lɒŋ/",
             "AmE": "/lɔːŋ/",
-            "definition": "having a great length or duration",
+            "definition": "for a large amount of time",
             "examples": [
-               "The road is long.",
-               "She waited for a long time.",
-               "His long speech was boring."
+               "I waited long.",
+               "She studied for long hours.",
+               "He hasn’t been here long."
             ]
          },
          {
-            "id": 50,
+            "id": 56,
             "word": "look",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/lʊk/",
             "AmE": "/lʊk/",
-            "definition": "to use your eyes to see something",
+            "definition": "an act of looking",
             "examples": [
-               "Look at the sky.",
-               "She looked at the picture.",
-               "He looked for his lost keys."
+               "Take a look.",
+               "She gave him a quick look.",
+               "The look on her face was sad."
             ]
          },
          {
-            "id": 50,
+            "id": 56,
+            "word": "loose",
+            "role": "adjective",
+            "BrE": "/luːs/",
+            "AmE": "/luːs/",
+            "definition": "not tight or fixed",
+            "examples": [
+               "The shirt is loose.",
+               "She wore loose clothes.",
+               "The loose screw fell out."
+            ]
+         },
+         {
+            "id": 57,
+            "word": "lorry",
+            "role": "noun",
+            "BrE": "/ˈlɒri/",
+            "AmE": "/ˈlɔːri/",
+            "definition": "a large vehicle for carrying goods",
+            "examples": [
+               "The lorry is big.",
+               "She saw a lorry on the road.",
+               "The lorry carried heavy boxes."
+            ]
+         },
+         {
+            "id": 57,
             "word": "lose",
             "role": "verb",
             "BrE": "/luːz/",
             "AmE": "/luːz/",
             "definition": "to not be able to find something",
             "examples": [
-               "I lost my phone.",
-               "She lost her way home.",
-               "He lost the game yesterday."
+               "I lost my keys.",
+               "She lost her phone.",
+               "He lost his bag at school."
             ]
          },
          {
-            "id": 50,
+            "id": 57,
+            "word": "loss",
+            "role": "noun",
+            "BrE": "/lɒs/",
+            "AmE": "/lɔːs/",
+            "definition": "the act of losing something",
+            "examples": [
+               "The loss was sad.",
+               "She felt the loss of her pet.",
+               "The loss of money hurt him."
+            ]
+         },
+         {
+            "id": 57,
             "word": "lot",
             "role": "noun",
             "BrE": "/lɒt/",
             "AmE": "/lɑːt/",
             "definition": "a large number or amount",
             "examples": [
-               "I have a lot of books.",
-               "She eats a lot of fruit.",
+               "I have a lot.",
+               "She bought a lot of books.",
                "A lot of people came."
             ]
          },
          {
-            "id": 50,
-            "word": "love",
-            "role": "verb",
-            "BrE": "/lʌv/",
-            "AmE": "/lʌv/",
-            "definition": "to have strong feelings of affection",
+            "id": 57,
+            "word": "loud",
+            "role": "adjective",
+            "BrE": "/laʊd/",
+            "AmE": "/laʊd/",
+            "definition": "making a lot of noise",
             "examples": [
-               "I love my family.",
-               "She loves to sing songs.",
-               "He loves her very much."
+               "The music is loud.",
+               "She has a loud voice.",
+               "The loud noise woke him."
             ]
          },
-            {
-            "id": 51,
+         {
+            "id": 57,
+            "word": "love",
+            "role": "noun",
+            "BrE": "/lʌv/",
+            "AmE": "/lʌv/",
+            "definition": "a strong feeling of affection",
+            "examples": [
+               "Love is important.",
+               "She feels love for her family.",
+               "His love for music is strong."
+            ]
+         },
+         {
+            "id": 57,
             "word": "lovely",
             "role": "adjective",
             "BrE": "/ˈlʌvli/",
@@ -6599,115 +7507,193 @@ export default function Lessons({ params }) {
             "examples": [
                "It’s a lovely day.",
                "She has a lovely smile.",
-               "The lovely garden was full of flowers."
+               "The lovely flowers bloomed."
             ]
          },
          {
-            "id": 51,
+            "id": 57,
             "word": "low",
             "role": "adjective",
             "BrE": "/ləʊ/",
             "AmE": "/loʊ/",
-            "definition": "close to the ground or not high",
+            "definition": "not high or tall",
             "examples": [
                "The wall is low.",
-               "He spoke in a low voice.",
-               "The low temperature felt cold."
+               "She spoke in a low voice.",
+               "The low table was small."
             ]
          },
          {
-            "id": 51,
+            "id": 57,
             "word": "luck",
             "role": "noun",
             "BrE": "/lʌk/",
             "AmE": "/lʌk/",
-            "definition": "good things that happen by chance",
+            "definition": "good or bad things that happen by chance",
             "examples": [
-               "I had good luck today.",
+               "I had good luck.",
                "She wished him luck.",
-               "His luck changed after the game."
+               "His luck changed yesterday."
             ]
          },
          {
-            "id": 51,
+            "id": 57,
             "word": "lucky",
             "role": "adjective",
             "BrE": "/ˈlʌki/",
             "AmE": "/ˈlʌki/",
             "definition": "having good luck",
             "examples": [
-               "I’m lucky to be here.",
-               "He’s a lucky person.",
-               "She was lucky to win the prize."
+               "I’m lucky today.",
+               "She was lucky to win.",
+               "The lucky ticket got a prize."
             ]
          },
          {
-            "id": 51,
+            "id": 58,
+            "word": "luggage",
+            "role": "noun",
+            "BrE": "/ˈlʌɡɪdʒ/",
+            "AmE": "/ˈlʌɡɪdʒ/",
+            "definition": "bags used for travelling",
+            "examples": [
+               "My luggage is heavy.",
+               "She lost her luggage.",
+               "The luggage is in the car."
+            ]
+         },
+         {
+            "id": 58,
             "word": "lunch",
             "role": "noun",
             "BrE": "/lʌntʃ/",
             "AmE": "/lʌntʃ/",
             "definition": "a meal eaten in the middle of the day",
             "examples": [
-               "I ate lunch at noon.",
-               "She packed lunch for school.",
-               "They had lunch at a café."
+               "I ate lunch.",
+               "She packed a lunch for school.",
+               "Lunch was a sandwich and juice."
             ]
          },
          {
-            "id": 51,
+            "id": 58,
             "word": "machine",
             "role": "noun",
             "BrE": "/məˈʃiːn/",
             "AmE": "/məˈʃiːn/",
-            "definition": "a piece of equipment with moving parts",
+            "definition": "a device with moving parts",
             "examples": [
                "The machine is loud.",
                "She used a washing machine.",
-               "The machine broke down yesterday."
+               "The machine broke down."
             ]
          },
          {
-            "id": 51,
+            "id": 58,
+            "word": "magazine",
+            "role": "noun",
+            "BrE": "/ˌmæɡəˈziːn/",
+            "AmE": "/ˌmæɡəˈziːn/",
+            "definition": "a publication with articles and pictures",
+            "examples": [
+               "I read a magazine.",
+               "She bought a fashion magazine.",
+               "The magazine has new stories."
+            ]
+         },
+         {
+            "id": 58,
+            "word": "mail",
+            "role": "noun",
+            "BrE": "/meɪl/",
+            "AmE": "/meɪl/",
+            "definition": "letters and packages sent by post",
+            "examples": [
+               "I got mail today.",
+               "She checked her mail.",
+               "The mail arrived late."
+            ]
+         },
+         {
+            "id": 58,
+            "word": "mail",
+            "role": "verb",
+            "BrE": "/meɪl/",
+            "AmE": "/meɪl/",
+            "definition": "to send something by post",
+            "examples": [
+               "Mail the letter.",
+               "She mailed a package.",
+               "He mailed the card yesterday."
+            ]
+         },
+         {
+            "id": 58,
             "word": "main",
             "role": "adjective",
             "BrE": "/meɪn/",
             "AmE": "/meɪn/",
-            "definition": "most important or largest",
+            "definition": "most important",
             "examples": [
-               "The main door is open.",
-               "The main reason was time.",
-               "He lives on the main street."
+               "The main road is busy.",
+               "She explained the main idea.",
+               "The main dish was chicken."
             ]
          },
          {
-            "id": 51,
+            "id": 58,
+            "word": "mainly",
+            "role": "adverb",
+            "BrE": "/ˈmeɪnli/",
+            "AmE": "/ˈmeɪnli/",
+            "definition": "mostly or primarily",
+            "examples": [
+               "It’s mainly sunny.",
+               "She works mainly at home.",
+               "The book is mainly about animals."
+            ]
+         },
+         {
+            "id": 58,
+            "word": "major",
+            "role": "adjective",
+            "BrE": "/ˈmeɪdʒə(r)/",
+            "AmE": "/ˈmeɪdʒər/",
+            "definition": "very important",
+            "examples": [
+               "It’s a major problem.",
+               "She made a major decision.",
+               "The major event was fun."
+            ]
+         },
+         {
+            "id": 58,
             "word": "make",
-            "role": "verb",
+            "role": "noun",
             "BrE": "/meɪk/",
             "AmE": "/meɪk/",
-            "definition": "to create or produce something",
+            "definition": "a brand or type of product",
             "examples": [
-               "I made a cake.",
-               "She makes her own clothes.",
-               "They made a plan for the trip."
+               "What make is your car?",
+               "She likes that make of phone.",
+               "The make of the watch is famous."
             ]
          },
          {
-            "id": 51,
+            "id": 59,
             "word": "male",
             "role": "adjective",
             "BrE": "/meɪl/",
             "AmE": "/meɪl/",
-            "definition": "belonging to the sex that does not give birth",
+            "definition": "relating to men or boys",
             "examples": [
-               "The male lion is big.",
                "He’s a male student.",
-               "Male birds are often colorful."
+               "The male team played well.",
+               "The male doctor was kind."
             ]
          },
          {
-            "id": 51,
+            "id": 59,
             "word": "man",
             "role": "noun",
             "BrE": "/mæn/",
@@ -6715,467 +7701,649 @@ export default function Lessons({ params }) {
             "definition": "an adult male person",
             "examples": [
                "The man is tall.",
-               "A man helped me yesterday.",
-               "The man works in an office."
+               "She saw a man in the park.",
+               "The man helped with the bags."
             ]
          },
          {
-            "id": 52,
+            "id": 59,
+            "word": "manage",
+            "role": "verb",
+            "BrE": "/ˈmænɪdʒ/",
+            "AmE": "/ˈmænɪdʒ/",
+            "definition": "to control or be in charge of",
+            "examples": [
+               "She manages the shop.",
+               "He managed the project well.",
+               "They manage a small team."
+            ]
+         },
+         {
+            "id": 59,
             "word": "manager",
             "role": "noun",
             "BrE": "/ˈmænɪdʒə(r)/",
             "AmE": "/ˈmænɪdʒər/",
-            "definition": "a person who controls a business or team",
+            "definition": "a person who controls an organization",
             "examples": [
-               "She’s the store manager.",
-               "The manager gave instructions.",
-               "He’s a good team manager."
+               "The manager is busy.",
+               "She spoke to the manager.",
+               "The manager hired new staff."
             ]
          },
          {
-            "id": 52,
+            "id": 59,
+            "word": "manner",
+            "role": "noun",
+            "BrE": "/ˈmænə(r)/",
+            "AmE": "/ˈmænər/",
+            "definition": "the way something is done",
+            "examples": [
+               "Her manner is polite.",
+               "He spoke in a kind manner.",
+               "The manner of teaching was clear."
+            ]
+         },
+         {
+            "id": 59,
+            "word": "many",
+            "role": "determiner",
+            "BrE": "/ˈmeni/",
+            "AmE": "/ˈmeni/",
+            "definition": "a large number of",
+            "examples": [
+               "I have many books.",
+               "She met many people.",
+               "Many students joined the club."
+            ]
+         },
+         {
+            "id": 59,
             "word": "map",
             "role": "noun",
             "BrE": "/mæp/",
             "AmE": "/mæp/",
-            "definition": "a drawing showing the features of an area",
+            "definition": "a drawing of an area",
             "examples": [
                "I need a map.",
-               "The map shows the city.",
-               "She followed the map to the park."
+               "She looked at the map.",
+               "The map shows the city."
             ]
          },
          {
-            "id": 52,
+            "id": 59,
             "word": "mark",
             "role": "noun",
             "BrE": "/mɑːk/",
             "AmE": "/mɑːrk/",
-            "definition": "a number or letter showing the quality of work",
+            "definition": "a score or grade",
             "examples": [
-               "I got a good mark.",
-               "Her mark in math was high.",
-               "The teacher gave him a mark."
+               "I got a high mark.",
+               "Her mark was excellent.",
+               "The mark on the test was good."
             ]
          },
          {
-            "id": 52,
+            "id": 59,
+            "word": "mark",
+            "role": "verb",
+            "BrE": "/mɑːk/",
+            "AmE": "/mɑːrk/",
+            "definition": "to write or draw on something",
+            "examples": [
+               "Mark the page.",
+               "She marked the map.",
+               "He marked his name on the book."
+            ]
+         },
+         {
+            "id": 59,
             "word": "market",
             "role": "noun",
             "BrE": "/ˈmɑːkɪt/",
             "AmE": "/ˈmɑːrkɪt/",
-            "definition": "a place where goods are bought and sold",
+            "definition": "a place to buy and sell things",
             "examples": [
-               "I go to the market.",
-               "The market sells fresh fruit.",
-               "She bought fish at the market."
+               "The market is busy.",
+               "She went to the market.",
+               "The market sells fresh fruit."
             ]
          },
          {
-            "id": 52,
+            "id": 60,
+            "word": "marriage",
+            "role": "noun",
+            "BrE": "/ˈmærɪdʒ/",
+            "AmE": "/ˈmærɪdʒ/",
+            "definition": "the relationship between married people",
+            "examples": [
+               "Their marriage is happy.",
+               "She celebrated her marriage.",
+               "The marriage lasted many years."
+            ]
+         },
+         {
+            "id": 60,
             "word": "married",
             "role": "adjective",
             "BrE": "/ˈmærid/",
             "AmE": "/ˈmærid/",
             "definition": "having a husband or wife",
             "examples": [
-               "She’s married now.",
+               "She is married.",
                "He’s a married man.",
-               "They’ve been married for years."
+               "The married couple moved."
             ]
          },
          {
-            "id": 52,
+            "id": 60,
             "word": "match",
             "role": "noun",
             "BrE": "/mætʃ/",
             "AmE": "/mætʃ/",
-            "definition": "a sports competition between two teams or people",
+            "definition": "a sports competition",
             "examples": [
                "The match was exciting.",
-               "They won the football match.",
-               "She watched a tennis match."
+               "She watched a football match.",
+               "The match ended in a draw."
             ]
          },
          {
-            "id": 52,
+            "id": 60,
+            "word": "match",
+            "role": "verb",
+            "BrE": "/mætʃ/",
+            "AmE": "/mætʃ/",
+            "definition": "to go well with something",
+            "examples": [
+               "The shoes match the dress.",
+               "She matched the colors.",
+               "His socks don’t match."
+            ]
+         },
+         {
+            "id": 60,
             "word": "material",
             "role": "noun",
             "BrE": "/məˈtɪəriəl/",
             "AmE": "/məˈtɪriəl/",
-            "definition": "something used to make things, like cloth or wood",
+            "definition": "substance used to make things",
             "examples": [
                "The material is soft.",
-               "She bought material for a dress.",
-               "The house is made of strong material."
+               "She chose cotton material.",
+               "The material for the dress is silk."
             ]
          },
          {
-            "id": 52,
+            "id": 60,
             "word": "matter",
             "role": "noun",
             "BrE": "/ˈmætə(r)/",
             "AmE": "/ˈmætər/",
-            "definition": "a subject or situation that needs attention",
+            "definition": "a subject or situation",
             "examples": [
-               "It’s an important matter.",
-               "The matter needs discussion.",
-               "She solved the matter quickly."
+               "It’s a serious matter.",
+               "She discussed the matter.",
+               "The matter needs attention."
             ]
          },
          {
-            "id": 52,
+            "id": 60,
+            "word": "matter",
+            "role": "verb",
+            "BrE": "/ˈmætə(r)/",
+            "AmE": "/ˈmætər/",
+            "definition": "to be important",
+            "examples": [
+               "It doesn’t matter.",
+               "She said it matters to her.",
+               "His opinion matters a lot."
+            ]
+         },
+         {
+            "id": 60,
             "word": "meal",
             "role": "noun",
             "BrE": "/miːl/",
             "AmE": "/miːl/",
-            "definition": "food eaten at a particular time",
+            "definition": "food eaten at a specific time",
             "examples": [
-               "I ate a big meal.",
-               "Dinner is my favorite meal.",
-               "She cooked a healthy meal."
+               "I ate a meal.",
+               "She cooked a big meal.",
+               "The meal was delicious."
             ]
          },
          {
-            "id": 52,
+            "id": 60,
             "word": "mean",
             "role": "verb",
             "BrE": "/miːn/",
             "AmE": "/miːn/",
-            "definition": "to have a particular meaning or intention",
+            "definition": "to have a particular meaning",
             "examples": [
-               "What does this word mean?",
-               "She didn’t mean to hurt you.",
-               "His smile meant he was happy."
+               "What does it mean?",
+               "She explained what it means.",
+               "His words meant a lot."
             ]
          },
          {
-            "id": 53,
+            "id": 60,
             "word": "meaning",
             "role": "noun",
             "BrE": "/ˈmiːnɪŋ/",
             "AmE": "/ˈmiːnɪŋ/",
-            "definition": "what something represents or expresses",
+            "definition": "what something expresses",
             "examples": [
-               "What’s the meaning of this?",
-               "The word has two meanings.",
+               "The word has a meaning.",
+               "She asked for the meaning.",
                "The meaning of the story was clear."
             ]
          },
          {
-            "id": 53,
+            "id": 61,
             "word": "meat",
             "role": "noun",
             "BrE": "/miːt/",
             "AmE": "/miːt/",
             "definition": "the flesh of animals used as food",
             "examples": [
-               "I don’t eat meat.",
+               "I eat meat.",
                "She cooked meat for dinner.",
                "The meat was fresh and tasty."
             ]
          },
          {
-            "id": 53,
+            "id": 61,
             "word": "media",
             "role": "noun",
             "BrE": "/ˈmiːdiə/",
             "AmE": "/ˈmiːdiə/",
-            "definition": "ways of communicating information, like TV or newspapers",
+            "definition": "means of communication, like TV or newspapers",
             "examples": [
-               "The media reported the news.",
-               "She works in the media.",
-               "Social media is popular now."
+               "The media is loud.",
+               "She reads media stories.",
+               "The media reported the news."
             ]
          },
          {
-            "id": 53,
-            "word": "medical",
-            "role": "adjective",
-            "BrE": "/ˈmedɪkl/",
-            "AmE": "/ˈmedɪkl/",
-            "definition": "related to medicine or health",
-            "examples": [
-               "He needs medical help.",
-               "She studies medical science.",
-               "The medical team was ready."
-            ]
-         },
-         {
-            "id": 53,
+            "id": 61,
             "word": "medicine",
             "role": "noun",
             "BrE": "/ˈmedɪsn/",
             "AmE": "/ˈmedɪsn/",
             "definition": "a substance used to treat illness",
             "examples": [
-               "Take this medicine.",
-               "The medicine helped her cold.",
-               "He forgot his medicine at home."
+               "Take your medicine.",
+               "She bought medicine at the shop.",
+               "The medicine helped her feel better."
             ]
          },
          {
-            "id": 53,
+            "id": 61,
             "word": "meet",
             "role": "verb",
             "BrE": "/miːt/",
             "AmE": "/miːt/",
             "definition": "to come together with someone",
             "examples": [
-               "Let’s meet at the park.",
-               "She met her friend yesterday.",
-               "They meet every week."
+               "Meet me at school.",
+               "She met her friend at the park.",
+               "He meets his team every week."
             ]
          },
          {
-            "id": 53,
+            "id": 61,
             "word": "meeting",
             "role": "noun",
             "BrE": "/ˈmiːtɪŋ/",
             "AmE": "/ˈmiːtɪŋ/",
-            "definition": "an event where people discuss something",
+            "definition": "an event where people discuss things",
             "examples": [
-               "The meeting is at 10.",
-               "She attended a work meeting.",
+               "The meeting is today.",
+               "She went to a work meeting.",
                "The meeting lasted two hours."
             ]
          },
          {
-            "id": 53,
+            "id": 61,
             "word": "member",
             "role": "noun",
             "BrE": "/ˈmembə(r)/",
             "AmE": "/ˈmembər/",
-            "definition": "a person who belongs to a group or organization",
+            "definition": "a person who belongs to a group",
             "examples": [
                "I’m a club member.",
-               "She’s a new team member.",
-               "All members voted today."
+               "She is a new team member.",
+               "The member helped with the project."
             ]
          },
          {
-            "id": 53,
+            "id": 61,
             "word": "memory",
             "role": "noun",
             "BrE": "/ˈmeməri/",
             "AmE": "/ˈmeməri/",
-            "definition": "the ability to remember or something you remember",
+            "definition": "something you remember",
             "examples": [
                "I have a good memory.",
-               "Her memory of the trip was clear.",
-               "Memories make her happy."
+               "She shared a happy memory.",
+               "The memory of the trip was fun."
             ]
          },
          {
-            "id": 53,
+            "id": 61,
             "word": "menu",
             "role": "noun",
             "BrE": "/ˈmenjuː/",
             "AmE": "/ˈmenjuː/",
-            "definition": "a list of food available in a restaurant",
+            "definition": "a list of food in a restaurant",
             "examples": [
-               "The menu has pizza.",
-               "She read the menu carefully.",
-               "The restaurant updated its menu."
+               "Look at the menu.",
+               "She chose from the menu.",
+               "The menu has pizza and pasta."
             ]
          },
          {
-            "id": 54,
+            "id": 61,
             "word": "message",
             "role": "noun",
             "BrE": "/ˈmesɪdʒ/",
             "AmE": "/ˈmesɪdʒ/",
             "definition": "a piece of information sent to someone",
             "examples": [
-               "I sent a message.",
-               "She got a text message.",
-               "His message was very clear."
+               "I got a message.",
+               "She sent a text message.",
+               "The message was about the party."
             ]
          },
          {
-            "id": 54,
+            "id": 61,
+            "word": "metal",
+            "role": "noun",
+            "BrE": "/ˈmetl/",
+            "AmE": "/ˈmetl/",
+            "definition": "a hard, shiny material like iron",
+            "examples": [
+               "The spoon is metal.",
+               "She bought a metal chair.",
+               "The metal gate was strong."
+            ]
+         },
+         {
+            "id": 62,
             "word": "method",
             "role": "noun",
             "BrE": "/ˈmeθəd/",
             "AmE": "/ˈmeθəd/",
             "definition": "a way of doing something",
             "examples": [
-               "This is a good method.",
-               "Her method works well.",
-               "They used a new teaching method."
+               "This method is easy.",
+               "She used a new method.",
+               "The method worked well."
             ]
          },
          {
-            "id": 54,
+            "id": 62,
             "word": "middle",
             "role": "noun",
             "BrE": "/ˈmɪdl/",
             "AmE": "/ˈmɪdl/",
-            "definition": "the central point or position",
+            "definition": "the central part of something",
             "examples": [
                "Stand in the middle.",
-               "The middle of the book is exciting.",
-               "She sat in the middle row."
+               "She sat in the middle of the room.",
+               "The middle of the book is exciting."
             ]
          },
          {
-            "id": 54,
+            "id": 62,
+            "word": "mile",
+            "role": "noun",
+            "BrE": "/maɪl/",
+            "AmE": "/maɪl/",
+            "definition": "a unit of distance",
+            "examples": [
+               "It’s one mile away.",
+               "She ran five miles.",
+               "The mile was hard to walk."
+            ]
+         },
+         {
+            "id": 62,
+            "word": "milk",
+            "role": "noun",
+            "BrE": "/mɪlk/",
+            "AmE": "/mɪlk/",
+            "definition": "a white liquid from cows or plants",
+            "examples": [
+               "I drink milk.",
+               "She bought milk at the shop.",
+               "The milk is in the fridge."
+            ]
+         },
+         {
+            "id": 62,
             "word": "mind",
             "role": "noun",
             "BrE": "/maɪnd/",
             "AmE": "/maɪnd/",
-            "definition": "the part of a person that thinks and feels",
+            "definition": "the part of a person that thinks",
             "examples": [
                "My mind is tired.",
                "She changed her mind.",
-               "He has a sharp mind."
+               "His mind was full of ideas."
             ]
          },
          {
-            "id": 54,
+            "id": 62,
+            "word": "mind",
+            "role": "verb",
+            "BrE": "/maɪnd/",
+            "AmE": "/maɪnd/",
+            "definition": "to care about or object to something",
+            "examples": [
+               "I don’t mind.",
+               "She minds the noise.",
+               "He minded waiting for her."
+            ]
+         },
+         {
+            "id": 62,
             "word": "minute",
             "role": "noun",
             "BrE": "/ˈmɪnɪt/",
             "AmE": "/ˈmɪnɪt/",
-            "definition": "a period of 60 seconds",
+            "definition": "a unit of time, 60 seconds",
             "examples": [
                "Wait a minute.",
-               "The meeting lasted 30 minutes.",
-               "She arrived a minute late."
+               "She was late by a minute.",
+               "The meeting lasted ten minutes."
             ]
          },
          {
-            "id": 54,
+            "id": 62,
+            "word": "mirror",
+            "role": "noun",
+            "BrE": "/ˈmɪrə(r)/",
+            "AmE": "/ˈmɪrər/",
+            "definition": "a piece of glass that shows your reflection",
+            "examples": [
+               "Look in the mirror.",
+               "She bought a big mirror.",
+               "The mirror is on the wall."
+            ]
+         },
+         {
+            "id": 62,
+            "word": "miss",
+            "role": "noun",
+            "BrE": "/mɪs/",
+            "AmE": "/mɪs/",
+            "definition": "a failure to hit or catch something",
+            "examples": [
+               "It was a miss.",
+               "She had a miss in the game.",
+               "The miss cost them a point."
+            ]
+         },
+         {
+            "id": 62,
             "word": "miss",
             "role": "verb",
             "BrE": "/mɪs/",
             "AmE": "/mɪs/",
-            "definition": "to not catch, see, or hit something",
+            "definition": "to not see or experience something",
             "examples": [
-               "I missed the bus.",
-               "She missed the ball.",
-               "He missed his chance to win."
+               "I miss my friend.",
+               "She missed the bus.",
+               "He missed the last show."
             ]
          },
          {
-            "id": 54,
+            "id": 63,
             "word": "mistake",
             "role": "noun",
             "BrE": "/mɪˈsteɪk/",
             "AmE": "/mɪˈsteɪk/",
-            "definition": "something that is incorrect",
+            "definition": "something done wrong",
             "examples": [
                "I made a mistake.",
-               "Her mistake was small.",
-               "The mistake cost them time."
+               "She found a mistake in the book.",
+               "The mistake was easy to fix."
             ]
          },
          {
-            "id": 54,
+            "id": 63,
             "word": "mix",
             "role": "verb",
             "BrE": "/mɪks/",
             "AmE": "/mɪks/",
             "definition": "to combine things together",
             "examples": [
-               "Mix the sugar and flour.",
-               "She mixed colors for painting.",
-               "They mixed ideas for the project."
+               "Mix the colours.",
+               "She mixed the cake ingredients.",
+               "He mixed water with juice."
             ]
          },
          {
-            "id": 54,
+            "id": 63,
+            "word": "mixture",
+            "role": "noun",
+            "BrE": "/ˈmɪkstʃə(r)/",
+            "AmE": "/ˈmɪkstʃər/",
+            "definition": "a combination of different things",
+            "examples": [
+               "The mixture is thick.",
+               "She made a mixture of fruits.",
+               "The mixture tastes good."
+            ]
+         },
+         {
+            "id": 63,
             "word": "model",
             "role": "noun",
             "BrE": "/ˈmɒdl/",
             "AmE": "/ˈmɑːdl/",
-            "definition": "a small copy of something or a person who shows clothes",
+            "definition": "a small copy or example of something",
             "examples": [
-               "He built a model plane.",
-               "She’s a fashion model.",
-               "The model car was detailed."
+               "The model is a car.",
+               "She built a model plane.",
+               "The model of the house was small."
             ]
          },
          {
-            "id": 54,
+            "id": 63,
             "word": "modern",
             "role": "adjective",
             "BrE": "/ˈmɒdn/",
             "AmE": "/ˈmɑːdərn/",
-            "definition": "new and using the latest ideas or technology",
+            "definition": "new and using recent ideas",
             "examples": [
-               "This is a modern phone.",
-               "Her house is very modern.",
-               "Modern art is interesting."
+               "The phone is modern.",
+               "She lives in a modern house.",
+               "The modern design is popular."
             ]
          },
          {
-            "id": 55,
+            "id": 63,
             "word": "moment",
             "role": "noun",
             "BrE": "/ˈməʊmənt/",
             "AmE": "/ˈmoʊmənt/",
             "definition": "a very short period of time",
             "examples": [
-               "Wait a moment, please.",
-               "The moment was special.",
-               "She paused for a moment."
+               "Wait a moment.",
+               "She was quiet for a moment.",
+               "The moment was special."
             ]
          },
          {
-            "id": 55,
+            "id": 63,
             "word": "money",
             "role": "noun",
             "BrE": "/ˈmʌni/",
             "AmE": "/ˈmʌni/",
             "definition": "what you use to buy things",
             "examples": [
-               "I need some money.",
-               "She saved money for a car.",
-               "Money is in the wallet."
+               "I need money.",
+               "She saved her money.",
+               "The money was in her bag."
             ]
          },
          {
-            "id": 55,
+            "id": 63,
             "word": "month",
             "role": "noun",
             "BrE": "/mʌnθ/",
             "AmE": "/mʌnθ/",
-            "definition": "one of the twelve periods in a year",
+            "definition": "a period of about four weeks",
             "examples": [
-               "January is a cold month.",
-               "She worked for a month.",
-               "The trip lasted one month."
+               "This month is busy.",
+               "She travels every month.",
+               "The month of June is warm."
             ]
          },
          {
-            "id": 55,
+            "id": 63,
+            "word": "mood",
+            "role": "noun",
+            "BrE": "/muːd/",
+            "AmE": "/muːd/",
+            "definition": "the way you feel at a time",
+            "examples": [
+               "I’m in a good mood.",
+               "She was in a bad mood.",
+               "His mood changed quickly."
+            ]
+         },
+         {
+            "id": 63,
             "word": "moon",
             "role": "noun",
             "BrE": "/muːn/",
             "AmE": "/muːn/",
-            "definition": "the large object in the sky seen at night",
+            "definition": "the large object in the night sky",
             "examples": [
                "The moon is bright.",
-               "She looked at the full moon.",
-               "The moon was hidden by clouds."
+               "She saw the full moon.",
+               "The moon was high last night."
             ]
          },
          {
-            "id": 55,
+            "id": 64,
             "word": "more",
-            "role": "determiner",
+            "role": "adverb",
             "BrE": "/mɔː(r)/",
             "AmE": "/mɔːr/",
-            "definition": "a larger amount or number",
+            "definition": "a greater amount or degree",
             "examples": [
                "I want more food.",
-               "She needs more time.",
-               "More people came to the party."
+               "She needs to study more.",
+               "He runs more than his friend."
             ]
          },
          {
-            "id": 55,
+            "id": 64,
             "word": "morning",
             "role": "noun",
             "BrE": "/ˈmɔːnɪŋ/",
@@ -7183,25 +8351,25 @@ export default function Lessons({ params }) {
             "definition": "the early part of the day",
             "examples": [
                "Good morning!",
-               "She runs every morning.",
-               "The morning was sunny and warm."
+               "She woke up this morning.",
+               "The morning was cold and rainy."
             ]
          },
          {
-            "id": 55,
+            "id": 64,
             "word": "most",
-            "role": "determiner",
+            "role": "adverb",
             "BrE": "/məʊst/",
             "AmE": "/moʊst/",
-            "definition": "the largest amount or number",
+            "definition": "the greatest amount or degree",
             "examples": [
-               "Most people like music.",
-               "She ate most of the cake.",
-               "Most students passed the test."
+               "She ate the most.",
+               "He works most of the time.",
+               "Most people like the show."
             ]
          },
          {
-            "id": 55,
+            "id": 64,
             "word": "mother",
             "role": "noun",
             "BrE": "/ˈmʌðə(r)/",
@@ -7209,12 +8377,38 @@ export default function Lessons({ params }) {
             "definition": "a female parent",
             "examples": [
                "My mother is kind.",
-               "She called her mother.",
-               "Her mother works as a teacher."
+               "She helped her mother cook.",
+               "The mother hugged her child."
             ]
          },
          {
-            "id": 55,
+            "id": 64,
+            "word": "motion",
+            "role": "noun",
+            "BrE": "/ˈməʊʃn/",
+            "AmE": "/ˈmoʊʃn/",
+            "definition": "the act of moving",
+            "examples": [
+               "The motion was fast.",
+               "She saw motion in the water.",
+               "The motion of the car was smooth."
+            ]
+         },
+         {
+            "id": 64,
+            "word": "motor",
+            "role": "noun",
+            "BrE": "/ˈməʊtə(r)/",
+            "AmE": "/ˈmoʊtər/",
+            "definition": "a machine that produces power",
+            "examples": [
+               "The motor is loud.",
+               "She fixed the motor.",
+               "The motor in the car stopped."
+            ]
+         },
+         {
+            "id": 64,
             "word": "mountain",
             "role": "noun",
             "BrE": "/ˈmaʊntən/",
@@ -7222,103 +8416,220 @@ export default function Lessons({ params }) {
             "definition": "a very high hill",
             "examples": [
                "The mountain is tall.",
-               "They climbed the mountain.",
-               "Snow covered the mountain."
+               "She climbed a mountain.",
+               "The mountain has snow on top."
             ]
          },
          {
-            "id": 55,
+            "id": 64,
+            "word": "mouse",
+            "role": "noun",
+            "BrE": "/maʊs/",
+            "AmE": "/maʊs/",
+            "definition": "a small animal or a computer device",
+            "examples": [
+               "The mouse is small.",
+               "She saw a mouse in the house.",
+               "The computer mouse is broken."
+            ]
+         },
+         {
+            "id": 64,
             "word": "mouth",
             "role": "noun",
             "BrE": "/maʊθ/",
             "AmE": "/maʊθ/",
-            "definition": "the part of the face used for eating and speaking",
+            "definition": "the part of the face for eating and speaking",
             "examples": [
                "Open your mouth.",
-               "She smiled with her mouth.",
-               "Food was stuck in his mouth."
+               "She covered her mouth.",
+               "The mouth of the river is wide."
             ]
          },
          {
-            "id": 56,
+            "id": 64,
+            "word": "move",
+            "role": "noun",
+            "BrE": "/muːv/",
+            "AmE": "/muːv/",
+            "definition": "an act of changing position",
+            "examples": [
+               "It was a quick move.",
+               "She made a move in the game.",
+               "The move to the new house was hard."
+            ]
+         },
+         {
+            "id": 65,
             "word": "move",
             "role": "verb",
             "BrE": "/muːv/",
             "AmE": "/muːv/",
             "definition": "to change position or place",
             "examples": [
-               "Move the chair here.",
+               "Move the chair.",
                "She moved to a new city.",
-               "He moved the box carefully."
+               "He moved the box to the room."
             ]
          },
          {
-            "id": 56,
+            "id": 65,
             "word": "movie",
             "role": "noun",
             "BrE": "/ˈmuːvi/",
             "AmE": "/ˈmuːvi/",
-            "definition": "a story shown on a screen, like in a cinema",
+            "definition": "a story shown on a screen",
             "examples": [
                "I watched a movie.",
-               "The movie was very funny.",
-               "She loves action movies."
+               "She likes funny movies.",
+               "The movie starts at eight."
             ]
          },
          {
-            "id": 56,
+            "id": 65,
+            "word": "much",
+            "role": "adverb",
+            "BrE": "/mʌtʃ/",
+            "AmE": "/mʌtʃ/",
+            "definition": "a large amount",
+            "examples": [
+               "I don’t eat much.",
+               "She talks too much.",
+               "He doesn’t have much time."
+            ]
+         },
+         {
+            "id": 65,
+            "word": "mud",
+            "role": "noun",
+            "BrE": "/mʌd/",
+            "AmE": "/mʌd/",
+            "definition": "wet, soft earth",
+            "examples": [
+               "The mud is sticky.",
+               "She stepped in the mud.",
+               "The mud covered his shoes."
+            ]
+         },
+         {
+            "id": 65,
+            "word": "murder",
+            "role": "noun",
+            "BrE": "/ˈmɜːdə(r)/",
+            "AmE": "/ˈmɜːrdər/",
+            "definition": "the crime of killing someone",
+            "examples": [
+               "Murder is a crime.",
+               "She read about a murder.",
+               "The murder was in the news."
+            ]
+         },
+         {
+            "id": 65,
+            "word": "museum",
+            "role": "noun",
+            "BrE": "/mjuˈziːəm/",
+            "AmE": "/mjuˈziːəm/",
+            "definition": "a place to show historical objects",
+            "examples": [
+               "The museum is big.",
+               "She visited a museum.",
+               "The museum has old paintings."
+            ]
+         },
+         {
+            "id": 65,
             "word": "music",
             "role": "noun",
             "BrE": "/ˈmjuːzɪk/",
             "AmE": "/ˈmjuːzɪk/",
-            "definition": "sounds arranged in a way that is pleasant to hear",
+            "definition": "sounds arranged in a pleasant way",
             "examples": [
-               "I listen to music.",
-               "She plays music on the piano.",
+               "I love music.",
+               "She plays music every day.",
                "The music was loud and fun."
             ]
          },
          {
-            "id": 56,
+            "id": 65,
             "word": "musical",
             "role": "adjective",
             "BrE": "/ˈmjuːzɪkl/",
             "AmE": "/ˈmjuːzɪkl/",
-            "definition": "related to music",
+            "definition": "relating to music",
             "examples": [
-               "He plays a musical instrument.",
-               "The musical show was great.",
-               "She has a musical voice."
+               "It’s a musical show.",
+               "She has a musical voice.",
+               "The musical event was great."
             ]
          },
          {
-            "id": 56,
+            "id": 65,
+            "word": "musician",
+            "role": "noun",
+            "BrE": "/mjuˈzɪʃn/",
+            "AmE": "/mjuˈzɪʃn/",
+            "definition": "a person who plays or writes music",
+            "examples": [
+               "The musician is talented.",
+               "She met a famous musician.",
+               "The musician played the guitar."
+            ]
+         },
+         {
+            "id": 65,
+            "word": "nail",
+            "role": "noun",
+            "BrE": "/neɪl/",
+            "AmE": "/neɪl/",
+            "definition": "a thin piece of metal or part of a finger",
+            "examples": [
+               "I broke a nail.",
+               "She hammered a nail into the wood.",
+               "The nail on her finger is long."
+            ]
+         },
+         {
+            "id": 66,
             "word": "name",
             "role": "noun",
             "BrE": "/neɪm/",
             "AmE": "/neɪm/",
-            "definition": "the word or words used to identify a person or thing",
+            "definition": "the word used to call a person or thing",
             "examples": [
                "My name is Anna.",
-               "What’s the name of this book?",
-               "She wrote her name on the paper."
+               "She forgot his name.",
+               "The name of the book is fun."
             ]
          },
          {
-            "id": 56,
+            "id": 66,
+            "word": "narrow",
+            "role": "adjective",
+            "BrE": "/ˈnærəʊ/",
+            "AmE": "/ˈnæroʊ/",
+            "definition": "not wide",
+            "examples": [
+               "The road is narrow.",
+               "She walked down a narrow path.",
+               "The narrow bridge was old."
+            ]
+         },
+         {
+            "id": 66,
             "word": "nation",
             "role": "noun",
             "BrE": "/ˈneɪʃn/",
             "AmE": "/ˈneɪʃn/",
-            "definition": "a country or its people",
+            "definition": "a country and its people",
             "examples": [
-               "The nation celebrated.",
-               "She’s proud of her nation.",
-               "The nation voted for a leader."
+               "The nation is big.",
+               "She loves her nation.",
+               "The nation voted yesterday."
             ]
          },
          {
-            "id": 56,
+            "id": 66,
             "word": "national",
             "role": "adjective",
             "BrE": "/ˈnæʃnəl/",
@@ -7326,116 +8637,207 @@ export default function Lessons({ params }) {
             "definition": "relating to a whole country",
             "examples": [
                "It’s a national holiday.",
-               "The national team won.",
-               "She watches national news."
+               "She watches national news.",
+               "The national team won."
             ]
          },
          {
-            "id": 56,
+            "id": 66,
             "word": "natural",
             "role": "adjective",
             "BrE": "/ˈnætʃrəl/",
             "AmE": "/ˈnætʃrəl/",
-            "definition": "existing in nature, not made by people",
+            "definition": "coming from nature",
             "examples": [
                "The lake is natural.",
-               "She has natural beauty.",
-               "Natural resources are important."
+               "She likes natural food.",
+               "The natural beauty was amazing."
             ]
          },
          {
-            "id": 56,
+            "id": 66,
             "word": "nature",
             "role": "noun",
             "BrE": "/ˈneɪtʃə(r)/",
             "AmE": "/ˈneɪtʃər/",
-            "definition": "the physical world, including plants and animals",
+            "definition": "the physical world, like plants and animals",
             "examples": [
                "I love nature.",
-               "Nature is beautiful in spring.",
-               "They protect nature in the park."
+               "She walked in nature.",
+               "Nature is full of animals."
             ]
          },
          {
-            "id": 56,
+            "id": 66,
             "word": "near",
-            "role": "preposition",
+            "role": "adverb",
             "BrE": "/nɪə(r)/",
             "AmE": "/nɪr/",
-            "definition": "close to something in distance",
+            "definition": "not far away",
             "examples": [
-               "The shop is near.",
-               "She lives near the school.",
-               "The park is near my house."
+               "I live near.",
+               "She sat near the window.",
+               "He parked near the shop."
             ]
          },
          {
-            "id": 57,
+            "id": 66,
+            "word": "nearly",
+            "role": "adverb",
+            "BrE": "/ˈnɪəli/",
+            "AmE": "/ˈnɪrli/",
+            "definition": "almost",
+            "examples": [
+               "I’m nearly finished.",
+               "She was nearly late.",
+               "He nearly won the race."
+            ]
+         },
+         {
+            "id": 66,
+            "word": "neat",
+            "role": "adjective",
+            "BrE": "/niːt/",
+            "AmE": "/niːt/",
+            "definition": "tidy and organized",
+            "examples": [
+               "The room is neat.",
+               "She keeps her desk neat.",
+               "His neat handwriting is clear."
+            ]
+         },
+         {
+            "id": 66,
             "word": "necessary",
             "role": "adjective",
             "BrE": "/ˈnesəsəri/",
             "AmE": "/ˈnesəseri/",
-            "definition": "needed to achieve something",
+            "definition": "needed or required",
             "examples": [
-               "Water is necessary.",
                "It’s necessary to study.",
-               "The tool is necessary for the job."
+               "She brought necessary tools.",
+               "The necessary steps were taken."
             ]
          },
          {
-            "id": 57,
+            "id": 67,
             "word": "neck",
             "role": "noun",
             "BrE": "/nek/",
             "AmE": "/nek/",
-            "definition": "the part of the body between the head and shoulders",
+            "definition": "the part of the body between head and shoulders",
             "examples": [
                "My neck hurts.",
-               "She wore a scarf around her neck.",
-               "The necklace was on her neck."
+               "She wore a neck scarf.",
+               "The neck of the shirt is tight."
             ]
          },
          {
-            "id": 57,
+            "id": 67,
+            "word": "need",
+            "role": "noun",
+            "BrE": "/niːd/",
+            "AmE": "/niːd/",
+            "definition": "something you must have",
+            "examples": [
+               "I have a need.",
+               "She has a need for food.",
+               "The need for water is urgent."
+            ]
+         },
+         {
+            "id": 67,
             "word": "need",
             "role": "verb",
             "BrE": "/niːd/",
             "AmE": "/niːd/",
             "definition": "to require something",
             "examples": [
-               "I need a pen.",
-               "She needs help with math.",
-               "They need food for the party."
+               "I need help.",
+               "She needs a new pen.",
+               "He needs to finish his work."
             ]
          },
          {
-            "id": 57,
+            "id": 67,
+            "word": "needle",
+            "role": "noun",
+            "BrE": "/ˈniːdl/",
+            "AmE": "/ˈniːdl/",
+            "definition": "a thin, pointed tool for sewing or medical use",
+            "examples": [
+               "The needle is sharp.",
+               "She used a needle to sew.",
+               "The doctor used a needle."
+            ]
+         },
+         {
+            "id": 67,
             "word": "neighbour",
             "role": "noun",
             "BrE": "/ˈneɪbə(r)/",
             "AmE": "/ˈneɪbər/",
-            "definition": "a person who lives near you",
+            "definition": "a person living near you",
             "examples": [
                "My neighbour is kind.",
-               "The neighbour has a dog.",
-               "She helped her neighbour."
+               "She visited her neighbour.",
+               "The neighbour helped with the garden."
             ]
          },
          {
-            "id": 57,
+            "id": 67,
+            "word": "nerve",
+            "role": "noun",
+            "BrE": "/nɜːv/",
+            "AmE": "/nɜːrv/",
+            "definition": "a part of the body that carries signals",
+            "examples": [
+               "The nerve was hurt.",
+               "She felt a nerve pain.",
+               "The nerve in his arm was sore."
+            ]
+         },
+         {
+            "id": 67,
+            "word": "nervous",
+            "role": "adjective",
+            "BrE": "/ˈnɜːvəs/",
+            "AmE": "/ˈnɜːrvəs/",
+            "definition": "afraid or worried",
+            "examples": [
+               "I feel nervous.",
+               "She was nervous before the test.",
+               "The nervous speaker paused."
+            ]
+         },
+         {
+            "id": 67,
+            "word": "net",
+            "role": "noun",
+            "BrE": "/net/",
+            "AmE": "/net/",
+            "definition": "a material made of strings with holes",
+            "examples": [
+               "The net is strong.",
+               "She caught fish in a net.",
+               "The net in the goal was torn."
+            ]
+         },
+         {
+            "id": 67,
             "word": "network",
             "role": "noun",
             "BrE": "/ˈnetwɜːk/",
             "AmE": "/ˈnetwɜːrk/",
-            "definition": "a group of people or things that are connected",
+            "definition": "a system of connected things",
             "examples": [
                "The network is fast.",
                "She joined a social network.",
-               "The computer network crashed."
+               "The network connects computers."
             ]
          },
          {
-            "id": 57,
+            "id": 67,
             "word": "never",
             "role": "adverb",
             "BrE": "/ˈnevə(r)/",
@@ -7443,64 +8845,38 @@ export default function Lessons({ params }) {
             "definition": "not at any time",
             "examples": [
                "I never eat meat.",
-               "She never forgets names.",
+               "She never forgets her keys.",
                "He never visited that city."
             ]
          },
          {
-            "id": 57,
-            "word": "new",
-            "role": "adjective",
-            "BrE": "/njuː/",
-            "AmE": "/nuː/",
-            "definition": "recently made or started",
-            "examples": [
-               "I have a new phone.",
-               "She started a new job.",
-               "The new rules are strict."
-            ]
-         },
-         {
-            "id": 57,
-            "word": "news",
-            "role": "noun",
-            "BrE": "/njuːz/",
-            "AmE": "/nuːz/",
-            "definition": "new information about recent events",
-            "examples": [
-               "I heard the news.",
-               "The news was on TV.",
-               "She shared good news."
-            ]
-         },
-         {
-            "id": 57,
+            "id": 68,
             "word": "newspaper",
             "role": "noun",
             "BrE": "/ˈnjuːzpeɪpə(r)/",
             "AmE": "/ˈnuːzpeɪpər/",
-            "definition": "a publication with news and stories",
+            "definition": "a paper with news and stories",
             "examples": [
                "I read the newspaper.",
-               "The newspaper had good articles.",
-               "She buys a newspaper daily."
+               "She bought a newspaper.",
+               "The newspaper has sports news."
             ]
          },
          {
-            "id": 57,
+            "id": 68,
             "word": "next",
-            "role": "adjective",
+            "role": "adverb",
             "BrE": "/nekst/",
             "AmE": "/nekst/",
             "definition": "coming immediately after",
             "examples": [
-               "The next bus is late.",
-               "She’s in the next room.",
-               "The next meeting is tomorrow."
+               "Who’s next?",
+               "She’s next in line.",
+               "The next bus comes soon."
             ]
          },
          {
-            "id": 58,
+            "id": 68,
             "word": "nice",
             "role": "adjective",
             "BrE": "/naɪs/",
@@ -7508,38 +8884,51 @@ export default function Lessons({ params }) {
             "definition": "pleasant or enjoyable",
             "examples": [
                "It’s a nice day.",
-               "She’s a nice teacher.",
+               "She has a nice smile.",
                "The nice weather helped the picnic."
             ]
          },
          {
-            "id": 58,
+            "id": 68,
             "word": "night",
             "role": "noun",
             "BrE": "/naɪt/",
             "AmE": "/naɪt/",
-            "definition": "the time when it is dark outside",
+            "definition": "the time when it is dark",
             "examples": [
-               "I sleep at night.",
-               "The night was cold.",
-               "They danced all night."
+               "The night is quiet.",
+               "She slept well last night.",
+               "The stars shone at night."
             ]
          },
          {
-            "id": 58,
+            "id": 68,
+            "word": "nobody",
+            "role": "pronoun",
+            "BrE": "/ˈnəʊbədi/",
+            "AmE": "/ˈnoʊbədi/",
+            "definition": "no person",
+            "examples": [
+               "Nobody is here.",
+               "She saw nobody in the room.",
+               "Nobody answered the phone."
+            ]
+         },
+         {
+            "id": 68,
             "word": "noise",
             "role": "noun",
             "BrE": "/nɔɪz/",
             "AmE": "/nɔɪz/",
             "definition": "a loud or unpleasant sound",
             "examples": [
-               "The noise woke me.",
+               "The noise is loud.",
                "She heard a strange noise.",
-               "The noise came from the street."
+               "The noise woke the baby."
             ]
          },
          {
-            "id": 58,
+            "id": 68,
             "word": "noisy",
             "role": "adjective",
             "BrE": "/ˈnɔɪzi/",
@@ -7547,25 +8936,25 @@ export default function Lessons({ params }) {
             "definition": "making a lot of noise",
             "examples": [
                "The room is noisy.",
-               "Noisy cars passed by.",
-               "The noisy party kept us awake."
+               "She lives on a noisy street.",
+               "The noisy dog barked a lot."
             ]
          },
          {
-            "id": 58,
+            "id": 68,
             "word": "none",
             "role": "pronoun",
             "BrE": "/nʌn/",
             "AmE": "/nʌn/",
-            "definition": "not one or not any",
+            "definition": "not any",
             "examples": [
-               "None of them came.",
-               "She has none left.",
-               "None of the books were new."
+               "None are left.",
+               "She ate none of the cake.",
+               "None of the books were good."
             ]
          },
          {
-            "id": 58,
+            "id": 68,
             "word": "normal",
             "role": "adjective",
             "BrE": "/ˈnɔːml/",
@@ -7573,116 +8962,168 @@ export default function Lessons({ params }) {
             "definition": "usual or typical",
             "examples": [
                "It’s a normal day.",
-               "Her temperature is normal.",
-               "The normal routine was followed."
+               "She felt normal again.",
+               "The normal price is low."
             ]
          },
          {
-            "id": 58,
+            "id": 68,
             "word": "north",
             "role": "noun",
             "BrE": "/nɔːθ/",
             "AmE": "/nɔːrθ/",
             "definition": "the direction towards the top of a map",
             "examples": [
-               "We’re going north.",
-               "The north is cold.",
-               "The city is in the north."
+               "Go north.",
+               "She lives in the north.",
+               "The north is cold in winter."
             ]
          },
          {
-            "id": 58,
+            "id": 69,
             "word": "nose",
             "role": "noun",
             "BrE": "/nəʊz/",
             "AmE": "/noʊz/",
-            "definition": "the part of the face used for smelling",
+            "definition": "the part of the face for smelling",
             "examples": [
                "My nose is cold.",
                "She touched her nose.",
-               "The dog sniffed with its nose."
+               "The nose of the dog is wet."
             ]
          },
          {
-            "id": 58,
+            "id": 69,
             "word": "note",
             "role": "noun",
             "BrE": "/nəʊt/",
             "AmE": "/noʊt/",
-            "definition": "a short written message or record",
+            "definition": "a short written message",
             "examples": [
                "I wrote a note.",
-               "She left a note for him.",
-               "His note was on the table."
+               "She left a note on the table.",
+               "The note was for her friend."
             ]
          },
          {
-            "id": 58,
+            "id": 69,
+            "word": "note",
+            "role": "verb",
+            "BrE": "/nəʊt/",
+            "AmE": "/noʊt/",
+            "definition": "to write down or notice something",
+            "examples": [
+               "Note the time.",
+               "She noted his name.",
+               "He noted the teacher’s advice."
+            ]
+         },
+         {
+            "id": 69,
             "word": "nothing",
             "role": "pronoun",
             "BrE": "/ˈnʌθɪŋ/",
             "AmE": "/ˈnʌθɪŋ/",
             "definition": "not anything",
             "examples": [
-               "There’s nothing in the box.",
-               "She said nothing about it.",
-               "Nothing happened during the trip."
+               "I have nothing.",
+               "She found nothing in the bag.",
+               "Nothing was left to eat."
             ]
          },
          {
-            "id": 59,
+            "id": 69,
+            "word": "notice",
+            "role": "noun",
+            "BrE": "/ˈnəʊtɪs/",
+            "AmE": "/ˈnoʊtɪs/",
+            "definition": "a written or printed announcement",
+            "examples": [
+               "Read the notice.",
+               "She saw a notice on the wall.",
+               "The notice was about the event."
+            ]
+         },
+         {
+            "id": 69,
             "word": "notice",
             "role": "verb",
             "BrE": "/ˈnəʊtɪs/",
             "AmE": "/ˈnoʊtɪs/",
             "definition": "to see or become aware of something",
             "examples": [
-               "I noticed a bird.",
-               "She noticed his new shoes.",
-               "He didn’t notice the mistake."
+               "I didn’t notice.",
+               "She noticed the new sign.",
+               "He noticed her smile."
             ]
          },
          {
-            "id": 59,
+            "id": 69,
+            "word": "nowhere",
+            "role": "adverb",
+            "BrE": "/ˈnəʊweə(r)/",
+            "AmE": "/ˈnoʊwer/",
+            "definition": "not in or to any place",
+            "examples": [
+               "It’s nowhere near.",
+               "She went nowhere yesterday.",
+               "The keys were nowhere to be found."
+            ]
+         },
+         {
+            "id": 69,
             "word": "number",
             "role": "noun",
             "BrE": "/ˈnʌmbə(r)/",
             "AmE": "/ˈnʌmbər/",
-            "definition": "a word or symbol that shows an amount",
+            "definition": "a word or symbol that shows amount",
             "examples": [
-               "My number is five.",
-               "She wrote down the number.",
-               "The number of students grew."
+               "Write the number.",
+               "She called his number.",
+               "The number of students is ten."
             ]
          },
          {
-            "id": 59,
+            "id": 69,
             "word": "nurse",
             "role": "noun",
             "BrE": "/nɜːs/",
             "AmE": "/nɜːrs/",
-            "definition": "a person who cares for sick or injured people",
+            "definition": "a person who cares for sick people",
             "examples": [
-               "The nurse helped me.",
-               "She’s a nurse at the hospital.",
-               "The nurse checked his temperature."
+               "The nurse is kind.",
+               "She saw a nurse at the hospital.",
+               "The nurse checked her temperature."
             ]
          },
          {
-            "id": 59,
+            "id": 69,
             "word": "object",
             "role": "noun",
             "BrE": "/ˈɒbdʒɪkt/",
             "AmE": "/ˈɑːbdʒɪkt/",
             "definition": "a thing that can be seen or touched",
             "examples": [
-               "What’s that object?",
-               "The object fell on the floor.",
-               "She picked up a small object."
+               "The object is small.",
+               "She picked up an object.",
+               "The object was on the table."
             ]
          },
          {
-            "id": 59,
+            "id": 70,
+            "word": "obvious",
+            "role": "adjective",
+            "BrE": "/ˈɒbviəs/",
+            "AmE": "/ˈɑːbviəs/",
+            "definition": "easy to see or understand",
+            "examples": [
+               "It’s obvious he’s tired.",
+               "She made an obvious mistake.",
+               "The answer was obvious to her."
+            ]
+         },
+         {
+            "id": 70,
             "word": "occasion",
             "role": "noun",
             "BrE": "/əˈkeɪʒn/",
@@ -7690,77 +9131,103 @@ export default function Lessons({ params }) {
             "definition": "a special event or time",
             "examples": [
                "It’s a special occasion.",
-               "The occasion was a wedding.",
-               "She dressed up for the occasion."
+               "She dressed up for the occasion.",
+               "The occasion was her birthday."
             ]
          },
          {
-            "id": 59,
+            "id": 70,
+            "word": "offer",
+            "role": "noun",
+            "BrE": "/ˈɒfə(r)/",
+            "AmE": "/ˈɔːfər/",
+            "definition": "something you give or suggest",
+            "examples": [
+               "I got an offer.",
+               "She accepted the job offer.",
+               "The offer was for a free ticket."
+            ]
+         },
+         {
+            "id": 70,
             "word": "offer",
             "role": "verb",
             "BrE": "/ˈɒfə(r)/",
             "AmE": "/ˈɔːfər/",
-            "definition": "to give or provide something to someone",
+            "definition": "to give or suggest something",
             "examples": [
-               "He offered me a drink.",
-               "She offered to help.",
-               "They offered a discount."
+               "Offer her a drink.",
+               "She offered to help him.",
+               "He offered a seat to her."
             ]
          },
          {
-            "id": 59,
+            "id": 70,
             "word": "office",
             "role": "noun",
             "BrE": "/ˈɒfɪs/",
             "AmE": "/ˈɔːfɪs/",
-            "definition": "a place where people work, often at desks",
+            "definition": "a place where people work",
             "examples": [
-               "I work in an office.",
                "The office is big.",
-               "She left her bag in the office."
+               "She works in an office.",
+               "The office has many desks."
             ]
          },
          {
-            "id": 59,
+            "id": 70,
+            "word": "official",
+            "role": "adjective",
+            "BrE": "/əˈfɪʃl/",
+            "AmE": "/əˈfɪʃl/",
+            "definition": "approved by authority",
+            "examples": [
+               "It’s an official letter.",
+               "She got an official invitation.",
+               "The official rules are clear."
+            ]
+         },
+         {
+            "id": 70,
             "word": "often",
             "role": "adverb",
             "BrE": "/ˈɒfn/",
             "AmE": "/ˈɔːfn/",
             "definition": "many times",
             "examples": [
-               "I often read books.",
-               "She often visits her family.",
+               "I often read.",
+               "She often visits her friend.",
                "He often walks to school."
             ]
          },
          {
-            "id": 59,
+            "id": 70,
             "word": "oil",
             "role": "noun",
             "BrE": "/ɔɪl/",
             "AmE": "/ɔɪl/",
-            "definition": "a thick liquid used for cooking or fuel",
+            "definition": "a liquid used for cooking or fuel",
             "examples": [
-               "I cook with oil.",
-               "The car needs oil.",
-               "Olive oil is healthy."
+               "I need oil to cook.",
+               "She used olive oil.",
+               "The car needs more oil."
             ]
          },
          {
-            "id": 59,
+            "id": 70,
             "word": "old",
             "role": "adjective",
             "BrE": "/əʊld/",
             "AmE": "/oʊld/",
-            "definition": "having lived or existed for a long time",
+            "definition": "having lived for a long time",
             "examples": [
                "The house is old.",
                "She has an old book.",
-               "The old man walked slowly."
+               "The old tree is tall."
             ]
          },
          {
-            "id": 60,
+            "id": 70,
             "word": "once",
             "role": "adverb",
             "BrE": "/wʌns/",
@@ -7768,51 +9235,51 @@ export default function Lessons({ params }) {
             "definition": "one time only",
             "examples": [
                "I went once.",
-               "She called me once.",
-               "He visited the city once."
+               "She called once yesterday.",
+               "He visited once last year."
             ]
          },
          {
-            "id": 60,
-            "word": "online",
+            "id": 71,
+            "word": "open",
             "role": "adjective",
-            "BrE": "/ˌɒnˈlaɪn/",
-            "AmE": "/ˌɑːnˈlaɪn/",
-            "definition": "connected to or done on the internet",
+            "BrE": "/ˈəʊpən/",
+            "AmE": "/ˈoʊpən/",
+            "definition": "not closed",
             "examples": [
-               "I shop online.",
-               "The online game is fun.",
-               "She took an online course."
+               "The door is open.",
+               "She left the window open.",
+               "The open book was on the table."
             ]
          },
          {
-            "id": 60,
+            "id": 71,
             "word": "open",
             "role": "verb",
             "BrE": "/ˈəʊpən/",
             "AmE": "/ˈoʊpən/",
-            "definition": "to move something so it is not closed",
+            "definition": "to make something not closed",
             "examples": [
-               "Open the door, please.",
-               "She opened the window.",
-               "He opened the book to read."
+               "Open the box.",
+               "She opened the shop early.",
+               "He opened the letter quickly."
             ]
          },
          {
-            "id": 60,
+            "id": 71,
             "word": "opinion",
             "role": "noun",
             "BrE": "/əˈpɪnjən/",
             "AmE": "/əˈpɪnjən/",
-            "definition": "what someone thinks about something",
+            "definition": "what you think about something",
             "examples": [
-               "What’s your opinion?",
-               "Her opinion was clear.",
-               "They have different opinions."
+               "I have an opinion.",
+               "She shared her opinion.",
+               "His opinion was different."
             ]
          },
          {
-            "id": 60,
+            "id": 71,
             "word": "opportunity",
             "role": "noun",
             "BrE": "/ˌɒpəˈtjuːnəti/",
@@ -7820,64 +9287,116 @@ export default function Lessons({ params }) {
             "definition": "a chance to do something",
             "examples": [
                "It’s a good opportunity.",
-               "She got a job opportunity.",
-               "He took the opportunity to learn."
+               "She took the opportunity to learn.",
+               "The opportunity came suddenly."
             ]
          },
          {
-            "id": 60,
+            "id": 71,
             "word": "opposite",
             "role": "adjective",
             "BrE": "/ˈɒpəzɪt/",
             "AmE": "/ˈɑːpəzɪt/",
-            "definition": "completely different or facing each other",
+            "definition": "completely different",
             "examples": [
-               "They sat opposite me.",
-               "Her ideas are opposite mine.",
-               "The house is opposite the park."
+               "They have opposite ideas.",
+               "She sat on the opposite side.",
+               "The opposite team played well."
             ]
          },
          {
-            "id": 60,
+            "id": 71,
+            "word": "opposite",
+            "role": "noun",
+            "BrE": "/ˈɒpəzɪt/",
+            "AmE": "/ˈɑːpəzɪt/",
+            "definition": "something completely different",
+            "examples": [
+               "Big is the opposite.",
+               "She said the opposite of him.",
+               "The opposite of hot is cold."
+            ]
+         },
+         {
+            "id": 71,
             "word": "option",
             "role": "noun",
             "BrE": "/ˈɒpʃn/",
             "AmE": "/ˈɑːpʃn/",
-            "definition": "something that you can choose",
+            "definition": "a choice you can make",
             "examples": [
-               "I have two options.",
+               "I have an option.",
                "She chose the best option.",
-               "The menu has many options."
+               "The option was to stay or go."
             ]
          },
          {
-            "id": 60,
+            "id": 71,
+            "word": "orange",
+            "role": "adjective",
+            "BrE": "/ˈɒrɪndʒ/",
+            "AmE": "/ˈɔːrɪndʒ/",
+            "definition": "a colour between red and yellow",
+            "examples": [
+               "The shirt is orange.",
+               "She painted the wall orange.",
+               "The orange light was bright."
+            ]
+         },
+         {
+            "id": 71,
             "word": "order",
             "role": "noun",
             "BrE": "/ˈɔːdə(r)/",
             "AmE": "/ˈɔːrdər/",
             "definition": "a request for something to be made or delivered",
             "examples": [
-               "I placed an order.",
-               "Her order arrived quickly.",
-               "The order was for pizza."
+               "I made an order.",
+               "She placed a food order.",
+               "The order arrived quickly."
             ]
          },
          {
-            "id": 60,
-            "word": "organization",
-            "role": "noun",
-            "BrE": "/ˌɔːɡənaɪˈzeɪʃn/",
-            "AmE": "/ˌɔːrɡənəˈzeɪʃn/",
-            "definition": "a group of people working together for a purpose",
+            "id": 71,
+            "word": "order",
+            "role": "verb",
+            "BrE": "/ˈɔːdə(r)/",
+            "AmE": "/ˈɔːrdər/",
+            "definition": "to ask for something to be made or delivered",
             "examples": [
-               "She joined an organization.",
-               "The organization helps animals.",
-               "He works for a big organization."
+               "Order a pizza.",
+               "She ordered a new book.",
+               "He ordered coffee at the café."
             ]
          },
          {
-            "id": 60,
+            "id": 72,
+            "word": "ordinary",
+            "role": "adjective",
+            "BrE": "/ˈɔːdnri/",
+            "AmE": "/ˈɔːrdneri/",
+            "definition": "normal or not special",
+            "examples": [
+               "It’s an ordinary day.",
+               "She wore ordinary clothes.",
+               "The ordinary book was boring."
+            ]
+         },
+         {
+            "id": 72,
+            "word": "organize",
+            "role": "verb",
+            "BrE": "/ˈɔːɡənaɪz/",
+            "AmE": "/ˈɔːrɡənaɪz/",
+            "definition": "to plan or arrange something",
+            "examples": [
+               "Organize the books.",
+               "She organized a party.",
+               "He organized his desk neatly."
+            ]
+         },
+         {
+            "id": 72,
             "word": "original",
             "role": "adjective",
             "BrE": "/əˈrɪdʒənl/",
@@ -7885,199 +9404,6894 @@ export default function Lessons({ params }) {
             "definition": "new and not copied",
             "examples": [
                "It’s an original idea.",
-               "She drew an original picture.",
-               "The original book was better."
+               "She wrote an original story.",
+               "The original painting is old."
             ]
          },
-            {
-            "id": 61,
+         {
+            "id": 72,
             "word": "other",
             "role": "adjective",
             "BrE": "/ˈʌðə(r)/",
             "AmE": "/ˈʌðər/",
             "definition": "different or additional",
             "examples": [
-               "I have other books.",
-               "She chose the other dress.",
-               "The other team played well."
+               "Try the other book.",
+               "She met other students.",
+               "The other side is green."
             ]
          },
          {
-            "id": 61,
+            "id": 72,
+            "word": "ought",
+            "role": "verb",
+            "BrE": "/ɔːt/",
+            "AmE": "/ɔːt/",
+            "definition": "used to say what is right to do",
+            "examples": [
+               "You ought to help.",
+               "She ought to study more.",
+               "He ought to call his mom."
+            ]
+         },
+         {
+            "id": 72,
+            "word": "out",
+            "role": "adverb",
+            "BrE": "/aʊt/",
+            "AmE": "/aʊt/",
+            "definition": "away from the inside",
+            "examples": [
+               "Go out now.",
+               "She went out with friends.",
+               "He took the trash out."
+            ]
+         },
+         {
+            "id": 72,
             "word": "outside",
-            "role": "preposition",
+            "role": "adverb",
             "BrE": "/ˌaʊtˈsaɪd/",
             "AmE": "/ˌaʊtˈsaɪd/",
-            "definition": "on or to the outer side of something",
+            "definition": "not inside a building",
             "examples": [
-               "Wait outside the shop.",
-               "The dog is outside.",
-               "She parked outside the house."
+               "Play outside.",
+               "She waited outside the shop.",
+               "He left his bag outside."
             ]
          },
          {
-            "id": 61,
+            "id": 72,
+            "word": "outside",
+            "role": "noun",
+            "BrE": "/ˈaʊtsaɪd/",
+            "AmE": "/ˈaʊtsaɪd/",
+            "definition": "the outer part of something",
+            "examples": [
+               "The outside is wet.",
+               "She painted the outside of the house.",
+               "The outside of the box is blue."
+            ]
+         },
+         {
+            "id": 72,
+            "word": "oven",
+            "role": "noun",
+            "BrE": "/ˈʌvn/",
+            "AmE": "/ˈʌvn/",
+            "definition": "a machine for baking or cooking",
+            "examples": [
+               "The oven is hot.",
+               "She baked a cake in the oven.",
+               "The oven needs cleaning."
+            ]
+         },
+         {
+            "id": 72,
             "word": "own",
             "role": "adjective",
             "BrE": "/əʊn/",
             "AmE": "/oʊn/",
-            "definition": "belonging to a particular person",
+            "definition": "belonging to a person",
             "examples": [
-               "This is my own pen.",
+               "It’s my own book.",
                "She has her own room.",
                "He built his own house."
             ]
          },
          {
-            "id": 61,
+            "id": 73,
+            "word": "owner",
+            "role": "noun",
+            "BrE": "/ˈəʊnə(r)/",
+            "AmE": "/ˈoʊnər/",
+            "definition": "a person who owns something",
+            "examples": [
+               "The owner is kind.",
+               "She is the shop owner.",
+               "The owner of the car arrived."
+            ]
+         },
+         {
+            "id": 73,
+            "word": "pack",
+            "role": "verb",
+            "BrE": "/pæk/",
+            "AmE": "/pæk/",
+            "definition": "to put things into a bag or box",
+            "examples": [
+               "Pack your bag.",
+               "She packed her clothes.",
+               "He packed for the trip."
+            ]
+         },
+         {
+            "id": 73,
+            "word": "package",
+            "role": "noun",
+            "BrE": "/ˈpækɪdʒ/",
+            "AmE": "/ˈpækɪdʒ/",
+            "definition": "something wrapped for sending",
+            "examples": [
+               "I got a package.",
+               "She sent a package home.",
+               "The package was heavy."
+            ]
+         },
+         {
+            "id": 73,
             "word": "page",
             "role": "noun",
             "BrE": "/peɪdʒ/",
             "AmE": "/peɪdʒ/",
             "definition": "one side of a sheet of paper in a book",
             "examples": [
-               "Turn to page ten.",
-               "She read a page quickly.",
+               "Turn the page.",
+               "She read page ten.",
                "The page was full of pictures."
             ]
          },
          {
-            "id": 61,
+            "id": 73,
             "word": "pain",
             "role": "noun",
             "BrE": "/peɪn/",
             "AmE": "/peɪn/",
-            "definition": "the feeling when you are hurt",
+            "definition": "a feeling of hurt in the body",
             "examples": [
-               "I feel pain in my leg.",
-               "Her pain was strong.",
-               "The pain stopped after medicine."
+               "I feel pain.",
+               "She had pain in her leg.",
+               "The pain was gone after rest."
             ]
          },
          {
-            "id": 61,
+            "id": 73,
+            "word": "paint",
+            "role": "noun",
+            "BrE": "/peɪnt/",
+            "AmE": "/peɪnt/",
+            "definition": "a liquid used to colour surfaces",
+            "examples": [
+               "I need paint.",
+               "She bought red paint.",
+               "The paint on the wall is new."
+            ]
+         },
+         {
+            "id": 73,
             "word": "paint",
             "role": "verb",
             "BrE": "/peɪnt/",
             "AmE": "/peɪnt/",
-            "definition": "to put color on something using a brush",
+            "definition": "to cover a surface with paint",
             "examples": [
-               "I paint the wall.",
+               "Paint the wall.",
                "She painted her room blue.",
-               "He painted a beautiful picture."
+               "He painted the house last week."
             ]
          },
          {
-            "id": 61,
+            "id": 73,
             "word": "painting",
             "role": "noun",
             "BrE": "/ˈpeɪntɪŋ/",
             "AmE": "/ˈpeɪntɪŋ/",
             "definition": "a picture made with paint",
             "examples": [
-               "The painting is pretty.",
-               "She hung a painting on the wall.",
-               "His painting won a prize."
+               "The painting is beautiful.",
+               "She saw a painting in the museum.",
+               "The painting was on the wall."
             ]
          },
          {
-            "id": 61,
+            "id": 73,
             "word": "pair",
             "role": "noun",
             "BrE": "/peə(r)/",
             "AmE": "/per/",
-            "definition": "two things of the same type used together",
+            "definition": "two things of the same type",
             "examples": [
-               "I have a pair of shoes.",
-               "She bought a pair of gloves.",
-               "The pair of socks is new."
+               "I need a pair.",
+               "She bought a pair of shoes.",
+               "The pair of gloves was warm."
             ]
          },
          {
-            "id": 61,
+            "id": 73,
+            "word": "palace",
+            "role": "noun",
+            "BrE": "/ˈpæləs/",
+            "AmE": "/ˈpæləs/",
+            "definition": "a large house for a king or queen",
+            "examples": [
+               "The palace is big.",
+               "She visited a palace.",
+               "The palace has many rooms."
+            ]
+         },
+         {
+            "id": 74,
+            "word": "pale",
+            "role": "adjective",
+            "BrE": "/peɪl/",
+            "AmE": "/peɪl/",
+            "definition": "having a light colour or little colour",
+            "examples": [
+               "Her face is pale.",
+               "She wore a pale blue dress.",
+               "The pale light came through."
+            ]
+         },
+         {
+            "id": 74,
+            "word": "pan",
+            "role": "noun",
+            "BrE": "/pæn/",
+            "AmE": "/pæn/",
+            "definition": "a metal container for cooking",
+            "examples": [
+               "The pan is hot.",
+               "She cooked eggs in a pan.",
+               "The pan was on the stove."
+            ]
+         },
+         {
+            "id": 74,
             "word": "paper",
             "role": "noun",
             "BrE": "/ˈpeɪpə(r)/",
             "AmE": "/ˈpeɪpər/",
             "definition": "material used for writing or printing",
             "examples": [
-               "I need some paper.",
+               "I need paper.",
                "She wrote on the paper.",
                "The paper was full of notes."
             ]
          },
          {
-            "id": 61,
+            "id": 74,
             "word": "parent",
             "role": "noun",
             "BrE": "/ˈpeərənt/",
             "AmE": "/ˈperənt/",
             "definition": "a mother or father",
             "examples": [
-               "My parent is at home.",
-               "Her parents are teachers.",
+               "My parent is here.",
+               "She called her parents.",
                "The parent helped with homework."
             ]
          },
          {
-            "id": 62,
+            "id": 74,
             "word": "park",
             "role": "noun",
             "BrE": "/pɑːk/",
             "AmE": "/pɑːrk/",
             "definition": "a public area with grass and trees",
             "examples": [
-               "I play in the park.",
-               "The park is near my house.",
-               "She walked through the park."
+               "The park is nice.",
+               "She walked in the park.",
+               "The park has a playground."
             ]
          },
          {
-            "id": 62,
+            "id": 74,
+            "word": "park",
+            "role": "verb",
+            "BrE": "/pɑːk/",
+            "AmE": "/pɑːrk/",
+            "definition": "to stop a vehicle in a place",
+            "examples": [
+               "Park the car.",
+               "She parked near the shop.",
+               "He parked the bike outside."
+            ]
+         },
+         {
+            "id": 74,
             "word": "part",
             "role": "noun",
             "BrE": "/pɑːt/",
             "AmE": "/pɑːrt/",
-            "definition": "a piece or section of something",
+            "definition": "a piece of something",
             "examples": [
-               "This is a part of the book.",
+               "I need a part.",
                "She ate part of the cake.",
-               "The part was hard to find."
+               "The part of the book was good."
             ]
          },
          {
-            "id": 62,
+            "id": 74,
+            "word": "particular",
+            "role": "adjective",
+            "BrE": "/pəˈtɪkjələ(r)/",
+            "AmE": "/pərˈtɪkjələr/",
+            "definition": "specific or special",
+            "examples": [
+               "I want a particular book.",
+               "She has a particular style.",
+               "The particular day was sunny."
+            ]
+         },
+         {
+            "id": 74,
+            "word": "partner",
+            "role": "noun",
+            "BrE": "/ˈpɑːtnə(r)/",
+            "AmE": "/ˈpɑːrtnər/",
+            "definition": "a person you work or do something with",
+            "examples": [
+               "He’s my partner.",
+               "She chose a dance partner.",
+               "The partner helped with the project."
+            ]
+         },
+         {
+            "id": 74,
             "word": "party",
             "role": "noun",
             "BrE": "/ˈpɑːti/",
             "AmE": "/ˈpɑːrti/",
-            "definition": "a social event with people and food",
+            "definition": "a social event with people",
             "examples": [
-               "I’m at a party.",
-               "The party was fun.",
-               "She planned a birthday party."
+               "I love a party.",
+               "She went to a birthday party.",
+               "The party was loud and fun."
             ]
          },
          {
-            "id": 62,
+            "id": 75,
             "word": "pass",
             "role": "verb",
             "BrE": "/pɑːs/",
             "AmE": "/pæs/",
-            "definition": "to go past something or someone",
+            "definition": "to go past or through something",
             "examples": [
-               "The car passed us.",
-               "She passed the test easily.",
-               "He passed the ball to her."
+               "Pass the ball.",
+               "She passed the shop.",
+               "He passed the test easily."
             ]
-         }
-   
+         },
+         {
+            "id": 75,
+            "word": "passenger",
+            "role": "noun",
+            "BrE": "/ˈpæsɪndʒə(r)/",
+            "AmE": "/ˈpæsɪndʒər/",
+            "definition": "a person travelling in a vehicle",
+            "examples": [
+               "The passenger is waiting.",
+               "She was a bus passenger.",
+               "The passenger carried a bag."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "passport",
+            "role": "noun",
+            "BrE": "/ˈpɑːspɔːt/",
+            "AmE": "/ˈpæspɔːrt/",
+            "definition": "a document for international travel",
+            "examples": [
+               "I need my passport.",
+               "She lost her passport.",
+               "The passport is in her bag."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "past",
+            "role": "noun",
+            "BrE": "/pɑːst/",
+            "AmE": "/pæst/",
+            "definition": "the time before now",
+            "examples": [
+               "The past was different.",
+               "She talked about the past.",
+               "The past of the town is old."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "past",
+            "role": "preposition",
+            "BrE": "/pɑːst/",
+            "AmE": "/pæst/",
+            "definition": "beyond a time or place",
+            "examples": [
+               "It’s past midnight.",
+               "She walked past the house.",
+               "He drove past the school."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "path",
+            "role": "noun",
+            "BrE": "/pɑːθ/",
+            "AmE": "/pæθ/",
+            "definition": "a way or track to walk on",
+            "examples": [
+               "The path is narrow.",
+               "She followed the path.",
+               "The path leads to the park."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "patient",
+            "role": "adjective",
+            "BrE": "/ˈpeɪʃnt/",
+            "AmE": "/ˈpeɪʃnt/",
+            "definition": "able to wait without getting upset",
+            "examples": [
+               "Be patient, please.",
+               "She is patient with kids.",
+               "The patient teacher helped him."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "patient",
+            "role": "noun",
+            "BrE": "/ˈpeɪʃnt/",
+            "AmE": "/ˈpeɪʃnt/",
+            "definition": "a person receiving medical treatment",
+            "examples": [
+               "The patient is better.",
+               "She visited the patient.",
+               "The patient was in the hospital."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "pattern",
+            "role": "noun",
+            "BrE": "/ˈpætn/",
+            "AmE": "/ˈpætərn/",
+            "definition": "a design or way things are arranged",
+            "examples": [
+               "The pattern is nice.",
+               "She chose a pattern for the dress.",
+               "The pattern on the wall is blue."
+            ]
+         },
+         {
+            "id": 75,
+            "word": "pay",
+            "role": "noun",
+            "BrE": "/peɪ/",
+            "AmE": "/peɪ/",
+            "definition": "money given for work",
+            "examples": [
+               "Her pay is good.",
+               "She got her pay today.",
+               "The pay for the job is high."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "pay",
+            "role": "verb",
+            "BrE": "/peɪ/",
+            "AmE": "/peɪ/",
+            "definition": "to give money for something",
+            "examples": [
+               "Pay the bill.",
+               "She paid for the book.",
+               "He pays his rent every month."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "peace",
+            "role": "noun",
+            "BrE": "/piːs/",
+            "AmE": "/piːs/",
+            "definition": "a state of calm or no war",
+            "examples": [
+               "I want peace.",
+               "She found peace in the park.",
+               "The peace in the room was nice."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "pen",
+            "role": "noun",
+            "BrE": "/pen/",
+            "AmE": "/pen/",
+            "definition": "a tool for writing with ink",
+            "examples": [
+               "I need a pen.",
+               "She wrote with a blue pen.",
+               "The pen is on the table."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "pencil",
+            "role": "noun",
+            "BrE": "/ˈpensl/",
+            "AmE": "/ˈpensl/",
+            "definition": "a tool for writing or drawing with lead",
+            "examples": [
+               "The pencil is sharp.",
+               "She drew with a pencil.",
+               "He lost his pencil at school."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "people",
+            "role": "noun",
+            "BrE": "/ˈpiːpl/",
+            "AmE": "/ˈpiːpl/",
+            "definition": "more than one person",
+            "examples": [
+               "People are here.",
+               "She met new people.",
+               "Many people like the movie."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "perfect",
+            "role": "adjective",
+            "BrE": "/ˈpɜːfɪkt/",
+            "AmE": "/ˈpɜːrfɪkt/",
+            "definition": "having no mistakes",
+            "examples": [
+               "The day is perfect.",
+               "She did a perfect job.",
+               "The perfect plan worked well."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "perform",
+            "role": "verb",
+            "BrE": "/pəˈfɔːm/",
+            "AmE": "/pərˈfɔːrm/",
+            "definition": "to do something like acting or playing music",
+            "examples": [
+               "They perform on stage.",
+               "She performed a song.",
+               "He performs in a band."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "performance",
+            "role": "noun",
+            "BrE": "/pəˈfɔːməns/",
+            "AmE": "/pərˈfɔːrməns/",
+            "definition": "an act of performing, like a play or concert",
+            "examples": [
+               "The performance was great.",
+               "She watched a dance performance.",
+               "His performance was the best."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "period",
+            "role": "noun",
+            "BrE": "/ˈpɪəriəd/",
+            "AmE": "/ˈpɪriəd/",
+            "definition": "a length of time",
+            "examples": [
+               "The period was short.",
+               "She waited for a period.",
+               "The period of the class is one hour."
+            ]
+         },
+         {
+            "id": 76,
+            "word": "permanent",
+            "role": "adjective",
+            "BrE": "/ˈpɜːmənənt/",
+            "AmE": "/ˈpɜːrmənənt/",
+            "definition": "lasting for a long time",
+            "examples": [
+               "It’s a permanent job.",
+               "She got a permanent mark.",
+               "The permanent change was good."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "person",
+            "role": "noun",
+            "BrE": "/ˈpɜːsn/",
+            "AmE": "/ˈpɜːrsn/",
+            "definition": "a human being",
+            "examples": [
+               "He’s a nice person.",
+               "She met a person at the park.",
+               "The person helped her."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "personal",
+            "role": "adjective",
+            "BrE": "/ˈpɜːsənl/",
+            "AmE": "/ˈpɜːrsənl/",
+            "definition": "relating to one person",
+            "examples": [
+               "It’s a personal choice.",
+               "She keeps her personal diary.",
+               "His personal items were lost."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "phone",
+            "role": "noun",
+            "BrE": "/fəʊn/",
+            "AmE": "/foʊn/",
+            "definition": "a device for calling people",
+            "examples": [
+               "My phone is new.",
+               "She used her phone to call.",
+               "The phone rang all day."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "phone",
+            "role": "verb",
+            "BrE": "/fəʊn/",
+            "AmE": "/foʊn/",
+            "definition": "to call someone using a phone",
+            "examples": [
+               "Phone your friend.",
+               "She phoned her mom.",
+               "He phones his boss every day."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "photo",
+            "role": "noun",
+            "BrE": "/ˈfəʊtəʊ/",
+            "AmE": "/ˈfoʊtoʊ/",
+            "definition": "a picture taken with a camera",
+            "examples": [
+               "I took a photo.",
+               "She showed me a photo.",
+               "The photo of the beach is nice."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "photograph",
+            "role": "noun",
+            "BrE": "/ˈfəʊtəɡrɑːf/",
+            "AmE": "/ˈfoʊtəɡræf/",
+            "definition": "a picture taken with a camera",
+            "examples": [
+               "The photograph is old.",
+               "She has a photograph of her family.",
+               "The photograph was in a book."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "phrase",
+            "role": "noun",
+            "BrE": "/freɪz/",
+            "AmE": "/freɪz/",
+            "definition": "a group of words with meaning",
+            "examples": [
+               "Learn this phrase.",
+               "She used a new phrase.",
+               "The phrase was easy to say."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "physical",
+            "role": "adjective",
+            "BrE": "/ˈfɪzɪkl/",
+            "AmE": "/ˈfɪzɪkl/",
+            "definition": "relating to the body or things",
+            "examples": [
+               "It’s a physical game.",
+               "She does physical exercise.",
+               "The physical book is heavy."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "piano",
+            "role": "noun",
+            "BrE": "/piˈænəʊ/",
+            "AmE": "/piˈænoʊ/",
+            "definition": "a musical instrument with keys",
+            "examples": [
+               "The piano is big.",
+               "She plays the piano well.",
+               "The piano is in the room."
+            ]
+         },
+         {
+            "id": 77,
+            "word": "pick",
+            "role": "verb",
+            "BrE": "/pɪk/",
+            "AmE": "/pɪk/",
+            "definition": "to choose or take something",
+            "examples": [
+               "Pick a colour.",
+               "She picked a red apple.",
+               "He picked the best book."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "picture",
+            "role": "noun",
+            "BrE": "/ˈpɪktʃə(r)/",
+            "AmE": "/ˈpɪktʃər/",
+            "definition": "an image or drawing",
+            "examples": [
+               "I drew a picture.",
+               "She saw a picture on the wall.",
+               "The picture shows a dog."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "piece",
+            "role": "noun",
+            "BrE": "/piːs/",
+            "AmE": "/piːs/",
+            "definition": "a part of something",
+            "examples": [
+               "I ate a piece.",
+               "She cut a piece of cake.",
+               "The piece of paper is small."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "pig",
+            "role": "noun",
+            "BrE": "/pɪɡ/",
+            "AmE": "/pɪɡ/",
+            "definition": "a farm animal with a flat nose",
+            "examples": [
+               "The pig is fat.",
+               "She saw a pig on the farm.",
+               "The pig ate a lot of food."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "pile",
+            "role": "noun",
+            "BrE": "/paɪl/",
+            "AmE": "/paɪl/",
+            "definition": "a number of things on top of each other",
+            "examples": [
+               "The pile is high.",
+               "She made a pile of books.",
+               "The pile of clothes fell."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "pilot",
+            "role": "noun",
+            "BrE": "/ˈpaɪlət/",
+            "AmE": "/ˈpaɪlət/",
+            "definition": "a person who flies a plane",
+            "examples": [
+               "The pilot is ready.",
+               "She met the pilot.",
+               "The pilot flew the plane."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "pink",
+            "role": "adjective",
+            "BrE": "/pɪŋk/",
+            "AmE": "/pɪŋk/",
+            "definition": "a light red colour",
+            "examples": [
+               "The shirt is pink.",
+               "She wore a pink dress.",
+               "The pink flower is pretty."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "pipe",
+            "role": "noun",
+            "BrE": "/paɪp/",
+            "AmE": "/paɪp/",
+            "definition": "a tube for carrying liquid or gas",
+            "examples": [
+               "The pipe is long.",
+               "She fixed a water pipe.",
+               "The pipe in the house broke."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "place",
+            "role": "noun",
+            "BrE": "/pleɪs/",
+            "AmE": "/pleɪs/",
+            "definition": "a particular area or position",
+            "examples": [
+               "This place is nice.",
+               "She found a place to sit.",
+               "The place was full of people."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "place",
+            "role": "verb",
+            "BrE": "/pleɪs/",
+            "AmE": "/pleɪs/",
+            "definition": "to put something somewhere",
+            "examples": [
+               "Place the book here.",
+               "She placed her bag on the table.",
+               "He placed the cup on the shelf."
+            ]
+         },
+         {
+            "id": 78,
+            "word": "plain",
+            "role": "adjective",
+            "BrE": "/pleɪn/",
+            "AmE": "/pleɪn/",
+            "definition": "simple or not decorated",
+            "examples": [
+               "The shirt is plain.",
+               "She likes plain food.",
+               "The plain wall needs paint."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "plan",
+            "role": "noun",
+            "BrE": "/plæn/",
+            "AmE": "/plæn/",
+            "definition": "an idea for doing something",
+            "examples": [
+               "I have a plan.",
+               "She made a plan for the trip.",
+               "The plan was to meet at six."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "plan",
+            "role": "verb",
+            "BrE": "/plæn/",
+            "AmE": "/plæn/",
+            "definition": "to decide what to do",
+            "examples": [
+               "Plan the party.",
+               "She planned her day.",
+               "He plans to visit soon."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "plane",
+            "role": "noun",
+            "BrE": "/pleɪn/",
+            "AmE": "/pleɪn/",
+            "definition": "a vehicle that flies",
+            "examples": [
+               "The plane is big.",
+               "She took a plane to London.",
+               "The plane landed safely."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "plant",
+            "role": "noun",
+            "BrE": "/plɑːnt/",
+            "AmE": "/plænt/",
+            "definition": "a living thing that grows in soil",
+            "examples": [
+               "The plant is green.",
+               "She watered her plant.",
+               "The plant grew tall."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "plastic",
+            "role": "noun",
+            "BrE": "/ˈplæstɪk/",
+            "AmE": "/ˈplæstɪk/",
+            "definition": "a man-made material that can be shaped",
+            "examples": [
+               "The bottle is plastic.",
+               "She used a plastic cup.",
+               "The plastic chair is light."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "plate",
+            "role": "noun",
+            "BrE": "/pleɪt/",
+            "AmE": "/pleɪt/",
+            "definition": "a flat dish for food",
+            "examples": [
+               "The plate is clean.",
+               "She put food on the plate.",
+               "The plate broke on the floor."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "play",
+            "role": "noun",
+            "BrE": "/pleɪ/",
+            "AmE": "/pleɪ/",
+            "definition": "an activity for fun or a performance",
+            "examples": [
+               "Let’s have a play.",
+               "She watched a school play.",
+               "The play was about a king."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "play",
+            "role": "verb",
+            "BrE": "/pleɪ/",
+            "AmE": "/pleɪ/",
+            "definition": "to do something for fun or perform",
+            "examples": [
+               "Play a game.",
+               "She plays football.",
+               "He played music all night."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "player",
+            "role": "noun",
+            "BrE": "/ˈpleɪə(r)/",
+            "AmE": "/ˈpleɪər/",
+            "definition": "a person who plays a game or music",
+            "examples": [
+               "The player is fast.",
+               "She is a good piano player.",
+               "The player scored a goal."
+            ]
+         },
+         {
+            "id": 79,
+            "word": "pleasant",
+            "role": "adjective",
+            "BrE": "/ˈpleznt/",
+            "AmE": "/ˈpleznt/",
+            "definition": "nice or enjoyable",
+            "examples": [
+               "The day is pleasant.",
+               "She had a pleasant trip.",
+               "The pleasant smell was flowers."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "please",
+            "role": "adverb",
+            "BrE": "/pliːz/",
+            "AmE": "/pliːz/",
+            "definition": "used to make a polite request",
+            "examples": [
+               "Sit down, please.",
+               "Please help me with this.",
+               "Can you please open the door?"
+            ]
+         },
+         {
+            "id": 80,
+            "word": "pleasure",
+            "role": "noun",
+            "BrE": "/ˈpleʒə(r)/",
+            "AmE": "/ˈpleʒər/",
+            "definition": "a feeling of happiness or enjoyment",
+            "examples": [
+               "It’s a pleasure to meet.",
+               "She reads for pleasure.",
+               "The pleasure of the trip was great."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "plenty",
+            "role": "pronoun",
+            "BrE": "/ˈplenti/",
+            "AmE": "/ˈplenti/",
+            "definition": "a lot or enough of something",
+            "examples": [
+               "We have plenty.",
+               "She has plenty of time.",
+               "There’s plenty of food left."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "pocket",
+            "role": "noun",
+            "BrE": "/ˈpɒkɪt/",
+            "AmE": "/ˈpɑːkɪt/",
+            "definition": "a small bag in clothes for carrying things",
+            "examples": [
+               "My pocket is full.",
+               "She put money in her pocket.",
+               "The pocket of the jacket is big."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "poem",
+            "role": "noun",
+            "BrE": "/ˈpəʊɪm/",
+            "AmE": "/ˈpoʊəm/",
+            "definition": "a piece of writing with rhythm",
+            "examples": [
+               "I read a poem.",
+               "She wrote a short poem.",
+               "The poem was about love."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "point",
+            "role": "noun",
+            "BrE": "/pɔɪnt/",
+            "AmE": "/pɔɪnt/",
+            "definition": "a particular detail or idea",
+            "examples": [
+               "Make a point.",
+               "She explained her point.",
+               "The point of the story was clear."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "point",
+            "role": "verb",
+            "BrE": "/pɔɪnt/",
+            "AmE": "/pɔɪnt/",
+            "definition": "to show direction with a finger",
+            "examples": [
+               "Point to the door.",
+               "She pointed at the sky.",
+               "He pointed to the map."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "police",
+            "role": "noun",
+            "BrE": "/pəˈliːs/",
+            "AmE": "/pəˈliːs/",
+            "definition": "people who keep law and order",
+            "examples": [
+               "The police are here.",
+               "She called the police for help.",
+               "The police caught the thief."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "polite",
+            "role": "adjective",
+            "BrE": "/pəˈlaɪt/",
+            "AmE": "/pəˈlaɪt/",
+            "definition": "having good manners",
+            "examples": [
+               "He is very polite.",
+               "She gave a polite smile.",
+               "The polite boy said thank you."
+            ]
+         },
+         {
+            "id": 80,
+            "word": "political",
+            "role": "adjective",
+            "BrE": "/pəˈlɪtɪkl/",
+            "AmE": "/pəˈlɪtɪkl/",
+            "definition": "relating to government or politics",
+            "examples": [
+               "It’s a political book.",
+               "She watches political news.",
+               "The political talk was long."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "poor",
+            "role": "adjective",
+            "BrE": "/pɔː(r)/",
+            "AmE": "/pʊr/",
+            "definition": "having little money or being of low quality",
+            "examples": [
+               "He is poor.",
+               "She helped a poor family.",
+               "The poor road was dangerous."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "pop",
+            "role": "noun",
+            "BrE": "/pɒp/",
+            "AmE": "/pɑːp/",
+            "definition": "modern popular music",
+            "examples": [
+               "I like pop music.",
+               "She listens to pop songs.",
+               "The pop concert was fun."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "popular",
+            "role": "adjective",
+            "BrE": "/ˈpɒpjələ(r)/",
+            "AmE": "/ˈpɑːpjələr/",
+            "definition": "liked by many people",
+            "examples": [
+               "The song is popular.",
+               "She is a popular student.",
+               "The popular game is new."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "population",
+            "role": "noun",
+            "BrE": "/ˌpɒpjuˈleɪʃn/",
+            "AmE": "/ˌpɑːpjuˈleɪʃn/",
+            "definition": "all the people living in an area",
+            "examples": [
+               "The population is big.",
+               "She studied the city’s population.",
+               "The population grew last year."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "position",
+            "role": "noun",
+            "BrE": "/pəˈzɪʃn/",
+            "AmE": "/pəˈzɪʃn/",
+            "definition": "the place where something is",
+            "examples": [
+               "The position is good.",
+               "She changed the chair’s position.",
+               "The position of the house is nice."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "positive",
+            "role": "adjective",
+            "BrE": "/ˈpɒzətɪv/",
+            "AmE": "/ˈpɑːzətɪv/",
+            "definition": "hopeful or confident",
+            "examples": [
+               "Be positive!",
+               "She has a positive idea.",
+               "His positive attitude helped."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "possible",
+            "role": "adjective",
+            "BrE": "/ˈpɒsəbl/",
+            "AmE": "/ˈpɑːsəbl/",
+            "definition": "able to happen or be done",
+            "examples": [
+               "It’s possible to win.",
+               "She found a possible answer.",
+               "The possible time is tomorrow."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "post",
+            "role": "noun",
+            "BrE": "/pəʊst/",
+            "AmE": "/poʊst/",
+            "definition": "letters or packages sent by mail",
+            "examples": [
+               "I got post today.",
+               "She sent a post to her friend.",
+               "The post arrived this morning."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "post",
+            "role": "verb",
+            "BrE": "/pəʊst/",
+            "AmE": "/poʊst/",
+            "definition": "to send something by mail",
+            "examples": [
+               "Post the letter.",
+               "She posted a card.",
+               "He posts packages every week."
+            ]
+         },
+         {
+            "id": 81,
+            "word": "pot",
+            "role": "noun",
+            "BrE": "/pɒt/",
+            "AmE": "/pɑːt/",
+            "definition": "a container for cooking or plants",
+            "examples": [
+               "The pot is hot.",
+               "She put a plant in the pot.",
+               "The pot of soup is ready."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "potato",
+            "role": "noun",
+            "BrE": "/pəˈteɪtəʊ/",
+            "AmE": "/pəˈteɪtoʊ/",
+            "definition": "a vegetable that grows underground",
+            "examples": [
+               "I like potatoes.",
+               "She cooked a potato.",
+               "The potato was soft and tasty."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "pound",
+            "role": "noun",
+            "BrE": "/paʊnd/",
+            "AmE": "/paʊnd/",
+            "definition": "a unit of weight or money",
+            "examples": [
+               "It costs one pound.",
+               "She bought a pound of apples.",
+               "The pound of sugar is heavy."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "pour",
+            "role": "verb",
+            "BrE": "/pɔː(r)/",
+            "AmE": "/pɔːr/",
+            "definition": "to make a liquid flow",
+            "examples": [
+               "Pour the water.",
+               "She poured juice into a glass.",
+               "He poured milk into the cup."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "power",
+            "role": "noun",
+            "BrE": "/ˈpaʊə(r)/",
+            "AmE": "/ˈpaʊər/",
+            "definition": "energy or strength",
+            "examples": [
+               "The power is off.",
+               "She has a lot of power.",
+               "The power of the car is strong."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "practice",
+            "role": "noun",
+            "BrE": "/ˈpræktɪs/",
+            "AmE": "/ˈpræktɪs/",
+            "definition": "doing something regularly to improve",
+            "examples": [
+               "Practice is important.",
+               "She does piano practice.",
+               "The practice helped her win."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "practise",
+            "role": "verb",
+            "BrE": "/ˈpræktɪs/",
+            "AmE": "/ˈpræktɪs/",
+            "definition": "to do something regularly to improve",
+            "examples": [
+               "Practise English.",
+               "She practises dancing.",
+               "He practised for the game."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "prefer",
+            "role": "verb",
+            "BrE": "/prɪˈfɜː(r)/",
+            "AmE": "/prɪˈfɜːr/",
+            "definition": "to like one thing more than another",
+            "examples": [
+               "I prefer tea.",
+               "She prefers books to movies.",
+               "He prefers walking to driving."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "prepare",
+            "role": "verb",
+            "BrE": "/prɪˈpeə(r)/",
+            "AmE": "/prɪˈper/",
+            "definition": "to get ready for something",
+            "examples": [
+               "Prepare your bag.",
+               "She prepared food for the party.",
+               "He prepared for the test."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "present",
+            "role": "adjective",
+            "BrE": "/ˈpreznt/",
+            "AmE": "/ˈpreznt/",
+            "definition": "existing or happening now",
+            "examples": [
+               "She is present today.",
+               "He was present at the meeting.",
+               "The present time is busy."
+            ]
+         },
+         {
+            "id": 82,
+            "word": "present",
+            "role": "noun",
+            "BrE": "/ˈpreznt/",
+            "AmE": "/ˈpreznt/",
+            "definition": "a gift",
+            "examples": [
+               "I got a present.",
+               "She gave him a present.",
+               "The present was a book."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "president",
+            "role": "noun",
+            "BrE": "/ˈprezɪdənt/",
+            "AmE": "/ˈprezɪdənt/",
+            "definition": "the leader of a country or group",
+            "examples": [
+               "The president spoke.",
+               "She met the president.",
+               "The president lives in a big house."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "press",
+            "role": "verb",
+            "BrE": "/pres/",
+            "AmE": "/pres/",
+            "definition": "to push something firmly",
+            "examples": [
+               "Press the button.",
+               "She pressed the doorbell.",
+               "He pressed the paper flat."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "pretty",
+            "role": "adjective",
+            "BrE": "/ˈprɪti/",
+            "AmE": "/ˈprɪti/",
+            "definition": "attractive in a pleasant way",
+            "examples": [
+               "The flower is pretty.",
+               "She wore a pretty dress.",
+               "The pretty park was quiet."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "price",
+            "role": "noun",
+            "BrE": "/praɪs/",
+            "AmE": "/praɪs/",
+            "definition": "the amount of money needed to buy something",
+            "examples": [
+               "The price is high.",
+               "She checked the price of the book.",
+               "The price of the ticket was low."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "print",
+            "role": "verb",
+            "BrE": "/prɪnt/",
+            "AmE": "/prɪnt/",
+            "definition": "to produce text or pictures on paper",
+            "examples": [
+               "Print the page.",
+               "She printed her name.",
+               "He printed a photo at home."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "prison",
+            "role": "noun",
+            "BrE": "/ˈprɪzn/",
+            "AmE": "/ˈprɪzn/",
+            "definition": "a place where people are kept as punishment",
+            "examples": [
+               "The prison is old.",
+               "She visited the prison.",
+               "The prison is near the city."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "private",
+            "role": "adjective",
+            "BrE": "/ˈpraɪvət/",
+            "AmE": "/ˈpraɪvət/",
+            "definition": "for one person or group, not public",
+            "examples": [
+               "It’s a private room.",
+               "She has a private office.",
+               "The private garden is small."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "prize",
+            "role": "noun",
+            "BrE": "/praɪz/",
+            "AmE": "/praɪz/",
+            "definition": "something given for winning",
+            "examples": [
+               "I won a prize.",
+               "She got a prize at school.",
+               "The prize was a big book."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "probably",
+            "role": "adverb",
+            "BrE": "/ˈprɒbəbli/",
+            "AmE": "/ˈprɑːbəbli/",
+            "definition": "almost certainly",
+            "examples": [
+               "I’ll probably come.",
+               "She will probably win.",
+               "He probably forgot the time."
+            ]
+         },
+         {
+            "id": 83,
+            "word": "problem",
+            "role": "noun",
+            "BrE": "/ˈprɒbləm/",
+            "AmE": "/ˈprɑːbləm/",
+            "definition": "something difficult that needs solving",
+            "examples": [
+               "I have a problem.",
+               "She solved the problem.",
+               "The problem was with the car."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "produce",
+            "role": "verb",
+            "BrE": "/prəˈdjuːs/",
+            "AmE": "/prəˈduːs/",
+            "definition": "to make or grow something",
+            "examples": [
+               "Produce good work.",
+               "She produces vegetables.",
+               "He produced a new song."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "product",
+            "role": "noun",
+            "BrE": "/ˈprɒdʌkt/",
+            "AmE": "/ˈprɑːdʌkt/",
+            "definition": "something made to be sold",
+            "examples": [
+               "The product is new.",
+               "She bought a product online.",
+               "The product was in a box."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "program",
+            "role": "noun",
+            "BrE": "/ˈprəʊɡræm/",
+            "AmE": "/ˈproʊɡræm/",
+            "definition": "a plan or a show on TV or computer",
+            "examples": [
+               "I watched a program.",
+               "She likes this TV program.",
+               "The program starts at seven."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "programme",
+            "role": "noun",
+            "BrE": "/ˈprəʊɡræm/",
+            "AmE": "/ˈproʊɡræm/",
+            "definition": "a plan or a show on TV (British spelling)",
+            "examples": [
+               "The programme is good.",
+               "She followed the programme.",
+               "The programme was about animals."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "progress",
+            "role": "noun",
+            "BrE": "/ˈprəʊɡres/",
+            "AmE": "/ˈprɑːɡres/",
+            "definition": "improvement or development",
+            "examples": [
+               "I made progress.",
+               "She saw progress in her work.",
+               "The progress was slow but good."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "project",
+            "role": "noun",
+            "BrE": "/ˈprɒdʒekt/",
+            "AmE": "/ˈprɑːdʒekt/",
+            "definition": "a planned piece of work",
+            "examples": [
+               "The project is big.",
+               "She worked on a school project.",
+               "The project took three weeks."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "promise",
+            "role": "noun",
+            "BrE": "/ˈprɒmɪs/",
+            "AmE": "/ˈprɑːmɪs/",
+            "definition": "a statement that you will do something",
+            "examples": [
+               "I made a promise.",
+               "She kept her promise.",
+               "The promise was to help him."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "promise",
+            "role": "verb",
+            "BrE": "/ˈprɒmɪs/",
+            "AmE": "/ˈprɑːmɪs/",
+            "definition": "to say you will definitely do something",
+            "examples": [
+               "Promise to call.",
+               "She promised to come early.",
+               "He promised to finish the work."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "proper",
+            "role": "adjective",
+            "BrE": "/ˈprɒpə(r)/",
+            "AmE": "/ˈprɑːpər/",
+            "definition": "correct or suitable",
+            "examples": [
+               "Wear proper shoes.",
+               "She used the proper tool.",
+               "The proper answer was easy."
+            ]
+         },
+         {
+            "id": 84,
+            "word": "protect",
+            "role": "verb",
+            "BrE": "/prəˈtekt/",
+            "AmE": "/prəˈtekt/",
+            "definition": "to keep something safe",
+            "examples": [
+               "Protect your eyes.",
+               "She protects her phone.",
+               "He protected the child from danger."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "protection",
+            "role": "noun",
+            "BrE": "/prəˈtekʃn/",
+            "AmE": "/prəˈtekʃn/",
+            "definition": "the act of keeping something safe",
+            "examples": [
+               "I need protection.",
+               "She wore protection in the sun.",
+               "The protection of the house was good."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "proud",
+            "role": "adjective",
+            "BrE": "/praʊd/",
+            "AmE": "/praʊd/",
+            "definition": "feeling pleased about something",
+            "examples": [
+               "I’m proud of you.",
+               "She is proud of her work.",
+               "He was proud of his new car."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "prove",
+            "role": "verb",
+            "BrE": "/pruːv/",
+            "AmE": "/pruːv/",
+            "definition": "to show something is true",
+            "examples": [
+               "Prove it!",
+               "She proved her answer.",
+               "He proved he was right."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "provide",
+            "role": "verb",
+            "BrE": "/prəˈvaɪd/",
+            "AmE": "/prəˈvaɪd/",
+            "definition": "to give something to someone",
+            "examples": [
+               "Provide some water.",
+               "She provided food for all.",
+               "He provides books for the class."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "public",
+            "role": "adjective",
+            "BrE": "/ˈpʌblɪk/",
+            "AmE": "/ˈpʌblɪk/",
+            "definition": "for everyone to use",
+            "examples": [
+               "The park is public.",
+               "She used a public phone.",
+               "The public library is free."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "pull",
+            "role": "verb",
+            "BrE": "/pʊl/",
+            "AmE": "/pʊl/",
+            "definition": "to move something towards you",
+            "examples": [
+               "Pull the rope.",
+               "She pulled the door open.",
+               "He pulled the box closer."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "punish",
+            "role": "verb",
+            "BrE": "/ˈpʌnɪʃ/",
+            "AmE": "/ˈpʌnɪʃ/",
+            "definition": "to make someone suffer for doing wrong",
+            "examples": [
+               "Don’t punish him.",
+               "She punished the bad behaviour.",
+               "He was punished for being late."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "pupil",
+            "role": "noun",
+            "BrE": "/ˈpjuːpl/",
+            "AmE": "/ˈpjuːpl/",
+            "definition": "a student in school",
+            "examples": [
+               "The pupil is young.",
+               "She is a good pupil.",
+               "The pupil answered the question."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "purpose",
+            "role": "noun",
+            "BrE": "/ˈpɜːpəs/",
+            "AmE": "/ˈpɜːrpəs/",
+            "definition": "the reason for doing something",
+            "examples": [
+               "What’s the purpose?",
+               "She explained the purpose.",
+               "The purpose of the meeting was clear."
+            ]
+         },
+         {
+            "id": 85,
+            "word": "push",
+            "role": "verb",
+            "BrE": "/pʊʃ/",
+            "AmE": "/pʊʃ/",
+            "definition": "to move something away from you",
+            "examples": [
+               "Push the door.",
+               "She pushed the cart.",
+               "He pushed the chair to the wall."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "put",
+            "role": "verb",
+            "BrE": "/pʊt/",
+            "AmE": "/pʊt/",
+            "definition": "to place something somewhere",
+            "examples": [
+               "Put the book here.",
+               "She put her bag on the table.",
+               "He put the keys in his pocket."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "quality",
+            "role": "noun",
+            "BrE": "/ˈkwɒləti/",
+            "AmE": "/ˈkwɑːləti/",
+            "definition": "how good or bad something is",
+            "examples": [
+               "The quality is good.",
+               "She bought a quality shirt.",
+               "The quality of the food was high."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "quantity",
+            "role": "noun",
+            "BrE": "/ˈkwɒntəti/",
+            "AmE": "/ˈkwɑːntəti/",
+            "definition": "the amount of something",
+            "examples": [
+               "I need a quantity.",
+               "She bought a quantity of apples.",
+               "The quantity of books was large."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "quarter",
+            "role": "noun",
+            "BrE": "/ˈkwɔːtə(r)/",
+            "AmE": "/ˈkwɔːrtər/",
+            "definition": "one of four equal parts",
+            "examples": [
+               "It’s a quarter past.",
+               "She ate a quarter of the cake.",
+               "The quarter of the book was short."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "queen",
+            "role": "noun",
+            "BrE": "/kwiːn/",
+            "AmE": "/kwiːn/",
+            "definition": "a female ruler or a chess piece",
+            "examples": [
+               "The queen is kind.",
+               "She read about a queen.",
+               "The queen moved in the game."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "question",
+            "role": "noun",
+            "BrE": "/ˈkwestʃən/",
+            "AmE": "/ˈkwestʃən/",
+            "definition": "something you ask",
+            "examples": [
+               "I have a question.",
+               "She asked a question in class.",
+               "The question was hard to answer."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "quick",
+            "role": "adjective",
+            "BrE": "/kwɪk/",
+            "AmE": "/kwɪk/",
+            "definition": "fast or not taking much time",
+            "examples": [
+               "Be quick!",
+               "She took a quick shower.",
+               "The quick walk was fun."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "quiet",
+            "role": "adjective",
+            "BrE": "/ˈkwaɪət/",
+            "AmE": "/ˈkwaɪət/",
+            "definition": "making little or no noise",
+            "examples": [
+               "The room is quiet.",
+               "She likes a quiet place.",
+               "The quiet night helped her sleep."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "quite",
+            "role": "adverb",
+            "BrE": "/kwaɪt/",
+            "AmE": "/kwaɪt/",
+            "definition": "fairly or to some degree",
+            "examples": [
+               "It’s quite cold.",
+               "She was quite happy today.",
+               "The book is quite interesting."
+            ]
+         },
+         {
+            "id": 86,
+            "word": "radio",
+            "role": "noun",
+            "BrE": "/ˈreɪdiəʊ/",
+            "AmE": "/ˈreɪdioʊ/",
+            "definition": "a device for listening to sound broadcasts",
+            "examples": [
+               "The radio is on.",
+               "She listens to the radio.",
+               "The radio played a song."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "railway",
+            "role": "noun",
+            "BrE": "/ˈreɪlweɪ/",
+            "AmE": "/ˈreɪlweɪ/",
+            "definition": "a system of tracks for trains",
+            "examples": [
+               "The railway is long.",
+               "She took the railway to town.",
+               "The railway station is busy."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "rain",
+            "role": "noun",
+            "BrE": "/reɪn/",
+            "AmE": "/reɪn/",
+            "definition": "water falling from the sky",
+            "examples": [
+               "The rain is heavy.",
+               "She got wet in the rain.",
+               "The rain stopped this morning."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "rain",
+            "role": "verb",
+            "BrE": "/reɪn/",
+            "AmE": "/reɪn/",
+            "definition": "when water falls from the sky",
+            "examples": [
+               "It will rain soon.",
+               "It rained all day.",
+               "It’s raining outside now."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "raise",
+            "role": "verb",
+            "BrE": "/reɪz/",
+            "AmE": "/reɪz/",
+            "definition": "to lift or increase something",
+            "examples": [
+               "Raise your hand.",
+               "She raised the flag.",
+               "He raised his voice to speak."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "range",
+            "role": "noun",
+            "BrE": "/reɪndʒ/",
+            "AmE": "/reɪndʒ/",
+            "definition": "a variety of things",
+            "examples": [
+               "A range of books.",
+               "She saw a range of colours.",
+               "The range of food was good."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "rare",
+            "role": "adjective",
+            "BrE": "/reə(r)/",
+            "AmE": "/rer/",
+            "definition": "not common or happening often",
+            "examples": [
+               "It’s a rare bird.",
+               "She found a rare coin.",
+               "The rare flower was beautiful."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "rather",
+            "role": "adverb",
+            "BrE": "/ˈrɑːðə(r)/",
+            "AmE": "/ˈræðər/",
+            "definition": "to some degree or instead",
+            "examples": [
+               "It’s rather cold.",
+               "She rather likes tea.",
+               "He’d rather stay home."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "reach",
+            "role": "verb",
+            "BrE": "/riːtʃ/",
+            "AmE": "/riːtʃ/",
+            "definition": "to arrive at or get to something",
+            "examples": [
+               "Reach the top.",
+               "She reached the station.",
+               "He reached for the book."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "read",
+            "role": "verb",
+            "BrE": "/riːd/",
+            "AmE": "/riːd/",
+            "definition": "to look at and understand words",
+            "examples": [
+               "Read this book.",
+               "She read a story.",
+               "He reads the news every day."
+            ]
+         },
+         {
+            "id": 87,
+            "word": "ready",
+            "role": "adjective",
+            "BrE": "/ˈredi/",
+            "AmE": "/ˈredi/",
+            "definition": "prepared for something",
+            "examples": [
+               "I’m ready now.",
+               "She is ready for school.",
+               "The ready meal was quick."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "real",
+            "role": "adjective",
+            "BrE": "/rɪəl/",
+            "AmE": "/rɪəl/",
+            "definition": "true or not imaginary",
+            "examples": [
+               "It’s a real story.",
+               "She saw a real lion.",
+               "The real problem was money."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "realize",
+            "role": "verb",
+            "BrE": "/ˈrɪəlaɪz/",
+            "AmE": "/ˈriːəlaɪz/",
+            "definition": "to understand or become aware of something",
+            "examples": [
+               "I didn’t realize.",
+               "She realized it was late.",
+               "He realized his mistake."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "really",
+            "role": "adverb",
+            "BrE": "/ˈrɪəli/",
+            "AmE": "/ˈriːəli/",
+            "definition": "truly or very much",
+            "examples": [
+               "It’s really cold.",
+               "She really likes him.",
+               "He really wanted to win."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "reason",
+            "role": "noun",
+            "BrE": "/ˈriːzn/",
+            "AmE": "/ˈriːzn/",
+            "definition": "why something happens",
+            "examples": [
+               "I have a reason.",
+               "She gave a reason for being late.",
+               "The reason was the rain."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "receive",
+            "role": "verb",
+            "BrE": "/rɪˈsiːv/",
+            "AmE": "/rɪˈsiːv/",
+            "definition": "to get something",
+            "examples": [
+               "I received a letter.",
+               "She received a gift.",
+               "He received the news today."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "recent",
+            "role": "adjective",
+            "BrE": "/ˈriːsnt/",
+            "AmE": "/ˈriːsnt/",
+            "definition": "happening not long ago",
+            "examples": [
+               "It’s a recent book.",
+               "She saw a recent movie.",
+               "The recent news was good."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "record",
+            "role": "noun",
+            "BrE": "/ˈrekɔːd/",
+            "AmE": "/ˈrekərd/",
+            "definition": "a written account or best performance",
+            "examples": [
+               "Keep a record.",
+               "She broke a running record.",
+               "The record of the game was saved."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "record",
+            "role": "verb",
+            "BrE": "/rɪˈkɔːd/",
+            "AmE": "/rɪˈkɔːrd/",
+            "definition": "to store information or sounds",
+            "examples": [
+               "Record the song.",
+               "She recorded the talk.",
+               "He records his ideas daily."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "red",
+            "role": "adjective",
+            "BrE": "/red/",
+            "AmE": "/red/",
+            "definition": "the colour of blood",
+            "examples": [
+               "The apple is red.",
+               "She wore a red hat.",
+               "The red car is fast."
+            ]
+         },
+         {
+            "id": 88,
+            "word": "reduce",
+            "role": "verb",
+            "BrE": "/rɪˈdjuːs/",
+            "AmE": "/rɪˈduːs/",
+            "definition": "to make something less",
+            "examples": [
+               "Reduce the price.",
+               "She reduced her work hours.",
+               "He reduced the noise."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "refer",
+            "role": "verb",
+            "BrE": "/rɪˈfɜː(r)/",
+            "AmE": "/rɪˈfɜːr/",
+            "definition": "to mention or talk about something",
+            "examples": [
+               "Refer to the book.",
+               "She referred to her notes.",
+               "He referred to the rules."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "refuse",
+            "role": "verb",
+            "BrE": "/rɪˈfjuːz/",
+            "AmE": "/rɪˈfjuːz/",
+            "definition": "to say no to something",
+            "examples": [
+               "I refuse to go.",
+               "She refused the offer.",
+               "He refused to eat the food."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "regard",
+            "role": "verb",
+            "BrE": "/rɪˈɡɑːd/",
+            "AmE": "/rɪˈɡɑːrd/",
+            "definition": "to think of someone or something in a particular way",
+            "examples": [
+               "I regard him highly.",
+               "She regards the book as good.",
+               "He regarded the plan as risky."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "region",
+            "role": "noun",
+            "BrE": "/ˈriːdʒən/",
+            "AmE": "/ˈriːdʒən/",
+            "definition": "a large area of land",
+            "examples": [
+               "The region is warm.",
+               "She lives in a cold region.",
+               "The region has many forests."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "regular",
+            "role": "adjective",
+            "BrE": "/ˈreɡjələ(r)/",
+            "AmE": "/ˈreɡjələr/",
+            "definition": "happening at fixed times",
+            "examples": [
+               "It’s a regular event.",
+               "She has regular classes.",
+               "The regular bus comes at six."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "relationship",
+            "role": "noun",
+            "BrE": "/rɪˈleɪʃnʃɪp/",
+            "AmE": "/rɪˈleɪʃnʃɪp/",
+            "definition": "the way people or things are connected",
+            "examples": [
+               "They have a relationship.",
+               "She has a good relationship with him.",
+               "The relationship between them is strong."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "relative",
+            "role": "noun",
+            "BrE": "/ˈrelətɪv/",
+            "AmE": "/ˈrelətɪv/",
+            "definition": "a member of your family",
+            "examples": [
+               "My relative is here.",
+               "She visited her relative.",
+               "The relative came for dinner."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "relax",
+            "role": "verb",
+            "BrE": "/rɪˈlæks/",
+            "AmE": "/rɪˈlæks/",
+            "definition": "to rest or become calm",
+            "examples": [
+               "Relax after work.",
+               "She relaxed on the sofa.",
+               "He relaxes by reading books."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "remain",
+            "role": "verb",
+            "BrE": "/rɪˈmeɪn/",
+            "AmE": "/rɪˈmeɪn/",
+            "definition": "to stay or continue",
+            "examples": [
+               "Remain here.",
+               "She remained at home.",
+               "He remained calm during the test."
+            ]
+         },
+         {
+            "id": 89,
+            "word": "remember",
+            "role": "verb",
+            "BrE": "/rɪˈmembə(r)/",
+            "AmE": "/rɪˈmembər/",
+            "definition": "to keep something in your mind",
+            "examples": [
+               "Remember my name.",
+               "She remembered the story.",
+               "He remembers his old school."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "remove",
+            "role": "verb",
+            "BrE": "/rɪˈmuːv/",
+            "AmE": "/rɪˈmuːv/",
+            "definition": "to take something away",
+            "examples": [
+               "Remove the book.",
+               "She removed her shoes.",
+               "He removed the old paint."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "rent",
+            "role": "noun",
+            "BrE": "/rent/",
+            "AmE": "/rent/",
+            "definition": "money paid to use something",
+            "examples": [
+               "The rent is high.",
+               "She paid the rent today.",
+               "The rent for the house is low."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "rent",
+            "role": "verb",
+            "BrE": "/rent/",
+            "AmE": "/rent/",
+            "definition": "to pay to use something",
+            "examples": [
+               "Rent a car.",
+               "She rented a flat.",
+               "He rents a room monthly."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "repair",
+            "role": "verb",
+            "BrE": "/rɪˈpeə(r)/",
+            "AmE": "/rɪˈper/",
+            "definition": "to fix something broken",
+            "examples": [
+               "Repair the bike.",
+               "She repaired the chair.",
+               "He repaired the broken window."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "repeat",
+            "role": "verb",
+            "BrE": "/rɪˈpiːt/",
+            "AmE": "/rɪˈpiːt/",
+            "definition": "to say or do something again",
+            "examples": [
+               "Repeat the word.",
+               "She repeated the question.",
+               "He repeated the story twice."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "replace",
+            "role": "verb",
+            "BrE": "/rɪˈpleɪs/",
+            "AmE": "/rɪˈpleɪs/",
+            "definition": "to put something new in place of another",
+            "examples": [
+               "Replace the bulb.",
+               "She replaced her old phone.",
+               "He replaced the broken cup."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "reply",
+            "role": "noun",
+            "BrE": "/rɪˈplaɪ/",
+            "AmE": "/rɪˈplaɪ/",
+            "definition": "an answer",
+            "examples": [
+               "I got a reply.",
+               "She sent a quick reply.",
+               "The reply to her email was short."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "reply",
+            "role": "verb",
+            "BrE": "/rɪˈplaɪ/",
+            "AmE": "/rɪˈplaɪ/",
+            "definition": "to answer someone",
+            "examples": [
+               "Reply to her.",
+               "She replied to the message.",
+               "He replied with a smile."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "report",
+            "role": "noun",
+            "BrE": "/rɪˈpɔːt/",
+            "AmE": "/rɪˈpɔːrt/",
+            "definition": "a written or spoken description of something",
+            "examples": [
+               "I wrote a report.",
+               "She read the news report.",
+               "The report was about the weather."
+            ]
+         },
+         {
+            "id": 90,
+            "word": "report",
+            "role": "verb",
+            "BrE": "/rɪˈpɔːt/",
+            "AmE": "/rɪˈpɔːrt/",
+            "definition": "to tell about something",
+            "examples": [
+               "Report the problem.",
+               "She reported the news.",
+               "He reported the accident."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "request",
+            "role": "noun",
+            "BrE": "/rɪˈkwest/",
+            "AmE": "/rɪˈkwest/",
+            "definition": "the act of asking for something",
+            "examples": [
+               "I have a request.",
+               "She made a request for help.",
+               "The request was for more time."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "request",
+            "role": "verb",
+            "BrE": "/rɪˈkwest/",
+            "AmE": "/rɪˈkwest/",
+            "definition": "to ask for something politely",
+            "examples": [
+               "Request a ticket.",
+               "She requested a book.",
+               "He requested to leave early."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "require",
+            "role": "verb",
+            "BrE": "/rɪˈkwaɪə(r)/",
+            "AmE": "/rɪˈkwaɪr/",
+            "definition": "to need something",
+            "examples": [
+               "I require water.",
+               "She requires a pen.",
+               "The job requires hard work."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "research",
+            "role": "noun",
+            "BrE": "/rɪˈsɜːtʃ/",
+            "AmE": "/ˈriːsɜːrtʃ/",
+            "definition": "study to learn new information",
+            "examples": [
+               "Research is important.",
+               "She did research for school.",
+               "The research was about animals."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "respect",
+            "role": "noun",
+            "BrE": "/rɪˈspekt/",
+            "AmE": "/rɪˈspekt/",
+            "definition": "admiration or politeness",
+            "examples": [
+               "Show respect.",
+               "She has respect for him.",
+               "Respect for teachers is key."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "respect",
+            "role": "verb",
+            "BrE": "/rɪˈspekt/",
+            "AmE": "/rɪˈspekt/",
+            "definition": "to admire or be polite to someone",
+            "examples": [
+               "Respect your parents.",
+               "She respects her boss.",
+               "He respects older people."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "rest",
+            "role": "noun",
+            "BrE": "/rest/",
+            "AmE": "/rest/",
+            "definition": "a time of relaxing or what remains",
+            "examples": [
+               "I need rest.",
+               "She took the rest of the food.",
+               "The rest of the day was free."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "rest",
+            "role": "verb",
+            "BrE": "/rest/",
+            "AmE": "/rest/",
+            "definition": "to relax or stop working",
+            "examples": [
+               "Rest now.",
+               "She rested on the sofa.",
+               "He rests after work every day."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "restaurant",
+            "role": "noun",
+            "BrE": "/ˈrestərɒnt/",
+            "AmE": "/ˈrestərɑːnt/",
+            "definition": "a place where people eat meals",
+            "examples": [
+               "The restaurant is nice.",
+               "She went to a restaurant.",
+               "The restaurant serves pizza."
+            ]
+         },
+         {
+            "id": 91,
+            "word": "result",
+            "role": "noun",
+            "BrE": "/rɪˈzʌlt/",
+            "AmE": "/rɪˈzʌlt/",
+            "definition": "what happens because of something",
+            "examples": [
+               "The result was good.",
+               "She saw the test result.",
+               "The result of the game was a tie."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "return",
+            "role": "verb",
+            "BrE": "/rɪˈtɜːn/",
+            "AmE": "/rɪˈtɜːrn/",
+            "definition": "to go back or give back",
+            "examples": [
+               "Return the book.",
+               "She returned home late.",
+               "He returned the borrowed pen."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "rice",
+            "role": "noun",
+            "BrE": "/raɪs/",
+            "AmE": "/raɪs/",
+            "definition": "a grain used as food",
+            "examples": [
+               "I eat rice.",
+               "She cooked rice for dinner.",
+               "The rice was soft and tasty."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "rich",
+            "role": "adjective",
+            "BrE": "/rɪtʃ/",
+            "AmE": "/rɪtʃ/",
+            "definition": "having a lot of money or value",
+            "examples": [
+               "He is rich.",
+               "She ate rich food.",
+               "The rich man helped the town."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "ride",
+            "role": "verb",
+            "BrE": "/raɪd/",
+            "AmE": "/raɪd/",
+            "definition": "to travel on a bike or horse",
+            "examples": [
+               "Ride a bike.",
+               "She rode a horse.",
+               "He rides to school every day."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "right",
+            "role": "adjective",
+            "BrE": "/raɪt/",
+            "AmE": "/raɪt/",
+            "definition": "correct or on the right side",
+            "examples": [
+               "It’s the right answer.",
+               "She turned to the right side.",
+               "The right choice was easy."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "right",
+            "role": "noun",
+            "BrE": "/raɪt/",
+            "AmE": "/raɪt/",
+            "definition": "the right side or a legal claim",
+            "examples": [
+               "Turn to the right.",
+               "She has the right to speak.",
+               "The right of the road is clear."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "ring",
+            "role": "noun",
+            "BrE": "/rɪŋ/",
+            "AmE": "/rɪŋ/",
+            "definition": "a piece of jewellery or a sound",
+            "examples": [
+               "She has a ring.",
+               "The phone made a ring.",
+               "The ring on her finger is gold."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "ring",
+            "role": "verb",
+            "BrE": "/rɪŋ/",
+            "AmE": "/rɪŋ/",
+            "definition": "to make a bell sound or call",
+            "examples": [
+               "Ring the bell.",
+               "She rang her friend.",
+               "He rings the office daily."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "rise",
+            "role": "verb",
+            "BrE": "/raɪz/",
+            "AmE": "/raɪz/",
+            "definition": "to go up",
+            "examples": [
+               "The sun rises.",
+               "She rose from her chair.",
+               "Prices rise every year."
+            ]
+         },
+         {
+            "id": 92,
+            "word": "risk",
+            "role": "noun",
+            "BrE": "/rɪsk/",
+            "AmE": "/rɪsk/",
+            "definition": "the chance of something bad happening",
+            "examples": [
+               "It’s a risk.",
+               "She took a big risk.",
+               "The risk of rain is high."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "river",
+            "role": "noun",
+            "BrE": "/ˈrɪvə(r)/",
+            "AmE": "/ˈrɪvər/",
+            "definition": "a large flow of water",
+            "examples": [
+               "The river is wide.",
+               "She swam in the river.",
+               "The river flows to the sea."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "road",
+            "role": "noun",
+            "BrE": "/rəʊd/",
+            "AmE": "/roʊd/",
+            "definition": "a way for vehicles or people to travel",
+            "examples": [
+               "The road is long.",
+               "She walked down the road.",
+               "The road to the city is busy."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "rock",
+            "role": "noun",
+            "BrE": "/rɒk/",
+            "AmE": "/rɑːk/",
+            "definition": "a hard, natural material or music type",
+            "examples": [
+               "The rock is heavy.",
+               "She likes rock music.",
+               "The rock on the hill is big."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "role",
+            "role": "noun",
+            "BrE": "/rəʊl/",
+            "AmE": "/roʊl/",
+            "definition": "a part or job someone has",
+            "examples": [
+               "Her role is teacher.",
+               "She played a role in the play.",
+               "His role in the team is leader."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "roll",
+            "role": "verb",
+            "BrE": "/rəʊl/",
+            "AmE": "/roʊl/",
+            "definition": "to move by turning over",
+            "examples": [
+               "Roll the ball.",
+               "She rolled the dice.",
+               "The car rolled down the hill."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "roof",
+            "role": "noun",
+            "BrE": "/ruːf/",
+            "AmE": "/ruːf/",
+            "definition": "the top covering of a building",
+            "examples": [
+               "The roof is red.",
+               "She fixed the roof.",
+               "The roof of the house is new."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "room",
+            "role": "noun",
+            "BrE": "/ruːm/",
+            "AmE": "/ruːm/",
+            "definition": "a part of a building or space",
+            "examples": [
+               "The room is big.",
+               "She cleaned her room.",
+               "There’s room for more chairs."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "rope",
+            "role": "noun",
+            "BrE": "/rəʊp/",
+            "AmE": "/roʊp/",
+            "definition": "a strong, thick string",
+            "examples": [
+               "The rope is strong.",
+               "She tied the rope.",
+               "The rope held the boat."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "rough",
+            "role": "adjective",
+            "BrE": "/rʌf/",
+            "AmE": "/rʌf/",
+            "definition": "not smooth or gentle",
+            "examples": [
+               "The road is rough.",
+               "She touched the rough wall.",
+               "The rough sea was dangerous."
+            ]
+         },
+         {
+            "id": 93,
+            "word": "round",
+            "role": "adjective",
+            "BrE": "/raʊnd/",
+            "AmE": "/raʊnd/",
+            "definition": "shaped like a circle",
+            "examples": [
+               "The table is round.",
+               "She bought a round mirror.",
+               "The round clock is old."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "route",
+            "role": "noun",
+            "BrE": "/ruːt/",
+            "AmE": "/ruːt/",
+            "definition": "a way to go from one place to another",
+            "examples": [
+               "The route is short.",
+               "She took a new route.",
+               "The route to school is safe."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "row",
+            "role": "noun",
+            "BrE": "/rəʊ/",
+            "AmE": "/roʊ/",
+            "definition": "a line of things or people",
+            "examples": [
+               "Sit in a row.",
+               "She saw a row of trees.",
+               "The row of chairs was neat."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "rule",
+            "role": "noun",
+            "BrE": "/ruːl/",
+            "AmE": "/ruːl/",
+            "definition": "an instruction about what is allowed",
+            "examples": [
+               "Follow the rule.",
+               "She broke a school rule.",
+               "The rule says no running."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "run",
+            "role": "verb",
+            "BrE": "/rʌn/",
+            "AmE": "/rʌn/",
+            "definition": "to move quickly on foot",
+            "examples": [
+               "Run to school.",
+               "She runs every morning.",
+               "He ran to catch the bus."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "safe",
+            "role": "adjective",
+            "BrE": "/seɪf/",
+            "AmE": "/seɪf/",
+            "definition": "not dangerous",
+            "examples": [
+               "The place is safe.",
+               "She feels safe at home.",
+               "The safe road was quiet."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "sail",
+            "role": "verb",
+            "BrE": "/seɪl/",
+            "AmE": "/seɪl/",
+            "definition": "to travel on water using a boat",
+            "examples": [
+               "Sail the boat.",
+               "She sailed across the lake.",
+               "He sails with his friends."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "salad",
+            "role": "noun",
+            "BrE": "/ˈsæləd/",
+            "AmE": "/ˈsæləd/",
+            "definition": "a dish of mixed vegetables",
+            "examples": [
+               "I ate a salad.",
+               "She made a salad for lunch.",
+               "The salad has tomatoes."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "sale",
+            "role": "noun",
+            "BrE": "/seɪl/",
+            "AmE": "/seɪl/",
+            "definition": "the act of selling something",
+            "examples": [
+               "The sale is today.",
+               "She went to a big sale.",
+               "The sale of the car was quick."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "salt",
+            "role": "noun",
+            "BrE": "/sɒlt/",
+            "AmE": "/sɔːlt/",
+            "definition": "a white substance used in cooking",
+            "examples": [
+               "Add some salt.",
+               "She used salt in the soup.",
+               "The salt is on the table."
+            ]
+         },
+         {
+            "id": 94,
+            "word": "same",
+            "role": "adjective",
+            "BrE": "/seɪm/",
+            "AmE": "/seɪm/",
+            "definition": "not different",
+            "examples": [
+               "We have the same book.",
+               "She wore the same dress.",
+               "The same time works for me."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "sand",
+            "role": "noun",
+            "BrE": "/sænd/",
+            "AmE": "/sænd/",
+            "definition": "tiny grains on beaches or deserts",
+            "examples": [
+               "The sand is hot.",
+               "She played in the sand.",
+               "The sand on the beach is soft."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "sandwich",
+            "role": "noun",
+            "BrE": "/ˈsænwɪtʃ/",
+            "AmE": "/ˈsændwɪtʃ/",
+            "definition": "food between two slices of bread",
+            "examples": [
+               "I ate a sandwich.",
+               "She made a cheese sandwich.",
+               "The sandwich was for lunch."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "save",
+            "role": "verb",
+            "BrE": "/seɪv/",
+            "AmE": "/seɪv/",
+            "definition": "to keep safe or store for later",
+            "examples": [
+               "Save your money.",
+               "She saved her work.",
+               "He saved the child from danger."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "say",
+            "role": "verb",
+            "BrE": "/seɪ/",
+            "AmE": "/seɪ/",
+            "definition": "to speak or express something",
+            "examples": [
+               "Say your name.",
+               "She said she was tired.",
+               "He says the same thing daily."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "scene",
+            "role": "noun",
+            "BrE": "/siːn/",
+            "AmE": "/siːn/",
+            "definition": "a part of a play or a view",
+            "examples": [
+               "The scene was funny.",
+               "She saw a beautiful scene.",
+               "The scene in the movie was sad."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "school",
+            "role": "noun",
+            "BrE": "/skuːl/",
+            "AmE": "/skuːl/",
+            "definition": "a place where children learn",
+            "examples": [
+               "School starts soon.",
+               "She goes to a big school.",
+               "The school has a library."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "science",
+            "role": "noun",
+            "BrE": "/ˈsaɪəns/",
+            "AmE": "/ˈsaɪəns/",
+            "definition": "the study of the natural world",
+            "examples": [
+               "I like science.",
+               "She studies science at school.",
+               "Science helps us understand life."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "scientist",
+            "role": "noun",
+            "BrE": "/ˈsaɪəntɪst/",
+            "AmE": "/ˈsaɪəntɪst/",
+            "definition": "a person who studies science",
+            "examples": [
+               "The scientist is smart.",
+               "She met a scientist.",
+               "The scientist works in a lab."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "score",
+            "role": "noun",
+            "BrE": "/skɔː(r)/",
+            "AmE": "/skɔːr/",
+            "definition": "points in a game or test",
+            "examples": [
+               "The score was high.",
+               "She got a good score.",
+               "The score in the game was close."
+            ]
+         },
+         {
+            "id": 95,
+            "word": "score",
+            "role": "verb",
+            "BrE": "/skɔː(r)/",
+            "AmE": "/skɔːr/",
+            "definition": "to get points in a game",
+            "examples": [
+               "Score a goal.",
+               "She scored in the match.",
+               "He scored three points."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "screen",
+            "role": "noun",
+            "BrE": "/skriːn/",
+            "AmE": "/skriːn/",
+            "definition": "a flat surface for showing images",
+            "examples": [
+               "The screen is big.",
+               "She watched a movie on the screen.",
+               "The phone screen is bright."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "sea",
+            "role": "noun",
+            "BrE": "/siː/",
+            "AmE": "/siː/",
+            "definition": "a large area of salt water",
+            "examples": [
+               "The sea is blue.",
+               "She swam in the sea.",
+               "The sea was calm today."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "search",
+            "role": "verb",
+            "BrE": "/sɜːtʃ/",
+            "AmE": "/sɜːrtʃ/",
+            "definition": "to look for something",
+            "examples": [
+               "Search for the key.",
+               "She searched her bag.",
+               "He searched for his phone."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "season",
+            "role": "noun",
+            "BrE": "/ˈsiːzn/",
+            "AmE": "/ˈsiːzn/",
+            "definition": "a time of year with specific weather",
+            "examples": [
+               "Winter is a season.",
+               "She likes the spring season.",
+               "The season for rain is here."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "seat",
+            "role": "noun",
+            "BrE": "/siːt/",
+            "AmE": "/siːt/",
+            "definition": "a place to sit",
+            "examples": [
+               "Take a seat.",
+               "She found a seat on the bus.",
+               "The seat in the car is soft."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "second",
+            "role": "adjective",
+            "BrE": "/ˈsekənd/",
+            "AmE": "/ˈsekənd/",
+            "definition": "coming after the first",
+            "examples": [
+               "The second book.",
+               "She was the second winner.",
+               "The second day was sunny."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "second",
+            "role": "noun",
+            "BrE": "/ˈsekənd/",
+            "AmE": "/ˈsekənd/",
+            "definition": "a unit of time",
+            "examples": [
+               "Wait a second.",
+               "She ran in ten seconds.",
+               "The second passed quickly."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "secret",
+            "role": "noun",
+            "BrE": "/ˈsiːkrət/",
+            "AmE": "/ˈsiːkrət/",
+            "definition": "something not told to others",
+            "examples": [
+               "It’s a secret.",
+               "She told me a secret.",
+               "The secret was about her plan."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "section",
+            "role": "noun",
+            "BrE": "/ˈsekʃn/",
+            "AmE": "/ˈsekʃn/",
+            "definition": "a part of something",
+            "examples": [
+               "Read this section.",
+               "She found a section in the book.",
+               "The section of the store is big."
+            ]
+         },
+         {
+            "id": 96,
+            "word": "see",
+            "role": "verb",
+            "BrE": "/siː/",
+            "AmE": "/siː/",
+            "definition": "to look at or notice something",
+            "examples": [
+               "See the bird.",
+               "She saw a movie yesterday.",
+               "He sees his friend every week."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "seem",
+            "role": "verb",
+            "BrE": "/siːm/",
+            "AmE": "/siːm/",
+            "definition": "to appear to be something",
+            "examples": [
+               "It seems easy.",
+               "She seems happy today.",
+               "He seemed tired after work."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "sell",
+            "role": "verb",
+            "BrE": "/sel/",
+            "AmE": "/sel/",
+            "definition": "to give something for money",
+            "examples": [
+               "Sell the car.",
+               "She sold her old bike.",
+               "He sells fruit at the market."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "send",
+            "role": "verb",
+            "BrE": "/send/",
+            "AmE": "/send/",
+            "definition": "to make something go somewhere",
+            "examples": [
+               "Send a letter.",
+               "She sent a text message.",
+               "He sends emails every day."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "sense",
+            "role": "noun",
+            "BrE": "/sens/",
+            "AmE": "/sens/",
+            "definition": "a feeling or ability to understand",
+            "examples": [
+               "I have a sense.",
+               "She has a sense of humour.",
+               "His sense of direction is good."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "sentence",
+            "role": "noun",
+            "BrE": "/ˈsentəns/",
+            "AmE": "/ˈsentəns/",
+            "definition": "a group of words expressing an idea",
+            "examples": [
+               "Write a sentence.",
+               "She read a long sentence.",
+               "The sentence was about a dog."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "separate",
+            "role": "adjective",
+            "BrE": "/ˈsepərət/",
+            "AmE": "/ˈsepərət/",
+            "definition": "not together or different",
+            "examples": [
+               "Use separate rooms.",
+               "She has a separate bag.",
+               "The separate groups worked alone."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "serious",
+            "role": "adjective",
+            "BrE": "/ˈsɪəriəs/",
+            "AmE": "/ˈsɪriəs/",
+            "definition": "important or not joking",
+            "examples": [
+               "It’s a serious problem.",
+               "She was serious about work.",
+               "He has a serious face."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "serve",
+            "role": "verb",
+            "BrE": "/sɜːv/",
+            "AmE": "/sɜːrv/",
+            "definition": "to give food or help",
+            "examples": [
+               "Serve the food.",
+               "She served tea to guests.",
+               "He serves at the restaurant."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "service",
+            "role": "noun",
+            "BrE": "/ˈsɜːvɪs/",
+            "AmE": "/ˈsɜːrvɪs/",
+            "definition": "work done for others",
+            "examples": [
+               "The service is good.",
+               "She used a taxi service.",
+               "The service at the shop was fast."
+            ]
+         },
+         {
+            "id": 97,
+            "word": "set",
+            "role": "verb",
+            "BrE": "/set/",
+            "AmE": "/set/",
+            "definition": "to put or arrange something",
+            "examples": [
+               "Set the table.",
+               "She set the clock to six.",
+               "He set the bag on the floor."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "several",
+            "role": "adjective",
+            "BrE": "/ˈsevrəl/",
+            "AmE": "/ˈsevrəl/",
+            "definition": "more than two but not many",
+            "examples": [
+               "I have several books.",
+               "She met several friends.",
+               "Several people came to the party."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "shake",
+            "role": "verb",
+            "BrE": "/ʃeɪk/",
+            "AmE": "/ʃeɪk/",
+            "definition": "to move quickly up and down or side to side",
+            "examples": [
+               "Shake the bottle.",
+               "She shook her head.",
+               "He shook the rug to clean it."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "shape",
+            "role": "noun",
+            "BrE": "/ʃeɪp/",
+            "AmE": "/ʃeɪp/",
+            "definition": "the form of something",
+            "examples": [
+               "The shape is round.",
+               "She drew a heart shape.",
+               "The shape of the box is square."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "share",
+            "role": "verb",
+            "BrE": "/ʃeə(r)/",
+            "AmE": "/ʃer/",
+            "definition": "to give a part to someone else",
+            "examples": [
+               "Share the cake.",
+               "She shared her book.",
+               "He shares his room with a friend."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "sharp",
+            "role": "adjective",
+            "BrE": "/ʃɑːp/",
+            "AmE": "/ʃɑːrp/",
+            "definition": "having a thin edge or point",
+            "examples": [
+               "The knife is sharp.",
+               "She used a sharp pencil.",
+               "The sharp needle was small."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "sheep",
+            "role": "noun",
+            "BrE": "/ʃiːp/",
+            "AmE": "/ʃiːp/",
+            "definition": "an animal with wool",
+            "examples": [
+               "The sheep is white.",
+               "She saw sheep on the farm.",
+               "The sheep eat grass."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "sheet",
+            "role": "noun",
+            "BrE": "/ʃiːt/",
+            "AmE": "/ʃiːt/",
+            "definition": "a large piece of cloth or paper",
+            "examples": [
+               "The sheet is clean.",
+               "She wrote on a sheet of paper.",
+               "The sheet on the bed is blue."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "shelf",
+            "role": "noun",
+            "BrE": "/ʃelf/",
+            "AmE": "/ʃelf/",
+            "definition": "a flat surface for storing things",
+            "examples": [
+               "The shelf is high.",
+               "She put books on the shelf.",
+               "The shelf in the room is full."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "shine",
+            "role": "verb",
+            "BrE": "/ʃaɪn/",
+            "AmE": "/ʃaɪn/",
+            "definition": "to give out or reflect light",
+            "examples": [
+               "The sun shines.",
+               "She shined her shoes.",
+               "The light shines brightly."
+            ]
+         },
+         {
+            "id": 98,
+            "word": "ship",
+            "role": "noun",
+            "BrE": "/ʃɪp/",
+            "AmE": "/ʃɪp/",
+            "definition": "a large boat for travelling on water",
+            "examples": [
+               "The ship is big.",
+               "She saw a ship at sea.",
+               "The ship sailed to the island."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "shirt",
+            "role": "noun",
+            "BrE": "/ʃɜːt/",
+            "AmE": "/ʃɜːrt/",
+            "definition": "a piece of clothing for the upper body",
+            "examples": [
+               "The shirt is blue.",
+               "She wore a clean shirt.",
+               "The shirt fits him well."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "shoe",
+            "role": "noun",
+            "BrE": "/ʃuː/",
+            "AmE": "/ʃuː/",
+            "definition": "a covering for the foot",
+            "examples": [
+               "My shoe is new.",
+               "She bought black shoes.",
+               "The shoe was too small."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "shop",
+            "role": "noun",
+            "BrE": "/ʃɒp/",
+            "AmE": "/ʃɑːp/",
+            "definition": "a place where things are sold",
+            "examples": [
+               "The shop is open.",
+               "She went to the clothes shop.",
+               "The shop sells food."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "shop",
+            "role": "verb",
+            "BrE": "/ʃɒp/",
+            "AmE": "/ʃɑːp/",
+            "definition": "to buy things in a shop",
+            "examples": [
+               "I shop for food.",
+               "She shops every weekend.",
+               "He shopped for a new shirt."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "short",
+            "role": "adjective",
+            "BrE": "/ʃɔːt/",
+            "AmE": "/ʃɔːrt/",
+            "definition": "not long or tall",
+            "examples": [
+               "The story is short.",
+               "She has short hair.",
+               "The short path was easy."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "shoulder",
+            "role": "noun",
+            "BrE": "/ˈʃəʊldə(r)/",
+            "AmE": "/ˈʃoʊldər/",
+            "definition": "the part of the body between the neck and arm",
+            "examples": [
+               "My shoulder hurts.",
+               "She carried a bag on her shoulder.",
+               "The shoulder of the shirt is torn."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "shout",
+            "role": "verb",
+            "BrE": "/ʃaʊt/",
+            "AmE": "/ʃaʊt/",
+            "definition": "to speak loudly",
+            "examples": [
+               "Don’t shout!",
+               "She shouted his name.",
+               "He shouted for help."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "show",
+            "role": "noun",
+            "BrE": "/ʃəʊ/",
+            "AmE": "/ʃoʊ/",
+            "definition": "a performance or event",
+            "examples": [
+               "The show is fun.",
+               "She watched a TV show.",
+               "The show starts at seven."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "show",
+            "role": "verb",
+            "BrE": "/ʃəʊ/",
+            "AmE": "/ʃoʊ/",
+            "definition": "to let someone see something",
+            "examples": [
+               "Show me the book.",
+               "She showed her picture.",
+               "He shows his work to the class."
+            ]
+         },
+         {
+            "id": 99,
+            "word": "shower",
+            "role": "noun",
+            "BrE": "/ˈʃaʊə(r)/",
+            "AmE": "/ˈʃaʊər/",
+            "definition": "a device for washing or a short rain",
+            "examples": [
+               "I took a shower.",
+               "She used the shower.",
+               "The shower of rain was quick."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "shut",
+            "role": "verb",
+            "BrE": "/ʃʌt/",
+            "AmE": "/ʃʌt/",
+            "definition": "to close something",
+            "examples": [
+               "Shut the door.",
+               "She shut the window.",
+               "He shut the book quickly."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "sick",
+            "role": "adjective",
+            "BrE": "/sɪk/",
+            "AmE": "/sɪk/",
+            "definition": "not well or ill",
+            "examples": [
+               "I feel sick.",
+               "She was sick yesterday.",
+               "The sick child stayed home."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "side",
+            "role": "noun",
+            "BrE": "/saɪd/",
+            "AmE": "/saɪd/",
+            "definition": "one part or edge of something",
+            "examples": [
+               "The side is green.",
+               "She sat on the side of the bed.",
+               "The side of the house is big."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "sight",
+            "role": "noun",
+            "BrE": "/saɪt/",
+            "AmE": "/saɪt/",
+            "definition": "the ability to see or something seen",
+            "examples": [
+               "My sight is good.",
+               "She saw a beautiful sight.",
+               "The sight of the sea was amazing."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "sign",
+            "role": "noun",
+            "BrE": "/saɪn/",
+            "AmE": "/saɪn/",
+            "definition": "a symbol or notice with information",
+            "examples": [
+               "See the sign.",
+               "She read the road sign.",
+               "The sign says no parking."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "sign",
+            "role": "verb",
+            "BrE": "/saɪn/",
+            "AmE": "/saɪn/",
+            "definition": "to write your name",
+            "examples": [
+               "Sign the paper.",
+               "She signed the letter.",
+               "He signed the book for her."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "silent",
+            "role": "adjective",
+            "BrE": "/ˈsaɪlənt/",
+            "AmE": "/ˈsaɪlənt/",
+            "definition": "without sound",
+            "examples": [
+               "The room is silent.",
+               "She stayed silent in class.",
+               "The silent night was calm."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "silver",
+            "role": "noun",
+            "BrE": "/ˈsɪlvə(r)/",
+            "AmE": "/ˈsɪlvər/",
+            "definition": "a shiny, grey-white metal",
+            "examples": [
+               "The ring is silver.",
+               "She bought a silver spoon.",
+               "The silver necklace is pretty."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "similar",
+            "role": "adjective",
+            "BrE": "/ˈsɪmɪlə(r)/",
+            "AmE": "/ˈsɪmɪlər/",
+            "definition": "almost the same",
+            "examples": [
+               "The bags are similar.",
+               "She has a similar dress.",
+               "Their houses look similar."
+            ]
+         },
+         {
+            "id": 100,
+            "word": "simple",
+            "role": "adjective",
+            "BrE": "/ˈsɪmpl/",
+            "AmE": "/ˈsɪmpl/",
+            "definition": "easy or not complicated",
+            "examples": [
+               "The task is simple.",
+               "She made a simple meal.",
+               "The simple plan worked well."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "since",
+            "role": "preposition",
+            "BrE": "/sɪns/",
+            "AmE": "/sɪns/",
+            "definition": "from a time in the past until now",
+            "examples": [
+               "Since last week.",
+               "She’s been here since Monday.",
+               "He’s worked since last year."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "sing",
+            "role": "verb",
+            "BrE": "/sɪŋ/",
+            "AmE": "/sɪŋ/",
+            "definition": "to make musical sounds with your voice",
+            "examples": [
+               "Sing a song.",
+               "She sang in the choir.",
+               "He sings every morning."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "single",
+            "role": "adjective",
+            "BrE": "/ˈsɪŋɡl/",
+            "AmE": "/ˈsɪŋɡl/",
+            "definition": "only one",
+            "examples": [
+               "A single ticket.",
+               "She bought a single apple.",
+               "The single chair was small."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "sink",
+            "role": "noun",
+            "BrE": "/sɪŋk/",
+            "AmE": "/sɪŋk/",
+            "definition": "a basin for washing dishes",
+            "examples": [
+               "The sink is full.",
+               "She cleaned the sink.",
+               "The sink in the kitchen is new."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "sister",
+            "role": "noun",
+            "BrE": "/ˈsɪstə(r)/",
+            "AmE": "/ˈsɪstər/",
+            "definition": "a female sibling",
+            "examples": [
+               "My sister is kind.",
+               "She helped her sister.",
+               "The sister lives next door."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "sit",
+            "role": "verb",
+            "BrE": "/sɪt/",
+            "AmE": "/sɪt/",
+            "definition": "to rest on a chair or seat",
+            "examples": [
+               "Sit here.",
+               "She sat on the bench.",
+               "He sits in class every day."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "site",
+            "role": "noun",
+            "BrE": "/saɪt/",
+            "AmE": "/saɪt/",
+            "definition": "a place where something happens",
+            "examples": [
+               "The site is old.",
+               "She visited a building site.",
+               "The site of the school is big."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "situation",
+            "role": "noun",
+            "BrE": "/ˌsɪtʃuˈeɪʃn/",
+            "AmE": "/ˌsɪtʃuˈeɪʃn/",
+            "definition": "the conditions at a particular time",
+            "examples": [
+               "The situation is good.",
+               "She fixed the situation.",
+               "The situation at work was hard."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "size",
+            "role": "noun",
+            "BrE": "/saɪz/",
+            "AmE": "/saɪz/",
+            "definition": "how big or small something is",
+            "examples": [
+               "The size is small.",
+               "She checked the shirt size.",
+               "The size of the box is large."
+            ]
+         },
+         {
+            "id": 101,
+            "word": "skill",
+            "role": "noun",
+            "BrE": "/skɪl/",
+            "AmE": "/skɪl/",
+            "definition": "the ability to do something well",
+            "examples": [
+               "She has skill.",
+               "He learned a new skill.",
+               "Her skill in drawing is great."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "skin",
+            "role": "noun",
+            "BrE": "/skɪn/",
+            "AmE": "/skɪn/",
+            "definition": "the outer covering of the body",
+            "examples": [
+               "Her skin is soft.",
+               "She cut the skin of the apple.",
+               "The skin on his arm is red."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "sky",
+            "role": "noun",
+            "BrE": "/skaɪ/",
+            "AmE": "/skaɪ/",
+            "definition": "the space above the earth",
+            "examples": [
+               "The sky is blue.",
+               "She looked at the sky.",
+               "The sky was full of stars."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "sleep",
+            "role": "verb",
+            "BrE": "/sliːp/",
+            "AmE": "/sliːp/",
+            "definition": "to rest with eyes closed",
+            "examples": [
+               "I sleep at night.",
+               "She slept for eight hours.",
+               "He sleeps in a big bed."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "slow",
+            "role": "adjective",
+            "BrE": "/sləʊ/",
+            "AmE": "/sloʊ/",
+            "definition": "not fast",
+            "examples": [
+               "The car is slow.",
+               "She walks at a slow pace.",
+               "The slow train was late."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "small",
+            "role": "adjective",
+            "BrE": "/smɔːl/",
+            "AmE": "/smɔːl/",
+            "definition": "not big",
+            "examples": [
+               "The dog is small.",
+               "She has a small bag.",
+               "The small room was cozy."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "smile",
+            "role": "noun",
+            "BrE": "/smaɪl/",
+            "AmE": "/smaɪl/",
+            "definition": "a happy expression on the face",
+            "examples": [
+               "Her smile is nice.",
+               "She gave a big smile.",
+               "The smile made him happy."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "smile",
+            "role": "verb",
+            "BrE": "/smaɪl/",
+            "AmE": "/smaɪl/",
+            "definition": "to make a happy expression",
+            "examples": [
+               "Smile for the photo.",
+               "She smiled at her friend.",
+               "He smiles when he’s happy."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "smoke",
+            "role": "noun",
+            "BrE": "/sməʊk/",
+            "AmE": "/smoʊk/",
+            "definition": "the cloud from burning",
+            "examples": [
+               "The smoke is thick.",
+               "She saw smoke from the fire.",
+               "The smoke filled the room."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "smooth",
+            "role": "adjective",
+            "BrE": "/smuːð/",
+            "AmE": "/smuːð/",
+            "definition": "flat or even, not rough",
+            "examples": [
+               "The road is smooth.",
+               "She touched the smooth stone.",
+               "The smooth paper was nice."
+            ]
+         },
+         {
+            "id": 102,
+            "word": "snake",
+            "role": "noun",
+            "BrE": "/sneɪk/",
+            "AmE": "/sneɪk/",
+            "definition": "a long, thin animal with no legs",
+            "examples": [
+               "The snake is long.",
+               "She saw a snake in the grass.",
+               "The snake moved quietly."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "snow",
+            "role": "noun",
+            "BrE": "/snəʊ/",
+            "AmE": "/snoʊ/",
+            "definition": "soft, white pieces of frozen water",
+            "examples": [
+               "The snow is cold.",
+               "She played in the snow.",
+               "The snow covered the ground."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "snow",
+            "role": "verb",
+            "BrE": "/snəʊ/",
+            "AmE": "/snoʊ/",
+            "definition": "when snow falls from the sky",
+            "examples": [
+               "It will snow soon.",
+               "It snowed all day.",
+               "It’s snowing outside now."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "soap",
+            "role": "noun",
+            "BrE": "/səʊp/",
+            "AmE": "/soʊp/",
+            "definition": "a substance used for cleaning",
+            "examples": [
+               "I need soap.",
+               "She used soap to wash.",
+               "The soap smells nice."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "social",
+            "role": "adjective",
+            "BrE": "/ˈsəʊʃl/",
+            "AmE": "/ˈsoʊʃl/",
+            "definition": "relating to people or society",
+            "examples": [
+               "It’s a social event.",
+               "She likes social media.",
+               "The social club is fun."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "society",
+            "role": "noun",
+            "BrE": "/səˈsaɪəti/",
+            "AmE": "/səˈsaɪəti/",
+            "definition": "people living together in a group",
+            "examples": [
+               "Society is changing.",
+               "She works for society.",
+               "The society in the city is big."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "sock",
+            "role": "noun",
+            "BrE": "/sɒk/",
+            "AmE": "/sɑːk/",
+            "definition": "a piece of clothing for the foot",
+            "examples": [
+               "The sock is warm.",
+               "She wore a blue sock.",
+               "The sock has a hole."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "soft",
+            "role": "adjective",
+            "BrE": "/sɒft/",
+            "AmE": "/sɔːft/",
+            "definition": "not hard or rough",
+            "examples": [
+               "The bed is soft.",
+               "She touched a soft pillow.",
+               "The soft blanket was warm."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "soil",
+            "role": "noun",
+            "BrE": "/sɔɪl/",
+            "AmE": "/sɔɪl/",
+            "definition": "the ground where plants grow",
+            "examples": [
+               "The soil is wet.",
+               "She planted in the soil.",
+               "The soil in the garden is good."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "soldier",
+            "role": "noun",
+            "BrE": "/ˈsəʊldʒə(r)/",
+            "AmE": "/ˈsoʊldʒər/",
+            "definition": "a person in an army",
+            "examples": [
+               "The soldier is brave.",
+               "She met a soldier.",
+               "The soldier marched in the parade."
+            ]
+         },
+         {
+            "id": 103,
+            "word": "solution",
+            "role": "noun",
+            "BrE": "/səˈluːʃn/",
+            "AmE": "/səˈluːʃn/",
+            "definition": "a way to solve a problem",
+            "examples": [
+               "Find a solution.",
+               "She found a solution to the puzzle.",
+               "The solution was simple."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "solve",
+            "role": "verb",
+            "BrE": "/sɒlv/",
+            "AmE": "/sɑːlv/",
+            "definition": "to find an answer to a problem",
+            "examples": [
+               "Solve the puzzle.",
+               "She solved the math problem.",
+               "He solved the issue quickly."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "somebody",
+            "role": "pronoun",
+            "BrE": "/ˈsʌmbədi/",
+            "AmE": "/ˈsʌmbɑːdi/",
+            "definition": "an unknown person",
+            "examples": [
+               "Somebody is here.",
+               "She saw somebody outside.",
+               "Somebody left a bag."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "someone",
+            "role": "pronoun",
+            "BrE": "/ˈsʌmwʌn/",
+            "AmE": "/ˈsʌmwʌn/",
+            "definition": "an unknown person",
+            "examples": [
+               "Someone called me.",
+               "She helped someone in need.",
+               "Someone took my pen."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "something",
+            "role": "pronoun",
+            "BrE": "/ˈsʌmθɪŋ/",
+            "AmE": "/ˈsʌmθɪŋ/",
+            "definition": "an unknown thing",
+            "examples": [
+               "I need something.",
+               "She found something in the box.",
+               "Something fell on the floor."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "sometimes",
+            "role": "adverb",
+            "BrE": "/ˈsʌmtaɪmz/",
+            "AmE": "/ˈsʌmtaɪmz/",
+            "definition": "on some occasions",
+            "examples": [
+               "I sometimes read.",
+               "She sometimes walks to school.",
+               "He sometimes forgets his keys."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "somewhere",
+            "role": "adverb",
+            "BrE": "/ˈsʌmweə(r)/",
+            "AmE": "/ˈsʌmwer/",
+            "definition": "in or to an unknown place",
+            "examples": [
+               "Go somewhere fun.",
+               "She lost her bag somewhere.",
+               "He’s somewhere in the park."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "son",
+            "role": "noun",
+            "BrE": "/sʌn/",
+            "AmE": "/sʌn/",
+            "definition": "a male child",
+            "examples": [
+               "My son is young.",
+               "She loves her son.",
+               "The son plays football."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "song",
+            "role": "noun",
+            "BrE": "/sɒŋ/",
+            "AmE": "/sɔːŋ/",
+            "definition": "a piece of music with words",
+            "examples": [
+               "The song is nice.",
+               "She sang a pop song.",
+               "The song was on the radio."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "soon",
+            "role": "adverb",
+            "BrE": "/suːn/",
+            "AmE": "/suːn/",
+            "definition": "in a short time",
+            "examples": [
+               "Come back soon.",
+               "She will finish soon.",
+               "The bus arrives soon."
+            ]
+         },
+         {
+            "id": 104,
+            "word": "sorry",
+            "role": "adjective",
+            "BrE": "/ˈsɒri/",
+            "AmE": "/ˈsɑːri/",
+            "definition": "feeling regret or sadness",
+            "examples": [
+               "I’m sorry.",
+               "She was sorry for being late.",
+               "He felt sorry for his friend."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "sort",
+            "role": "noun",
+            "BrE": "/sɔːt/",
+            "AmE": "/sɔːrt/",
+            "definition": "a type or kind",
+            "examples": [
+               "What sort is it?",
+               "She likes this sort of book.",
+               "The sort of food was spicy."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "sort",
+            "role": "verb",
+            "BrE": "/sɔːt/",
+            "AmE": "/sɔːrt/",
+            "definition": "to put things in order",
+            "examples": [
+               "Sort the clothes.",
+               "She sorted her books.",
+               "He sorted the papers by date."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "sound",
+            "role": "noun",
+            "BrE": "/saʊnd/",
+            "AmE": "/saʊnd/",
+            "definition": "something you hear",
+            "examples": [
+               "The sound is loud.",
+               "She heard a strange sound.",
+               "The sound of the bell was clear."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "soup",
+            "role": "noun",
+            "BrE": "/suːp/",
+            "AmE": "/suːp/",
+            "definition": "a liquid food made by cooking",
+            "examples": [
+               "The soup is hot.",
+               "She made vegetable soup.",
+               "The soup tastes good."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "south",
+            "role": "noun",
+            "BrE": "/saʊθ/",
+            "AmE": "/saʊθ/",
+            "definition": "the direction towards the bottom of a map",
+            "examples": [
+               "Go south.",
+               "She lives in the south.",
+               "The south is warm in summer."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "space",
+            "role": "noun",
+            "BrE": "/speɪs/",
+            "AmE": "/speɪs/",
+            "definition": "an empty area or outer space",
+            "examples": [
+               "The space is big.",
+               "She needs space for her books.",
+               "The space in the room is small."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "speak",
+            "role": "verb",
+            "BrE": "/spiːk/",
+            "AmE": "/spiːk/",
+            "definition": "to say words or talk",
+            "examples": [
+               "Speak loudly.",
+               "She speaks English well.",
+               "He spoke to the class."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "special",
+            "role": "adjective",
+            "BrE": "/ˈspeʃl/",
+            "AmE": "/ˈspeʃl/",
+            "definition": "unusual or important",
+            "examples": [
+               "It’s a special day.",
+               "She got a special gift.",
+               "The special event was fun."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "speech",
+            "role": "noun",
+            "BrE": "/spiːtʃ/",
+            "AmE": "/spiːtʃ/",
+            "definition": "a formal talk or the ability to speak",
+            "examples": [
+               "Her speech was good.",
+               "She gave a speech at school.",
+               "The speech was about peace."
+            ]
+         },
+         {
+            "id": 105,
+            "word": "speed",
+            "role": "noun",
+            "BrE": "/spiːd/",
+            "AmE": "/spiːd/",
+            "definition": "how fast something moves",
+            "examples": [
+               "The speed is high.",
+               "She checked the car’s speed.",
+               "The speed of the train was fast."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "spend",
+            "role": "verb",
+            "BrE": "/spend/",
+            "AmE": "/spend/",
+            "definition": "to use money or time",
+            "examples": [
+               "Spend your money.",
+               "She spent time with friends.",
+               "He spends hours on his phone."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "sport",
+            "role": "noun",
+            "BrE": "/spɔːt/",
+            "AmE": "/spɔːrt/",
+            "definition": "a physical activity or game",
+            "examples": [
+               "I like sport.",
+               "She plays sport at school.",
+               "The sport of tennis is fun."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "spread",
+            "role": "verb",
+            "BrE": "/spred/",
+            "AmE": "/spred/",
+            "definition": "to cover or move over an area",
+            "examples": [
+               "Spread the butter.",
+               "She spread the map on the table.",
+               "The news spread quickly."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "spring",
+            "role": "noun",
+            "BrE": "/sprɪŋ/",
+            "AmE": "/sprɪŋ/",
+            "definition": "the season after winter",
+            "examples": [
+               "Spring is warm.",
+               "She loves spring flowers.",
+               "The spring season starts soon."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "square",
+            "role": "noun",
+            "BrE": "/skweə(r)/",
+            "AmE": "/skwer/",
+            "definition": "a shape with four equal sides or a public area",
+            "examples": [
+               "Draw a square.",
+               "She sat in the town square.",
+               "The square in the city is big."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "stage",
+            "role": "noun",
+            "BrE": "/steɪdʒ/",
+            "AmE": "/steɪdʒ/",
+            "definition": "a raised area for performances or a step in a process",
+            "examples": [
+               "The stage is ready.",
+               "She stood on the stage.",
+               "The stage of the project is new."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "stand",
+            "role": "verb",
+            "BrE": "/stænd/",
+            "AmE": "/stænd/",
+            "definition": "to be on your feet",
+            "examples": [
+               "Stand up now.",
+               "She stood by the door.",
+               "He stands in line every day."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "star",
+            "role": "noun",
+            "BrE": "/stɑː(r)/",
+            "AmE": "/stɑːr/",
+            "definition": "a bright object in the sky or a famous person",
+            "examples": [
+               "The star is bright.",
+               "She saw a movie star.",
+               "The star in the sky was big."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "start",
+            "role": "verb",
+            "BrE": "/stɑːt/",
+            "AmE": "/stɑːrt/",
+            "definition": "to begin something",
+            "examples": [
+               "Start the game.",
+               "She started her homework.",
+               "He starts work at eight."
+            ]
+         },
+         {
+            "id": 106,
+            "word": "state",
+            "role": "noun",
+            "BrE": "/steɪt/",
+            "AmE": "/steɪt/",
+            "definition": "a condition or a part of a country",
+            "examples": [
+               "The state is good.",
+               "She lives in a big state.",
+               "The state of the house is clean."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "station",
+            "role": "noun",
+            "BrE": "/ˈsteɪʃn/",
+            "AmE": "/ˈsteɪʃn/",
+            "definition": "a place for trains or buses",
+            "examples": [
+               "The station is near.",
+               "She waited at the train station.",
+               "The bus station was busy."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "stay",
+            "role": "verb",
+            "BrE": "/steɪ/",
+            "AmE": "/steɪ/",
+            "definition": "to remain in a place",
+            "examples": [
+               "Stay here.",
+               "She stayed at home.",
+               "He stays with his friend."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "step",
+            "role": "noun",
+            "BrE": "/step/",
+            "AmE": "/step/",
+            "definition": "a movement or part of a process",
+            "examples": [
+               "Take a step.",
+               "She took a step forward.",
+               "The first step is easy."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "stick",
+            "role": "noun",
+            "BrE": "/stɪk/",
+            "AmE": "/stɪk/",
+            "definition": "a thin piece of wood",
+            "examples": [
+               "Pick up the stick.",
+               "She found a stick in the park.",
+               "The stick was on the ground."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "stick",
+            "role": "verb",
+            "BrE": "/stɪk/",
+            "AmE": "/stɪk/",
+            "definition": "to attach or stay in place",
+            "examples": [
+               "Stick the paper.",
+               "She stuck a note on the door.",
+               "The tape sticks well."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "still",
+            "role": "adverb",
+            "BrE": "/stɪl/",
+            "AmE": "/stɪl/",
+            "definition": "continuing to happen now",
+            "examples": [
+               "It’s still raining.",
+               "She is still at school.",
+               "He still likes to read."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "stone",
+            "role": "noun",
+            "BrE": "/stəʊn/",
+            "AmE": "/stoʊn/",
+            "definition": "a hard, solid material",
+            "examples": [
+               "The stone is heavy.",
+               "She picked up a stone.",
+               "The stone wall is old."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "stop",
+            "role": "verb",
+            "BrE": "/stɒp/",
+            "AmE": "/stɑːp/",
+            "definition": "to end or pause something",
+            "examples": [
+               "Stop the car.",
+               "She stopped talking.",
+               "He stopped to rest."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "store",
+            "role": "noun",
+            "BrE": "/stɔː(r)/",
+            "AmE": "/stɔːr/",
+            "definition": "a shop or place to keep things",
+            "examples": [
+               "The store is open.",
+               "She went to a big store.",
+               "The store has new books."
+            ]
+         },
+         {
+            "id": 107,
+            "word": "store",
+            "role": "verb",
+            "BrE": "/stɔː(r)/",
+            "AmE": "/stɔːr/",
+            "definition": "to keep something for later",
+            "examples": [
+               "Store the food.",
+               "She stored her clothes.",
+               "He stores boxes in the room."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "storm",
+            "role": "noun",
+            "BrE": "/stɔːm/",
+            "AmE": "/stɔːrm/",
+            "definition": "very bad weather with rain or wind",
+            "examples": [
+               "The storm is loud.",
+               "She saw a storm coming.",
+               "The storm broke the tree."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "story",
+            "role": "noun",
+            "BrE": "/ˈstɔːri/",
+            "AmE": "/ˈstɔːri/",
+            "definition": "a description of events, real or imaginary",
+            "examples": [
+               "I read a story.",
+               "She told a funny story.",
+               "The story was about a king."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "straight",
+            "role": "adjective",
+            "BrE": "/streɪt/",
+            "AmE": "/streɪt/",
+            "definition": "not bent or curved",
+            "examples": [
+               "The line is straight.",
+               "She has straight hair.",
+               "The straight road was long."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "strange",
+            "role": "adjective",
+            "BrE": "/streɪndʒ/",
+            "AmE": "/streɪndʒ/",
+            "definition": "unusual or surprising",
+            "examples": [
+               "It’s a strange noise.",
+               "She saw a strange man.",
+               "The strange book was old."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "street",
+            "role": "noun",
+            "BrE": "/striːt/",
+            "AmE": "/striːt/",
+            "definition": "a road in a city or town",
+            "examples": [
+               "The street is busy.",
+               "She lives on Main Street.",
+               "The street has many shops."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "strong",
+            "role": "adjective",
+            "BrE": "/strɒŋ/",
+            "AmE": "/strɔːŋ/",
+            "definition": "having power or not easily broken",
+            "examples": [
+               "He is strong.",
+               "She bought a strong bag.",
+               "The strong wind broke the tree."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "student",
+            "role": "noun",
+            "BrE": "/ˈstjuːdnt/",
+            "AmE": "/ˈstuːdnt/",
+            "definition": "a person who studies at school or college",
+            "examples": [
+               "The student is smart.",
+               "She is a good student.",
+               "The student read a book."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "study",
+            "role": "noun",
+            "BrE": "/ˈstʌdi/",
+            "AmE": "/ˈstʌdi/",
+            "definition": "the act of learning",
+            "examples": [
+               "Study is important.",
+               "She does study every day.",
+               "The study of math is fun."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "study",
+            "role": "verb",
+            "BrE": "/ˈstʌdi/",
+            "AmE": "/ˈstʌdi/",
+            "definition": "to learn about something",
+            "examples": [
+               "Study English.",
+               "She studies at home.",
+               "He studied for the test."
+            ]
+         },
+         {
+            "id": 108,
+            "word": "subject",
+            "role": "noun",
+            "BrE": "/ˈsʌbdʒɪkt/",
+            "AmE": "/ˈsʌbdʒɪkt/",
+            "definition": "something studied or talked about",
+            "examples": [
+               "Math is a subject.",
+               "She likes the subject of art.",
+               "The subject of the talk was peace."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "success",
+            "role": "noun",
+            "BrE": "/səkˈses/",
+            "AmE": "/səkˈses/",
+            "definition": "achieving something you wanted",
+            "examples": [
+               "Success feels good.",
+               "She had success in school.",
+               "The success of the plan was great."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "such",
+            "role": "determiner",
+            "BrE": "/sʌtʃ/",
+            "AmE": "/sʌtʃ/",
+            "definition": "of a particular kind",
+            "examples": [
+               "Such a nice day.",
+               "She likes such books.",
+               "Such a car is expensive."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "sudden",
+            "role": "adjective",
+            "BrE": "/ˈsʌdn/",
+            "AmE": "/ˈsʌdn/",
+            "definition": "happening quickly or unexpectedly",
+            "examples": [
+               "A sudden noise.",
+               "She made a sudden move.",
+               "The sudden rain was heavy."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "sugar",
+            "role": "noun",
+            "BrE": "/ˈʃʊɡə(r)/",
+            "AmE": "/ˈʃʊɡər/",
+            "definition": "a sweet substance used in food",
+            "examples": [
+               "I need sugar.",
+               "She added sugar to her tea.",
+               "The sugar is in the jar."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "suggest",
+            "role": "verb",
+            "BrE": "/səˈdʒest/",
+            "AmE": "/səˈdʒest/",
+            "definition": "to offer an idea",
+            "examples": [
+               "Suggest a place.",
+               "She suggested a movie.",
+               "He suggests going to the park."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "suit",
+            "role": "noun",
+            "BrE": "/suːt/",
+            "AmE": "/suːt/",
+            "definition": "a set of clothes or something suitable",
+            "examples": [
+               "The suit is black.",
+               "She wore a suit to work.",
+               "The suit fits him well."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "summer",
+            "role": "noun",
+            "BrE": "/ˈsʌmə(r)/",
+            "AmE": "/ˈsʌmər/",
+            "definition": "the season after spring",
+            "examples": [
+               "Summer is hot.",
+               "She loves summer holidays.",
+               "The summer was very sunny."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "sun",
+            "role": "noun",
+            "BrE": "/sʌn/",
+            "AmE": "/sʌn/",
+            "definition": "the star that gives light and heat",
+            "examples": [
+               "The sun is bright.",
+               "She sat in the sun.",
+               "The sun rises in the morning."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "supermarket",
+            "role": "noun",
+            "BrE": "/ˈsuːpəmɑːkɪt/",
+            "AmE": "/ˈsuːpərmɑːrkɪt/",
+            "definition": "a large shop selling food and other items",
+            "examples": [
+               "The supermarket is big.",
+               "She shops at the supermarket.",
+               "The supermarket has fresh fruit."
+            ]
+         },
+         {
+            "id": 109,
+            "word": "support",
+            "role": "verb",
+            "BrE": "/səˈpɔːt/",
+            "AmE": "/səˈpɔːrt/",
+            "definition": "to help or agree with something",
+            "examples": [
+               "Support your team.",
+               "She supported her friend.",
+               "He supports the new plan."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "sure",
+            "role": "adjective",
+            "BrE": "/ʃʊə(r)/",
+            "AmE": "/ʃʊr/",
+            "definition": "certain or confident",
+            "examples": [
+               "I’m sure it’s right.",
+               "She is sure of her answer.",
+               "He’s sure about the time."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "surface",
+            "role": "noun",
+            "BrE": "/ˈsɜːfɪs/",
+            "AmE": "/ˈsɜːrfɪs/",
+            "definition": "the outside or top of something",
+            "examples": [
+               "The surface is smooth.",
+               "She cleaned the table’s surface.",
+               "The surface of the lake is calm."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "surprise",
+            "role": "noun",
+            "BrE": "/səˈpraɪz/",
+            "AmE": "/sərˈpraɪz/",
+            "definition": "something unexpected",
+            "examples": [
+               "It’s a surprise!",
+               "She got a surprise gift.",
+               "The surprise party was fun."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "surprise",
+            "role": "verb",
+            "BrE": "/səˈpraɪz/",
+            "AmE": "/sərˈpraɪz/",
+            "definition": "to cause someone to feel unexpected",
+            "examples": [
+               "Surprise her!",
+               "She surprised her friend.",
+               "He was surprised by the news."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "swim",
+            "role": "verb",
+            "BrE": "/swɪm/",
+            "AmE": "/swɪm/",
+            "definition": "to move through water",
+            "examples": [
+               "Swim in the pool.",
+               "She swam in the sea.",
+               "He swims every weekend."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "system",
+            "role": "noun",
+            "BrE": "/ˈsɪstɪm/",
+            "AmE": "/ˈsɪstɪm/",
+            "definition": "a set of things working together",
+            "examples": [
+               "The system works.",
+               "She used a computer system.",
+               "The system in the school is new."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "table",
+            "role": "noun",
+            "BrE": "/ˈteɪbl/",
+            "AmE": "/ˈteɪbl/",
+            "definition": "a piece of furniture with a flat top",
+            "examples": [
+               "The table is big.",
+               "She put her book on the table.",
+               "The table in the kitchen is new."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "take",
+            "role": "verb",
+            "BrE": "/teɪk/",
+            "AmE": "/teɪk/",
+            "definition": "to get or carry something",
+            "examples": [
+               "Take the pen.",
+               "She took her bag to school.",
+               "He takes the bus every day."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "talk",
+            "role": "verb",
+            "BrE": "/tɔːk/",
+            "AmE": "/tɔːk/",
+            "definition": "to speak or discuss",
+            "examples": [
+               "Talk to me.",
+               "She talked to her friend.",
+               "He talks about his day."
+            ]
+         },
+         {
+            "id": 110,
+            "word": "tall",
+            "role": "adjective",
+            "BrE": "/tɔːl/",
+            "AmE": "/tɔːl/",
+            "definition": "having a great height",
+            "examples": [
+               "The tree is tall.",
+               "She is a tall girl.",
+               "The tall building is new."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "taste",
+            "role": "noun",
+            "BrE": "/teɪst/",
+            "AmE": "/teɪst/",
+            "definition": "the flavour of food or drink",
+            "examples": [
+               "The taste is good.",
+               "She likes the taste of apples.",
+               "The taste of the soup was nice."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "taste",
+            "role": "verb",
+            "BrE": "/teɪst/",
+            "AmE": "/teɪst/",
+            "definition": "to experience the flavour of something",
+            "examples": [
+               "Taste the cake.",
+               "She tasted the new drink.",
+               "He tasted the spicy food."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "tax",
+            "role": "noun",
+            "BrE": "/tæks/",
+            "AmE": "/tæks/",
+            "definition": "money paid to the government",
+            "examples": [
+               "Tax is high.",
+               "She paid her tax.",
+               "The tax on food is low."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "taxi",
+            "role": "noun",
+            "BrE": "/ˈtæksi/",
+            "AmE": "/ˈtæksi/",
+            "definition": "a car you pay to take you somewhere",
+            "examples": [
+               "Take a taxi.",
+               "She called a taxi home.",
+               "The taxi was yellow."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "tea",
+            "role": "noun",
+            "BrE": "/tiː/",
+            "AmE": "/tiː/",
+            "definition": "a hot drink made from leaves",
+            "examples": [
+               "I drink tea.",
+               "She made tea for us.",
+               "The tea was hot and sweet."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "teach",
+            "role": "verb",
+            "BrE": "/tiːtʃ/",
+            "AmE": "/tiːtʃ/",
+            "definition": "to give knowledge or skills",
+            "examples": [
+               "Teach me English.",
+               "She teaches math at school.",
+               "He taught his sister to read."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "teacher",
+            "role": "noun",
+            "BrE": "/ˈtiːtʃə(r)/",
+            "AmE": "/ˈtiːtʃər/",
+            "definition": "a person who teaches",
+            "examples": [
+               "The teacher is kind.",
+               "She met her teacher today.",
+               "The teacher helps the students."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "team",
+            "role": "noun",
+            "BrE": "/tiːm/",
+            "AmE": "/tiːm/",
+            "definition": "a group of people who work or play together",
+            "examples": [
+               "The team is good.",
+               "She joined a football team.",
+               "The team won the game."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "technology",
+            "role": "noun",
+            "BrE": "/tekˈnɒlədʒi/",
+            "AmE": "/tekˈnɑːlədʒi/",
+            "definition": "tools and machines to do tasks",
+            "examples": [
+               "Technology is new.",
+               "She uses technology at work.",
+               "The technology in the phone is great."
+            ]
+         },
+         {
+            "id": 111,
+            "word": "teenager",
+            "role": "noun",
+            "BrE": "/ˈtiːneɪdʒə(r)/",
+            "AmE": "/ˈtiːneɪdʒər/",
+            "definition": "a person aged 13 to 19",
+            "examples": [
+               "The teenager is tall.",
+               "She is a happy teenager.",
+               "The teenager likes music."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "telephone",
+            "role": "noun",
+            "BrE": "/ˈtelɪfəʊn/",
+            "AmE": "/ˈtelɪfoʊn/",
+            "definition": "a device for talking to people far away",
+            "examples": [
+               "The telephone rang.",
+               "She used the telephone.",
+               "The telephone is in the office."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "television",
+            "role": "noun",
+            "BrE": "/ˈtelɪvɪʒn/",
+            "AmE": "/ˈtelɪvɪʒn/",
+            "definition": "a device for watching programmes",
+            "examples": [
+               "The television is on.",
+               "She watched television.",
+               "The television shows news."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "tell",
+            "role": "verb",
+            "BrE": "/tel/",
+            "AmE": "/tel/",
+            "definition": "to give information to someone",
+            "examples": [
+               "Tell me now.",
+               "She told a story.",
+               "He tells his friend everything."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "temperature",
+            "role": "noun",
+            "BrE": "/ˈtemprətʃə(r)/",
+            "AmE": "/ˈtemprətʃər/",
+            "definition": "how hot or cold something is",
+            "examples": [
+               "The temperature is high.",
+               "She checked the temperature.",
+               "The temperature was cold today."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "tennis",
+            "role": "noun",
+            "BrE": "/ˈtenɪs/",
+            "AmE": "/ˈtenɪs/",
+            "definition": "a game played with rackets and a ball",
+            "examples": [
+               "I play tennis.",
+               "She likes tennis a lot.",
+               "The tennis match was exciting."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "term",
+            "role": "noun",
+            "BrE": "/tɜːm/",
+            "AmE": "/tɜːrm/",
+            "definition": "a period of time or a word",
+            "examples": [
+               "The term is long.",
+               "She used a new term.",
+               "The school term starts soon."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "test",
+            "role": "noun",
+            "BrE": "/test/",
+            "AmE": "/test/",
+            "definition": "an exam or way to check something",
+            "examples": [
+               "The test was easy.",
+               "She passed her math test.",
+               "The test of the car was good."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "test",
+            "role": "verb",
+            "BrE": "/test/",
+            "AmE": "/test/",
+            "definition": "to check or examine something",
+            "examples": [
+               "Test the water.",
+               "She tested her new pen.",
+               "He tests the machine daily."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "text",
+            "role": "noun",
+            "BrE": "/tekst/",
+            "AmE": "/tekst/",
+            "definition": "written words or a message",
+            "examples": [
+               "Read the text.",
+               "She sent a text message.",
+               "The text in the book is clear."
+            ]
+         },
+         {
+            "id": 112,
+            "word": "than",
+            "role": "conjunction",
+            "BrE": "/ðæn/",
+            "AmE": "/ðæn/",
+            "definition": "used to compare things",
+            "examples": [
+               "She is taller than me.",
+               "He runs faster than her.",
+               "The book is better than the movie."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "thank",
+            "role": "verb",
+            "BrE": "/θæŋk/",
+            "AmE": "/θæŋk/",
+            "definition": "to express gratitude",
+            "examples": [
+               "Thank your friend.",
+               "She thanked him for the gift.",
+               "He thanks his teacher daily."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "that",
+            "role": "determiner",
+            "BrE": "/ðæt/",
+            "AmE": "/ðæt/",
+            "definition": "used to point to a specific thing",
+            "examples": [
+               "That book is mine.",
+               "She likes that dress.",
+               "That car is very fast."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "theatre",
+            "role": "noun",
+            "BrE": "/ˈθɪətə(r)/",
+            "AmE": "/ˈθiːətər/",
+            "definition": "a place for plays or performances",
+            "examples": [
+               "The theatre is big.",
+               "She went to the theatre.",
+               "The theatre show was funny."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "their",
+            "role": "determiner",
+            "BrE": "/ðeə(r)/",
+            "AmE": "/ðer/",
+            "definition": "belonging to them",
+            "examples": [
+               "Their house is nice.",
+               "She saw their dog.",
+               "Their books are on the table."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "them",
+            "role": "pronoun",
+            "BrE": "/ðem/",
+            "AmE": "/ðem/",
+            "definition": "used to refer to people or things",
+            "examples": [
+               "I saw them.",
+               "She gave them a gift.",
+               "He helped them with homework."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "then",
+            "role": "adverb",
+            "BrE": "/ðen/",
+            "AmE": "/ðen/",
+            "definition": "at that time or next",
+            "examples": [
+               "Come back then.",
+               "She was happy then.",
+               "He finished and then left."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "there",
+            "role": "adverb",
+            "BrE": "/ðeə(r)/",
+            "AmE": "/ðer/",
+            "definition": "in or to that place",
+            "examples": [
+               "Look over there.",
+               "She went there yesterday.",
+               "The book is there on the shelf."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "these",
+            "role": "determiner",
+            "BrE": "/ðiːz/",
+            "AmE": "/ðiːz/",
+            "definition": "used to point to specific things",
+            "examples": [
+               "These books are new.",
+               "She likes these flowers.",
+               "These apples are sweet."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "they",
+            "role": "pronoun",
+            "BrE": "/ðeɪ/",
+            "AmE": "/ðeɪ/",
+            "definition": "used to refer to people or things",
+            "examples": [
+               "They are here.",
+               "She saw them play.",
+               "They have two cats."
+            ]
+         },
+         {
+            "id": 113,
+            "word": "thick",
+            "role": "adjective",
+            "BrE": "/θɪk/",
+            "AmE": "/θɪk/",
+            "definition": "wide or not thin",
+            "examples": [
+               "The book is thick.",
+               "She wore a thick jacket.",
+               "The thick rope was strong."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "thin",
+            "role": "adjective",
+            "BrE": "/θɪn/",
+            "AmE": "/θɪn/",
+            "definition": "not thick or wide",
+            "examples": [
+               "The paper is thin.",
+               "She has thin hair.",
+               "The thin book was short."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "thing",
+            "role": "noun",
+            "BrE": "/θɪŋ/",
+            "AmE": "/θɪŋ/",
+            "definition": "an object or item",
+            "examples": [
+               "What’s that thing?",
+               "She lost her favourite thing.",
+               "The thing on the table is mine."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "think",
+            "role": "verb",
+            "BrE": "/θɪŋk/",
+            "AmE": "/θɪŋk/",
+            "definition": "to use your mind or believe",
+            "examples": [
+               "Think about it.",
+               "She thinks he’s nice.",
+               "He thought of a new idea."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "third",
+            "role": "adjective",
+            "BrE": "/θɜːd/",
+            "AmE": "/θɜːrd/",
+            "definition": "coming after the second",
+            "examples": [
+               "The third book.",
+               "She was the third winner.",
+               "The third day was rainy."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "this",
+            "role": "determiner",
+            "BrE": "/ðɪs/",
+            "AmE": "/ðɪs/",
+            "definition": "used to point to a specific thing",
+            "examples": [
+               "This is my bag.",
+               "She likes this song.",
+               "This house is very old."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "those",
+            "role": "determiner",
+            "BrE": "/ðəʊz/",
+            "AmE": "/ðoʊz/",
+            "definition": "used to point to specific things",
+            "examples": [
+               "Those books are hers.",
+               "She saw those birds.",
+               "Those chairs are new."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "though",
+            "role": "conjunction",
+            "BrE": "/ðəʊ/",
+            "AmE": "/ðoʊ/",
+            "definition": "despite something",
+            "examples": [
+               "It’s cold, though nice.",
+               "She went, though she was tired.",
+               "He smiled, though he was sad."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "thought",
+            "role": "noun",
+            "BrE": "/θɔːt/",
+            "AmE": "/θɔːt/",
+            "definition": "an idea or opinion",
+            "examples": [
+               "I had a thought.",
+               "She shared her thought.",
+               "The thought of food was nice."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "through",
+            "role": "preposition",
+            "BrE": "/θruː/",
+            "AmE": "/θruː/",
+            "definition": "from one side to another",
+            "examples": [
+               "Go through the door.",
+               "She walked through the park.",
+               "He read through the book."
+            ]
+         },
+         {
+            "id": 114,
+            "word": "throw",
+            "role": "verb",
+            "BrE": "/θrəʊ/",
+            "AmE": "/θroʊ/",
+            "definition": "to send something through the air",
+            "examples": [
+               "Throw the ball.",
+               "She threw a stone.",
+               "He throws well in the game."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "ticket",
+            "role": "noun",
+            "BrE": "/ˈtɪkɪt/",
+            "AmE": "/ˈtɪkɪt/",
+            "definition": "a piece of paper for entry or travel",
+            "examples": [
+               "Buy a ticket.",
+               "She lost her train ticket.",
+               "The ticket was for the show."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "tidy",
+            "role": "adjective",
+            "BrE": "/ˈtaɪdi/",
+            "AmE": "/ˈtaɪdi/",
+            "definition": "neat and organized",
+            "examples": [
+               "The room is tidy.",
+               "She keeps her desk tidy.",
+               "The tidy house looks nice."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "tie",
+            "role": "noun",
+            "BrE": "/taɪ/",
+            "AmE": "/taɪ/",
+            "definition": "a piece of clothing or a draw in a game",
+            "examples": [
+               "He wore a tie.",
+               "The game was a tie.",
+               "The tie was blue and red."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "tie",
+            "role": "verb",
+            "BrE": "/taɪ/",
+            "AmE": "/taɪ/",
+            "definition": "to fasten with string or rope",
+            "examples": [
+               "Tie your shoes.",
+               "She tied the rope.",
+               "He tied the bag closed."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "tight",
+            "role": "adjective",
+            "BrE": "/taɪt/",
+            "AmE": "/taɪt/",
+            "definition": "fitting closely or firmly",
+            "examples": [
+               "The shirt is tight.",
+               "She wore tight jeans.",
+               "The tight knot was hard to open."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "time",
+            "role": "noun",
+            "BrE": "/taɪm/",
+            "AmE": "/taɪm/",
+            "definition": "a moment or period",
+            "examples": [
+               "What time is it?",
+               "She has time to read.",
+               "The time for the meeting is now."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "tired",
+            "role": "adjective",
+            "BrE": "/ˈtaɪəd/",
+            "AmE": "/ˈtaɪərd/",
+            "definition": "needing rest",
+            "examples": [
+               "I’m tired.",
+               "She was tired after work.",
+               "The tired dog slept all day."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "title",
+            "role": "noun",
+            "BrE": "/ˈtaɪtl/",
+            "AmE": "/ˈtaɪtl/",
+            "definition": "the name of something",
+            "examples": [
+               "The title is good.",
+               "She read the book’s title.",
+               "The title of the movie is short."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "to",
+            "role": "preposition",
+            "BrE": "/tə/",
+            "AmE": "/tə/",
+            "definition": "showing direction or purpose",
+            "examples": [
+               "Go to school.",
+               "She gave a book to him.",
+               "He walked to the park."
+            ]
+         },
+         {
+            "id": 115,
+            "word": "today",
+            "role": "adverb",
+            "BrE": "/təˈdeɪ/",
+            "AmE": "/təˈdeɪ/",
+            "definition": "on this day",
+            "examples": [
+               "Come today.",
+               "She is busy today.",
+               "He starts work today."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "together",
+            "role": "adverb",
+            "BrE": "/təˈɡeðə(r)/",
+            "AmE": "/təˈɡeðər/",
+            "definition": "with another person or thing",
+            "examples": [
+               "Work together.",
+               "She walked with him together.",
+               "They live together in a house."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "tomorrow",
+            "role": "adverb",
+            "BrE": "/təˈmɒrəʊ/",
+            "AmE": "/təˈmɑːroʊ/",
+            "definition": "the day after today",
+            "examples": [
+               "See you tomorrow.",
+               "She will go tomorrow.",
+               "Tomorrow is a holiday."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "tone",
+            "role": "noun",
+            "BrE": "/təʊn/",
+            "AmE": "/toʊn/",
+            "definition": "the sound or manner of speaking",
+            "examples": [
+               "The tone is soft.",
+               "She used a kind tone.",
+               "His tone was serious."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "tongue",
+            "role": "noun",
+            "BrE": "/tʌŋ/",
+            "AmE": "/tʌŋ/",
+            "definition": "the soft part in the mouth",
+            "examples": [
+               "My tongue hurts.",
+               "She stuck out her tongue.",
+               "The tongue helps us taste."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "tonight",
+            "role": "adverb",
+            "BrE": "/təˈnaɪt/",
+            "AmE": "/təˈnaɪt/",
+            "definition": "this evening or night",
+            "examples": [
+               "Come tonight.",
+               "She watches TV tonight.",
+               "Tonight is a quiet evening."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "too",
+            "role": "adverb",
+            "BrE": "/tuː/",
+            "AmE": "/tuː/",
+            "definition": "more than is wanted",
+            "examples": [
+               "It’s too hot.",
+               "She ate too much.",
+               "The bag is too heavy."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "tool",
+            "role": "noun",
+            "BrE": "/tuːl/",
+            "AmE": "/tuːl/",
+            "definition": "an object used to do work",
+            "examples": [
+               "I need a tool.",
+               "She used a tool to fix it.",
+               "The tool is in the box."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "tooth",
+            "role": "noun",
+            "BrE": "/tuːθ/",
+            "AmE": "/tuːθ/",
+            "definition": "a hard part in the mouth",
+            "examples": [
+               "My tooth hurts.",
+               "She brushed her teeth.",
+               "The tooth was very white."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "top",
+            "role": "noun",
+            "BrE": "/tɒp/",
+            "AmE": "/tɑːp/",
+            "definition": "the highest part of something",
+            "examples": [
+               "The top is high.",
+               "She climbed to the top.",
+               "The top of the hill is flat."
+            ]
+         },
+         {
+            "id": 116,
+            "word": "total",
+            "role": "adjective",
+            "BrE": "/ˈtəʊtl/",
+            "AmE": "/ˈtoʊtl/",
+            "definition": "complete or full",
+            "examples": [
+               "The total cost is high.",
+               "She made a total change.",
+               "The total number was ten."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "touch",
+            "role": "verb",
+            "BrE": "/tʌtʃ/",
+            "AmE": "/tʌtʃ/",
+            "definition": "to put your hand on something",
+            "examples": [
+               "Touch the table.",
+               "She touched the soft blanket.",
+               "He touched the hot pan carefully."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "tour",
+            "role": "noun",
+            "BrE": "/tʊə(r)/",
+            "AmE": "/tʊr/",
+            "definition": "a trip to visit places",
+            "examples": [
+               "The tour was fun.",
+               "She went on a city tour.",
+               "The tour of the museum was short."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "tourist",
+            "role": "noun",
+            "BrE": "/ˈtʊərɪst/",
+            "AmE": "/ˈtʊrɪst/",
+            "definition": "a person who travels for pleasure",
+            "examples": [
+               "The tourist took photos.",
+               "She met a tourist at the park.",
+               "The tourist visited the castle."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "towel",
+            "role": "noun",
+            "BrE": "/ˈtaʊəl/",
+            "AmE": "/ˈtaʊəl/",
+            "definition": "a piece of cloth for drying",
+            "examples": [
+               "I need a towel.",
+               "She used a clean towel.",
+               "The towel is in the bathroom."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "tower",
+            "role": "noun",
+            "BrE": "/ˈtaʊə(r)/",
+            "AmE": "/ˈtaʊər/",
+            "definition": "a tall, narrow building or structure",
+            "examples": [
+               "The tower is high.",
+               "She saw a tall tower.",
+               "The tower in the city is old."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "town",
+            "role": "noun",
+            "BrE": "/taʊn/",
+            "AmE": "/taʊn/",
+            "definition": "a place with many houses and shops",
+            "examples": [
+               "The town is small.",
+               "She lives in a quiet town.",
+               "The town has a big market."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "toy",
+            "role": "noun",
+            "BrE": "/tɔɪ/",
+            "AmE": "/tɔɪ/",
+            "definition": "an object for children to play with",
+            "examples": [
+               "The toy is fun.",
+               "She bought a new toy.",
+               "The toy car is red."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "traffic",
+            "role": "noun",
+            "BrE": "/ˈtræfɪk/",
+            "AmE": "/ˈtræfɪk/",
+            "definition": "vehicles moving on roads",
+            "examples": [
+               "Traffic is heavy.",
+               "She was late because of traffic.",
+               "The traffic stopped at the light."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "train",
+            "role": "noun",
+            "BrE": "/treɪn/",
+            "AmE": "/treɪn/",
+            "definition": "a vehicle that runs on rails",
+            "examples": [
+               "The train is fast.",
+               "She took a train to work.",
+               "The train leaves at six."
+            ]
+         },
+         {
+            "id": 117,
+            "word": "travel",
+            "role": "verb",
+            "BrE": "/ˈtrævl/",
+            "AmE": "/ˈtrævl/",
+            "definition": "to go from one place to another",
+            "examples": [
+               "I love to travel.",
+               "She travels by bus.",
+               "He travelled to a new city."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "tree",
+            "role": "noun",
+            "BrE": "/triː/",
+            "AmE": "/triː/",
+            "definition": "a tall plant with a trunk and leaves",
+            "examples": [
+               "The tree is tall.",
+               "She climbed a tree.",
+               "The tree has green leaves."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "trip",
+            "role": "noun",
+            "BrE": "/trɪp/",
+            "AmE": "/trɪp/",
+            "definition": "a journey to a place",
+            "examples": [
+               "The trip was fun.",
+               "She went on a school trip.",
+               "The trip to the beach was long."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "trouble",
+            "role": "noun",
+            "BrE": "/ˈtrʌbl/",
+            "AmE": "/ˈtrʌbl/",
+            "definition": "a problem or difficulty",
+            "examples": [
+               "I have trouble.",
+               "She had trouble with her car.",
+               "The trouble was easy to fix."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "true",
+            "role": "adjective",
+            "BrE": "/truː/",
+            "AmE": "/truː/",
+            "definition": "correct or real",
+            "examples": [
+               "The story is true.",
+               "She told a true fact.",
+               "His true name is John."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "try",
+            "role": "verb",
+            "BrE": "/traɪ/",
+            "AmE": "/traɪ/",
+            "definition": "to attempt to do something",
+            "examples": [
+               "Try again.",
+               "She tried to open the door.",
+               "He tries to learn English."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "turn",
+            "role": "verb",
+            "BrE": "/tɜːn/",
+            "AmE": "/tɜːrn/",
+            "definition": "to move or change direction",
+            "examples": [
+               "Turn left.",
+               "She turned the page.",
+               "He turned to see the dog."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "type",
+            "role": "noun",
+            "BrE": "/taɪp/",
+            "AmE": "/taɪp/",
+            "definition": "a kind or group of things",
+            "examples": [
+               "What type is it?",
+               "She likes this type of music.",
+               "The type of food was spicy."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "umbrella",
+            "role": "noun",
+            "BrE": "/ʌmˈbrelə/",
+            "AmE": "/ʌmˈbrelə/",
+            "definition": "an object to protect from rain",
+            "examples": [
+               "I need an umbrella.",
+               "She used her umbrella.",
+               "The umbrella was black."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "uncle",
+            "role": "noun",
+            "BrE": "/ˈʌŋkl/",
+            "AmE": "/ˈʌŋkl/",
+            "definition": "the brother of a parent",
+            "examples": [
+               "My uncle is kind.",
+               "She visited her uncle.",
+               "The uncle gave her a gift."
+            ]
+         },
+         {
+            "id": 118,
+            "word": "under",
+            "role": "preposition",
+            "BrE": "/ˈʌndə(r)/",
+            "AmE": "/ˈʌndər/",
+            "definition": "below something",
+            "examples": [
+               "Look under the table.",
+               "She hid under the bed.",
+               "The cat is under the chair."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "understand",
+            "role": "verb",
+            "BrE": "/ˌʌndəˈstænd/",
+            "AmE": "/ˌʌndərˈstænd/",
+            "definition": "to know the meaning of something",
+            "examples": [
+               "I understand you.",
+               "She understands English.",
+               "He understood the lesson."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "uniform",
+            "role": "noun",
+            "BrE": "/ˈjuːnɪfɔːm/",
+            "AmE": "/ˈjuːnɪfɔːrm/",
+            "definition": "special clothes worn by a group",
+            "examples": [
+               "The uniform is blue.",
+               "She wore a school uniform.",
+               "The uniform fits well."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "until",
+            "role": "preposition",
+            "BrE": "/ʌnˈtɪl/",
+            "AmE": "/ʌnˈtɪl/",
+            "definition": "up to a certain time",
+            "examples": [
+               "Wait until five.",
+               "She stayed until evening.",
+               "He worked until the job was done."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "up",
+            "role": "preposition",
+            "BrE": "/ʌp/",
+            "AmE": "/ʌp/",
+            "definition": "to a higher place",
+            "examples": [
+               "Go up the stairs.",
+               "She climbed up the hill.",
+               "The bird flew up to the tree."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "use",
+            "role": "verb",
+            "BrE": "/juːz/",
+            "AmE": "/juːz/",
+            "definition": "to do something with an object",
+            "examples": [
+               "Use a pen.",
+               "She used her phone.",
+               "He uses the car every day."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "usual",
+            "role": "adjective",
+            "BrE": "/ˈjuːʒuəl/",
+            "AmE": "/ˈjuːʒuəl/",
+            "definition": "normal or common",
+            "examples": [
+               "It’s the usual time.",
+               "She wore her usual dress.",
+               "The usual shop was closed."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "vegetable",
+            "role": "noun",
+            "BrE": "/ˈvedʒtəbl/",
+            "AmE": "/ˈvedʒtəbl/",
+            "definition": "a plant used as food",
+            "examples": [
+               "I eat vegetables.",
+               "She cooked a vegetable soup.",
+               "The vegetable was fresh."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "very",
+            "role": "adverb",
+            "BrE": "/ˈveri/",
+            "AmE": "/ˈveri/",
+            "definition": "to a great degree",
+            "examples": [
+               "It’s very cold.",
+               "She is very happy today.",
+               "He runs very fast."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "view",
+            "role": "noun",
+            "BrE": "/vjuː/",
+            "AmE": "/vjuː/",
+            "definition": "what you can see or an opinion",
+            "examples": [
+               "The view is nice.",
+               "She saw a great view.",
+               "His view on the topic is clear."
+            ]
+         },
+         {
+            "id": 119,
+            "word": "village",
+            "role": "noun",
+            "BrE": "/ˈvɪlɪdʒ/",
+            "AmE": "/ˈvɪlɪdʒ/",
+            "definition": "a small group of houses",
+            "examples": [
+               "The village is quiet.",
+               "She lives in a small village.",
+               "The village has a shop."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "visit",
+            "role": "verb",
+            "BrE": "/ˈvɪzɪt/",
+            "AmE": "/ˈvɪzɪt/",
+            "definition": "to go to see a place or person",
+            "examples": [
+               "Visit your friend.",
+               "She visited her grandma.",
+               "He visits the park often."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "voice",
+            "role": "noun",
+            "BrE": "/vɔɪs/",
+            "AmE": "/vɔɪs/",
+            "definition": "the sound made when speaking",
+            "examples": [
+               "Her voice is loud.",
+               "She has a soft voice.",
+               "The voice on the phone was clear."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "wait",
+            "role": "verb",
+            "BrE": "/weɪt/",
+            "AmE": "/weɪt/",
+            "definition": "to stay until something happens",
+            "examples": [
+               "Wait here.",
+               "She waited for the bus.",
+               "He waits at the station."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "wake",
+            "role": "verb",
+            "BrE": "/weɪk/",
+            "AmE": "/weɪk/",
+            "definition": "to stop sleeping",
+            "examples": [
+               "Wake up early.",
+               "She woke at seven.",
+               "He wakes when the sun rises."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "walk",
+            "role": "verb",
+            "BrE": "/wɔːk/",
+            "AmE": "/wɔːk/",
+            "definition": "to move on foot",
+            "examples": [
+               "Walk to school.",
+               "She walks in the park.",
+               "He walked home yesterday."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "wall",
+            "role": "noun",
+            "BrE": "/wɔːl/",
+            "AmE": "/wɔːl/",
+            "definition": "a structure around or in a building",
+            "examples": [
+               "The wall is high.",
+               "She painted the wall.",
+               "The wall of the house is white."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "want",
+            "role": "verb",
+            "BrE": "/wɒnt/",
+            "AmE": "/wɑːnt/",
+            "definition": "to wish for something",
+            "examples": [
+               "I want a book.",
+               "She wants a new dress.",
+               "He wanted to go home."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "warm",
+            "role": "adjective",
+            "BrE": "/wɔːm/",
+            "AmE": "/wɔːrm/",
+            "definition": "slightly hot",
+            "examples": [
+               "The room is warm.",
+               "She wore a warm coat.",
+               "The warm water felt nice."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "wash",
+            "role": "verb",
+            "BrE": "/wɒʃ/",
+            "AmE": "/wɑːʃ/",
+            "definition": "to clean with water",
+            "examples": [
+               "Wash your hands.",
+               "She washed the dishes.",
+               "He washes his car weekly."
+            ]
+         },
+         {
+            "id": 120,
+            "word": "watch",
+            "role": "verb",
+            "BrE": "/wɒtʃ/",
+            "AmE": "/wɑːtʃ/",
+            "definition": "to look at something",
+            "examples": [
+               "Watch the movie.",
+               "She watched the game.",
+               "He watches TV every night."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "water",
+            "role": "noun",
+            "BrE": "/ˈwɔːtə(r)/",
+            "AmE": "/ˈwɔːtər/",
+            "definition": "a clear liquid for drinking or washing",
+            "examples": [
+               "I drink water.",
+               "She filled a glass with water.",
+               "The water in the lake is clean."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "way",
+            "role": "noun",
+            "BrE": "/weɪ/",
+            "AmE": "/weɪ/",
+            "definition": "a method or path",
+            "examples": [
+               "Find a way.",
+               "She knows the way home.",
+               "The way to the shop is short."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "wear",
+            "role": "verb",
+            "BrE": "/weə(r)/",
+            "AmE": "/wer/",
+            "definition": "to have clothes on your body",
+            "examples": [
+               "Wear a hat.",
+               "She wore a red dress.",
+               "He wears glasses every day."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "weather",
+            "role": "noun",
+            "BrE": "/ˈweðə(r)/",
+            "AmE": "/ˈweðər/",
+            "definition": "the condition of the air",
+            "examples": [
+               "The weather is nice.",
+               "She checked the weather.",
+               "The weather today is sunny."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "week",
+            "role": "noun",
+            "BrE": "/wiːk/",
+            "AmE": "/wiːk/",
+            "definition": "a period of seven days",
+            "examples": [
+               "This week is busy.",
+               "She works every week.",
+               "The week starts on Monday."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "weekend",
+            "role": "noun",
+            "BrE": "/ˌwiːkˈend/",
+            "AmE": "/ˈwiːkend/",
+            "definition": "Saturday and Sunday",
+            "examples": [
+               "The weekend is fun.",
+               "She went out this weekend.",
+               "The weekend was very relaxing."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "welcome",
+            "role": "verb",
+            "BrE": "/ˈwelkəm/",
+            "AmE": "/ˈwelkəm/",
+            "definition": "to greet someone kindly",
+            "examples": [
+               "Welcome your guest.",
+               "She welcomed her friend.",
+               "He welcomes new students."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "well",
+            "role": "adverb",
+            "BrE": "/wel/",
+            "AmE": "/wel/",
+            "definition": "in a good way",
+            "examples": [
+               "She sings well.",
+               "He did the test well.",
+               "They work well together."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "west",
+            "role": "noun",
+            "BrE": "/west/",
+            "AmE": "/west/",
+            "definition": "the direction where the sun sets",
+            "examples": [
+               "Go west.",
+               "She lives in the west.",
+               "The west is sunny today."
+            ]
+         },
+         {
+            "id": 121,
+            "word": "wet",
+            "role": "adjective",
+            "BrE": "/wet/",
+            "AmE": "/wet/",
+            "definition": "covered with water",
+            "examples": [
+               "The clothes are wet.",
+               "She got wet in the rain.",
+               "The wet floor was slippery."
+            ]
+         },
+         {
+            "id": 122,
+            "word": "what",
+            "role": "pronoun",
+            "BrE": "/wɒt/",
+            "AmE": "/wɑːt/",
+            "definition": "used to ask about something",
+            "examples": [
+               "What is this?",
+               "She asked what time it was.",
+               "What did he say?"
+            ]
+         },
+         {
+            "id": 122,
+            "word": "when",
+            "role": "adverb",
+            "BrE": "/wen/",
+            "AmE": "/wen/",
+            "definition": "at what time",
+            "examples": [
+               "When is it?",
+               "She asked when he arrived.",
+               "When does the shop open?"
+            ]
+         },
+         {
+            "id": 122,
+            "word": "where",
+            "role": "adverb",
+            "BrE": "/weə(r)/",
+            "AmE": "/wer/",
+            "definition": "in or to what place",
+            "examples": [
+               "Where is my bag?",
+               "She asked where he was.",
+               "Where are you going?"
+            ]
+         },
+         {
+            "id": 122,
+            "word": "which",
+            "role": "pronoun",
+            "BrE": "/wɪtʃ/",
+            "AmE": "/wɪtʃ/",
+            "definition": "used to ask about a choice",
+            "examples": [
+               "Which book?",
+               "She asked which one is hers.",
+               "Which colour do you like?"
+            ]
+         },
+         {
+            "id": 122,
+            "word": "while",
+            "role": "conjunction",
+            "BrE": "/waɪl/",
+            "AmE": "/waɪl/",
+            "definition": "during the time that",
+            "examples": [
+               "Read while waiting.",
+               "She sang while cooking.",
+               "He worked while she slept."
+            ]
+         },
+         {
+            "id": 122,
+            "word": "white",
+            "role": "adjective",
+            "BrE": "/waɪt/",
+            "AmE": "/waɪt/",
+            "definition": "the colour of snow",
+            "examples": [
+               "The shirt is white.",
+               "She has a white car.",
+               "The white wall is clean."
+            ]
+         },
+         {
+            "id": 122,
+            "word": "who",
+            "role": "pronoun",
+            "BrE": "/huː/",
+            "AmE": "/huː/",
+            "definition": "used to ask about a person",
+            "examples": [
+               "Who is there?",
+               "She asked who called.",
+               "Who is your teacher?"
+            ]
+         },
+         {
+            "id": 122,
+            "word": "whole",
+            "role": "adjective",
+            "BrE": "/həʊl/",
+            "AmE": "/hoʊl/",
+            "definition": "complete or all of something",
+            "examples": [
+               "Eat the whole apple.",
+               "She read the whole book.",
+               "The whole class was here."
+            ]
+         },
+         {
+            "id": 122,
+            "word": "why",
+            "role": "adverb",
+            "BrE": "/waɪ/",
+            "AmE": "/waɪ/",
+            "definition": "for what reason",
+            "examples": [
+               "Why are you late?",
+               "She asked why he left.",
+               "Why is the sky blue?"
+            ]
+         },
+         {
+            "id": 122,
+            "word": "wide",
+            "role": "adjective",
+            "BrE": "/waɪd/",
+            "AmE": "/waɪd/",
+            "definition": "having a large distance across",
+            "examples": [
+               "The road is wide.",
+               "She opened the door wide.",
+               "The wide river was deep."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "wife",
+            "role": "noun",
+            "BrE": "/waɪf/",
+            "AmE": "/waɪf/",
+            "definition": "a married woman",
+            "examples": [
+               "His wife is kind.",
+               "She met his wife yesterday.",
+               "The wife works at a school."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "wild",
+            "role": "adjective",
+            "BrE": "/waɪld/",
+            "AmE": "/waɪld/",
+            "definition": "living naturally, not controlled",
+            "examples": [
+               "The animal is wild.",
+               "She saw a wild bird.",
+               "The wild forest is big."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "win",
+            "role": "verb",
+            "BrE": "/wɪn/",
+            "AmE": "/wɪn/",
+            "definition": "to get first place in a competition",
+            "examples": [
+               "Win the game.",
+               "She won a prize.",
+               "He won the race easily."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "wind",
+            "role": "noun",
+            "BrE": "/wɪnd/",
+            "AmE": "/wɪnd/",
+            "definition": "moving air",
+            "examples": [
+               "The wind is strong.",
+               "She felt the wind outside.",
+               "The wind blew the leaves."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "window",
+            "role": "noun",
+            "BrE": "/ˈwɪndəʊ/",
+            "AmE": "/ˈwɪndoʊ/",
+            "definition": "an opening in a wall for light or air",
+            "examples": [
+               "The window is open.",
+               "She looked through the window.",
+               "The window in the room is big."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "winter",
+            "role": "noun",
+            "BrE": "/ˈwɪntə(r)/",
+            "AmE": "/ˈwɪntər/",
+            "definition": "the season after autumn",
+            "examples": [
+               "Winter is cold.",
+               "She likes winter sports.",
+               "The winter was very snowy."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "wish",
+            "role": "verb",
+            "BrE": "/wɪʃ/",
+            "AmE": "/wɪʃ/",
+            "definition": "to want something to happen",
+            "examples": [
+               "Wish for luck.",
+               "She wished for a new phone.",
+               "He wishes to travel soon."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "woman",
+            "role": "noun",
+            "BrE": "/ˈwʊmən/",
+            "AmE": "/ˈwʊmən/",
+            "definition": "an adult female person",
+            "examples": [
+               "The woman is kind.",
+               "She met a woman at work.",
+               "The woman helped her friend."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "work",
+            "role": "noun",
+            "BrE": "/wɜːk/",
+            "AmE": "/wɜːrk/",
+            "definition": "a job or task",
+            "examples": [
+               "Work is hard.",
+               "She has a lot of work.",
+               "The work at school is fun."
+            ]
+         },
+         {
+            "id": 123,
+            "word": "work",
+            "role": "verb",
+            "BrE": "/wɜːk/",
+            "AmE": "/wɜːrk/",
+            "definition": "to do a job or task",
+            "examples": [
+               "I work every day.",
+               "She works at a shop.",
+               "He worked late yesterday."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "world",
+            "role": "noun",
+            "BrE": "/wɜːld/",
+            "AmE": "/wɜːrld/",
+            "definition": "the earth or all people",
+            "examples": [
+               "The world is big.",
+               "She wants to see the world.",
+               "The world needs peace."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "write",
+            "role": "verb",
+            "BrE": "/raɪt/",
+            "AmE": "/raɪt/",
+            "definition": "to make words on paper or a screen",
+            "examples": [
+               "Write your name.",
+               "She wrote a letter.",
+               "He writes in his notebook."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "wrong",
+            "role": "adjective",
+            "BrE": "/rɒŋ/",
+            "AmE": "/rɔːŋ/",
+            "definition": "not correct",
+            "examples": [
+               "The answer is wrong.",
+               "She took the wrong bus.",
+               "The wrong book was on the table."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "yard",
+            "role": "noun",
+            "BrE": "/jɑːd/",
+            "AmE": "/jɑːrd/",
+            "definition": "an area outside a house",
+            "examples": [
+               "The yard is green.",
+               "She played in the yard.",
+               "The yard has a big tree."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "year",
+            "role": "noun",
+            "BrE": "/jɪə(r)/",
+            "AmE": "/jɪr/",
+            "definition": "a period of twelve months",
+            "examples": [
+               "This year is new.",
+               "She was born last year.",
+               "The year was very busy."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "yellow",
+            "role": "adjective",
+            "BrE": "/ˈjeləʊ/",
+            "AmE": "/ˈjeloʊ/",
+            "definition": "the colour of a lemon",
+            "examples": [
+               "The flower is yellow.",
+               "She wore a yellow dress.",
+               "The yellow car is fast."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "yes",
+            "role": "exclamation",
+            "BrE": "/jes/",
+            "AmE": "/jes/",
+            "definition": "used to agree or say something is true",
+            "examples": [
+               "Yes, I agree.",
+               "She said yes to the plan.",
+               "Yes, the shop is open."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "yesterday",
+            "role": "adverb",
+            "BrE": "/ˈjestədeɪ/",
+            "AmE": "/ˈjestərdeɪ/",
+            "definition": "the day before today",
+            "examples": [
+               "I was busy yesterday.",
+               "She called me yesterday.",
+               "Yesterday was a sunny day."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "young",
+            "role": "adjective",
+            "BrE": "/jʌŋ/",
+            "AmE": "/jʌŋ/",
+            "definition": "not old",
+            "examples": [
+               "The boy is young.",
+               "She has a young sister.",
+               "The young dog is playful."
+            ]
+         },
+         {
+            "id": 124,
+            "word": "your",
+            "role": "determiner",
+            "BrE": "/jɔː(r)/",
+            "AmE": "/jʊr/",
+            "definition": "belonging to you",
+            "examples": [
+               "Your book is here.",
+               "She took your bag.",
+               "Your house looks nice."
+            ]
+         },
       ]
    }
 
+
+   const saveHandle = (ws) => {
+      const savedVocab = ws.word.word
+      const savedVocabRole = ws.word.role
+
+      const foundWord = data.wordList.filter((item, index) => {
+         if(item.word === savedVocab && item.role === savedVocabRole) {
+            data.wordList[index].saved = !data.wordList[index].saved
+            return item
+         }
+      })
+      
+      if(savedA2Vocabs.some(item => item.word == ws.word.word) && savedA2Vocabs.some(item => item.role == ws.word.role)){
+         setSavedA2Vocabs(savedA2Vocabs.filter((item) => {
+            return !(item.word === ws.word.word && item.role === ws.word.role)
+         }))
+      } else {
+         setSavedA2Vocabs((prev) => [
+            ...prev,
+            foundWord[0]
+         ])
+      }
+   }
+   
    const specificLessonWords = data.wordList.filter((item) => {
       return item.id == slug
    })
+
+   const wholeLessons = data.wordList[data.wordList.length - 1]
+
 
    return (
       <div className={styles.container}>
@@ -8120,7 +16334,6 @@ export default function Lessons({ params }) {
    
          {stage === 'learning' && (
          <div className={styles.learnCard}>
-            <p className={styles.title}>The words you ned to learn</p>
             {(() => {
                const learningWords = [...partialWords, ...unknownWords];
                if (learningWords.length === 0) {
@@ -8129,69 +16342,79 @@ export default function Lessons({ params }) {
                <div className={styles.btnHolder}>
                   <Link href='/a2' className={styles.back}>Done</Link>
                   {
-                     lessonNumber < 62 ?
+                     lessonNumber < wholeLessons ?
                      <Link href={`/a2/${lessonNumber + 1}`} className={styles.back}>Next Lesson</Link>
                      :
-                     <Link href='/a2' className={styles.back}>Start A2</Link>
+                     <Link href='/b1' className={styles.back}>Start A2</Link>
                   }
                </div>
             </div>
                }
                const ws = learningWords[learningWordIndex];
                return (
-               <div className={styles.wordBlock}>
-                  <div className={styles.wordHolder}>
-                     <p className={styles.wordTitle}>{ws.word.word}</p>
-                     <div className={styles.infoHolder}>
-                        <p className={styles.phonetics}>{ws.word.AmE}</p>
-                        <p className={styles.phonetics}>{ws.word.BrE}</p>
-                        <div className={styles.role}>{specificLessonWords[currentWordIndex].role}</div>
+               <>
+                  <div className={styles.actionsHolder}>
+                     <p className={styles.title}>The words you need to learn</p>
+                     <p className={styles.actions} onClick={() => saveHandle(ws)}>
+                        {  
+                           (savedA2Vocabs.some(item => item.word == ws.word.word) && savedA2Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark className={styles.save}/> : <FaRegBookmark className={styles.save}/>  
+                        }
+                     </p>
+                  </div>
+                  <div className={styles.wordBlock}>
+                     <div className={styles.wordHolder}>
+                        <p className={styles.wordTitle}>{ws.word.word}</p>
+                        <div className={styles.infoHolder}>
+                           <p className={styles.phonetics}>{ws.word.AmE}</p>
+                           <p className={styles.phonetics}>{ws.word.BrE}</p>
+                           <div className={styles.role}>{ws.word.role}</div>
+                        </div>
                      </div>
-                  </div>
-                  <div className={styles.definition}>{ws.word.definition}</div>
-                  <div className={styles.examplesHolder}>
-                     <p><strong>Examples:</strong></p>
-                     <ul className={styles.examplesList}>
-                        {ws.word.examples.map((example, i) => (
-                        <li key={i}>{example}</li>
-                        ))}
-                     </ul>
-                  </div>
-                  {
-                     btn ? 
-                        <div className={styles.btnHolder}>
-                           <button
-                              className={styles.button}
-                              onClick={() => setStage('revision')}
-                           >
-                              Review Again
-                           </button>
-                           {
-                           lessonNumber < 62 ?
-                              <Link href={`/a2/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
-                              :
-                              <Link href='/a2' className={styles.button}>Start A2</Link>  
-                           }
-                        </div>
+                     <div className={styles.definition}>{ws.word.definition}</div>
+                     <div className={styles.examplesHolder}>
+                        <p><strong>Examples:</strong></p>
+                        <ul className={styles.examplesList}>
+                           {ws.word.examples.map((example, i) => (
+                           <li key={i}>{example}</li>
+                           ))}
+                        </ul>
+                     </div>
+                     {
+                        btn ? 
+                           <div className={styles.btnHolder}>
+                              <button
+                                 className={styles.button}
+                                 onClick={() => setStage('revision')}
+                              >
+                                 Review Again
+                              </button>
+                              {
+                              lessonNumber < wholeLessons ?
+                                 <Link href={`/a2/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
+                                 :
+                                 <Link href='/b1' className={styles.button}>Start B1</Link>  
+                              }
+                           </div>
 
-                        : 
+                           : 
 
-                        <div className={styles.btnHolder}>
-                           <button
-                              className={styles.button}
-                              onClick={handleBackLearningWord}
-                           >
-                              Back
-                           </button>
-                           <button
-                              className={styles.button}
-                              onClick={handleNextLearningWord}
-                           >
-                              Next
-                           </button>
-                        </div>
-                  }
-               </div>
+                           <div className={styles.btnHolder}>
+                              <button
+                                 className={styles.button}
+                                 onClick={handleBackLearningWord}
+                              >
+                                 Back
+                              </button>
+                              <button
+                                 className={styles.button}
+                                 onClick={handleNextLearningWord}
+                              >
+                                 Next
+                              </button>
+                           </div>
+                     }
+                  </div>
+               </>
                );
             })()}
          </div>
@@ -8209,7 +16432,7 @@ export default function Lessons({ params }) {
                      <div className={styles.infoHolder}>
                         <p className={styles.phonetics}>{ws.word.AmE}</p>
                         <p className={styles.phonetics}>{ws.word.BrE}</p>
-                        <div className={styles.role}>{specificLessonWords[currentWordIndex].role}</div>
+                        <div className={styles.role}>{ws.word.role}</div>
                      </div>
                   </div>
                   <div className={styles.definition}>{ws.word.definition}</div>
@@ -8226,10 +16449,10 @@ export default function Lessons({ params }) {
             })()}
             <div className={styles.btnHolder}>
                {
-                  lessonNumber < 62 ?
+                  lessonNumber < wholeLessons ?
                   <Link href={`/a2/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
                   :
-                  <Link href='/a2' className={styles.button}>Start A2</Link>
+                  <Link href='/b1' className={styles.button}>Start B1</Link>
                }
 
                <Link href='/a2'

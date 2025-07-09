@@ -11,11 +11,11 @@ function A1() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(0);
   const totalImages = 1;
-  const [switches, setSwitches] = useState(Array(52).fill(false));
+  const [switches, setSwitches] = useState(Array(117).fill(false));
 
   useEffect(() => {
-    const newSwitches = Array(52).fill(false);
-    for (let i = 1; i <= 52; i++) {
+    const newSwitches = Array(117).fill(false);
+    for (let i = 1; i <= 117; i++) {
       const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A1`)) || [];
       const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A1`)) || [];
       const partials = JSON.parse(localStorage.getItem(`partialWords-${i}-A1`)) || [];
