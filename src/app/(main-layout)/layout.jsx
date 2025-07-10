@@ -6,7 +6,7 @@ import Menu from "@/components/menu/menu";
 
 
 export const metadata = {
-   title: "Ghazalim English App",
+   title: "iGhazal App",
    description: "Powered by Mohamad Gomar",
    manifest: "/manifest.json",
    viewport: {

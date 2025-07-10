@@ -1901,126 +1901,110 @@ const StudyPlan = () => {
             onLoad={handleImageLoad}
          />
          
- 
-
-         {
-            pages === 'home' ? <>
-               <div className={styles.pageHolder}>
-                  <div className={styles.progress}>
-                     <div className={styles.mainTitle}>Your Progress</div>
-                     <div className={styles.illHolder}>
-                        <Image className={styles.progPic}
-                           src='/images/illustrations/progress.png'
-                           alt="progress"
-                           fill
-                           onLoad={handleImageLoad}
-                        />
+      
+         <div className={styles.pageHolder}>
+            <div className={styles.progress}>
+               <div className={styles.mainTitle}>Your Progress</div>
+               <div className={styles.illHolder}>
+                  <Image className={styles.progPic}
+                     src='/images/illustrations/progress.png'
+                     alt="progress"
+                     fill
+                     onLoad={handleImageLoad}
+                  />
+               </div>
+               <div className={styles.aveProgress}>
+                  <ProgressBar inputNumber={aveProgress}/>
+                  <div className={styles.aveTitle}>Completed</div>
+               </div>
+               <div className={styles.progBarHolder}>
+                  <div className={styles.progBar}>
+                     <div className={styles.progHolder}>
+                        <div className={styles.progNumber}>{speakProgress}%</div>
+                        <div className={styles.progTitle}>SPEAKING</div>
                      </div>
-                     <div className={styles.aveProgress}>
-                        <ProgressBar inputNumber={aveProgress}/>
-                        <div className={styles.aveTitle}>Completed</div>
+                     <div className={styles.progHolder}>
+                        <div className={styles.progNumber}>{writeProgress}%</div>
+                        <div className={styles.progTitle}>WRITING</div>
                      </div>
-                     <div className={styles.progBarHolder}>
-                        <div className={styles.progBar}>
-                           <div className={styles.progHolder}>
-                              <div className={styles.progNumber}>{speakProgress}%</div>
-                              <div className={styles.progTitle}>SPEAKING</div>
-                           </div>
-                           <div className={styles.progHolder}>
-                              <div className={styles.progNumber}>{writeProgress}%</div>
-                              <div className={styles.progTitle}>WRITING</div>
-                           </div>
-                           <div className={styles.progHolder}>
-                              <div className={styles.progNumber}>{listenProgress}%</div>
-                              <div className={styles.progTitle}>LISTENING</div>
-                           </div>
-                           <div className={styles.progHolder}>
-                              <div className={styles.progNumber}>{readProgress}%</div>
-                              <div className={styles.progTitle}>READING</div>
-                           </div>
-                        </div>
+                     <div className={styles.progHolder}>
+                        <div className={styles.progNumber}>{listenProgress}%</div>
+                        <div className={styles.progTitle}>LISTENING</div>
                      </div>
-                  </div>
-
-
-                  <div className={styles.activityHolder}>
-                     <div className={styles.activityTitle}>Start From Here</div>
-                     <div className={styles.pair}>
-                        <Link href='/words' className={styles.activity}>
-                           <Image className={styles.actPic}
-                              src='/images/illustrations/act1.jpg'
-                              alt="progress"
-                              fill
-                              onLoad={handleImageLoad}
-                           />
-                           <button className={styles.actBtn}>Vocabulary</button>
-                        </Link>
-                        <div className={styles.activity}>
-                           <Image className={styles.actPic}
-                              src='/images/illustrations/act2.jpg'
-                              alt="progress"
-                              fill
-                              onLoad={handleImageLoad}
-                           />
-                           <button className={styles.actBtn}>Grammar</button>
-                        </div>
-                     </div>
-                     <div className={styles.pair}>
-                        <div className={styles.activity}>
-                           <Image className={styles.actPic}
-                              src='/images/illustrations/act3.jpg'
-                              alt="progress"
-                              fill
-                              onLoad={handleImageLoad}
-                           />
-                           <button className={`${styles.actBtn} ${styles.light}`}>Expressions</button>
-                        </div>
-                        <div className={styles.activity}>
-                           <Image className={styles.actPic}
-                              src='/images/illustrations/act4.jpg'
-                              alt="progress"
-                              fill
-                              onLoad={handleImageLoad}
-                           />
-                           <button className={`${styles.actBtn} ${styles.light}`}>Synonyms</button>
-                        </div>
-                     </div>
-                     <div className={styles.pair}>
-                        <div className={styles.activity}>
-                           <Image className={styles.actPic}
-                              src='/images/illustrations/act5.jpg'
-                              alt="progress"
-                              fill
-                              onLoad={handleImageLoad}
-                           />
-                           <button className={styles.actBtn}>Tests</button>
-                        </div>
-                        <Link href='/review' className={styles.activity}>
-                           <Image className={styles.actPic}
-                              src='/images/illustrations/act6.jpg'
-                              alt="progress"
-                              fill
-                              onLoad={handleImageLoad}
-                           />
-                           <button className={`${styles.actBtn} ${styles.light}`}>Review</button>
-                        </Link>
+                     <div className={styles.progHolder}>
+                        <div className={styles.progNumber}>{readProgress}%</div>
+                        <div className={styles.progTitle}>READING</div>
                      </div>
                   </div>
                </div>
-            </> :
-            pages === 'read' ? <>
-               <div className={styles.pageHolder}>The Reading Page</div>
-            </> :
-            pages === 'speak' ? <>
-               <div className={styles.pageHolder}>The Speaking Page</div>
-            </> :
-            pages === 'write' ? <>
-               <div className={styles.pageHolder}>The Writing Page</div>
-            </> :
-            pages === 'listen' ? <>
-               <div className={styles.pageHolder}>The Listening Page</div>
-            </> : <div>THIS IS AN ERROR</div>
-         }
+            </div>
+
+
+            <div className={styles.activityHolder}>
+               <div className={styles.activityTitle}>Start From Here</div>
+               <div className={styles.pair}>
+                  <Link href='/words' className={styles.activity}>
+                     <Image className={styles.actPic}
+                        src='/images/illustrations/act1.jpg'
+                        alt="progress"
+                        fill
+                        onLoad={handleImageLoad}
+                     />
+                     <button className={styles.actBtn}>Vocabulary</button>
+                  </Link>
+                  <div className={styles.activity}>
+                     <Image className={styles.actPic}
+                        src='/images/illustrations/act2.jpg'
+                        alt="progress"
+                        fill
+                        onLoad={handleImageLoad}
+                     />
+                     <button className={styles.actBtn}>Grammar</button>
+                  </div>
+               </div>
+               <div className={styles.pair}>
+                  <div className={styles.activity}>
+                     <Image className={styles.actPic}
+                        src='/images/illustrations/act3.jpg'
+                        alt="progress"
+                        fill
+                        onLoad={handleImageLoad}
+                     />
+                     <button className={`${styles.actBtn} ${styles.light}`}>Expressions</button>
+                  </div>
+                  <div className={styles.activity}>
+                     <Image className={styles.actPic}
+                        src='/images/illustrations/act4.jpg'
+                        alt="progress"
+                        fill
+                        onLoad={handleImageLoad}
+                     />
+                     <button className={`${styles.actBtn} ${styles.light}`}>Synonyms</button>
+                  </div>
+               </div>
+               <div className={styles.pair}>
+                  <div className={styles.activity}>
+                     <Image className={styles.actPic}
+                        src='/images/illustrations/act5.jpg'
+                        alt="progress"
+                        fill
+                        onLoad={handleImageLoad}
+                     />
+                     <button className={styles.actBtn}>Tests</button>
+                  </div>
+                  <Link href='/review' className={styles.activity}>
+                     <Image className={styles.actPic}
+                        src='/images/illustrations/act6.jpg'
+                        alt="progress"
+                        fill
+                        onLoad={handleImageLoad}
+                     />
+                     <button className={`${styles.actBtn} ${styles.light}`}>Review</button>
+                  </Link>
+               </div>
+            </div>
+         </div>
+   
          
          {
             isLoading ?

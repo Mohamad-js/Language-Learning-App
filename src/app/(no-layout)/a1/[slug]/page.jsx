@@ -15,6 +15,8 @@ export default function Lessons({ params }) {
    const [btn, setBtn] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
    const [savedA1Vocabs, setSavedA1Vocabs] = useState([])
+   const [confirmBox, setConfirmBox] = useState(false)
+   const [cancelBox, setCancelBox] = useState(false)
 
    const { slug } = params;
 
@@ -17193,11 +17195,24 @@ export default function Lessons({ params }) {
          setSavedA1Vocabs(savedA1Vocabs.filter((item) => {
             return !(item.word === ws.word.word && item.role === ws.word.role)
          }))
+
+         setCancelBox(true)
+
+         setTimeout(() => {
+            setCancelBox(false);
+         }, 3000);
+
       } else {
          setSavedA1Vocabs((prev) => [
             ...prev,
             foundWord[0]
          ])
+
+         setConfirmBox(true)
+
+         setTimeout(() => {
+            setConfirmBox(false);
+         }, 3000);
       }
    }
    
@@ -17380,6 +17395,12 @@ export default function Lessons({ params }) {
             </div>
          </div>
       )}
+
+      {
+         confirmBox ? <div className={styles.confirm}>Saved Successfully</div>
+         :
+         cancelBox ? <div  className={styles.cancel}>Removed Successfully</div> : null
+      }
       </div>
    );
 }
