@@ -2,13 +2,18 @@
 import styles from './menu.module.css'
 import { CiMenuFries } from "react-icons/ci";
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 
 function Menu(){
    const [menu,setMenu] = useState(false)
 
-   function toggleMenu(){
+   const toggleMenu = () => {
       setMenu(!menu)
+   }
+
+   const resetToggle = () => {
+      localStorage.clear()
    }
 
    return(
@@ -20,7 +25,7 @@ function Menu(){
             menu ?
             <div className={styles.menuLayer} onClick={toggleMenu}>
                <div className={styles.menu}>
-                  <div className={styles.item}>Restart</div>
+                  <Link href='/' className={styles.item} onClick={resetToggle}>Restart</Link>
                   <div className={styles.item}>Saved</div>
                   <div className={styles.item}>Statistics</div>
                   <div className={styles.item}>My Errors</div>

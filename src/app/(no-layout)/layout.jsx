@@ -1,6 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import Menu from "@/components/menu/menu";
+import RegisterServiceWorker from "../registerServiceWorker";
 import "./globals.css";
 
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
   return (
       <html lang="en">
          <body>
+            <RegisterServiceWorker />
             <Menu />
             {children}
             <SpeedInsights />

@@ -1895,7 +1895,7 @@ const StudyPlan = () => {
       <div className={styles.bigMom}>
 
          <Image className={styles.back}
-            src='../images/back/mainBack.jpg'
+            src='/images/back/mainBack.jpg'
             fill
             alt="background"
             onLoad={handleImageLoad}
@@ -1910,7 +1910,7 @@ const StudyPlan = () => {
                      <div className={styles.mainTitle}>Your Progress</div>
                      <div className={styles.illHolder}>
                         <Image className={styles.progPic}
-                           src='../images/illustrations/progress.png'
+                           src='/images/illustrations/progress.png'
                            alt="progress"
                            fill
                            onLoad={handleImageLoad}
@@ -1948,7 +1948,7 @@ const StudyPlan = () => {
                      <div className={styles.pair}>
                         <Link href='/words' className={styles.activity}>
                            <Image className={styles.actPic}
-                              src='../images/illustrations/act1.jpg'
+                              src='/images/illustrations/act1.jpg'
                               alt="progress"
                               fill
                               onLoad={handleImageLoad}
@@ -1957,7 +1957,7 @@ const StudyPlan = () => {
                         </Link>
                         <div className={styles.activity}>
                            <Image className={styles.actPic}
-                              src='../images/illustrations/act2.jpg'
+                              src='/images/illustrations/act2.jpg'
                               alt="progress"
                               fill
                               onLoad={handleImageLoad}
@@ -1968,7 +1968,7 @@ const StudyPlan = () => {
                      <div className={styles.pair}>
                         <div className={styles.activity}>
                            <Image className={styles.actPic}
-                              src='../images/illustrations/act3.jpg'
+                              src='/images/illustrations/act3.jpg'
                               alt="progress"
                               fill
                               onLoad={handleImageLoad}
@@ -1977,7 +1977,7 @@ const StudyPlan = () => {
                         </div>
                         <div className={styles.activity}>
                            <Image className={styles.actPic}
-                              src='../images/illustrations/act4.jpg'
+                              src='/images/illustrations/act4.jpg'
                               alt="progress"
                               fill
                               onLoad={handleImageLoad}
@@ -1988,7 +1988,7 @@ const StudyPlan = () => {
                      <div className={styles.pair}>
                         <div className={styles.activity}>
                            <Image className={styles.actPic}
-                              src='../images/illustrations/act5.jpg'
+                              src='/images/illustrations/act5.jpg'
                               alt="progress"
                               fill
                               onLoad={handleImageLoad}
@@ -1997,7 +1997,7 @@ const StudyPlan = () => {
                         </div>
                         <Link href='/review' className={styles.activity}>
                            <Image className={styles.actPic}
-                              src='../images/illustrations/act6.jpg'
+                              src='/images/illustrations/act6.jpg'
                               alt="progress"
                               fill
                               onLoad={handleImageLoad}

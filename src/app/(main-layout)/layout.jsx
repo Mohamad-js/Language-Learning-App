@@ -8,6 +8,7 @@ import Menu from "@/components/menu/menu";
 export const metadata = {
    title: "Ghazalim English App",
    description: "Powered by Mohamad Gomar",
+   manifest: "/manifest.json",
    viewport: {
       width: 'device-width',
       initialScale: 1.0,
@@ -19,6 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
       <html lang="en">
+      <head>
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      </head>
          <body>
             <Menu />
             {children}
