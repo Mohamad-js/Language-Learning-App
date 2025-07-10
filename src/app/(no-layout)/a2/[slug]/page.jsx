@@ -38,16 +38,28 @@ export default function Lessons({ params }) {
    }, [slug]); // Depend on slug to reload when lesson changes
 
    // Save data to localStorage when state changes
-   useEffect(() => {
+   // useEffect(() => {
+   //    try {
+   //       localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
+   //       localStorage.setItem(`partialWords-${slug}-A2`, JSON.stringify(partialWords));
+   //       localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
+
+   //    } catch (e) {
+   //       console.error('Error saving to localStorage:', e);
+   //    }
+   // }, [knownWords, partialWords, unknownWords, slug]);
+   
+   const saveProgress = () => {
       try {
          localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-A2`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
-
+   
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
-   }, [knownWords, partialWords, unknownWords, slug]);
+
+   }
 
    // Save data to localStorage when state changes
    useEffect(() => {
@@ -16290,7 +16302,7 @@ export default function Lessons({ params }) {
       return item.id == slug
    })
 
-   const wholeLessons = data.wordList[data.wordList.length - 1]
+   const wholeLessons = data.wordList[data.wordList.length - 1].id
 
 
    return (
@@ -16340,12 +16352,12 @@ export default function Lessons({ params }) {
                   return <div className={styles.done}>
                <div className={styles.doneTitle}>All done. Brilliant :)</div>
                <div className={styles.btnHolder}>
-                  <Link href='/a2' className={styles.back}>Done</Link>
+                  <Link href='/a2' className={styles.back} onClick={saveProgress}>Done</Link>
                   {
                      lessonNumber < wholeLessons ?
-                     <Link href={`/a2/${lessonNumber + 1}`} className={styles.back}>Next Lesson</Link>
+                     <Link href={`/a2/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
                      :
-                     <Link href='/b1' className={styles.back}>Start A2</Link>
+                     <Link href='/b1' className={styles.back} onClick={saveProgress}>Start A2</Link>
                   }
                </div>
             </div>
@@ -16390,9 +16402,9 @@ export default function Lessons({ params }) {
                               </button>
                               {
                               lessonNumber < wholeLessons ?
-                                 <Link href={`/a2/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
+                                 <Link href={`/a2/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
                                  :
-                                 <Link href='/b1' className={styles.button}>Start B1</Link>  
+                                 <Link href='/b1' className={styles.button} onClick={saveProgress}>Start B1</Link>  
                               }
                            </div>
 
@@ -16450,13 +16462,14 @@ export default function Lessons({ params }) {
             <div className={styles.btnHolder}>
                {
                   lessonNumber < wholeLessons ?
-                  <Link href={`/a2/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
+                  <Link href={`/a2/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
                   :
-                  <Link href='/b1' className={styles.button}>Start B1</Link>
+                  <Link href='/b1' className={styles.button} onClick={saveProgress}>Start B1</Link>
                }
 
                <Link href='/a2'
                   className={styles.button}
+                  onClick={saveProgress}
                >
                   Done
                </Link>

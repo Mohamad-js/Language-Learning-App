@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import styles from './slug.module.css';
 import Link from 'next/link';
-
+import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 
 
 export default function Lessons({ params }) {
@@ -14,6 +14,7 @@ export default function Lessons({ params }) {
    const [unknownWords, setUnknownWords] = useState([]);
    const [btn, setBtn] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
+   const [savedB1Vocabs, setSavedB1Vocabs] = useState([])
 
    const { slug } = params;
 
@@ -37,15 +38,38 @@ export default function Lessons({ params }) {
    }, [slug]); // Depend on slug to reload when lesson changes
 
    // Save data to localStorage when state changes
-   useEffect(() => {
+   // useEffect(() => {
+   //    try {
+   //       localStorage.setItem(`knownWords-${slug}-B1`, JSON.stringify(knownWords));
+   //       localStorage.setItem(`partialWords-${slug}-B1`, JSON.stringify(partialWords));
+   //       localStorage.setItem(`unknownWords-${slug}-B1`, JSON.stringify(unknownWords));
+
+   //    } catch (e) {
+   //       console.error('Error saving to localStorage:', e);
+   //    }
+   // }, [knownWords, partialWords, unknownWords, slug]);
+   
+   const saveProgress = () => {
       try {
          localStorage.setItem(`knownWords-${slug}-B1`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-B1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-B1`, JSON.stringify(unknownWords));
+   
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
-   }, [knownWords, partialWords, unknownWords, slug]);
+
+   }
+
+   // Save data to localStorage when state changes
+   useEffect(() => {
+      try {
+         localStorage.setItem(`savedB1Vocabs-${slug}-B1`, JSON.stringify(savedB1Vocabs));
+
+      } catch (e) {
+         console.error('Error saving to localStorage:', e);
+      }
+   }, [savedB1Vocabs, slug]);
 
    const handleAnswer = (status) => {
       const currentWord = specificLessonWords[currentWordIndex];
@@ -85,8 +109,7 @@ export default function Lessons({ params }) {
    };
 
    // Access the slug from the URL
-
-   const data = {
+      const data = {
       slug,
       wordList: [
       {
@@ -11760,9 +11783,37 @@ export default function Lessons({ params }) {
       ]
    }
 
+
+
+   const saveHandle = (ws) => {
+      const savedVocab = ws.word.word
+      const savedVocabRole = ws.word.role
+
+      const foundWord = data.wordList.filter((item, index) => {
+         if(item.word === savedVocab && item.role === savedVocabRole) {
+            data.wordList[index].saved = !data.wordList[index].saved
+            return item
+         }
+      })
+      
+      if(savedB1Vocabs.some(item => item.word == ws.word.word) && savedB1Vocabs.some(item => item.role == ws.word.role)){
+         setSavedB1Vocabs(savedB1Vocabs.filter((item) => {
+            return !(item.word === ws.word.word && item.role === ws.word.role)
+         }))
+      } else {
+         setSavedB1Vocabs((prev) => [
+            ...prev,
+            foundWord[0]
+         ])
+      }
+   }
+   
    const specificLessonWords = data.wordList.filter((item) => {
       return item.id == slug
    })
+
+   const wholeLessons = data.wordList[data.wordList.length - 1].id
+
 
    return (
       <div className={styles.container}>
@@ -11805,78 +11856,87 @@ export default function Lessons({ params }) {
    
          {stage === 'learning' && (
          <div className={styles.learnCard}>
-            <p className={styles.title}>The words you ned to learn</p>
             {(() => {
                const learningWords = [...partialWords, ...unknownWords];
                if (learningWords.length === 0) {
                   return <div className={styles.done}>
                <div className={styles.doneTitle}>All done. Brilliant :)</div>
                <div className={styles.btnHolder}>
-                  <Link href='/b1' className={styles.back}>Done</Link>
+                  <Link href='/b1' className={styles.back} onClick={saveProgress}>Done</Link>
                   {
-                     lessonNumber < 62 ?
-                     <Link href={`/b1/${lessonNumber + 1}`} className={styles.back}>Next Lesson</Link>
+                     lessonNumber < wholeLessons ?
+                     <Link href={`/b1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
                      :
-                     <Link href='/b1' className={styles.back}>Start A2</Link>
+                     <Link href='/b2' className={styles.back} onClick={saveProgress}>Start B2</Link>
                   }
                </div>
             </div>
                }
                const ws = learningWords[learningWordIndex];
                return (
-               <div className={styles.wordBlock}>
-                  <div className={styles.wordHolder}>
-                     <p className={styles.wordTitle}>{ws.word.word}</p>
-                     <div className={styles.infoHolder}>
-                        <p className={styles.phonetics}>{ws.word.AmE}</p>
-                        <p className={styles.phonetics}>{ws.word.BrE}</p>
-                        <div className={styles.role}>{ws.word.role}</div>
+               <>
+                  <div className={styles.actionsHolder}>
+                     <p className={styles.title}>The words you need to learn</p>
+                     <p className={styles.actions} onClick={() => saveHandle(ws)}>
+                        {  
+                           (savedB1Vocabs.some(item => item.word == ws.word.word) && savedB1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark className={styles.save}/> : <FaRegBookmark className={styles.save}/>  
+                        }
+                     </p>
+                  </div>
+                  <div className={styles.wordBlock}>
+                     <div className={styles.wordHolder}>
+                        <p className={styles.wordTitle}>{ws.word.word}</p>
+                        <div className={styles.infoHolder}>
+                           <p className={styles.phonetics}>{ws.word.AmE}</p>
+                           <p className={styles.phonetics}>{ws.word.BrE}</p>
+                           <div className={styles.role}>{ws.word.role}</div>
+                        </div>
                      </div>
-                  </div>
-                  <div className={styles.definition}>{ws.word.definition}</div>
-                  <div className={styles.examplesHolder}>
-                     <p><strong>Examples:</strong></p>
-                     <ul className={styles.examplesList}>
-                        {ws.word.examples.map((example, i) => (
-                        <li key={i}>{example}</li>
-                        ))}
-                     </ul>
-                  </div>
-                  {
-                     btn ? 
-                        <div className={styles.btnHolder}>
-                           <button
-                              className={styles.button}
-                              onClick={() => setStage('revision')}
-                           >
-                              Review Again
-                           </button>
-                           {
-                           lessonNumber < 62 ?
-                              <Link href={`/b1/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
-                              :
-                              <Link href='/b1' className={styles.button}>Start A2</Link>  
-                           }
-                        </div>
+                     <div className={styles.definition}>{ws.word.definition}</div>
+                     <div className={styles.examplesHolder}>
+                        <p><strong>Examples:</strong></p>
+                        <ul className={styles.examplesList}>
+                           {ws.word.examples.map((example, i) => (
+                           <li key={i}>{example}</li>
+                           ))}
+                        </ul>
+                     </div>
+                     {
+                        btn ? 
+                           <div className={styles.btnHolder}>
+                              <button
+                                 className={styles.button}
+                                 onClick={() => setStage('revision')}
+                              >
+                                 Review Again
+                              </button>
+                              {
+                              lessonNumber < wholeLessons ?
+                                 <Link href={`/b1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
+                                 :
+                                 <Link href='/b2' className={styles.button} onClick={saveProgress}>Start B1</Link>  
+                              }
+                           </div>
 
-                        : 
+                           : 
 
-                        <div className={styles.btnHolder}>
-                           <button
-                              className={styles.button}
-                              onClick={handleBackLearningWord}
-                           >
-                              Back
-                           </button>
-                           <button
-                              className={styles.button}
-                              onClick={handleNextLearningWord}
-                           >
-                              Next
-                           </button>
-                        </div>
-                  }
-               </div>
+                           <div className={styles.btnHolder}>
+                              <button
+                                 className={styles.button}
+                                 onClick={handleBackLearningWord}
+                              >
+                                 Back
+                              </button>
+                              <button
+                                 className={styles.button}
+                                 onClick={handleNextLearningWord}
+                              >
+                                 Next
+                              </button>
+                           </div>
+                     }
+                  </div>
+               </>
                );
             })()}
          </div>
@@ -11911,14 +11971,15 @@ export default function Lessons({ params }) {
             })()}
             <div className={styles.btnHolder}>
                {
-                  lessonNumber < 62 ?
-                  <Link href={`/b1/${lessonNumber + 1}`} className={styles.button}>Next Lesson</Link>
+                  lessonNumber < wholeLessons ?
+                  <Link href={`/b1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
                   :
-                  <Link href='/b1' className={styles.button}>Start A2</Link>
+                  <Link href='/b2' className={styles.button} onClick={saveProgress}>Start B2</Link>
                }
 
                <Link href='/b1'
                   className={styles.button}
+                  onClick={saveProgress}
                >
                   Done
                </Link>
