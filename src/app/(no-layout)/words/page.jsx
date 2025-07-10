@@ -34,7 +34,7 @@ function Words(){
       <>
          <div className={styles.container}>
             <Image className={styles.image}
-               src='../images/back/background.jpg'
+               src='/images/back/background.jpg'
                fill
                alt='background'
                onLoad={handleImageLoad}
