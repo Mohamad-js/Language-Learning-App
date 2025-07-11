@@ -39,12 +39,12 @@ const StudyPlan = () => {
       <div className={styles.bigMom}>
          <div className={styles.pageHolder}>
             <div className={styles.activityTitle}>Start From Here</div>
-            <div className={styles.activityHolder}>
-               <div className={styles.aveProgress}>
-                  <ProgressBar inputNumber={aveProgress}/>
-                  <div className={styles.aveTitle}>TOTAL COMPLETION</div>
-               </div>
+            <div className={styles.aveProgress}>
+               <ProgressBar inputNumber={aveProgress}/>
+               <div className={styles.aveTitle}>TOTAL COMPLETION</div>
+            </div>
 
+            <div className={styles.activityHolder}>
                <div className={styles.pair}>
                   <Link href='/words' className={styles.activity}>
                      <button className={styles.actBtn}>Vocabulary</button>
@@ -64,9 +64,9 @@ const StudyPlan = () => {
                </div>
 
                <div className={styles.pair}>
-                  <Link href='/words' className={styles.activity}>
+                  <div className={styles.activity}>
                      <button className={styles.actBtn}>Synoynms</button>
-                  </Link>
+                  </div>
                   <div className={styles.activity}>
                      <button className={styles.actBtn}>Antonyms</button>
                   </div>
