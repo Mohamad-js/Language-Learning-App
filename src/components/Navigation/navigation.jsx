@@ -14,7 +14,7 @@ function Navigation(){
 
 
    return(
-      <>
+      <div className={styles.container}>
       
          <div className={styles.navigation}>
             <Link href='/reading' className={styles.iconHolder}>
@@ -43,7 +43,7 @@ function Navigation(){
             </Link>
          </div>
          
-      </>
+      </div>
    )
 }
 
