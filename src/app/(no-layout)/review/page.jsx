@@ -1,4 +1,5 @@
 'use client'
+import ProgressBar from '@/components/ProgressBar/ProgressBar';
 import styles from './review.module.css'
 import { useState, useEffect } from 'react';
 
@@ -18,7 +19,9 @@ function Review(){
 
    return(
       <>
-         <div className={styles.container}>This is review page</div>
+         <div className={styles.container}>
+            <ProgressBar inputNumber={3}/>
+         </div>
       </>
    )
 }

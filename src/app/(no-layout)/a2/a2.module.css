@@ -109,6 +109,11 @@
             flex-direction: column;
             padding: 15px;
 
+            &:active {
+               background-color: black;
+               color: white;
+            }
+            
             
             & .lesson {
                font-size: 15px;
@@ -141,10 +146,6 @@
             color: green;
             font-weight: 700;
 
-            &:active {
-               background-color: black;
-               color: white;
-            }
          }
    
       }

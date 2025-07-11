@@ -13,30 +13,31 @@ export default function ProgressBar({inputNumber, circleRadius}) {
   }, [inputNumber]);
 
   // Circle properties
-  const radius = 45;
+  const radius = 90;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
     <div className={styles.container}>
-      <svg className={styles.progressRing} width='120' height='120'>
-        <circle
-          className={styles.progressRingBackground}
-          cx="60"
-          cy="60"
-          r={radius}
-          strokeWidth="10"
-        />
-        <circle
-          className={styles.progressRingFill}
-          cx="60"
-          cy="60"
-          r={radius}
-          strokeWidth="10"
-          strokeDasharray={circumference}
-          strokeDashoffset={strokeDashoffset}
-        />
-      </svg>
+      <div className={styles.momCircle}>
+         <svg className={styles.progressRing} width='200' height='200'>
+            <circle
+               className={styles.progressRingBackground}
+               cx="100"
+               cy="100"
+               r={radius}
+            />
+            <circle
+               className={styles.progressRingFill}
+               cx="100"
+               cy="100"
+               r={radius}
+               strokeDasharray={circumference}
+               strokeDashoffset={strokeDashoffset}
+            />
+         </svg>
+         <div className={styles.sonCircle}></div>
+      </div>
       <div className={styles.progressText}>{progress}%</div>
     </div>
   );

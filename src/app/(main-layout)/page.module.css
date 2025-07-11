@@ -2,6 +2,7 @@
    position: fixed;
    width: 100%;
    height: 100dvh;
+   background-color: #e0e0e0;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -9,166 +10,43 @@
    padding: 20px;
    
 
-   @media (width < 700px){
-      padding: 10px;
-   }
-
-
-   & .back {
-      width: 130%;
-      height: 100vh;
-      z-index: 0;
-      position: absolute;
-      top: 0;
-      
-   }
-
    & .pageHolder {
       z-index: 1;
       width: 100%;
       height: 100%;
       
       
-
-      & .progress {
-         position: relative;
-         width: 100%;
-         margin-bottom: 20px;
-         height: 280px;
-         border-radius: 10px;
-         background-color: rgba(255, 255, 255, 0.4);
-         overflow: hidden;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         flex-wrap: wrap;
-
-         @media (max-width: 390px) {
-            height: 260px;
-         }
-
-
-         & .mainTitle {
-            width: 100vw;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 17px;
-            font-weight: 600;
-
-            @media (max-width: 390px) {
-               font-size: 15px;
-            }
-         }
-
-
-         & .illHolder {
-            position: relative;
-            height: 150px;
-            width: 50%;
-            display: flex;
-
-
-            @media (max-width: 390px) {
-               width: 50%;
-            }
-
-
-            & .progPic {
-               width: 50%;
-               object-fit: cover;
-            }
-         }
-
-         & .aveProgress {
-            height: 150px;
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-
-
-            & .aveTitle {
-               font-size: 18px;
-            }
-         }
-
-         & .progBarHolder {
-            width: 100%;
-            display: flex;
-            height: 100px;
-            flex-direction: column;
-            align-items: center;
-
-            @media (max-width: 390px) {
-               height: 70px;
-            }
-
-
-            & .progBar {
-               width: 100%;
-               display: flex;
-               flex-wrap: wrap;
-               justify-content: space-evenly;
-               
-               
-               & .progHolder {
-                  width: 90px;
-                  height: 80px;
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-
-                  @media (max-width: 390px) {
-                     height: 50px;
-                     width: 50px;
-                  }
-
-
-                  & .progTitle {
-                     font: 13px arial;
-
-                     @media (max-width: 390px) {
-                        font-size: 10px;
-                     }
-                  }
-
-                  & .progNumber {
-                     font-size: 30px;
-
-                     @media (max-width: 390px) {
-                        font-size: 20px;
-                     }
-                  }
-               }
-            }
-         }
-
-
-      }
-
       & .activityHolder {
-         height: 50%;
+         height: 70%;
          width: 100%;
          display: flex;
          flex-direction: column;
-         gap: 10px;
+         align-items: center;
+         gap: 50px;
 
 
          & .activityTitle {
             width: 100%;
-            margin-bottom: 10px;
             text-align: center;
-            height: 19px;
             font-size: 16px;
             font-weight: 700;
 
             @media (max-width:  390px) and (max-height: 750px) {
                font-size: 15px;
                height: 14px;
+            }
+         }
+
+         & .aveProgress {
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+
+            & .aveTitle {
+               font-size: 18px;
             }
          }
 
@@ -186,29 +64,15 @@
 
             & .activity {
                position: relative;
-               width: 49%;
-               height: 100px;
-               border-radius: 10px;
+               width: 40%;
+               height: 50px;
+               border-radius: 20px;
                background-color: rgba(255, 255, 255, 0.4);
-               overflow: hidden;
                display: flex;
                justify-content: center;
                align-items: center;
-               box-shadow: 0px 0px 7px 0px rgb(85, 85, 85);
-
-               @media (max-width:  390px) and (max-height: 730px) {
-                  height: 80px;
-               }
-
-
-               & .actPic {
-                  object-fit: fill;
-                  width: 10%;
-
-                  @media (max-width:  390px) and (max-height: 750px) {
-                     object-fit: cover;
-                  }
-               }
+               background: linear-gradient(145deg, #f0f0f0, #cacaca);
+               box-shadow:  9px 9px 18px #acacac, -9px -9px 18px #ffffff;
 
 
                & .actBtn {
@@ -217,15 +81,12 @@
                   border-radius: 10px;
                   background-color: rgba(255, 255, 255, 0);
                   border: none;
+                  color: rgb(93, 0, 129);
                   font: 15px tahoma;
 
                   @media (max-width:  390px) and (max-height: 750px) {
                      font-size: 13px;
                   }
-               }
-
-               & .light {
-                  color: white;
                }
             }
          }
