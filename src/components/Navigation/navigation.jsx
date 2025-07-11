@@ -17,29 +17,29 @@ function Navigation(){
       <div className={styles.container}>
       
          <div className={styles.navigation}>
-            <Link href='/reading' className={styles.iconHolder}>
+            <Link href='/reading' className={`${styles.iconHolder}  ${pages === '/reading' && styles.choosen}`}>
                <IoBookOutline className={`${styles.navIcons} ${pages === '/reading' && styles.selected}`} />
-               <div className={`${styles.savesTitle} ${pages === '/reading' && styles.selected}`}>Read</div>
+               <div className={`${styles.savesTitle} ${pages === '/reading' && styles.selected2}`}>Read</div>
             </Link>
 
             <Link href='/speaking' className={styles.iconHolder}>
                <BiConversation className={`${styles.navIcons} ${pages === '/speaking' && styles.selected}`} />
-               <div className={`${styles.savesTitle} ${pages === '/speaking' && styles.selected}`}>Speak</div>
+               <div className={`${styles.savesTitle} ${pages === '/speaking' && styles.selected2}`}>Speak</div>
             </Link>
             
             <Link href='/' className={styles.iconHolder}>
                <GoHome  className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
-               <div className={`${styles.savesTitle} ${pages === '/' && styles.selected}`}>Home</div>
+               <div className={`${styles.savesTitle} ${pages === '/' && styles.selected2}`}>Home</div>
             </Link>
 
             <Link href='/writing' className={styles.iconHolder}>
                <IoReaderOutline  className={`${styles.navIcons} ${pages === '/writing' && styles.selected}`} />
-               <div className={`${styles.savesTitle} ${pages === '/writing' && styles.selected}`}>Write</div>
+               <div className={`${styles.savesTitle} ${pages === '/writing' && styles.selected2}`}>Write</div>
             </Link>
 
             <Link href='/listening' className={styles.iconHolder}>
                <FaAssistiveListeningSystems  className={`${styles.navIcons} ${pages === '/listening' && styles.selected}`} />
-               <div className={`${styles.savesTitle} ${pages === '/listening' && styles.selected}`}>Listen</div>
+               <div className={`${styles.savesTitle} ${pages === '/listening' && styles.selected2}`}>Listen</div>
             </Link>
          </div>
          
