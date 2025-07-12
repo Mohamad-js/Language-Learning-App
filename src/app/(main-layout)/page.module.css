@@ -43,7 +43,7 @@
       
       .activityHolder {
          height: 55%;
-         width: 100%;
+         width: 100vw;
          display: flex;
          flex-direction: column;
          justify-content: start;
@@ -52,14 +52,14 @@
 
 
          .pair {
-            width: 100%;
+            width: 90vw;
             height: 80px;
             display: flex;
             justify-content: space-between;
 
 
             .activity {
-               width: 40VW;
+               width: 40vw;
                height: 80px;
                border-radius: 20px;
                display: flex;
