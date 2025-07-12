@@ -56,40 +56,28 @@
             height: 80px;
             display: flex;
             justify-content: space-between;
-            border: 3px solid blue;
 
-            
-            .activityLink {
-               position: relative;
-               width: 45%;
+
+            .activity {
+               width: 40VW;
                height: 80px;
-               background-color: red;
+               border-radius: 20px;
                display: flex;
                justify-content: center;
                align-items: center;
-
-               .activity {
-                  width: 120px;
-                  height: 80px;
-                  border-radius: 20px;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  background-image: linear-gradient(145deg, #f0f0f0, #cacaca);
-                  box-shadow:  9px 9px 18px #acacac, -9px -9px 18px #ffffff;
+               background-image: linear-gradient(145deg, #f0f0f0, #cacaca);
+               box-shadow:  9px 9px 18px #acacac, -9px -9px 18px #ffffff;
+               
+               &:active {
+                  box-shadow:  1px 1px 18px #acacac, -1px -1px 18px #ffffff;
+               }
                   
-                  &:active {
-                     box-shadow:  1px 1px 18px #acacac, -1px -1px 18px #ffffff;
-                  }
-                   
-                  .actBtn {
-                     color: rgb(93, 0, 129);
-                     font-size: 20px;
-                     font-weight: 500;
-                  }
+               .actBtn {
+                  color: rgb(93, 0, 129);
+                  font-size: 20px;
+                  font-weight: 500;
                }
             }
-            
 
          }
 

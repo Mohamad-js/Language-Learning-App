@@ -46,12 +46,12 @@ const StudyPlan = () => {
 
             <div className={styles.activityHolder}>
                <div className={styles.pair}>
-                  <Link className={styles.activityLink} href='/words'>
+                  <Link href='/words'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Vocabulary</div>
                      </div>
                   </Link>
-                  <Link className={styles.activityLink} href='/grammar'>
+                  <Link href='/grammar'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Grammar</div>
                      </div>
@@ -59,12 +59,12 @@ const StudyPlan = () => {
                </div>
 
                <div className={styles.pair}>
-                  <Link className={styles.activityLink} href='/expressions'>
+                  <Link href='/expressions'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Expressions</div>
                      </div>
                   </Link>
-                  <Link className={styles.activityLink} href='/collocations'>
+                  <Link href='/collocations'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Collocations</div>
                      </div>
@@ -72,12 +72,12 @@ const StudyPlan = () => {
                </div>
 
                <div className={styles.pair}>
-                  <Link className={styles.activityLink} href='synoynms'>
+                  <Link href='synoynms'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Synoynms</div>
                      </div>
                   </Link>
-                  <Link className={styles.activityLink} href='antonyms'>
+                  <Link href='antonyms'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Antonyms</div>
                      </div>

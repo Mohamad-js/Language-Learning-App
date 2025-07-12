@@ -34,7 +34,7 @@
       top: 15px;
       right: 15px;
       font-size: 18px;
-      width: 100px;
+      width: 130px;
       height: fit-content;
       background-color: rgb(255, 255, 255);
       display: flex;
@@ -49,7 +49,7 @@
          padding: 10px;
          width: 100%;
          text-align: center;
-         font-size: 12px;
+         font-size: 15px;
    
          &:active {
             background-color: rgb(223, 216, 216);
