@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
+import ProgressBar from '@/components/ProgressBar/ProgressBar';
 
 
 export default function Lessons({ params }) {
@@ -17,6 +18,7 @@ export default function Lessons({ params }) {
    const [savedA1Vocabs, setSavedA1Vocabs] = useState([])
    const [confirmBox, setConfirmBox] = useState(false)
    const [cancelBox, setCancelBox] = useState(false)
+   const [progressA1, setProgressA1] = useState(null)
 
    const { slug } = params;
 
@@ -30,7 +32,9 @@ export default function Lessons({ params }) {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A1`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A1`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-A1`) || '[]');
-
+         const currentProgress = slug * 0.0136752137
+         
+         setProgressA1(currentProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
          setPartialWords(savedPartials);
@@ -38,25 +42,14 @@ export default function Lessons({ params }) {
          console.error('Error parsing localStorage data:', e);
       }
    }, [slug]); // Depend on slug to reload when lesson changes
-
-   // Save data to localStorage when state changes
-   // useEffect(() => {
-   //    try {
-   //       localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
-   //       localStorage.setItem(`partialWords-${slug}-A1`, JSON.stringify(partialWords));
-   //       localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
-
-   //    } catch (e) {
-   //       console.error('Error saving to localStorage:', e);
-   //    }
-   // }, [knownWords, partialWords, unknownWords, slug]);
    
    const saveProgress = () => {
       try {
          localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-A1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
-   
+         localStorage.setItem(`progress-A1`, JSON.stringify(progressA1));
+      
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }

@@ -15,6 +15,10 @@ export default function Lessons({ params }) {
    const [btn, setBtn] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
    const [savedA2Vocabs, setSavedA2Vocabs] = useState([])
+   const [confirmBox, setConfirmBox] = useState(false)
+   const [cancelBox, setCancelBox] = useState(false)
+   const [progressA2, setProgressA2] = useState(null)
+   
 
    const { slug } = params;
 
@@ -28,7 +32,9 @@ export default function Lessons({ params }) {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A2`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A2`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-A2`) || '[]');
-
+         const currentProgress = slug * 0.0136752137
+         
+         setProgressA2(currentProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
          setPartialWords(savedPartials);
@@ -54,6 +60,8 @@ export default function Lessons({ params }) {
          localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-A2`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
+         localStorage.setItem(`progress-A2`, JSON.stringify(progressA2));
+
    
       } catch (e) {
          console.error('Error saving to localStorage:', e);
@@ -16476,6 +16484,12 @@ export default function Lessons({ params }) {
             </div>
          </div>
       )}
+
+      {
+         confirmBox ? <div className={styles.confirm}>Saved Successfully</div>
+         :
+         cancelBox ? <div  className={styles.cancel}>Removed Successfully</div> : null
+      }
       </div>
    );
 }

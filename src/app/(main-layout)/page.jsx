@@ -8,13 +8,15 @@ import styles from './page.module.css'
 
 
 
+
+
 const StudyPlan = () => {
    const [aveProgress,setAveProgress] = useState(77)
    const [readProgress,setReadProgress] = useState(42)
    const [writeProgress,setWriteProgress] = useState(18)
    const [listenProgress,setListenProgress] = useState(29)
    const [speakProgress,setSpeakProgress] = useState(57)
-   const [isLoading, setIsLoading] = useState(true);
+   // const [isLoading, setIsLoading] = useState(true);
    // const [loadedImages, setLoadedImages] = useState(0);
    // const totalImages = 7;
 
@@ -34,6 +36,18 @@ const StudyPlan = () => {
    //       setIsLoading(false);
    //    }
    // }, [loadedImages]);
+
+   useEffect(() =>  {
+      const progressA1 = JSON.parse(localStorage.getItem('progress-A1') || 0);
+      const progressA2 = JSON.parse(localStorage.getItem('progress-A2') || 0);
+
+      console.log(progressA1, progressA2);
+      const currentProgress = progressA1 + progressA2
+      const visibleProgress = Number(currentProgress).toFixed(2)
+      setAveProgress(visibleProgress)
+
+   }, [])
+
 
    return (
       <div className={styles.bigMom}>
