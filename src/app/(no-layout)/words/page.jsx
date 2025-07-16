@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { IoIosArrowBack } from "react-icons/io";
 import styles from './words.module.css'
@@ -11,6 +12,20 @@ function Words(){
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
+
+   const router = useRouter()
+   useEffect(() => {
+      const handleDefaultBack = (event) => {
+         event.preventDefault()
+         router.push('/')
+      }
+
+      window.addEventListener('popstate', handleDefaultBack)
+      
+      return () => {
+         window.addEventListener('popstate', handleDefaultBack)
+      }
+   }, [router])
 
    const handleImageLoad = () => {
       setLoadedImages((prev) => {

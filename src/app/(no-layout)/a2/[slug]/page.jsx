@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
@@ -26,13 +27,27 @@ export default function Lessons({ params }) {
       setLessonNumber(Number(slug))
    }, [slug])
 
+   const router = useRouter()
+   useEffect(() => {
+      const handleDefaultBack = (event) => {
+         event.preventDefault()
+         router.replace('/a2')
+      }
+
+      window.addEventListener('popstate', handleDefaultBack)
+      
+      return () => {
+         window.addEventListener('popstate', handleDefaultBack)
+      }
+   }, [router])
+
 // Retrieve data from localStorage on mount
    useEffect(() => {
       try {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A2`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A2`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-A2`) || '[]');
-         const currentProgress = slug * 0.0136752137
+         const currentProgress = slug * 0.0403225806451613
          
          setProgressA2(currentProgress)
          setKnownWords(savedKnowns);
@@ -16298,11 +16313,24 @@ export default function Lessons({ params }) {
          setSavedA2Vocabs(savedA2Vocabs.filter((item) => {
             return !(item.word === ws.word.word && item.role === ws.word.role)
          }))
+
+         setCancelBox(true)
+
+         setTimeout(() => {
+            setCancelBox(false);
+         }, 3000);
+
       } else {
          setSavedA2Vocabs((prev) => [
             ...prev,
             foundWord[0]
          ])
+
+         setConfirmBox(true)
+
+         setTimeout(() => {
+            setConfirmBox(false);
+         }, 3000);
       }
    }
    

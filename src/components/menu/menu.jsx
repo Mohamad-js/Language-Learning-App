@@ -1,13 +1,16 @@
 'use client'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './menu.module.css'
 import { CiMenuFries } from "react-icons/ci";
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 
 function Menu(){
    const [menu,setMenu] = useState(false)
    const [warning,setWarning] = useState(false)
+
+   const router = useRouter()
 
    const resetWarning = () => {
       setMenu(!menu)
@@ -19,6 +22,7 @@ function Menu(){
    const resetAction = () => {
       setWarning(false)
       localStorage.clear()
+      router.push('/')
       location.reload()
    }
 
@@ -39,7 +43,7 @@ function Menu(){
             menu ?
             <div className={styles.menuLayer} onClick={closeMenu}>
                <div className={styles.menu}>
-                  <Link href='/' className={styles.item} onClick={showWarning}>Restart</Link>
+                  <div className={styles.item} onClick={showWarning}>Restart</div>
                   <div className={styles.item}>Saved</div>
                   <div className={styles.item}>Statistics</div>
                   <div className={styles.item}>My Errors</div>
@@ -49,7 +53,7 @@ function Menu(){
          } 
          {
             warning ?
-            <div className={styles.warningHolder}>
+            <div className={styles.warningHolder} onClick={cancelReset}>
                <div className={styles.warning}>
                   <div className={styles.titleHolder}>
                      <div className={styles.title}>All progress will be lost.</div>

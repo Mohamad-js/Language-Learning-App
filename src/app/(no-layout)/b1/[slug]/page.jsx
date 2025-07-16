@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
@@ -22,13 +23,29 @@ export default function Lessons({ params }) {
       setLessonNumber(Number(slug))
    }, [slug])
 
+   const router = useRouter()
+   useEffect(() => {
+      const handleDefaultBack = (event) => {
+         event.preventDefault()
+         router.replace('/b1')
+      }
+
+      window.addEventListener('popstate', handleDefaultBack)
+      
+      return () => {
+         window.addEventListener('popstate', handleDefaultBack)
+      }
+   }, [router])
+
 // Retrieve data from localStorage on mount
    useEffect(() => {
       try {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-B1`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-B1`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-B1`) || '[]');
-
+         const currentProgress = slug * 0.0555555555555556
+         
+         setProgressB1(currentProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
          setPartialWords(savedPartials);

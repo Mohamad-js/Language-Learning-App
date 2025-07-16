@@ -20,12 +20,26 @@ export default function Lessons({ params }) {
    const [cancelBox, setCancelBox] = useState(false)
    const [progressA1, setProgressA1] = useState(null)
 
-   const router = useRouter()
    const { slug } = params;
-
+   
    useEffect(() => {
       setLessonNumber(Number(slug))
    }, [slug])
+   
+   const router = useRouter()
+   useEffect(() => {
+      const handleDefaultBack = (event) => {
+         event.preventDefault()
+         router.replace('/a1')
+      }
+
+      window.addEventListener('popstate', handleDefaultBack)
+      
+      return () => {
+         window.addEventListener('popstate', handleDefaultBack)
+      }
+   }, [router])
+
 
 // Retrieve data from localStorage on mount
    useEffect(() => {
@@ -33,7 +47,7 @@ export default function Lessons({ params }) {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A1`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A1`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-A1`) || '[]');
-         const currentProgress = slug * 0.0136752137
+         const currentProgress = slug * 0.0427350427350427
          
          setProgressA1(currentProgress)
          setKnownWords(savedKnowns);
@@ -50,8 +64,6 @@ export default function Lessons({ params }) {
          localStorage.setItem(`partialWords-${slug}-A1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
          localStorage.setItem(`progress-A1`, JSON.stringify(progressA1));
-
-         router.replace('/words')
       
       } catch (e) {
          console.error('Error saving to localStorage:', e);
@@ -17313,14 +17325,20 @@ export default function Lessons({ params }) {
                                  className={styles.button}
                                  onClick={() => setStage('revision')}
                               >
-                                 Review Again
+                                 Review
                               </button>
                               {
                               lessonNumber < wholeLessons ?
-                                 <Link href={`/a1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
+                                 <Link href={`/a1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Lesson {lessonNumber + 1}</Link>
                                  :
                                  <Link href='/a2' className={styles.button} onClick={saveProgress}>Start A2</Link>  
                               }
+                              <Link className={styles.button}
+                                 href={`/a1/${lessonNumber + 1}`}
+                                 onClick={saveProgress}
+                              >
+                                 Save
+                              </Link>
                            </div>
 
                            : 

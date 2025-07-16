@@ -93,7 +93,7 @@ const Home = () => {
                   </Link>
                   <Link href='antonyms'>
                      <div className={styles.activity}>
-                        <div className={styles.actBtn}>Antonyms</div>
+                        <div className={styles.actBtn}>Word Family</div>
                      </div>
                   </Link>
                </div>
