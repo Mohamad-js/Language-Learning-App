@@ -24,11 +24,41 @@
   transition: stroke-dashoffset 0.3s ease; /* Smooth animation */
 }
 
-.progressText {
-  position: absolute;
-  font-size: 50px;
+.progressInfo {
+   position: absolute;
+   height: 83px;
+   z-index: 5;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.top {
+   width: 100%;
+   display: flex;
+   gap: 5px;
+   height: 90px;
+   overflow: hidden;
+}
+
+.progress {
+  font-size: 40px;
   color: rgb(112, 0, 177);
   z-index: 2;
+}
+
+.percent {
+   font-size: 40px;
+   color: rgb(145, 145, 145);
+   z-index: 2;
+}
+
+.progressText {
+   z-index: 2;
+   text-align: center;
+   width: 100%;
+   font-size: 17px;
+   color: rgb(131, 131, 131);
 }
 
 .sonCircle {

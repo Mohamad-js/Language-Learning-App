@@ -2,7 +2,10 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './menu.module.css'
-import { CiMenuFries } from "react-icons/ci";
+import { CiMenuFries, CiSaveDown1 } from "react-icons/ci";
+import { MdOutlineRestartAlt, MdInsertChartOutlined } from "react-icons/md";
+import { BiErrorCircle } from "react-icons/bi";
+import { IoIosOptions } from "react-icons/io";
 import Link from 'next/link';
 
 
@@ -43,11 +46,26 @@ function Menu(){
             menu ?
             <div className={styles.menuLayer} onClick={closeMenu}>
                <div className={styles.menu}>
-                  <div className={styles.item} onClick={showWarning}>Restart</div>
-                  <div className={styles.item}>Saved</div>
-                  <div className={styles.item}>Statistics</div>
-                  <div className={styles.item}>My Errors</div>
-                  <div className={styles.item}>About</div>
+                  <div className={styles.option}>
+                     <MdOutlineRestartAlt className={styles.icon} />
+                     <div className={styles.item} onClick={showWarning}>Restart</div>
+                  </div>
+                  <div className={styles.option}>
+                     <CiSaveDown1 className={styles.icon} />
+                     <div className={styles.item}>Saved</div>
+                  </div>
+                  <div className={styles.option}>
+                     <MdInsertChartOutlined className={styles.icon} />
+                     <div className={styles.item}>Statistics</div>
+                  </div>
+                  <div className={styles.option}>
+                     <BiErrorCircle className={styles.icon} />
+                     <div className={styles.item}>My Errors</div>
+                  </div>
+                  <div className={styles.option}>
+                     <IoIosOptions className={styles.icon} />
+                     <div className={styles.item}>Theme</div>
+                  </div>
                </div>
             </div> : null
          } 

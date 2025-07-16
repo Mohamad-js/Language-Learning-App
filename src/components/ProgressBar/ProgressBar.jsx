@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './ProgressBar.module.css';
 
-export default function ProgressBar({inputNumber, circleRadius}) {
+export default function ProgressBar({inputNumber, title}) {
   const [progress, setProgress] = useState(0);
 
   // Simulate progress increase (for demo purposes)
@@ -18,7 +18,7 @@ export default function ProgressBar({inputNumber, circleRadius}) {
   const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
-    <div className={styles.container}>
+   <div className={styles.container}>
       <div className={styles.momCircle}>
          <svg className={styles.progressRing} width='200' height='200'>
             <circle
@@ -38,7 +38,14 @@ export default function ProgressBar({inputNumber, circleRadius}) {
          </svg>
          <div className={styles.sonCircle}></div>
       </div>
-      <div className={styles.progressText}>{progress}%</div>
-    </div>
+      <div className={styles.progressInfo}>
+         <div className={styles.top}>
+            <div className={styles.progress}>{progress}</div>
+            <div className={styles.percent}>%</div>
+         </div>
+         <div className={styles.progressText}>{title}</div>
+      </div>
+
+   </div>
   );
 }

@@ -52,10 +52,10 @@ const Home = () => {
    return (
       <div className={styles.bigMom}>
          <div className={styles.pageHolder}>
-            <div className={styles.activityTitle}>Start From Here</div>
+            <div className={styles.activityTitle}>Home Page</div>
             <div className={styles.aveProgress}>
-               <ProgressBar inputNumber={aveProgress}/>
-               <div className={styles.aveTitle}>TOTAL COMPLETION</div>
+               <ProgressBar inputNumber={aveProgress} title='COMPLETED'/>
+               <div className={styles.aveTitle}>Start Learning</div>
             </div>
 
             <div className={styles.activityHolder}>
