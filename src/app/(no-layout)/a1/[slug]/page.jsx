@@ -1,9 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation'
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
-import ProgressBar from '@/components/ProgressBar/ProgressBar';
 
 
 export default function Lessons({ params }) {
@@ -20,6 +20,7 @@ export default function Lessons({ params }) {
    const [cancelBox, setCancelBox] = useState(false)
    const [progressA1, setProgressA1] = useState(null)
 
+   const router = useRouter()
    const { slug } = params;
 
    useEffect(() => {
@@ -49,6 +50,8 @@ export default function Lessons({ params }) {
          localStorage.setItem(`partialWords-${slug}-A1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
          localStorage.setItem(`progress-A1`, JSON.stringify(progressA1));
+
+         router.replace('/words')
       
       } catch (e) {
          console.error('Error saving to localStorage:', e);

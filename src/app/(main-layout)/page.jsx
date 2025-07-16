@@ -10,7 +10,7 @@ import styles from './page.module.css'
 
 
 
-const StudyPlan = () => {
+const Home = () => {
    const [aveProgress,setAveProgress] = useState(77)
    const [readProgress,setReadProgress] = useState(42)
    const [writeProgress,setWriteProgress] = useState(18)
@@ -113,4 +113,4 @@ const StudyPlan = () => {
    );
 };
 
-export default StudyPlan;
+export default Home;

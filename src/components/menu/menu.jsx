@@ -7,25 +7,39 @@ import Link from 'next/link';
 
 function Menu(){
    const [menu,setMenu] = useState(false)
+   const [warning,setWarning] = useState(false)
 
-   const toggleMenu = () => {
+   const resetWarning = () => {
+      setMenu(!menu)
+   }
+   const closeMenu = () => {
       setMenu(!menu)
    }
 
-   const resetToggle = () => {
+   const resetAction = () => {
+      setWarning(false)
       localStorage.clear()
+      location.reload()
+   }
+
+   const showWarning = () => {
+      setWarning(true)
+   }
+
+   const cancelReset = () => {
+      setWarning(false)
    }
 
    return(
       <>
          <div className={styles.holder}>
-            <CiMenuFries className={styles.hamIcon} onClick={toggleMenu}/>
+            <CiMenuFries className={styles.hamIcon} onClick={resetWarning}/>
          </div>
          {
             menu ?
-            <div className={styles.menuLayer} onClick={toggleMenu}>
+            <div className={styles.menuLayer} onClick={closeMenu}>
                <div className={styles.menu}>
-                  <Link href='/' className={styles.item} onClick={resetToggle}>Restart</Link>
+                  <Link href='/' className={styles.item} onClick={showWarning}>Restart</Link>
                   <div className={styles.item}>Saved</div>
                   <div className={styles.item}>Statistics</div>
                   <div className={styles.item}>My Errors</div>
@@ -33,6 +47,21 @@ function Menu(){
                </div>
             </div> : null
          } 
+         {
+            warning ?
+            <div className={styles.warningHolder}>
+               <div className={styles.warning}>
+                  <div className={styles.titleHolder}>
+                     <div className={styles.title}>All progress will be lost.</div>
+                     <div className={styles.title}>Are you sure to restart?</div>
+                  </div>
+                  <div className={styles.btnHolder}>
+                     <button className={styles.no} onClick={cancelReset}>No</button>
+                     <button className={styles.yes} onClick={resetAction}>Yes</button>
+                  </div>
+               </div>
+            </div> : null
+         }
       </>
    )
 }
