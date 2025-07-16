@@ -16434,14 +16434,20 @@ export default function Lessons({ params }) {
                                  className={styles.button}
                                  onClick={() => setStage('revision')}
                               >
-                                 Review Again
+                                 Review
                               </button>
                               {
                               lessonNumber < wholeLessons ?
-                                 <Link href={`/a2/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
+                                 <Link href={`/a2/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Lesson  {lessonNumber + 1}</Link>
                                  :
                                  <Link href='/b1' className={styles.button} onClick={saveProgress}>Start B1</Link>  
                               }
+                              <Link className={styles.button}
+                                 href='/a2'
+                                 onClick={saveProgress}
+                              >
+                                 Save
+                              </Link>
                            </div>
 
                            : 

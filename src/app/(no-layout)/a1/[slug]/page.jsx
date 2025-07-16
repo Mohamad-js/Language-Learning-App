@@ -17334,7 +17334,7 @@ export default function Lessons({ params }) {
                                  <Link href='/a2' className={styles.button} onClick={saveProgress}>Start A2</Link>  
                               }
                               <Link className={styles.button}
-                                 href={`/a1/${lessonNumber + 1}`}
+                                 href='/a1'
                                  onClick={saveProgress}
                               >
                                  Save

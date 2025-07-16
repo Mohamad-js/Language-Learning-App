@@ -11882,7 +11882,7 @@ export default function Lessons({ params }) {
                   <Link href='/b1' className={styles.back} onClick={saveProgress}>Done</Link>
                   {
                      lessonNumber < wholeLessons ?
-                     <Link href={`/b1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
+                     <Link href={`/b1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Lesson {lessonNumber + 1}</Link>
                      :
                      <Link href='/b2' className={styles.back} onClick={saveProgress}>Start B2</Link>
                   }
@@ -11929,10 +11929,16 @@ export default function Lessons({ params }) {
                               </button>
                               {
                               lessonNumber < wholeLessons ?
-                                 <Link href={`/b1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
+                                 <Link href={`/b1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Lesson {lessonNumber + 1}</Link>
                                  :
-                                 <Link href='/b2' className={styles.button} onClick={saveProgress}>Start B1</Link>  
+                                 <Link href='/b2' className={styles.button} onClick={saveProgress}>Start B2</Link>  
                               }
+                              <Link className={styles.button}
+                                 href='/b1'
+                                 onClick={saveProgress}
+                              >
+                                 Save
+                              </Link>
                            </div>
 
                            : 
