@@ -50,10 +50,10 @@ function Menu(){
                      <MdOutlineRestartAlt className={styles.icon} />
                      <div className={styles.item} onClick={showWarning}>Restart</div>
                   </div>
-                  <div className={styles.option}>
+                  <Link href='/review' className={styles.option}>
                      <CiSaveDown1 className={styles.icon} />
                      <div className={styles.item}>Saved</div>
-                  </div>
+                  </Link>
                   <div className={styles.option}>
                      <MdInsertChartOutlined className={styles.icon} />
                      <div className={styles.item}>Statistics</div>

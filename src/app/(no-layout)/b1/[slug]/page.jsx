@@ -27,7 +27,7 @@ export default function Lessons({ params }) {
    useEffect(() => {
       const handleDefaultBack = (event) => {
          event.preventDefault()
-         router.replace('/b1')
+         router.push('/b1')
       }
 
       window.addEventListener('popstate', handleDefaultBack)

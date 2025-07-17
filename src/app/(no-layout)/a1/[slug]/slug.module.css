@@ -231,10 +231,10 @@
       top: 50px;
       background-color: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(5px);
-      height: 0;
+      height: 90dvh;
       padding: 0 15px;
       border-radius: 10px;
-      width: 90%;
+      width: 0;
       color: white;
       transition: 1s;
       overflow: hidden;
@@ -419,7 +419,7 @@
    }
    
    .fadeIn {
-      height: 90dvh;
+      width: 90%;
       padding: 15px;
    }
 

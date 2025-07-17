@@ -4,6 +4,7 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { TiTick } from "react-icons/ti";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 
@@ -25,6 +26,21 @@ function B1() {
       }
       setSwitches(newSwitches);
    }, []);
+
+
+   const router = useRouter()
+   useEffect(() => {
+      const handleDefaultBack = (event) => {
+         event.preventDefault()
+         router.push('/words')
+      }
+
+      window.addEventListener('popstate', handleDefaultBack)
+      
+      return () => {
+         window.addEventListener('popstate', handleDefaultBack)
+      }
+   }, [router])
 
    const handleImageLoad = () => {
       setLoadedImages((prev) => {

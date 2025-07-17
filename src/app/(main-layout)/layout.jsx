@@ -1,5 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import { Providers } from "@/app/providers";
 import "./globals.css";
 import Navigation from "@/components/Navigation/navigation";
 import Menu from "@/components/menu/menu";
@@ -26,11 +27,13 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </head>
          <body>
-            <Menu />
-            {children}
-            <Navigation />
-            <SpeedInsights />
-            <Analytics />
+            <Providers>
+               <Menu />
+               {children}
+               <Navigation />
+               <SpeedInsights />
+               <Analytics />
+            </Providers>
          </body>
       </html>
   );

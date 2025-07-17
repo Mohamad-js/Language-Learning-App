@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useData } from '@/components/context/MyContext'
 import Image from 'next/image';
 import styles from './slug.module.css';
 import Link from 'next/link';
@@ -24,6 +25,7 @@ export default function Lessons({ params }) {
    const [fade, setFade] = useState(false)
    const [progressA1, setProgressA1] = useState(null)
 
+
    const { slug } = params;
    
    useEffect(() => {
@@ -34,7 +36,7 @@ export default function Lessons({ params }) {
    useEffect(() => {
       const handleDefaultBack = (event) => {
          event.preventDefault()
-         router.replace('/a1')
+         router.push('/a1')
       }
 
       window.addEventListener('popstate', handleDefaultBack)
@@ -68,7 +70,6 @@ export default function Lessons({ params }) {
          localStorage.setItem(`partialWords-${slug}-A1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
          localStorage.setItem(`progress-A1`, JSON.stringify(progressA1));
-      
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
@@ -17253,6 +17254,7 @@ export default function Lessons({ params }) {
          setFade(true);
       }, 1500);
    }
+
 
    return (
       <div className={styles.container}>
