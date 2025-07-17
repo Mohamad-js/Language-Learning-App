@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
@@ -18,6 +19,9 @@ export default function Lessons({ params }) {
    const [savedA1Vocabs, setSavedA1Vocabs] = useState([])
    const [confirmBox, setConfirmBox] = useState(false)
    const [cancelBox, setCancelBox] = useState(false)
+   const [close, setClose] = useState(false)
+   const [appear, setAppear] = useState(false)
+   const [fade, setFade] = useState(false)
    const [progressA1, setProgressA1] = useState(null)
 
    const { slug } = params;
@@ -96,7 +100,15 @@ export default function Lessons({ params }) {
       if (currentWordIndex + 1 < specificLessonWords.length) {
          setCurrentWordIndex(currentWordIndex + 1);
       } else {
-         setStage('learning');
+         setClose(true);
+
+         setTimeout(() => {
+            setStage('shiftMsg')
+         }, 1000);
+
+         setTimeout(() => {
+            setAppear(true)
+         }, 1500);
       }
    };
 
@@ -106,7 +118,7 @@ export default function Lessons({ params }) {
          setLearningWordIndex(learningWordIndex + 1);
       } else if(learningWordIndex + 1 == learningWords.length) {
          setBtn(true)
-      }
+      } 
    };
    
    const handleBackLearningWord = () => {
@@ -17230,16 +17242,32 @@ export default function Lessons({ params }) {
 
    const wholeLessons = data.wordList[data.wordList.length - 1].id
 
-   console.log(wholeLessons)
+   const startLearning = () => {
+      setAppear(false);
+
+      setTimeout(() => {
+         setStage('learning');
+      }, 1000);
+
+      setTimeout(() => {
+         setFade(true);
+      }, 1500);
+   }
 
    return (
       <div className={styles.container}>
+
+         <Image
+            src= '/images/back/vocabBack.jpg'
+            alt= 'background image'
+            fill
+         />
 
          <div className={styles.lessonTitle}>Lesson {lessonNumber}</div>
          <div className={styles.lessonLevel}>A1</div>
 
          {stage === 'assessment' && (
-            <div className={styles.assessCard}>
+            <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
                <div className={styles.titleHolder}>
                   <h2 className={styles.check}>Knowledge Check</h2>
                   <p className={styles.prompt}>checking how much control do you have over each word in this lesson.</p>
@@ -17270,9 +17298,20 @@ export default function Lessons({ params }) {
                </div>
          </div>
          )}
+
+         {
+            stage === 'shiftMsg' && (
+               <div className={`${styles.shiftCard} ${appear && styles.appear}`}>
+                  <div>Now let's learn the words you don't know</div>
+                  <button className={styles.start}
+                     onClick={startLearning}
+                  >Let's  Go</button>
+               </div>
+            )
+         }
    
          {stage === 'learning' && (
-         <div className={styles.learnCard}>
+         <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}>
             {(() => {
                const learningWords = [...partialWords, ...unknownWords];
                if (learningWords.length === 0) {

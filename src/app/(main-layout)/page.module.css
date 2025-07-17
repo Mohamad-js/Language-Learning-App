@@ -72,6 +72,10 @@
       display: flex;
       justify-content: space-between;
 
+         @media (max-height: 777px) {
+            height: 60px;
+         }
+
 
       .activity {
          width: 40vw;
@@ -86,6 +90,11 @@
          &:active {
             box-shadow:  1px 1px 18px #acacac, -1px -1px 18px #ffffff;
          }
+
+         @media (max-height: 777px) {
+            height: 60px;
+         }
+
             
          .actBtn {
             color: rgb(93, 0, 129);

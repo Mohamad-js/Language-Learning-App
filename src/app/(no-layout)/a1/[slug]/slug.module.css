@@ -43,12 +43,13 @@
       position: absolute;
       top: 0;
       height: 50px;
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 600;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
    }
 
    & .lessonLevel {
@@ -66,15 +67,17 @@
    & .assessCard {
       position: fixed;
       top: 50px;
-      background-color: rgba(98, 0, 163, 0.295);
+      background-color: rgba(0, 0, 0, 0.3);
       height: 90dvh;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 90%;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: 1s;
 
 
       & .titleHolder {
@@ -83,15 +86,16 @@
 
 
          & .check {
-            color: rgb(72, 0, 90);
+            color: white;
             text-align: center;
+            margin-bottom: 10px;
          }
-   
-               
+         
+         
          & .prompt {
             text-align: center;
+            color: rgb(221, 170, 255);
             margin-bottom: 1rem;
-            color: rgb(72, 0, 90);
             font-weight: 600;
          }
       }
@@ -126,7 +130,6 @@
          & .button {
             padding: 10px 30px;
             font-size: 15px;
-            font-weight: 800;
             border: none;
             border-radius: 0.25rem;
             color: rgb(0, 0, 0);
@@ -135,29 +138,29 @@
             
             
             &.buttonKnown {
-               background-color: #00ff5e;
+               background-color: #7fffae;
                border-radius: 10px;
                
                &:active {
-                  background-color: #00c448;
+                  background-color: #38ff81;
                }
             }
 
             &.buttonPartial {
-               background-color: #ffbf00;
+               background-color: #ffdb6f;
                border-radius: 10px;
                
                &:active {
-                  background-color: #c09000;
+                  background-color: #ffc721;
                }
             }
 
             &.buttonUnknown {
-               background-color: #ff0000;
+               background-color: #ff8080;
                border-radius: 10px;
                
                &:active {
-                  background-color: #b80000;
+                  background-color: #ff3030;
                }
             }
          }
@@ -178,15 +181,63 @@
       }
    }
 
+   .shiftMsg {
+      height: 0;
+      padding: 0 15px;
+      transition: 1s ease-in-out;
+   }
+
+   .shiftCard {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0;
+      border-radius: 20px;
+      width: 90%;
+      height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      overflow: hidden;
+      color: white;
+      transition: 0.75s;
+      
+      .start {
+         padding: 10px 30px;
+         border-radius: 10px;
+         font-weight: 600;
+         font-size: 17px;
+         border: none;
+
+         &:active {
+            background-color: rgb(199, 199, 199);
+         }
+      }
+   }
+   
+   .appear {
+      height: 150px;
+      padding: 20px;
+   }
+   
+   .appear {
+      height: 150px;
+      padding: 20px;
+   }
+   
    & .learnCard {
       position: fixed;
       top: 50px;
-      background-color: rgb(22, 0, 43);
-      height: 90dvh;
-      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+      height: 0;
+      padding: 0 15px;
       border-radius: 10px;
       width: 90%;
       color: white;
+      transition: 1s;
+      overflow: hidden;
 
       
       & .done {
@@ -248,7 +299,7 @@
             font-size: 15px;
             font-weight: 700;
          }
-
+         
          & .actions {
             width: 50px;
             height: 30px;
@@ -345,6 +396,7 @@
          & .definition {
             height: 50px;
             width: 100%;
+            font-size: 20px;
             display: flex;
             align-items: center;
          }
@@ -364,6 +416,11 @@
 
 
       }
+   }
+   
+   .fadeIn {
+      height: 90dvh;
+      padding: 15px;
    }
 
    & .revisionCard {
