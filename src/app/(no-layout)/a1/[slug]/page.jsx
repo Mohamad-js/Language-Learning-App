@@ -17302,10 +17302,10 @@ export default function Lessons({ params }) {
          {
             stage === 'shiftMsg' && (
                <div className={`${styles.shiftCard} ${appear && styles.appear}`}>
-                  <div>Now let's learn the words you don't know</div>
+                  <div>Time to Learn the New Words</div>
                   <button className={styles.start}
                      onClick={startLearning}
-                  >Let's  Go</button>
+                  >START</button>
                </div>
             )
          }
