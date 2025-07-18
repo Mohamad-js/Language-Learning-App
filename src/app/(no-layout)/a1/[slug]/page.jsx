@@ -89,13 +89,13 @@ export default function Lessons({ params }) {
    const handleAnswer = (status) => {
       const currentWord = specificLessonWords[currentWordIndex];
       if (status === 'known') {
-         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
 
       } else if (status === 'partial') {
-         setPartialWords([...partialWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+         setPartialWords([...partialWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
 
       } else {
-         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
       }
 
       if (currentWordIndex + 1 < specificLessonWords.length) {

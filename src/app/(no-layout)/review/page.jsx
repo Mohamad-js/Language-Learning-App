@@ -1,45 +1,57 @@
 'use client'
-import ProgressBar from '@/components/ProgressBar/ProgressBar';
 import styles from './review.module.css'
 import { useState, useEffect } from 'react';
-import { useData } from '@/components/context/MyContext';
-
+import Link from 'next/link';
 
 
 function Review(){
-   const {vocabData, setVocabData} = useData()
    
-   useEffect(() => {
-      const unknown = localStorage.getItem('unknownWords')
-      const partial = localStorage.getItem('partialWords')
-      const learningWords = unknown && partial ? [...partial, ...unknown] : []
-      localStorage.setItem('toReview', learningWords)
-
-   }, [])
-
-   useEffect(() => {
-      console.log("Updated vocabData:", vocabData); // Debug log
-
-      // Only proceed if vocabData.lessons exists
-      if (vocabData.lessons) {
-         const lessonKey = `lesson${slug}`; // Replace with your slug logic
-         const lesson = vocabData.lessons[lessonKey];
-         
-         if (lesson) {
-         const unknown = lesson.unknownWords || [];
-         const partial = lesson.partialWords || [];
-         const learningWords = [...partial, ...unknown];
-         localStorage.setItem('toReview', JSON.stringify(learningWords));
-         }
-      }
-   }, [vocabData]); // Re-run when vocabData changes
 
 
 
    return(
       <>
          <div className={styles.container}>
-            <ProgressBar inputNumber={3}/>
+            <div className={styles.sectionsHolder }>
+               <div className={styles.activityHolder}>
+               <div className={styles.title}>Review Menu</div>
+                  
+                  <Link href='/review/words'>
+                     <div className={styles.activity}>
+                        <div className={styles.actBtn}>Vocabulary</div>
+                     </div>
+                  </Link>
+                  
+                  <Link href='/review/grammar'>
+                     <div className={styles.activity}>
+                        <div className={styles.actBtn}>Grammar</div>
+                     </div>
+                  </Link>
+               
+                  <Link href='/review/expressions'>
+                     <div className={styles.activity}>
+                        <div className={styles.actBtn}>Expressions</div>
+                     </div>
+                  </Link>
+                  <Link href='/review/collocations'>
+                     <div className={styles.activity}>
+                        <div className={styles.actBtn}>Collocations</div>
+                     </div>
+                  </Link>
+               
+                  <Link href='/review/synoynms'>
+                     <div className={styles.activity}>
+                        <div className={styles.actBtn}>Synoynms</div>
+                     </div>
+                  </Link>
+
+                  <Link href='/review/antonyms'>
+                     <div className={styles.activity}>
+                        <div className={styles.actBtn}>Word Family</div>
+                     </div>
+                  </Link>
+               </div>
+            </div>
          </div>
       </>
    )

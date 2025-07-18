@@ -6,6 +6,7 @@ import { CiMenuFries, CiSaveDown1 } from "react-icons/ci";
 import { MdOutlineRestartAlt, MdInsertChartOutlined } from "react-icons/md";
 import { BiErrorCircle } from "react-icons/bi";
 import { IoIosOptions } from "react-icons/io";
+import { RiRepeat2Fill } from "react-icons/ri";
 import Link from 'next/link';
 
 
@@ -50,7 +51,7 @@ function Menu(){
                      <MdOutlineRestartAlt className={styles.icon} />
                      <div className={styles.item} onClick={showWarning}>Restart</div>
                   </div>
-                  <Link href='/review' className={styles.option}>
+                  <Link href='/saved' className={styles.option}>
                      <CiSaveDown1 className={styles.icon} />
                      <div className={styles.item}>Saved</div>
                   </Link>
@@ -66,6 +67,10 @@ function Menu(){
                      <IoIosOptions className={styles.icon} />
                      <div className={styles.item}>Theme</div>
                   </div>
+                  <Link href='/review' className={styles.option}>
+                     <RiRepeat2Fill className={styles.icon} />
+                     <div className={styles.item}>Review</div>
+                  </Link>
                </div>
             </div> : null
          } 

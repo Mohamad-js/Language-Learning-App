@@ -228,15 +228,16 @@
    
    & .learnCard {
       position: fixed;
-      top: 50px;
+      top: 200px;
+      opacity: 0;
       background-color: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(5px);
       height: 90dvh;
-      padding: 0 15px;
+      padding: 15px;
       border-radius: 10px;
-      width: 0;
+      width: 90%;
       color: white;
-      transition: 1s;
+      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
       overflow: hidden;
 
       
@@ -419,8 +420,8 @@
    }
    
    .fadeIn {
-      width: 90%;
-      padding: 15px;
+      top: 50px;
+      opacity: 1;
    }
 
    & .revisionCard {

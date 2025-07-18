@@ -57,18 +57,6 @@ export default function Lessons({ params }) {
          console.error('Error parsing localStorage data:', e);
       }
    }, [slug]); // Depend on slug to reload when lesson changes
-
-   // Save data to localStorage when state changes
-   // useEffect(() => {
-   //    try {
-   //       localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
-   //       localStorage.setItem(`partialWords-${slug}-A2`, JSON.stringify(partialWords));
-   //       localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
-
-   //    } catch (e) {
-   //       console.error('Error saving to localStorage:', e);
-   //    }
-   // }, [knownWords, partialWords, unknownWords, slug]);
    
    const saveProgress = () => {
       try {
@@ -97,13 +85,13 @@ export default function Lessons({ params }) {
    const handleAnswer = (status) => {
       const currentWord = specificLessonWords[currentWordIndex];
       if (status === 'known') {
-         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A2' }]);
 
       } else if (status === 'partial') {
-         setPartialWords([...partialWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+         setPartialWords([...partialWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A2' }]);
 
       } else {
-         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber }]);
+         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A2' }]);
       }
 
       if (currentWordIndex + 1 < specificLessonWords.length) {
