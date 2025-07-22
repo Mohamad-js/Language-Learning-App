@@ -49,6 +49,7 @@ function WordsReview() {
    const [selectedLevel, setSelectedLevel] = useState('all');
    const [currentWordIndex, setCurrentWordIndex] = useState(0);
    const [isFlipped, setIsFlipped] = useState(false);
+   const [expand,setExpand] = useState([])
 
    // Load data on component mount
    useEffect(() => {
@@ -80,41 +81,55 @@ function WordsReview() {
       console.log('Current word:', JSON.stringify(filteredWords[currentWordIndex], null, 2));
    }, [filteredWords, currentWordIndex]);
 
-   const handleFlip = () => {
-      setIsFlipped(!isFlipped);
+   const handleFlip = (index) => {
+      setExpand((prev) => {
+         const isOpen = prev.some((state) => state.index === index);
+         let result;
+         if (isOpen) {
+            // Remove the state from the list
+            result = prev.filter((state) => !(state.index === index));
+         } else {
+            // Add the state to the list
+            result = [...prev, { index }];
+         }
+         // Save the updated state to localStorage
+         return result
+      });
+
+      // setIsFlipped(!isFlipped);
    };
 
    const handleNext = () => {
       setCurrentWordIndex((prev) => 
-      prev + 1 < filteredWords.length ? prev + 1 : 0
+         prev + 1 < filteredWords.length ? prev + 1 : 0
       );
-      setIsFlipped(false);
+      // setIsFlipped(false);
    };
 
    const handlePrevious = () => {
       setCurrentWordIndex((prev) => 
-      prev - 1 >= 0 ? prev - 1 : filteredWords.length - 1
+         prev - 1 >= 0 ? prev - 1 : filteredWords.length - 1
       );
-      setIsFlipped(false);
+      // setIsFlipped(false);
    };
 
    const handleTypeChange = (e) => {
       setSelectedType(e.target.value);
       setCurrentWordIndex(0);
-      setIsFlipped(false);
+      // setIsFlipped(false);
    };
 
    const handleLevelChange = (e) => {
       setSelectedLevel(e.target.value);
       setSelectedLesson('all');
       setCurrentWordIndex(0);
-      setIsFlipped(false);
+      // setIsFlipped(false);
    };
 
    const handleLessonChange = (e) => {
       setSelectedLesson(e.target.value);
       setCurrentWordIndex(0);
-      setIsFlipped(false);
+      // setIsFlipped(false);
    };
 
    const currentWord = filteredWords[currentWordIndex];
@@ -136,7 +151,7 @@ function WordsReview() {
                value={selectedLevel}
                onChange={handleLevelChange}
                >
-               <option value="all">All Levels</option>
+               <option value="all">All</option>
                {levels.filter(level => 
                   wordData.some(item => item.level === level)
                ).map(level => (
@@ -152,7 +167,7 @@ function WordsReview() {
                value={selectedLesson}
                onChange={handleLessonChange}
                >
-               <option value="all">All Lessons</option>
+               <option value="all">All</option>
                {availableLessons.map(lesson => (
                   <option key={lesson} value={lesson}>{lesson}</option>
                ))}
@@ -166,39 +181,20 @@ function WordsReview() {
                value={selectedType}
                onChange={handleTypeChange}
                >
-               <option value="all">All Types</option>
+               <option value="all">All</option>
                <option value="knownWords">Known</option>
                <option value="partialWords">Partial</option>
                <option value="unknownWords">Unknown</option>
                </select>
             </div>
          </div>
-
+{/* 
          {filteredWords.length > 0 && currentWord ? (
             <div className={styles.flashcardContainer}>
-               <div className={`${styles.flashcard} ${isFlipped ? styles.flipped : ''}`}
-               onClick={handleFlip}
-               >
-                  <p className={styles.word}>{typeof currentWord.word === 'string' ? currentWord.word : 'No word'}</p>
-                  <div className={styles.phonetics}>
-                     <p>{currentWord.BrE}</p>
-                     <p>{currentWord.AmE}</p>
-                  </div>
-                  <h3>{typeof currentWord.definition === 'string' ? currentWord.definition : 'No definition'}</h3>
-                  {typeof currentWord.role === 'string' && currentWord.role && <p>Part of Speech: {currentWord.role}</p>}
-                  {Array.isArray(currentWord.examples) && currentWord.examples.length > 0 ? (
-                     <div>
-                     <p><strong>Examples:</strong></p>
-                     <ul>
-                        {currentWord.examples.map((example, index) => (
-                           <li key={index}>{typeof example === 'string' ? example : 'Invalid example'}</li>
-                        ))}
-                     </ul>
-                     </div>
-                  ) : (
-                     <p>No examples available</p>
-                  )}
+               <div className={}
                
+               >
+                 
             
                </div>
                <div className={styles.navigation}>
@@ -221,7 +217,42 @@ function WordsReview() {
             </div>
          ) : (
             <p>No words available for the selected filters or invalid data.</p>
-         )}
+         )} */}
+
+            <div className={styles.flashcardContainer}>
+               <div className={styles.scroller}></div>
+            {
+               filteredWords.length > 0 ?
+               filteredWords.map((item, index) => (
+                  <div className={`${styles.flashcard} ${expand.some((state) => state.index == index) ? styles.flipped : ''}`}
+                     key={index}
+                     onClick={() => handleFlip(index)}   
+                  >
+                     <p className={styles.word}>{item.word}</p>
+                     <p className={styles.role}>{item.role}</p>
+                     <div className={styles.phonetics}>
+                        <p>{item.BrE}</p>
+                        <p>{item.AmE}</p>
+                     </div>
+                     <h3 className={styles.definition}>{item.definition}</h3>
+                     {Array.isArray(item.examples) && item.examples.length > 0 ? (
+                        <div className={styles.exHolder}>
+                           <p><strong>Examples:</strong></p>
+                           <div className={styles.example}>
+                              {item.examples.map((example, index) => (
+                                 <p key={index}>{example}</p>
+                              ))}
+                           </div>
+                        </div>
+                     ) : (
+                        <p>No examples available</p>
+                     )}
+               
+                  </div>
+                  ))
+                  : null
+            }
+         </div>
       </div>
    );
 }
