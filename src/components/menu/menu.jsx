@@ -55,18 +55,18 @@ function Menu(){
                      <CiSaveDown1 className={styles.icon} />
                      <div className={styles.item}>Saved</div>
                   </Link>
-                  <div className={styles.option}>
+                  <Link href='/statistics' className={styles.option}>
                      <MdInsertChartOutlined className={styles.icon} />
                      <div className={styles.item}>Statistics</div>
-                  </div>
+                  </Link>
                   <div className={styles.option}>
                      <BiErrorCircle className={styles.icon} />
                      <div className={styles.item}>My Errors</div>
                   </div>
-                  <div className={styles.option}>
+                  <Link href='/themes' className={styles.option}>
                      <IoIosOptions className={styles.icon} />
                      <div className={styles.item}>Theme</div>
-                  </div>
+                  </Link>
                   <Link href='/review' className={styles.option}>
                      <RiRepeat2Fill className={styles.icon} />
                      <div className={styles.item}>Review</div>

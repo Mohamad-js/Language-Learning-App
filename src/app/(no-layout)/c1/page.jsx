@@ -2,6 +2,7 @@
 import styles from './c1.module.css'
 import { IoIosArrowBack } from "react-icons/io";
 import Link from 'next/link';
+import DevMode from '@/components/underDev/DevMode';
 
 
 
@@ -19,9 +20,11 @@ function C1(){
                <div className={styles.backText}>Back</div>
             </Link>
 
-            <div className={styles.learningHolder}>
+            <DevMode />
 
-            </div>
+            {/* <div className={styles.learningHolder}>
+
+            </div> */}
          </div>
       </>
    )

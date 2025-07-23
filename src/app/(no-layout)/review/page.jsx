@@ -39,13 +39,13 @@ function Review(){
                      </div>
                   </Link>
                
-                  <Link href='/review/synoynms'>
+                  <Link href='/review/synonyms'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Synoynms</div>
                      </div>
                   </Link>
 
-                  <Link href='/review/antonyms'>
+                  <Link href='/review/family'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Word Family</div>
                      </div>

@@ -86,12 +86,12 @@ const Home = () => {
                </div>
 
                <div className={styles.pair}>
-                  <Link href='synoynms'>
+                  <Link href='synonyms'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Synoynms</div>
                      </div>
                   </Link>
-                  <Link href='antonyms'>
+                  <Link href='family'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Word Family</div>
                      </div>
