@@ -1,43 +1,16 @@
 .container {
    height: 100vh;
-   background-color: #d19ff1;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    padding: 1rem;
    padding-bottom: 100px;
-
-
-   & .backHolder {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 50px;
-      width: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      z-index: 3;
-
-      &:active {
-         opacity: 0.5;
-      }
-      
-      & .backSign {
-         color: black;
-         font-size: 25px;
-      }
-      
-      
-      & .backText {
-         padding-top: 5px;
-         font-size: 15px;
-         color: black;
-      }
-   }
    
+   .img {
+      object-fit: cover;
+      /* rotate: 180deg; */
+   }
    
    & .lessonTitle {
       position: absolute;
@@ -67,11 +40,9 @@
    & .assessCard {
       position: fixed;
       top: 50px;
-      background-color: rgba(0, 0, 0, 0.3);
       height: 90dvh;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 90%;
       overflow: hidden;
       display: flex;
@@ -94,7 +65,7 @@
          
          & .prompt {
             text-align: center;
-            color: rgb(221, 170, 255);
+            color: rgb(255, 255, 255);
             margin-bottom: 1rem;
             font-weight: 600;
          }
@@ -113,6 +84,7 @@
 
          & .vocab {
             font-size: 50px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.397);
          }
 
          & .role {
@@ -135,33 +107,25 @@
             color: rgb(0, 0, 0);
             cursor: pointer;
             transition: background-color 0.2s;
-            
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+
+
+            &:active {
+               background-color: #00000085;
+            }
+               
             
             &.buttonKnown {
-               background-color: #7fffae;
-               border-radius: 10px;
-               
-               &:active {
-                  background-color: #38ff81;
-               }
+               color: rgb(0, 255, 0);
             }
 
             &.buttonPartial {
-               background-color: #ffdb6f;
-               border-radius: 10px;
-               
-               &:active {
-                  background-color: #ffc721;
-               }
+               color: rgb(255, 255, 0);
             }
 
             &.buttonUnknown {
-               background-color: #ff8080;
-               border-radius: 10px;
-               
-               &:active {
-                  background-color: #ff3030;
-               }
+               color: rgb(255, 0, 0);
             }
          }
       }
