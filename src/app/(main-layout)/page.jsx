@@ -11,7 +11,7 @@ import styles from './page.module.css'
 
 
 const Home = () => {
-   const [aveProgress,setAveProgress] = useState(77)
+   const [total, setTotal] = useState(77)
    const [readProgress,setReadProgress] = useState(42)
    const [writeProgress,setWriteProgress] = useState(18)
    const [listenProgress,setListenProgress] = useState(29)
@@ -38,13 +38,13 @@ const Home = () => {
    // }, [loadedImages]);
 
    useEffect(() =>  {
-      const progressA1 = JSON.parse(localStorage.getItem('progress-A1') || 0);
-      const progressA2 = JSON.parse(localStorage.getItem('progress-A2') || 0);
+      const totalA1 = JSON.parse(localStorage.getItem('total-A1') || 0);
+      const totalA2 = JSON.parse(localStorage.getItem('total-A2') || 0);
+      const totalB1 = JSON.parse(localStorage.getItem('total-B1') || 0);
 
-      console.log(progressA1, progressA2);
-      const currentProgress = progressA1 + progressA2
-      const visibleProgress = Number(currentProgress).toFixed(2)
-      setAveProgress(visibleProgress)
+      const currentTotal = totalA1 + totalA2 + totalB1
+      const visibleTotal = Number(currentTotal).toFixed(2)
+      setTotal(visibleTotal)
 
    }, [])
 
@@ -54,7 +54,7 @@ const Home = () => {
          <div className={styles.pageHolder}>
             <div className={styles.activityTitle}>Home Page</div>
             <div className={styles.aveProgress}>
-               <ProgressBar inputNumber={aveProgress} title='COMPLETED'/>
+               <ProgressBar inputNumber={total} title='COMPLETED'/>
                <div className={styles.aveTitle}>Start Learning</div>
             </div>
 

@@ -23,7 +23,9 @@ export default function Lessons({ params }) {
    const [close, setClose] = useState(false)
    const [appear, setAppear] = useState(false)
    const [fade, setFade] = useState(false)
-   const [progressA1, setProgressA1] = useState(null)
+   const [show, setShow] = useState(false)
+   const [totalA1, setTotalA1] = useState(null)
+   const [lessonsA1, setLessonsA1] = useState(null)
 
 
    const { slug } = params;
@@ -53,9 +55,11 @@ export default function Lessons({ params }) {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A1`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A1`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-A1`) || '[]');
-         const currentProgress = slug * 0.0427350427350427
+         const totalProgress = slug * 0.0427350427
+         const lessonsProgress = slug
          
-         setProgressA1(currentProgress)
+         setTotalA1(totalProgress)
+         setLessonsA1(lessonsProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
          setPartialWords(savedPartials);
@@ -69,7 +73,7 @@ export default function Lessons({ params }) {
          localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-A1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
-         localStorage.setItem(`progress-A1`, JSON.stringify(progressA1));
+         localStorage.setItem(`total-A1`, JSON.stringify(totalA1));
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
@@ -100,16 +104,27 @@ export default function Lessons({ params }) {
 
       if (currentWordIndex + 1 < specificLessonWords.length) {
          setCurrentWordIndex(currentWordIndex + 1);
-      } else {
-         setClose(true);
 
+      } else if (partialWords.length > 0 || unknownWords.length > 0) {
+         
+         setClose(true);
          setTimeout(() => {
             setStage('shiftMsg')
          }, 1000);
-
+         
          setTimeout(() => {
             setAppear(true)
          }, 1500);
+         
+      } else {
+         setClose(true);
+         setTimeout(() => {
+            setStage('excellent')
+         }, 1000);
+         
+         setTimeout(() => {
+            setShow(true)
+         }, 2000);
       }
    };
 
@@ -17311,25 +17326,28 @@ export default function Lessons({ params }) {
                </div>
             )
          }
+
+         {
+            stage === 'excellent' && (
+               <div className={`${styles.done} ${show && styles.show}`}>
+                  <div className={styles.doneTitle}>All done. Brilliant :)</div>
+                  <div className={styles.btnHolder}>
+                     <Link href='/a1' className={styles.back} onClick={saveProgress}>Done</Link>
+                     {
+                        lessonNumber < wholeLessons ?
+                        <Link href={`/a1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
+                        :
+                        <Link href='/a2' className={styles.back} onClick={saveProgress}>Start A2</Link>
+                     }
+                  </div>
+               </div>
+            )
+         }
    
          {stage === 'learning' && (
          <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}>
             {(() => {
                const learningWords = [...partialWords, ...unknownWords];
-               if (learningWords.length === 0) {
-                  return <div className={styles.done}>
-               <div className={styles.doneTitle}>All done. Brilliant :)</div>
-               <div className={styles.btnHolder}>
-                  <Link href='/a1' className={styles.back} onClick={saveProgress}>Done</Link>
-                  {
-                     lessonNumber < wholeLessons ?
-                     <Link href={`/a1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
-                     :
-                     <Link href='/a2' className={styles.back} onClick={saveProgress}>Start A2</Link>
-                  }
-               </div>
-            </div>
-               }
                const ws = learningWords[learningWordIndex];
                return (
                <>

@@ -188,36 +188,6 @@ function WordsReview() {
                </select>
             </div>
          </div>
-{/* 
-         {filteredWords.length > 0 && currentWord ? (
-            <div className={styles.flashcardContainer}>
-               <div className={}
-               
-               >
-                 
-            
-               </div>
-               <div className={styles.navigation}>
-                  <button 
-                     onClick={handlePrevious} 
-                     disabled={filteredWords.length <= 1}
-                     className={styles.navButton}
-                  >
-                     Previous
-                  </button>
-                  <span>{`${currentWordIndex + 1} / ${filteredWords.length}`}</span>
-                  <button 
-                     onClick={handleNext} 
-                     disabled={filteredWords.length <= 1}
-                     className={styles.navButton}
-                  >
-                     Next
-                  </button>
-               </div>
-            </div>
-         ) : (
-            <p>No words available for the selected filters or invalid data.</p>
-         )} */}
 
             <div className={styles.flashcardContainer}>
                <div className={styles.scroller}></div>

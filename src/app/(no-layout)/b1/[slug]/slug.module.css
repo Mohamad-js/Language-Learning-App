@@ -435,11 +435,11 @@
 
 
    & .done {
-      width: 100%;
-      height: 100%;
-      z-index: 10;
-      position: absolute;
-      top: 0;
+      width: 90%;
+      height: 90dvh;
+      position: fixed;
+      top: 100px;
+      opacity: 0;
       left: 0;
       background-color: #d19ff1;
       border: 5px solid #d19ff1;
@@ -448,6 +448,8 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
+      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
 
       & .doneTitle {
          font-size: 20px;
@@ -474,5 +476,10 @@
             }
          }
       }
+   }
+
+   .show {
+      top: 50px;
+      opacity: 1;
    }
 }

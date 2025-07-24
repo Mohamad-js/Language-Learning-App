@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
@@ -18,7 +20,12 @@ export default function Lessons({ params }) {
    const [savedA2Vocabs, setSavedA2Vocabs] = useState([])
    const [confirmBox, setConfirmBox] = useState(false)
    const [cancelBox, setCancelBox] = useState(false)
-   const [progressA2, setProgressA2] = useState(null)
+   const [close, setClose] = useState(false)
+   const [appear, setAppear] = useState(false)
+   const [fade, setFade] = useState(false)
+   const [show, setShow] = useState(false)
+   const [totalA2, setTotalA2] = useState(null)
+   const [lessonsA2, setLessonsA2] = useState(null)
    
 
    const { slug } = params;
@@ -47,9 +54,11 @@ export default function Lessons({ params }) {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A2`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A2`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-A2`) || '[]');
-         const currentProgress = slug * 0.0403225806451613
-         
-         setProgressA2(currentProgress)
+         const totalProgress = slug * 0.0403225806
+         const lessonsProgress = slug
+
+         setTotalA2(totalProgress)
+         setLessonsA2(lessonsProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
          setPartialWords(savedPartials);
@@ -63,7 +72,7 @@ export default function Lessons({ params }) {
          localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-A2`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
-         localStorage.setItem(`progress-A2`, JSON.stringify(progressA2));
+         localStorage.setItem(`total-A2`, JSON.stringify(totalA2));
 
    
       } catch (e) {
@@ -96,8 +105,26 @@ export default function Lessons({ params }) {
 
       if (currentWordIndex + 1 < specificLessonWords.length) {
          setCurrentWordIndex(currentWordIndex + 1);
+      } else if (partialWords.length > 0 || unknownWords.length > 0) {
+         
+         setClose(true);
+         setTimeout(() => {
+            setStage('shiftMsg')
+         }, 1000);
+         
+         setTimeout(() => {
+            setAppear(true)
+         }, 1500);
+         
       } else {
-         setStage('learning');
+         setClose(true);
+         setTimeout(() => {
+            setStage('excellent')
+         }, 1000);
+         
+         setTimeout(() => {
+            setShow(true)
+         }, 2000)
       }
    };
 
@@ -16328,15 +16355,32 @@ export default function Lessons({ params }) {
 
    const wholeLessons = data.wordList[data.wordList.length - 1].id
 
+   const startLearning = () => {
+      setAppear(false);
+
+      setTimeout(() => {
+         setStage('learning');
+      }, 1000);
+
+      setTimeout(() => {
+         setFade(true);
+      }, 1500);
+   }
 
    return (
       <div className={styles.container}>
+
+         <Image
+            src= '/images/back/vocabBack.jpg'
+            alt= 'background image'
+            fill
+         />
 
          <div className={styles.lessonTitle}>Lesson {lessonNumber}</div>
          <div className={styles.lessonLevel}>A2</div>
 
          {stage === 'assessment' && (
-            <div className={styles.assessCard}>
+            <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
                <div className={styles.titleHolder}>
                   <h2 className={styles.check}>Knowledge Check</h2>
                   <p className={styles.prompt}>checking how much control do you have over each word in this lesson.</p>
@@ -16367,25 +16411,39 @@ export default function Lessons({ params }) {
                </div>
          </div>
          )}
+
+         {
+            stage === 'shiftMsg' && (
+               <div className={`${styles.shiftCard} ${appear && styles.appear}`}>
+                  <div>Time to Learn the New Words</div>
+                  <button className={styles.start}
+                     onClick={startLearning}
+                  >START</button>
+               </div>
+            )
+         }-
+
+         {
+            stage === 'excellent' && (
+               <div className={`${styles.done} ${show && styles.show}`}>
+                  <div className={styles.doneTitle}>All done. Brilliant :)</div>
+                  <div className={styles.btnHolder}>
+                     <Link href='/a1' className={styles.back} onClick={saveProgress}>Done</Link>
+                     {
+                        lessonNumber < wholeLessons ?
+                        <Link href={`/a1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
+                        :
+                        <Link href='/a2' className={styles.back} onClick={saveProgress}>Start A2</Link>
+                     }
+                  </div>
+               </div>
+            )
+         }
    
          {stage === 'learning' && (
-         <div className={styles.learnCard}>
+         <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}>
             {(() => {
                const learningWords = [...partialWords, ...unknownWords];
-               if (learningWords.length === 0) {
-                  return <div className={styles.done}>
-               <div className={styles.doneTitle}>All done. Brilliant :)</div>
-               <div className={styles.btnHolder}>
-                  <Link href='/a2' className={styles.back} onClick={saveProgress}>Done</Link>
-                  {
-                     lessonNumber < wholeLessons ?
-                     <Link href={`/a2/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
-                     :
-                     <Link href='/b1' className={styles.back} onClick={saveProgress}>Start A2</Link>
-                  }
-               </div>
-            </div>
-               }
                const ws = learningWords[learningWordIndex];
                return (
                <>

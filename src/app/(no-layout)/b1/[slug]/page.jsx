@@ -16,6 +16,10 @@ export default function Lessons({ params }) {
    const [btn, setBtn] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
    const [savedB1Vocabs, setSavedB1Vocabs] = useState([])
+   const [confirmBox, setConfirmBox] = useState(false)
+   const [cancelBox, setCancelBox] = useState(false)
+   const [totalB1, setTotalB1] = useState(null)
+   const [lessonsB1, setLessonsB1] = useState(null)
 
    const { slug } = params;
 
@@ -43,9 +47,11 @@ export default function Lessons({ params }) {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-B1`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-B1`) || '[]');
          const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-B1`) || '[]');
-         const currentProgress = slug * 0.0555555555555556
+         const totalProgress = slug * 0.0555555556
+         const lessonsProgress = slug
          
-         setProgressB1(currentProgress)
+         setTotalB1(totalProgress)
+         setLessonsB1(lessonsProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
          setPartialWords(savedPartials);
@@ -59,6 +65,8 @@ export default function Lessons({ params }) {
          localStorage.setItem(`knownWords-${slug}-B1`, JSON.stringify(knownWords));
          localStorage.setItem(`partialWords-${slug}-B1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-B1`, JSON.stringify(unknownWords));
+         localStorage.setItem(`total-B1`, JSON.stringify(totalB1));
+
    
       } catch (e) {
          console.error('Error saving to localStorage:', e);
@@ -11805,11 +11813,24 @@ export default function Lessons({ params }) {
          setSavedB1Vocabs(savedB1Vocabs.filter((item) => {
             return !(item.word === ws.word.word && item.role === ws.word.role)
          }))
+
+          setCancelBox(true)
+
+         setTimeout(() => {
+            setCancelBox(false);
+         }, 3000);
+
       } else {
          setSavedB1Vocabs((prev) => [
             ...prev,
             foundWord[0]
          ])
+
+         setConfirmBox(true)
+
+         setTimeout(() => {
+            setConfirmBox(false);
+         }, 3000);
       }
    }
    
@@ -11913,7 +11934,7 @@ export default function Lessons({ params }) {
                                  className={styles.button}
                                  onClick={() => setStage('revision')}
                               >
-                                 Review Again
+                                 Review
                               </button>
                               {
                               lessonNumber < wholeLessons ?
@@ -11997,6 +12018,11 @@ export default function Lessons({ params }) {
             </div>
          </div>
       )}
+      {
+         confirmBox ? <div className={styles.confirm}>Saved Successfully</div>
+         :
+         cancelBox ? <div  className={styles.cancel}>Removed Successfully</div> : null
+      }
       </div>
    );
 }
