@@ -2,6 +2,8 @@
 import styles from './wordsReview.module.css'
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { IoIosArrowBack } from 'react-icons/io';
 
 
 const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -99,20 +101,6 @@ function WordsReview() {
       // setIsFlipped(!isFlipped);
    };
 
-   const handleNext = () => {
-      setCurrentWordIndex((prev) => 
-         prev + 1 < filteredWords.length ? prev + 1 : 0
-      );
-      // setIsFlipped(false);
-   };
-
-   const handlePrevious = () => {
-      setCurrentWordIndex((prev) => 
-         prev - 1 >= 0 ? prev - 1 : filteredWords.length - 1
-      );
-      // setIsFlipped(false);
-   };
-
    const handleTypeChange = (e) => {
       setSelectedType(e.target.value);
       setCurrentWordIndex(0);
@@ -132,7 +120,6 @@ function WordsReview() {
       // setIsFlipped(false);
    };
 
-   const currentWord = filteredWords[currentWordIndex];
 
    return (
       <div className={styles.container}>
@@ -140,7 +127,12 @@ function WordsReview() {
             src='/images/back/reviewBack.jpg'
             alt='background image'
             fill
-         />         
+         />
+
+         <Link href="/review" className={styles.backHolder}>
+            <IoIosArrowBack className={styles.backSign} />
+            <div className={styles.backText}>Back</div>
+         </Link>
 
          <div className={styles.filterHolder}>
             <div className={styles.typeHolder}>

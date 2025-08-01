@@ -59,11 +59,11 @@ function A1() {
     <>
       <div className={styles.container}>
         <Image
-          className={styles.background}
-          src="/images/illustrations/act1.jpg"
-          alt=""
-          fill
-          onLoad={handleImageLoad}
+            className={styles.background}
+            src="/images/illustrations/act1.jpg"
+            alt=""
+            fill
+            onLoad={handleImageLoad}
         />
 
         <Link href="/words" className={styles.backHolder}>
