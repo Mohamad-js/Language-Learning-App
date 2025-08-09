@@ -5,7 +5,6 @@ import Image from 'next/image';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
-import { VscDebugRestart } from "react-icons/vsc";
 
 
 
@@ -150,7 +149,7 @@ export default function Lessons({ params }) {
    };
 
    // Access the slug from the URL
-      const data = {
+   const data = {
       slug,
       wordList: [
          
@@ -17215,8 +17214,6 @@ export default function Lessons({ params }) {
          },
       ]
    }
-
-
 
    const saveHandle = (ws) => {
       const savedVocab = ws.word.word

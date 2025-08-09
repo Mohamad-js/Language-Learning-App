@@ -1,9 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
+
 
 
 export default function Lessons({ params }) {
@@ -11,22 +13,35 @@ export default function Lessons({ params }) {
    const [learningWordIndex, setLearningWordIndex] = useState(0);
    const [stage, setStage] = useState('assessment');
    const [knownWords, setKnownWords] = useState([]);
-   const [partialWords, setPartialWords] = useState([]);
    const [unknownWords, setUnknownWords] = useState([]);
    const [btn, setBtn] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
    const [savedB1Vocabs, setSavedB1Vocabs] = useState([])
    const [confirmBox, setConfirmBox] = useState(false)
    const [cancelBox, setCancelBox] = useState(false)
+   const [close, setClose] = useState(false)
+   const [appear, setAppear] = useState(false)
+   const [fade, setFade] = useState(false)
+   const [show, setShow] = useState(false)
    const [totalB1, setTotalB1] = useState(null)
    const [lessonsB1, setLessonsB1] = useState(null)
 
-   const { slug } = params;
+   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+   const [counter, setCounter] = useState(0);
+   const [isSwiping, setIsSwiping] = useState(false);
+   const [isSwiped, setIsSwiped] = useState(false);
+   const [startX, setStartX] = useState(0);
+   const [translateX, setTranslateX] = useState(0);
+   const [swipeDirection, setSwipeDirection] = useState(null);
+   const cardRef = useRef(null);
 
+
+   const { slug } = params;
+   
    useEffect(() => {
       setLessonNumber(Number(slug))
    }, [slug])
-
+   
    const router = useRouter()
    useEffect(() => {
       const handleDefaultBack = (event) => {
@@ -41,12 +56,12 @@ export default function Lessons({ params }) {
       }
    }, [router])
 
+
 // Retrieve data from localStorage on mount
    useEffect(() => {
       try {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-B1`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-B1`) || '[]');
-         const savedPartials = JSON.parse(localStorage.getItem(`partialWords-${slug}-B1`) || '[]');
          const totalProgress = slug * 0.0555555556
          const lessonsProgress = slug
          
@@ -54,7 +69,6 @@ export default function Lessons({ params }) {
          setLessonsB1(lessonsProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
-         setPartialWords(savedPartials);
       } catch (e) {
          console.error('Error parsing localStorage data:', e);
       }
@@ -63,15 +77,12 @@ export default function Lessons({ params }) {
    const saveProgress = () => {
       try {
          localStorage.setItem(`knownWords-${slug}-B1`, JSON.stringify(knownWords));
-         localStorage.setItem(`partialWords-${slug}-B1`, JSON.stringify(partialWords));
          localStorage.setItem(`unknownWords-${slug}-B1`, JSON.stringify(unknownWords));
          localStorage.setItem(`total-B1`, JSON.stringify(totalB1));
-
-   
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
-
+      
    }
 
    // Save data to localStorage when state changes
@@ -89,27 +100,43 @@ export default function Lessons({ params }) {
       if (status === 'known') {
          setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'B1' }]);
 
-      } else if (status === 'partial') {
-         setPartialWords([...partialWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'B1' }]);
-
-      } else {
+      } else if (status === 'unknown') {
          setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'B1' }]);
       }
-
+      
       if (currentWordIndex + 1 < specificLessonWords.length) {
          setCurrentWordIndex(currentWordIndex + 1);
+
+      } else if (unknownWords.length > 0) { // partialWords.length WAS DELETED
+         
+         setClose(true);
+         setTimeout(() => {
+            setStage('shiftMsg')
+         }, 1000);
+         
+         setTimeout(() => {
+            setAppear(true)
+         }, 1500);
+         
       } else {
-         setStage('learning');
+         setClose(true);
+         setTimeout(() => {
+            setStage('excellent')
+         }, 1000);
+         
+         setTimeout(() => {
+            setShow(true)
+         }, 2000);
       }
    };
 
    const handleNextLearningWord = () => {
-      const learningWords = [...partialWords, ...unknownWords];
+      const learningWords = [...unknownWords];
       if (learningWordIndex + 1 < learningWords.length) {
          setLearningWordIndex(learningWordIndex + 1);
       } else if(learningWordIndex + 1 == learningWords.length) {
          setBtn(true)
-      }
+      } 
    };
    
    const handleBackLearningWord = () => {
@@ -121,7 +148,7 @@ export default function Lessons({ params }) {
       }
    };
 
-   // Access the slug from the URL
+      // Access the slug from the URL
       const data = {
       slug,
       wordList: [
@@ -11796,8 +11823,6 @@ export default function Lessons({ params }) {
       ]
    }
 
-
-
    const saveHandle = (ws) => {
       const savedVocab = ws.word.word
       const savedVocabRole = ws.word.role
@@ -11814,7 +11839,7 @@ export default function Lessons({ params }) {
             return !(item.word === ws.word.word && item.role === ws.word.role)
          }))
 
-          setCancelBox(true)
+         setCancelBox(true)
 
          setTimeout(() => {
             setCancelBox(false);
@@ -11840,64 +11865,260 @@ export default function Lessons({ params }) {
 
    const wholeLessons = data.wordList[data.wordList.length - 1].id
 
+   const startLearning = () => {
+      setAppear(false);
+
+      setTimeout(() => {
+         setStage('learning');
+      }, 1000);
+
+      setTimeout(() => {
+         setFade(true);
+      }, 1500);
+   }
+
+   // logics for the assesment card
+   const handleTouchStart = (e) => {
+      if (isSwiped) return; // Prevent interaction during swipe animation
+      setStartX(e.touches[0].clientX);
+      setIsSwiping(true);
+   };
+
+   const handleTouchMove = (e) => {
+      if (!isSwiping || isSwiped) return;
+      const currentX = e.touches[0].clientX;
+      const diffX = currentX - startX;
+      setTranslateX(diffX);
+      setSwipeDirection(diffX > 0 ? 'right' : 'left');
+   };
+
+   const handleTouchEnd = () => {
+      if (!isSwiping || isSwiped) return;
+      setIsSwiping(false);
+
+      const threshold = 30; // pixels
+      if (translateX > threshold || translateX < -threshold) {
+         setIsSwiped(true);
+         const direction = translateX > threshold ? 'right' : 'left';
+         console.log(`Initiating swipe ${direction} for card: ${specificLessonWords[currentCardIndex].word}`);
+         handleSwipe(direction);
+      } else {
+         setTranslateX(0);
+         setSwipeDirection(null);
+      }
+   };
+
+   const handleSwipe = (direction) => {
+      setCounter(prev => prev + 10)
+      if(direction === 'right'){
+         setTranslateX(1000)
+         handleAnswer('known')
+      } else {
+         setTranslateX(-1000)
+         handleAnswer('unknown')
+      }
+
+      setTimeout(() => {
+         setTranslateX(0);
+         setSwipeDirection(null);
+         setIsSwiped(false);
+         setCurrentCardIndex((prev) => (prev + 1 < specificLessonWords.length ? prev + 1 : 0));
+      }, 400); // Match CSS transition duration
+   };
+
+   if (!specificLessonWords || specificLessonWords.length === 0) {
+      return <div className={styles.noCards}>No flashcards available</div>;
+   }
+
+   const visibleCards = [];
+   for (let i = 0; i < Math.min(3, specificLessonWords.length - currentCardIndex); i++) {
+      visibleCards.push(specificLessonWords[(currentCardIndex + i) % specificLessonWords.length]);
+   }
+
+   const startOver = () => {
+      location.reload()
+   }
 
    return (
       <div className={styles.container}>
+
+         <Image className={styles.img}
+            src= '/images/back/vocabBack.jpg'
+            alt= 'background image'
+            fill
+         />
 
          <div className={styles.lessonTitle}>Lesson {lessonNumber}</div>
          <div className={styles.lessonLevel}>B1</div>
 
          {stage === 'assessment' && (
-            <div className={styles.assessCard}>
-               <div className={styles.titleHolder}>
-                  <h2 className={styles.check}>Knowledge Check</h2>
-                  <p className={styles.prompt}>checking how much control do you have over each word in this lesson.</p>
-               </div>
-               <div className={styles.vocabHolder}>
-                  <p className={styles.vocab}>{specificLessonWords[currentWordIndex].word}</p>
-                  <p className={styles.role}>{specificLessonWords[currentWordIndex].role}</p>
-               </div>
-               <div className={styles.buttonGroup}>
-                  <button
-                     className={`${styles.button} ${styles.buttonKnown}`}
-                     onClick={() => handleAnswer('known')}
+         //    <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
+         //       <div className={styles.titleHolder}>
+         //          <h2 className={styles.check}>Knowledge Check</h2>
+         //          <p className={styles.prompt}>checking how much control do you have over each word in this lesson.</p>
+         //       </div>
+         //       <div className={styles.vocabHolder}>
+         //          <p className={styles.vocab}>{specificLessonWords[currentWordIndex].word}</p>
+         //          <p className={styles.role}>{specificLessonWords[currentWordIndex].role}</p>
+         //       </div>
+         //       <div className={styles.buttonGroup}>
+         //          <button
+         //             className={`${styles.button} ${styles.buttonKnown}`}
+         //             onClick={() => handleAnswer('known')}
+         //          >
+         //          I know it and use it a lot
+         //          </button>
+         //          <button
+         //             className={`${styles.button} ${styles.buttonPartial}`}
+         //             onClick={() => handleAnswer('partial')}
+         //          >
+         //          I know it but can’t use it
+         //          </button>
+         //          <button
+         //             className={`${styles.button} ${styles.buttonUnknown}`}
+         //             onClick={() => handleAnswer('unknown')}
+         //          >
+         //          I don’t know it 
+         //          </button>
+         //       </div>
+         // </div>
+
+         <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
+            <div className={styles.titleHolder}>
+               <h2 className={styles.check}>Knowledge Check</h2>
+               <p className={styles.prompt}>Swipe right if you know the word.</p>
+               <p className={styles.prompt}>Swipe left if you need to learn the word.</p>
+            </div>
+           <div className={styles.cardStack}>
+               {visibleCards.map((card, index) => (
+                  <div
+                     key={`${card.word}-${(currentCardIndex + index) % specificLessonWords.length}`}
+                     ref={index === 0 ? cardRef : null}
+                     className={`${styles.card} ${
+                     index === 0 && isSwiping ? styles.swiping : ''
+                     } ${index === 0 && swipeDirection && isSwiped ? styles[swipeDirection] : ''} ${
+                     styles[`card${index}`]
+                     }`}
+                     style={
+                     index === 0
+                        ? {
+                           transform: `translateX(${translateX}px)`,
+                           backgroundColor:
+                              isSwiping || isSwiped
+                                 ? swipeDirection === 'right'
+                                 ? 'green'
+                                 : swipeDirection === 'left'
+                                 ? 'red'
+                                 : 'white'
+                                 : 'white',
+                           }
+                        : {}
+                     }
+                     onTouchStart={index === 0 ? handleTouchStart : undefined}
+                     onTouchMove={index === 0 ? handleTouchMove : undefined}
+                     onTouchEnd={index === 0 ? handleTouchEnd : undefined}
                   >
-                  I know it and use it a lot
-                  </button>
-                  <button
-                     className={`${styles.button} ${styles.buttonPartial}`}
-                     onClick={() => handleAnswer('partial')}
-                  >
-                  I know it but can’t use it
-                  </button>
-                  <button
-                     className={`${styles.button} ${styles.buttonUnknown}`}
-                     onClick={() => handleAnswer('unknown')}
-                  >
-                  I don’t know it 
-                  </button>
-               </div>
-         </div>
-         )}
-   
-         {stage === 'learning' && (
-         <div className={styles.learnCard}>
-            {(() => {
-               const learningWords = [...partialWords, ...unknownWords];
-               if (learningWords.length === 0) {
-                  return <div className={styles.done}>
-               <div className={styles.doneTitle}>All done. Brilliant :)</div>
-               <div className={styles.btnHolder}>
-                  <Link href='/b1' className={styles.back} onClick={saveProgress}>Done</Link>
-                  {
-                     lessonNumber < wholeLessons ?
-                     <Link href={`/b1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Lesson {lessonNumber + 1}</Link>
-                     :
-                     <Link href='/b2' className={styles.back} onClick={saveProgress}>Start B2</Link>
-                  }
+                     <div className={styles.cardContent}>
+                        <h2
+                        style={
+                        index === 0
+                        ? {
+                           color:
+                              isSwiping || isSwiped
+                                 ? swipeDirection === 'right'
+                                 ? 'white'
+                                 : swipeDirection === 'left'
+                                 ? 'white'
+                                 : 'black'
+                                 : 'black',
+                           }
+                        : {}}
+                        >{card.word}</h2>
+
+                        <h3
+                        style={
+                        index === 0
+                        ? {
+                           color:
+                              isSwiping || isSwiped
+                                 ? swipeDirection === 'right'
+                                 ? 'white'
+                                 : swipeDirection === 'left'
+                                 ? 'white'
+                                 : 'black'
+                                 : 'black',
+                           }
+                        : {}}
+                        >{card.role}</h3>
+
+                        <p
+                        style={
+                        index === 0
+                        ? {
+                           color:
+                              isSwiping || isSwiped
+                                 ? swipeDirection === 'right'
+                                 ? 'white'
+                                 : swipeDirection === 'left'
+                                 ? 'white'
+                                 : 'rgb(156, 156, 156)'
+                                 : 'rgb(156, 156, 156)',
+                           }
+                        : {}}
+                        >{card.definition}</p>
+
+                     </div>
+                  </div>
+               ))}
+
+            </div>
+            <div className={styles.counterHolder}>
+               <div className={styles.number}>{counter} %</div>
+               <div className={styles.counterCourse}>
+                  <div className={styles.counter}
+                     style={{width: counter + '%'}}
+                  ></div>
                </div>
             </div>
-               }
+
+            <button className={styles.restart} onClick={startOver}>Start Again</button>
+
+         </div>
+            
+         )}
+
+         {
+            stage === 'shiftMsg' && (
+               <div className={`${styles.shiftCard} ${appear && styles.appear}`}>
+                  <div>Time to Learn the New Words</div>
+                  <button className={styles.start}
+                     onClick={startLearning}
+                  >START</button>
+               </div>
+            )
+         }
+
+         {
+            stage === 'excellent' && (
+               <div className={`${styles.done} ${show && styles.show}`}>
+                  <div className={styles.doneTitle}>All done. Brilliant :)</div>
+                  <div className={styles.btnHolder}>
+                     <Link href='/b1' className={styles.back} onClick={saveProgress}>Done</Link>
+                     {
+                        lessonNumber < wholeLessons ?
+                        <Link href={`/b1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
+                        :
+                        <Link href='/b2' className={styles.back} onClick={saveProgress}>Start B2</Link>
+                     }
+                  </div>
+               </div>
+            )
+         }
+   
+         {stage === 'learning' && (
+         <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}>
+            {(() => {
+               const learningWords = [...unknownWords]; // ...partialWords WAS DELETED
                const ws = learningWords[learningWordIndex];
                return (
                <>
@@ -11978,7 +12199,7 @@ export default function Lessons({ params }) {
          <div className={styles.revisionCard}>
             <p className={styles.title}>What you learnt in this lesson:</p>
             {(() => {
-               const revisionWords = [...partialWords, ...unknownWords];
+               const revisionWords = [...unknownWords];
                return revisionWords.map((ws, index) => (
                <div key={index} className={styles.wordBlock}>
                   <div className={styles.wordHolder}>
@@ -12018,6 +12239,7 @@ export default function Lessons({ params }) {
             </div>
          </div>
       )}
+
       {
          confirmBox ? <div className={styles.confirm}>Saved Successfully</div>
          :

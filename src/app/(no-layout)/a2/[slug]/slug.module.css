@@ -1,45 +1,17 @@
 .container {
    height: 100vh;
-   background-color: #d19ff1;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    padding: 1rem;
-   padding-bottom: 100px;
-
-
-   .backHolder {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 50px;
-      width: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      z-index: 3;
-
-      &:active {
-         opacity: 0.5;
-      }
-      
-      .backSign {
-         color: black;
-         font-size: 25px;
-      }
-      
-      
-      .backText {
-         padding-top: 5px;
-         font-size: 15px;
-         color: black;
-      }
+   
+   .img {
+      object-fit: cover;
+      /* rotate: 180deg; */
    }
    
-   
-   .lessonTitle {
+   & .lessonTitle {
       position: absolute;
       top: 0;
       height: 50px;
@@ -52,7 +24,7 @@
       color: white;
    }
 
-   .lessonLevel {
+   & .lessonLevel {
       position: absolute;
       top: 0;
       left: 8px;
@@ -64,14 +36,12 @@
       align-items: center;
    }
 
-   .assessCard {
+   /* & .assessCard {
       position: fixed;
       top: 50px;
-      background-color: rgba(0, 0, 0, 0.3);
       height: 90dvh;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 90%;
       overflow: hidden;
       display: flex;
@@ -80,28 +50,28 @@
       transition: 1s;
 
 
-      .titleHolder {
+      & .titleHolder {
          width: 100%;
          height: fit-content;
 
 
-         .check {
+         & .check {
             color: white;
             text-align: center;
             margin-bottom: 10px;
          }
          
          
-         .prompt {
+         & .prompt {
             text-align: center;
-            color: rgb(221, 170, 255);
+            color: rgb(255, 255, 255);
             margin-bottom: 1rem;
             font-weight: 600;
          }
       }
 
       
-      .vocabHolder {
+      & .vocabHolder {
          width: 100%;
          height: fit-content;
          display: flex;
@@ -111,23 +81,24 @@
          margin-bottom: 20px;
 
 
-         .vocab {
+         & .vocab {
             font-size: 50px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.397);
          }
 
-         .role {
+         & .role {
             font-size: 15px;
          }
       }
 
-      .buttonGroup {
+      & .buttonGroup {
          display: flex;
          flex-direction: column;
          gap: 0.5rem;
          color: white;
 
 
-         .button {
+         & .button {
             padding: 10px 30px;
             font-size: 15px;
             border: none;
@@ -135,41 +106,33 @@
             color: rgb(0, 0, 0);
             cursor: pointer;
             transition: background-color 0.2s;
-            
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+
+
+            &:active {
+               background-color: #00000085;
+            }
+               
             
             &.buttonKnown {
-               background-color: #7fffae;
-               border-radius: 10px;
-               
-               &:active {
-                  background-color: #38ff81;
-               }
+               color: rgb(0, 255, 0);
             }
 
             &.buttonPartial {
-               background-color: #ffdb6f;
-               border-radius: 10px;
-               
-               &:active {
-                  background-color: #ffc721;
-               }
+               color: rgb(255, 255, 0);
             }
 
             &.buttonUnknown {
-               background-color: #ff8080;
-               border-radius: 10px;
-               
-               &:active {
-                  background-color: #ff3030;
-               }
+               color: rgb(255, 0, 0);
             }
          }
       }
 
-      .wordBlock {
+      & .wordBlock {
          margin-bottom: 50px;
 
-         .wordTitle {
+         & .wordTitle {
             font-size: 50px;
             font-weight: 500;
          }
@@ -179,17 +142,16 @@
             padding-left: 1.25rem;
          }
       }
-   }
+   } */
 
    .shiftMsg {
-      height: 0;
-      padding: 0 15px;
-      transition: 1s ease-in-out;
+      opacity: 0;
+      transition: 0.5s;
    }
 
    .shiftCard {
       position: absolute;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.171);
       padding: 0;
       border-radius: 20px;
       width: 90%;
@@ -200,7 +162,6 @@
       align-items: center;
       gap: 15px;
       overflow: hidden;
-      color: white;
       transition: 0.75s;
       
       .start {
@@ -209,15 +170,18 @@
          font-weight: 600;
          font-size: 17px;
          border: none;
-
+         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.411);
+         
          &:active {
-            background-color: rgb(199, 199, 199);
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.171);
          }
       }
    }
    
    .appear {
       height: 150px;
+      border: 1px solid rgba(255, 255, 255, 0.418);
+
       padding: 20px;
    }
    
@@ -226,13 +190,14 @@
       padding: 20px;
    }
    
-   .learnCard {
+   & .learnCard {
       position: fixed;
       top: 200px;
       opacity: 0;
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(5px);
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
       height: 90dvh;
+      border: 1px solid rgba(255, 255, 255, 0.404);
       padding: 15px;
       border-radius: 10px;
       width: 90%;
@@ -242,7 +207,7 @@
 
 
 
-      .actionsHolder {
+      & .actionsHolder {
          position: absolute;
          top: 10px;
          left: 0;
@@ -254,12 +219,12 @@
          align-items: start;
 
 
-         .title {
+         & .title {
             font-size: 15px;
             font-weight: 700;
          }
          
-         .actions {
+         & .actions {
             width: 50px;
             height: 30px;
             display: flex;
@@ -268,7 +233,7 @@
             
             
             
-            .save {
+            & .save {
                display: flex;
                justify-content: center;
                align-items: center;
@@ -278,7 +243,7 @@
       }
 
 
-      .wordBlock {
+      & .wordBlock {
          margin-bottom: 50px;
          height: 80%;
          display: flex;
@@ -287,9 +252,10 @@
          align-content: start;
          align-items: start;
          gap: 30px;
+         color: black;
 
 
-         .wordHolder {
+         & .wordHolder {
             width: 100%;
             display: flex;
             height: fit-content;
@@ -297,31 +263,31 @@
             align-items: start;
 
             
-            .wordTitle {
+            & .wordTitle {
                font-size: 50px;
                height: 70px;
-               color: #d19ff1;
+               color: #a200ff;
 
             }
 
-            .infoHolder {
+            & .infoHolder {
                width: 100%;
                display: flex;
                gap: 10px;
 
                
-               .phonetics {
+               & .phonetics {
                   font-size: 15px;
                }
                
-               .role {
+               & .role {
                   font-size: 15px;
                }
             }
             
          }
          
-         .btnHolder {
+         & .btnHolder {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -333,26 +299,24 @@
             gap: 10px;
 
 
-            .button {
+            & .button {
                padding: 5px 25px;
                font-size: 13px;
                font-weight: 700;
-               border: 1px solid white;
                border-radius: 10px;
-               color: white;
-               background-color: rgba(240, 248, 255, 0);
+               color: rgb(0, 0, 0);
+               background-color: rgb(255, 255, 255);
                cursor: pointer;
                bottom: 0;
                transition: background-color 0.2s;
 
                &:active {
                   background-color: white;
-                  color: black;
                }
             }
          }
          
-         .definition {
+         & .definition {
             height: 50px;
             width: 100%;
             font-size: 20px;
@@ -360,7 +324,7 @@
             align-items: center;
          }
          
-         .examplesHolder {
+         & .examplesHolder {
             width: 100%;
             height: fit-content;
             
@@ -388,7 +352,6 @@
       padding: 30px;
       border-radius: 20px;
       position: relative;
-      top: 100px;
       opacity: 0;
       background-color: #d19ff1;
       border: 5px solid #d19ff1;
@@ -399,12 +362,12 @@
       gap: 20px;
       transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-      .doneTitle {
+      & .doneTitle {
          font-size: 20px;
          color: rgb(63, 0, 82);
       }
 
-      .btnHolder {
+      & .btnHolder {
          width: 100%;
          height: fit-content;
          display: flex;
@@ -413,7 +376,7 @@
          gap: 10px;
 
    
-         .back {
+         & .back {
             padding: 5px 20px;
             border-radius: 10px;
             background-color: #b53dff;
@@ -431,7 +394,7 @@
       opacity: 1;
    }
 
-   .revisionCard {
+   & .revisionCard {
       position: fixed;
       top: 50px;
       background-color: rgb(22, 0, 43);
@@ -446,13 +409,13 @@
       overflow-y: auto;
 
 
-      .title {
+      & .title {
          font-size: 18px;
          margin-bottom: 10px;
       }
 
 
-      .wordBlock {
+      & .wordBlock {
          margin-bottom: 50px;
          padding: 10px;
          border-radius: 10px;
@@ -464,7 +427,7 @@
          border: 1px solid white;
 
 
-         .wordHolder {
+         & .wordHolder {
             width: 100%;
             display: flex;
             height: fit-content;
@@ -472,29 +435,29 @@
             align-items: start;
 
             
-            .wordTitle {
+            & .wordTitle {
                font-size: 50px;
                height: 70px;
             }
 
-            .infoHolder {
+            & .infoHolder {
                width: 100%;
                display: flex;
                gap: 20px;
 
                
-               .phonetics {
+               & .phonetics {
                   font-size: 20px;
                }
                
-               .role {
+               & .role {
                   font-size: 20px;
                }
             }
             
          }
 
-         .definition {
+         & .definition {
             height: 50px;
             width: 100%;
             display: flex;
@@ -502,7 +465,7 @@
             margin: 20px 0;
          }
          
-         .examplesHolder {
+         & .examplesHolder {
             width: 100%;
             height: fit-content;
             
@@ -515,7 +478,7 @@
       }
    }
 
-   .btnHolder {
+   & .btnHolder {
       width: 100%;
       height: fit-content;
       display: flex;
@@ -523,7 +486,7 @@
       gap: 10px;
 
 
-      .button {
+      & .button {
          padding: 5px 30px;
          font-size: 13px;
          font-weight: 700;
@@ -541,7 +504,7 @@
       }
    }
 
-   .confirm {
+   & .confirm {
       position: absolute;
       top: 60px;
       padding: 5px 10px;
@@ -557,7 +520,7 @@
       backdrop-filter: blur(5px);
    }
    
-   .cancel {
+   & .cancel {
       position: absolute;
       top: 60px;
       padding: 5px 10px;
@@ -572,4 +535,165 @@
       z-index: 5;
       backdrop-filter: blur(5px);
    }
+}
+
+/* components/Flashcard.module.css */
+.assessCard {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   width: 100%;
+   height: 100dvh;
+   padding: 20px;
+   touch-action: pan-y;
+   user-select: none;
+   z-index: 5;
+
+
+   .titleHolder {
+      width: 100%;
+      height: fit-content;
+
+
+      & .check {
+         color: black;
+         text-align: center;
+         margin-bottom: 10px;
+      }
+      
+      
+      & .prompt {
+         text-align: center;
+         color: black;
+         font-weight: 600;
+      }
+   }
+
+   .counterHolder {
+      height: 20px;
+      width: 100%;
+      
+      .number {
+         color: white;
+         font-size: 20px;
+         font-weight: 700;
+      }
+
+
+      .counterCourse {
+         height: 20px;
+         width: 100%;
+         background-color: rgba(255, 255, 255, 0.363);
+         border-radius: 10px;
+         display: flex;
+         align-items: center;
+         justify-content: start;
+   
+         .counter {
+            background-color: rgb(255, 255, 255);
+            height: 100%;
+            border-radius: 10px;
+            transition: 1s;
+         }
+      }
+   }
+
+
+   .restart {
+      width: 100%;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0);
+      border: 2px solid  white;
+      border-radius: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   
+
+      &:active {
+         background-color: white;
+         color: black;
+      }
+   }
+}
+
+.cardStack {
+   position: relative;
+   height: 30dvh;
+   width: 100%;
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.card {
+   position: absolute;
+   border-radius: 50px;
+   width: 100%;
+   height: 100%;
+   background-color: white;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: transform 0.4s ease-out, background-color 0.4s ease-out;
+   will-change: transform, background-color;
+   touch-action: none;
+}
+
+.card.swiping {
+   transition: none;
+}
+
+.card.right {
+   transform: translateX(1000px);
+}
+
+.card.left {
+   transform: translateX(-1000px);
+}
+
+.card0 {
+   z-index: 3;
+}
+
+.card1 {
+   z-index: 2;
+   transform: translateY(10px) scale(0.95);
+}
+
+.card2 {
+   z-index: 1;
+   transform: translateY(20px) scale(0.90);
+}
+
+.cardContent {
+   text-align: center;
+   padding: 20px;
+   display: flex;
+   height: 100%;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-direction: column;
+}
+
+.cardContent h2 {
+   font-size: 2.5rem;
+   color: #333;
+}
+
+.cardContent p {
+   font-size: 1.2rem;
+   color: #666;
+}
+
+.noCards {
+   font-size: 1.2rem;
+   color: #666;
+   text-align: center;
 }
