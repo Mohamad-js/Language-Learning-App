@@ -17344,36 +17344,6 @@ export default function Lessons({ params }) {
          <div className={styles.lessonLevel}>A1</div>
 
          {stage === 'assessment' && (
-         //    <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
-         //       <div className={styles.titleHolder}>
-         //          <h2 className={styles.check}>Knowledge Check</h2>
-         //          <p className={styles.prompt}>checking how much control do you have over each word in this lesson.</p>
-         //       </div>
-         //       <div className={styles.vocabHolder}>
-         //          <p className={styles.vocab}>{specificLessonWords[currentWordIndex].word}</p>
-         //          <p className={styles.role}>{specificLessonWords[currentWordIndex].role}</p>
-         //       </div>
-         //       <div className={styles.buttonGroup}>
-         //          <button
-         //             className={`${styles.button} ${styles.buttonKnown}`}
-         //             onClick={() => handleAnswer('known')}
-         //          >
-         //          I know it and use it a lot
-         //          </button>
-         //          <button
-         //             className={`${styles.button} ${styles.buttonPartial}`}
-         //             onClick={() => handleAnswer('partial')}
-         //          >
-         //          I know it but can’t use it
-         //          </button>
-         //          <button
-         //             className={`${styles.button} ${styles.buttonUnknown}`}
-         //             onClick={() => handleAnswer('unknown')}
-         //          >
-         //          I don’t know it 
-         //          </button>
-         //       </div>
-         // </div>
 
          <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
             <div className={styles.titleHolder}>

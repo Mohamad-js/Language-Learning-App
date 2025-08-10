@@ -1,0 +1,73 @@
+.container {
+   perspective: 1000px;
+   width: 100%;
+   height: 300px;
+   cursor: pointer;
+   margin: 20px;
+   outline: none;
+   -webkit-tap-highlight-color: transparent;
+   user-select: none;
+
+
+   .card {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      transition: transform 1s ease-in-out;
+      transform-style: preserve-3d;
+
+
+      .front,
+      .back {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         backface-visibility: hidden;
+         display: flex;
+         align-items: center;
+         justify-content: space-evenly;
+         flex-direction: column;
+         border-radius: 12px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         padding: 20px;
+         text-align: center;
+         background: rgba(255, 255, 255, 0.1); /* Adjust transparency as needed */
+         backdrop-filter: blur(10px); /* Blur strength */
+         border: 1px solid rgba(255, 255, 255, 0.2); /* Optional border for glass effect */
+
+         .word {
+            font-size: 40px;
+            color: white;
+         }
+
+         .role {
+            font-size: 20px;
+         }
+
+         .phoneticsHolder {
+            display: flex;
+            gap: 20px;
+
+            .phonetics {
+               font-size: 20px;
+            }
+         }
+
+         .definition {
+            font-size: 20px;
+         }
+
+      }
+
+      .back {
+         transform: rotateY(180deg);
+      }
+   }
+
+   .flipped {
+      transform: rotateY(180deg);
+   }
+}
+
+
+

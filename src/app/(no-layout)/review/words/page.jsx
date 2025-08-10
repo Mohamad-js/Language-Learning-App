@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoIosArrowBack } from 'react-icons/io';
+import FlipCard from '@/components/flashcard/FlipCard';
 
 
 const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -186,31 +187,15 @@ function WordsReview() {
             {
                filteredWords.length > 0 ?
                filteredWords.map((item, index) => (
-                  <div className={`${styles.flashcard} ${expand.some((state) => state.index == index) ? styles.flipped : ''}`}
-                     key={index}
-                     onClick={() => handleFlip(index)}   
-                  >
-                     <p className={styles.word}>{item.word}</p>
-                     <p className={styles.role}>{item.role}</p>
-                     <div className={styles.phonetics}>
-                        <p>{item.BrE}</p>
-                        <p>{item.AmE}</p>
-                     </div>
-                     <h3 className={styles.definition}>{item.definition}</h3>
-                     {Array.isArray(item.examples) && item.examples.length > 0 ? (
-                        <div className={styles.exHolder}>
-                           <p><strong>Examples:</strong></p>
-                           <div className={styles.example}>
-                              {item.examples.map((example, index) => (
-                                 <p key={index}>{example}</p>
-                              ))}
-                           </div>
-                        </div>
-                     ) : (
-                        <p>No examples available</p>
-                     )}
-               
-                  </div>
+                     <FlipCard
+                        key={index}
+                        word={item.word}
+                        role={item.role}
+                        british={item.BrE}
+                        american={item.AmE}
+                        definition={item.definition}
+                        examples={item.examples}
+                     />
                   ))
                   : null
             }
