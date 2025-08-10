@@ -8,7 +8,7 @@ import FlipCard from '@/components/flashcard/FlipCard';
 
 
 const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-const wordTypes = ['knownWords', 'partialWords', 'unknownWords'];
+const wordTypes = ['knownWords', 'unknownWords'];
 const maxLessons = 240; // Maximum number of lessons for any level
 
 // Function to aggregate all words from localStorage into a single state
@@ -51,14 +51,11 @@ function WordsReview() {
    const [selectedLesson, setSelectedLesson] = useState('all');
    const [selectedLevel, setSelectedLevel] = useState('all');
    const [currentWordIndex, setCurrentWordIndex] = useState(0);
-   const [isFlipped, setIsFlipped] = useState(false);
-   const [expand,setExpand] = useState([])
 
    // Load data on component mount
    useEffect(() => {
       const data = aggregateWordsFromLocalStorage();
       setWordData(data);
-      console.log('Loaded wordData:', JSON.stringify(data, null, 2));
    }, []);
 
    // Get unique lessons for the selected level
@@ -69,38 +66,11 @@ function WordsReview() {
    )].sort((a, b) => a - b);
 
    // Filter words based on selections
-   const filteredWords = wordData
-      .filter(item => 
+   const filteredWords = wordData.filter(item => 
       (selectedType === 'all' || item.type === selectedType) &&
       (selectedLevel === 'all' || item.level === selectedLevel) &&
       (selectedLesson === 'all' || item.lesson === Number(selectedLesson))
-      )
-      .flatMap(item => item.words.map(wordObj => wordObj.word)) // Extract the nested 'word' object
-      .filter(word => word && typeof word === 'object'); // Ensure valid word objects
-
-   // Debug: Log filtered words and current word
-   useEffect(() => {
-      console.log('Filtered words:', JSON.stringify(filteredWords, null, 2));
-      console.log('Current word:', JSON.stringify(filteredWords[currentWordIndex], null, 2));
-   }, [filteredWords, currentWordIndex]);
-
-   const handleFlip = (index) => {
-      setExpand((prev) => {
-         const isOpen = prev.some((state) => state.index === index);
-         let result;
-         if (isOpen) {
-            // Remove the state from the list
-            result = prev.filter((state) => !(state.index === index));
-         } else {
-            // Add the state to the list
-            result = [...prev, { index }];
-         }
-         // Save the updated state to localStorage
-         return result
-      });
-
-      // setIsFlipped(!isFlipped);
-   };
+   ).flatMap(item => item.words.map(wordObj => wordObj.word)).filter(word => word && typeof word === 'object'); // Ensure valid word objects
 
    const handleTypeChange = (e) => {
       setSelectedType(e.target.value);
@@ -121,6 +91,7 @@ function WordsReview() {
       // setIsFlipped(false);
    };
 
+   console.log(wordData);
 
    return (
       <div className={styles.container}>
@@ -176,7 +147,6 @@ function WordsReview() {
                >
                <option value="all">All</option>
                <option value="knownWords">Known</option>
-               <option value="partialWords">Partial</option>
                <option value="unknownWords">Unknown</option>
                </select>
             </div>
@@ -187,17 +157,21 @@ function WordsReview() {
             {
                filteredWords.length > 0 ?
                filteredWords.map((item, index) => (
-                     <FlipCard
-                        key={index}
-                        word={item.word}
-                        role={item.role}
-                        british={item.BrE}
-                        american={item.AmE}
-                        definition={item.definition}
-                        examples={item.examples}
-                     />
-                  ))
-                  : null
+                  <FlipCard
+                     key={index}
+                     word={item.word}
+                     role={item.role}
+                     british={item.BrE}
+                     american={item.AmE}
+                     definition={item.definition}
+                     examples={item.examples}
+                  />
+               ))
+               :
+               <div className={styles.noCard}>
+                  <div className={styles.alarm}>You have not studied any words yet</div>
+                  <Link href='/words' className={styles.goVocab}>Start Learning Vocabulary</Link>
+               </div>
             }
          </div>
       </div>

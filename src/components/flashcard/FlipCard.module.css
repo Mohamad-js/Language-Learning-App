@@ -31,9 +31,9 @@
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
          padding: 20px;
          text-align: center;
-         background: rgba(255, 255, 255, 0.1); /* Adjust transparency as needed */
-         backdrop-filter: blur(10px); /* Blur strength */
-         border: 1px solid rgba(255, 255, 255, 0.2); /* Optional border for glass effect */
+         background: rgba(255, 255, 255, 0.1);
+         backdrop-filter: blur(5px);
+         border: 1px solid rgba(255, 255, 255, 0.2);
 
          .word {
             font-size: 40px;
@@ -61,6 +61,7 @@
 
       .back {
          transform: rotateY(180deg);
+         background: rgba(255, 255, 255, 0.507);
       }
    }
 
