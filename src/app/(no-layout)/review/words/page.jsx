@@ -70,7 +70,13 @@ function WordsReview() {
       (selectedType === 'all' || item.type === selectedType) &&
       (selectedLevel === 'all' || item.level === selectedLevel) &&
       (selectedLesson === 'all' || item.lesson === Number(selectedLesson))
-   ).flatMap(item => item.words.map(wordObj => wordObj.word)).filter(word => word && typeof word === 'object'); // Ensure valid word objects
+   ).flatMap(item => 
+      item.words.map(wordObj => ({
+         ...wordObj.word, // Spread the word object to include all its properties
+         level: item.level, // Add level from the parent item
+         lesson: item.lesson // Add lesson from the parent item
+      }))
+   ).filter(word => word && typeof word === 'object');
 
    const handleTypeChange = (e) => {
       setSelectedType(e.target.value);
@@ -165,6 +171,8 @@ function WordsReview() {
                      american={item.AmE}
                      definition={item.definition}
                      examples={item.examples}
+                     lesson={item.lesson}
+                     level={item.level}
                   />
                ))
                :

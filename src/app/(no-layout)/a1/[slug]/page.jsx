@@ -156,7 +156,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "about",
             "role": "adverb",
             "BrE": "/əˈbaʊt/",
@@ -171,7 +170,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "about",
             "role": "preposition",
             "BrE": "/əˈbaʊt/",
@@ -186,7 +184,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "above",
             "role": "adverb",
             "BrE": "/əˈbʌv/",
@@ -201,7 +198,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "above",
             "role": "preposition",
             "BrE": "/əˈbʌv/",
@@ -216,7 +212,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "across",
             "role": "adverb",
             "BrE": "/əˈkrɒs/",
@@ -231,7 +226,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "across",
             "role": "preposition",
             "BrE": "/əˈkrɒs/",
@@ -246,7 +240,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "action",
             "role": "noun",
             "BrE": "/ˈækʃn/",
@@ -261,7 +254,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "activity",
             "role": "noun",
             "BrE": "/ækˈtɪvəti/",
@@ -276,7 +268,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "actor",
             "role": "noun",
             "BrE": "/ˈæktə(r)/",
@@ -291,7 +282,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 1,
-            "level": "A1",
             "word": "actress",
             "role": "noun",
             "BrE": "/ˈæktrəs/",
@@ -306,7 +296,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "add",
             "role": "verb",
             "BrE": "/æd/",
@@ -321,7 +310,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "address",
             "role": "noun",
             "BrE": "/əˈdres/",
@@ -336,7 +324,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "adult",
             "role": "noun",
             "BrE": "/ˈædʌlt/",
@@ -351,7 +338,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "advice",
             "role": "noun",
             "BrE": "/ədˈvaɪs/",
@@ -366,7 +352,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "afraid",
             "role": "adjective",
             "BrE": "/əˈfreɪd/",
@@ -381,7 +366,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "after",
             "role": "preposition",
             "BrE": "/ˈɑːftə(r)/",
@@ -396,7 +380,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "afternoon",
             "role": "noun",
             "BrE": "/ˌɑːftəˈnuːn/",
@@ -411,7 +394,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "again",
             "role": "adverb",
             "BrE": "/əˈɡen/",
@@ -426,7 +408,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "age",
             "role": "noun",
             "BrE": "/eɪdʒ/",
@@ -441,7 +422,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 2,
-            "level": "A1",
             "word": "ago",
             "role": "adverb",
             "BrE": "/əˈɡəʊ/",
@@ -456,7 +436,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "agree",
             "role": "verb",
             "BrE": "/əˈɡriː/",
@@ -471,7 +450,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "air",
             "role": "noun",
             "BrE": "/eə(r)/",
@@ -486,7 +464,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "airport",
             "role": "noun",
             "BrE": "/ˈeəpɔːt/",
@@ -501,7 +478,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "all",
             "role": "determiner",
             "BrE": "/ɔːl/",
@@ -516,7 +492,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "all",
             "role": "pronoun",
             "BrE": "/ɔːl/",
@@ -531,7 +506,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "also",
             "role": "adverb",
             "BrE": "/ˈɔːlsəʊ/",
@@ -546,7 +520,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "always",
             "role": "adverb",
             "BrE": "/ˈɔːlweɪz/",
@@ -561,7 +534,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "amazing",
             "role": "adjective",
             "BrE": "/əˈmeɪzɪŋ/",
@@ -576,7 +548,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "and",
             "role": "conjunction",
             "BrE": "/ænd/",
@@ -591,7 +562,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 3,
-            "level": "A1",
             "word": "angry",
             "role": "adjective",
             "BrE": "/ˈæŋɡri/",
@@ -606,7 +576,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "animal",
             "role": "noun",
             "BrE": "/ˈænɪml/",
@@ -621,7 +590,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "another",
             "role": "determiner",
             "BrE": "/əˈnʌðə(r)/",
@@ -636,7 +604,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "another",
             "role": "pronoun",
             "BrE": "/əˈnʌðə(r)/",
@@ -651,7 +618,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "answer",
             "role": "noun",
             "BrE": "/ˈɑːnsə(r)/",
@@ -666,7 +632,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "answer",
             "role": "verb",
             "BrE": "/ˈɑːnsə(r)/",
@@ -681,7 +646,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "any",
             "role": "determiner",
             "BrE": "/ˈeni/",
@@ -695,7 +659,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 4,
-            "level": "A1",
             "word": "reply",
             "role": "noun",
             "BrE": "/rɪˈplaɪ/",
@@ -710,7 +673,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "anyone",
             "role": "pronoun",
             "BrE": "/ˈeniwʌn/",
@@ -725,7 +687,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "anything",
             "role": "pronoun",
             "BrE": "/ˈeniθɪŋ/",
@@ -740,7 +701,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 4,
-            "level": "A1",
             "word": "apartment",
             "role": "noun",
             "BrE": "/əˈpɑːtmənt/",
@@ -755,7 +715,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "apple",
             "role": "noun",
             "BrE": "/ˈæpl/",
@@ -770,7 +729,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "April",
             "role": "noun",
             "BrE": "/ˈeɪprəl/",
@@ -785,7 +743,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "area",
             "role": "noun",
             "BrE": "/ˈeəriə/",
@@ -800,7 +757,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "arm",
             "role": "noun",
             "BrE": "/ɑːm/",
@@ -815,7 +771,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "around",
             "role": "adverb",
             "BrE": "/əˈraʊnd/",
@@ -830,7 +785,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "around",
             "role": "preposition",
             "BrE": "/əˈraʊnd/",
@@ -845,7 +799,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "arrive",
             "role": "verb",
             "BrE": "/əˈraɪv/",
@@ -860,7 +813,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "art",
             "role": "noun",
             "BrE": "/ɑːt/",
@@ -875,7 +827,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "article",
             "role": "noun",
             "BrE": "/ˈɑːtɪkl/",
@@ -890,7 +841,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 5,
-            "level": "A1",
             "word": "artist",
             "role": "noun",
             "BrE": "/ˈɑːtɪst/",
@@ -905,7 +855,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "as",
             "role": "preposition",
             "BrE": "/æz/",
@@ -920,7 +869,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "ask",
             "role": "verb",
             "BrE": "/ɑːsk/",
@@ -935,7 +883,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "at",
             "role": "preposition",
             "BrE": "/æt/",
@@ -950,7 +897,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "August",
             "role": "noun",
             "BrE": "/ˈɔːɡəst/",
@@ -965,7 +911,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "aunt",
             "role": "noun",
             "BrE": "/ɑːnt/",
@@ -980,7 +925,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "autumn",
             "role": "noun",
             "BrE": "/ˈɔːtəm/",
@@ -995,7 +939,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "away",
             "role": "adverb",
             "BrE": "/əˈweɪ/",
@@ -1010,7 +953,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "baby",
             "role": "noun",
             "BrE": "/ˈbeɪbi/",
@@ -1025,7 +967,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "back",
             "role": "adverb",
             "BrE": "/bæk/",
@@ -1040,7 +981,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 6,
-            "level": "A1",
             "word": "back",
             "role": "noun",
             "BrE": "/bæk/",
@@ -1055,7 +995,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "bad",
             "role": "adjective",
             "BrE": "/bæd/",
@@ -1070,7 +1009,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "bag",
             "role": "noun",
             "BrE": "/bæɡ/",
@@ -1085,7 +1023,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "ball",
             "role": "noun",
             "BrE": "/bɔːl/",
@@ -1100,7 +1037,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "banana",
             "role": "noun",
             "BrE": "/bəˈnɑːnə/",
@@ -1115,7 +1051,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "band",
             "role": "noun",
             "BrE": "/bænd/",
@@ -1130,7 +1065,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "bank",
             "role": "noun",
             "BrE": "/bæŋk/",
@@ -1145,7 +1079,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "bath",
             "role": "noun",
             "BrE": "/bɑːθ/",
@@ -1160,7 +1093,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "bathroom",
             "role": "noun",
             "BrE": "/ˈbɑːθruːm/",
@@ -1175,7 +1107,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "be",
             "role": "verb",
             "BrE": "/biː/",
@@ -1190,7 +1121,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 7,
-            "level": "A1",
             "word": "be",
             "role": "auxiliary verb",
             "BrE": "/biː/",
@@ -1205,7 +1135,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "beach",
             "role": "noun",
             "BrE": "/biːtʃ/",
@@ -1220,7 +1149,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "beautiful",
             "role": "adjective",
             "BrE": "/ˈbjuːtɪfl/",
@@ -1235,7 +1163,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "because",
             "role": "conjunction",
             "BrE": "/bɪˈkɒz/",
@@ -1250,7 +1177,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "become",
             "role": "verb",
             "BrE": "/bɪˈkʌm/",
@@ -1265,7 +1191,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "bed",
             "role": "noun",
             "BrE": "/bed/",
@@ -1280,7 +1205,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "bedroom",
             "role": "noun",
             "BrE": "/ˈbedruːm/",
@@ -1295,7 +1219,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "beer",
             "role": "noun",
             "BrE": "/bɪə(r)/",
@@ -1310,7 +1233,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "before",
             "role": "preposition",
             "BrE": "/bɪˈfɔː(r)/",
@@ -1325,7 +1247,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "begin",
             "role": "verb",
             "BrE": "/bɪˈɡɪn/",
@@ -1340,7 +1261,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 8,
-            "level": "A1",
             "word": "beginning",
             "role": "noun",
             "BrE": "/bɪˈɡɪnɪŋ/",
@@ -1355,7 +1275,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "behind",
             "role": "adverb",
             "BrE": "/bɪˈhaɪnd/",
@@ -1370,7 +1289,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "behind",
             "role": "preposition",
             "BrE": "/bɪˈhaɪnd/",
@@ -1385,7 +1303,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "believe",
             "role": "verb",
             "BrE": "/bɪˈliːv/",
@@ -1400,7 +1317,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "below",
             "role": "adverb",
             "BrE": "/bɪˈləʊ/",
@@ -1415,7 +1331,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "below",
             "role": "preposition",
             "BrE": "/bɪˈləʊ/",
@@ -1430,7 +1345,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "best",
             "role": "adjective",
             "BrE": "/best/",
@@ -1445,7 +1359,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "better",
             "role": "adjective",
             "BrE": "/ˈbetə(r)/",
@@ -1460,7 +1373,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "between",
             "role": "preposition",
             "BrE": "/bɪˈtwiːn/",
@@ -1475,7 +1387,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "bicycle",
             "role": "noun",
             "BrE": "/ˈbaɪsɪkl/",
@@ -1490,7 +1401,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 9,
-            "level": "A1",
             "word": "big",
             "role": "adjective",
             "BrE": "/bɪɡ/",
@@ -1505,7 +1415,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "bike",
             "role": "noun",
             "BrE": "/baɪk/",
@@ -1520,7 +1429,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "bill",
             "role": "noun",
             "BrE": "/bɪl/",
@@ -1535,7 +1443,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "bird",
             "role": "noun",
             "BrE": "/bɜːd/",
@@ -1550,7 +1457,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "birthday",
             "role": "noun",
             "BrE": "/ˈbɜːθdeɪ/",
@@ -1565,7 +1471,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "black",
             "role": "adjective",
             "BrE": "/blæk/",
@@ -1580,7 +1485,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "black",
             "role": "noun",
             "BrE": "/blæk/",
@@ -1595,7 +1499,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "blog",
             "role": "noun",
             "BrE": "/blɒɡ/",
@@ -1610,7 +1513,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "blonde",
             "role": "adjective",
             "BrE": "/blɒnd/",
@@ -1625,7 +1527,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "blue",
             "role": "adjective",
             "BrE": "/bluː/",
@@ -1640,7 +1541,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 10,
-            "level": "A1",
             "word": "blue",
             "role": "noun",
             "BrE": "/bluː/",
@@ -1656,7 +1556,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "boat",
             "role": "noun",
             "BrE": "/bəʊt/",
@@ -1671,7 +1570,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "body",
             "role": "noun",
             "BrE": "/ˈbɒdi/",
@@ -1686,7 +1584,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "book",
             "role": "noun",
             "BrE": "/bʊk/",
@@ -1701,7 +1598,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "boot",
             "role": "noun",
             "BrE": "/buːt/",
@@ -1716,7 +1612,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "bored",
             "role": "adjective",
             "BrE": "/bɔːd/",
@@ -1731,7 +1626,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "boring",
             "role": "adjective",
             "BrE": "/ˈbɔːrɪŋ/",
@@ -1746,7 +1640,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "born",
             "role": "verb",
             "BrE": "/bɔːn/",
@@ -1761,7 +1654,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "both",
             "role": "determiner",
             "BrE": "/bəʊθ/",
@@ -1776,7 +1668,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "both",
             "role": "pronoun",
             "BrE": "/bəʊθ/",
@@ -1791,7 +1682,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 11,
-            "level": "A1",
             "word": "bottle",
             "role": "noun",
             "BrE": "/ˈbɒtl/",
@@ -1806,7 +1696,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "box",
             "role": "noun",
             "BrE": "/bɒks/",
@@ -1821,7 +1710,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "boy",
             "role": "noun",
             "BrE": "/bɔɪ/",
@@ -1836,7 +1724,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "boyfriend",
             "role": "noun",
             "BrE": "/ˈbɔɪfrend/",
@@ -1851,7 +1738,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "bread",
             "role": "noun",
             "BrE": "/bred/",
@@ -1866,7 +1752,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "break",
             "role": "noun",
             "BrE": "/breɪk/",
@@ -1881,7 +1766,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "break",
             "role": "verb",
             "BrE": "/breɪk/",
@@ -1896,7 +1780,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "breakfast",
             "role": "noun",
             "BrE": "/ˈbrekfəst/",
@@ -1911,7 +1794,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "bring",
             "role": "verb",
             "BrE": "/brɪŋ/",
@@ -1926,7 +1808,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "brother",
             "role": "noun",
             "BrE": "/ˈbrʌðə(r)/",
@@ -1941,7 +1822,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 12,
-            "level": "A1",
             "word": "brown",
             "role": "adjective",
             "BrE": "/braʊn/",
@@ -1956,7 +1836,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "brown",
             "role": "noun",
             "BrE": "/braʊn/",
@@ -1971,7 +1850,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "build",
             "role": "verb",
             "BrE": "/bɪld/",
@@ -1986,7 +1864,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "building",
             "role": "noun",
             "BrE": "/ˈbɪldɪŋ/",
@@ -2001,7 +1878,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "bus",
             "role": "noun",
             "BrE": "/bʌs/",
@@ -2016,7 +1892,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "business",
             "role": "noun",
             "BrE": "/ˈbɪznəs/",
@@ -2031,7 +1906,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "busy",
             "role": "adjective",
             "BrE": "/ˈbɪzi/",
@@ -2046,7 +1920,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "but",
             "role": "conjunction",
             "BrE": "/bət/",
@@ -2061,7 +1934,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "butter",
             "role": "noun",
             "BrE": "/ˈbʌtə(r)/",
@@ -2076,7 +1948,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "buy",
             "role": "verb",
             "BrE": "/baɪ/",
@@ -2091,7 +1962,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 13,
-            "level": "A1",
             "word": "by",
             "role": "preposition",
             "BrE": "/baɪ/",
@@ -2106,7 +1976,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "bye",
             "role": "exclamation",
             "BrE": "/baɪ/",
@@ -2121,7 +1990,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "cafe",
             "role": "noun",
             "BrE": "/ˈkæfeɪ/",
@@ -2136,7 +2004,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "cake",
             "role": "noun",
             "BrE": "/keɪk/",
@@ -2151,7 +2018,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "call",
             "role": "noun",
             "BrE": "/kɔːl/",
@@ -2166,7 +2032,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "call",
             "role": "verb",
             "BrE": "/kɔːl/",
@@ -2181,7 +2046,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "camera",
             "role": "noun",
             "BrE": "/ˈkæmərə/",
@@ -2196,7 +2060,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "can",
             "role": "modal verb",
             "BrE": "/kæn/",
@@ -2211,7 +2074,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "cannot",
             "role": "modal verb",
             "BrE": "/ˈkænɒt/",
@@ -2226,7 +2088,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "capital",
             "role": "adjective",
             "BrE": "/ˈkæpɪtl/",
@@ -2241,7 +2102,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 14,
-            "level": "A1",
             "word": "capital",
             "role": "noun",
             "BrE": "/ˈkæpɪtl/",
@@ -2256,7 +2116,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "car",
             "role": "noun",
             "BrE": "/kɑː(r)/",
@@ -2271,7 +2130,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "card",
             "role": "noun",
             "BrE": "/kɑːd/",
@@ -2286,7 +2144,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "career",
             "role": "noun",
             "BrE": "/kəˈrɪə(r)/",
@@ -2301,7 +2158,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "carrot",
             "role": "noun",
             "BrE": "/ˈkærət/",
@@ -2316,7 +2172,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "carry",
             "role": "verb",
             "BrE": "/ˈkæri/",
@@ -2331,7 +2186,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "cat",
             "role": "noun",
             "BrE": "/kæt/",
@@ -2346,7 +2200,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "CD",
             "role": "noun",
             "BrE": "/ˌsiː ˈdiː/",
@@ -2361,7 +2214,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "cent",
             "role": "noun",
             "BrE": "/sent/",
@@ -2376,7 +2228,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "centre",
             "role": "noun",
             "BrE": "/ˈsentə(r)/",
@@ -2391,7 +2242,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 15,
-            "level": "A1",
             "word": "century",
             "role": "noun",
             "BrE": "/ˈsentʃəri/",
@@ -2406,7 +2256,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "chair",
             "role": "noun",
             "BrE": "/tʃeə(r)/",
@@ -2421,7 +2270,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "change",
             "role": "noun",
             "BrE": "/tʃeɪndʒ/",
@@ -2436,7 +2284,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "change",
             "role": "verb",
             "BrE": "/tʃeɪndʒ/",
@@ -2451,7 +2298,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "chart",
             "role": "noun",
             "BrE": "/tʃɑːt/",
@@ -2466,7 +2312,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "cheap",
             "role": "adjective",
             "BrE": "/tʃiːp/",
@@ -2481,7 +2326,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "check",
             "role": "verb",
             "BrE": "/tʃek/",
@@ -2496,7 +2340,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "cheese",
             "role": "noun",
             "BrE": "/tʃiːz/",
@@ -2511,7 +2354,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "chicken",
             "role": "noun",
             "BrE": "/ˈtʃɪkɪn/",
@@ -2526,7 +2368,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "child",
             "role": "noun",
             "BrE": "/tʃaɪld/",
@@ -2541,7 +2382,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 16,
-            "level": "A1",
             "word": "chocolate",
             "role": "noun",
             "BrE": "/ˈtʃɒklət/",
@@ -2556,7 +2396,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "choose",
             "role": "verb",
             "BrE": "/tʃuːz/",
@@ -2571,7 +2410,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "cinema",
             "role": "noun",
             "BrE": "/ˈsɪnəmə/",
@@ -2586,7 +2424,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "city",
             "role": "noun",
             "BrE": "/ˈsɪti/",
@@ -2601,7 +2438,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "class",
             "role": "noun",
             "BrE": "/klɑːs/",
@@ -2616,7 +2452,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "classroom",
             "role": "noun",
             "BrE": "/ˈklɑːsruːm/",
@@ -2631,7 +2466,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "clean",
             "role": "adjective",
             "BrE": "/kliːn/",
@@ -2646,7 +2480,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "clean",
             "role": "verb",
             "BrE": "/kliːn/",
@@ -2661,7 +2494,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "climb",
             "role": "verb",
             "BrE": "/klaɪm/",
@@ -2676,7 +2508,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "clock",
             "role": "noun",
             "BrE": "/klɒk/",
@@ -2691,7 +2522,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 17,
-            "level": "A1",
             "word": "close",
             "role": "verb",
             "BrE": "/kləʊz/",
@@ -2706,7 +2536,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "clothes",
             "role": "noun",
             "BrE": "/kləʊðz/",
@@ -2721,7 +2550,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "club",
             "role": "noun",
             "BrE": "/klʌb/",
@@ -2736,7 +2564,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "coat",
             "role": "noun",
             "BrE": "/kəʊt/",
@@ -2751,7 +2578,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "coffee",
             "role": "noun",
             "BrE": "/ˈkɒfi/",
@@ -2766,7 +2592,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "cold",
             "role": "adjective",
             "BrE": "/kəʊld/",
@@ -2781,7 +2606,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "cold",
             "role": "noun",
             "BrE": "/kəʊld/",
@@ -2796,7 +2620,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "college",
             "role": "noun",
             "BrE": "/ˈkɒlɪdʒ/",
@@ -2811,7 +2634,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "colour",
             "role": "noun",
             "BrE": "/ˈkʌlə(r)/",
@@ -2826,7 +2648,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "come",
             "role": "verb",
             "BrE": "/kʌm/",
@@ -2841,7 +2662,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 18,
-            "level": "A1",
             "word": "common",
             "role": "adjective",
             "BrE": "/ˈkɒmən/",
@@ -2856,7 +2676,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "company",
             "role": "noun",
             "BrE": "/ˈkʌmpəni/",
@@ -2871,7 +2690,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "compare",
             "role": "verb",
             "BrE": "/kəmˈpeə(r)/",
@@ -2886,7 +2704,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "complete",
             "role": "adjective",
             "BrE": "/kəmˈpliːt/",
@@ -2901,7 +2718,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "complete",
             "role": "verb",
             "BrE": "/kəmˈpliːt/",
@@ -2916,7 +2732,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "computer",
             "role": "noun",
             "BrE": "/kəmˈpjuːtə(r)/",
@@ -2931,7 +2746,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "concert",
             "role": "noun",
             "BrE": "/ˈkɒnsət/",
@@ -2946,7 +2760,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "conversation",
             "role": "noun",
             "BrE": "/ˌkɒnvəˈseɪʃn/",
@@ -2961,7 +2774,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "cook",
             "role": "verb",
             "BrE": "/kʊk/",
@@ -2976,7 +2788,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "cooking",
             "role": "noun",
             "BrE": "/ˈkʊkɪŋ/",
@@ -2991,7 +2802,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 19,
-            "level": "A1",
             "word": "cool",
             "role": "adjective",
             "BrE": "/kuːl/",
@@ -3006,7 +2816,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "correct",
             "role": "adjective",
             "BrE": "/kəˈrekt/",
@@ -3021,7 +2830,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "correct",
             "role": "verb",
             "BrE": "/kəˈrekt/",
@@ -3036,7 +2844,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "cost",
             "role": "noun",
             "BrE": "/kɒst/",
@@ -3051,7 +2858,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "cost",
             "role": "verb",
             "BrE": "/kɒst/",
@@ -3066,7 +2872,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "could",
             "role": "modal verb",
             "BrE": "/kəd/",
@@ -3081,7 +2886,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "country",
             "role": "noun",
             "BrE": "/ˈkʌntri/",
@@ -3096,7 +2900,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "course",
             "role": "noun",
             "BrE": "/kɔːs/",
@@ -3111,7 +2914,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "cousin",
             "role": "noun",
             "BrE": "/ˈkʌzn/",
@@ -3126,7 +2928,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "cow",
             "role": "noun",
             "BrE": "/kaʊ/",
@@ -3141,7 +2942,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 20,
-            "level": "A1",
             "word": "cream",
             "role": "noun",
             "BrE": "/kriːm/",
@@ -3157,7 +2957,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "create",
             "role": "verb",
             "BrE": "/kriˈeɪt/",
@@ -3172,7 +2971,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "culture",
             "role": "noun",
             "BrE": "/ˈkʌltʃə(r)/",
@@ -3187,7 +2985,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "cup",
             "role": "noun",
             "BrE": "/kʌp/",
@@ -3202,7 +2999,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "customer",
             "role": "noun",
             "BrE": "/ˈkʌstəmə(r)/",
@@ -3217,7 +3013,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "cut",
             "role": "verb",
             "BrE": "/kʌt/",
@@ -3232,7 +3027,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "dad",
             "role": "noun",
             "BrE": "/dæd/",
@@ -3247,7 +3041,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "dance",
             "role": "noun",
             "BrE": "/dɑːns/",
@@ -3262,7 +3055,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "dance",
             "role": "verb",
             "BrE": "/dɑːns/",
@@ -3277,7 +3069,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "dancer",
             "role": "noun",
             "BrE": "/ˈdɑːnsə(r)/",
@@ -3292,7 +3083,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 21,
-            "level": "A1",
             "word": "dancing",
             "role": "noun",
             "BrE": "/ˈdɑːnsɪŋ/",
@@ -3307,7 +3097,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "dangerous",
             "role": "adjective",
             "BrE": "/ˈdeɪndʒərəs/",
@@ -3322,7 +3111,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "dark",
             "role": "adjective",
             "BrE": "/dɑːk/",
@@ -3337,7 +3125,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "date",
             "role": "noun",
             "BrE": "/deɪt/",
@@ -3352,7 +3139,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "daughter",
             "role": "noun",
             "BrE": "/ˈdɔːtə(r)/",
@@ -3367,7 +3153,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "day",
             "role": "noun",
             "BrE": "/deɪ/",
@@ -3382,7 +3167,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "dear",
             "role": "adjective",
             "BrE": "/dɪə(r)/",
@@ -3397,7 +3181,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "December",
             "role": "noun",
             "BrE": "/dɪˈsembə(r)/",
@@ -3412,7 +3195,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "decide",
             "role": "verb",
             "BrE": "/dɪˈsaɪd/",
@@ -3427,7 +3209,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "delicious",
             "role": "adjective",
             "BrE": "/dɪˈlɪʃəs/",
@@ -3442,7 +3223,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 22,
-            "level": "A1",
             "word": "describe",
             "role": "verb",
             "BrE": "/dɪˈskraɪb/",
@@ -3457,7 +3237,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "description",
             "role": "noun",
             "BrE": "/dɪˈskrɪpʃn/",
@@ -3472,7 +3251,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "design",
             "role": "noun",
             "BrE": "/dɪˈzaɪn/",
@@ -3487,7 +3265,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "design",
             "role": "verb",
             "BrE": "/dɪˈzaɪn/",
@@ -3502,7 +3279,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "desk",
             "role": "noun",
             "BrE": "/desk/",
@@ -3517,7 +3293,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "detail",
             "role": "noun",
             "BrE": "/ˈdiːteɪl/",
@@ -3532,7 +3307,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "dialogue",
             "role": "noun",
             "BrE": "/ˈdaɪəlɒɡ/",
@@ -3547,7 +3321,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "dictionary",
             "role": "noun",
             "BrE": "/ˈdɪkʃənri/",
@@ -3562,7 +3335,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "die",
             "role": "verb",
             "BrE": "/daɪ/",
@@ -3577,7 +3349,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "diet",
             "role": "noun",
             "BrE": "/ˈdaɪət/",
@@ -3592,7 +3363,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 23,
-            "level": "A1",
             "word": "difference",
             "role": "noun",
             "BrE": "/ˈdɪfrəns/",
@@ -3607,7 +3377,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "different",
             "role": "adjective",
             "BrE": "/ˈdɪfrənt/",
@@ -3622,7 +3391,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "difficult",
             "role": "adjective",
             "BrE": "/ˈdɪfɪkəlt/",
@@ -3637,7 +3405,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "dinner",
             "role": "noun",
             "BrE": "/ˈdɪnə(r)/",
@@ -3652,7 +3419,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "dirty",
             "role": "adjective",
             "BrE": "/ˈdɜːti/",
@@ -3667,7 +3433,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "discuss",
             "role": "verb",
             "BrE": "/dɪˈskʌs/",
@@ -3682,7 +3447,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "dish",
             "role": "noun",
             "BrE": "/dɪʃ/",
@@ -3697,7 +3461,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "do",
             "role": "verb",
             "BrE": "/duː/",
@@ -3712,7 +3475,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "do",
             "role": "auxiliary verb",
             "BrE": "/duː/",
@@ -3727,7 +3489,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "doctor",
             "role": "noun",
             "BrE": "/ˈdɒktə(r)/",
@@ -3742,7 +3503,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 24,
-            "level": "A1",
             "word": "dog",
             "role": "noun",
             "BrE": "/dɒɡ/",
@@ -3757,7 +3517,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "dollar",
             "role": "noun",
             "BrE": "/ˈdɒlə(r)/",
@@ -3772,7 +3531,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "door",
             "role": "noun",
             "BrE": "/dɔː(r)/",
@@ -3787,7 +3545,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "down",
             "role": "adverb",
             "BrE": "/daʊn/",
@@ -3802,7 +3559,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "down",
             "role": "preposition",
             "BrE": "/daʊn/",
@@ -3817,7 +3573,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "downstairs",
             "role": "adverb",
             "BrE": "/ˌdaʊnˈsteəz/",
@@ -3832,7 +3587,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "draw",
             "role": "verb",
             "BrE": "/drɔː/",
@@ -3847,7 +3601,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "dress",
             "role": "noun",
             "BrE": "/dres/",
@@ -3862,7 +3615,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "dress",
             "role": "verb",
             "BrE": "/dres/",
@@ -3877,7 +3629,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "drink",
             "role": "noun",
             "BrE": "/drɪŋk/",
@@ -3892,7 +3643,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 25,
-            "level": "A1",
             "word": "drink",
             "role": "verb",
             "BrE": "/drɪŋk/",
@@ -3907,7 +3657,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "drive",
             "role": "verb",
             "BrE": "/draɪv/",
@@ -3922,7 +3671,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "driver",
             "role": "noun",
             "BrE": "/ˈdraɪvə(r)/",
@@ -3937,7 +3685,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "during",
             "role": "preposition",
             "BrE": "/ˈdjʊərɪŋ/",
@@ -3952,7 +3699,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "DVD",
             "role": "noun",
             "BrE": "/ˌdiː viː ˈdiː/",
@@ -3967,7 +3713,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "each",
             "role": "adverb",
             "BrE": "/iːtʃ/",
@@ -3982,7 +3727,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "each",
             "role": "determiner",
             "BrE": "/iːtʃ/",
@@ -3997,7 +3741,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "each",
             "role": "pronoun",
             "BrE": "/iːtʃ/",
@@ -4012,7 +3755,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "ear",
             "role": "noun",
             "BrE": "/ɪə(r)/",
@@ -4027,7 +3769,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "early",
             "role": "adjective",
             "BrE": "/ˈɜːli/",
@@ -4042,7 +3783,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 26,
-            "level": "A1",
             "word": "early",
             "role": "adverb",
             "BrE": "/ˈɜːli/",
@@ -4057,7 +3797,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "east",
             "role": "adjective",
             "BrE": "/iːst/",
@@ -4072,7 +3811,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "east",
             "role": "adverb",
             "BrE": "/iːst/",
@@ -4087,7 +3825,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "east",
             "role": "noun",
             "BrE": "/iːst/",
@@ -4102,7 +3839,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "easy",
             "role": "adjective",
             "BrE": "/ˈiːzi/",
@@ -4117,7 +3853,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "eat",
             "role": "verb",
             "BrE": "/iːt/",
@@ -4132,7 +3867,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "egg",
             "role": "noun",
             "BrE": "/eɡ/",
@@ -4147,7 +3881,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "eight",
             "role": "number",
             "BrE": "/eɪt/",
@@ -4162,7 +3895,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "eighteen",
             "role": "number",
             "BrE": "/ˌeɪˈtiːn/",
@@ -4177,7 +3909,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "eighty",
             "role": "number",
             "BrE": "/ˈeɪti/",
@@ -4192,7 +3923,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 27,
-            "level": "A1",
             "word": "elephant",
             "role": "noun",
             "BrE": "/ˈelɪfənt/",
@@ -4207,7 +3937,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "eleven",
             "role": "number",
             "BrE": "/ɪˈlevn/",
@@ -4222,7 +3951,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "else",
             "role": "adverb",
             "BrE": "/els/",
@@ -4237,7 +3965,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "email",
             "role": "noun",
             "BrE": "/ˈiːmeɪl/",
@@ -4252,7 +3979,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "email",
             "role": "verb",
             "BrE": "/ˈiːmeɪl/",
@@ -4267,7 +3993,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "end",
             "role": "noun",
             "BrE": "/end/",
@@ -4282,7 +4007,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "end",
             "role": "verb",
             "BrE": "/end/",
@@ -4297,7 +4021,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "enjoy",
             "role": "verb",
             "BrE": "/ɪnˈdʒɔɪ/",
@@ -4312,7 +4035,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "enough",
             "role": "adverb",
             "BrE": "/ɪˈnʌf/",
@@ -4327,7 +4049,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "enough",
             "role": "determiner",
             "BrE": "/ɪˈnʌf/",
@@ -4342,7 +4063,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 28,
-            "level": "A1",
             "word": "enough",
             "role": "pronoun",
             "BrE": "/ɪˈnʌf/",
@@ -4357,7 +4077,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "euro",
             "role": "noun",
             "BrE": "/ˈjʊərəʊ/",
@@ -4372,7 +4091,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "even",
             "role": "adverb",
             "BrE": "/ˈiːvn/",
@@ -4387,7 +4105,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "evening",
             "role": "noun",
             "BrE": "/ˈiːvnɪŋ/",
@@ -4402,7 +4119,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "event",
             "role": "noun",
             "BrE": "/ɪˈvent/",
@@ -4417,7 +4133,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "ever",
             "role": "adverb",
             "BrE": "/ˈevə(r)/",
@@ -4432,7 +4147,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "every",
             "role": "determiner",
             "BrE": "/ˈevri/",
@@ -4447,7 +4161,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "everybody",
             "role": "pronoun",
             "BrE": "/ˈevribɒdi/",
@@ -4462,7 +4175,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "everyone",
             "role": "pronoun",
             "BrE": "/ˈevriwʌn/",
@@ -4477,7 +4189,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "everything",
             "role": "pronoun",
             "BrE": "/ˈevriθɪŋ/",
@@ -4492,7 +4203,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 29,
-            "level": "A1",
             "word": "exam",
             "role": "noun",
             "BrE": "/ɪɡˈzæm/",
@@ -4507,7 +4217,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "example",
             "role": "noun",
             "BrE": "/ɪɡˈzɑːmpl/",
@@ -4522,7 +4231,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "excited",
             "role": "adjective",
             "BrE": "/ɪkˈsaɪtɪd/",
@@ -4537,7 +4245,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "exciting",
             "role": "adjective",
             "BrE": "/ɪkˈsaɪtɪŋ/",
@@ -4552,7 +4259,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "exercise",
             "role": "noun",
             "BrE": "/ˈeksəsaɪz/",
@@ -4567,7 +4273,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "exercise",
             "role": "verb",
             "BrE": "/ˈeksəsaɪz/",
@@ -4582,7 +4287,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "expensive",
             "role": "adjective",
             "BrE": "/ɪkˈspensɪv/",
@@ -4597,7 +4301,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "explain",
             "role": "verb",
             "BrE": "/ɪkˈspleɪn/",
@@ -4612,7 +4315,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "extra",
             "role": "adjective",
             "BrE": "/ˈekstrə/",
@@ -4627,7 +4329,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "eye",
             "role": "noun",
             "BrE": "/aɪ/",
@@ -4642,7 +4343,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 30,
-            "level": "A1",
             "word": "face",
             "role": "noun",
             "BrE": "/feɪs/",
@@ -4658,7 +4358,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "fact",
             "role": "noun",
             "BrE": "/fækt/",
@@ -4673,7 +4372,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "fall",
             "role": "verb",
             "BrE": "/fɔːl/",
@@ -4688,7 +4386,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "family",
             "role": "noun",
             "BrE": "/ˈfæməli/",
@@ -4703,7 +4400,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "famous",
             "role": "adjective",
             "BrE": "/ˈfeɪməs/",
@@ -4718,7 +4414,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "far",
             "role": "adverb",
             "BrE": "/fɑː(r)/",
@@ -4733,7 +4428,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "fast",
             "role": "adjective",
             "BrE": "/fɑːst/",
@@ -4748,7 +4442,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "fast",
             "role": "adverb",
             "BrE": "/fɑːst/",
@@ -4763,7 +4456,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "father",
             "role": "noun",
             "BrE": "/ˈfɑːðə(r)/",
@@ -4778,7 +4470,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "favourite",
             "role": "adjective",
             "BrE": "/ˈfeɪvərɪt/",
@@ -4793,7 +4484,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 31,
-            "level": "A1",
             "word": "February",
             "role": "noun",
             "BrE": "/ˈfebruəri/",
@@ -4808,7 +4498,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "feel",
             "role": "verb",
             "BrE": "/fiːl/",
@@ -4823,7 +4512,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "feeling",
             "role": "noun",
             "BrE": "/ˈfiːlɪŋ/",
@@ -4838,7 +4526,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "festival",
             "role": "noun",
             "BrE": "/ˈfestɪvl/",
@@ -4853,7 +4540,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "few",
             "role": "determiner",
             "BrE": "/fjuː/",
@@ -4868,7 +4554,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "few",
             "role": "pronoun",
             "BrE": "/fjuː/",
@@ -4883,7 +4568,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "film",
             "role": "noun",
             "BrE": "/fɪlm/",
@@ -4898,7 +4582,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "find",
             "role": "verb",
             "BrE": "/faɪnd/",
@@ -4913,7 +4596,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "fine",
             "role": "adjective",
             "BrE": "/faɪn/",
@@ -4928,7 +4610,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "finish",
             "role": "verb",
             "BrE": "/ˈfɪnɪʃ/",
@@ -4943,7 +4624,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 32,
-            "level": "A1",
             "word": "fire",
             "role": "noun",
             "BrE": "/faɪə(r)/",
@@ -4958,7 +4638,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "first",
             "role": "adjective",
             "BrE": "/fɜːst/",
@@ -4973,7 +4652,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "first",
             "role": "adverb",
             "BrE": "/fɜːst/",
@@ -4988,7 +4666,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "fish",
             "role": "noun",
             "BrE": "/fɪʃ/",
@@ -5003,7 +4680,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "five",
             "role": "number",
             "BrE": "/faɪv/",
@@ -5018,7 +4694,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "flat",
             "role": "noun",
             "BrE": "/flæt/",
@@ -5033,7 +4708,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "floor",
             "role": "noun",
             "BrE": "/flɔː(r)/",
@@ -5048,7 +4722,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "flower",
             "role": "noun",
             "BrE": "/ˈflaʊə(r)/",
@@ -5063,7 +4736,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "fly",
             "role": "verb",
             "BrE": "/flaɪ/",
@@ -5078,7 +4750,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "follow",
             "role": "verb",
             "BrE": "/ˈfɒləʊ/",
@@ -5093,7 +4764,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 33,
-            "level": "A1",
             "word": "food",
             "role": "noun",
             "BrE": "/fuːd/",
@@ -5108,7 +4778,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "foot",
             "role": "noun",
             "BrE": "/fʊt/",
@@ -5123,7 +4792,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "football",
             "role": "noun",
             "BrE": "/ˈfʊtbɔːl/",
@@ -5138,7 +4806,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "for",
             "role": "preposition",
             "BrE": "/fə(r)/",
@@ -5153,7 +4820,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "foreign",
             "role": "adjective",
             "BrE": "/ˈfɒrən/",
@@ -5168,7 +4834,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "forest",
             "role": "noun",
             "BrE": "/ˈfɒrɪst/",
@@ -5183,7 +4848,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "forget",
             "role": "verb",
             "BrE": "/fəˈɡet/",
@@ -5198,7 +4862,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "fork",
             "role": "noun",
             "BrE": "/fɔːk/",
@@ -5213,7 +4876,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "four",
             "role": "number",
             "BrE": "/fɔː(r)/",
@@ -5228,7 +4890,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "fourteen",
             "role": "number",
             "BrE": "/ˌfɔːˈtiːn/",
@@ -5243,7 +4904,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 34,
-            "level": "A1",
             "word": "fourth",
             "role": "adjective",
             "BrE": "/fɔːθ/",
@@ -5258,7 +4918,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "free",
             "role": "adjective",
             "BrE": "/friː/",
@@ -5273,7 +4932,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "Friday",
             "role": "noun",
             "BrE": "/ˈfraɪdeɪ/",
@@ -5288,7 +4946,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "friend",
             "role": "noun",
             "BrE": "/frend/",
@@ -5303,7 +4960,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "friendly",
             "role": "adjective",
             "BrE": "/ˈfrendli/",
@@ -5318,7 +4974,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "from",
             "role": "preposition",
             "BrE": "/frɒm/",
@@ -5333,7 +4988,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "front",
             "role": "noun",
             "BrE": "/frʌnt/",
@@ -5348,7 +5002,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "fruit",
             "role": "noun",
             "BrE": "/fruːt/",
@@ -5363,7 +5016,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "full",
             "role": "adjective",
             "BrE": "/fʊl/",
@@ -5378,7 +5030,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "fun",
             "role": "adjective",
             "BrE": "/fʌn/",
@@ -5393,7 +5044,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 35,
-            "level": "A1",
             "word": "fun",
             "role": "noun",
             "BrE": "/fʌn/",
@@ -5408,7 +5058,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "funny",
             "role": "adjective",
             "BrE": "/ˈfʌni/",
@@ -5423,7 +5072,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "future",
             "role": "noun",
             "BrE": "/ˈfjuːtʃə(r)/",
@@ -5438,7 +5086,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "game",
             "role": "noun",
             "BrE": "/ɡeɪm/",
@@ -5453,7 +5100,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "garden",
             "role": "noun",
             "BrE": "/ˈɡɑːdn/",
@@ -5468,7 +5114,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "get",
             "role": "verb",
             "BrE": "/ɡet/",
@@ -5483,7 +5128,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "girl",
             "role": "noun",
             "BrE": "/ɡɜːl/",
@@ -5498,7 +5142,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "girlfriend",
             "role": "noun",
             "BrE": "/ˈɡɜːlfrend/",
@@ -5513,7 +5156,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "give",
             "role": "verb",
             "BrE": "/ɡɪv/",
@@ -5528,7 +5170,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "glass",
             "role": "noun",
             "BrE": "/ɡlɑːs/",
@@ -5543,7 +5184,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 36,
-            "level": "A1",
             "word": "go",
             "role": "verb",
             "BrE": "/ɡəʊ/",
@@ -5558,7 +5198,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "good",
             "role": "adjective",
             "BrE": "/ɡʊd/",
@@ -5573,7 +5212,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "goodbye",
             "role": "exclamation",
             "BrE": "/ˌɡʊdˈbaɪ/",
@@ -5588,7 +5226,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "grandfather",
             "role": "noun",
             "BrE": "/ˈɡrænfɑːðə(r)/",
@@ -5603,7 +5240,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "grandmother",
             "role": "noun",
             "BrE": "/ˈɡrænmʌðə(r)/",
@@ -5618,7 +5254,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "great",
             "role": "adjective",
             "BrE": "/ɡreɪt/",
@@ -5633,7 +5268,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "green",
             "role": "adjective",
             "BrE": "/ɡriːn/",
@@ -5648,7 +5282,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "green",
             "role": "noun",
             "BrE": "/ɡriːn/",
@@ -5663,7 +5296,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "grey",
             "role": "adjective",
             "BrE": "/ɡreɪ/",
@@ -5678,7 +5310,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "grey",
             "role": "noun",
             "BrE": "/ɡreɪ/",
@@ -5693,7 +5324,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 37,
-            "level": "A1",
             "word": "group",
             "role": "noun",
             "BrE": "/ɡruːp/",
@@ -5708,7 +5338,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "guitar",
             "role": "noun",
             "BrE": "/ɡɪˈtɑː(r)/",
@@ -5723,7 +5352,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "hair",
             "role": "noun",
             "BrE": "/heə(r)/",
@@ -5738,7 +5366,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "half",
             "role": "noun",
             "BrE": "/hɑːf/",
@@ -5753,7 +5380,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "hand",
             "role": "noun",
             "BrE": "/hænd/",
@@ -5768,7 +5394,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "happy",
             "role": "adjective",
             "BrE": "/ˈhæpi/",
@@ -5783,7 +5408,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "hard",
             "role": "adjective",
             "BrE": "/hɑːd/",
@@ -5798,7 +5422,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "hard",
             "role": "adverb",
             "BrE": "/hɑːd/",
@@ -5813,7 +5436,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "hat",
             "role": "noun",
             "BrE": "/hæt/",
@@ -5828,7 +5450,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "have",
             "role": "verb",
             "BrE": "/hæv/",
@@ -5843,7 +5464,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 38,
-            "level": "A1",
             "word": "he",
             "role": "pronoun",
             "BrE": "/hiː/",
@@ -5858,7 +5478,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "head",
             "role": "noun",
             "BrE": "/hed/",
@@ -5873,7 +5492,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "health",
             "role": "noun",
             "BrE": "/helθ/",
@@ -5888,7 +5506,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "healthy",
             "role": "adjective",
             "BrE": "/ˈhelθi/",
@@ -5903,7 +5520,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "hear",
             "role": "verb",
             "BrE": "/hɪə(r)/",
@@ -5918,7 +5534,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "hello",
             "role": "exclamation",
             "BrE": "/həˈləʊ/",
@@ -5933,7 +5548,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "help",
             "role": "noun",
             "BrE": "/help/",
@@ -5948,7 +5562,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "help",
             "role": "verb",
             "BrE": "/help/",
@@ -5963,7 +5576,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "her",
             "role": "pronoun",
             "BrE": "/hə(r)/",
@@ -5978,7 +5590,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "here",
             "role": "adverb",
             "BrE": "/hɪə(r)/",
@@ -5993,7 +5604,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 39,
-            "level": "A1",
             "word": "hi",
             "role": "exclamation",
             "BrE": "/haɪ/",
@@ -6008,7 +5618,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "high",
             "role": "adjective",
             "BrE": "/haɪ/",
@@ -6023,7 +5632,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "him",
             "role": "pronoun",
             "BrE": "/hɪm/",
@@ -6038,7 +5646,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "his",
             "role": "determiner",
             "BrE": "/hɪz/",
@@ -6053,7 +5660,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "history",
             "role": "noun",
             "BrE": "/ˈhɪstri/",
@@ -6068,7 +5674,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "hobby",
             "role": "noun",
             "BrE": "/ˈhɒbi/",
@@ -6083,7 +5688,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "holiday",
             "role": "noun",
             "BrE": "/ˈhɒlədeɪ/",
@@ -6098,7 +5702,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "home",
             "role": "noun",
             "BrE": "/həʊm/",
@@ -6113,7 +5716,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "homework",
             "role": "noun",
             "BrE": "/ˈhəʊmwɜːk/",
@@ -6128,7 +5730,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "horse",
             "role": "noun",
             "BrE": "/hɔːs/",
@@ -6143,7 +5744,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 40,
-            "level": "A1",
             "word": "hospital",
             "role": "noun",
             "BrE": "/ˈhɒspɪtl/",
@@ -6159,7 +5759,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "hot",
             "role": "adjective",
             "BrE": "/hɒt/",
@@ -6174,7 +5773,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "hotel",
             "role": "noun",
             "BrE": "/həʊˈtel/",
@@ -6189,7 +5787,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "hour",
             "role": "noun",
             "BrE": "/aʊə(r)/",
@@ -6204,7 +5801,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "house",
             "role": "noun",
             "BrE": "/haʊs/",
@@ -6219,7 +5815,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "how",
             "role": "adverb",
             "BrE": "/haʊ/",
@@ -6234,7 +5829,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "however",
             "role": "adverb",
             "BrE": "/haʊˈevə(r)/",
@@ -6249,7 +5843,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "hundred",
             "role": "number",
             "BrE": "/ˈhʌndrəd/",
@@ -6264,7 +5857,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "hungry",
             "role": "adjective",
             "BrE": "/ˈhʌŋɡri/",
@@ -6279,7 +5871,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "husband",
             "role": "noun",
             "BrE": "/ˈhʌzbənd/",
@@ -6294,7 +5885,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 41,
-            "level": "A1",
             "word": "I",
             "role": "pronoun",
             "BrE": "/aɪ/",
@@ -6309,7 +5899,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "ice",
             "role": "noun",
             "BrE": "/aɪs/",
@@ -6324,7 +5913,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "idea",
             "role": "noun",
             "BrE": "/aɪˈdɪə/",
@@ -6339,7 +5927,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "if",
             "role": "conjunction",
             "BrE": "/ɪf/",
@@ -6354,7 +5941,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "important",
             "role": "adjective",
             "BrE": "/ɪmˈpɔːtnt/",
@@ -6369,7 +5955,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "in",
             "role": "preposition",
             "BrE": "/ɪn/",
@@ -6384,7 +5969,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "information",
             "role": "noun",
             "BrE": "/ˌɪnfəˈmeɪʃn/",
@@ -6399,7 +5983,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "interest",
             "role": "noun",
             "BrE": "/ˈɪntrəst/",
@@ -6414,7 +5997,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "interested",
             "role": "adjective",
             "BrE": "/ˈɪntrəstɪd/",
@@ -6429,7 +6011,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "interesting",
             "role": "adjective",
             "BrE": "/ˈɪntrəstɪŋ/",
@@ -6444,7 +6025,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 42,
-            "level": "A1",
             "word": "internet",
             "role": "noun",
             "BrE": "/ˈɪntənet/",
@@ -6459,7 +6039,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "into",
             "role": "preposition",
             "BrE": "/ˈɪntə/",
@@ -6474,7 +6053,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "it",
             "role": "pronoun",
             "BrE": "/ɪt/",
@@ -6489,7 +6067,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "January",
             "role": "noun",
             "BrE": "/ˈdʒænjuəri/",
@@ -6504,7 +6081,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "jeans",
             "role": "noun",
             "BrE": "/dʒiːnz/",
@@ -6519,7 +6095,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "job",
             "role": "noun",
             "BrE": "/dʒɒb/",
@@ -6534,7 +6109,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "join",
             "role": "verb",
             "BrE": "/dʒɔɪn/",
@@ -6549,7 +6123,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "journey",
             "role": "noun",
             "BrE": "/ˈdʒɜːni/",
@@ -6564,7 +6137,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "July",
             "role": "noun",
             "BrE": "/dʒuˈlaɪ/",
@@ -6579,7 +6151,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "June",
             "role": "noun",
             "BrE": "/dʒuːn/",
@@ -6594,7 +6165,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 43,
-            "level": "A1",
             "word": "just",
             "role": "adverb",
             "BrE": "/dʒʌst/",
@@ -6609,7 +6179,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "key",
             "role": "noun",
             "BrE": "/kiː/",
@@ -6624,7 +6193,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "kind",
             "role": "adjective",
             "BrE": "/kaɪnd/",
@@ -6639,7 +6207,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "kind",
             "role": "noun",
             "BrE": "/kaɪnd/",
@@ -6654,7 +6221,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "kitchen",
             "role": "noun",
             "BrE": "/ˈkɪtʃɪn/",
@@ -6669,7 +6235,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "know",
             "role": "verb",
             "BrE": "/nəʊ/",
@@ -6684,7 +6249,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "language",
             "role": "noun",
             "BrE": "/ˈlæŋɡwɪdʒ/",
@@ -6699,7 +6263,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "large",
             "role": "adjective",
             "BrE": "/lɑːdʒ/",
@@ -6714,7 +6277,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "last",
             "role": "adjective",
             "BrE": "/lɑːst/",
@@ -6729,7 +6291,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "late",
             "role": "adjective",
             "BrE": "/leɪt/",
@@ -6744,7 +6305,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 44,
-            "level": "A1",
             "word": "later",
             "role": "adverb",
             "BrE": "/ˈleɪtə(r)/",
@@ -6759,7 +6319,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "learn",
             "role": "verb",
             "BrE": "/lɜːn/",
@@ -6774,7 +6333,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "leave",
             "role": "verb",
             "BrE": "/liːv/",
@@ -6789,7 +6347,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "left",
             "role": "adjective",
             "BrE": "/left/",
@@ -6804,7 +6361,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "leg",
             "role": "noun",
             "BrE": "/leɡ/",
@@ -6819,7 +6375,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "lesson",
             "role": "noun",
             "BrE": "/ˈlesn/",
@@ -6834,7 +6389,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "let",
             "role": "verb",
             "BrE": "/let/",
@@ -6849,7 +6403,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "letter",
             "role": "noun",
             "BrE": "/ˈletə(r)/",
@@ -6864,7 +6417,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "life",
             "role": "noun",
             "BrE": "/laɪf/",
@@ -6879,7 +6431,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "light",
             "role": "adjective",
             "BrE": "/laɪt/",
@@ -6894,7 +6445,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 45,
-            "level": "A1",
             "word": "light",
             "role": "noun",
             "BrE": "/laɪt/",
@@ -6909,7 +6459,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "like",
             "role": "preposition",
             "BrE": "/laɪk/",
@@ -6924,7 +6473,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "like",
             "role": "verb",
             "BrE": "/laɪk/",
@@ -6939,7 +6487,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "listen",
             "role": "verb",
             "BrE": "/ˈlɪsn/",
@@ -6954,7 +6501,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "little",
             "role": "adjective",
             "BrE": "/ˈlɪtl/",
@@ -6969,7 +6515,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "live",
             "role": "verb",
             "BrE": "/lɪv/",
@@ -6984,7 +6529,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "long",
             "role": "adjective",
             "BrE": "/lɒŋ/",
@@ -6999,7 +6543,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "look",
             "role": "verb",
             "BrE": "/lʊk/",
@@ -7014,7 +6557,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "lose",
             "role": "verb",
             "BrE": "/luːz/",
@@ -7029,7 +6571,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "lot",
             "role": "noun",
             "BrE": "/lɒt/",
@@ -7044,7 +6585,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 46,
-            "level": "A1",
             "word": "love",
             "role": "noun",
             "BrE": "/lʌv/",
@@ -7059,7 +6599,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "love",
             "role": "verb",
             "BrE": "/lʌv/",
@@ -7074,7 +6613,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "lunch",
             "role": "noun",
             "BrE": "/lʌntʃ/",
@@ -7089,7 +6627,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "make",
             "role": "verb",
             "BrE": "/meɪk/",
@@ -7104,7 +6641,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "man",
             "role": "noun",
             "BrE": "/mæn/",
@@ -7119,7 +6655,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "many",
             "role": "determiner",
             "BrE": "/ˈmeni/",
@@ -7134,7 +6669,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "March",
             "role": "noun",
             "BrE": "/mɑːtʃ/",
@@ -7149,7 +6683,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "market",
             "role": "noun",
             "BrE": "/ˈmɑːkɪt/",
@@ -7164,7 +6697,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "married",
             "role": "adjective",
             "BrE": "/ˈmærid/",
@@ -7179,7 +6711,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "May",
             "role": "noun",
             "BrE": "/meɪ/",
@@ -7194,7 +6725,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 47,
-            "level": "A1",
             "word": "me",
             "role": "pronoun",
             "BrE": "/miː/",
@@ -7209,7 +6739,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "meal",
             "role": "noun",
             "BrE": "/miːl/",
@@ -7224,7 +6753,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "meat",
             "role": "noun",
             "BrE": "/miːt/",
@@ -7239,7 +6767,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "meet",
             "role": "verb",
             "BrE": "/miːt/",
@@ -7254,7 +6781,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "milk",
             "role": "noun",
             "BrE": "/mɪlk/",
@@ -7269,7 +6795,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "minute",
             "role": "noun",
             "BrE": "/ˈmɪnɪt/",
@@ -7284,7 +6809,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "Miss",
             "role": "noun",
             "BrE": "/mɪs/",
@@ -7299,7 +6823,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "mistake",
             "role": "noun",
             "BrE": "/mɪˈsteɪk/",
@@ -7314,7 +6837,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "modern",
             "role": "adjective",
             "BrE": "/ˈmɒdn/",
@@ -7329,7 +6851,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "Monday",
             "role": "noun",
             "BrE": "/ˈmʌndeɪ/",
@@ -7344,7 +6865,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 48,
-            "level": "A1",
             "word": "money",
             "role": "noun",
             "BrE": "/ˈmʌni/",
@@ -7359,7 +6879,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "month",
             "role": "noun",
             "BrE": "/mʌnθ/",
@@ -7374,7 +6893,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "more",
             "role": "adverb",
             "BrE": "/mɔː(r)/",
@@ -7389,7 +6907,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "morning",
             "role": "noun",
             "BrE": "/ˈmɔːnɪŋ/",
@@ -7404,7 +6921,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "mother",
             "role": "noun",
             "BrE": "/ˈmʌðə(r)/",
@@ -7419,7 +6935,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "mountain",
             "role": "noun",
             "BrE": "/ˈmaʊntən/",
@@ -7434,7 +6949,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "mouse",
             "role": "noun",
             "BrE": "/maʊs/",
@@ -7449,7 +6963,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "mouth",
             "role": "noun",
             "BrE": "/maʊθ/",
@@ -7464,7 +6977,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "move",
             "role": "verb",
             "BrE": "/muːv/",
@@ -7479,7 +6991,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "movie",
             "role": "noun",
             "BrE": "/ˈmuːvi/",
@@ -7494,7 +7005,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 49,
-            "level": "A1",
             "word": "Mr",
             "role": "noun",
             "BrE": "/ˈmɪstə(r)/",
@@ -7509,7 +7019,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "Mrs",
             "role": "noun",
             "BrE": "/ˈmɪsɪz/",
@@ -7524,7 +7033,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "much",
             "role": "adverb",
             "BrE": "/mʌtʃ/",
@@ -7539,7 +7047,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "mum",
             "role": "noun",
             "BrE": "/mʌm/",
@@ -7554,7 +7061,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "museum",
             "role": "noun",
             "BrE": "/mjuˈziːəm/",
@@ -7569,7 +7075,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "music",
             "role": "noun",
             "BrE": "/ˈmjuːzɪk/",
@@ -7584,7 +7089,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "my",
             "role": "determiner",
             "BrE": "/maɪ/",
@@ -7599,7 +7103,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "name",
             "role": "noun",
             "BrE": "/neɪm/",
@@ -7614,7 +7117,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "near",
             "role": "preposition",
             "BrE": "/nɪə(r)/",
@@ -7629,7 +7131,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "need",
             "role": "verb",
             "BrE": "/niːd/",
@@ -7644,7 +7145,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 50,
-            "level": "A1",
             "word": "never",
             "role": "adverb",
             "BrE": "/ˈnevə(r)/",
@@ -7660,7 +7160,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "new",
             "role": "adjective",
             "BrE": "/njuː/",
@@ -7675,7 +7174,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "news",
             "role": "noun",
             "BrE": "/njuːz/",
@@ -7690,7 +7188,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "next",
             "role": "adjective",
             "BrE": "/nekst/",
@@ -7705,7 +7202,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "nice",
             "role": "adjective",
             "BrE": "/naɪs/",
@@ -7720,7 +7216,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "night",
             "role": "noun",
             "BrE": "/naɪt/",
@@ -7735,7 +7230,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "nine",
             "role": "number",
             "BrE": "/naɪn/",
@@ -7750,7 +7244,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "nineteen",
             "role": "number",
             "BrE": "/ˌnaɪnˈtiːn/",
@@ -7765,7 +7258,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "ninety",
             "role": "number",
             "BrE": "/ˈnaɪnti/",
@@ -7780,7 +7272,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "no",
             "role": "exclamation",
             "BrE": "/nəʊ/",
@@ -7795,7 +7286,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 51,
-            "level": "A1",
             "word": "nobody",
             "role": "pronoun",
             "BrE": "/ˈnəʊbədi/",
@@ -7810,7 +7300,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "north",
             "role": "noun",
             "BrE": "/nɔːθ/",
@@ -7825,7 +7314,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "north",
             "role": "adjective",
             "BrE": "/nɔːθ/",
@@ -7840,7 +7328,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "north",
             "role": "adverb",
             "BrE": "/nɔːθ/",
@@ -7855,7 +7342,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "nose",
             "role": "noun",
             "BrE": "/nəʊz/",
@@ -7870,7 +7356,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "not",
             "role": "adverb",
             "BrE": "/nɒt/",
@@ -7885,7 +7370,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "nothing",
             "role": "pronoun",
             "BrE": "/ˈnʌθɪŋ/",
@@ -7900,7 +7384,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "November",
             "role": "noun",
             "BrE": "/nəʊˈvembə(r)/",
@@ -7915,7 +7398,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "now",
             "role": "adverb",
             "BrE": "/naʊ/",
@@ -7930,7 +7412,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "number",
             "role": "noun",
             "BrE": "/ˈnʌmbə(r)/",
@@ -7945,7 +7426,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 52,
-            "level": "A1",
             "word": "October",
             "role": "noun",
             "BrE": "/ɒkˈtəʊbə(r)/",
@@ -7960,7 +7440,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "of",
             "role": "preposition",
             "BrE": "/əv/",
@@ -7975,7 +7454,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "off",
             "role": "adverb",
             "BrE": "/ɒf/",
@@ -7990,7 +7468,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "often",
             "role": "adverb",
             "BrE": "/ˈɒfn/",
@@ -8005,7 +7482,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "old",
             "role": "adjective",
             "BrE": "/əʊld/",
@@ -8020,7 +7496,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "on",
             "role": "preposition",
             "BrE": "/ɒn/",
@@ -8035,7 +7510,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "once",
             "role": "adverb",
             "BrE": "/wʌns/",
@@ -8050,7 +7524,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "one",
             "role": "number",
             "BrE": "/wʌn/",
@@ -8065,7 +7538,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "only",
             "role": "adverb",
             "BrE": "/ˈəʊnli/",
@@ -8080,7 +7552,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "open",
             "role": "adjective",
             "BrE": "/ˈəʊpən/",
@@ -8095,7 +7566,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 53,
-            "level": "A1",
             "word": "open",
             "role": "verb",
             "BrE": "/ˈəʊpən/",
@@ -8110,7 +7580,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "or",
             "role": "conjunction",
             "BrE": "/ɔː(r)/",
@@ -8125,7 +7594,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "orange",
             "role": "noun",
             "BrE": "/ˈɒrɪndʒ/",
@@ -8140,7 +7608,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "our",
             "role": "determiner",
             "BrE": "/aʊə(r)/",
@@ -8155,7 +7622,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "out",
             "role": "adverb",
             "BrE": "/aʊt/",
@@ -8170,7 +7636,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "over",
             "role": "preposition",
             "BrE": "/ˈəʊvə(r)/",
@@ -8185,7 +7650,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "page",
             "role": "noun",
             "BrE": "/peɪdʒ/",
@@ -8200,7 +7664,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "paint",
             "role": "verb",
             "BrE": "/peɪnt/",
@@ -8215,7 +7678,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "painting",
             "role": "noun",
             "BrE": "/ˈpeɪntɪŋ/",
@@ -8230,7 +7692,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "pair",
             "role": "noun",
             "BrE": "/peə(r)/",
@@ -8245,7 +7706,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 54,
-            "level": "A1",
             "word": "paper",
             "role": "noun",
             "BrE": "/ˈpeɪpə(r)/",
@@ -8260,7 +7720,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "parent",
             "role": "noun",
             "BrE": "/ˈpeərənt/",
@@ -8275,7 +7734,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "park",
             "role": "noun",
             "BrE": "/pɑːk/",
@@ -8290,7 +7748,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "part",
             "role": "noun",
             "BrE": "/pɑːt/",
@@ -8305,7 +7762,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "party",
             "role": "noun",
             "BrE": "/ˈpɑːti/",
@@ -8320,7 +7776,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "past",
             "role": "preposition",
             "BrE": "/pɑːst/",
@@ -8335,7 +7790,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "pay",
             "role": "verb",
             "BrE": "/peɪ/",
@@ -8350,7 +7804,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "pen",
             "role": "noun",
             "BrE": "/pen/",
@@ -8365,7 +7818,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "pencil",
             "role": "noun",
             "BrE": "/ˈpensl/",
@@ -8380,7 +7832,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "people",
             "role": "noun",
             "BrE": "/ˈpiːpl/",
@@ -8395,7 +7846,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 55,
-            "level": "A1",
             "word": "person",
             "role": "noun",
             "BrE": "/ˈpɜːsn/",
@@ -8410,7 +7860,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "phone",
             "role": "noun",
             "BrE": "/fəʊn/",
@@ -8425,7 +7874,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "photo",
             "role": "noun",
             "BrE": "/ˈfəʊtəʊ/",
@@ -8440,7 +7888,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "piano",
             "role": "noun",
             "BrE": "/piˈænəʊ/",
@@ -8455,7 +7902,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "picture",
             "role": "noun",
             "BrE": "/ˈpɪktʃə(r)/",
@@ -8470,7 +7916,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "place",
             "role": "noun",
             "BrE": "/pleɪs/",
@@ -8485,7 +7930,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "play",
             "role": "verb",
             "BrE": "/pleɪ/",
@@ -8500,7 +7944,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "player",
             "role": "noun",
             "BrE": "/ˈpleɪə(r)/",
@@ -8515,7 +7958,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "please",
             "role": "exclamation",
             "BrE": "/pliːz/",
@@ -8530,7 +7972,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "point",
             "role": "noun",
             "BrE": "/pɔɪnt/",
@@ -8545,7 +7986,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 56,
-            "level": "A1",
             "word": "police",
             "role": "noun",
             "BrE": "/pəˈliːs/",
@@ -8560,7 +8000,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "poor",
             "role": "adjective",
             "BrE": "/pɔː(r)/",
@@ -8575,7 +8014,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "possible",
             "role": "adjective",
             "BrE": "/ˈpɒsəbl/",
@@ -8590,7 +8028,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "present",
             "role": "noun",
             "BrE": "/ˈpreznt/",
@@ -8605,7 +8042,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "pretty",
             "role": "adjective",
             "BrE": "/ˈprɪti/",
@@ -8620,7 +8056,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "price",
             "role": "noun",
             "BrE": "/praɪs/",
@@ -8635,7 +8070,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "problem",
             "role": "noun",
             "BrE": "/ˈprɒbləm/",
@@ -8650,7 +8084,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "programme",
             "role": "noun",
             "BrE": "/ˈprəʊɡræm/",
@@ -8665,7 +8098,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "put",
             "role": "verb",
             "BrE": "/pʊt/",
@@ -8680,7 +8112,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "question",
             "role": "noun",
             "BrE": "/ˈkwestʃən/",
@@ -8695,7 +8126,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 57,
-            "level": "A1",
             "word": "quick",
             "role": "adjective",
             "BrE": "/kwɪk/",
@@ -8710,7 +8140,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "quiet",
             "role": "adjective",
             "BrE": "/ˈkwaɪət/",
@@ -8725,7 +8154,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "radio",
             "role": "noun",
             "BrE": "/ˈreɪdiəʊ/",
@@ -8740,7 +8168,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "rain",
             "role": "noun",
             "BrE": "/reɪn/",
@@ -8755,7 +8182,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "read",
             "role": "verb",
             "BrE": "/riːd/",
@@ -8770,7 +8196,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "ready",
             "role": "adjective",
             "BrE": "/ˈredi/",
@@ -8785,7 +8210,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "red",
             "role": "adjective",
             "BrE": "/red/",
@@ -8800,7 +8224,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "red",
             "role": "noun",
             "BrE": "/red/",
@@ -8815,7 +8238,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "remember",
             "role": "verb",
             "BrE": "/rɪˈmembə(r)/",
@@ -8830,7 +8252,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "restaurant",
             "role": "noun",
             "BrE": "/ˈrestrɒnt/",
@@ -8845,7 +8266,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 58,
-            "level": "A1",
             "word": "rice",
             "role": "noun",
             "BrE": "/raɪs/",
@@ -8860,7 +8280,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "rich",
             "role": "adjective",
             "BrE": "/rɪtʃ/",
@@ -8875,7 +8294,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "right",
             "role": "adjective",
             "BrE": "/raɪt/",
@@ -8890,7 +8308,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "right",
             "role": "adverb",
             "BrE": "/raɪt/",
@@ -8905,7 +8322,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "river",
             "role": "noun",
             "BrE": "/ˈrɪvə(r)/",
@@ -8920,7 +8336,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "road",
             "role": "noun",
             "BrE": "/rəʊd/",
@@ -8935,7 +8350,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "room",
             "role": "noun",
             "BrE": "/ruːm/",
@@ -8950,7 +8364,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "run",
             "role": "verb",
             "BrE": "/rʌn/",
@@ -8965,7 +8378,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "sad",
             "role": "adjective",
             "BrE": "/sæd/",
@@ -8980,7 +8392,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "same",
             "role": "adjective",
             "BrE": "/seɪm/",
@@ -8995,7 +8406,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 59,
-            "level": "A1",
             "word": "Saturday",
             "role": "noun",
             "BrE": "/ˈsætədeɪ/",
@@ -9010,7 +8420,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "say",
             "role": "verb",
             "BrE": "/seɪ/",
@@ -9025,7 +8434,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "school",
             "role": "noun",
             "BrE": "/skuːl/",
@@ -9040,7 +8448,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "sea",
             "role": "noun",
             "BrE": "/siː/",
@@ -9055,7 +8462,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "second",
             "role": "adjective",
             "BrE": "/ˈsekənd/",
@@ -9070,7 +8476,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "see",
             "role": "verb",
             "BrE": "/siː/",
@@ -9085,7 +8490,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "sell",
             "role": "verb",
             "BrE": "/sel/",
@@ -9100,7 +8504,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "send",
             "role": "verb",
             "BrE": "/send/",
@@ -9115,7 +8518,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "September",
             "role": "noun",
             "BrE": "/sepˈtembə(r)/",
@@ -9130,7 +8532,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "seven",
             "role": "number",
             "BrE": "/ˈsevn/",
@@ -9145,7 +8546,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 60,
-            "level": "A1",
             "word": "seventeen",
             "role": "number",
             "BrE": "/ˌsevənˈtiːn/",
@@ -9161,7 +8561,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "seventy",
             "role": "number",
             "BrE": "/ˈsevnti/",
@@ -9176,7 +8575,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "she",
             "role": "pronoun",
             "BrE": "/ʃiː/",
@@ -9191,7 +8589,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "shirt",
             "role": "noun",
             "BrE": "/ʃɜːt/",
@@ -9206,7 +8603,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "shoe",
             "role": "noun",
             "BrE": "/ʃuː/",
@@ -9221,7 +8617,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "shop",
             "role": "noun",
             "BrE": "/ʃɒp/",
@@ -9236,7 +8631,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "short",
             "role": "adjective",
             "BrE": "/ʃɔːt/",
@@ -9251,7 +8645,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "show",
             "role": "verb",
             "BrE": "/ʃəʊ/",
@@ -9266,7 +8659,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "sing",
             "role": "verb",
             "BrE": "/sɪŋ/",
@@ -9281,7 +8673,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "sister",
             "role": "noun",
             "BrE": "/ˈsɪstə(r)/",
@@ -9296,7 +8687,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 61,
-            "level": "A1",
             "word": "sit",
             "role": "verb",
             "BrE": "/sɪt/",
@@ -9311,7 +8701,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "six",
             "role": "number",
             "BrE": "/sɪks/",
@@ -9326,7 +8715,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "sixteen",
             "role": "number",
             "BrE": "/ˌsɪksˈtiːn/",
@@ -9341,7 +8729,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "sixty",
             "role": "number",
             "BrE": "/ˈsɪksti/",
@@ -9356,7 +8743,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "sleep",
             "role": "verb",
             "BrE": "/sliːp/",
@@ -9371,7 +8757,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "small",
             "role": "adjective",
             "BrE": "/smɔːl/",
@@ -9386,7 +8771,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "snow",
             "role": "noun",
             "BrE": "/snəʊ/",
@@ -9401,7 +8785,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "so",
             "role": "adverb",
             "BrE": "/səʊ/",
@@ -9416,7 +8799,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "some",
             "role": "determiner",
             "BrE": "/sʌm/",
@@ -9431,7 +8813,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "something",
             "role": "pronoun",
             "BrE": "/ˈsʌmθɪŋ/",
@@ -9446,7 +8827,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 62,
-            "level": "A1",
             "word": "sometimes",
             "role": "adverb",
             "BrE": "/ˈsʌmtaɪmz/",
@@ -9461,7 +8841,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "son",
             "role": "noun",
             "BrE": "/sʌn/",
@@ -9476,7 +8855,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "song",
             "role": "noun",
             "BrE": "/sɒŋ/",
@@ -9491,7 +8869,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "soon",
             "role": "adverb",
             "BrE": "/suːn/",
@@ -9506,7 +8883,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "sorry",
             "role": "exclamation",
             "BrE": "/ˈsɒri/",
@@ -9521,7 +8897,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "south",
             "role": "noun",
             "BrE": "/saʊθ/",
@@ -9536,7 +8911,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "south",
             "role": "adjective",
             "BrE": "/saʊθ/",
@@ -9551,7 +8925,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "south",
             "role": "adverb",
             "BrE": "/saʊθ/",
@@ -9566,7 +8939,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "speak",
             "role": "verb",
             "BrE": "/spiːk/",
@@ -9581,7 +8953,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "sport",
             "role": "noun",
             "BrE": "/spɔːt/",
@@ -9596,7 +8967,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 63,
-            "level": "A1",
             "word": "spring",
             "role": "noun",
             "BrE": "/sprɪŋ/",
@@ -9611,7 +8981,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "stand",
             "role": "verb",
             "BrE": "/stænd/",
@@ -9626,7 +8995,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "star",
             "role": "noun",
             "BrE": "/stɑː(r)/",
@@ -9641,7 +9009,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "start",
             "role": "verb",
             "BrE": "/stɑːt/",
@@ -9656,7 +9023,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "station",
             "role": "noun",
             "BrE": "/ˈsteɪʃn/",
@@ -9671,7 +9037,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "stay",
             "role": "verb",
             "BrE": "/steɪ/",
@@ -9686,7 +9051,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "stop",
             "role": "verb",
             "BrE": "/stɒp/",
@@ -9701,7 +9065,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "store",
             "role": "noun",
             "BrE": "/stɔː(r)/",
@@ -9716,7 +9079,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "street",
             "role": "noun",
             "BrE": "/striːt/",
@@ -9731,7 +9093,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "strong",
             "role": "adjective",
             "BrE": "/strɒŋ/",
@@ -9746,7 +9107,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 64,
-            "level": "A1",
             "word": "student",
             "role": "noun",
             "BrE": "/ˈstjuːdnt/",
@@ -9761,7 +9121,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "study",
             "role": "verb",
             "BrE": "/ˈstʌdi/",
@@ -9776,7 +9135,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "summer",
             "role": "noun",
             "BrE": "/ˈsʌmə(r)/",
@@ -9791,7 +9149,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "sun",
             "role": "noun",
             "BrE": "/sʌn/",
@@ -9806,7 +9163,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "Sunday",
             "role": "noun",
             "BrE": "/ˈsʌndeɪ/",
@@ -9821,7 +9177,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "supermarket",
             "role": "noun",
             "BrE": "/ˈsuːpəmɑːkɪt/",
@@ -9836,7 +9191,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "sure",
             "role": "adjective",
             "BrE": "/ʃʊə(r)/",
@@ -9851,7 +9205,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "swim",
             "role": "verb",
             "BrE": "/swɪm/",
@@ -9866,7 +9219,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "table",
             "role": "noun",
             "BrE": "/ˈteɪbl/",
@@ -9881,7 +9233,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "take",
             "role": "verb",
             "BrE": "/teɪk/",
@@ -9896,7 +9247,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 65,
-            "level": "A1",
             "word": "talk",
             "role": "verb",
             "BrE": "/tɔːk/",
@@ -9911,7 +9261,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "tall",
             "role": "adjective",
             "BrE": "/tɔːl/",
@@ -9926,7 +9275,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "tea",
             "role": "noun",
             "BrE": "/tiː/",
@@ -9941,7 +9289,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "teacher",
             "role": "noun",
             "BrE": "/ˈtiːtʃə(r)/",
@@ -9956,7 +9303,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "television",
             "role": "noun",
             "BrE": "/ˈtelɪvɪʒn/",
@@ -9971,7 +9317,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "tell",
             "role": "verb",
             "BrE": "/tel/",
@@ -9986,7 +9331,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "ten",
             "role": "number",
             "BrE": "/ten/",
@@ -10001,7 +9345,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "test",
             "role": "noun",
             "BrE": "/test/",
@@ -10016,7 +9359,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "than",
             "role": "conjunction",
             "BrE": "/ðæn/",
@@ -10031,7 +9373,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "thank",
             "role": "verb",
             "BrE": "/θæŋk/",
@@ -10046,7 +9387,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 66,
-            "level": "A1",
             "word": "that",
             "role": "determiner",
             "BrE": "/ðæt/",
@@ -10061,7 +9401,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "the",
             "role": "determiner",
             "BrE": "/ðə/",
@@ -10076,7 +9415,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "their",
             "role": "determiner",
             "BrE": "/ðeə(r)/",
@@ -10091,7 +9429,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "them",
             "role": "pronoun",
             "BrE": "/ðem/",
@@ -10106,7 +9443,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "then",
             "role": "adverb",
             "BrE": "/ðen/",
@@ -10121,7 +9457,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "there",
             "role": "adverb",
             "BrE": "/ðeə(r)/",
@@ -10136,7 +9471,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "they",
             "role": "pronoun",
             "BrE": "/ðeɪ/",
@@ -10151,7 +9485,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "thing",
             "role": "noun",
             "BrE": "/θɪŋ/",
@@ -10166,7 +9499,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "think",
             "role": "verb",
             "BrE": "/θɪŋk/",
@@ -10181,7 +9513,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "third",
             "role": "adjective",
             "BrE": "/θɜːd/",
@@ -10196,7 +9527,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 67,
-            "level": "A1",
             "word": "thirteen",
             "role": "number",
             "BrE": "/ˌθɜːˈtiːn/",
@@ -10211,7 +9541,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 68,
-            "level": "A1",
             "word": "thirty",
             "role": "number",
             "BrE": "/ˈθɜːti/",
@@ -10226,7 +9555,6 @@ export default function Lessons({ params }) {
          {
             
             "id": 68,
-            "level": "A1",
             "word": "this",
             "role": "determiner",
             "BrE": "/ðɪs/",
@@ -10240,7 +9568,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "Thursday",
             "role": "noun",
             "BrE": "/ˈθɜːzdeɪ/",
@@ -10254,7 +9581,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "ticket",
             "role": "noun",
             "BrE": "/ˈtɪkɪt/",
@@ -10268,7 +9594,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "time",
             "role": "noun",
             "BrE": "/taɪm/",
@@ -10282,7 +9607,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "to",
             "role": "preposition",
             "BrE": "/tə/",
@@ -10296,7 +9620,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "today",
             "role": "adverb",
             "BrE": "/təˈdeɪ/",
@@ -10310,7 +9633,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "together",
             "role": "adverb",
             "BrE": "/təˈɡeðə(r)/",
@@ -10324,7 +9646,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "tomorrow",
             "role": "adverb",
             "BrE": "/təˈmɒrəʊ/",
@@ -10338,7 +9659,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 68,
-            "level": "A1",
             "word": "too",
             "role": "adverb",
             "BrE": "/tuː/",
@@ -10352,7 +9672,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "town",
             "role": "noun",
             "BrE": "/taʊn/",
@@ -10366,7 +9685,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "train",
             "role": "noun",
             "BrE": "/treɪn/",
@@ -10380,7 +9698,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "travel",
             "role": "verb",
             "BrE": "/ˈtrævl/",
@@ -10394,7 +9711,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "tree",
             "role": "noun",
             "BrE": "/triː/",
@@ -10408,7 +9724,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "try",
             "role": "verb",
             "BrE": "/traɪ/",
@@ -10422,7 +9737,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "Tuesday",
             "role": "noun",
             "BrE": "/ˈtjuːzdeɪ/",
@@ -10436,7 +9750,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "turn",
             "role": "verb",
             "BrE": "/tɜːn/",
@@ -10450,7 +9763,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "twelve",
             "role": "number",
             "BrE": "/twelv/",
@@ -10464,7 +9776,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "twenty",
             "role": "number",
             "BrE": "/ˈtwenti/",
@@ -10478,7 +9789,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 69,
-            "level": "A1",
             "word": "two",
             "role": "number",
             "BrE": "/tuː/",
@@ -10492,7 +9802,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "umbrella",
             "role": "noun",
             "BrE": "/ʌmˈbrelə/",
@@ -10506,7 +9815,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "under",
             "role": "preposition",
             "BrE": "/ˈʌndə(r)/",
@@ -10520,7 +9828,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "understand",
             "role": "verb",
             "BrE": "/ˌʌndəˈstænd/",
@@ -10534,7 +9841,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "up",
             "role": "adverb",
             "BrE": "/ʌp/",
@@ -10548,7 +9854,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "us",
             "role": "pronoun",
             "BrE": "/ʌs/",
@@ -10562,7 +9867,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "use",
             "role": "verb",
             "BrE": "/juːz/",
@@ -10576,7 +9880,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "usually",
             "role": "adverb",
             "BrE": "/ˈjuːʒuəli/",
@@ -10590,7 +9893,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "very",
             "role": "adverb",
             "BrE": "/ˈveri/",
@@ -10604,7 +9906,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "visit",
             "role": "verb",
             "BrE": "/ˈvɪzɪt/",
@@ -10618,7 +9919,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 70,
-            "level": "A1",
             "word": "wait",
             "role": "verb",
             "BrE": "/weɪt/",
@@ -10633,7 +9933,6 @@ export default function Lessons({ params }) {
          
          {
             "id": 71,
-            "level": "A1",
             "word": "walk",
             "role": "verb",
             "BrE": "/wɔːk/",
@@ -10647,7 +9946,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "wall",
             "role": "noun",
             "BrE": "/wɔːl/",
@@ -10661,7 +9959,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "want",
             "role": "verb",
             "BrE": "/wɒnt/",
@@ -10675,7 +9972,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "warm",
             "role": "adjective",
             "BrE": "/wɔːm/",
@@ -10689,7 +9985,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "watch",
             "role": "verb",
             "BrE": "/wɒtʃ/",
@@ -10703,7 +9998,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "watch",
             "role": "noun",
             "BrE": "/wɒtʃ/",
@@ -10717,7 +10011,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "water",
             "role": "noun",
             "BrE": "/ˈwɔːtə(r)/",
@@ -10731,7 +10024,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "way",
             "role": "noun",
             "BrE": "/weɪ/",
@@ -10745,7 +10037,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "we",
             "role": "pronoun",
             "BrE": "/wiː/",
@@ -10759,7 +10050,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 71,
-            "level": "A1",
             "word": "wear",
             "role": "verb",
             "BrE": "/weə(r)/",
@@ -10773,7 +10063,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "weather",
             "role": "noun",
             "BrE": "/ˈweðə(r)/",
@@ -10787,7 +10076,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "Wednesday",
             "role": "noun",
             "BrE": "/ˈwenzdeɪ/",
@@ -10801,7 +10089,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "week",
             "role": "noun",
             "BrE": "/wiːk/",
@@ -10815,7 +10102,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "weekend",
             "role": "noun",
             "BrE": "/ˌwiːkˈend/",
@@ -10829,7 +10115,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "well",
             "role": "adverb",
             "BrE": "/wel/",
@@ -10843,7 +10128,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "west",
             "role": "noun",
             "BrE": "/west/",
@@ -10857,7 +10141,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "west",
             "role": "adjective",
             "BrE": "/west/",
@@ -10871,7 +10154,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "west",
             "role": "adverb",
             "BrE": "/west/",
@@ -10885,7 +10167,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "what",
             "role": "pronoun",
             "BrE": "/wɒt/",
@@ -10899,7 +10180,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 72,
-            "level": "A1",
             "word": "when",
             "role": "adverb",
             "BrE": "/wen/",
@@ -10913,7 +10193,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "where",
             "role": "adverb",
             "BrE": "/weə(r)/",
@@ -10927,7 +10206,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "which",
             "role": "pronoun",
             "BrE": "/wɪtʃ/",
@@ -10941,7 +10219,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "white",
             "role": "adjective",
             "BrE": "/waɪt/",
@@ -10955,7 +10232,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "white",
             "role": "noun",
             "BrE": "/waɪt/",
@@ -10969,7 +10245,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "who",
             "role": "pronoun",
             "BrE": "/huː/",
@@ -10983,7 +10258,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "why",
             "role": "adverb",
             "BrE": "/waɪ/",
@@ -10997,7 +10271,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "wife",
             "role": "noun",
             "BrE": "/waɪf/",
@@ -11011,7 +10284,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "window",
             "role": "noun",
             "BrE": "/ˈwɪndəʊ/",
@@ -11025,7 +10297,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "winter",
             "role": "noun",
             "BrE": "/ˈwɪntə(r)/",
@@ -11039,7 +10310,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 73,
-            "level": "A1",
             "word": "with",
             "role": "preposition",
             "BrE": "/wɪð/",
@@ -11053,7 +10323,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "woman",
             "role": "noun",
             "BrE": "/ˈwʊmən/",
@@ -11067,7 +10336,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "work",
             "role": "noun",
             "BrE": "/wɜːk/",
@@ -11081,7 +10349,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "work",
             "role": "verb",
             "BrE": "/wɜːk/",
@@ -11095,7 +10362,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "world",
             "role": "noun",
             "BrE": "/wɜːld/",
@@ -11109,7 +10375,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "write",
             "role": "verb",
             "BrE": "/raɪt/",
@@ -11123,7 +10388,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "year",
             "role": "noun",
             "BrE": "/jɪə(r)/",
@@ -11137,7 +10401,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "yellow",
             "role": "adjective",
             "BrE": "/ˈjeləʊ/",
@@ -11151,7 +10414,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "yellow",
             "role": "noun",
             "BrE": "/ˈjeləʊ/",
@@ -11165,7 +10427,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "yes",
             "role": "exclamation",
             "BrE": "/jes/",
@@ -11179,7 +10440,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 74,
-            "level": "A1",
             "word": "yesterday",
             "role": "adverb",
             "BrE": "/ˈjestədeɪ/",
@@ -11193,7 +10453,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "you",
             "role": "pronoun",
             "BrE": "/juː/",
@@ -11207,7 +10466,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "young",
             "role": "adjective",
             "BrE": "/jʌŋ/",
@@ -11221,7 +10479,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "your",
             "role": "determiner",
             "BrE": "/jɔː(r)/",
@@ -11235,7 +10492,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "zoo",
             "role": "noun",
             "BrE": "/zuː/",
@@ -11249,7 +10505,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "always",
             "role": "adverb",
             "BrE": "/ˈɔːlweɪz/",
@@ -11263,7 +10518,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "any",
             "role": "determiner",
             "BrE": "/ˈeni/",
@@ -11277,7 +10531,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "ask",
             "role": "verb",
             "BrE": "/ɑːsk/",
@@ -11291,7 +10544,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "both",
             "role": "determiner",
             "BrE": "/bəʊθ/",
@@ -11305,7 +10557,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "bring",
             "role": "verb",
             "BrE": "/brɪŋ/",
@@ -11319,7 +10570,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 75,
-            "level": "A1",
             "word": "busy",
             "role": "adjective",
             "BrE": "/ˈbɪzi/",
@@ -11333,7 +10583,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "call",
             "role": "verb",
             "BrE": "/kɔːl/",
@@ -11347,7 +10596,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "careful",
             "role": "adjective",
             "BrE": "/ˈkeəfl/",
@@ -11361,7 +10609,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "clean",
             "role": "adjective",
             "BrE": "/kliːn/",
@@ -11375,7 +10622,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "clean",
             "role": "verb",
             "BrE": "/kliːn/",
@@ -11389,7 +10635,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "close",
             "role": "verb",
             "BrE": "/kləʊz/",
@@ -11403,7 +10648,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "cold",
             "role": "adjective",
             "BrE": "/kəʊld/",
@@ -11417,7 +10661,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "come",
             "role": "verb",
             "BrE": "/kʌm/",
@@ -11431,7 +10674,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "cook",
             "role": "verb",
             "BrE": "/kʊk/",
@@ -11445,7 +10687,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "cool",
             "role": "adjective",
             "BrE": "/kuːl/",
@@ -11459,7 +10700,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 76,
-            "level": "A1",
             "word": "dance",
             "role": "verb",
             "BrE": "/dɑːns/",
@@ -11473,7 +10713,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "dark",
             "role": "adjective",
             "BrE": "/dɑːk/",
@@ -11487,7 +10726,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "day",
             "role": "noun",
             "BrE": "/deɪ/",
@@ -11501,7 +10739,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "different",
             "role": "adjective",
             "BrE": "/ˈdɪfrənt/",
@@ -11515,7 +10752,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "do",
             "role": "verb",
             "BrE": "/duː/",
@@ -11529,7 +10765,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "draw",
             "role": "verb",
             "BrE": "/drɔː/",
@@ -11543,7 +10778,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "drink",
             "role": "verb",
             "BrE": "/drɪŋk/",
@@ -11557,7 +10791,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "easy",
             "role": "adjective",
             "BrE": "/ˈiːzi/",
@@ -11571,7 +10804,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "eat",
             "role": "verb",
             "BrE": "/iːt/",
@@ -11585,7 +10817,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "egg",
             "role": "noun",
             "BrE": "/eɡ/",
@@ -11599,7 +10830,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 77,
-            "level": "A1",
             "word": "every",
             "role": "determiner",
             "BrE": "/ˈevri/",
@@ -11613,7 +10843,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "excuse",
             "role": "exclamation",
             "BrE": "/ɪkˈskjuːz/",
@@ -11627,7 +10856,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "family",
             "role": "noun",
             "BrE": "/ˈfæməli/",
@@ -11641,7 +10869,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "fast",
             "role": "adjective",
             "BrE": "/fɑːst/",
@@ -11655,7 +10882,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "father",
             "role": "noun",
             "BrE": "/ˈfɑːðə(r)/",
@@ -11669,7 +10895,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "find",
             "role": "verb",
             "BrE": "/faɪnd/",
@@ -11683,7 +10908,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "first",
             "role": "adjective",
             "BrE": "/fɜːst/",
@@ -11697,7 +10921,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "fish",
             "role": "noun",
             "BrE": "/fɪʃ/",
@@ -11711,7 +10934,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "five",
             "role": "number",
             "BrE": "/faɪv/",
@@ -11725,7 +10947,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "floor",
             "role": "noun",
             "BrE": "/flɔː(r)/",
@@ -11739,7 +10960,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 78,
-            "level": "A1",
             "word": "food",
             "role": "noun",
             "BrE": "/fuːd/",
@@ -11753,7 +10973,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "four",
             "role": "number",
             "BrE": "/fɔː(r)/",
@@ -11767,7 +10986,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "Friday",
             "role": "noun",
             "BrE": "/ˈfraɪdeɪ/",
@@ -11781,7 +10999,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "friend",
             "role": "noun",
             "BrE": "/frend/",
@@ -11795,7 +11012,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "fun",
             "role": "adjective",
             "BrE": "/fʌn/",
@@ -11809,7 +11025,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "game",
             "role": "noun",
             "BrE": "/ɡeɪm/",
@@ -11823,7 +11038,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "garden",
             "role": "noun",
             "BrE": "/ˈɡɑːdn/",
@@ -11837,7 +11051,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "get",
             "role": "verb",
             "BrE": "/ɡet/",
@@ -11851,7 +11064,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "girl",
             "role": "noun",
             "BrE": "/ɡɜːl/",
@@ -11865,7 +11077,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "give",
             "role": "verb",
             "BrE": "/ɡɪv/",
@@ -11879,7 +11090,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 79,
-            "level": "A1",
             "word": "go",
             "role": "verb",
             "BrE": "/ɡəʊ/",
@@ -11893,7 +11103,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "good",
             "role": "adjective",
             "BrE": "/ɡʊd/",
@@ -11907,7 +11116,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "great",
             "role": "adjective",
             "BrE": "/ɡreɪt/",
@@ -11921,7 +11129,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "green",
             "role": "adjective",
             "BrE": "/ɡriːn/",
@@ -11935,7 +11142,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "green",
             "role": "noun",
             "BrE": "/ɡriːn/",
@@ -11949,7 +11155,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "hair",
             "role": "noun",
             "BrE": "/heə(r)/",
@@ -11963,7 +11168,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "happy",
             "role": "adjective",
             "BrE": "/ˈhæpi/",
@@ -11977,7 +11181,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "hat",
             "role": "noun",
             "BrE": "/hæt/",
@@ -11991,7 +11194,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "have",
             "role": "verb",
             "BrE": "/hæv/",
@@ -12005,7 +11207,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "he",
             "role": "pronoun",
             "BrE": "/hiː/",
@@ -12019,7 +11220,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 80,
-            "level": "A1",
             "word": "hello",
             "role": "exclamation",
             "BrE": "/həˈləʊ/",
@@ -12034,7 +11234,6 @@ export default function Lessons({ params }) {
          
          {
             "id": 81,
-            "level": "A1",
             "word": "help",
             "role": "verb",
             "BrE": "/help/",
@@ -12048,7 +11247,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "her",
             "role": "pronoun",
             "BrE": "/hə(r)/",
@@ -12062,7 +11260,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "here",
             "role": "adverb",
             "BrE": "/hɪə(r)/",
@@ -12076,7 +11273,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "high",
             "role": "adjective",
             "BrE": "/haɪ/",
@@ -12090,7 +11286,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "him",
             "role": "pronoun",
             "BrE": "/hɪm/",
@@ -12104,7 +11299,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "his",
             "role": "determiner",
             "BrE": "/hɪz/",
@@ -12118,7 +11312,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "home",
             "role": "noun",
             "BrE": "/həʊm/",
@@ -12132,7 +11325,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "hot",
             "role": "adjective",
             "BrE": "/hɒt/",
@@ -12146,7 +11338,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "house",
             "role": "noun",
             "BrE": "/haʊs/",
@@ -12160,7 +11351,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 81,
-            "level": "A1",
             "word": "how",
             "role": "adverb",
             "BrE": "/haʊ/",
@@ -12174,7 +11364,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "hundred",
             "role": "number",
             "BrE": "/ˈhʌndrəd/",
@@ -12188,7 +11377,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "I",
             "role": "pronoun",
             "BrE": "/aɪ/",
@@ -12202,7 +11390,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "in",
             "role": "preposition",
             "BrE": "/ɪn/",
@@ -12216,7 +11403,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "it",
             "role": "pronoun",
             "BrE": "/ɪt/",
@@ -12230,7 +11416,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "January",
             "role": "noun",
             "BrE": "/ˈdʒænjuəri/",
@@ -12244,7 +11429,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "job",
             "role": "noun",
             "BrE": "/dʒɒb/",
@@ -12258,7 +11442,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "July",
             "role": "noun",
             "BrE": "/dʒuˈlaɪ/",
@@ -12272,7 +11455,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "June",
             "role": "noun",
             "BrE": "/dʒuːn/",
@@ -12286,7 +11468,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "kind",
             "role": "adjective",
             "BrE": "/kaɪnd/",
@@ -12300,7 +11481,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 82,
-            "level": "A1",
             "word": "know",
             "role": "verb",
             "BrE": "/nəʊ/",
@@ -12314,7 +11494,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "learn",
             "role": "verb",
             "BrE": "/lɜːn/",
@@ -12328,7 +11507,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "left",
             "role": "adjective",
             "BrE": "/left/",
@@ -12342,7 +11520,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "letter",
             "role": "noun",
             "BrE": "/ˈletə(r)/",
@@ -12356,7 +11533,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "like",
             "role": "verb",
             "BrE": "/laɪk/",
@@ -12370,7 +11546,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "listen",
             "role": "verb",
             "BrE": "/ˈlɪsn/",
@@ -12384,7 +11559,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "little",
             "role": "adjective",
             "BrE": "/ˈlɪtl/",
@@ -12398,7 +11572,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "live",
             "role": "verb",
             "BrE": "/lɪv/",
@@ -12412,7 +11585,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "long",
             "role": "adjective",
             "BrE": "/lɒŋ/",
@@ -12426,7 +11598,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "look",
             "role": "verb",
             "BrE": "/lʊk/",
@@ -12440,7 +11611,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 83,
-            "level": "A1",
             "word": "love",
             "role": "verb",
             "BrE": "/lʌv/",
@@ -12454,7 +11624,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "make",
             "role": "verb",
             "BrE": "/meɪk/",
@@ -12468,7 +11637,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "man",
             "role": "noun",
             "BrE": "/mæn/",
@@ -12482,7 +11650,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "many",
             "role": "determiner",
             "BrE": "/ˈmeni/",
@@ -12496,7 +11663,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "March",
             "role": "noun",
             "BrE": "/mɑːtʃ/",
@@ -12510,7 +11676,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "May",
             "role": "noun",
             "BrE": "/meɪ/",
@@ -12524,7 +11689,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "me",
             "role": "pronoun",
             "BrE": "/miː/",
@@ -12538,7 +11702,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "milk",
             "role": "noun",
             "BrE": "/mɪlk/",
@@ -12552,7 +11715,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "money",
             "role": "noun",
             "BrE": "/ˈmʌni/",
@@ -12566,7 +11728,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "month",
             "role": "noun",
             "BrE": "/mʌnθ/",
@@ -12580,7 +11741,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 84,
-            "level": "A1",
             "word": "morning",
             "role": "noun",
             "BrE": "/ˈmɔːnɪŋ/",
@@ -12594,7 +11754,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "mother",
             "role": "noun",
             "BrE": "/ˈmʌðə(r)/",
@@ -12608,7 +11767,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "music",
             "role": "noun",
             "BrE": "/ˈmjuːzɪk/",
@@ -12622,7 +11780,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "my",
             "role": "determiner",
             "BrE": "/maɪ/",
@@ -12636,7 +11793,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "name",
             "role": "noun",
             "BrE": "/neɪm/",
@@ -12650,7 +11806,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "near",
             "role": "preposition",
             "BrE": "/nɪə(r)/",
@@ -12664,7 +11819,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "need",
             "role": "verb",
             "BrE": "/niːd/",
@@ -12678,7 +11832,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "never",
             "role": "adverb",
             "BrE": "/ˈnevə(r)/",
@@ -12692,7 +11845,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "new",
             "role": "adjective",
             "BrE": "/njuː/",
@@ -12706,7 +11858,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "news",
             "role": "noun",
             "BrE": "/njuːz/",
@@ -12720,7 +11871,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 85,
-            "level": "A1",
             "word": "next",
             "role": "adjective",
             "BrE": "/nekst/",
@@ -12734,7 +11884,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "nice",
             "role": "adjective",
             "BrE": "/naɪs/",
@@ -12748,7 +11897,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "night",
             "role": "noun",
             "BrE": "/naɪt/",
@@ -12762,7 +11910,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "nine",
             "role": "number",
             "BrE": "/naɪn/",
@@ -12776,7 +11923,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "nineteen",
             "role": "number",
             "BrE": "/ˌnaɪnˈtiːn/",
@@ -12790,7 +11936,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "ninety",
             "role": "number",
             "BrE": "/ˈnaɪnti/",
@@ -12804,7 +11949,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "no",
             "role": "exclamation",
             "BrE": "/nəʊ/",
@@ -12818,7 +11962,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "nobody",
             "role": "pronoun",
             "BrE": "/ˈnəʊbədi/",
@@ -12832,7 +11975,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "north",
             "role": "noun",
             "BrE": "/nɔːθ/",
@@ -12846,7 +11988,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "north",
             "role": "adjective",
             "BrE": "/nɔːθ/",
@@ -12860,7 +12001,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 86,
-            "level": "A1",
             "word": "north",
             "role": "adverb",
             "BrE": "/nɔːθ/",
@@ -12874,7 +12014,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "nose",
             "role": "noun",
             "BrE": "/nəʊz/",
@@ -12888,7 +12027,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "not",
             "role": "adverb",
             "BrE": "/nɒt/",
@@ -12902,7 +12040,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "nothing",
             "role": "pronoun",
             "BrE": "/ˈnʌθɪŋ/",
@@ -12916,7 +12053,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "November",
             "role": "noun",
             "BrE": "/nəʊˈvembə(r)/",
@@ -12930,7 +12066,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "now",
             "role": "adverb",
             "BrE": "/naʊ/",
@@ -12944,7 +12079,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "number",
             "role": "noun",
             "BrE": "/ˈnʌmbə(r)/",
@@ -12958,7 +12092,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "October",
             "role": "noun",
             "BrE": "/ɒkˈtəʊbə(r)/",
@@ -12972,7 +12105,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "of",
             "role": "preposition",
             "BrE": "/əv/",
@@ -12986,7 +12118,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "off",
             "role": "adverb",
             "BrE": "/ɒf/",
@@ -13000,7 +12131,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 87,
-            "level": "A1",
             "word": "often",
             "role": "adverb",
             "BrE": "/ˈɒfn/",
@@ -13014,7 +12144,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "old",
             "role": "adjective",
             "BrE": "/əʊld/",
@@ -13028,7 +12157,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "on",
             "role": "preposition",
             "BrE": "/ɒn/",
@@ -13042,7 +12170,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "once",
             "role": "adverb",
             "BrE": "/wʌns/",
@@ -13056,7 +12183,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "one",
             "role": "number",
             "BrE": "/wʌn/",
@@ -13070,7 +12196,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "only",
             "role": "adverb",
             "BrE": "/ˈəʊnli/",
@@ -13084,7 +12209,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "open",
             "role": "adjective",
             "BrE": "/ˈəʊpən/",
@@ -13098,7 +12222,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "open",
             "role": "verb",
             "BrE": "/ˈəʊpən/",
@@ -13112,7 +12235,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "or",
             "role": "conjunction",
             "BrE": "/ɔː(r)/",
@@ -13126,7 +12248,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "orange",
             "role": "noun",
             "BrE": "/ˈɒrɪndʒ/",
@@ -13140,7 +12261,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 88,
-            "level": "A1",
             "word": "our",
             "role": "determiner",
             "BrE": "/aʊə(r)/",
@@ -13154,7 +12274,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "out",
             "role": "adverb",
             "BrE": "/aʊt/",
@@ -13168,7 +12287,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "over",
             "role": "preposition",
             "BrE": "/ˈəʊvə(r)/",
@@ -13182,7 +12300,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "page",
             "role": "noun",
             "BrE": "/peɪdʒ/",
@@ -13196,7 +12313,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "paint",
             "role": "verb",
             "BrE": "/peɪnt/",
@@ -13210,7 +12326,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "painting",
             "role": "noun",
             "BrE": "/ˈpeɪntɪŋ/",
@@ -13224,7 +12339,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "pair",
             "role": "noun",
             "BrE": "/peə(r)/",
@@ -13238,7 +12352,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "paper",
             "role": "noun",
             "BrE": "/ˈpeɪpə(r)/",
@@ -13252,7 +12365,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "parent",
             "role": "noun",
             "BrE": "/ˈpeərənt/",
@@ -13266,7 +12378,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "park",
             "role": "noun",
             "BrE": "/pɑːk/",
@@ -13280,7 +12391,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 89,
-            "level": "A1",
             "word": "part",
             "role": "noun",
             "BrE": "/pɑːt/",
@@ -13294,7 +12404,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "party",
             "role": "noun",
             "BrE": "/ˈpɑːti/",
@@ -13308,7 +12417,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "past",
             "role": "preposition",
             "BrE": "/pɑːst/",
@@ -13322,7 +12430,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "pay",
             "role": "verb",
             "BrE": "/peɪ/",
@@ -13336,7 +12443,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "pen",
             "role": "noun",
             "BrE": "/pen/",
@@ -13350,7 +12456,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "pencil",
             "role": "noun",
             "BrE": "/ˈpensl/",
@@ -13364,7 +12469,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "people",
             "role": "noun",
             "BrE": "/ˈpiːpl/",
@@ -13378,7 +12482,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "person",
             "role": "noun",
             "BrE": "/ˈpɜːsn/",
@@ -13392,7 +12495,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "phone",
             "role": "noun",
             "BrE": "/fəʊn/",
@@ -13406,7 +12508,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "photo",
             "role": "noun",
             "BrE": "/ˈfəʊtəʊ/",
@@ -13420,7 +12521,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 90,
-            "level": "A1",
             "word": "piano",
             "role": "noun",
             "BrE": "/piˈænəʊ/",
@@ -13435,7 +12535,6 @@ export default function Lessons({ params }) {
          
          {
             "id": 91,
-            "level": "A1",
             "word": "picture",
             "role": "noun",
             "BrE": "/ˈpɪktʃə(r)/",
@@ -13449,7 +12548,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "place",
             "role": "noun",
             "BrE": "/pleɪs/",
@@ -13463,7 +12561,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "play",
             "role": "verb",
             "BrE": "/pleɪ/",
@@ -13477,7 +12574,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "please",
             "role": "exclamation",
             "BrE": "/pliːz/",
@@ -13491,7 +12587,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "point",
             "role": "verb",
             "BrE": "/pɔɪnt/",
@@ -13505,7 +12600,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "pretty",
             "role": "adjective",
             "BrE": "/ˈprɪti/",
@@ -13519,7 +12613,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "put",
             "role": "verb",
             "BrE": "/pʊt/",
@@ -13533,7 +12626,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "question",
             "role": "noun",
             "BrE": "/ˈkwestʃən/",
@@ -13547,7 +12639,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "quick",
             "role": "adjective",
             "BrE": "/kwɪk/",
@@ -13561,7 +12652,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 91,
-            "level": "A1",
             "word": "quiet",
             "role": "adjective",
             "BrE": "/ˈkwaɪət/",
@@ -13575,7 +12665,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "read",
             "role": "verb",
             "BrE": "/riːd/",
@@ -13589,7 +12678,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "red",
             "role": "adjective",
             "BrE": "/red/",
@@ -13603,7 +12691,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "red",
             "role": "noun",
             "BrE": "/red/",
@@ -13617,7 +12704,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "right",
             "role": "adjective",
             "BrE": "/raɪt/",
@@ -13631,7 +12717,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "room",
             "role": "noun",
             "BrE": "/ruːm/",
@@ -13645,7 +12730,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "run",
             "role": "verb",
             "BrE": "/rʌn/",
@@ -13659,7 +12743,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "sad",
             "role": "adjective",
             "BrE": "/sæd/",
@@ -13673,7 +12756,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "same",
             "role": "adjective",
             "BrE": "/seɪm/",
@@ -13687,7 +12769,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "Saturday",
             "role": "noun",
             "BrE": "/ˈsætədeɪ/",
@@ -13701,7 +12782,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 92,
-            "level": "A1",
             "word": "say",
             "role": "verb",
             "BrE": "/seɪ/",
@@ -13715,7 +12795,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "school",
             "role": "noun",
             "BrE": "/skuːl/",
@@ -13729,7 +12808,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "sea",
             "role": "noun",
             "BrE": "/siː/",
@@ -13743,7 +12821,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "second",
             "role": "adjective",
             "BrE": "/ˈsekənd/",
@@ -13757,7 +12834,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "see",
             "role": "verb",
             "BrE": "/siː/",
@@ -13771,7 +12847,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "September",
             "role": "noun",
             "BrE": "/sepˈtembə(r)/",
@@ -13785,7 +12860,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "seven",
             "role": "number",
             "BrE": "/ˈsevn/",
@@ -13799,7 +12873,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "seventeen",
             "role": "number",
             "BrE": "/ˌsevnˈtiːn/",
@@ -13813,7 +12886,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "sheep",
             "role": "noun",
             "BrE": "/ʃiːp/",
@@ -13827,7 +12899,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "shorts",
             "role": "noun",
             "BrE": "/ʃɔːts/",
@@ -13841,7 +12912,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 93,
-            "level": "A1",
             "word": "sick",
             "role": "adjective",
             "BrE": "/sɪk/",
@@ -13855,7 +12925,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "sky",
             "role": "noun",
             "BrE": "/skaɪ/",
@@ -13869,7 +12938,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "sleep",
             "role": "noun",
             "BrE": "/sliːp/",
@@ -13883,7 +12951,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "slow",
             "role": "adjective",
             "BrE": "/sləʊ/",
@@ -13897,7 +12964,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "smile",
             "role": "verb",
             "BrE": "/smaɪl/",
@@ -13911,7 +12977,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "snow",
             "role": "verb",
             "BrE": "/snəʊ/",
@@ -13925,7 +12990,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "somebody",
             "role": "pronoun",
             "BrE": "/ˈsʌmbədi/",
@@ -13939,7 +13003,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "sound",
             "role": "noun",
             "BrE": "/saʊnd/",
@@ -13953,7 +13016,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "stand",
             "role": "noun",
             "BrE": "/stænd/",
@@ -13967,7 +13029,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "start",
             "role": "noun",
             "BrE": "/stɑːt/",
@@ -13981,7 +13042,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 94,
-            "level": "A1",
             "word": "store",
             "role": "verb",
             "BrE": "/stɔː(r)/",
@@ -13995,7 +13055,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "story",
             "role": "noun",
             "BrE": "/ˈstɔːri/",
@@ -14009,7 +13068,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "study",
             "role": "noun",
             "BrE": "/ˈstʌdi/",
@@ -14023,7 +13081,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "sunny",
             "role": "adjective",
             "BrE": "/ˈsʌni/",
@@ -14037,7 +13094,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "sweet",
             "role": "adjective",
             "BrE": "/swiːt/",
@@ -14051,7 +13107,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "talk",
             "role": "noun",
             "BrE": "/tɔːk/",
@@ -14065,7 +13120,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "teacher",
             "role": "noun",
             "BrE": "/ˈtiːtʃə(r)/",
@@ -14079,7 +13133,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "team",
             "role": "noun",
             "BrE": "/tiːm/",
@@ -14093,7 +13146,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "tell",
             "role": "noun",
             "BrE": "/tel/",
@@ -14107,7 +13159,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "tennis",
             "role": "noun",
             "BrE": "/ˈtenɪs/",
@@ -14121,7 +13172,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 95,
-            "level": "A1",
             "word": "test",
             "role": "verb",
             "BrE": "/test/",
@@ -14135,7 +13185,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "thank you",
             "role": "exclamation",
             "BrE": "/ˈθæŋk juː/",
@@ -14149,7 +13198,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "thing",
             "role": "noun",
             "BrE": "/θɪŋ/",
@@ -14163,7 +13211,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "time",
             "role": "noun",
             "BrE": "/taɪm/",
@@ -14177,7 +13224,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "tired",
             "role": "adjective",
             "BrE": "/ˈtaɪəd/",
@@ -14191,7 +13237,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "to",
             "role": "preposition",
             "BrE": "/tə/",
@@ -14205,7 +13250,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "today",
             "role": "noun",
             "BrE": "/təˈdeɪ/",
@@ -14219,7 +13263,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "together",
             "role": "adjective",
             "BrE": "/təˈɡeðə(r)/",
@@ -14233,7 +13276,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "tomorrow",
             "role": "noun",
             "BrE": "/təˈmɒrəʊ/",
@@ -14247,7 +13289,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "too",
             "role": "adverb",
             "BrE": "/tuː/",
@@ -14261,7 +13302,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 96,
-            "level": "A1",
             "word": "train",
             "role": "verb",
             "BrE": "/treɪn/",
@@ -14275,7 +13315,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "tree",
             "role": "noun",
             "BrE": "/triː/",
@@ -14289,7 +13328,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "true",
             "role": "adjective",
             "BrE": "/truː/",
@@ -14303,7 +13341,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "try",
             "role": "noun",
             "BrE": "/traɪ/",
@@ -14317,7 +13354,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "turn",
             "role": "noun",
             "BrE": "/tɜːn/",
@@ -14331,7 +13367,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "TV",
             "role": "noun",
             "BrE": "/ˌtiː ˈviː/",
@@ -14345,7 +13380,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "umbrella",
             "role": "noun",
             "BrE": "/ʌmˈbrelə/",
@@ -14359,7 +13393,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "understand",
             "role": "verb",
             "BrE": "/ˌʌndəˈstænd/",
@@ -14373,7 +13406,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "up",
             "role": "preposition",
             "BrE": "/ʌp/",
@@ -14387,7 +13419,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "use",
             "role": "noun",
             "BrE": "/juːs/",
@@ -14401,7 +13432,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 97,
-            "level": "A1",
             "word": "very",
             "role": "adjective",
             "BrE": "/ˈveri/",
@@ -14415,7 +13445,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "visit",
             "role": "noun",
             "BrE": "/ˈvɪzɪt/",
@@ -14429,7 +13458,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "wait",
             "role": "noun",
             "BrE": "/weɪt/",
@@ -14443,7 +13471,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "walk",
             "role": "noun",
             "BrE": "/wɔːk/",
@@ -14457,7 +13484,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "want",
             "role": "noun",
             "BrE": "/wɒnt/",
@@ -14471,7 +13497,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "water",
             "role": "verb",
             "BrE": "/ˈwɔːtə(r)/",
@@ -14485,7 +13510,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "way",
             "role": "noun",
             "BrE": "/weɪ/",
@@ -14499,7 +13523,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "wear",
             "role": "noun",
             "BrE": "/weə(r)/",
@@ -14513,7 +13536,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "week",
             "role": "noun",
             "BrE": "/wiːk/",
@@ -14527,7 +13549,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "well",
             "role": "adjective",
             "BrE": "/wel/",
@@ -14541,7 +13562,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 98,
-            "level": "A1",
             "word": "what",
             "role": "determiner",
             "BrE": "/wɒt/",
@@ -14555,7 +13575,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "when",
             "role": "conjunction",
             "BrE": "/wen/",
@@ -14569,7 +13588,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "where",
             "role": "conjunction",
             "BrE": "/weə(r)/",
@@ -14583,7 +13601,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "which",
             "role": "determiner",
             "BrE": "/wɪtʃ/",
@@ -14597,7 +13614,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "white",
             "role": "adjective",
             "BrE": "/waɪt/",
@@ -14611,7 +13627,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "who",
             "role": "pronoun",
             "BrE": "/huː/",
@@ -14625,7 +13640,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "why",
             "role": "conjunction",
             "BrE": "/waɪ/",
@@ -14639,7 +13653,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "wind",
             "role": "noun",
             "BrE": "/wɪnd/",
@@ -14653,7 +13666,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "window",
             "role": "noun",
             "BrE": "/ˈwɪndəʊ/",
@@ -14667,7 +13679,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "winter",
             "role": "noun",
             "BrE": "/ˈwɪntə(r)/",
@@ -14681,7 +13692,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 99,
-            "level": "A1",
             "word": "with",
             "role": "preposition",
             "BrE": "/wɪð/",
@@ -14695,7 +13705,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "woman",
             "role": "noun",
             "BrE": "/ˈwʊmən/",
@@ -14709,7 +13718,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "work",
             "role": "noun",
             "BrE": "/wɜːk/",
@@ -14723,7 +13731,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "world",
             "role": "noun",
             "BrE": "/wɜːld/",
@@ -14737,7 +13744,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "write",
             "role": "verb",
             "BrE": "/raɪt/",
@@ -14751,7 +13757,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "year",
             "role": "noun",
             "BrE": "/jɪə(r)/",
@@ -14765,7 +13770,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "yellow",
             "role": "adjective",
             "BrE": "/ˈjeləʊ/",
@@ -14779,7 +13783,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "yes",
             "role": "exclamation",
             "BrE": "/jes/",
@@ -14793,7 +13796,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "yesterday",
             "role": "noun",
             "BrE": "/ˈjestədeɪ/",
@@ -14807,7 +13809,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "you",
             "role": "pronoun",
             "BrE": "/juː/",
@@ -14821,7 +13822,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 100,
-            "level": "A1",
             "word": "young",
             "role": "adjective",
             "BrE": "/jʌŋ/",
@@ -14836,7 +13836,6 @@ export default function Lessons({ params }) {
          
          {
             "id": 101,
-            "level": "A1",
             "word": "address",
             "role": "noun",
             "BrE": "/əˈdres/",
@@ -14850,7 +13849,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "afternoon",
             "role": "noun",
             "BrE": "/ˌæftəˈnuːn/",
@@ -14864,7 +13862,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "again",
             "role": "adverb",
             "BrE": "/əˈɡen/",
@@ -14878,7 +13875,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "age",
             "role": "noun",
             "BrE": "/eɪdʒ/",
@@ -14892,7 +13888,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "reply",
             "role": "verb",
             "BrE": "/rɪˈplaɪ/",
@@ -14906,7 +13901,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "arm",
             "role": "noun",
             "BrE": "/ɑːm/",
@@ -14920,7 +13914,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "arrive",
             "role": "verb",
             "BrE": "/əˈraɪv/",
@@ -14934,7 +13927,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "bag",
             "role": "noun",
             "BrE": "/bæɡ/",
@@ -14948,7 +13940,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "ball",
             "role": "noun",
             "BrE": "/bɔːl/",
@@ -14962,7 +13953,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 101,
-            "level": "A1",
             "word": "begin",
             "role": "verb",
             "BrE": "/bɪˈɡɪn/",
@@ -14976,7 +13966,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "behind",
             "role": "preposition",
             "BrE": "/bɪˈhaɪnd/",
@@ -14990,7 +13979,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "best",
             "role": "adjective",
             "BrE": "/best/",
@@ -15004,7 +13992,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "bike",
             "role": "noun",
             "BrE": "/baɪk/",
@@ -15018,7 +14005,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "bird",
             "role": "noun",
             "BrE": "/bɜːd/",
@@ -15032,7 +14018,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "black",
             "role": "adjective",
             "BrE": "/blæk/",
@@ -15046,7 +14031,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "blue",
             "role": "adjective",
             "BrE": "/bluː/",
@@ -15060,7 +14044,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "boat",
             "role": "noun",
             "BrE": "/bəʊt/",
@@ -15074,7 +14057,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "body",
             "role": "noun",
             "BrE": "/ˈbɒdi/",
@@ -15088,7 +14070,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "box",
             "role": "noun",
             "BrE": "/bɒks/",
@@ -15102,7 +14083,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 102,
-            "level": "A1",
             "word": "bread",
             "role": "noun",
             "BrE": "/bred/",
@@ -15116,7 +14096,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "breakfast",
             "role": "noun",
             "BrE": "/ˈbrekfəst/",
@@ -15130,7 +14109,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "bridge",
             "role": "noun",
             "BrE": "/brɪdʒ/",
@@ -15144,7 +14122,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "brother",
             "role": "noun",
             "BrE": "/ˈbrʌðə(r)/",
@@ -15158,7 +14135,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "brown",
             "role": "adjective",
             "BrE": "/braʊn/",
@@ -15172,7 +14148,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "bus",
             "role": "noun",
             "BrE": "/bʌs/",
@@ -15186,7 +14161,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "buy",
             "role": "verb",
             "BrE": "/baɪ/",
@@ -15200,7 +14174,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "cake",
             "role": "noun",
             "BrE": "/keɪk/",
@@ -15214,7 +14187,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "car",
             "role": "noun",
             "BrE": "/kɑː(r)/",
@@ -15228,7 +14200,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "chair",
             "role": "noun",
             "BrE": "/tʃeə(r)/",
@@ -15242,7 +14213,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 103,
-            "level": "A1",
             "word": "child",
             "role": "noun",
             "BrE": "/tʃaɪld/",
@@ -15256,7 +14226,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "city",
             "role": "noun",
             "BrE": "/ˈsɪti/",
@@ -15270,7 +14239,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "class",
             "role": "noun",
             "BrE": "/klɑːs/",
@@ -15284,7 +14252,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "clock",
             "role": "noun",
             "BrE": "/klɒk/",
@@ -15298,7 +14265,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "clothes",
             "role": "noun",
             "BrE": "/kləʊðz/",
@@ -15312,7 +14278,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "cloud",
             "role": "noun",
             "BrE": "/klaʊd/",
@@ -15326,7 +14291,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "coffee",
             "role": "noun",
             "BrE": "/ˈkɒfi/",
@@ -15340,7 +14304,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "colour",
             "role": "noun",
             "BrE": "/ˈkʌlə(r)/",
@@ -15354,7 +14317,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "computer",
             "role": "noun",
             "BrE": "/kəmˈpjuːtə(r)/",
@@ -15368,7 +14330,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "country",
             "role": "noun",
             "BrE": "/ˈkʌntri/",
@@ -15382,7 +14343,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 104,
-            "level": "A1",
             "word": "cup",
             "role": "noun",
             "BrE": "/kʌp/",
@@ -15396,7 +14356,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "daughter",
             "role": "noun",
             "BrE": "/ˈdɔːtə(r)/",
@@ -15410,7 +14369,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "day",
             "role": "noun",
             "BrE": "/deɪ/",
@@ -15424,7 +14382,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "desk",
             "role": "noun",
             "BrE": "/desk/",
@@ -15438,7 +14395,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "dinner",
             "role": "noun",
             "BrE": "/ˈdɪnə(r)/",
@@ -15452,7 +14408,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "dog",
             "role": "noun",
             "BrE": "/dɒɡ/",
@@ -15466,7 +14421,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "door",
             "role": "noun",
             "BrE": "/dɔː(r)/",
@@ -15480,7 +14434,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "dress",
             "role": "noun",
             "BrE": "/dres/",
@@ -15494,7 +14447,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "drink",
             "role": "noun",
             "BrE": "/drɪŋk/",
@@ -15508,7 +14460,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "ear",
             "role": "noun",
             "BrE": "/ɪə(r)/",
@@ -15522,7 +14473,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 105,
-            "level": "A1",
             "word": "eat",
             "role": "verb",
             "BrE": "/iːt/",
@@ -15536,7 +14486,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "eight",
             "role": "number",
             "BrE": "/eɪt/",
@@ -15550,7 +14499,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "evening",
             "role": "noun",
             "BrE": "/ˈiːvnɪŋ/",
@@ -15564,7 +14512,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "eye",
             "role": "noun",
             "BrE": "/aɪ/",
@@ -15578,7 +14525,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "face",
             "role": "noun",
             "BrE": "/feɪs/",
@@ -15592,7 +14538,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "farm",
             "role": "noun",
             "BrE": "/fɑːm/",
@@ -15606,7 +14551,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "fast",
             "role": "adverb",
             "BrE": "/fɑːst/",
@@ -15620,7 +14564,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "fish",
             "role": "verb",
             "BrE": "/fɪʃ/",
@@ -15634,7 +14577,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "flower",
             "role": "noun",
             "BrE": "/ˈflaʊə(r)/",
@@ -15648,7 +14590,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "fly",
             "role": "verb",
             "BrE": "/flaɪ/",
@@ -15662,7 +14603,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 106,
-            "level": "A1",
             "word": "food",
             "role": "noun",
             "BrE": "/fuːd/",
@@ -15676,7 +14616,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "foot",
             "role": "noun",
             "BrE": "/fʊt/",
@@ -15690,7 +14629,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "friend",
             "role": "noun",
             "BrE": "/frend/",
@@ -15704,7 +14642,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "fruit",
             "role": "noun",
             "BrE": "/fruːt/",
@@ -15718,7 +14655,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "funny",
             "role": "adjective",
             "BrE": "/ˈfʌni/",
@@ -15732,7 +14668,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "garden",
             "role": "noun",
             "BrE": "/ˈɡɑːdn/",
@@ -15746,7 +14681,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "girl",
             "role": "noun",
             "BrE": "/ɡɜːl/",
@@ -15760,7 +14694,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "glass",
             "role": "noun",
             "BrE": "/ɡlɑːs/",
@@ -15774,7 +14707,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "goodbye",
             "role": "exclamation",
             "BrE": "/ˌɡʊdˈbaɪ/",
@@ -15788,7 +14720,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "grass",
             "role": "noun",
             "BrE": "/ɡrɑːs/",
@@ -15802,7 +14733,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 107,
-            "level": "A1",
             "word": "hand",
             "role": "noun",
             "BrE": "/hænd/",
@@ -15816,7 +14746,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "head",
             "role": "noun",
             "BrE": "/hed/",
@@ -15830,7 +14759,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "holiday",
             "role": "noun",
             "BrE": "/ˈhɒlədeɪ/",
@@ -15844,7 +14772,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "horse",
             "role": "noun",
             "BrE": "/hɔːs/",
@@ -15858,7 +14785,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "hospital",
             "role": "noun",
             "BrE": "/ˈhɒspɪtl/",
@@ -15872,7 +14798,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "hotel",
             "role": "noun",
             "BrE": "/həʊˈtel/",
@@ -15886,7 +14811,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "hour",
             "role": "noun",
             "BrE": "/aʊə(r)/",
@@ -15900,7 +14824,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "ice",
             "role": "noun",
             "BrE": "/aɪs/",
@@ -15914,7 +14837,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "idea",
             "role": "noun",
             "BrE": "/aɪˈdɪə/",
@@ -15928,7 +14850,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "important",
             "role": "adjective",
             "BrE": "/ɪmˈpɔːtnt/",
@@ -15942,7 +14863,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 108,
-            "level": "A1",
             "word": "inside",
             "role": "preposition",
             "BrE": "/ɪnˈsaɪd/",
@@ -15956,7 +14876,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "juice",
             "role": "noun",
             "BrE": "/dʒuːs/",
@@ -15970,7 +14889,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "jump",
             "role": "verb",
             "BrE": "/dʒʌmp/",
@@ -15984,7 +14902,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "key",
             "role": "noun",
             "BrE": "/kiː/",
@@ -15998,7 +14915,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "kitchen",
             "role": "noun",
             "BrE": "/ˈkɪtʃɪn/",
@@ -16012,7 +14928,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "leg",
             "role": "noun",
             "BrE": "/leɡ/",
@@ -16026,7 +14941,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "lesson",
             "role": "noun",
             "BrE": "/ˈlesn/",
@@ -16040,7 +14954,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "light",
             "role": "noun",
             "BrE": "/laɪt/",
@@ -16054,7 +14967,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "like",
             "role": "preposition",
             "BrE": "/laɪk/",
@@ -16068,7 +14980,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "live",
             "role": "adjective",
             "BrE": "/laɪv/",
@@ -16082,7 +14993,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 109,
-            "level": "A1",
             "word": "love",
             "role": "noun",
             "BrE": "/lʌv/",
@@ -16096,7 +15006,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "market",
             "role": "noun",
             "BrE": "/ˈmɑːkɪt/",
@@ -16110,7 +15019,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "minute",
             "role": "noun",
             "BrE": "/ˈmɪnɪt/",
@@ -16124,7 +15032,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "moon",
             "role": "noun",
             "BrE": "/muːn/",
@@ -16138,7 +15045,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "mountain",
             "role": "noun",
             "BrE": "/ˈmaʊntən/",
@@ -16152,7 +15058,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "mouth",
             "role": "noun",
             "BrE": "/maʊθ/",
@@ -16166,7 +15071,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "music",
             "role": "noun",
             "BrE": "/ˈmjuːzɪk/",
@@ -16180,7 +15084,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "night",
             "role": "noun",
             "BrE": "/naɪt/",
@@ -16194,7 +15097,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "noise",
             "role": "noun",
             "BrE": "/nɔɪz/",
@@ -16208,7 +15110,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "open",
             "role": "verb",
             "BrE": "/ˈəʊpən/",
@@ -16222,7 +15123,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 110,
-            "level": "A1",
             "word": "outside",
             "role": "preposition",
             "BrE": "/ˌaʊtˈsaɪd/",
@@ -16236,7 +15136,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "park",
             "role": "verb",
             "BrE": "/pɑːk/",
@@ -16250,7 +15149,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "pen",
             "role": "noun",
             "BrE": "/pen/",
@@ -16264,7 +15162,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "place",
             "role": "verb",
             "BrE": "/pleɪs/",
@@ -16278,7 +15175,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "play",
             "role": "noun",
             "BrE": "/pleɪ/",
@@ -16292,7 +15188,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "rain",
             "role": "noun",
             "BrE": "/reɪn/",
@@ -16306,7 +15201,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "read",
             "role": "noun",
             "BrE": "/riːd/",
@@ -16320,7 +15214,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "river",
             "role": "noun",
             "BrE": "/ˈrɪvə(r)/",
@@ -16334,7 +15227,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "road",
             "role": "noun",
             "BrE": "/rəʊd/",
@@ -16348,7 +15240,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "run",
             "role": "noun",
             "BrE": "/rʌn/",
@@ -16362,7 +15253,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 111,
-            "level": "A1",
             "word": "school",
             "role": "noun",
             "BrE": "/skuːl/",
@@ -16376,7 +15266,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "sea",
             "role": "noun",
             "BrE": "/siː/",
@@ -16390,7 +15279,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "shop",
             "role": "noun",
             "BrE": "/ʃɒp/",
@@ -16404,7 +15292,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "sing",
             "role": "verb",
             "BrE": "/sɪŋ/",
@@ -16418,7 +15305,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "sister",
             "role": "noun",
             "BrE": "/ˈsɪstə(r)/",
@@ -16432,7 +15318,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "sit",
             "role": "verb",
             "BrE": "/sɪt/",
@@ -16446,7 +15331,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "six",
             "role": "number",
             "BrE": "/sɪks/",
@@ -16460,7 +15344,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "sleep",
             "role": "verb",
             "BrE": "/sliːp/",
@@ -16474,7 +15357,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "snow",
             "role": "noun",
             "BrE": "/snəʊ/",
@@ -16488,7 +15370,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "son",
             "role": "noun",
             "BrE": "/sʌn/",
@@ -16502,7 +15383,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 112,
-            "level": "A1",
             "word": "star",
             "role": "noun",
             "BrE": "/stɑː(r)/",
@@ -16516,7 +15396,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "stop",
             "role": "verb",
             "BrE": "/stɒp/",
@@ -16530,7 +15409,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "street",
             "role": "noun",
             "BrE": "/striːt/",
@@ -16544,7 +15422,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "student",
             "role": "noun",
             "BrE": "/ˈstjuːdnt/",
@@ -16558,7 +15435,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "sun",
             "role": "noun",
             "BrE": "/sʌn/",
@@ -16572,7 +15448,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "table",
             "role": "noun",
             "BrE": "/ˈteɪbl/",
@@ -16586,7 +15461,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "talk",
             "role": "verb",
             "BrE": "/tɔːk/",
@@ -16600,7 +15474,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "tea",
             "role": "noun",
             "BrE": "/tiː/",
@@ -16614,7 +15487,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "teach",
             "role": "verb",
             "BrE": "/tiːtʃ/",
@@ -16628,7 +15500,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "ten",
             "role": "number",
             "BrE": "/ten/",
@@ -16642,7 +15513,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 113,
-            "level": "A1",
             "word": "test",
             "role": "noun",
             "BrE": "/test/",
@@ -16656,7 +15526,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "their",
             "role": "determiner",
             "BrE": "/ðeə(r)/",
@@ -16670,7 +15539,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "there",
             "role": "adverb",
             "BrE": "/ðeə(r)/",
@@ -16684,7 +15552,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "they",
             "role": "pronoun",
             "BrE": "/ðeɪ/",
@@ -16698,7 +15565,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "think",
             "role": "verb",
             "BrE": "/θɪŋk/",
@@ -16712,7 +15578,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "three",
             "role": "number",
             "BrE": "/θriː/",
@@ -16726,7 +15591,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "Thursday",
             "role": "noun",
             "BrE": "/ˈθɜːzdeɪ/",
@@ -16740,7 +15604,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "ticket",
             "role": "noun",
             "BrE": "/ˈtɪkɪt/",
@@ -16754,7 +15617,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "time",
             "role": "noun",
             "BrE": "/taɪm/",
@@ -16768,7 +15630,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "tired",
             "role": "adjective",
             "BrE": "/ˈtaɪəd/",
@@ -16782,7 +15643,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 114,
-            "level": "A1",
             "word": "today",
             "role": "adverb",
             "BrE": "/təˈdeɪ/",
@@ -16796,7 +15656,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "together",
             "role": "adverb",
             "BrE": "/təˈɡeðə(r)/",
@@ -16810,7 +15669,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "tomorrow",
             "role": "adverb",
             "BrE": "/təˈmɒrəʊ/",
@@ -16824,7 +15682,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "train",
             "role": "noun",
             "BrE": "/treɪn/",
@@ -16838,7 +15695,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "tree",
             "role": "noun",
             "BrE": "/triː/",
@@ -16852,7 +15708,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "try",
             "role": "verb",
             "BrE": "/traɪ/",
@@ -16866,7 +15721,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "turn",
             "role": "verb",
             "BrE": "/tɜːn/",
@@ -16880,7 +15734,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "two",
             "role": "number",
             "BrE": "/tuː/",
@@ -16894,7 +15747,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "umbrella",
             "role": "noun",
             "BrE": "/ʌmˈbrelə/",
@@ -16908,7 +15760,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "up",
             "role": "adverb",
             "BrE": "/ʌp/",
@@ -16922,7 +15773,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 115,
-            "level": "A1",
             "word": "use",
             "role": "verb",
             "BrE": "/juːz/",
@@ -16936,7 +15786,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "very",
             "role": "adverb",
             "BrE": "/ˈveri/",
@@ -16950,7 +15799,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "visit",
             "role": "verb",
             "BrE": "/ˈvɪzɪt/",
@@ -16964,7 +15812,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "wait",
             "role": "verb",
             "BrE": "/weɪt/",
@@ -16978,7 +15825,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "wall",
             "role": "noun",
             "BrE": "/wɔːl/",
@@ -16992,7 +15838,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "warm",
             "role": "adjective",
             "BrE": "/wɔːm/",
@@ -17006,7 +15851,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "watch",
             "role": "noun",
             "BrE": "/wɒtʃ/",
@@ -17020,7 +15864,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "water",
             "role": "noun",
             "BrE": "/ˈwɔːtə(r)/",
@@ -17034,7 +15877,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "weather",
             "role": "noun",
             "BrE": "/ˈweðə(r)/",
@@ -17048,7 +15890,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "weekend",
             "role": "noun",
             "BrE": "/ˌwiːkˈend/",
@@ -17062,7 +15903,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 116,
-            "level": "A1",
             "word": "well",
             "role": "exclamation",
             "BrE": "/wel/",
@@ -17076,7 +15916,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "west",
             "role": "noun",
             "BrE": "/west/",
@@ -17090,7 +15929,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "what",
             "role": "pronoun",
             "BrE": "/wɒt/",
@@ -17104,7 +15942,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "when",
             "role": "adverb",
             "BrE": "/wen/",
@@ -17118,7 +15955,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "where",
             "role": "adverb",
             "BrE": "/weə(r)/",
@@ -17132,7 +15968,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "which",
             "role": "pronoun",
             "BrE": "/wɪtʃ/",
@@ -17146,7 +15981,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "white",
             "role": "noun",
             "BrE": "/waɪt/",
@@ -17160,7 +15994,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "who",
             "role": "pronoun",
             "BrE": "/huː/",
@@ -17174,7 +16007,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "why",
             "role": "adverb",
             "BrE": "/waɪ/",
@@ -17188,7 +16020,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "wife",
             "role": "noun",
             "BrE": "/waɪf/",
@@ -17202,7 +16033,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 117,
-            "level": "A1",
             "word": "wind",
             "role": "noun",
             "BrE": "/wɪnd/",

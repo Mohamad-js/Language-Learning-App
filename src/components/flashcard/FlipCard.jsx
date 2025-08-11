@@ -2,7 +2,9 @@
 import { useState } from 'react';
 import styles from './FlipCard.module.css';
 
-export default function FlipCard({ word, role, british, american, definition, examples }) {
+export default function FlipCard({ 
+   word, role, british, american, definition, examples, lesson, level
+}) {
    const [isFlipped, setIsFlipped] = useState(false);
 
    const handleClick = () => {
@@ -13,6 +15,11 @@ export default function FlipCard({ word, role, british, american, definition, ex
       <div className={styles.container} onClick={handleClick}>
          <div className={`${styles.card} ${isFlipped ? styles.flipped : ''}`}>
             <div className={styles.front}>
+               <div className={styles.infoHolder}>
+                  <div className={styles.info}>{level}</div>
+                  <div className={styles.info}>{lesson}</div>
+               </div>
+
                <div className={styles.word}>{word}</div>
                <div className={styles.role}>{role}</div>
 
@@ -22,6 +29,11 @@ export default function FlipCard({ word, role, british, american, definition, ex
                </div>
             </div>
             <div className={styles.back}>
+               <div className={styles.infoHolder}>
+                  <div className={styles.info}>{level}</div>
+                  <div className={styles.info}>{lesson}</div>
+               </div>
+               
                <div className={styles.definition}>{definition}</div>
                <div className={styles.examples}>{
                   examples.map((item, index) => (
