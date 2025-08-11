@@ -46,7 +46,7 @@ function Grammar(){
       <div className={styles.container}>
          <Image
             className={styles.background}
-            src="/images/illustrations/act2.jpg"
+            src="/images/back/grammarBack.jpg"
             alt=""
             fill
             onLoad={handleImageLoad}
@@ -66,104 +66,429 @@ function Grammar(){
             <div className={styles.lessonsTitle}>Lessons:</div>
 
             <div className={styles.learningHolder}>
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 1: Sentence Elements 1</div>
-                  <div className={styles.newLesson}>Subject / Verb</div>
-               </Link>
 
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 2: Sentence Elements 2</div>
-                  <div className={styles.newLesson}>Subject Pronouns</div>
-               </Link>
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Sentence Elements</div>
 
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 3:  Tenses 1</div>
-                  <div className={styles.newLesson}>Present Simple</div>
-               </Link>
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/noun'>
+                        Noun
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/verb'>
+                        Verb
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/adverb'>
+                        Adverb
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/adjective'>
+                        Adjective
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/subject'>
+                        Subject
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/object'>
+                        Object
+                     </Link>
+                  </button>
+
+               </div>
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>English Pronouns</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/subpro'>
+                        Subject Pronoun
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/objpro'>
+                        Object Pronoun
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pospro'>
+                        Possessive Pro.
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/posadj'>
+                        Possessive Adj.
+                     </Link>
+                  </button>
+
+               </div>
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Present Simple</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Present Continuous</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preconstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preconusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preconque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preconneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+              <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Past Simple</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/passimstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/passimusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/passimque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/passimneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Past Continuous</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasconstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasconusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasconque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasconneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Future Simple</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futsimstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futsimusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futsimque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futsimneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Future Continuous</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futpasstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futpasusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futpasque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futpasneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
 
                
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 4: Sentence Elements 3</div>
-                  <div className={styles.newLesson}>Possessive Pronouns</div>
-               </Link>
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Present Perfect</div>
 
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 5: Sentence Elements 4</div>
-                  <div className={styles.newLesson}>Object Pronouns</div>
-               </Link>
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Past Perfect</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
 
                
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 6: Tenses 2</div>
-                  <div className={styles.newLesson}>Present Continuous</div>
-               </Link>
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Future Perfect</div>
 
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 7: Sentence Elements 5</div>
-                  <div className={styles.newLesson}>Adverbs of Time / Place</div>
-               </Link>
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Present Perfect Continuous</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperconstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperconusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperconque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperconneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Past Perfect Continuous</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperconstr'>
+                        Structure
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperconusa'>
+                        Usages
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperconque'>
+                        Question Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/pasperconneg'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
                
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 8: Sentence Elements 6</div>
-                  <div className={styles.newLesson}>Adverbs of Manner</div>
-               </Link>
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Future Perfect Continuous</div>
 
-               <Link
-                  href='/grammar/'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 9: Articles</div>
-                  <div className={styles.newLesson}>Definite and Indefinite</div>
-               </Link>
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperconstr'>
+                        Structure
+                     </Link>
+                  </button>
 
-               <Link
-                  href='/grammar/Sentence Elements'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 10: Sentence Elements 7</div>
-                  <div className={styles.newLesson}>Adverbs of Frequency</div>
-               </Link>
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperconusa'>
+                        Usages
+                     </Link>
+                  </button>
 
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperconque'>
+                        Question Form
+                     </Link>
+                  </button>
 
-               <Link
-                  href='/grammar/'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 11: Verb Forms 1</div>
-                  <div className={styles.newLesson}>Infinitives and -ing</div>
-               </Link>
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/futperconneg'>
+                        Negative Form
+                     </Link>
+                  </button>
 
-               <Link
-                  href='/grammar/'
-                  className={styles.lessonsHolder}
-               >
-                  <div className={styles.lesson}>Lesson 12: Helping Verbs</div>
-                  <div className={styles.newLesson}>English Modals</div>
-               </Link>
+               </div>
 
             </div>
          </div>
