@@ -106,10 +106,11 @@
       .scroller {
          position: fixed;
          z-index: 2;
-         left: 0;
+         left: 5%;
+         bottom: 0;
          width: 0;
-         top: 203px;
          height: 3px;
+         border-radius: 10px;
          background-color: white;
          animation: scroll linear forwards;
          animation-timeline: scroll();
@@ -151,5 +152,5 @@
 }
 
 @keyframes scroll {
-   to {width: 100%}
+   to {width: 90%}
 }

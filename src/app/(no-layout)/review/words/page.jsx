@@ -158,8 +158,9 @@ function WordsReview() {
             </div>
          </div>
 
-            <div className={styles.flashcardContainer}>
-               <div className={styles.scroller}></div>
+         <div className={styles.flashcardContainer}>
+            <div className={styles.scroller}></div>
+
             {
                filteredWords.length > 0 ?
                filteredWords.map((item, index) => (
@@ -182,6 +183,7 @@ function WordsReview() {
                </div>
             }
          </div>
+
       </div>
    );
 }
