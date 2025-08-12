@@ -108,6 +108,7 @@ function Grammar(){
 
                </div>
 
+
                <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>English Pronouns</div>
 
@@ -136,6 +137,7 @@ function Grammar(){
                   </button>
 
                </div>
+
 
                <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Present Simple</div>
@@ -166,6 +168,67 @@ function Grammar(){
 
                </div>
 
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Helping Verbs & Modals</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimstr'>
+                        to be
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimstr'>
+                        have / has
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimusa'>
+                        do / does
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimque'>
+                        can / could
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimneg'>
+                        should
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimneg'>
+                        would
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimneg'>
+                        must
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimneg'>
+                        will
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/presimneg'>
+                        have to / has to
+                     </Link>
+                  </button>
+
+               </div>
+
+
                <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Present Continuous</div>
 
@@ -195,7 +258,32 @@ function Grammar(){
 
                </div>
 
-              <div className={styles.lessonsHolder}>
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>English Adverbs</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/always'>
+                        Frequency
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/often'>
+                        Manner
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/sometimes'>
+                        Distinguishing Adverbs with Subject
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Past Simple</div>
 
                   <button className={styles.subLesson}>
@@ -223,6 +311,7 @@ function Grammar(){
                   </button>
 
                </div>
+
 
                <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Past Continuous</div>
@@ -252,6 +341,7 @@ function Grammar(){
                   </button>
 
                </div>
+
 
                <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Future Simple</div>
@@ -401,6 +491,8 @@ function Grammar(){
                   </button>
 
                </div>
+
+
                <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Present Perfect Continuous</div>
 
