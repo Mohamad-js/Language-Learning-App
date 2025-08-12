@@ -173,56 +173,62 @@ function Grammar(){
                   <div className={styles.lesson}>Helping Verbs & Modals</div>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimstr'>
-                        to be
+                     <Link href='/grammar/tobe'>
+                        To Be
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimstr'>
-                        have / has
+                     <Link href='/grammar/have'>
+                        Have
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimusa'>
-                        do / does
+                     <Link href='/grammar/do'>
+                        Do / Does
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimque'>
-                        can / could
+                     <Link href='/grammar/can'>
+                        Can / Could
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimneg'>
-                        should
+                     <Link href='/grammar/should'>
+                        Shall / Should
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimneg'>
-                        would
+                     <Link href='/grammar/would'>
+                        Would
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimneg'>
-                        must
+                     <Link href='/grammar/must'>
+                        Must
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimneg'>
-                        will
+                     <Link href='/grammar/will'>
+                        Will
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/presimneg'>
-                        have to / has to
+                     <Link href='/grammar/haveto'>
+                        Have to
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/may'>
+                        May / Might
                      </Link>
                   </button>
 
@@ -263,20 +269,32 @@ function Grammar(){
                   <div className={styles.lesson}>English Adverbs</div>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/always'>
+                     <Link href='/grammar/frequency'>
                         Frequency
                      </Link>
                   </button>
 
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/often'>
+                     <Link href='/grammar/manner'>
                         Manner
                      </Link>
                   </button>
 
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Wh Questions</div>
+
                   <button className={styles.subLesson}>
-                     <Link href='/grammar/sometimes'>
-                        Distinguishing Adverbs with Subject
+                     <Link href='/grammar/frequency'>
+                        Wh + to be
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/manner'>
+                        Wh + do / does
                      </Link>
                   </button>
 
@@ -344,6 +362,114 @@ function Grammar(){
 
 
                <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Relative Pronouns</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/Frequency'>
+                        What
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/Manner'>
+                        When
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/distinguish'>
+                        Where
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/distinguish'>
+                        Who
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/distinguish'>
+                        Why
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/distinguish'>
+                        Which
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/distinguish'>
+                        How
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/distinguish'>
+                        Whose
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/distinguish'>
+                        Whom
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Indirect Questions</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/posImp'>
+                        Questions in Statements
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/negImp'>
+                        Questions in Questions
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/negImp'>
+                        Questions in Imperatives
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Verb Forms</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/posImp'>
+                        Infinitives
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/negImp'>
+                        Gerunds
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/negImp'>
+                        Doubles
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Future Simple</div>
 
                   <button className={styles.subLesson}>
@@ -367,6 +493,90 @@ function Grammar(){
                   <button className={styles.subLesson}>
                      <Link href='/grammar/futsimneg'>
                         Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Connectors</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/addition'>
+                        Addition
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/contrast'>
+                        Contrast
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/cause'>
+                        Cause & Effect
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/comparison'>
+                        Comparison
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/Result'>
+                        Result
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/starters'>
+                        Starters
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/condition'>
+                        Condition
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/summary'>
+                        Summary
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/clarification'>
+                        Clarification
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Future Types</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/fixed'>
+                        Fixed
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/planned'>
+                        Planned
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/prediction'>
+                        Prediction
                      </Link>
                   </button>
 
@@ -434,6 +644,48 @@ function Grammar(){
 
 
                <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Modal Perfect</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperstr'>
+                        Must
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperusa'>
+                        Should
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperque'>
+                        Can
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperque'>
+                        Cannot
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperneg'>
+                        Could
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/preperneg'>
+                        May / Might
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
                   <div className={styles.lesson}>Past Perfect</div>
 
                   <button className={styles.subLesson}>
@@ -487,6 +739,72 @@ function Grammar(){
                   <button className={styles.subLesson}>
                      <Link href='/grammar/futperneg'>
                         Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+               
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Conditional Sentences</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/first'>
+                        Type 1: Facts and Predictions
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/second'>
+                        Type 2: Wishes and Dreams
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/third'>
+                        Type 3: Future in the Past
+                     </Link>
+                  </button>
+
+               </div>
+
+               
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Reported Speech</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/Statements'>
+                        Statements
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/negative'>
+                        Negative Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/imperativeRep'>
+                        Imperative Form
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/tobeRe'>
+                        To be Questions
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/doRep'>
+                        Do Questions
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/whRep'>
+                        Wh- Questions
                      </Link>
                   </button>
 
@@ -577,6 +895,24 @@ function Grammar(){
                   <button className={styles.subLesson}>
                      <Link href='/grammar/futperconneg'>
                         Negative Form
+                     </Link>
+                  </button>
+
+               </div>
+
+
+               <div className={styles.lessonsHolder}>
+                  <div className={styles.lesson}>Extended Gerunds</div>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/type1'>
+                        Prep. + Gerunds
+                     </Link>
+                  </button>
+
+                  <button className={styles.subLesson}>
+                     <Link href='/grammar/type2'>
+                        Present Participles
                      </Link>
                   </button>
 
