@@ -347,7 +347,7 @@
    }
 
    .done {
-      z-index: 10;
+      z-index: 1;
       width: 90%;
       padding: 30px;
       border-radius: 20px;
@@ -381,6 +381,7 @@
             border-radius: 10px;
             background-color: #b53dff;
             color: rgb(255, 255, 255);
+            border: none;
    
             &:active {
                opacity: 0.5;
@@ -534,6 +535,90 @@
       align-items: center;
       z-index: 5;
       backdrop-filter: blur(5px);
+   }
+
+   .congratsHolder {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100dvh;
+      background-color: rgba(0, 0, 0, 0.589);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+
+      .msgHolder {
+         position: relative;
+         width: 90%;
+         top: 100px;
+         opacity: 0;
+         height: 500px;
+         display: flex;
+         align-items: center;
+         justify-content: space-evenly;
+         flex-direction: column;
+         border-radius: 30px;
+         background-color: white;
+         overflow: hidden;
+         box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.37);
+         transition: 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+         .background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+         }
+         
+         .congrats {
+            font-size: 40px;
+            z-index: 2;
+            position: absolute;
+            top: 20px;
+            color: white;
+         }
+         
+         .textHolder {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 2;
+            
+            .text {
+               font-size: 25px;
+            }
+
+            .count {
+               font-size: 120px;
+               font-family: arial;
+               color: rgb(255, 255, 255);
+            }
+         }
+         
+         .continue {
+            position: absolute;
+            bottom: 30px;
+            padding: 10px 30px;
+            background-color: white;
+            border-radius: 10px;
+            z-index: 2;
+            box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.445);
+            font-weight: 600;
+            
+            &:active {
+               box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.151);
+            }
+         }
+      }
+
+      .showCongrats {
+         opacity: 1;
+         top: 0;
+      }
    }
 }
 

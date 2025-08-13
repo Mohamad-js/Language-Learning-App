@@ -3,8 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './slug.module.css';
-import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
+import Confetti from "@/components/confetti/confetti"; // NEW
+
 
 
 
@@ -25,6 +26,12 @@ export default function Lessons({ params }) {
    const [show, setShow] = useState(false)
    const [totalA1, setTotalA1] = useState(null)
    const [lessonsA1, setLessonsA1] = useState(null)
+   const [wordsCount, setWordsCount] = useState(null) // NEW
+   const [showConfetti, setShowConfetti] = useState(false) // NEW
+   const [showCongrats, setShowCongrats] = useState(false) // NEW
+   const [anime, setAnime] = useState(false) // NEW
+   const [btnPressed, setBtnPressed] = useState(null) // NEW
+   
 
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -64,8 +71,10 @@ export default function Lessons({ params }) {
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A1`) || '[]');
          const totalProgress = slug * 0.0427350427
          const lessonsProgress = slug
+         const wordsLearnt = slug * 10 // NEW
          
          setTotalA1(totalProgress)
+         setWordsCount(wordsLearnt) // NEW
          setLessonsA1(lessonsProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
@@ -73,16 +82,77 @@ export default function Lessons({ params }) {
          console.error('Error parsing localStorage data:', e);
       }
    }, [slug]); // Depend on slug to reload when lesson changes
-   
-   const saveProgress = () => {
+
+   const done = () => { // NEW
       try {
-         localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
-         localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
-         localStorage.setItem(`total-A1`, JSON.stringify(totalA1));
+         save()
+
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+            animation()
+            setBtnPressed('done')
+         } else {
+            router.push('/a1')
+         }
+
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
-      
+   }
+
+   const nextLesson = () => { // NEW
+      try {
+         save()
+
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+            animation()
+            setBtnPressed('nextLesson')
+         } else {
+            router.push(`/a1/${lessonNumber + 1}`)
+         }
+
+      } catch (e) {
+         console.error('Error saving to localStorage:', e);
+      }
+   }
+
+   const nextLevel = () => { // NEW
+      try {
+         save()
+
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+            animation()
+            setBtnPressed('nextLevel')
+         } else {
+            router.push('/a2')
+         }
+
+      } catch (e) {
+         console.error('Error saving to localStorage:', e);
+      }
+   }
+
+   const closeCongrats = () => { // NEW
+      setShowCongrats(false)
+      setAnime(false)
+      save()
+
+      btnPressed === 'done' ? router.push('/a1') :
+      btnPressed === 'nextLesson' ? router.push(`/a1/${lessonNumber + 1}`) :
+      btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
+   }
+
+   const save = () => { // NEW
+      localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
+      localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
+      localStorage.setItem(`total-A1`, JSON.stringify(totalA1));
+      localStorage.setItem(`wordsCount-A1`, JSON.stringify(wordsCount)); // NEW
+   }
+
+   const animation = () => { // NEW
+      setShowCongrats(true)
+      setTimeout(() => setShowConfetti(true), 500)
+      setTimeout(() => setAnime(true), 500)
+      setTimeout(() => setShowConfetti(false), 3000)
    }
 
    // Save data to localStorage when state changes
@@ -16297,12 +16367,12 @@ export default function Lessons({ params }) {
                <div className={`${styles.done} ${show && styles.show}`}>
                   <div className={styles.doneTitle}>All done. Brilliant :)</div>
                   <div className={styles.btnHolder}>
-                     <Link href='/a1' className={styles.back} onClick={saveProgress}>Done</Link>
+                     <button className={styles.back} onClick={done}>Done</button>
                      {
                         lessonNumber < wholeLessons ?
-                        <Link href={`/a1/${lessonNumber + 1}`} className={styles.back} onClick={saveProgress}>Next Lesson</Link>
+                        <button className={styles.back} onClick={nextLesson}>Next Lesson</button>
                         :
-                        <Link href='/a2' className={styles.back} onClick={saveProgress}>Start A2</Link>
+                        <button className={styles.back} onClick={nextLevel}>Start A2</button>
                      }
                   </div>
                </div>
@@ -16353,16 +16423,11 @@ export default function Lessons({ params }) {
                               </button>
                               {
                               lessonNumber < wholeLessons ?
-                                 <Link href={`/a1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Lesson {lessonNumber + 1}</Link>
+                                 <button className={styles.button} onClick={nextLesson}>Lesson {lessonNumber + 1}</button>
                                  :
-                                 <Link href='/a2' className={styles.button} onClick={saveProgress}>Start A2</Link>  
+                                 <button className={styles.button} onClick={nextLevel}>Start A2</button>  
                               }
-                              <Link className={styles.button}
-                                 href='/a1'
-                                 onClick={saveProgress}
-                              >
-                                 Save
-                              </Link>
+                              <button className={styles.button} onClick={done}>Save</button>
                            </div>
 
                            : 
@@ -16419,17 +16484,12 @@ export default function Lessons({ params }) {
             <div className={styles.btnHolder}>
                {
                   lessonNumber < wholeLessons ?
-                  <Link href={`/a1/${lessonNumber + 1}`} className={styles.button} onClick={saveProgress}>Next Lesson</Link>
+                  <button className={styles.button} onClick={nextLesson}>Next Lesson</button>
                   :
-                  <Link href='/a2' className={styles.button} onClick={saveProgress}>Start A2</Link>
+                  <button className={styles.button} onClick={nextLevel}>Start A2</button>
                }
 
-               <Link href='/a1'
-                  className={styles.button}
-                  onClick={saveProgress}
-               >
-                  Done
-               </Link>
+               <button className={styles.button} onClick={done}>Save</button>
             </div>
          </div>
       )}
@@ -16439,6 +16499,37 @@ export default function Lessons({ params }) {
          :
          cancelBox ? <div  className={styles.cancel}>Removed Successfully</div> : null
       }
+
+      { // NEW
+         showCongrats &&
+         <>
+            showConfetti ? <Confetti /> : null
+            <div className={styles.congratsHolder}>
+
+               <div className={`${styles.msgHolder} ${anime && styles.showCongrats}`}>
+                  <Image
+                     className={styles.background}
+                     src="/images/back/congrats.jpg"
+                     alt=""
+                     fill
+                  />
+                  
+                  <div className={styles.congrats}>Congrats!</div>
+
+                  <div className={styles.textHolder}>
+                     <div className={styles.text}>You have learned</div>
+                     <div className={styles.count}>{wordsCount}</div>
+                     <div className={styles.text}>words successfully.</div>
+                  </div>
+
+                  <div className={styles.continue} onClick={closeCongrats}>Continue</div>
+               </div>
+            </div>
+         </> 
+         
+      }
+
+
       </div>
    );
 }

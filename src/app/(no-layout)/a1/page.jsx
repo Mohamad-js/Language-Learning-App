@@ -7,12 +7,18 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
+import Confetti from "@/components/confetti/confetti"; // NEW
+
+
 
 function A1() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadedImages, setLoadedImages] = useState(0);
-  const totalImages = 1;
-  const [switches, setSwitches] = useState(Array(117).fill(false));
+   const [isLoading, setIsLoading] = useState(true);
+   const [loadedImages, setLoadedImages] = useState(0);
+   const totalImages = 1;
+   const [switches, setSwitches] = useState(Array(117).fill(false));
+
+  
+
 
   useEffect(() => {
     const newSwitches = Array(117).fill(false);

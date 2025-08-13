@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import styles from './ProgressBar.module.css';
 
-export default function ProgressBar({inputNumber, title}) {
+export default function ProgressBar({inputNumber, title, percent, endNumber}) {
   const [progress, setProgress] = useState(0);
 
   // Simulate progress increase (for demo purposes)
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => (prev < inputNumber ? prev + 1 : inputNumber));
-    }, 100);
+    }, 20);
     return () => clearInterval(interval);
   }, [inputNumber]);
 
   // Circle properties
   const radius = 90;
   const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (progress / 100) * circumference;
+  const strokeDashoffset = circumference - (progress / endNumber) * circumference;
 
   return (
    <div className={styles.container}>
@@ -41,7 +41,9 @@ export default function ProgressBar({inputNumber, title}) {
       <div className={styles.progressInfo}>
          <div className={styles.top}>
             <div className={styles.progress}>{progress}</div>
-            <div className={styles.percent}>%</div>
+            {
+               percent ? <div className={styles.percent}>%</div> : null
+            }
          </div>
          <div className={styles.progressText}>{title}</div>
       </div>
