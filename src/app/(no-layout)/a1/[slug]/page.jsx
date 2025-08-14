@@ -16363,7 +16363,7 @@ export default function Lessons({ params }) {
          }
 
          {
-            stage === 'excellent' && (
+            stage === 'excellent' && ( // NEW
                <div className={`${styles.done} ${show && styles.show}`}>
                   <div className={styles.doneTitle}>All done. Brilliant :)</div>
                   <div className={styles.btnHolder}>
@@ -16413,7 +16413,7 @@ export default function Lessons({ params }) {
                         </ul>
                      </div>
                      {
-                        btn ? 
+                        btn ? // NEW
                            <div className={styles.btnHolder}>
                               <button
                                  className={styles.button}
@@ -16421,12 +16421,14 @@ export default function Lessons({ params }) {
                               >
                                  Review
                               </button>
+
                               {
                               lessonNumber < wholeLessons ?
                                  <button className={styles.button} onClick={nextLesson}>Lesson {lessonNumber + 1}</button>
                                  :
                                  <button className={styles.button} onClick={nextLevel}>Start A2</button>  
                               }
+
                               <button className={styles.button} onClick={done}>Save</button>
                            </div>
 
@@ -16513,7 +16515,7 @@ export default function Lessons({ params }) {
                      alt=""
                      fill
                   />
-                  
+               
                   <div className={styles.congrats}>Congrats!</div>
 
                   <div className={styles.textHolder}>
@@ -16526,7 +16528,6 @@ export default function Lessons({ params }) {
                </div>
             </div>
          </> 
-         
       }
 
 
