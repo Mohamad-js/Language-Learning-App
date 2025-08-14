@@ -850,19 +850,22 @@
       border-radius: 15px;
       margin-bottom: 30px;
 
-      .vocab {
+      .eachCard {
          width: 45%;
          padding: 20px 0;
-         font-size: 20px;
-         color: white;
          background-color: rgba(0, 0, 0, 0.291);
-         backdrop-filter: blur(10px);
          border-radius: 10px;
          display: flex;
          justify-content: center;
          align-items: center;
          flex-grow: 1;
          transition: 1s;
+         
+         .vocab {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+         }
       }
    }
 

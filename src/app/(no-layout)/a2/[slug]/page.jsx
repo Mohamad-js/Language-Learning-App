@@ -16535,11 +16535,13 @@ export default function Lessons({ params }) {
             <h2 className={styles.preTitle}> The Words in This Lesson</h2>
 
             <div className={styles.vocabCards}>
-               {
-                  specificLessonWords?.map((item, index) => (
-                     <div className={styles.vocab} key={index}>{item.word}</div>
-                  ))
-               }
+            {
+               specificLessonWords?.map((item, index) => (
+                  <div className={styles.eachCard} key={index}>
+                     <div className={styles.vocab}>{item.word}</div>
+                  </div>
+               ))
+            }
             </div>
 
             <div className={styles.actionsHolder}>
