@@ -73,8 +73,8 @@ export default function Lessons({ params }) {
          const lessonsProgress = slug
          const wordsLearnt = slug * 10 // NEW
          
-         setTotalA1(totalProgress)
          setWordsCount(wordsLearnt) // NEW
+         setTotalA1(totalProgress)
          setLessonsA1(lessonsProgress)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
@@ -16237,7 +16237,7 @@ export default function Lessons({ params }) {
       <div className={styles.container}>
 
          <Image className={styles.img}
-            src= '/images/back/vocabBack.jpg'
+            src= '/images/back/A1Back.jpg'
             alt= 'background image'
             fill
          />

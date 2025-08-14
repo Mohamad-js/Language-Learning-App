@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
+import Confetti from "@/components/confetti/confetti"; // NEW
 
 
 
@@ -25,6 +26,11 @@ export default function Lessons({ params }) {
    const [show, setShow] = useState(false)
    const [totalA2, setTotalA2] = useState(null)
    const [lessonsA2, setLessonsA2] = useState(null)
+   const [wordsCount, setWordsCount] = useState(null) // NEW
+   const [showConfetti, setShowConfetti] = useState(false) // NEW
+   const [showCongrats, setShowCongrats] = useState(false) // NEW
+   const [anime, setAnime] = useState(false) // NEW
+   const [btnPressed, setBtnPressed] = useState(null) // NEW
 
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -64,7 +70,9 @@ export default function Lessons({ params }) {
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A2`) || '[]');
          const totalProgress = slug * 0.0403225806
          const lessonsProgress = slug
+         const wordsLearnt = slug * 10 // NEW
          
+         setWordsCount(wordsLearnt) // NEW
          setTotalA2(totalProgress)
          setLessonsA2(lessonsProgress)
          setKnownWords(savedKnowns);
@@ -74,15 +82,76 @@ export default function Lessons({ params }) {
       }
    }, [slug]); // Depend on slug to reload when lesson changes
    
-   const saveProgress = () => {
+   const done = () => { // NEW
       try {
-         localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
-         localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
-         localStorage.setItem(`total-A2`, JSON.stringify(totalA2));
+         save()
+
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+            animation()
+            setBtnPressed('done')
+         } else {
+            router.push('/a1')
+         }
+
       } catch (e) {
          console.error('Error saving to localStorage:', e);
       }
-      
+   }
+
+   const nextLesson = () => { // NEW
+      try {
+         save()
+
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+            animation()
+            setBtnPressed('nextLesson')
+         } else {
+            router.push(`/a1/${lessonNumber + 1}`)
+         }
+
+      } catch (e) {
+         console.error('Error saving to localStorage:', e);
+      }
+   }
+
+   const nextLevel = () => { // NEW
+      try {
+         save()
+
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+            animation()
+            setBtnPressed('nextLevel')
+         } else {
+            router.push('/a2')
+         }
+
+      } catch (e) {
+         console.error('Error saving to localStorage:', e);
+      }
+   }
+
+   const closeCongrats = () => { // NEW
+      setShowCongrats(false)
+      setAnime(false)
+      save()
+
+      btnPressed === 'done' ? router.push('/a1') :
+      btnPressed === 'nextLesson' ? router.push(`/a1/${lessonNumber + 1}`) :
+      btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
+   }
+
+   const save = () => { // NEW
+      localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
+      localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
+      localStorage.setItem(`total-A1`, JSON.stringify(totalA1));
+      localStorage.setItem(`wordsCount-A1`, JSON.stringify(wordsCount)); // NEW
+   }
+
+   const animation = () => { // NEW
+      setShowCongrats(true)
+      setTimeout(() => setShowConfetti(true), 500)
+      setTimeout(() => setAnime(true), 500)
+      setTimeout(() => setShowConfetti(false), 3000)
    }
 
    // Save data to localStorage when state changes
@@ -16435,7 +16504,7 @@ export default function Lessons({ params }) {
       <div className={styles.container}>
 
          <Image className={styles.img}
-            src= '/images/back/vocabBack.jpg'
+            src= '/images/back/A2Back.jpg'
             alt= 'background image'
             fill
          />

@@ -11943,7 +11943,7 @@ export default function Lessons({ params }) {
       <div className={styles.container}>
 
          <Image className={styles.img}
-            src= '/images/back/vocabBack.jpg'
+            src= '/images/back/B1Back.jpg'
             alt= 'background image'
             fill
          />
