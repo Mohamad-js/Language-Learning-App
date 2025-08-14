@@ -16530,7 +16530,6 @@ export default function Lessons({ params }) {
          </> 
       }
 
-
       </div>
    );
 }
