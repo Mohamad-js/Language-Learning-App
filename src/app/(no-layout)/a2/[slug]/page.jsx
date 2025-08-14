@@ -16513,7 +16513,7 @@ export default function Lessons({ params }) {
       }
 
       const back = () => {
-         router.push('/a1')
+         router.push('/a2')
          localStorage.setItem(`preview`, JSON.stringify(false));
          setPreview(false)
       }

@@ -106,11 +106,11 @@ function A2() {
                      </div>
                         
                      <button className={styles.lessonBtn}>
-                        <Link href={`/a1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
+                        <Link href={`/a2/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
                      </button>
 
                      <button className={styles.lessonBtn}>
-                        <Link href={`/a1/${lessonNumber}`}>START</Link>
+                        <Link href={`/a2/${lessonNumber}`}>START</Link>
                      </button>
 
                   </div>
