@@ -60,6 +60,10 @@ function A1() {
    const firstNonDoneIndex = switches.findIndex((switchState) => !switchState);
    const newLessonIndex = firstNonDoneIndex === -1 ? null : firstNonDoneIndex;
 
+   const switchPreview = () => { // NEW
+      localStorage.setItem(`preview`, JSON.stringify(true));
+   }
+
    return (
       <div className={styles.container}>
          <Image
@@ -91,28 +95,41 @@ function A1() {
                const isSelectable = (index === 0 && !isDone) || (index > 0 && switches[index - 1] && !isDone);
 
                return isSelectable ? (
-                  <Link
-                  href={`/a1/${lessonNumber}`}
-                  className={styles.lessonsHolder}
-                  key={lessonNumber}
+                  <div
+                     className={styles.lessonsHolder}
+                     // href={`/a1/${lessonNumber}`}
+                     key={lessonNumber}
                   >
-                  <div className={styles.lesson}>Lesson {lessonNumber}</div>
-                  {isNew ? (
-                     <div className={styles.newLesson}>New Lesson</div>
-                  ) : (
-                     <div className={styles.lessonWaiting}>Locked</div>
-                  )}
-                  </Link>
+                     <div className={styles.dataHolder}>
+                        <div className={styles.lesson}>Lesson {lessonNumber}</div>
+                        {isNew ? (
+                           <div className={styles.newLesson}>New Lesson</div>
+                        ) : (
+                           <div className={styles.lessonWaiting}>Locked</div>
+                        )}
+                     </div>
+                        
+                     <button className={styles.preview}>
+                        <Link
+                           href={`/a1/${lessonNumber}`}
+                           onClick={switchPreview}
+                        > PREVIEW </Link>
+                     </button>
+                     <button className={styles.preview}>
+                        <Link href={`/a1/${lessonNumber}`}>START</Link>
+                     </button>
+
+                  </div>
                ) : (
                   <div className={`${styles.lessonsHolder} ${styles.disabled}`} key={lessonNumber}>
-                  <div className={styles.lesson}>Lesson {lessonNumber}</div>
-                  {isDone ? (
-                     <div className={styles.lessonDone}><TiTick className={styles.tick}/></div>
-                  ) : isNew ? (
-                     <div className={styles.newLesson}>New Lesson</div>
-                  ) : (
-                     <div className={styles.lessonWaiting}>Locked</div>
-                  )}
+                     <div className={styles.lesson}>Lesson {lessonNumber}</div>
+                     {isDone ? (
+                        <div className={styles.lessonDone}><TiTick className={styles.tick}/></div>
+                     ) : isNew ? (
+                        <div className={styles.newLesson}>New Lesson</div>
+                     ) : (
+                        <div className={styles.lessonWaiting}>Locked</div>
+                     )}
                   </div>
                );
             })}

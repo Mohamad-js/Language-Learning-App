@@ -26,11 +26,12 @@ export default function Lessons({ params }) {
    const [show, setShow] = useState(false)
    const [totalA1, setTotalA1] = useState(null)
    const [lessonsA1, setLessonsA1] = useState(null)
-   const [wordsCount, setWordsCount] = useState(null) // NEW
-   const [showConfetti, setShowConfetti] = useState(false) // NEW
-   const [showCongrats, setShowCongrats] = useState(false) // NEW
-   const [anime, setAnime] = useState(false) // NEW
-   const [btnPressed, setBtnPressed] = useState(null) // NEW
+   const [wordsCount, setWordsCount] = useState(null)
+   const [showConfetti, setShowConfetti] = useState(false)
+   const [showCongrats, setShowCongrats] = useState(false)
+   const [anime, setAnime] = useState(false)
+   const [btnPressed, setBtnPressed] = useState(null)
+   const [preview, setPreview] = useState(false) // NEW
    
 
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -54,6 +55,8 @@ export default function Lessons({ params }) {
       const handleDefaultBack = (event) => {
          event.preventDefault()
          router.push('/a1')
+         localStorage.setItem(`preview`, JSON.stringify(false)); // NEW
+         setPreview(false) // NEW
       }
 
       window.addEventListener('popstate', handleDefaultBack)
@@ -69,11 +72,13 @@ export default function Lessons({ params }) {
       try {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A1`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A1`) || '[]');
+         const previewState = JSON.parse(localStorage.getItem('preview') || false); // NEW
          const totalProgress = slug * 0.0427350427
          const lessonsProgress = slug
-         const wordsLearnt = slug * 10 // NEW
+         const wordsLearnt = slug * 10
          
-         setWordsCount(wordsLearnt) // NEW
+         setPreview(previewState)
+         setWordsCount(wordsLearnt)
          setTotalA1(totalProgress)
          setLessonsA1(lessonsProgress)
          setKnownWords(savedKnowns);
@@ -83,7 +88,7 @@ export default function Lessons({ params }) {
       }
    }, [slug]); // Depend on slug to reload when lesson changes
 
-   const done = () => { // NEW
+   const done = () => {
       try {
          save()
 
@@ -99,7 +104,7 @@ export default function Lessons({ params }) {
       }
    }
 
-   const nextLesson = () => { // NEW
+   const nextLesson = () => {
       try {
          save()
 
@@ -115,7 +120,7 @@ export default function Lessons({ params }) {
       }
    }
 
-   const nextLevel = () => { // NEW
+   const nextLevel = () => {
       try {
          save()
 
@@ -131,7 +136,7 @@ export default function Lessons({ params }) {
       }
    }
 
-   const closeCongrats = () => { // NEW
+   const closeCongrats = () => {
       setShowCongrats(false)
       setAnime(false)
       save()
@@ -141,14 +146,14 @@ export default function Lessons({ params }) {
       btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
    }
 
-   const save = () => { // NEW
+   const save = () => {
       localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
       localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
       localStorage.setItem(`total-A1`, JSON.stringify(totalA1));
-      localStorage.setItem(`wordsCount-A1`, JSON.stringify(wordsCount)); // NEW
+      localStorage.setItem(`wordsCount-A1`, JSON.stringify(wordsCount));
    }
 
-   const animation = () => { // NEW
+   const animation = () => {
       setShowCongrats(true)
       setTimeout(() => setShowConfetti(true), 500)
       setTimeout(() => setAnime(true), 500)
@@ -16232,6 +16237,22 @@ export default function Lessons({ params }) {
    const startOver = () => {
       location.reload()
    }
+
+   if(preview){ // NEW
+      const cancelPreview = () => {
+         localStorage.setItem(`preview`, JSON.stringify(false));
+         setPreview(false)
+      }
+
+      return (
+         <div className={styles.preview}>
+            <div>The Preview is correct</div>
+            <button onClick={cancelPreview}>Start Lesson</button>
+         
+         </div>
+      )
+   }
+
 
    return (
       <div className={styles.container}>
