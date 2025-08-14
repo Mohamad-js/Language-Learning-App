@@ -139,11 +139,12 @@
                color: red;
             }
 
-            .preview {
+            .lessonBtn {
                padding: 10px;
                background-color: rgb(233, 233, 233);
                border: none;
                border-radius: 10px;
+               font-size: 10px;
                
                &:active {
                   background-color: rgb(188, 188, 188);

@@ -5,7 +5,8 @@ import Image from 'next/image';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
-import Confetti from "@/components/confetti/confetti"; // NEW
+import { IoIosArrowBack } from 'react-icons/io';
+import Confetti from "@/components/confetti/confetti";
 
 
 
@@ -26,11 +27,12 @@ export default function Lessons({ params }) {
    const [show, setShow] = useState(false)
    const [totalA2, setTotalA2] = useState(null)
    const [lessonsA2, setLessonsA2] = useState(null)
-   const [wordsCount, setWordsCount] = useState(null) // NEW
-   const [showConfetti, setShowConfetti] = useState(false) // NEW
-   const [showCongrats, setShowCongrats] = useState(false) // NEW
-   const [anime, setAnime] = useState(false) // NEW
-   const [btnPressed, setBtnPressed] = useState(null) // NEW
+   const [wordsCount, setWordsCount] = useState(null)
+   const [showConfetti, setShowConfetti] = useState(false)
+   const [showCongrats, setShowCongrats] = useState(false)
+   const [anime, setAnime] = useState(false)
+   const [btnPressed, setBtnPressed] = useState(null)
+   const [preview, setPreview] = useState(false)
 
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -53,6 +55,8 @@ export default function Lessons({ params }) {
       const handleDefaultBack = (event) => {
          event.preventDefault()
          router.push('/a2')
+         localStorage.setItem(`preview`, JSON.stringify(false))
+         setPreview(false)
       }
 
       window.addEventListener('popstate', handleDefaultBack)
@@ -68,11 +72,13 @@ export default function Lessons({ params }) {
       try {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A2`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A2`) || '[]');
+         const previewState = JSON.parse(localStorage.getItem('preview') || false);
          const totalProgress = slug * 0.0403225806
          const lessonsProgress = slug
-         const wordsLearnt = slug * 10 // NEW
+         const wordsLearnt = slug * 10
          
-         setWordsCount(wordsLearnt) // NEW
+         setPreview(previewState)
+         setWordsCount(wordsLearnt)
          setTotalA2(totalProgress)
          setLessonsA2(lessonsProgress)
          setKnownWords(savedKnowns);
@@ -82,7 +88,7 @@ export default function Lessons({ params }) {
       }
    }, [slug]); // Depend on slug to reload when lesson changes
    
-   const done = () => { // NEW
+   const done = () => {
       try {
          save()
 
@@ -98,7 +104,7 @@ export default function Lessons({ params }) {
       }
    }
 
-   const nextLesson = () => { // NEW
+   const nextLesson = () => {
       try {
          save()
 
@@ -114,7 +120,7 @@ export default function Lessons({ params }) {
       }
    }
 
-   const nextLevel = () => { // NEW
+   const nextLevel = () => {
       try {
          save()
 
@@ -130,7 +136,7 @@ export default function Lessons({ params }) {
       }
    }
 
-   const closeCongrats = () => { // NEW
+   const closeCongrats = () => {
       setShowCongrats(false)
       setAnime(false)
       save()
@@ -140,14 +146,14 @@ export default function Lessons({ params }) {
       btnPressed === 'nextLevel' ? router.push('/b1') : console.log('PROBLEM')
    }
 
-   const save = () => { // NEW
+   const save = () => {
       localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
       localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
       localStorage.setItem(`total-A2`, JSON.stringify(totalA2));
       localStorage.setItem(`wordsCount-A2`, JSON.stringify(wordsCount)); // NEW
    }
 
-   const animation = () => { // NEW
+   const animation = () => {
       setShowCongrats(true)
       setTimeout(() => setShowConfetti(true), 500)
       setTimeout(() => setAnime(true), 500)
@@ -16498,6 +16504,50 @@ export default function Lessons({ params }) {
 
    const startOver = () => {
       location.reload()
+   }
+
+   if(preview){ // NEW
+      const cancelPreview = () => {
+         localStorage.setItem(`preview`, JSON.stringify(false));
+         setPreview(false)
+      }
+
+      const back = () => {
+         router.push('/a1')
+         localStorage.setItem(`preview`, JSON.stringify(false));
+         setPreview(false)
+      }
+
+      return (
+         <div className={styles.previewContainer}>
+
+            <Image className={styles.imgPreview}
+               src= '/images/back/previewA2.jpg'
+               alt= 'background image'
+               fill
+            />
+
+            <div className={styles.backHolder} onClick={back}>
+               <IoIosArrowBack className={styles.backSign} />
+               <div className={styles.backText}>Back</div>
+            </div>
+
+            <h2 className={styles.preTitle}> The Words in This Lesson</h2>
+
+            <div className={styles.vocabCards}>
+               {
+                  specificLessonWords?.map((item, index) => (
+                     <div className={styles.vocab} key={index}>{item.word}</div>
+                  ))
+               }
+            </div>
+
+            <div className={styles.actionsHolder}>
+               <button className={styles.actions} onClick={cancelPreview}>Start this Lesson</button>
+            </div>
+         
+         </div>
+      )
    }
 
    return (

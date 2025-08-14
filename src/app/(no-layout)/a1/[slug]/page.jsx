@@ -1,10 +1,12 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './slug.module.css';
-import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
-import Confetti from "@/components/confetti/confetti"; // NEW
+import { FaRegBookmark, FaBookmark } from "react-icons/fa6"
+import { IoIosArrowBack } from 'react-icons/io'; // NEW
+import Confetti from "@/components/confetti/confetti";
 
 
 
@@ -55,7 +57,7 @@ export default function Lessons({ params }) {
       const handleDefaultBack = (event) => {
          event.preventDefault()
          router.push('/a1')
-         localStorage.setItem(`preview`, JSON.stringify(false)); // NEW
+         localStorage.setItem(`preview`, JSON.stringify(false)) // NEW
          setPreview(false) // NEW
       }
 
@@ -77,7 +79,7 @@ export default function Lessons({ params }) {
          const lessonsProgress = slug
          const wordsLearnt = slug * 10
          
-         setPreview(previewState)
+         setPreview(previewState) // NEW
          setWordsCount(wordsLearnt)
          setTotalA1(totalProgress)
          setLessonsA1(lessonsProgress)
@@ -16244,10 +16246,39 @@ export default function Lessons({ params }) {
          setPreview(false)
       }
 
+      const back = () => {
+         router.push('/a1')
+         localStorage.setItem(`preview`, JSON.stringify(false));
+         setPreview(false)
+      }
+
       return (
-         <div className={styles.preview}>
-            <div>The Preview is correct</div>
-            <button onClick={cancelPreview}>Start Lesson</button>
+         <div className={styles.previewContainer}>
+
+            <Image className={styles.imgPreview}
+               src= '/images/back/previewA1.jpg'
+               alt= 'background image'
+               fill
+            />
+
+            <div className={styles.backHolder} onClick={back}>
+               <IoIosArrowBack className={styles.backSign} />
+               <div className={styles.backText}>Back</div>
+            </div>
+
+            <h2 className={styles.preTitle}> The Words in This Lesson</h2>
+
+            <div className={styles.vocabCards}>
+               {
+                  specificLessonWords?.map((item, index) => (
+                     <div className={styles.vocab} key={index}>{item.word}</div>
+                  ))
+               }
+            </div>
+
+            <div className={styles.actionsHolder}>
+               <button className={styles.actions} onClick={cancelPreview}>Start this Lesson</button>
+            </div>
          
          </div>
       )

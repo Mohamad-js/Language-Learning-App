@@ -105,23 +105,25 @@
             background-color: white;
             color: rgb(59, 59, 59);
             display: flex;
-            align-items: start;
-            flex-direction: column;
+            align-items: center;
             padding: 15px;
+            gap: 10px;
 
-            &:active {
-               background-color: black;
-               color: white;
+            .dataHolder {
+               width: 80%;
+               color: rgb(59, 59, 59);
+               display: flex;
+               align-items: start;
+               flex-direction: column;
             }
             
-            
-            & .lesson {
+            .lesson {
                font-size: 15px;
                font-weight: 700;
-               color: rgb(133, 133, 133);
+               color: rgb(66, 66, 66);
             }
             
-            & .lessonDone {
+            .lessonDone {
                font-size: 13px;
                color: green;
                font-weight: 700;
@@ -131,10 +133,22 @@
                }
             }
             
-            & .lessonWaiting {
+            .lessonWaiting {
                font-weight: 700;
                font-size: 13px;
                color: red;
+            }
+
+            .lessonBtn {
+               padding: 10px;
+               background-color: rgb(233, 233, 233);
+               border: none;
+               border-radius: 10px;
+               font-size: 10px;
+               
+               &:active {
+                  background-color: rgb(188, 188, 188);
+               }
             }
          }
 
@@ -161,5 +175,4 @@
       align-items: center;
       z-index: 10;
    }
-
 }

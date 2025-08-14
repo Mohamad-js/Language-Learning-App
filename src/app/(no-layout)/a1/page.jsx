@@ -16,9 +16,6 @@ function A1() {
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(117).fill(false));
 
-  
-
-
    useEffect(() => {
       const newSwitches = Array(117).fill(false);
       for (let i = 1; i <= 117; i++) {
@@ -97,7 +94,6 @@ function A1() {
                return isSelectable ? (
                   <div
                      className={styles.lessonsHolder}
-                     // href={`/a1/${lessonNumber}`}
                      key={lessonNumber}
                   >
                      <div className={styles.dataHolder}>
@@ -109,13 +105,11 @@ function A1() {
                         )}
                      </div>
                         
-                     <button className={styles.preview}>
-                        <Link
-                           href={`/a1/${lessonNumber}`}
-                           onClick={switchPreview}
-                        > PREVIEW </Link>
+                     <button className={styles.lessonBtn}>
+                        <Link href={`/a1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
                      </button>
-                     <button className={styles.preview}>
+
+                     <button className={styles.lessonBtn}>
                         <Link href={`/a1/${lessonNumber}`}>START</Link>
                      </button>
 
