@@ -1,22 +1,29 @@
 .container {
-  position: relative; /* Required for Image fill */
-  min-height: 200vh; /* Ensure scrolling */
+  position: fixed; /* Required for Image fill */
+  height: 100dvh; /* Ensure scrolling */
   overflow-y: auto; /* Enable scrolling */
+}
+
+.imgHolder {
+   position: fixed;
+   width: 100%;
+   height: 100dvh;
+
+
+   .background {
+      object-fit: cover; /* Ensure image covers container */
+      z-index: 0; /* Keep behind content */
+   }
 }
 
 .item {
    position: relative;
    top: 100vh;
-   padding: 20px
-}
-
-.background {
-  object-fit: cover; /* Ensure image covers container */
-  z-index: 0; /* Keep behind content */
+   padding: 20px;
 }
 
 .backHolder {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
   z-index: 2; /* Above image */
