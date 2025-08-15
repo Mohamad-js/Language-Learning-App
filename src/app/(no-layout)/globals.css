@@ -32,7 +32,7 @@ html.lenis {
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
