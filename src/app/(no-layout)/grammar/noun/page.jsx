@@ -2,98 +2,63 @@
 import { useState, useRef } from 'react';
 import Loader from '@/components/loading/loading';
 import styles from './noun.module.css';
-import Image from 'next/image';
 import Link from 'next/link';
 import { IoIosArrowBack } from 'react-icons/io';
-import ScrollReveal from '@/components/scrollReveal/ScrollReveal.jsx';
-import { ReactLenis } from '@studio-freight/react-lenis';
+import GradientText from '@/components/scrollReveal/GradientText';
+
+
 
 function Noun() {
-  const [loadedImages, setLoadedImages] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const totalImages = 1;
-  const scrollContainerRef = useRef(null);
+   const scrollContainerRef = useRef(null);
 
-  const handleImageLoad = () => {
-    setLoadedImages((prev) => {
-      const newCount = prev + 1;
-      if (newCount >= totalImages) {
-        setIsLoading(false);
-      }
-      return newCount;
-    });
-  };
+
+
 
   return (
-    <div className={styles.container} ref={scrollContainerRef}>
-
-      <div className={styles.imgHolder}>
-         <Image
-            className={styles.background}
-            src="/images/back/SenEle.jpg"
-            alt="background image"
-            fill
-            onLoad={handleImageLoad}
-         />
-      </div>
+    <div className={styles.container}>
 
       <Link href="/grammar" className={styles.backHolder}>
          <IoIosArrowBack className={styles.backSign} />
          <div className={styles.backText}>Back</div>
       </Link>
-      <ReactLenis
-         options={{
-            duration: 2, // Animation duration in seconds
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
-            lerp: 0, // Linear interpolation intensity (0 to 1)
-            smoothWheel: true, // Enable smooth scrolling for mouse wheel
-            smoothTouch: true, // Disable smooth scrolling for touch (optional, can be unstable on iOS < 16)
-            wheelMultiplier: 0.2, // Adjust scroll speed for mouse wheel
-            touchMultiplier: 1, // Adjust scroll speed for touch
-            infinite: false, // Enable infinite scrolling (requires syncTouch: true for touch devices)
-         }}
-         root
-      >
-         <div className={styles.item}>
-            <ScrollReveal
-               baseOpacity={0}
-               enableBlur={true}
-               baseRotation={0}
-               blurStrength={10}
-            >  
-               When does a man die? When he is hit by a bullet? No! When he suffers a disease?
-               No! When he ate a soup made out of a poisonous mushroom?
-               No! A man dies when he is forgotten!
-               When does a man die? When he is hit by a bullet? No! When he suffers a disease?
-               No! When he ate a soup made out of a poisonous mushroom?
-               No! A man dies when he is forgotten!
-               When does a man die? When he is hit by a bullet? No! When he suffers a disease?
-               No! When he ate a soup made out of a poisonous mushroom?
-               No! A man dies when he is forgotten!
-               When does a man die? When he is hit by a bullet? No! When he suffers a disease?
-               No! When he ate a soup made out of a poisonous mushroom?
-               No! A man dies when he is forgotten!
-            </ScrollReveal>
 
-            <ScrollReveal
-               baseOpacity={0}
-               enableBlur={true}
-               baseRotation={0}
-               blurStrength={10}
-            >  
-               When does a man die? When he is hit by a bullet? No! When he suffers a disease?
-               No! When he ate a soup made out of a poisonous mushroom?
-               No! A man dies when he is forgotten!
-            </ScrollReveal>
+      <div className={styles.leftScroll}></div>
+      <div className={styles.rightScroll}></div>
+      <div className={styles.leftScroll2}></div>
+      <div className={styles.rightScroll2}></div>
+
+      <div className={styles.titleHolder}>
+         <GradientText
+            colors={["#40ffaa", "#9900ff", "#ff00c8", "#ff0040", "#ff00f2"]}
+            animationSpeed={4}
+            showBorder={false}
+            className={styles.title}
+         >
+            NOUNS
+         </GradientText>
+      </div>
+
+      <div className={styles.learningBlock}>
+         <div className={styles.sections}>
+            A noun is any word related to objects, places, names and concepts.
          </div>
-
-      </ReactLenis>
-
-      {isLoading && (
-         <div className={styles.bottomLayer}>
-            <Loader />
+         <div className={styles.sections}>
+            A noun is any word related to objects, places, names and concepts.
          </div>
-      )}
+         <div className={styles.sections}>
+            A noun is any word related to objects, places, names and concepts.
+         </div>
+         <div className={styles.sections}>
+            A noun is any word related to objects, places, names and concepts.
+         </div>
+         <div className={styles.sections}>
+            A noun is any word related to objects, places, names and concepts.
+         </div>
+         <div className={styles.sections}>
+            A noun is any word related to objects, places, names and concepts.
+         </div>
+      </div>
+   
     </div>
   );
 }
