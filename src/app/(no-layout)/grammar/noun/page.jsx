@@ -47,7 +47,7 @@ function Noun() {
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
             lerp: 0.1, // Linear interpolation intensity (0 to 1)
             smoothWheel: true, // Enable smooth scrolling for mouse wheel
-            smoothTouch: true, // Disable smooth scrolling for touch (optional, can be unstable on iOS < 16)
+            smoothTouch: false, // Disable smooth scrolling for touch (optional, can be unstable on iOS < 16)
             wheelMultiplier: 0.2, // Adjust scroll speed for mouse wheel
             touchMultiplier: 0.2, // Adjust scroll speed for touch
             infinite: false, // Enable infinite scrolling (requires syncTouch: true for touch devices)
