@@ -1,9 +1,13 @@
 .container {
    position: fixed;
-   height: 200dvh;
+   padding: 10px;
+   height: 100dvh;
    width: 100%;
-   overflow-y: auto;
-   background-color: rgb(17, 0, 24);
+   display: flex;
+   align-items: start;
+   justify-content: start;
+   flex-direction: column;
+   background-color: rgb(0, 0, 0);
    scroll-timeline-name: --container-scroll;
    scrollbar-width: none;
 
@@ -14,95 +18,16 @@
       -ms-overflow-style: none;
    }
 
-
-   .titleHolder {
-      position: relative;
-      width: 100%;
-      height: 100dvh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .title {
-         font-size: 100px;
-         height: 400px;
-      }
-   }
-
-   .learningBlock {
-      width: 100%;
-      height: 100dvh;
-      padding: 20px;
-
-      .sections {
-         width: 100%;
-         height: 100vh;
-         color: white;
-         font-size: 15px;
-         opacity: 1;
-         /* animation: appear linear forwards;
-         animation-timeline: --container-scroll;
-         animation-range: 10% 50%; */
-      }
-   }
-
-   .leftScroll {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 0;
-      background-color: rgb(174, 0, 255);
-      animation: scroller linear forwards;
-      animation-timeline: --container-scroll;
-   }
-
-   .rightScroll {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      width: 3px;
-      height: 0;
-      background-color: rgb(174, 0, 255);
-      animation: scroller linear forwards;
-      animation-timeline: --container-scroll;
-   }
-
-   .leftScroll2 {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 0;
-      z-index: 10;
-      height: 3px;
-      background-color: rgb(174, 0, 255);
-      animation: scroller2 linear forwards;
-      animation-timeline: --container-scroll;
-   }
-
-   .rightScroll2 {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background-color: rgb(174, 0, 255);
-      animation: scroller2 linear forwards;
-      animation-timeline: --container-scroll;
-   }
-
    .backHolder {
-      position: fixed;
       z-index: 2;
-      top: 0;
       left: 10px;
-      height: 50px;
+      height: 6dvh;
       width: 100px;
       display: flex;
       align-items: center;
       justify-content: start;
       gap: 10px;
-
+   
       &:active {
          opacity: 0.5;
       }
@@ -120,6 +45,101 @@
       }
       
    }
+
+   .learningTrack {
+      width: 100%;
+      height: 94dvh;
+      border-radius: 20px;
+      border: 1px solid rgb(94, 94, 94);
+      overflow-y: auto;
+      scroll-timeline-name: --container-scroll;
+      scrollbar-width: none;
+
+
+      &::-webkit-scrollbar {
+         display: none;
+         scrollbar-width: none;
+         -ms-overflow-style: none;
+      }
+
+      .titleHolder {
+         position: relative;
+         width: 100%;
+         height: 100dvh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+   
+         .title {
+            font-size: 100px;
+            height: 400px;
+         }
+      }
+   
+      .learningBlock {
+         width: 100%;
+         height: 100dvh;
+         padding: 20px;
+   
+         .sections {
+            width: 100%;
+            height: 100vh;
+            color: white;
+            font-size: 15px;
+            opacity: 1;
+            /* animation: appear linear forwards;
+            animation-timeline: --container-scroll;
+            animation-range: 10% 50%; */
+         }
+      }
+   
+      .leftScroll {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 1px;
+         height: 0;
+         background-color: rgb(174, 0, 255);
+         animation: scroller linear forwards;
+         animation-timeline: --container-scroll;
+      }
+   
+      .rightScroll {
+         position: fixed;
+         bottom: 0;
+         right: 0;
+         width: 1px;
+         height: 0;
+         background-color: rgb(174, 0, 255);
+         animation: scroller linear forwards;
+         animation-timeline: --container-scroll;
+      }
+   
+      .leftScroll2 {
+         position: fixed;
+         top: 0;
+         right: 0;
+         width: 0;
+         z-index: 10;
+         height: 1px;
+         background-color: rgb(174, 0, 255);
+         animation: scroller2 linear forwards;
+         animation-timeline: --container-scroll;
+      }
+   
+      .rightScroll2 {
+         position: fixed;
+         bottom: 0;
+         left: 0;
+         width: 0;
+         height: 1px;
+         background-color: rgb(174, 0, 255);
+         animation: scroller2 linear forwards;
+         animation-timeline: --container-scroll;
+      }
+   }
+
+
 
    .bottomLayer {
       position: fixed;
