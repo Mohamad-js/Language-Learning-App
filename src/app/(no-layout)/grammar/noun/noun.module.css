@@ -97,7 +97,7 @@
             opacity: 0;
             top: 600px;
             padding: 20px;
-            background-color: rgb(255, 0, 85);
+            background-color: rgb(225, 0, 255);
             border-radius: 20px;
             animation: appear 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
             animation-timeline: --container-scroll;

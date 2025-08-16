@@ -4,6 +4,8 @@ import styles from './noun.module.css';
 import Link from 'next/link';
 import { IoIosArrowBack } from 'react-icons/io';
 import GradientText from '@/components/gradientText/GradientText';
+import { Fade } from 'react-awesome-reveal';
+
 
 
 function Noun() {
@@ -43,9 +45,11 @@ function Noun() {
             A noun is any word related to one of these groups:
 
             <div className={styles.shapesHolder}>
-               <div className={styles.blobs}>Objects</div>
-               <div className={styles.blobs}>Places</div>
-               <div className={styles.blobs}>Concepts</div>
+               <Fade cascade delay={1000}>
+                  <div className={styles.blobs}>Objects</div>
+                  <div className={styles.blobs}>Places</div>
+                  <div className={styles.blobs}>Concepts</div>
+               </Fade>
             </div>
          </div>
          <div className={styles.sections}>
