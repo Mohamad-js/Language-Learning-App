@@ -1,6 +1,6 @@
 .container {
    position: fixed;
-   padding: 10px;
+   padding: 0 10px;
    height: 100dvh;
    width: 100%;
    display: flex;
@@ -86,53 +86,63 @@
          height: 100vh;
          scroll-snap-align: start;
          scroll-snap-stop: always;
-         padding-top: 100px;
          color: white;
          font-size: 15px;
          opacity: 1;
+         display: flex;
+         align-items: center;
+         justify-content: center;
 
-         /* Apply animation to the first section's shapesHolder */
-         &:nth-child(1) .shapesHolder .blobs {
-            position: relative;
-            opacity: 0;
-            top: 600px;
-            padding: 20px;
-            background-color: rgb(225, 0, 255);
-            border-radius: 20px;
-            animation: appear 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-            animation-timeline: --container-scroll;
-            animation-range: entry 0% entry 50%; /* Animation triggers when section enters viewport */
-         }
-
-         .shapesHolder {
-            margin-top: 50px;
+         .content {
+            width: 100%;
+            height: fit-content;
             display: flex;
-            align-items: start;
-            justify-content: space-between;
-            height: 60dvh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
 
-            .blobs {
-               /* Reset default animation properties for other sections */
-               position: relative;
-               padding: 20px;
-               background-color: rgb(255, 0, 85);
-               border-radius: 20px;
+            .info {
+               font-size: 25px;
+               text-align: center;
+               line-height: 1.4;
+            }
+            
+            .shapesHolder {
+               display: flex;
+               width: 100%;
+               align-items: center;
+               justify-content: space-between;
+               
+               .blobs {
+                  position: relative;
+                  padding: 20px;
+                  background-color: rgb(98, 0, 128);
+                  border-radius: 20px;
+                  font-size: 20px;
+               }
+            }
+            
+            .exHolder {
+               display: flex;
+               width: 100%;
+               justify-content: space-between;
+
+               .exColumn {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+               }
+               
+               .text {
+                  padding: 0 20px;
+                  font-size: 20px;
+               }
             }
          }
       }
       
-   
-      .leftScroll {
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 1px;
-         height: 0;
-         background-color: rgb(174, 0, 255);
-         animation: scroller linear forwards;
-         animation-timeline: --container-scroll;
-      }
-   
       .rightScroll {
          position: fixed;
          bottom: 0;
@@ -141,29 +151,6 @@
          height: 0;
          background-color: rgb(174, 0, 255);
          animation: scroller linear forwards;
-         animation-timeline: --container-scroll;
-      }
-   
-      .leftScroll2 {
-         position: fixed;
-         top: 0;
-         right: 0;
-         width: 0;
-         z-index: 10;
-         height: 1px;
-         background-color: rgb(174, 0, 255);
-         animation: scroller2 linear forwards;
-         animation-timeline: --container-scroll;
-      }
-   
-      .rightScroll2 {
-         position: fixed;
-         bottom: 0;
-         left: 0;
-         width: 0;
-         height: 1px;
-         background-color: rgb(174, 0, 255);
-         animation: scroller2 linear forwards;
          animation-timeline: --container-scroll;
       }
    }
