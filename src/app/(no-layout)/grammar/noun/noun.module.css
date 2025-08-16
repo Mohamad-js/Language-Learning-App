@@ -90,9 +90,35 @@
          color: white;
          font-size: 15px;
          opacity: 1;
-         /* animation: appear linear forwards;
-         animation-timeline: --container-scroll;
-         animation-range: 10% 50%; */
+
+         /* Apply animation to the first section's shapesHolder */
+         &:nth-child(1) .shapesHolder .blobs {
+            position: relative;
+            opacity: 0;
+            top: 600px;
+            padding: 20px;
+            background-color: rgb(255, 0, 85);
+            border-radius: 20px;
+            animation: appear 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            animation-timeline: --container-scroll;
+            animation-range: entry 0% entry 50%; /* Animation triggers when section enters viewport */
+         }
+
+         .shapesHolder {
+            margin-top: 50px;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            height: 60dvh;
+
+            .blobs {
+               /* Reset default animation properties for other sections */
+               position: relative;
+               padding: 20px;
+               background-color: rgb(255, 0, 85);
+               border-radius: 20px;
+            }
+         }
       }
       
    
@@ -171,7 +197,7 @@
 
 @keyframes appear {
    to {
+      top: 0;
       opacity: 1;
-      width: 100%;
    }
 }

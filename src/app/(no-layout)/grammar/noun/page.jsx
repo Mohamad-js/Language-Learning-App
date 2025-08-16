@@ -37,9 +37,16 @@ function Noun() {
             >
                NOUNS
             </GradientText>
+         
          </div>
          <div className={styles.sections}>
-            A noun is any word related to objects, places, names and concepts.
+            A noun is any word related to one of these groups:
+
+            <div className={styles.shapesHolder}>
+               <div className={styles.blobs}>Objects</div>
+               <div className={styles.blobs}>Places</div>
+               <div className={styles.blobs}>Concepts</div>
+            </div>
          </div>
          <div className={styles.sections}>
             A noun is any word related to objects, places, names and concepts.
