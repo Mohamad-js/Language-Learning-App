@@ -17,6 +17,7 @@
       "@vercel/speed-insights": "^1.2.0",
       "canvas-confetti": "^1.9.3",
       "framer-motion": "^12.23.12",
+      "fullpage.js": "^4.0.37",
       "gsap": "^3.13.0",
       "moment-jalaali": "^0.10.4",
       "next": "14.2.26",

@@ -19,6 +19,8 @@
    }
 
    .backHolder {
+      position: absolute;
+      top: 0;
       z-index: 2;
       left: 10px;
       height: 6dvh;
@@ -48,12 +50,13 @@
 
    .learningTrack {
       width: 100%;
-      height: 94dvh;
+      height: 100dvh;
       border-radius: 20px;
-      border: 1px solid rgb(94, 94, 94);
+      padding: 10px;
       overflow-y: auto;
       scroll-timeline-name: --container-scroll;
       scrollbar-width: none;
+      scroll-snap-type: y mandatory;
 
 
       &::-webkit-scrollbar {
@@ -61,7 +64,7 @@
          scrollbar-width: none;
          -ms-overflow-style: none;
       }
-
+      
       .titleHolder {
          position: relative;
          width: 100%;
@@ -69,29 +72,29 @@
          display: flex;
          align-items: center;
          justify-content: center;
+         scroll-snap-align: start;
+         scroll-snap-stop: always;
    
          .title {
             font-size: 100px;
             height: 400px;
          }
       }
-   
-      .learningBlock {
+
+      .sections {
          width: 100%;
-         height: 100dvh;
-         padding: 20px;
-   
-         .sections {
-            width: 100%;
-            height: 100vh;
-            color: white;
-            font-size: 15px;
-            opacity: 1;
-            /* animation: appear linear forwards;
-            animation-timeline: --container-scroll;
-            animation-range: 10% 50%; */
-         }
+         height: 100vh;
+         scroll-snap-align: start;
+         scroll-snap-stop: always;
+         padding-top: 100px;
+         color: white;
+         font-size: 15px;
+         opacity: 1;
+         /* animation: appear linear forwards;
+         animation-timeline: --container-scroll;
+         animation-range: 10% 50%; */
       }
+      
    
       .leftScroll {
          position: fixed;
