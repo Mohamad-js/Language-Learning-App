@@ -64,6 +64,9 @@ function Noun() {
          <div className={styles.sections}>
             A noun is any word related to objects, places, names and concepts.
          </div>
+         <div className={styles.sections}>
+            A noun is any word related to objects, places, names and concepts.
+         </div>
       </div>
 
    
