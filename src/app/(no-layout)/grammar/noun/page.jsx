@@ -16,8 +16,21 @@ function Noun() {
    const [warning, setWarning] = useState(false)
 
    const router = useRouter()
+   
+   const handleDefaultBack = (event) => {
+      event.preventDefault()
+      router.push('/grammar/noun')
+      setWarning(true)
+   }
+   // window.addEventListener('popstate', handleDefaultBack)
+
    useEffect(() => {
-      
+      const handleDefaultBack = (event) => {
+         event.preventDefault()
+         router.push('/grammar/noun')
+         setWarning(true)
+      }
+
       window.addEventListener('popstate', handleDefaultBack)
       
       return () => {
@@ -25,10 +38,6 @@ function Noun() {
       }
    }, [router])
 
-   const handleDefaultBack = (event) => {
-      event.preventDefault()
-      setWarning(true)
-   }
    
    const cancel = () => {
       setWarning(false)
@@ -90,7 +99,7 @@ function Noun() {
          loop
          autoPlay
       />
-      
+
       <button
          onClick={togglePlayPause}
          className={styles.audio}
