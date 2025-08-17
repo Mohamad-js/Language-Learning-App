@@ -54,7 +54,7 @@ function Menu(){
                <div className={styles.menu}>
                   <div className={styles.option}>
                      <MdOutlineRestartAlt className={styles.icon} />
-                     <div className={styles.item} onClick={showWarning}>Restart</div>
+                     <div className={styles.item} onClick={showWarning}>Restart App</div>
                   </div>
                   <Link href='/saved' className={styles.option}>
                      <CiSaveDown1 className={styles.icon} />
@@ -84,12 +84,12 @@ function Menu(){
             <div className={styles.warningHolder} onClick={cancelReset}>
                <div className={styles.warning}>
                   <div className={styles.titleHolder}>
-                     <div className={styles.title}>All progress will be lost.</div>
-                     <div className={styles.title}>Are you sure to restart?</div>
+                     <div className={styles.title}>All progress in the app will be lost.</div>
+                     <div className={styles.title}>Are you sure to restart the app?</div>
                   </div>
                   <div className={styles.btnHolder}>
-                     <button className={styles.no} onClick={cancelReset}>No</button>
-                     <button className={styles.yes} onClick={resetAction}>Yes</button>
+                     <button className={styles.btn} onClick={cancelReset}>No</button>
+                     <button className={styles.btn} onClick={resetAction}>Yes</button>
                   </div>
                </div>
             </div> : null

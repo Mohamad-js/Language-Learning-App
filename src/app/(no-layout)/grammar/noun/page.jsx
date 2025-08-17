@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './noun.module.css';
 import Link from 'next/link';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -12,6 +13,30 @@ import Particles from '@/components/particles/Particles';
 function Noun() {
    const audioRef = useRef(null);
    const [isPlaying, setIsPlaying] = useState(true);
+   const [warning, setWarning] = useState(false)
+
+   const router = useRouter()
+   useEffect(() => {
+      
+      window.addEventListener('popstate', handleDefaultBack)
+      
+      return () => {
+         window.addEventListener('popstate', handleDefaultBack)
+      }
+   }, [router])
+
+   const handleDefaultBack = (event) => {
+      event.preventDefault()
+      setWarning(true)
+   }
+   
+   const cancel = () => {
+      setWarning(false)
+   }
+   
+   const exit = () => {
+      router.push('/grammar')
+   }
 
    useEffect(() => {
       if (audioRef.current) {
@@ -41,10 +66,10 @@ function Noun() {
 
    <div className={styles.container}>
 
-      <Link href="/grammar" className={styles.backHolder}>
+      <div className={styles.backHolder} onClick={handleDefaultBack}>
          <IoIosArrowBack className={styles.backSign} />
          <div className={styles.backText}>Back</div>
-      </Link>
+      </div>
 
       <div style={{ width: '100%', height: '100dvh', position: 'absolute', left: 0 }}>
          <Particles
@@ -65,6 +90,7 @@ function Noun() {
          loop
          autoPlay
       />
+      
       <button
          onClick={togglePlayPause}
          className={styles.audio}
@@ -101,7 +127,7 @@ function Noun() {
          </div>
          <div className={styles.contentHolder}>
             <div className={styles.content}>
-               <div className={styles.info}>
+               <div className={styles.prompt}>
                   For Example:
                </div>
 
@@ -177,7 +203,7 @@ function Noun() {
          </div>
          <div className={styles.contentHolder}>
             <div className={styles.content}>
-               <div className={styles.info}>
+               <div className={styles.prompt}>
                   Some noun suffixes are:
                </div>
 
@@ -259,37 +285,66 @@ function Noun() {
          </div>
          <div className={styles.contentHolder}>
             <div className={styles.content}>
-               <div className={styles.info}>
+               <div className={styles.prompt}>
                   For Example:
                </div>
 
                <Slide triggerOnce direction="up" duration={1000} delay={500}>
                   <Fade triggerOnce delay={500}>
-                     <div className={styles.text}>
+                     <div className={styles.explain}>
                         <span style={{color: '#D2042D'}}>The pen</span> is so beautiful.
+                     </div>
+                  </Fade>
+               </Slide>
+
+               <Slide triggerOnce direction="up" duration={1000} delay={750}>
+                  <Fade triggerOnce delay={750}>
+                     <div className={styles.explain}>
+                        Your French <span style={{color: '#D2042D'}}>friend</span> has a nice <span style={{color: '#D2042D'}}>car</span>.
                      </div>
                   </Fade>
                </Slide>
 
                <Slide triggerOnce direction="up" duration={1000} delay={1000}>
                   <Fade triggerOnce delay={1000}>
-                     <div className={styles.text}>
-                        Your French <span style={{color: '#D2042D'}}>friend</span> has a nice <span style={{color: '#D2042D'}}>car</span>.
-                     </div>
-                  </Fade>
-               </Slide>
-
-               <Slide triggerOnce direction="up" duration={1000} delay={1500}>
-                  <Fade triggerOnce delay={1500}>
-                     <div className={styles.text}>
+                     <div className={styles.explain}>
                         she eats a lot of <span style={{color: '#D2042D'}}>apples</span> every day morning.
                      </div>
                   </Fade>
                </Slide>
             </div>
          </div>
+
+         <div className={styles.contentHolder}>
+            <div className={styles.content}>
+               <div className={styles.prompt}>
+                  Now you know what a noun is :)
+               </div>
+
+               <Slide triggerOnce direction="up" duration={1000} delay={500}>
+                  <Fade triggerOnce delay={500}>
+                     <button className={styles.finished}>
+                        Save My Progress
+                     </button>
+                  </Fade>
+               </Slide>
+            </div>
+         </div>
       </div>
 
+      {
+         warning &&
+         <div className={styles.warning}>
+            <div className={styles.warningHolder}>
+               <div className={styles.warningMsg}>Are you sure to exit?</div>
+               <div className={styles.warningMsg}>All progress will be lost.</div>
+               <div className={styles.warningBtnHolder}>
+                  <div className={styles.btn} onClick={cancel}>No</div>
+                  <div className={styles.btn} onClick={exit}>Yes</div>
+               </div>
+            </div>
+         </div>
+      }
    
    </div>
 
