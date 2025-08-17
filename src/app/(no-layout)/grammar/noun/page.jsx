@@ -74,11 +74,11 @@ function Noun() {
                <div className={styles.exHolder}>
                   <div className={styles.exColumn}>
                      <Slide triggerOnce direction="left" duration={1000} delay={500}>
-                        <Fade triggerOnce delay={500} triggerOnce>
+                        <Fade triggerOnce delay={500}>
                            <div className={styles.blobs}>Objects</div>
                         </Fade>
                      </Slide>
-                     <Fade triggerOnce delay={1500} triggerOnce>
+                     <Fade triggerOnce delay={1500}>
                         <Slide triggerOnce delay={1500} direction='up'>
                            <div className={styles.text}>Pen</div>
                            <div className={styles.text}>Car</div>
