@@ -86,7 +86,7 @@ const Particles = ({
   alphaParticles = ture,
   particleBaseSize = 100,
   sizeRandomness = 1,
-  cameraDistance = 10,
+  cameraDistance = 40,
   disableRotation = false,
   className,
 }) => {

@@ -136,7 +136,7 @@
             }
 
             .info {
-               font-size: 25px;
+               font-size: 24px;
                text-align: center;
                line-height: 1.4;
             }
@@ -145,13 +145,18 @@
                display: flex;
                width: 100%;
                justify-content: space-between;
+               margin-bottom: 20px;
                
                .exColumn {
-                  text-align: center;
-
-
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  flex-direction: column;
+                  
+                  
                   .blobs {
-                     background-color: rgb(98, 0, 128);
+                     background-color: rgb(255, 255, 255);
+                     color: black;
                      border-radius: 50%;
                      font-size: 20px;
                      margin-bottom: 20px;
@@ -167,8 +172,14 @@
                   .text {
                      padding: 0 10px;
                      font-size: 20px;
-                     color: rgb(255, 185, 255);
+                     color: rgb(255, 255, 255);
+                     text-align: center;
                   }
+               }
+
+               .alarm {
+                  width: 100%;
+                  color: white;
                }
             }
          }
