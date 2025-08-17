@@ -153,18 +153,22 @@
 
                   .blobs {
                      background-color: rgb(98, 0, 128);
-                     border-radius: 20px;
+                     border-radius: 50%;
                      font-size: 20px;
                      margin-bottom: 20px;
-                     padding: 20px;
+                     width: 100px;
+                     height: 100px;
                      font-weight: 1000;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
                   }
    
                   
                   .text {
                      padding: 0 10px;
                      font-size: 20px;
-                     color: rgb(255, 135, 255);
+                     color: rgb(255, 185, 255);
                   }
                }
             }
