@@ -11,10 +11,14 @@
    gap: 10px;
 
 
-      & .hamIcon {
-         font-size: 20px;
-         color: black;
-      }
+   .hamIcon {
+      font-size: 20px;
+      color: black;
+   }
+
+   .newStyle {
+      color: white;
+   }
 }
 
 

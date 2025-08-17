@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import styles from './menu.module.css'
 import { CiMenuFries, CiSaveDown1 } from "react-icons/ci";
 import { MdOutlineRestartAlt, MdInsertChartOutlined } from "react-icons/md";
@@ -13,6 +13,11 @@ import Link from 'next/link';
 function Menu(){
    const [menu,setMenu] = useState(false)
    const [warning,setWarning] = useState(false)
+
+   const pathname = usePathname()
+
+   const whiteColor =
+   pathname == '/grammar/noun' && styles.newStyle
 
    const router = useRouter()
 
@@ -41,7 +46,7 @@ function Menu(){
    return(
       <>
          <div className={styles.holder}>
-            <CiMenuFries className={styles.hamIcon} onClick={resetWarning}/>
+            <CiMenuFries className={`${styles.hamIcon} ${whiteColor}`} onClick={resetWarning}/>
          </div>
          {
             menu ?

@@ -9,7 +9,6 @@ import Particles from '@/components/particles/Particles';
 
 
 
-
 function Noun() {
    const audioRef = useRef(null);
    const [isPlaying, setIsPlaying] = useState(true);
