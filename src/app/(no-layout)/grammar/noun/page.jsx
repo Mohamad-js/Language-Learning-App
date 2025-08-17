@@ -7,6 +7,8 @@ import { IoIosArrowBack } from 'react-icons/io';
 import GradientText from '@/components/gradientText/GradientText';
 import { Fade, Slide } from 'react-awesome-reveal';
 import Particles from '@/components/particles/Particles';
+import ConfirmDialogue from '@/components/confirmDialogue/confirmDialogue';
+import PreventNavigation from '@/components/preventNavigation/preventNavigation';
 
 
 
@@ -17,35 +19,10 @@ function Noun() {
 
    const router = useRouter()
    
-   const handleDefaultBack = (event) => {
-      event.preventDefault()
-      router.push('/grammar/noun')
+   const handleDefaultBack = () => {
       setWarning(true)
    }
-   // window.addEventListener('popstate', handleDefaultBack)
-
-   useEffect(() => {
-      const handleDefaultBack = (event) => {
-         event.preventDefault()
-         router.push('/grammar/noun')
-         setWarning(true)
-      }
-
-      window.addEventListener('popstate', handleDefaultBack)
-      
-      return () => {
-         window.addEventListener('popstate', handleDefaultBack)
-      }
-   }, [router])
-
    
-   const cancel = () => {
-      setWarning(false)
-   }
-   
-   const exit = () => {
-      router.push('/grammar')
-   }
 
    useEffect(() => {
       if (audioRef.current) {
@@ -341,19 +318,11 @@ function Noun() {
          </div>
       </div>
 
-      {
-         warning &&
-         <div className={styles.warning}>
-            <div className={styles.warningHolder}>
-               <div className={styles.warningMsg}>Are you sure to exit?</div>
-               <div className={styles.warningMsg}>All progress will be lost.</div>
-               <div className={styles.warningBtnHolder}>
-                  <div className={styles.btn} onClick={cancel}>No</div>
-                  <div className={styles.btn} onClick={exit}>Yes</div>
-               </div>
-            </div>
-         </div>
-      }
+      <PreventNavigation
+         warning={warning}
+         setWarning={setWarning}
+         ConfirmDialogue={ConfirmDialogue}
+      />
    
    </div>
 
