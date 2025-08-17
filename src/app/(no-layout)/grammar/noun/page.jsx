@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './noun.module.css';
 import Link from 'next/link';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -11,7 +11,29 @@ import Particles from '@/components/particles/Particles';
 
 
 function Noun() {
+   const audioRef = useRef(null);
+   const [isPlaying, setIsPlaying] = useState(true);
 
+   useEffect(() => {
+      if (audioRef.current) {
+         audioRef.current.play().catch((error) => {
+            console.error('Error playing audio:', error);
+         });
+      }
+   }, []);
+
+   const togglePlayPause = () => {
+      if (audioRef.current) {
+         if (isPlaying) {
+            audioRef.current.pause();
+         } else {
+            audioRef.current.play().catch((error) => {
+               console.error('Error playing audio:', error);
+            });
+         }
+         setIsPlaying(!isPlaying);
+      }
+   };
 
 
 
@@ -37,6 +59,19 @@ function Noun() {
             disableRotation={false}
          />
       </div>
+
+      <audio
+         ref={audioRef}
+         src="/soundTracks/LessonOne.m4a"
+         loop
+         autoPlay
+      />
+      <button
+         onClick={togglePlayPause}
+         className={styles.audio}
+      >
+         {isPlaying ? 'Pause' : 'Play'} Music
+      </button>
 
       <div className={styles.learningTrack}>
          <div className={styles.rightScroll}></div>
