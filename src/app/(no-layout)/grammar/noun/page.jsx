@@ -55,19 +55,31 @@ function Noun() {
 
          <div className={styles.contentHolder}>
             <div className={styles.content}>
+               <div className={styles.steps}>1</div>
+
+               <Fade delay={1000} triggerOnce>
+                  <div className={styles.info}>
+                     A noun is any word that is an object, place or a concept.
+                  </div>
+               </Fade>
+
+            </div>
+         </div>
+         <div className={styles.contentHolder}>
+            <div className={styles.content}>
                <div className={styles.info}>
-                  A noun is any word that belongs to one of these groups below:
+                  For Example:
                </div>
 
                <div className={styles.exHolder}>
                   <div className={styles.exColumn}>
-                     <Slide direction="left" duration={1000} delay={500}>
-                        <Fade delay={500}>
+                     <Slide triggerOnce direction="left" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500} triggerOnce>
                            <div className={styles.blobs}>Objects</div>
                         </Fade>
                      </Slide>
-                     <Fade delay={1500}>
-                        <Slide delay={1500} direction='up'>
+                     <Fade triggerOnce delay={1500} triggerOnce>
+                        <Slide triggerOnce delay={1500} direction='up'>
                            <div className={styles.text}>Pen</div>
                            <div className={styles.text}>Car</div>
                            <div className={styles.text}>Table</div>
@@ -79,13 +91,13 @@ function Noun() {
                   </div>
 
                   <div className={styles.exColumn}>
-                     <Slide  direction="up" duration={1000} delay={500}>
-                        <Fade delay={500}>
+                     <Slide triggerOnce  direction="up" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
                            <div className={styles.blobs}>Places</div>
                         </Fade>
                      </Slide>
-                     <Fade delay={1600}>
-                        <Slide delay={1600} direction='up'>
+                     <Fade triggerOnce delay={1600}>
+                        <Slide triggerOnce delay={1600} direction='up'>
                            <div className={styles.text}>Countires</div>
                            <div className={styles.text}>Seas</div>
                            <div className={styles.text}>Oceans</div>
@@ -97,13 +109,13 @@ function Noun() {
                   </div>
 
                   <div className={styles.exColumn}>
-                     <Slide direction="right" duration={1000} delay={500}>
-                        <Fade delay={500}>
+                     <Slide triggerOnce direction="right" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
                            <div className={styles.blobs}>Concepts</div>
                         </Fade>
                      </Slide>
-                     <Fade delay={1700}>
-                        <Slide delay={1700} direction='up'>
+                     <Fade triggerOnce delay={1700}>
+                        <Slide triggerOnce delay={1700} direction='up'>
                            <div className={styles.text}>Jealousy</div>
                            <div className={styles.text}>Truth</div>
                            <div className={styles.text}>Happiness</div>
@@ -118,13 +130,137 @@ function Noun() {
             </div>
          </div>
          <div className={styles.contentHolder}>
-            A noun is any word related to objects, places, names and concepts.
+            <div className={styles.content}>
+               <div className={styles.steps}>2</div>
+
+               <Fade triggerOnce delay={1000}>
+                  <div className={styles.info}>
+                     Nouns in English often have one or two suffixes at the end.
+                  </div>
+               </Fade>
+
+            </div>
          </div>
          <div className={styles.contentHolder}>
-            A noun is any word related to objects, places, names and concepts.
-         </div>
-         <div className={styles.contentHolder}>
-            A noun is any word related to objects, places, names and concepts.
+            <div className={styles.content}>
+               <div className={styles.info}>
+                  For Example:
+               </div>
+
+               <div className={styles.exHolder}>
+                  <div className={styles.exColumn}>
+                     <Slide triggerOnce direction="left" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
+                           <div className={styles.blobs}>Objects</div>
+                        </Fade>
+                     </Slide>
+                     <Fade triggerOnce delay={1500}>
+                        <Slide triggerOnce delay={1500} direction='up'>
+                           <div className={styles.text}>Pen</div>
+                           <div className={styles.text}>Car</div>
+                           <div className={styles.text}>Table</div>
+                           <div className={styles.text}>Bag</div>
+                           <div className={styles.text}>Phone</div>
+                           <div className={styles.text}>Rocket</div>
+                        </Slide>
+                     </Fade>
+                  </div>
+
+                  <div className={styles.exColumn}>
+                     <Slide triggerOnce  direction="up" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
+                           <div className={styles.blobs}>Places</div>
+                        </Fade>
+                     </Slide>
+                     <Fade triggerOnce delay={1600}>
+                        <Slide triggerOnce delay={1600} direction='up'>
+                           <div className={styles.text}>Countires</div>
+                           <div className={styles.text}>Seas</div>
+                           <div className={styles.text}>Oceans</div>
+                           <div className={styles.text}>Rivers</div>
+                           <div className={styles.text}>Streets</div>
+                           <div className={styles.text}>Mounains</div>
+                        </Slide>
+                     </Fade>
+                  </div>
+
+                  <div className={styles.exColumn}>
+                     <Slide triggerOnce direction="right" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
+                           <div className={styles.blobs}>Concepts</div>
+                        </Fade>
+                     </Slide>
+                     <Fade triggerOnce delay={1700}>
+                        <Slide triggerOnce delay={1700} direction='up'>
+                           <div className={styles.text}>Jealousy</div>
+                           <div className={styles.text}>Truth</div>
+                           <div className={styles.text}>Happiness</div>
+                           <div className={styles.text}>Beauty</div>
+                           <div className={styles.text}>Secret</div>
+                           <div className={styles.text}>Anger</div>
+                        </Slide>
+                     </Fade>
+                  </div>
+                  
+               </div>
+
+               <div className={styles.exHolder}>
+                  <div className={styles.exColumn}>
+                     <Slide triggerOnce direction="left" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
+                           <div className={styles.blobs}>Objects</div>
+                        </Fade>
+                     </Slide>
+                     <Fade triggerOnce delay={1500}>
+                        <Slide triggerOnce delay={1500} direction='up'>
+                           <div className={styles.text}>Pen</div>
+                           <div className={styles.text}>Car</div>
+                           <div className={styles.text}>Table</div>
+                           <div className={styles.text}>Bag</div>
+                           <div className={styles.text}>Phone</div>
+                           <div className={styles.text}>Rocket</div>
+                        </Slide>
+                     </Fade>
+                  </div>
+
+                  <div className={styles.exColumn}>
+                     <Slide triggerOnce  direction="up" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
+                           <div className={styles.blobs}>Places</div>
+                        </Fade>
+                     </Slide>
+                     <Fade triggerOnce delay={1600}>
+                        <Slide triggerOnce delay={1600} direction='up'>
+                           <div className={styles.text}>Countires</div>
+                           <div className={styles.text}>Seas</div>
+                           <div className={styles.text}>Oceans</div>
+                           <div className={styles.text}>Rivers</div>
+                           <div className={styles.text}>Streets</div>
+                           <div className={styles.text}>Mounains</div>
+                        </Slide>
+                     </Fade>
+                  </div>
+
+                  <div className={styles.exColumn}>
+                     <Slide triggerOnce direction="right" duration={1000} delay={500}>
+                        <Fade triggerOnce delay={500}>
+                           <div className={styles.blobs}>Concepts</div>
+                        </Fade>
+                     </Slide>
+                     <Fade triggerOnce delay={1700}>
+                        <Slide triggerOnce delay={1700} direction='up'>
+                           <div className={styles.text}>Jealousy</div>
+                           <div className={styles.text}>Truth</div>
+                           <div className={styles.text}>Happiness</div>
+                           <div className={styles.text}>Beauty</div>
+                           <div className={styles.text}>Secret</div>
+                           <div className={styles.text}>Anger</div>
+                        </Slide>
+                     </Fade>
+                  </div>
+                  
+               </div>
+            </div>
          </div>
          <div className={styles.contentHolder}>
             A noun is any word related to objects, places, names and concepts.
