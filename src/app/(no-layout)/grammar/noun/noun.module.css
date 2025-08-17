@@ -9,8 +9,8 @@
    flex-direction: column;
    scroll-timeline-name: --container-scroll;
    scrollbar-width: none;
-
-
+   
+   
    &::-webkit-scrollbar {
       display: none;
       scrollbar-width: none;
@@ -63,6 +63,17 @@
          scrollbar-width: none;
          -ms-overflow-style: none;
       }
+
+      .rightScroll {
+         position: fixed;
+         bottom: 0;
+         right: 0;
+         width: 1px;
+         height: 0;
+         background-color: rgb(174, 0, 255);
+         animation: scroller linear forwards;
+         animation-timeline: --container-scroll;
+      }
       
       .titleHolder {
          position: relative;
@@ -110,50 +121,33 @@
                line-height: 1.4;
             }
             
-            .shapesHolder {
-               display: flex;
-               width: 100%;
-               align-items: center;
-               justify-content: space-between;
-               
-            }
-            
             .exHolder {
                display: flex;
                width: 100%;
                justify-content: space-between;
                
-               .blobs {
-                  position: relative;
-                  padding: 20px;
-                  background-color: rgb(98, 0, 128);
-                  border-radius: 20px;
-                  font-size: 20px;
-                  margin-bottom: 20px;
-               }
-
                .exColumn {
                   text-align: center;
-               }
-               
-               .text {
-                  padding: 0 20px;
-                  font-size: 20px;
-                  color: rgb(255, 135, 255);
+
+
+                  .blobs {
+                     position: relative;
+                     padding: 10px;
+                     background-color: rgb(98, 0, 128);
+                     border-radius: 20px;
+                     font-size: 20px;
+                     margin-bottom: 20px;
+                  }
+   
+                  
+                  .text {
+                     padding: 0 20px;
+                     font-size: 20px;
+                     color: rgb(255, 135, 255);
+                  }
                }
             }
          }
-      }
-      
-      .rightScroll {
-         position: fixed;
-         bottom: 0;
-         right: 0;
-         width: 1px;
-         height: 0;
-         background-color: rgb(174, 0, 255);
-         animation: scroller linear forwards;
-         animation-timeline: --container-scroll;
       }
    }
 

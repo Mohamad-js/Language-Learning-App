@@ -41,8 +41,6 @@ function Noun() {
       <div className={styles.learningTrack}>
          <div className={styles.rightScroll}></div>
 
-
-
          <div className={styles.titleHolder}>
             <GradientText
                colors={["#40ffaa", "#9900ff", "#ff00c8", "#ff0040", "#ff00f2"]}
@@ -54,13 +52,11 @@ function Noun() {
             </GradientText>
          
          </div>
+
          <div className={styles.contentHolder}>
             <div className={styles.content}>
                <div className={styles.info}>
                   A noun is any word that belongs to one of these groups below:
-               </div>
-
-               <div className={styles.shapesHolder}>
                </div>
 
                <div className={styles.exHolder}>
