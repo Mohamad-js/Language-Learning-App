@@ -215,12 +215,10 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: yellow;
    
 }
 
 .icon {
-   background-color: blue;
    color: red;
    font-size: 60px;
 }
