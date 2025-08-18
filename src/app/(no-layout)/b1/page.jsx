@@ -149,7 +149,9 @@ function B1() {
             allowStart < 2410 && 
             <div className={styles.lockedLayer}>
                <div className={styles.holder}>
-                  <RiProhibited2Line className={styles.attentionIcon} />
+                  <div className={styles.attentionIcon}>
+                     <RiProhibited2Line />
+                  </div>
                   <div className={styles.lockedTitle}>You need to complete A2 vocabulary lessons to open this level.</div>
                </div>
             </div>
