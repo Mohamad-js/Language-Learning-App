@@ -8,7 +8,6 @@ import GradientText from '@/components/gradientText/GradientText';
 import { Fade, Slide } from 'react-awesome-reveal';
 import Particles from '@/components/particles/Particles';
 import ConfirmDialogue from '@/components/confirmDialogue/confirmDialogue';
-import PreventNavigation from '@/components/preventNavigation/preventNavigation';
 
 
 
@@ -17,12 +16,20 @@ function Noun() {
    const [isPlaying, setIsPlaying] = useState(true);
    const [warning, setWarning] = useState(false)
 
-   const router = useRouter()
    
    const handleDefaultBack = () => {
       setWarning(true)
    }
    
+   const router = useRouter()
+
+   const onConfirm = () => {
+      router.push('/grammar')
+   }
+
+   const onCancel = () => {
+      setWarning(false)
+   }
 
    useEffect(() => {
       if (audioRef.current) {
@@ -318,10 +325,10 @@ function Noun() {
          </div>
       </div>
 
-      <PreventNavigation
-         warning={warning}
-         setWarning={setWarning}
-         ConfirmDialogue={ConfirmDialogue}
+      <ConfirmDialogue
+         warning = {warning}
+         confirm = {onConfirm}
+         cancel = {onCancel}
       />
    
    </div>

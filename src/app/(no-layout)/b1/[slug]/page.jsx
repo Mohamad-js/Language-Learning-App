@@ -75,7 +75,7 @@ export default function Lessons({ params }) {
          const previewState = JSON.parse(localStorage.getItem('preview') || false); // NEW
          const totalProgress = slug * 0.0555555556
          const lessonsProgress = slug
-         const wordsLearnt = slug * 10
+         const wordsLearnt = (slug * 10) + 2410
          
          setPreview(previewState) // NEW
          setWordsCount(wordsLearnt)
@@ -92,7 +92,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90].includes(lessonNumber)){
             animation()
             setBtnPressed('done')
          } else {
@@ -108,7 +108,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90].includes(lessonNumber)){
             animation()
             setBtnPressed('nextLesson')
          } else {
@@ -124,7 +124,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 117].includes(lessonNumber)){
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90].includes(lessonNumber)){
             animation()
             setBtnPressed('nextLevel')
          } else {
