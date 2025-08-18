@@ -150,7 +150,7 @@ function B1() {
             <div className={styles.lockedLayer}>
                <div className={styles.holder}>
                   <div className={styles.attentionIcon}>
-                     <RiProhibited2Line />
+                     <RiProhibited2Line className={styles.icon} />
                   </div>
                   <div className={styles.lockedTitle}>You need to complete A2 vocabulary lessons to open this level.</div>
                </div>

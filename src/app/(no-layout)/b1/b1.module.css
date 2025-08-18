@@ -211,6 +211,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: yellow;
+
+            .icon {
+               background-color: blue;
+            }
          }
          
          .lockedTitle {
