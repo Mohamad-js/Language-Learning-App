@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
+import { RiProhibited2Line } from "react-icons/ri";
 
 
 
@@ -15,6 +16,7 @@ function A2() {
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(124).fill(false));
+   const [allowStart, setAllowStart] = useState(false)
 
    useEffect(() => {
       const newSwitches = Array(124).fill(false);
@@ -22,6 +24,10 @@ function A2() {
          const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A2`)) || [];
          const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A2`)) || [];
          const partials = JSON.parse(localStorage.getItem(`partialWords-${i}-A2`)) || [];
+         const wordsA1Count = JSON.parse(localStorage.getItem('wordsCount-A1') || false);
+
+         setAllowStart(wordsA1Count)
+
          if (knowns.length > 0 || unknowns.length > 0 || partials.length > 0) {
             newSwitches[i - 1] = true;
          }
@@ -132,9 +138,19 @@ function A2() {
 
          {isLoading && (
             <div className={styles.bottomLayer}>
-            <Loader />
+               <Loader />
             </div>
          )}
+
+         {
+            allowStart < 1170 && 
+            <div className={styles.lockedLayer}>
+               <div className={styles.holder}>
+                  <RiProhibited2Line className={styles.attentionIcon} />
+                  <div className={styles.lockedTitle}>You need to complete A1 vocabulary lessons to open this level.</div>
+               </div>
+            </div>
+         }
       </div>
    
    );

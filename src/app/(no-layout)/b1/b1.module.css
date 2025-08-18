@@ -28,6 +28,7 @@
       align-items: center;
       justify-content: start;
       gap: 10px;
+      z-index: 3;
 
       &:active {
          opacity: 0.5;
@@ -164,6 +165,7 @@
    
       }
    }
+
    .bottomLayer {
       position: absolute;
       top: 0;
@@ -174,5 +176,45 @@
       justify-content: center;
       align-items: center;
       z-index: 10;
+   }
+
+   .lockedLayer {
+      position: absolute;
+      width: 100%;
+      height: 100dvh;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.493);
+      z-index: 2;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .holder {
+         width: 100%;
+         height: 200px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         background-color: white;
+         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.384);
+         border-radius: 20px;
+         
+         .attentionIcon {
+            color: red;
+            font-size: 60px;
+         }
+         
+         .lockedTitle {
+            width: 100%;
+            padding: 10px;
+            color: rgb(92, 92, 92);
+            font-size: 18px;
+            text-align: center;
+         }
+      }
    }
 }

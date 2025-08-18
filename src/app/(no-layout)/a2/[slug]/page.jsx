@@ -104,6 +104,7 @@ export default function Lessons({ params }) {
       }
    }
 
+
    const nextLesson = () => {
       try {
          save()
