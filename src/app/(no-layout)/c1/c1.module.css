@@ -16,38 +16,6 @@
       z-index: -1;
    }
    
-   
-   & .backHolder {
-      position: fixed;
-      top: 0;
-      left: 10px;
-      height: 50px;
-      width: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      gap: 10px;
-
-      &:active {
-         opacity: 0.5;
-      }
-      
-      
-      & .backSign {
-         color: black;
-         font-size: 25px;
-      }
-      
-      
-      & .backText {
-         padding-top: 5px;
-         font-size: 15px;
-         color: black;
-      }
-      
-   }
-   
-   
    & .learningHolder {
       border-radius: 30px 30px 0 0;
       width: 100%;

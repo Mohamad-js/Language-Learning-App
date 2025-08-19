@@ -1,5 +1,7 @@
+'use client'
 import DevMode from '@/components/underDev/DevMode';
 import styles from './speaking.module.css'
+import Back from '@/components/backButton/back';
 
 
 
@@ -13,6 +15,7 @@ function Speaking(){
       <>
          <div className={styles.container}>
             <DevMode />
+            <Back />
          </div>
       </>
    )

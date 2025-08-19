@@ -5,8 +5,8 @@ import Image from 'next/image';
 import styles from './slug.module.css';
 import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
-import { IoIosArrowBack } from 'react-icons/io';
 import Confetti from "@/components/confetti/confetti";
+import Back from '@/components/backButton/back';
 
 
 
@@ -16513,12 +16513,6 @@ export default function Lessons({ params }) {
          setPreview(false)
       }
 
-      const back = () => {
-         router.push('/a2')
-         localStorage.setItem(`preview`, JSON.stringify(false));
-         setPreview(false)
-      }
-
       return (
          <div className={styles.previewContainer}>
 
@@ -16528,10 +16522,7 @@ export default function Lessons({ params }) {
                fill
             />
 
-            <div className={styles.backHolder} onClick={back}>
-               <IoIosArrowBack className={styles.backSign} />
-               <div className={styles.backText}>Back</div>
-            </div>
+            <Back previre={true} />
 
             <h2 className={styles.preTitle}> The Words in This Lesson</h2>
 

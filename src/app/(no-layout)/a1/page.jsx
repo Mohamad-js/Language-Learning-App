@@ -1,12 +1,12 @@
 'use client';
 import styles from './a1.module.css';
-import { IoIosArrowBack } from 'react-icons/io';
 import { TiTick } from "react-icons/ti";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
+import Back from '@/components/backButton/back';
 
 
 
@@ -71,10 +71,7 @@ function A1() {
             onLoad={handleImageLoad}
          />
 
-         <Link href="/words" className={styles.backHolder}>
-            <IoIosArrowBack className={styles.backSign} />
-            <div className={styles.backText}>Back</div>
-         </Link>
+         <Back />
 
          <div className={styles.top}>
             <div className={styles.mainTitle}>A1 Vocabulary</div>

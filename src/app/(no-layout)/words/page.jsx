@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { IoIosArrowBack } from "react-icons/io";
 import styles from './words.module.css'
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
+import Back from '@/components/backButton/back';
 
 
 function Words(){
@@ -55,10 +55,7 @@ function Words(){
                onLoad={handleImageLoad}
             />
 
-            <Link href='/' className={styles.backHolder}>
-               <IoIosArrowBack className={styles.backSign}/>
-               <div className={styles.backText}>Back</div>
-            </Link>
+            <Back />
 
             <div className={styles.mother}>
                <div className={styles.title}>Choose Your Level</div>

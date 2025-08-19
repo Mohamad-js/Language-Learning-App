@@ -2,7 +2,7 @@
 import styles from './review.module.css'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { IoIosArrowBack } from 'react-icons/io';
+import Back from '@/components/backButton/back';
 
 
 function Review(){
@@ -13,10 +13,8 @@ function Review(){
    return(
       <>
          <div className={styles.container}>
-            <Link href="/" className={styles.backHolder}>
-               <IoIosArrowBack className={styles.backSign} />
-               <div className={styles.backText}>Back</div>
-            </Link>
+            <Back />
+
             <div className={styles.sectionsHolder }>
                <div className={styles.activityHolder}>
                <div className={styles.title}>Review Menu</div>

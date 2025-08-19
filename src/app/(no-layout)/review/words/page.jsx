@@ -3,8 +3,8 @@ import styles from './wordsReview.module.css'
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IoIosArrowBack } from 'react-icons/io';
 import FlipCard from '@/components/flashcard/FlipCard';
+import Back from '@/components/backButton/back';
 
 
 const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -107,10 +107,7 @@ function WordsReview() {
             fill
          />
 
-         <Link href="/review" className={styles.backHolder}>
-            <IoIosArrowBack className={styles.backSign} />
-            <div className={styles.backText}>Back</div>
-         </Link>
+         <Back />
 
          <div className={styles.filterHolder}>
             <div className={styles.typeHolder}>

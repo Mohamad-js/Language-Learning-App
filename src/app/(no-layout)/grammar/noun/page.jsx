@@ -3,11 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './noun.module.css';
 import Link from 'next/link';
-import { IoIosArrowBack } from 'react-icons/io';
 import GradientText from '@/components/gradientText/GradientText';
 import { Fade, Slide } from 'react-awesome-reveal';
 import Particles from '@/components/particles/Particles';
-import ConfirmDialogue from '@/components/confirmDialogue/confirmDialogue';
+import Back from '@/components/backButton/back';
 
 
 
@@ -17,19 +16,7 @@ function Noun() {
    const [warning, setWarning] = useState(false)
 
    
-   const handleDefaultBack = () => {
-      setWarning(true)
-   }
-   
    const router = useRouter()
-
-   const onConfirm = () => {
-      router.push('/grammar')
-   }
-
-   const onCancel = () => {
-      setWarning(false)
-   }
 
    useEffect(() => {
       if (audioRef.current) {
@@ -59,10 +46,11 @@ function Noun() {
 
    <div className={styles.container}>
 
-      <div className={styles.backHolder} onClick={handleDefaultBack}>
-         <IoIosArrowBack className={styles.backSign} />
-         <div className={styles.backText}>Back</div>
-      </div>
+      <Back
+         preventNavigation = {true}
+         warning = {true}
+         setWarning = {setWarning}
+      />
 
       <div style={{ width: '100%', height: '100dvh', position: 'absolute', left: 0 }}>
          <Particles
@@ -324,12 +312,6 @@ function Noun() {
             </div>
          </div>
       </div>
-
-      <ConfirmDialogue
-         warning = {warning}
-         confirm = {onConfirm}
-         cancel = {onCancel}
-      />
    
    </div>
 

@@ -1,0 +1,40 @@
+.container {
+   position: absolute;
+   width: 100%;
+   height: fit-content;
+   top: 0;
+   left: 0;
+
+
+   .backHolder {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      height: 50px;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 10px;
+      z-index: 3;
+   
+      &:active {
+         opacity: 0.5;
+      }
+      
+      
+      & .backSign {
+         font-size: 25px;
+      }
+   
+   
+      & .backText {
+         padding-top: 5px;
+         font-size: 15px;
+      }  
+   }
+
+   .newStyle {
+      color: white;
+   }
+}

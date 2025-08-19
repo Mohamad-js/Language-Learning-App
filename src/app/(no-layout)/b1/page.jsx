@@ -1,6 +1,5 @@
 'use client';
 import styles from './b1.module.css';
-import { IoIosArrowBack } from 'react-icons/io';
 import { TiTick } from "react-icons/ti";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -9,6 +8,7 @@ import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 import { RiProhibited2Line } from "react-icons/ri";
 import WarningMessage from '@/components/warningMessage/warningMessage';
+import Back from '@/components/backButton/back';
 
 
 
@@ -81,10 +81,7 @@ function B1() {
             onLoad={handleImageLoad}
          />
 
-         <Link href="/words" className={styles.backHolder}>
-            <IoIosArrowBack className={styles.backSign} />
-            <div className={styles.backText}>Back</div>
-         </Link>
+         <Back />
 
          <div className={styles.top}>
             <div className={styles.mainTitle}>B1 Vocabulary</div>
