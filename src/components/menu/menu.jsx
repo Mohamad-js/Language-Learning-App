@@ -17,7 +17,8 @@ function Menu(){
    const pathname = usePathname()
 
    const whiteColor =
-   pathname == '/grammar/noun' && styles.newStyle
+   pathname == '/grammar/noun' ? styles.newStyle :
+   pathname == '/statistics' ? styles.newStyle : null
 
    const router = useRouter()
 

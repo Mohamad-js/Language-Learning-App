@@ -30,17 +30,17 @@ function A1() {
    }, []);
 
    const router = useRouter()
-     useEffect(() => {
-         const handleDefaultBack = (event) => {
-            event.preventDefault()
-            router.push('/words')
-         }
+   useEffect(() => {
+      const handleDefaultBack = (event) => {
+         event.preventDefault()
+         router.push('/words')
+      }
 
+      window.addEventListener('popstate', handleDefaultBack)
+      
+      return () => {
          window.addEventListener('popstate', handleDefaultBack)
-         
-         return () => {
-            window.addEventListener('popstate', handleDefaultBack)
-         }
+      }
    }, [router])
 
    const handleImageLoad = () => {
