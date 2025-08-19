@@ -45,9 +45,11 @@ const Home = () => {
 
    useEffect(() =>  {
       const totalA1 = JSON.parse(localStorage.getItem('total-A1') || 0);
-      const wordsNumber = JSON.parse(localStorage.getItem('wordsCount-A1') || 0);
+      const wordsNumberA1 = JSON.parse(localStorage.getItem('wordsCount-A1') || 0);
+      const wordsNumberA2 = JSON.parse(localStorage.getItem('wordsCount-A2') || 0);
+      const wordsNumberB1 = JSON.parse(localStorage.getItem('wordsCount-B1') || 0);
 
-      setWordsA1Count(wordsNumber)
+      setWordsA1Count(wordsNumberA1)
 
       const totalA2 = JSON.parse(localStorage.getItem('total-A2') || 0);
       const totalB1 = JSON.parse(localStorage.getItem('total-B1') || 0);
