@@ -111,14 +111,16 @@ function B1() {
                            <div className={styles.lessonWaiting}>Locked</div>
                         )}
                      </div>
+                     <div className={styles.btns}>
                         
-                     <button className={styles.lessonBtn}>
-                        <Link href={`/b1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
-                     </button>
+                        <button className={styles.lessonBtn}>
+                           <Link href={`/b1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
+                        </button>
 
-                     <button className={styles.lessonBtn}>
-                        <Link href={`/b1/${lessonNumber}`}>START</Link>
-                     </button>
+                        <button className={styles.lessonBtn}>
+                           <Link href={`/b1/${lessonNumber}`}>START</Link>
+                        </button>
+                     </div>
 
                   </div>
                ) : (

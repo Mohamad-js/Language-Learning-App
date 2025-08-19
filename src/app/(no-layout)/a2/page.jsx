@@ -107,14 +107,17 @@ function A2() {
                            <div className={styles.lessonWaiting}>Locked</div>
                         )}
                      </div>
-                        
-                     <button className={styles.lessonBtn}>
-                        <Link href={`/a2/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
-                     </button>
+                     
+                     <div className={styles.btns}>
+                     
+                        <button className={styles.lessonBtn}>
+                           <Link href={`/a2/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
+                        </button>
 
-                     <button className={styles.lessonBtn}>
-                        <Link href={`/a2/${lessonNumber}`}>START</Link>
-                     </button>
+                        <button className={styles.lessonBtn}>
+                           <Link href={`/a2/${lessonNumber}`}>START</Link>
+                        </button>
+                     </div>
 
                   </div>
                ) : (
