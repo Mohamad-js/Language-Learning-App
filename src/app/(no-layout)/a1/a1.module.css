@@ -125,19 +125,28 @@
                   font-size: 20px;
                }
             }
-            
 
-            .lessonBtn {
-               padding: 10px;
-               background-color: rgb(233, 233, 233);
-               border: none;
-               border-radius: 10px;
-               font-size: 10px;
-               
-               &:active {
-                  background-color: rgb(188, 188, 188);
+            .btns {
+               width: fit-content;
+               height: fit-content;
+               background-color: blue;
+               display: flex;
+               gap: 10px;
+
+               .lessonBtn {
+                  padding: 10px;
+                  background-color: rgb(233, 233, 233);
+                  border: none;
+                  border-radius: 10px;
+                  font-size: 10px;
+                  
+                  &:active {
+                     background-color: rgb(188, 188, 188);
+                  }
                }
             }
+            
+            
 
             .newLesson {
                color: green;

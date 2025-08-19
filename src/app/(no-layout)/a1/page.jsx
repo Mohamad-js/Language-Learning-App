@@ -101,14 +101,16 @@ function A1() {
                            <div className={styles.lessonWaiting}>Locked</div>
                         )}
                      </div>
-                        
-                     <button className={styles.lessonBtn}>
-                        <Link href={`/a1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
-                     </button>
 
-                     <button className={styles.lessonBtn}>
-                        <Link href={`/a1/${lessonNumber}`}>START</Link>
-                     </button>
+                     <div className={styles.btns}>
+                        <button className={styles.lessonBtn}>
+                           <Link href={`/a1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
+                        </button>
+
+                        <button className={styles.lessonBtn}>
+                           <Link href={`/a1/${lessonNumber}`}>START</Link>
+                        </button>
+                     </div>
 
                   </div>
                ) : (
