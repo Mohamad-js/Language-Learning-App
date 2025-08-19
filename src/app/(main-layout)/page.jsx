@@ -11,11 +11,6 @@ import styles from './page.module.css'
 
 
 const Home = () => {
-   const [readProgress,setReadProgress] = useState(42)
-   const [writeProgress,setWriteProgress] = useState(18)
-   const [listenProgress,setListenProgress] = useState(29)
-   const [speakProgress,setSpeakProgress] = useState(57)
-   const [wordsA1Count,setWordsA1Count] = useState(null)
 
    // const [isLoading, setIsLoading] = useState(true);
    // const [loadedImages, setLoadedImages] = useState(0);
@@ -41,59 +36,15 @@ const Home = () => {
 
 
 
-   const [total, setTotal] = useState(77)
 
-   const router = useRouter()
 
-   const updateProgress = () => {
-      const totalA1 = JSON.parse(localStorage.getItem('total-A1') || 0);
-      const wordsNumberA1 = JSON.parse(localStorage.getItem('wordsCount-A1') || 0);
-      const wordsNumberA2 = JSON.parse(localStorage.getItem('wordsCount-A2') || 0);
-      const wordsNumberB1 = JSON.parse(localStorage.getItem('wordsCount-B1') || 0);
-   
-      setWordsA1Count(wordsNumberA1)
-   
-      const totalA2 = JSON.parse(localStorage.getItem('total-A2') || 0);
-      const totalB1 = JSON.parse(localStorage.getItem('total-B1') || 0);
-   
-      const currentTotal = totalA1 + totalA2 + totalB1
-      const visibleTotal = Number(currentTotal).toFixed(2)
-      setTotal(visibleTotal)
-   }
 
-      
-   useEffect(() =>  {
-      updateProgress(); // Initial fetch
-      
-         // Listen for popstate to handle navigation back to Home
-      const handlePopstate = () => {
-         if (window.location.pathname === "/") {
-            updateProgress(); // Update state when Home is navigated to
-         }
-      };
-
-      window.addEventListener("popstate", handlePopstate);
-
-      // Cleanup
-      return () => {
-         window.removeEventListener("popstate", handlePopstate);
-      };
-
-   }, [])
 
 
    return (
       <div className={styles.bigMom}>
          <div className={styles.pageHolder}>
             <div className={styles.activityTitle}>Home Page</div>
-            <div className={styles.aveProgress}>
-               <ProgressBar
-                  inputNumber={wordsA1Count}
-                  endNumber={1170}
-                  title='A1 Words Learnt'
-               />
-               <div className={styles.aveTitle}>Start Learning</div>
-            </div>
 
             <div className={styles.activityHolder}>
                <div className={styles.pair}>
