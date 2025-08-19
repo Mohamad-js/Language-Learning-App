@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import ProgressBar from "@/components/ProgressBar/ProgressBar";
+import { useRouter } from 'next/navigation';import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Image from "next/image";
 import Loader from "@/components/loading/loading";
 import styles from './page.module.css'
@@ -43,20 +43,41 @@ const Home = () => {
 
    const [total, setTotal] = useState(77)
 
-   useEffect(() =>  {
+   const router = useRouter()
+
+   const updateProgress = () => {
       const totalA1 = JSON.parse(localStorage.getItem('total-A1') || 0);
       const wordsNumberA1 = JSON.parse(localStorage.getItem('wordsCount-A1') || 0);
       const wordsNumberA2 = JSON.parse(localStorage.getItem('wordsCount-A2') || 0);
       const wordsNumberB1 = JSON.parse(localStorage.getItem('wordsCount-B1') || 0);
-
+   
       setWordsA1Count(wordsNumberA1)
-
+   
       const totalA2 = JSON.parse(localStorage.getItem('total-A2') || 0);
       const totalB1 = JSON.parse(localStorage.getItem('total-B1') || 0);
-
+   
       const currentTotal = totalA1 + totalA2 + totalB1
       const visibleTotal = Number(currentTotal).toFixed(2)
       setTotal(visibleTotal)
+   }
+
+      
+   useEffect(() =>  {
+      updateProgress(); // Initial fetch
+      
+         // Listen for popstate to handle navigation back to Home
+      const handlePopstate = () => {
+         if (window.location.pathname === "/") {
+            updateProgress(); // Update state when Home is navigated to
+         }
+      };
+
+      window.addEventListener("popstate", handlePopstate);
+
+      // Cleanup
+      return () => {
+         window.removeEventListener("popstate", handlePopstate);
+      };
 
    }, [])
 

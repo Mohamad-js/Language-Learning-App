@@ -23,7 +23,7 @@ function Words(){
       window.addEventListener('popstate', handleDefaultBack)
       
       return () => {
-         window.addEventListener('popstate', handleDefaultBack)
+         window.removeEventListener('popstate', handleDefaultBack)
       }
    }, [router])
 
