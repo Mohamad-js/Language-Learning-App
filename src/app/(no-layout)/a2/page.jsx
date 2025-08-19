@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 import { RiProhibited2Line } from "react-icons/ri";
+import WarningMessage from '@/components/warningMessage/warningMessage';
 
 
 
@@ -69,8 +70,7 @@ function A2() {
 
    return (
       <div className={styles.container}>
-         <Image
-            className={styles.background}
+         <Image className={styles.background}
             src="/images/illustrations/act1.jpg"
             alt=""
             fill
@@ -144,14 +144,9 @@ function A2() {
 
          {
             allowStart < 1170 && 
-            <div className={styles.lockedLayer}>
-               <div className={styles.holder}>
-                  <div className={styles.attentionIcon}>
-                     <RiProhibited2Line className={styles.icon} />
-                  </div>
-                  <div className={styles.lockedTitle}>You need to complete A2 vocabulary lessons to open this level.</div>
-               </div>
-            </div>
+            <WarningMessage
+               message='You need to complete A1 vocabulary lessons to open this level.'
+            />
          }
       </div>
    

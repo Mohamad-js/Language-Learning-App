@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 import { RiProhibited2Line } from "react-icons/ri";
+import WarningMessage from '@/components/warningMessage/warningMessage';
 
 
 
@@ -147,14 +148,9 @@ function B1() {
 
          {
             allowStart < 2410 && 
-            <div className={styles.lockedLayer}>
-               <div className={styles.holder}>
-                  <div className={styles.attentionIcon}>
-                     <RiProhibited2Line className={styles.icon} />
-                  </div>
-                  <div className={styles.lockedTitle}>You need to complete A2 vocabulary lessons to open this level.</div>
-               </div>
-            </div>
+            <WarningMessage
+               message='You need to complete A2 vocabulary lessons to open this level.'
+            />
          }
       </div>
    
