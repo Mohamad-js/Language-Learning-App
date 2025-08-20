@@ -14,7 +14,7 @@ function Writing(){
    return(
       <>
          <div className={styles.container}>
-            <DevMode />
+            {/* <DevMode /> */}
             <Back />
          </div>
       </>

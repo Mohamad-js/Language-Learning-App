@@ -62,16 +62,39 @@ function Navigation(){
       <div className={styles.container}>
       
          <div className={styles.navigation}>
-            <Link href='/reading' className={styles.iconHolder} onClick={readClicked}>
-               {
-                  readSelected ?
+            <Link href='/reading'>
+               <div className={`${styles.iconHolder} ${pages === '/reading' && styles.selected3}`}>
                   <IoBook className={`${styles.navIcons} ${pages === '/reading' && styles.selected}`} />
-                  :
-                  <IoBookOutline className={`${styles.navIcons} ${pages === '/reading' && styles.selected}`} />
-               }
+                  <div className={`${styles.subTitle} ${pages === '/reading' && styles.selected2}`}>Reading</div>
+               </div>
             </Link>
+            <Link href='/speaking'>
+               <div className={`${styles.iconHolder} ${pages === '/speaking' && styles.selected3}`}>
+                  <PiUserSoundFill className={`${styles.navIcons} ${pages === '/speaking' && styles.selected}`} />
+                  <div className={`${styles.subTitle} ${pages === '/speaking' && styles.selected2}`}>Speaking</div>
+               </div>
+            </Link>
+            <Link href='/'>
+               <div className={`${styles.iconHolder} ${pages === '/' && styles.selected3}`}>
+                  <GoHomeFill className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
+                  <div className={`${styles.subTitle} ${pages === '/' && styles.selected2}`}>Home</div>
+               </div>
+            </Link>
+            <Link href='/writing'>
+               <div className={`${styles.iconHolder} ${pages === '/writing' && styles.selected3}`}>
+                  <IoReader className={`${styles.navIcons} ${pages === '/writing' && styles.selected}`} />
+                  <div className={`${styles.subTitle} ${pages === '/writing' && styles.selected2}`}>Writing</div>
+               </div>
+            </Link>
+            <Link href='/listening'>
+               <div className={`${styles.iconHolder} ${pages === '/listening' && styles.selected3}`}>
+                  <ImHeadphones className={`${styles.navIcons} ${pages === '/listening' && styles.selected}`} />
+                  <div className={`${styles.subTitle} ${pages === '/listening' && styles.selected2}`}>Listening</div>
+               </div>
+            </Link>
+            
 
-            <Link href='/speaking' className={styles.iconHolder} onClick={speakClicked}>
+            {/* <Link href='/speaking' className={styles.iconHolder} onClick={speakClicked}>
                {
                   speakSelected ?
                   <PiUserSoundFill   className={`${styles.navIcons} ${pages === '/speaking' && styles.selected}`} />
@@ -83,12 +106,14 @@ function Navigation(){
             <Link href='/' className={styles.iconHolder} onClick={homeClicked}>
                {
                   homeSelected ?
-                  <>
+                  <div className={styles.selectedHolder}>
                      <GoHomeFill   className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
                      <div className={styles.subtitle}>Home</div>
-                  </>
+                  </div>
                   :
-                  <GoHome  className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
+                  <div className={`${styles.selectedHolder} ${pages === '/' && styles.holderSelected}`}>
+                     <GoHome  className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
+                  </div>
                }
             </Link>
 
@@ -108,7 +133,7 @@ function Navigation(){
                   :
                   <ImHeadphones  className={`${styles.navIcons} ${pages === '/listening' && styles.selected}`} />
                }
-            </Link>
+            </Link> */}
          </div>
          
       </div>

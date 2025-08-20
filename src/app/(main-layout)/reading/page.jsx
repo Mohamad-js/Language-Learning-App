@@ -12,7 +12,7 @@ function Reading(){
 
    return(
       <>
-         <DevMode />
+         {/* <DevMode /> */}
          <Back />
       </>
    )

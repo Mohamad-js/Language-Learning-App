@@ -14,7 +14,7 @@ function Speaking(){
    return(
       <>
          <div className={styles.container}>
-            <DevMode />
+            {/* <DevMode /> */}
             <Back />
          </div>
       </>

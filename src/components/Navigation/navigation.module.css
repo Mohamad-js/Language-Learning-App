@@ -15,33 +15,52 @@
       z-index: 1;
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
       background-color: white;
+      gap: 5px;
 
    
       & .iconHolder {
+         width: 50px;
+         height: 50px;
          display: flex;
          align-items: center;
          justify-content: center;
-         flex-direction: column;
+         border-radius: 10px;
+         transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
          
-         
-         & .navIcons {
+
+         .navIcons {
             position: relative;
             color: rgb(172, 172, 172);
-            font-size: 40px;
-            bottom: 0;
-            padding: 8px;
+            font-size: 25px;
             border-radius: 15px;
-            transition: 0.5s ease-out;
-         }
-
-         & .selected {
-            color: rgb(123, 0, 180);
-            bottom: 10px;
             transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-            background-color: rgb(241, 241, 241);
          }
+         
+         .selected {
+            color: rgb(123, 0, 180);
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+         }
+         
+         .subTitle {
+            font-size: 10px;
+            opacity: 0;
+            display: none;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+         }
+         
+         .selected2 {
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            opacity: 1;
+            display: block;
+         }
+      }
+
+      .selected3 {
+         width: 100px;
+         background-color: rgb(235, 235, 235);
+         justify-content: space-evenly;
       }
    }
 }
