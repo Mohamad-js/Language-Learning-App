@@ -13,32 +13,6 @@ import Iridescence from "@/components/Iridescence/iridescence";
 
 const Home = () => {
 
-   // const [isLoading, setIsLoading] = useState(true);
-   // const [loadedImages, setLoadedImages] = useState(0);
-   // const totalImages = 7;
-
-   // const handleImageLoad = () => {
-   //    setLoadedImages((prev) => {
-   //    const newCount = prev + 1;
-   //    if (newCount >= totalImages) {
-   //       setIsLoading(false);
-   //    }
-   //       return newCount;
-   //    });
-   // };
-
-
-   // useEffect(() => {
-   //    if (loadedImages >= totalImages) {
-   //       setIsLoading(false);
-   //    }
-   // }, [loadedImages]);
-
-
-
-
-
-
 
 
 
@@ -53,18 +27,34 @@ const Home = () => {
          />
 
          <div className={styles.pageHolder}>
-            <div className={styles.activityTitle}>Home Page</div>
+            <div className={styles.pageTitle}>Home Page</div>
+
+            <div className={styles.topSection}>
+               <div className={styles.motivtitle}>Today&apos;s Expression</div>
+               <div className={styles.motivText}>
+                  Oh, excuse my French! I did not know that you are the new professor.
+               </div>
+            </div>
 
             <div className={styles.activityHolder}>
+               <div className={styles.activityTitle}>Lessons to Learn</div>
                <div className={styles.pair}>
                   <Link href='/words'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Vocabulary</div>
+                        <div className={styles.info}>
+                           <div className={styles.infoText}>6 CEFR Levels</div>
+                           <div className={styles.infoText}>5000 Words</div>
+                        </div>
                      </div>
                   </Link>
                   <Link href='/grammar'>
                      <div className={styles.activity}>
                         <div className={styles.actBtn}>Grammar</div>
+                        <div className={styles.info}>
+                           <div className={styles.infoText}>38 Topics</div>
+                           <div className={styles.infoText}>164 Lessons</div>
+                        </div>
                      </div>
                   </Link>
                </div>
@@ -97,15 +87,7 @@ const Home = () => {
 
             </div>
          </div>
-   
-         
-         {/* {
-            isLoading ?
-            <div className={styles.bottomLayer}>
-               <Loader /> 
-            </div>
-            : ''
-         } */}
+
       </div>
    );
 };

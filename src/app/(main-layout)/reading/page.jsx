@@ -11,10 +11,10 @@ function Reading(){
 
 
    return(
-      <>
+      <div className = {styles.container}>
          {/* <DevMode /> */}
          <Back />
-      </>
+      </div>
    )
 }
 
