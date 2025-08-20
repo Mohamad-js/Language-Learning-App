@@ -83,7 +83,10 @@ function Navigation(){
             <Link href='/' className={styles.iconHolder} onClick={homeClicked}>
                {
                   homeSelected ?
-                  <GoHomeFill   className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
+                  <>
+                     <GoHomeFill   className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
+                     <div className={styles.subtitle}>Home</div>
+                  </>
                   :
                   <GoHome  className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
                }

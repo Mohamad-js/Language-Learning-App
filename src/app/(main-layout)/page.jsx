@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';import ProgressBar from "@/component
 import Image from "next/image";
 import Loader from "@/components/loading/loading";
 import styles from './page.module.css'
+import Iridescence from "@/components/Iridescence/iridescence";
 
 
 
@@ -43,6 +44,14 @@ const Home = () => {
 
    return (
       <div className={styles.bigMom}>
+
+         <Iridescence
+            color={[1, 1, 1]}
+            mouseReact={false}
+            amplitude={0.1}
+            speed={1.0}
+         />
+
          <div className={styles.pageHolder}>
             <div className={styles.activityTitle}>Home Page</div>
 

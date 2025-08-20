@@ -2,7 +2,6 @@
    position: fixed;
    width: 100vw;
    height: 100dvh;
-   background-color: #e0e0e0;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -84,8 +83,9 @@
          display: flex;
          justify-content: center;
          align-items: center;
-         background-image: linear-gradient(145deg, #f0f0f0, #cacaca);
-         box-shadow:  9px 9px 18px #acacac, -9px -9px 18px #ffffff;
+         background-color: rgba(255, 255, 255, 0.212);
+         backdrop-filter: blur(5px);
+         border: 1px solid rgba(255, 255, 255, 0.452);
          
          &:active {
             box-shadow:  1px 1px 18px #acacac, -1px -1px 18px #ffffff;
@@ -97,7 +97,7 @@
 
             
          .actBtn {
-            color: rgb(93, 0, 129);
+            color: rgb(75, 0, 82);
             font-size: 20px;
             font-weight: 500;
          }
