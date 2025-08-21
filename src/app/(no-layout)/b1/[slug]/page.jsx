@@ -170,41 +170,6 @@ export default function Lessons({ params }) {
       }
    }, [savedB1Vocabs, slug]);
 
-   const handleAnswer = (status) => {
-      const currentWord = specificLessonWords[currentWordIndex];
-      if (status === 'known') {
-         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'B1' }]);
-
-      } else if (status === 'unknown') {
-         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'B1' }]);
-      }
-      
-      if (currentWordIndex + 1 < specificLessonWords.length) {
-         setCurrentWordIndex(currentWordIndex + 1);
-
-      } else if (unknownWords.length > 0) { // partialWords.length WAS DELETED
-         
-         setClose(true);
-         setTimeout(() => {
-            setStage('shiftMsg')
-         }, 1000);
-         
-         setTimeout(() => {
-            setAppear(true)
-         }, 1500);
-         
-      } else {
-         setClose(true);
-         setTimeout(() => {
-            setStage('excellent')
-         }, 1000);
-         
-         setTimeout(() => {
-            setShow(true)
-         }, 2000);
-      }
-   };
-
    const handleNextLearningWord = () => {
       const learningWords = [...unknownWords];
       if (learningWordIndex + 1 < learningWords.length) {
@@ -11933,6 +11898,45 @@ export default function Lessons({ params }) {
          }, 3000);
       }
    }
+
+   const handleAnswer = (status) => {
+      const currentWord = specificLessonWords[currentWordIndex];
+
+      // Update known or unknown words based on status
+      if (status === 'known') {
+         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
+      } else if (status === 'unknown') {
+         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
+      }
+
+      // Check if there are more words to process
+      if (currentWordIndex + 1 < specificLessonWords.length) {
+         setCurrentWordIndex(currentWordIndex + 1);
+      } else {
+         // Use the current status to determine the next stage
+         const willHaveUnknownWords = status === 'unknown' ? true : unknownWords.length > 0;
+
+         setClose(true);
+         if (willHaveUnknownWords) {
+               setTimeout(() => {
+               setStage('shiftMsg');
+            }, 1000);
+
+            setTimeout(() => {
+               setAppear(true);
+            }, 1500);
+
+         } else {
+            setTimeout(() => {
+               setStage('excellent');
+            }, 1000);
+
+            setTimeout(() => {
+               setShow(true);
+            }, 2000);
+         }
+      }
+   };
    
    const specificLessonWords = data.wordList.filter((item) => {
       return item.id == slug
