@@ -38,6 +38,7 @@ const Home = () => {
 
             <div className={styles.activityHolder}>
                <div className={styles.activityTitle}>Lessons to Learn</div>
+               <div className={styles.lessonsHolder}>
                   <div className={styles.activity}>
                      <Link href='/words'>
                         <div className={styles.infoHolder}>
@@ -109,6 +110,7 @@ const Home = () => {
                         </div>
                      </Link>
                   </div>
+               </div>
 
             </div>
          </div>
