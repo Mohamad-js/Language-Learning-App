@@ -71,11 +71,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 11px;
 
 
             .activity {
-               width: 100%;
+               width: 50%;
                height: 150px;
                border-radius: 20px;
                padding: 15px;
