@@ -20,15 +20,11 @@ function Back({preventNavigation, warning, preview, goTo}){
       if(preview){
          localStorage.setItem(`preview`, JSON.stringify(false));
       }
-
-      if(goTo){
-         router.push(goTo)
-      }
-   }, [preview, goTo, router])
+   }, [preview])
 
 
    const handleBack = () => {
-      preventNavigation ? setMessage(true) : history.back()
+      preventNavigation ? setMessage(true) : goTo ? router.push(goTo) : history.back()
    }
 
    const onConfirm = () => {
