@@ -153,7 +153,7 @@ function B1() {
          {
             allowStart < 2410 && 
             <WarningMessage
-               message='You need to complete A2 vocabulary lessons to open this level.'
+               message='Complete A2 vocabulary lessons to unlock this level.'
             />
          }
       </div>

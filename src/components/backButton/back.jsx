@@ -6,7 +6,7 @@ import ConfirmDialogue from '../confirmDialogue/confirmDialogue';
 
 
 
-function Back({preventNavigation, warning, preview}){
+function Back({preventNavigation, warning, preview, goTo}){
    const router = useRouter()
    const [message, setMessage] = useState()
 
@@ -20,7 +20,11 @@ function Back({preventNavigation, warning, preview}){
       if(preview){
          localStorage.setItem(`preview`, JSON.stringify(false));
       }
-   }, [preview])
+
+      if(goTo){
+         router.push(goTo)
+      }
+   }, [preview, goTo, router])
 
 
    const handleBack = () => {

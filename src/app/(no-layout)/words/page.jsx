@@ -55,7 +55,7 @@ function Words(){
                onLoad={handleImageLoad}
             />
 
-            <Back />
+            <Back goTo ={'/'} />
 
             <div className={styles.mother}>
                <div className={styles.title}>Choose Your Level</div>
