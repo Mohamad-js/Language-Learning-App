@@ -81,9 +81,9 @@
    .activity {
       width: 45%;
       flex-grow: 1;
-      height: 150px;
+      height: 120px;
       border-radius: 20px;
-      padding: 15px;
+      padding: 10px 0 5px 10px;
       background-color: rgba(255, 255, 255, 0.212);
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.452);
@@ -110,7 +110,10 @@
       .info {
          width: 100%;
          height: fit-content;
-         font-size: 15px;
+         
+         .infoText {
+            font-size: 15px;
+         }
       }
    }
 }

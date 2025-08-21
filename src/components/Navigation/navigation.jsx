@@ -11,51 +11,6 @@ import { useState } from 'react';
 
 function Navigation(){
    const pages = usePathname()
-   const [readSelected,setReadSelected] = useState(false)
-   const [homeSelected,setHomeSelected] = useState(true)
-   const [writeSelected,setWriteSelected] = useState(false)
-   const [speakSelected,setSpeakSelected] = useState(false)
-   const [listenSelected,setListenSelected] = useState(false)
-
-   const readClicked = () => {
-      setReadSelected(true)
-      setWriteSelected(false)
-      setSpeakSelected(false)
-      setHomeSelected(false)
-      setListenSelected(false)
-   }
-
-   const speakClicked = () => {
-      setReadSelected(false)
-      setWriteSelected(false)
-      setSpeakSelected(true)
-      setHomeSelected(false)
-      setListenSelected(false)
-   }
-
-   const writeClicked = () => {
-      setReadSelected(false)
-      setWriteSelected(true)
-      setSpeakSelected(false)
-      setHomeSelected(false)
-      setListenSelected(false)
-   }
-
-   const listenClicked = () => {
-      setReadSelected(false)
-      setWriteSelected(false)
-      setSpeakSelected(false)
-      setHomeSelected(false)
-      setListenSelected(true)
-   }
-
-   const homeClicked = () => {
-      setReadSelected(false)
-      setWriteSelected(false)
-      setSpeakSelected(false)
-      setHomeSelected(true)
-      setListenSelected(false)
-   }
 
 
    return(
@@ -92,48 +47,7 @@ function Navigation(){
                   <div className={`${styles.subTitle} ${pages === '/listening' && styles.selected2}`}>Listening</div>
                </div>
             </Link>
-            
-
-            {/* <Link href='/speaking' className={styles.iconHolder} onClick={speakClicked}>
-               {
-                  speakSelected ?
-                  <PiUserSoundFill   className={`${styles.navIcons} ${pages === '/speaking' && styles.selected}`} />
-                  :
-                  <PiUserSound  className={`${styles.navIcons} ${pages === '/speaking' && styles.selected}`} />
-               }
-            </Link>
-            
-            <Link href='/' className={styles.iconHolder} onClick={homeClicked}>
-               {
-                  homeSelected ?
-                  <div className={styles.selectedHolder}>
-                     <GoHomeFill   className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
-                     <div className={styles.subtitle}>Home</div>
-                  </div>
-                  :
-                  <div className={`${styles.selectedHolder} ${pages === '/' && styles.holderSelected}`}>
-                     <GoHome  className={`${styles.navIcons} ${pages === '/' && styles.selected}`} />
-                  </div>
-               }
-            </Link>
-
-            <Link href='/writing' className={styles.iconHolder} onClick={writeClicked}>
-               {
-                  writeSelected ?
-                  <IoReader   className={`${styles.navIcons} ${pages === '/writing' && styles.selected}`} />
-                  :
-                  <IoReaderOutline  className={`${styles.navIcons} ${pages === '/writing' && styles.selected}`} />
-               }
-            </Link>
-
-            <Link href='/listening' className={styles.iconHolder} onClick={listenClicked}>
-               {
-                  listenSelected ?
-                  <ImHeadphones  className={`${styles.navIcons} ${pages === '/listening' && styles.selected}`} />
-                  :
-                  <ImHeadphones  className={`${styles.navIcons} ${pages === '/listening' && styles.selected}`} />
-               }
-            </Link> */}
+      
          </div>
          
       </div>

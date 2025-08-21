@@ -44,7 +44,7 @@
          }
          
          .subTitle {
-            font-size: 10px;
+            font-size: 15px;
             opacity: 0;
             display: none;
             transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -55,6 +55,7 @@
             opacity: 1;
             display: block;
             color: rgb(123, 0, 180);
+            margin-top: 4px;
          }
       }
       
