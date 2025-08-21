@@ -127,7 +127,12 @@ function B1() {
                   <div className={`${styles.lessonsHolder} ${styles.disabled}`} key={lessonNumber}>
                   <div className={styles.lesson}>Lesson {lessonNumber}</div>
                   {isDone ? (
-                     <div className={styles.lessonDone}><TiTick className={styles.tick}/></div>
+                     <div className={styles.lessonDone}>
+                        <button className={styles.lessonBtn}>
+                           <Link href = {'/review/words'} >Review</Link>
+                        </button>
+                        <TiTick className={styles.tick}/>
+                     </div>
                   ) : isNew ? (
                      <div className={styles.newLesson}>New Lesson</div>
                   ) : (

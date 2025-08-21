@@ -119,9 +119,24 @@
                font-size: 13px;
                color: green;
                font-weight: 700;
+               display: flex;
+               align-items: center;
+               gap: 10px;
 
                & .tick {
                   font-size: 20px;
+               }
+
+               .lessonBtn {
+                  padding: 10px;
+                  background-color: rgb(233, 233, 233);
+                  border: none;
+                  border-radius: 10px;
+                  font-size: 10px;
+                  
+                  &:active {
+                     background-color: rgb(188, 188, 188);
+                  }
                }
             }
 
@@ -153,7 +168,7 @@
          }
 
          .disabled {
-            opacity: 0.5;
+            background-color: rgba(255, 255, 255, 0.445);
          }
          
    

@@ -1,5 +1,5 @@
 import styles from './warningMessage.module.css'
-import { RiProhibited2Line } from "react-icons/ri";
+import Image from 'next/image';
 
 
 
@@ -13,7 +13,12 @@ function WarningMessage({message}){
       <div className={styles.container}>
          <div className={styles.holder}>
             <div className={styles.attentionIcon}>
-               <RiProhibited2Line className={styles.icon} />
+               <Image className={styles.icon}
+                  src = '/images/illustrations/lock.png'
+                  alt = 'lock icon'
+                  width = {70}
+                  height = {70}
+               />
             </div>
             <div className={styles.lockedTitle}>{message}</div>
          </div>
