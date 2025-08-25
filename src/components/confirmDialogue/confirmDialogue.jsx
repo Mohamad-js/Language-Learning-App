@@ -1,4 +1,4 @@
-import styles from './confirmDialogue.module.css'
+import styles from './confirmDialogue.module.sass'
 
 
 

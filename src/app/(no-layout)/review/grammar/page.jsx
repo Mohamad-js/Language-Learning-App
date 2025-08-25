@@ -1,5 +1,5 @@
 import DevMode from '@/components/underDev/DevMode';
-import styles from './grammar.module.css'
+import styles from './grammar.module.sass'
 
 
 

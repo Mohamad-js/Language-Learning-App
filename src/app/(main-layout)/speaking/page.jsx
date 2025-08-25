@@ -1,6 +1,6 @@
 'use client'
 import DevMode from '@/components/underDev/DevMode';
-import styles from './speaking.module.css'
+import styles from './speaking.module.sass'
 import Back from '@/components/backButton/back';
 
 

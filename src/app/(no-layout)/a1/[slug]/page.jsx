@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './slug.module.css';
+import styles from './slug.module.sass';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6"
 import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';

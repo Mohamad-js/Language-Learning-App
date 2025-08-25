@@ -1,5 +1,5 @@
 import DevMode from '@/components/underDev/DevMode';
-import styles from './collocations.module.css'
+import styles from './collocations.module.sass'
 
 
 

@@ -1,5 +1,5 @@
 'use client'
-import styles from './wordsReview.module.css'
+import styles from './wordsReview.module.sass'
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';

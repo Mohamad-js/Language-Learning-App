@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Image from "next/image";
 import Loader from "@/components/loading/loading";
-import styles from './home.module.css'
+import styles from './home.module.sass'
 
 
 

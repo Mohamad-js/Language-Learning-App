@@ -1,19 +1,17 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
-import { useRouter } from 'next/navigation';
-import ProgressBar from "@/components/ProgressBar/ProgressBar";
-import Image from "next/image";
-import Loader from "@/components/loading/loading";
 import styles from './page.module.sass'
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
+import Loader from "@/components/loading/loading";
 
 
 
 
 const Home = () => {
+   const [isLoading, setIsLoading] = useState(true);
    const [showIdiom, setShowIdiom] = useState(false)
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const timeoutRef = useRef(null);
@@ -80,8 +78,8 @@ const Home = () => {
       };
    }, []);
 
-   if (!dailyIdiom) {
-      return <div>Loading...</div>;
+   while (!dailyIdiom) {
+      setIsLoading(true)
    }
 
    return (
@@ -189,6 +187,12 @@ const Home = () => {
                </div>
             </div>
          </div>
+
+         {isLoading && (
+            <div className={styles.bottomLayer}>
+               <Loader />
+            </div>
+         )}
       </div>
    );
 };

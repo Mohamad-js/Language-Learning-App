@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './ProgressBar.module.css';
+import styles from './ProgressBar.module.sass';
 
 export default function ProgressBar({inputNumber, title, percent, endNumber}) {
   const [progress, setProgress] = useState(0);

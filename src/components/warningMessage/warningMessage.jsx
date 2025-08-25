@@ -1,4 +1,4 @@
-import styles from './warningMessage.module.css'
+import styles from './warningMessage.module.sass'
 import Image from 'next/image';
 
 

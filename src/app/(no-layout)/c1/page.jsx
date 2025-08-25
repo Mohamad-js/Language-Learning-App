@@ -1,5 +1,5 @@
 'use client'
-import styles from './c1.module.css'
+import styles from './c1.module.sass'
 import Link from 'next/link';
 import DevMode from '@/components/underDev/DevMode';
 import Back from '@/components/backButton/back';

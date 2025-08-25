@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import styles from './menu.module.css'
+import styles from './menu.module.sass'
 import { CiMenuFries, CiSaveDown1 } from "react-icons/ci";
 import { MdOutlineRestartAlt, MdInsertChartOutlined } from "react-icons/md";
 import { BiErrorCircle } from "react-icons/bi";

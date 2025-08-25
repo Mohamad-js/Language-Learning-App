@@ -1,5 +1,5 @@
 'use client'
-import styles from './statistics.module.css'
+import styles from './statistics.module.sass'
 import Silk from '@/components/silk/silk';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
