@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Image from "next/image";
 import Loader from "@/components/loading/loading";
-import styles from './page.module.css'
+import styles from './page.module.sass'
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
