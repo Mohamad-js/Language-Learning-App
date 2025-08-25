@@ -10,7 +10,6 @@ import Back from '@/components/backButton/back';
 
 
 
-
 export default function Lessons({ params }) {
    const [currentWordIndex, setCurrentWordIndex] = useState(0);
    const [learningWordIndex, setLearningWordIndex] = useState(0);

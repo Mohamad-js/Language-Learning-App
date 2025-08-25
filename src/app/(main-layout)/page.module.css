@@ -49,7 +49,49 @@
             font-size: 15px;
          }
       }
+      
+      .idiomInfoHolder {
+         position: absolute;
+         width: 100%;
+         height: 100dvh;
+         top: 0;
+         left: 0;
+         padding: 15px;
+         background-color: rgba(0, 0, 0, 0.5);
+         z-index: 5;
+         display: flex;
+         align-items: center;
+         justify-content: center;
 
+         .idiomCard {
+            width: 100%;
+            height: 200px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: white;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .close {
+               position: absolute;
+               top: 0;
+               right: 0;
+               color: black;
+               font-size: 20px;
+            }
+
+            .idiom {
+               color: rgb(59, 59, 59);
+               font-size: 25px;
+            }
+            
+            .meaning {
+               font: 17px arial;
+            }
+         }
+      }
 
       .activityHolder {
          height: fit-content;

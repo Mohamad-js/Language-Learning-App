@@ -8,7 +8,6 @@
    
    .img {
       object-fit: cover;
-      /* rotate: 180deg; */
    }
    
    & .lessonTitle {
@@ -35,114 +34,6 @@
       justify-content: center;
       align-items: center;
    }
-
-   /* & .assessCard {
-      position: fixed;
-      top: 50px;
-      height: 90dvh;
-      padding: 15px;
-      border-radius: 10px;
-      width: 90%;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: 1s;
-
-
-      & .titleHolder {
-         width: 100%;
-         height: fit-content;
-
-
-         & .check {
-            color: white;
-            text-align: center;
-            margin-bottom: 10px;
-         }
-         
-         
-         & .prompt {
-            text-align: center;
-            color: rgb(255, 255, 255);
-            margin-bottom: 1rem;
-            font-weight: 600;
-         }
-      }
-
-      
-      & .vocabHolder {
-         width: 100%;
-         height: fit-content;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         color: white;
-         margin-bottom: 20px;
-
-
-         & .vocab {
-            font-size: 50px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.397);
-         }
-
-         & .role {
-            font-size: 15px;
-         }
-      }
-
-      & .buttonGroup {
-         display: flex;
-         flex-direction: column;
-         gap: 0.5rem;
-         color: white;
-
-
-         & .button {
-            padding: 10px 30px;
-            font-size: 15px;
-            border: none;
-            border-radius: 0.25rem;
-            color: rgb(0, 0, 0);
-            cursor: pointer;
-            transition: background-color 0.2s;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-
-
-            &:active {
-               background-color: #00000085;
-            }
-               
-            
-            &.buttonKnown {
-               color: rgb(0, 255, 0);
-            }
-
-            &.buttonPartial {
-               color: rgb(255, 255, 0);
-            }
-
-            &.buttonUnknown {
-               color: rgb(255, 0, 0);
-            }
-         }
-      }
-
-      & .wordBlock {
-         margin-bottom: 50px;
-
-         & .wordTitle {
-            font-size: 50px;
-            font-weight: 500;
-         }
-
-         .exampleList {
-            list-style-type: disc;
-            padding-left: 1.25rem;
-         }
-      }
-   } */
 
    .shiftMsg {
       opacity: 0;
