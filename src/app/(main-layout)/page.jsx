@@ -105,9 +105,11 @@ const Home = () => {
 
             {
                showIdiom && 
-               <div className={styles.idiomInfoHolder} onClick={toggleIdiomCard}>
+               <div className={styles.idiomInfoHolder}>
                   <div className={styles.idiomCard}>
-                     <IoCloseOutline className={styles.close} />
+                     <div className={styles.closeIconHolder} onClick={toggleIdiomCard}>
+                        <IoCloseOutline className={styles.close} />
+                     </div>
                      <div className={styles.idiom}>{dailyIdiom.idiom}</div>
                      <div className={styles.meaning}>{dailyIdiom.meaning}</div>
                   </div>
