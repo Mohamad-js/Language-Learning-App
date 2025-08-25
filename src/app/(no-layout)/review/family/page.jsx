@@ -1,5 +1,5 @@
 import DevMode from '@/components/underDev/DevMode';
-import styles from './family.module.sass'
+import styles from './family.module.css'
 
 
 

@@ -1,5 +1,5 @@
 import DevMode from '@/components/underDev/DevMode';
-import styles from './expressions.module.sass'
+import styles from './expressions.module.css'
 
 
 

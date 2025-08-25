@@ -1,5 +1,5 @@
 'use client'
-import styles from './grammar.module.sass'
+import styles from './grammar.module.css'
 import { TiTick } from "react-icons/ti";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';

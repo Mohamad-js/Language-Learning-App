@@ -1,17 +1,17 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
-import styles from './page.module.sass'
+import Loader from "@/components/loading/loading";
+import styles from './page.module.css'
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
-import Loader from "@/components/loading/loading";
 
 
 
 
 const Home = () => {
-   const [isLoading, setIsLoading] = useState(true);
+   const [isLoading, setIsLoading] = useState(false);
    const [showIdiom, setShowIdiom] = useState(false)
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const timeoutRef = useRef(null);
@@ -78,9 +78,10 @@ const Home = () => {
       };
    }, []);
 
-   while (!dailyIdiom) {
-      setIsLoading(true)
-   }
+   // while (!dailyIdiom) {
+   //    setIsLoading(true)
+   // }
+
 
    return (
       <div className={styles.bigMom}>
@@ -97,7 +98,7 @@ const Home = () => {
             <div className={styles.topSection} onClick={toggleIdiomCard}>
                <div className={styles.motivTitle}>Today&apos;s Expression</div>
                <div className={styles.motivText}>
-                  {dailyIdiom.example}
+                  {dailyIdiom?.example}
                </div>
             </div>
 
@@ -108,8 +109,8 @@ const Home = () => {
                      <div className={styles.closeIconHolder} onClick={toggleIdiomCard}>
                         <IoCloseOutline className={styles.close} />
                      </div>
-                     <div className={styles.idiom}>{dailyIdiom.idiom}</div>
-                     <div className={styles.meaning}>{dailyIdiom.meaning}</div>
+                     <div className={styles.idiom}>{dailyIdiom?.idiom}</div>
+                     <div className={styles.meaning}>{dailyIdiom?.meaning}</div>
                   </div>
                </div>
             }
@@ -188,11 +189,11 @@ const Home = () => {
             </div>
          </div>
 
-         {isLoading && (
+         {/* {isLoading && (
             <div className={styles.bottomLayer}>
                <Loader />
             </div>
-         )}
+         )} */}
       </div>
    );
 };

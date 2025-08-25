@@ -1,5 +1,5 @@
 'use client'
-import styles from './navigation.module.sass'
+import styles from './navigation.module.css'
 import Link from "next/link";
 import { IoBookOutline, IoBook, IoReaderOutline, IoReader  } from "react-icons/io5";
 import { ImHeadphones } from "react-icons/im";

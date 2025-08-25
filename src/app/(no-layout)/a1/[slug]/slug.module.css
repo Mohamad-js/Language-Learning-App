@@ -513,6 +513,7 @@
    }
 }
 
+/* components/Flashcard.module.css */
 .assessCard {
    display: flex;
    flex-direction: column;

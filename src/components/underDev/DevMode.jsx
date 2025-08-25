@@ -1,5 +1,5 @@
 'use client'
-import styles from './devMode.module.sass'
+import styles from './devMode.module.css'
 import Link from 'next/link';
 
 

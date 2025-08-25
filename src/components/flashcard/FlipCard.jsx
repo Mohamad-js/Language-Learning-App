@@ -1,6 +1,6 @@
 // components/FlipCard.jsx
 import { useState } from 'react';
-import styles from './FlipCard.module.sass';
+import styles from './FlipCard.module.css';
 
 export default function FlipCard({ 
    word, role, british, american, definition, examples, lesson, level

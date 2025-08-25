@@ -1,5 +1,5 @@
 'use client';
-import styles from './a2.module.sass';
+import styles from './a2.module.css';
 import { TiTick } from "react-icons/ti";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';

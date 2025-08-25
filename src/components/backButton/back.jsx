@@ -1,4 +1,4 @@
-import styles from './back.module.sass'
+import styles from './back.module.css'
 import { IoIosArrowBack } from 'react-icons/io';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';

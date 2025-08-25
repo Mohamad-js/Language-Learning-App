@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './noun.module.sass';
+import styles from './noun.module.css';
 import Link from 'next/link';
 import GradientText from '@/components/gradientText/GradientText';
 import { Fade, Slide } from 'react-awesome-reveal';

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import styles from './words.module.sass'
+import styles from './words.module.css'
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';

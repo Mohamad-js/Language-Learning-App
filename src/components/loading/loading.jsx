@@ -1,4 +1,4 @@
-import styles from './loading.module.sass'
+import styles from './loading.module.css'
 
 
 

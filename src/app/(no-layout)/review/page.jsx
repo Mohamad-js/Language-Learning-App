@@ -1,5 +1,5 @@
 'use client'
-import styles from './review.module.sass'
+import styles from './review.module.css'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Back from '@/components/backButton/back';

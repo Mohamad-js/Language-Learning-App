@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import styles from './slug.module.sass';
+import styles from './slug.module.css';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';
