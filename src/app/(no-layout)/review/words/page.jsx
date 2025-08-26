@@ -48,8 +48,8 @@ function aggregateWordsFromLocalStorage() {
 function WordsReview() {
    const [wordData, setWordData] = useState([]);
    const [selectedType, setSelectedType] = useState('all');
-   const [selectedLesson, setSelectedLesson] = useState('all');
-   const [selectedLevel, setSelectedLevel] = useState('all');
+   const [selectedLesson, setSelectedLesson] = useState('1');
+   const [selectedLevel, setSelectedLevel] = useState('A1');
    const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
    // Load data on component mount
@@ -81,23 +81,19 @@ function WordsReview() {
    const handleTypeChange = (e) => {
       setSelectedType(e.target.value);
       setCurrentWordIndex(0);
-      // setIsFlipped(false);
    };
 
    const handleLevelChange = (e) => {
       setSelectedLevel(e.target.value);
-      setSelectedLesson('all');
+      setSelectedLesson('1');
       setCurrentWordIndex(0);
-      // setIsFlipped(false);
    };
 
    const handleLessonChange = (e) => {
       setSelectedLesson(e.target.value);
       setCurrentWordIndex(0);
-      // setIsFlipped(false);
    };
 
-   console.log(wordData);
 
    return (
       <div className={styles.container}>
@@ -113,10 +109,10 @@ function WordsReview() {
             <div className={styles.typeHolder}>
                <label htmlFor="level-select" className={styles.type}>Level</label>
                <select
-               id="level-select"
-               className={styles.select}
-               value={selectedLevel}
-               onChange={handleLevelChange}
+                  id="level-select"
+                  className={styles.select}
+                  value={selectedLevel}
+                  onChange={handleLevelChange}
                >
                <option value="all">All</option>
                {levels.filter(level => 
@@ -129,10 +125,10 @@ function WordsReview() {
             <div className={styles.typeHolder}>
                <label htmlFor="lesson-select" className={styles.type}>Lesson</label>
                <select
-               id="lesson-select"
-               className={styles.select}
-               value={selectedLesson}
-               onChange={handleLessonChange}
+                  id="lesson-select"
+                  className={styles.select}
+                  value={selectedLesson}
+                  onChange={handleLessonChange}
                >
                <option value="all">All</option>
                {availableLessons.map(lesson => (
@@ -175,8 +171,7 @@ function WordsReview() {
                ))
                :
                <div className={styles.noCard}>
-                  <div className={styles.alarm}>You have not studied any words yet</div>
-                  <Link href='/words' className={styles.goVocab}>Start Learning Vocabulary</Link>
+                  <div className={styles.alarm}>No Words to Show</div>
                </div>
             }
          </div>
