@@ -13,7 +13,7 @@ function Statistics(){
    const [writeProgress, setWriteProgress] = useState(18)
    const [listenProgress, setListenProgress] = useState(29)
    const [speakProgress, setSpeakProgress] = useState(57)
-   const [total, setTotal] = useState(77)
+   const [total, setTotal] = useState(0)
    const [wordsA1Count, setWordsA1Count] = useState(null)
    const [wordsA2Count, setWordsA2Count] = useState(null)
    const [wordsB1Count, setWordsB1Count] = useState(null)
@@ -31,6 +31,8 @@ function Statistics(){
       const wordsNumberB2 = JSON.parse(localStorage.getItem('wordsCount-B2') || 0);
       const wordsNumberC1 = JSON.parse(localStorage.getItem('wordsCount-C1') || 0);
       const wordsNumberC2 = JSON.parse(localStorage.getItem('wordsCount-C2') || 0);
+
+      const totalWordsCount = JSON.parse(localStorage.getItem('totalWordsCount') || 0);
    
       setWordsA1Count(wordsNumberA1)
       setWordsA2Count(wordsNumberA2)
@@ -39,9 +41,9 @@ function Statistics(){
       setWordsC1Count(wordsNumberC1)
       setWordsC2Count(wordsNumberC2)
       
-      const totalA1 = JSON.parse(localStorage.getItem('total-A1') || 0);
-      const totalA2 = JSON.parse(localStorage.getItem('total-A2') || 0);
-      const totalB1 = JSON.parse(localStorage.getItem('total-B1') || 0);
+      const totalA1 = JSON.parse(localStorage.getItem('totalProgress-A1') || 0);
+      const totalA2 = JSON.parse(localStorage.getItem('totalProgress-A2') || 0);
+      const totalB1 = JSON.parse(localStorage.getItem('totalProgress-B1') || 0);
    
       const currentTotal = Number(totalA1 + totalA2 + totalB1).toFixed(2)
       setTotal(currentTotal)
@@ -98,7 +100,7 @@ function Statistics(){
                <ProgressBar
                   inputNumber = {wordsB2Count}
                   numberSize = {20}
-                  endNumber = {1170}
+                  endNumber = {2000}
                   circleWidth = '100'
                   lineWidth = '47'
                   title='B2 Words'
@@ -108,7 +110,7 @@ function Statistics(){
                <ProgressBar
                   inputNumber = {wordsC1Count}
                   numberSize = {20}
-                  endNumber = {1170}
+                  endNumber = {2000}
                   circleWidth = '100'
                   lineWidth = '47'
                   title='C1 Words'
@@ -118,7 +120,7 @@ function Statistics(){
                <ProgressBar
                   inputNumber = {wordsC2Count}
                   numberSize = {20}
-                  endNumber = {1170}
+                  endNumber = {2000}
                   circleWidth = '100'
                   lineWidth = '47'
                   title='C2 Words'
@@ -126,9 +128,9 @@ function Statistics(){
                   lineStroke = {6}
                />
                <ProgressBar
-                  inputNumber = {500}
+                  inputNumber = {total}
                   percent = {true}
-                  endNumber = {1170}
+                  endNumber = {100}
                   circleWidth = '200'
                   lineWidth = '90'
                   title='Total Progress'

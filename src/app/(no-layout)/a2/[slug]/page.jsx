@@ -25,9 +25,10 @@ export default function Lessons({ params }) {
    const [appear, setAppear] = useState(false)
    const [fade, setFade] = useState(false)
    const [show, setShow] = useState(false)
-   const [totalA2, setTotalA2] = useState(null)
+   const [totalA2Progress, setTotalA2Progress] = useState(null)
+   const [a2WordsCount, setA2WordsCount] = useState(null)
    const [lessonsA2, setLessonsA2] = useState(null)
-   const [wordsCount, setWordsCount] = useState(null)
+   const [totalWordsCount, setTotalWordsCount] = useState(null)
    const [showConfetti, setShowConfetti] = useState(false)
    const [showCongrats, setShowCongrats] = useState(false)
    const [anime, setAnime] = useState(false)
@@ -72,15 +73,18 @@ export default function Lessons({ params }) {
       try {
          const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A2`) || '[]');
          const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A2`) || '[]');
+         const a1WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-A1`) || 0);
          const previewState = JSON.parse(localStorage.getItem('preview') || false);
          const totalProgress = slug * 0.0403225806
-         const lessonsProgress = slug
-         const wordsLearnt = (slug * 10) + 1170
+         const lessonsLearnt = slug
+         const totalWordsLearnt = (slug * 10) + Number(a1WordsLearnt)
+         const a2WordsLearnt = slug * 10
          
+         setA2WordsCount(a2WordsLearnt)
          setPreview(previewState)
-         setWordsCount(wordsLearnt)
-         setTotalA2(totalProgress)
-         setLessonsA2(lessonsProgress)
+         setTotalWordsCount(totalWordsLearnt)
+         setTotalA2Progress(totalProgress)
+         setLessonsA2(lessonsLearnt)
          setKnownWords(savedKnowns);
          setUnknownWords(savedUnknowns);
       } catch (e) {
@@ -150,8 +154,9 @@ export default function Lessons({ params }) {
    const save = () => {
       localStorage.setItem(`knownWords-${slug}-A2`, JSON.stringify(knownWords));
       localStorage.setItem(`unknownWords-${slug}-A2`, JSON.stringify(unknownWords));
-      localStorage.setItem(`total-A2`, JSON.stringify(totalA2));
-      localStorage.setItem(`wordsCount-A2`, JSON.stringify(wordsCount)); // NEW
+      localStorage.setItem(`totalProgress-A2`, JSON.stringify(totalA2Progress));
+      localStorage.setItem(`wordsCount-A2`, JSON.stringify(a2WordsCount));
+      localStorage.setItem(`totalWordsCount`, JSON.stringify(totalWordsCount));
    }
 
    const animation = () => {
@@ -16835,7 +16840,7 @@ export default function Lessons({ params }) {
 
                   <div className={styles.textHolder}>
                      <div className={styles.text}>You have learned</div>
-                     <div className={styles.count}>{wordsCount}</div>
+                     <div className={styles.count}>{totalWordsCount}</div>
                      <div className={styles.text}>words successfully.</div>
                   </div>
 
