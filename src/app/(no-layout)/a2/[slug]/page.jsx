@@ -6329,19 +6329,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 48,
-            "word": "interview",
-            "role": "verb",
-            "BrE": "/ˈɪntəvjuː/",
-            "AmE": "/ˈɪntərvjuː/",
-            "definition": "to ask someone questions formally",
-            "examples": [
-               "They will interview me.",
-               "She interviewed the singer.",
-               "He was interviewed for the job."
-            ]
-         },
-         {
-            "id": 48,
             "word": "introduce",
             "role": "verb",
             "BrE": "/ˌɪntrəˈdjuːs/",
@@ -6446,19 +6433,6 @@ export default function Lessons({ params }) {
          },
          {
             "id": 48,
-            "word": "item",
-            "role": "noun",
-            "BrE": "/ˈaɪtəm/",
-            "AmE": "/ˈaɪtəm/",
-            "definition": "a single thing in a list or group",
-            "examples": [
-               "I bought an item.",
-               "She checked each item on the list.",
-               "The item was missing from the bag."
-            ]
-         },
-         {
-            "id": 48,
             "word": "jacket",
             "role": "noun",
             "BrE": "/ˈdʒækɪt/",
@@ -6468,19 +6442,6 @@ export default function Lessons({ params }) {
                "My jacket is blue.",
                "She wore a warm jacket.",
                "The jacket has a big pocket."
-            ]
-         },
-         {
-            "id": 48,
-            "word": "jeans",
-            "role": "noun",
-            "BrE": "/dʒiːnz/",
-            "AmE": "/dʒiːnz/",
-            "definition": "casual trousers made of denim",
-            "examples": [
-               "I wear jeans.",
-               "She bought new jeans.",
-               "The jeans are comfortable."
             ]
          },
          {
@@ -16709,7 +16670,7 @@ export default function Lessons({ params }) {
                <div className={`${styles.done} ${show && styles.show}`}>
                   <div className={styles.doneTitle}>All done. Brilliant :)</div>
                   <div className={styles.btnHolder}>
-                     <button className={styles.back} onClick={done}>Done</button>
+                     <button className={styles.back} onClick={done}>Save</button>
                      {
                         lessonNumber < wholeLessons ?
                         <button className={styles.back} onClick={nextLesson}>Next Lesson</button>

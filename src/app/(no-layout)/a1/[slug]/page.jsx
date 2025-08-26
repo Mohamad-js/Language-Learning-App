@@ -16441,7 +16441,7 @@ export default function Lessons({ params }) {
                <div className={`${styles.done} ${show && styles.show}`}>
                   <div className={styles.doneTitle}>All done. Brilliant :)</div>
                   <div className={styles.btnHolder}>
-                     <button className={styles.back} onClick={done}>Done</button>
+                     <button className={styles.back} onClick={done}>Save</button>
                      {
                         lessonNumber < wholeLessons ?
                         <button className={styles.back} onClick={nextLesson}>Next Lesson</button>
