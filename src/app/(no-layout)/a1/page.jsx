@@ -45,11 +45,11 @@ function A1() {
 
    const handleImageLoad = () => {
       setLoadedImages((prev) => {
-      const newCount = prev + 1;
-      if (newCount >= totalImages) {
-         setIsLoading(false);
-      }
-      return newCount;
+         const newCount = prev + 1;
+         if (newCount >= totalImages) {
+            setIsLoading(false);
+         }
+         return newCount;
       });
    };
 

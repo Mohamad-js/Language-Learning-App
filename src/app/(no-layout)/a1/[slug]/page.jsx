@@ -1,16 +1,20 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from './slug.module.css';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6"
 import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';
+import Loader from '@/components/loading/loading';
 
 
 
 export default function Lessons({ params }) {
+   const [isLoading, setIsLoading] = useState(true);
+   const [loadedImages, setLoadedImages] = useState(0);
+   const totalImages = 1;
+
    const [currentWordIndex, setCurrentWordIndex] = useState(0);
    const [learningWordIndex, setLearningWordIndex] = useState(0);
    const [stage, setStage] = useState('assessment');
@@ -16248,11 +16252,21 @@ export default function Lessons({ params }) {
       location.reload()
    }
 
-   if(preview){ // NEW
+   if(preview){
       const cancelPreview = () => {
          localStorage.setItem(`preview`, JSON.stringify(false));
          setPreview(false)
       }
+
+      const handleImageLoad = () => {
+         setLoadedImages((prev) => {
+            const newCount = prev + 1;
+            if (newCount >= totalImages) {
+               setIsLoading(false);
+            }
+            return newCount;
+         });
+      };
 
       return (
          <div className={styles.previewContainer}>
@@ -16261,6 +16275,7 @@ export default function Lessons({ params }) {
                src= '/images/back/previewA1.jpg'
                alt= 'background image'
                fill
+               onLoad={handleImageLoad}
             />
 
             <Back preview = {true}/>
@@ -16280,12 +16295,17 @@ export default function Lessons({ params }) {
             <div className={styles.actionsHolder}>
                <button className={styles.actions} onClick={cancelPreview}>Start this Lesson</button>
             </div>
+
+            {isLoading && (
+               <div className={styles.bottomLayer}>
+                  <Loader />
+               </div>
+            )}
          
          </div>
       )
    }
 
-   console.log(unknownWords)
 
    return (
       <div className={styles.container}>

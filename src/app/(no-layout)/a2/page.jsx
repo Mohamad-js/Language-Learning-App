@@ -71,7 +71,7 @@ function A2() {
    return (
       <div className={styles.container}>
          <Image className={styles.background}
-            src="/images/illustrations/act1.jpg"
+            src="/images/illustrations/act2.jpg"
             alt=""
             fill
             onLoad={handleImageLoad}
