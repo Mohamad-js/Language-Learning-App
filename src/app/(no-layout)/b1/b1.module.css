@@ -52,7 +52,7 @@
          width: 100%;
          height: 100%;
          padding: 20px 20px 100px 20px;
-         background-color: rgba(163, 163, 163, 0.486);
+         border: 1px solid white;
          overflow-y: auto;
 
          &::-webkit-scrollbar {
@@ -90,7 +90,7 @@
                }
                
                .newLesson {
-                  color: green;
+                  color: rgb(0, 200, 255);
                   font-weight: 700;
                }
 
@@ -98,14 +98,14 @@
                .lessonWaiting {
                   font-weight: 700;
                   font-size: 13px;
-                  color: red;
+                  color: rgb(66, 66, 66);
                }
             }
             
             .lessonWaiting {
                font-weight: 700;
                font-size: 13px;
-               color: red;
+               color: rgb(66, 66, 66);
             }
 
             .lesson {
@@ -116,7 +116,7 @@
             
             .lessonDone {
                font-size: 13px;
-               color: green;
+               color: rgb(0, 200, 255);
                font-weight: 700;
                display: flex;
                align-items: center;

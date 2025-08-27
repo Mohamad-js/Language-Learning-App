@@ -113,11 +113,11 @@ function B2() {
                      <div className={styles.btns}>
                         
                         <button className={styles.lessonBtn}>
-                           <Link href={`/b1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
+                           <Link href={`/b2/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
                         </button>
 
                         <button className={styles.lessonBtn}>
-                           <Link href={`/b1/${lessonNumber}`}>START</Link>
+                           <Link href={`/b2/${lessonNumber}`}>START</Link>
                         </button>
                      </div>
 

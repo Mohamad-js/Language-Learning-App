@@ -65,7 +65,7 @@ function A1() {
       <div className={styles.container}>
          <Image
             className={styles.background}
-            src="/images/illustrations/act1.jpg"
+            src="/images/back/A1Back.jpg"
             alt=""
             fill
             onLoad={handleImageLoad}

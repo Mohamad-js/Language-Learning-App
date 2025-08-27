@@ -75,7 +75,7 @@ function B1() {
       <div className={styles.container}>
          <Image
             className={styles.background}
-            src="/images/illustrations/act3.jpg"
+            src="/images/back/B1Back.jpg"
             alt=""
             fill
             onLoad={handleImageLoad}
@@ -150,12 +150,12 @@ function B1() {
             </div>
          )}
 
-         {
+         {/* {
             allowStart < 1240 && 
             <WarningMessage
                message='Complete A2 vocabulary lessons to unlock this level.'
             />
-         }
+         } */}
       </div>
    
    );

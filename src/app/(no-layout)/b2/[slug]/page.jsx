@@ -10784,7 +10784,7 @@ export default function Lessons({ params }) {
          <div className={styles.previewContainer}>
 
             <Image className={styles.imgPreview}
-               src= '/images/back/previewB1.jpg'
+               src= '/images/back/previewB2.jpg'
                alt= 'background image'
                fill
                onLoad={handleImageLoad}
@@ -10822,7 +10822,7 @@ export default function Lessons({ params }) {
       <div className={styles.container}>
 
          <Image className={styles.img}
-            src= '/images/back/B1Back.jpg'
+            src= '/images/back/B2Slug.jpg'
             alt= 'background image'
             fill
          />
