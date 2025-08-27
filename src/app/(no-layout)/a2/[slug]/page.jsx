@@ -16368,9 +16368,9 @@ export default function Lessons({ params }) {
 
       // Update known or unknown words based on status
       if (status === 'known') {
-         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
+         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A2' }]);
       } else if (status === 'unknown') {
-         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
+         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A2' }]);
       }
 
       // Check if there are more words to process

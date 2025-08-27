@@ -11915,9 +11915,9 @@ export default function Lessons({ params }) {
 
       // Update known or unknown words based on status
       if (status === 'known') {
-         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
+         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'B1' }]);
       } else if (status === 'unknown') {
-         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
+         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'B1' }]);
       }
 
       // Check if there are more words to process
@@ -12336,7 +12336,7 @@ export default function Lessons({ params }) {
                   lessonNumber < wholeLessons ?
                   <button className={styles.button} onClick={nextLesson}>Next Lesson</button>
                   :
-                  <button className={styles.button} onClick={nextLevel}>Start A2</button>
+                  <button className={styles.button} onClick={nextLevel}>Start B2</button>
                }
 
                <button className={styles.button} onClick={done}>Save</button>

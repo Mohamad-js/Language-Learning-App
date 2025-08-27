@@ -203,7 +203,6 @@ export default function Lessons({ params }) {
       wordList: [
          
          {
-            
             "id": 1,
             "word": "about",
             "role": "adverb",
@@ -217,7 +216,6 @@ export default function Lessons({ params }) {
             ]
          },
          {
-            
             "id": 1,
             "word": "about",
             "role": "preposition",
@@ -231,7 +229,6 @@ export default function Lessons({ params }) {
             ]
          },
          {
-            
             "id": 1,
             "word": "above",
             "role": "adverb",
@@ -245,7 +242,6 @@ export default function Lessons({ params }) {
             ]
          },
          {
-            
             "id": 1,
             "word": "above",
             "role": "preposition",
@@ -259,7 +255,6 @@ export default function Lessons({ params }) {
             ]
          },
          {
-            
             "id": 1,
             "word": "across",
             "role": "adverb",
@@ -273,7 +268,6 @@ export default function Lessons({ params }) {
             ]
          },
          {
-            
             "id": 1,
             "word": "across",
             "role": "preposition",
