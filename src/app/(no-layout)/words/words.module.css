@@ -30,7 +30,7 @@
 
       & .title {
          width: 100%;
-         font: 20px tahoma;
+         font-size: 20px;
          text-align: center;
       }
       

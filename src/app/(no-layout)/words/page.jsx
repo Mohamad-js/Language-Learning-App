@@ -58,7 +58,7 @@ function Words(){
             <Back goTo ={'/'} />
 
             <div className={styles.mother}>
-               <div className={styles.title}>Choose Your Level</div>
+               <div className={styles.title}>Choose Your CEFR Level</div>
 
                <div className={styles.level}>
                   <Link href='/a1'>A1</Link>
