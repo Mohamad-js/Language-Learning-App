@@ -27,28 +27,6 @@
          font-weight: 700;
       }
 
-      .topSection {
-         width: 100%;
-         height: 150px;
-         padding: 15px;
-         background-color: rgba(255, 255, 255, 0.212);
-         backdrop-filter: blur(5px);
-         border: 1px solid rgba(255, 255, 255, 0.452);
-         border-radius: 20px;
-         display: flex;
-         align-items: start;
-         justify-content: center;
-         flex-direction: column;
-         gap: 10px;
-
-         .motivTitle {
-            font-size: 10px;
-         }
-
-         .motivText {
-            font-size: 15px;
-         }
-      }   
       
    
       .activityHolder {
@@ -186,3 +164,25 @@
 
 
 
+.topSection {
+   width: 100%;
+   height: 150px;
+   padding: 15px;
+   background-color: rgba(255, 255, 255, 0.212);
+   backdrop-filter: blur(5px);
+   border: 1px solid rgba(255, 255, 255, 0.452);
+   border-radius: 20px;
+   display: flex;
+   align-items: start;
+   flex-direction: column;
+   justify-content: center;
+   gap: 10px;
+
+   .motivTitle {
+      font-size: 10px;
+   }
+
+   .motivText {
+      font-size: 15px;
+   }
+}   
