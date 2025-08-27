@@ -92,7 +92,7 @@
                }
                
                .newLesson {
-                  color: rgb(0, 181, 84);
+                  color: rgb(0, 255, 145);
                   font-weight: 700;
                }
 
@@ -118,7 +118,7 @@
             
             .lessonDone {
                font-size: 13px;
-               color: rgb(0, 255, 98);
+               color: rgb(0, 255, 145);
                font-weight: 700;
                display: flex;
                align-items: center;
