@@ -74,7 +74,7 @@ function B2() {
       <div className={styles.container}>
          <Image
             className={styles.background}
-            src="/images/illustrations/act3.jpg"
+            src="/images/back/B2Back.jpg"
             alt=""
             fill
             onLoad={handleImageLoad}

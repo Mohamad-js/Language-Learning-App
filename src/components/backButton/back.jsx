@@ -14,6 +14,7 @@ function Back({preventNavigation, warning, preview, goTo}){
 
    const whiteColor =
    pathname == '/grammar/noun' ? styles.newStyle :
+   pathname == '/b2' ? styles.newStyle :
    pathname == '/statistics' ? styles.newStyle : null
 
    useEffect(() => {
