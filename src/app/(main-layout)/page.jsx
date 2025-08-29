@@ -11,7 +11,6 @@ import { idioms } from "@/data/idioms";
 
 
 const Home = () => {
-   const [isLoading, setIsLoading] = useState(false);
    const [showIdiom, setShowIdiom] = useState(false)
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const timeoutRef = useRef(null);

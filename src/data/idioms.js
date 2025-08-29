@@ -1,5 +1,3 @@
-// data/messages.ts (same as before, to store your messages)
-
 export const idioms = [
 
    {
