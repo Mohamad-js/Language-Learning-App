@@ -104,7 +104,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80].includes(lessonNumber)){
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 110, 120, 130].includes(lessonNumber)){
             animation()
             setBtnPressed('done')
          } else {
@@ -120,7 +120,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80].includes(lessonNumber)){
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 110, 120, 130].includes(lessonNumber)){
             animation()
             setBtnPressed('nextLesson')
          } else {
@@ -136,7 +136,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80].includes(lessonNumber)){
+         if([10, 20, 30, 40, 50, 60, 70, 80, 90, 110, 120, 130].includes(lessonNumber)){
             animation()
             setBtnPressed('nextLevel')
          } else {
