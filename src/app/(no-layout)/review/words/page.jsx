@@ -56,6 +56,17 @@ function WordsReview() {
    useEffect(() => {
       const data = aggregateWordsFromLocalStorage();
       setWordData(data);
+      
+      const lessonRequested = JSON.parse(localStorage.getItem('lessonRequested')) || '1';
+      setSelectedLesson(lessonRequested)
+      
+      const levelRequested = JSON.parse(localStorage.getItem('levelRequested')) || 'A1';
+      setSelectedLevel(levelRequested)
+
+      setTimeout(() => {
+         localStorage.removeItem('lessonRequested');
+         localStorage.removeItem('levelRequested');
+      }, 1000)
    }, []);
 
    // Get unique lessons for the selected level

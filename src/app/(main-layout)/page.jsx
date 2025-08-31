@@ -77,10 +77,6 @@ const Home = () => {
       };
    }, []);
 
-   // while (!dailyIdiom) {
-   //    setIsLoading(true)
-   // }
-
 
    return (
       <div className={styles.bigMom}>

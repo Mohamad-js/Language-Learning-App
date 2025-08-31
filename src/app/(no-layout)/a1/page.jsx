@@ -61,6 +61,12 @@ function A1() {
       localStorage.setItem(`preview`, JSON.stringify(true));
    }
 
+   const goReview = (lessonRequested) => {
+      localStorage.setItem(`lessonRequested`, JSON.stringify(lessonRequested));
+      localStorage.setItem(`levelRequested`, JSON.stringify('A1'));
+      router.push('/review/words')
+   }
+
    return (
       <div className={styles.container}>
          <Image
@@ -119,7 +125,7 @@ function A1() {
                      {isDone ? (
                         <div className={styles.lessonDone}>
                            <button className={styles.lessonBtn}>
-                              <Link href = {'/review/words'} >Review</Link>
+                              <div onClick={() => goReview(lessonNumber)}>Review</div>
                            </button>
                            <TiTick className={styles.tick}/>
                         </div>

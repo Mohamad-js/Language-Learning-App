@@ -63,8 +63,8 @@ export default function Lessons({ params }) {
       const handleDefaultBack = (event) => {
          event.preventDefault()
          router.push('/a1')
-         localStorage.setItem(`preview`, JSON.stringify(false)) // NEW
-         setPreview(false) // NEW
+         localStorage.setItem(`preview`, JSON.stringify(false))
+         setPreview(false) 
       }
 
       window.addEventListener('popstate', handleDefaultBack)
