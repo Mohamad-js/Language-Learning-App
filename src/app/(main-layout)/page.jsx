@@ -6,7 +6,7 @@ import styles from './page.module.css'
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
-import { useServiceWorker } from "../lib/useServiceWorker";
+import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 
 
@@ -16,30 +16,8 @@ const Home = () => {
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const timeoutRef = useRef(null);
-   const { isUpdateAvailable, activateUpdate } = useServiceWorker();
-   const [open, setOpen] = useState(false);
-   const [versionData, setVersionData] = useState({ version: '', updates: [] });
+   const { showDialog, updates, closeDialog } = useUpdateDialog();
 
-
-   useEffect(() => {
-      // Fetch version.json
-      fetch('/version.json')
-         .then((res) => res.json())
-         .then((data) => {
-         setVersionData(data);
-         const storedVersion = localStorage.getItem('appVersion');
-         if (isUpdateAvailable && storedVersion !== data.version) {
-            setOpen(true);
-         }
-         })
-         .catch((err) => console.error('Error fetching version:', err));
-   }, [isUpdateAvailable]);
-
-   const handleClose = () => {
-      setOpen(false);
-      localStorage.setItem('appVersion', versionData.version);
-      activateUpdate();
-   };
 
 
 
@@ -222,12 +200,14 @@ const Home = () => {
             </div>
          )} */}
 
-      <UpdateMsg
-        open={open}
-        onClose={handleClose}
-        updates={versionData.updates}
-        version={versionData.version}
-      />
+         {
+            showDialog &&
+            <UpdateMsg
+               updates={updates}
+               onClose={closeDialog}
+            />
+         }
+
 
       </div>
    );
