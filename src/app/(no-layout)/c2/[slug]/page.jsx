@@ -105,7 +105,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80, 90].includes(lessonNumber)){
+         if(totalWordsCount % 100 === 0){
             animation()
             setBtnPressed('done')
          } else {
@@ -121,7 +121,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80, 90].includes(lessonNumber)){
+         if(totalWordsCount % 100 === 0){
             animation()
             setBtnPressed('nextLesson')
          } else {
@@ -137,7 +137,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80, 90].includes(lessonNumber)){
+         if(totalWordsCount % 100 === 0){
             animation()
             setBtnPressed('nextLevel')
          } else {
@@ -586,10 +586,10 @@ export default function Lessons({ params }) {
                      <div className={styles.wordHolder}>
                         <p className={styles.wordTitle}>{ws.word.word}</p>
                         <div className={styles.infoHolder}>
-                           <p className={styles.phonetics}>{ws.word.AmE}</p>
-                           <p className={styles.phonetics}>{ws.word.BrE}</p>
-                           <div className={styles.role}>{ws.word.role}</div>
+                           <p className={styles.phonetics}>American: {ws.word.AmE}</p>
+                           <p className={styles.phonetics}>British: {ws.word.BrE}</p>
                         </div>
+                        <div className={styles.role}>{ws.word.role}</div>
                      </div>
                      <div className={styles.definition}>{ws.word.definition}</div>
                      <div className={styles.examplesHolder}>

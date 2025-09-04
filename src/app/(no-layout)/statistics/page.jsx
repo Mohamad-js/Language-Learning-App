@@ -20,6 +20,7 @@ function Statistics(){
    const [wordsB2Count, setWordsB2Count] = useState(null)
    const [wordsC1Count, setWordsC1Count] = useState(null)
    const [wordsC2Count, setWordsC2Count] = useState(null)
+   const [totalWords, setTotalWords] = useState(0)
 
 
 
@@ -33,6 +34,7 @@ function Statistics(){
       const wordsNumberC2 = JSON.parse(localStorage.getItem('wordsCount-C2') || 0);
 
       const totalWordsCount = JSON.parse(localStorage.getItem('totalWordsCount') || 0);
+      setTotalWords(totalWordsCount)
    
       setWordsA1Count(wordsNumberA1)
       setWordsA2Count(wordsNumberA2)
@@ -100,7 +102,7 @@ function Statistics(){
                <ProgressBar
                   inputNumber = {wordsB2Count}
                   numberSize = {20}
-                  endNumber = {2000}
+                  endNumber = {800}
                   circleWidth = '100'
                   lineWidth = '47'
                   title='B2 Words'
@@ -110,7 +112,7 @@ function Statistics(){
                <ProgressBar
                   inputNumber = {wordsC1Count}
                   numberSize = {20}
-                  endNumber = {2000}
+                  endNumber = {1310}
                   circleWidth = '100'
                   lineWidth = '47'
                   title='C1 Words'
@@ -120,7 +122,7 @@ function Statistics(){
                <ProgressBar
                   inputNumber = {wordsC2Count}
                   numberSize = {20}
-                  endNumber = {2000}
+                  endNumber = {920}
                   circleWidth = '100'
                   lineWidth = '47'
                   title='C2 Words'
@@ -128,12 +130,11 @@ function Statistics(){
                   lineStroke = {6}
                />
                <ProgressBar
-                  inputNumber = {total}
-                  percent = {true}
-                  endNumber = {100}
+                  inputNumber = {totalWords}
+                  endNumber = {6340}
                   circleWidth = '200'
                   lineWidth = '90'
-                  title='Total Progress'
+                  title='Total Words'
                />
             </div>
          </div>

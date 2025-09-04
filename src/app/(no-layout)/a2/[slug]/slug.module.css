@@ -11,7 +11,7 @@
       object-fit: cover;
    }
    
-   & .lessonTitle {
+   .lessonTitle {
       position: absolute;
       top: 0;
       height: 50px;
@@ -24,7 +24,7 @@
       color: white;
    }
 
-   & .lessonLevel {
+   .lessonLevel {
       position: absolute;
       top: 0;
       left: 8px;
@@ -35,7 +35,6 @@
       justify-content: center;
       align-items: center;
    }
-
 
    .shiftMsg {
       opacity: 0;
@@ -83,7 +82,7 @@
       padding: 20px;
    }
    
-   & .learnCard {
+   .learnCard {
       position: fixed;
       top: 200px;
       opacity: 0;
@@ -100,7 +99,7 @@
 
 
 
-      & .actionsHolder {
+      .actionsHolder {
          position: absolute;
          top: 10px;
          left: 0;
@@ -112,12 +111,12 @@
          align-items: start;
 
 
-         & .title {
+         .title {
             font-size: 15px;
             font-weight: 700;
          }
          
-         & .actions {
+         .actions {
             width: 50px;
             height: 30px;
             display: flex;
@@ -126,7 +125,7 @@
             
             
             
-            & .save {
+            .save {
                display: flex;
                justify-content: center;
                align-items: center;
@@ -136,7 +135,7 @@
       }
 
 
-      & .wordBlock {
+      .wordBlock {
          margin-bottom: 50px;
          height: 80%;
          display: flex;
@@ -148,7 +147,7 @@
          color: black;
 
 
-         & .wordHolder {
+         .wordHolder {
             width: 100%;
             display: flex;
             height: fit-content;
@@ -156,31 +155,30 @@
             align-items: start;
 
             
-            & .wordTitle {
+            .wordTitle {
                font-size: 50px;
                height: 70px;
                color: #a200ff;
 
             }
 
-            & .infoHolder {
+            .infoHolder {
                width: 100%;
                display: flex;
-               gap: 10px;
+               gap: 20px;
 
                
-               & .phonetics {
-                  font-size: 15px;
-               }
-               
-               & .role {
+               .phonetics {
                   font-size: 15px;
                }
             }
-            
+
+            .role {
+               font: arial 20px;
+            }
          }
          
-         & .btnHolder {
+         .btnHolder {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -192,7 +190,7 @@
             gap: 10px;
 
 
-            & .button {
+            .button {
                padding: 5px 25px;
                font-size: 13px;
                font-weight: 700;
@@ -209,7 +207,7 @@
             }
          }
          
-         & .definition {
+         .definition {
             height: 50px;
             width: 100%;
             font-size: 20px;
@@ -217,7 +215,7 @@
             align-items: center;
          }
          
-         & .examplesHolder {
+         .examplesHolder {
             width: 100%;
             height: fit-content;
             
@@ -255,12 +253,12 @@
       gap: 20px;
       transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-      & .doneTitle {
+      .doneTitle {
          font-size: 20px;
          color: rgb(63, 0, 82);
       }
 
-      & .btnHolder {
+      .btnHolder {
          width: 100%;
          height: fit-content;
          display: flex;
@@ -269,7 +267,7 @@
          gap: 10px;
 
    
-         & .back {
+         .back {
             padding: 5px 20px;
             border-radius: 10px;
             background-color: #b53dff;
@@ -288,7 +286,7 @@
       opacity: 1;
    }
 
-   & .revisionCard {
+   .revisionCard {
       position: fixed;
       top: 50px;
       background-color: rgb(22, 0, 43);
@@ -303,13 +301,13 @@
       overflow-y: auto;
 
 
-      & .title {
+      .title {
          font-size: 18px;
          margin-bottom: 10px;
       }
 
 
-      & .wordBlock {
+      .wordBlock {
          margin-bottom: 50px;
          padding: 10px;
          border-radius: 10px;
@@ -321,7 +319,7 @@
          border: 1px solid white;
 
 
-         & .wordHolder {
+         .wordHolder {
             width: 100%;
             display: flex;
             height: fit-content;
@@ -329,29 +327,29 @@
             align-items: start;
 
             
-            & .wordTitle {
+            .wordTitle {
                font-size: 50px;
                height: 70px;
             }
 
-            & .infoHolder {
+            .infoHolder {
                width: 100%;
                display: flex;
                gap: 20px;
 
                
-               & .phonetics {
+               .phonetics {
                   font-size: 20px;
                }
                
-               & .role {
+               .role {
                   font-size: 20px;
                }
             }
             
          }
 
-         & .definition {
+         .definition {
             height: 50px;
             width: 100%;
             display: flex;
@@ -359,7 +357,7 @@
             margin: 20px 0;
          }
          
-         & .examplesHolder {
+         .examplesHolder {
             width: 100%;
             height: fit-content;
             
@@ -372,7 +370,7 @@
       }
    }
 
-   & .btnHolder {
+   .btnHolder {
       width: 100%;
       height: fit-content;
       display: flex;
@@ -380,7 +378,7 @@
       gap: 10px;
 
 
-      & .button {
+      .button {
          padding: 5px 30px;
          font-size: 13px;
          font-weight: 700;
@@ -398,7 +396,7 @@
       }
    }
 
-   & .confirm {
+   .confirm {
       position: absolute;
       top: 60px;
       padding: 5px 10px;
@@ -414,7 +412,7 @@
       backdrop-filter: blur(5px);
    }
    
-   & .cancel {
+   .cancel {
       position: absolute;
       top: 60px;
       padding: 5px 10px;
@@ -547,14 +545,14 @@
       height: fit-content;
 
 
-      & .check {
+      .check {
          color: black;
          text-align: center;
          margin-bottom: 10px;
       }
       
       
-      & .prompt {
+      .prompt {
          text-align: center;
          color: black;
          font-weight: 600;

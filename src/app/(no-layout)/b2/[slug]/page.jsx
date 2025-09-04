@@ -85,8 +85,10 @@ export default function Lessons({ params }) {
          const a1WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-A1`) || 0);
          const a2WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-A2`) || 0);
          const b1WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-B1`) || 0);
+         const c1WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-C1`) || 0);
+         const c2WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-C2`) || 0);
          const lessonsProgress = slug
-         const totalWordsLearnt = (slug * 10) + Number(a1WordsLearnt) + Number(a2WordsLearnt) +  Number(b1WordsLearnt)
+         const totalWordsLearnt = (slug * 10) + Number(a1WordsLearnt) + Number(a2WordsLearnt) + Number(b1WordsLearnt) + Number(c1WordsLearnt) + Number(c2WordsLearnt)
          const b2WordsLearnt = slug * 10
          
          setB2WordsCount(b2WordsLearnt)
@@ -104,7 +106,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80].includes(lessonNumber)){
+         if(totalWordsCount % 100 === 0){
             animation()
             setBtnPressed('done')
          } else {
@@ -120,7 +122,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80].includes(lessonNumber)){
+         if(totalWordsCount % 100 === 0){
             animation()
             setBtnPressed('nextLesson')
          } else {
@@ -136,7 +138,7 @@ export default function Lessons({ params }) {
       try {
          save()
 
-         if([10, 20, 30, 40, 50, 60, 70, 80].includes(lessonNumber)){
+         if(totalWordsCount % 100 === 0){
             animation()
             setBtnPressed('nextLevel')
          } else {
@@ -585,8 +587,8 @@ export default function Lessons({ params }) {
                      <div className={styles.wordHolder}>
                         <p className={styles.wordTitle}>{ws.word.word}</p>
                         <div className={styles.infoHolder}>
-                           <p className={styles.phonetics}>{ws.word.AmE}</p>
-                           <p className={styles.phonetics}>{ws.word.BrE}</p>
+                           <p className={styles.phonetics}>American: {ws.word.AmE}</p>
+                           <p className={styles.phonetics}>British: {ws.word.BrE}</p>
                            <div className={styles.role}>{ws.word.role}</div>
                         </div>
                      </div>
