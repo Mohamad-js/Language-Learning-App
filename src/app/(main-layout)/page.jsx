@@ -101,7 +101,7 @@ const Home = () => {
             <div className={styles.pageTitle}>Home Page</div>
 
             <div className={styles.topSection} onClick={toggleIdiomCard}>
-               <div className={styles.motivTitle}>Today&apos;s Expression</div>
+               <div className={styles.motivTitle}>Today&apos;s Idiom</div>
                <div className={styles.motivText}>
                   {dailyIdiom?.example}
                </div>
