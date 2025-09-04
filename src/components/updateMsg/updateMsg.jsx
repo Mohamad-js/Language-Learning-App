@@ -3,9 +3,13 @@ import Image from 'next/image';
 
 
 
-function UpdateMsg({onClose, updates}){
+function UpdateMsg({onClose, version, updates, titles}){
    if (!updates?.length) return null;
 
+   const updatesData = titles.map((title, index) => ({
+      titles: title,
+      info: updates[index]
+   }));
 
    return(
       <div className={styles.container}>
@@ -15,17 +19,20 @@ function UpdateMsg({onClose, updates}){
                alt='update backgorund'
                fill
             />
-            <div className={styles.title}>New Update</div>
+            <div className={styles.title}>New Version: {version}</div>
             <div className={styles.msg}>
                <div className={styles.updatesHolder}>
                {
-                  updates.map((item, index) => (
-                     <div key={index} className={styles.updates}>{item}</div>
+                  updatesData.map((item, index) => (
+                     <div key={index} className={styles.updatesItem}>
+                        <div key={index} className={styles.titles}>{item.titles}</div>
+                        <div key={index} className={styles.info}>{item.info}</div>
+                     </div>
                   ))
                }
                </div>
             </div>
-            <button className={styles.close} onClick={onClose}>I Understand</button>
+            <button className={styles.close} onClick={onClose}>Close</button>
          </div>
       </div>
 

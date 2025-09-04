@@ -6,7 +6,7 @@ const LOCAL_STORAGE_KEY = 'appVersion';
 
 export const useUpdateDialog = () => {
 const [showDialog, setShowDialog] = useState(false);
-const { version, updates } = versionData;
+const { version, updates, titles } = versionData;
 
 useEffect(() => {
    const storedVersion = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -21,5 +21,5 @@ const closeDialog = () =>{
    localStorage.setItem(LOCAL_STORAGE_KEY, version);
 }
 
-return { showDialog, updates, closeDialog };
+return { showDialog, version, updates, titles, closeDialog };
 };

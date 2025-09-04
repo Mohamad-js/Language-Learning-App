@@ -16,7 +16,7 @@ const Home = () => {
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const timeoutRef = useRef(null);
-   const { showDialog, updates, closeDialog } = useUpdateDialog();
+   const { showDialog, version, updates, titles, closeDialog } = useUpdateDialog();
 
 
 
@@ -203,8 +203,10 @@ const Home = () => {
          {
             showDialog &&
             <UpdateMsg
-               updates={updates}
-               onClose={closeDialog}
+               updates = {updates}
+               onClose = {closeDialog}
+               titles = {titles}
+               version = {version}
             />
          }
 
