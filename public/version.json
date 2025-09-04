@@ -1,0 +1,8 @@
+{
+   "version": "1.0.1",
+   "updates": [
+      "Added new user profile feature",
+      "Improved performance for faster loading",
+      "Fixed bugs in the authentication flow"
+   ]
+}

@@ -6,51 +6,84 @@ import styles from './page.module.css'
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
+import { useServiceWorker } from "../lib/useServiceWorker";
+import UpdateMsg from "@/components/updateMsg/updateMsg";
 
 
 
 
 const Home = () => {
-   const [showIdiom, setShowIdiom] = useState(false)
+   const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const timeoutRef = useRef(null);
+   const { isUpdateAvailable, activateUpdate } = useServiceWorker();
+   const [open, setOpen] = useState(false);
+   const [versionData, setVersionData] = useState({ version: '', updates: [] });
+
+
+   useEffect(() => {
+      // Fetch version.json
+      fetch('/version.json')
+         .then((res) => res.json())
+         .then((data) => {
+         setVersionData(data);
+         const storedVersion = localStorage.getItem('appVersion');
+         if (isUpdateAvailable && storedVersion !== data.version) {
+            setOpen(true);
+         }
+         })
+         .catch((err) => console.error('Error fetching version:', err));
+   }, [isUpdateAvailable]);
+
+   const handleClose = () => {
+      setOpen(false);
+      localStorage.setItem('appVersion', versionData.version);
+      activateUpdate();
+   };
+
+
 
    const updateIdiom = () => {
       const now = new Date();
-      const utcNow = new Date(now.toUTCString());
+      // Convert current time to IRST (UTC+3:30)
+      const offsetIRST = 3.5 * 60 * 60 * 1000; // 3 hours 30 minutes in milliseconds
+      const nowIRST = new Date(now.getTime() + offsetIRST);
 
-      // Define a fixed start date (e.g., January 1, 2024). Adjust this to your desired starting point.
-      const startDate = new Date('2025-08-25T00:00:00Z');
+      // Define a fixed start date (e.g., January 1, 2024, 00:00 IRST)
+      const startDate = new Date('2025-08-25T00:00:00+03:30');
       const daysSinceStart = Math.floor(
-         (utcNow.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
+         (nowIRST.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
       );
 
-      // Compute the index using modulo to cycle through the 360 messages
-      const index = Math.abs(daysSinceStart) % 360; // Use abs to handle dates before start
-
+      // Compute the index using modulo to cycle through the 360 idioms
+      const index = Math.abs(daysSinceStart) % 360;
       setDailyIdiom(idioms[index]);
+      console.log('Idiom updated at:', nowIRST.toISOString(), 'Idiom:', idioms[index]);
    };
 
    const getTimeToNextMidnightIRST = () => {
       const now = new Date();
-      // Calculate next midnight in IRST (UTC+3:30)
-      const nextMidnight = new Date(now);
-      nextMidnight.setUTCDate(nextMidnight.getUTCDate() + 1);
-      nextMidnight.setUTCHours(20, 30, 0, 0); // 20:30 UTC = 00:00 IRST
-      let timeToNext = nextMidnight.getTime() - now.getTime();
+      const offsetIRST = 3.5 * 60 * 60 * 1000; // 3 hours 30 minutes in milliseconds
+      const nowIRST = new Date(now.getTime() + offsetIRST);
 
-      // If the time has already passed today, schedule for the next day
-      if (timeToNext <= 0) {
-         nextMidnight.setUTCDate(nextMidnight.getUTCDate() + 1);
-         timeToNext = nextMidnight.getTime() - now.getTime();
+      // Set next midnight IRST (00:00 IRST = 20:30 UTC previous day)
+      const nextMidnightIRST = new Date(nowIRST);
+      nextMidnightIRST.setHours(0, 0, 0, 0); // Set to 00:00:00.000 IRST
+      if (nowIRST.getHours() >= 0) {
+         // If it's after midnight IRST, schedule for next day
+         nextMidnightIRST.setDate(nextMidnightIRST.getDate() + 1);
       }
+
+      // Convert next midnight IRST back to UTC for timeout
+      const nextMidnightUTC = new Date(nextMidnightIRST.getTime() - offsetIRST);
+      const timeToNext = nextMidnightUTC.getTime() - now.getTime();
 
       return timeToNext;
    };
 
    const toggleIdiomCard = () => {
-      setShowIdiom(!showIdiom)
-   }
+      setShowIdiom(!showIdiom);
+   };
 
    useEffect(() => {
       updateIdiom(); // Initial update
@@ -60,12 +93,11 @@ const Home = () => {
             clearTimeout(timeoutRef.current);
          }
          const timeToNext = getTimeToNextMidnightIRST();
+         console.log('Time to next update (ms):', timeToNext, 'Scheduled for:', new Date(Date.now() + timeToNext).toISOString());
          timeoutRef.current = setTimeout(() => {
             updateIdiom();
-            setupNextUpdate(); // Chain the next update for 24 hours later
+            setupNextUpdate(); // Schedule the next update
          }, timeToNext);
-
-         console.log('time to next update (ms):', timeToNext);
       };
 
       setupNextUpdate();
@@ -189,6 +221,14 @@ const Home = () => {
                <Loader />
             </div>
          )} */}
+
+      <UpdateMsg
+        open={open}
+        onClose={handleClose}
+        updates={versionData.updates}
+        version={versionData.version}
+      />
+
       </div>
    );
 };
