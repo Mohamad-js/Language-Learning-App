@@ -16,14 +16,12 @@ function A1() {
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(117).fill(false));
    const [nextLesson, setNextLesson] = useState(0)
-   const [currentLesson, setCurrentLesson] = useState(0)
    const [progress, setProgress] = useState(0)
 
 
    useEffect(() => {
       const current = JSON.parse(localStorage.getItem(`currentLesson-A1`)) || 0;
       setNextLesson(Number(current) + 1)
-      setCurrentLesson(Number(current))
       
       const currentProgress = (Number(current) * 100) / 117
 
@@ -41,7 +39,7 @@ function A1() {
          }
       }
       setSwitches(newSwitches);
-   }, [currentLesson]);
+   }, []);
 
    const router = useRouter()
    useEffect(() => {
@@ -153,16 +151,20 @@ function A1() {
             })}
             </div>
 
-            <div className={styles.progressInfoHolder}>
-               <div className={styles.number}>{progress} %</div>
-               <div className={styles.counter}
-                  style={{width: progress + '%'}}
-               ></div>
-               
-               <button className={styles.continue}>
-                  <Link href={`/a1/${nextLesson}`}>Start New Lesson: {nextLesson}</Link>
-               </button>
-            </div>
+            {
+               nextLesson !== 1 &&
+               <div className={styles.progressInfoHolder}>
+                  <div className={styles.number}>{progress}% Done</div>
+                  <div className={styles.counter}
+                     style={{width: progress + '%'}}
+                  ></div>
+
+                  <button className={styles.continue}>
+                     <Link href={`/a1/${nextLesson}`}>Start New Lesson: {nextLesson}</Link>
+                  </button>
+               </div>
+            }
+
          </div>
 
          {isLoading && (
