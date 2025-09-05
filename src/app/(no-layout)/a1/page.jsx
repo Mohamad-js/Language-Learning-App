@@ -154,7 +154,7 @@ function A1() {
             {
                nextLesson !== 1 &&
                <div className={styles.progressInfoHolder}>
-                  <div className={styles.number}>{progress}% Done</div>
+                  <div className={styles.number}>{progress}% done</div>
                   <div className={styles.counter}
                      style={{width: progress + '%'}}
                   ></div>
