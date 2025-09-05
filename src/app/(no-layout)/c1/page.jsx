@@ -163,7 +163,7 @@ function C1() {
                <div className={styles.progressInfoHolder}>
                   <div className={styles.number}>{progress}% done</div>
                   <div className={styles.counter}
-                     style={{height: progress + '%'}}
+                     style={{width: progress + '%'}}
                   ></div>
 
                   <button className={styles.continue}>
