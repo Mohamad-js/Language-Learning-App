@@ -6,8 +6,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
-import { RiProhibited2Line } from "react-icons/ri";
-import WarningMessage from '@/components/warningMessage/warningMessage';
 import Back from '@/components/backButton/back';
 
 
@@ -17,24 +15,40 @@ function A2() {
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(124).fill(false));
-   const [allowStart, setAllowStart] = useState(false)
+   // const [allowStart, setAllowStart] = useState(false)
+   const [nextLesson, setNextLesson] = useState(0) // NEW
+   const [progress, setProgress] = useState(0) // NEW
+   const [completed, setCompleted] = useState(false) // NEW
 
    useEffect(() => {
+      const current = JSON.parse(localStorage.getItem(`currentLesson-A2`)) || 0; // NEW
+      current < 124 ? setNextLesson(Number(current) + 1) : null // NEW
+      
+      const currentProgress = (Number(current) * 100) / 124 // NEW
+
+      progress == 100 && setTimeout(() => { // NEW
+         setCompleted(true)
+      }, 2000)
+
+      setTimeout(() => { // NEW
+         setProgress(Number(currentProgress.toFixed(1)))
+      }, 1000)
+
+
       const newSwitches = Array(124).fill(false);
       for (let i = 1; i <= 124; i++) {
          const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A2`)) || [];
          const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A2`)) || [];
-         const partials = JSON.parse(localStorage.getItem(`partialWords-${i}-A2`)) || [];
-         const wordsA1Count = JSON.parse(localStorage.getItem('wordsCount-A1') || false);
+         
+         // const wordsA1Count = JSON.parse(localStorage.getItem('wordsCount-A1') || false);
+         // setAllowStart(wordsA1Count)
 
-         setAllowStart(wordsA1Count)
-
-         if (knowns.length > 0 || unknowns.length > 0 || partials.length > 0) {
+         if (knowns.length > 0 || unknowns.length > 0) {
             newSwitches[i - 1] = true;
          }
       }
       setSwitches(newSwitches);
-   }, []);
+   }, [progress]);
 
    const router = useRouter()
    useEffect(() => {
@@ -146,6 +160,26 @@ function A2() {
                );
             })}
             </div>
+
+            { // NEW
+               nextLesson !== 1 && // NEW
+               <div className={styles.progressInfoHolder}>
+                  <div className={styles.number}>{progress}% done</div>
+                  <div className={styles.counter}
+                     style={{height: progress + '%'}}
+                  ></div>
+
+                  <button className={styles.continue}>
+                     <Link href={`/a2/${nextLesson}`}>Start New Lesson: {nextLesson}</Link>
+                  </button>
+
+                  <div className={`${styles.completed} ${completed && styles.show}`}>
+                     COMPLETED :)
+                  </div>
+                  
+               </div>
+            }
+
          </div>
 
          {isLoading && (

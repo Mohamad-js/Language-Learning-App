@@ -15,22 +15,22 @@ function A1() {
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(117).fill(false));
-   const [nextLesson, setNextLesson] = useState(0)
-   const [progress, setProgress] = useState(0)
-   const [completed, setCompleted] = useState(false)
+   const [nextLesson, setNextLesson] = useState(0) // NEW
+   const [progress, setProgress] = useState(0) // NEW
+   const [completed, setCompleted] = useState(false) // NEW
 
 
    useEffect(() => {
-      const current = JSON.parse(localStorage.getItem(`currentLesson-A1`)) || 0;
-      setNextLesson(Number(current) + 1)
+      const current = JSON.parse(localStorage.getItem(`currentLesson-A1`)) || 0; // NEW
+      current < 117 ? setNextLesson(Number(current) + 1) : null // NEW
       
-      const currentProgress = (Number(current) * 100) / 117
+      const currentProgress = (Number(current) * 100) / 117 // NEW
 
-      progress == 100 && setTimeout(() => {
+      progress == 100 && setTimeout(() => { // NEW
          setCompleted(true)
       }, 2000)
 
-      setTimeout(() => {
+      setTimeout(() => { // NEW
          setProgress(Number(currentProgress.toFixed(1)))
       }, 1000)
 
@@ -44,7 +44,7 @@ function A1() {
          }
       }
       setSwitches(newSwitches);
-   }, [progress]);
+   }, [progress]); // NEW
 
    const router = useRouter()
    useEffect(() => {
@@ -74,7 +74,7 @@ function A1() {
    const firstNonDoneIndex = switches.findIndex((switchState) => !switchState);
    const newLessonIndex = firstNonDoneIndex === -1 ? null : firstNonDoneIndex;
 
-   const switchPreview = () => { // NEW
+   const switchPreview = () => {
       localStorage.setItem(`preview`, JSON.stringify(true));
    }
 
@@ -156,24 +156,22 @@ function A1() {
             })}
             </div>
 
-            {
-               nextLesson !== 1 &&
+            { // NEW
+               nextLesson !== 1 && // NEW
                <div className={styles.progressInfoHolder}>
                   <div className={styles.number}>{progress}% done</div>
                   <div className={styles.counter}
-                     style={{width: progress + '%'}}
+                     style={{height: progress + '%'}}
                   ></div>
 
                   <button className={styles.continue}>
                      <Link href={`/a1/${nextLesson}`}>Start New Lesson: {nextLesson}</Link>
                   </button>
 
-                  {
-                     completed &&
-                     <div className={styles.completed}>
-                        COMPLETED :)
-                     </div>
-                  }
+                  <div className={`${styles.completed} ${completed && styles.show}`}>
+                     COMPLETED :)
+                  </div>
+                  
                </div>
             }
 

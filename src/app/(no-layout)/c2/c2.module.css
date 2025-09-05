@@ -8,8 +8,8 @@
    justify-content: start;
    flex-direction: column;
    gap: 20px;
-   
-   
+
+
    .background {
       width: 100%;
       object-fit: cover;
@@ -53,9 +53,10 @@
          border-radius: 30px 30px 0 0;
          width: 100%;
          height: 100%;
-         padding: 20px 20px 100px 20px;
+         padding: 20px 20px 300px 20px;
          border: 1px solid white;
          overflow-y: auto;
+         overflow-x: hidden;
 
          &::-webkit-scrollbar {
             display: none;
@@ -92,7 +93,7 @@
                }
                
                .newLesson {
-                  color: rgb(187, 0, 255);
+                  color: rgb(153, 0, 255);
                   font-weight: 700;
                }
 
@@ -100,7 +101,7 @@
                .lessonWaiting {
                   font-weight: 700;
                   font-size: 13px;
-                  color: rgb(66, 66, 66);
+                  color: red;
                }
             }
             
@@ -118,7 +119,7 @@
             
             .lessonDone {
                font-size: 13px;
-               color: rgb(187, 0, 255);
+               color: rgb(225, 0, 255);
                font-weight: 700;
                display: flex;
                align-items: center;
@@ -163,7 +164,7 @@
             
 
             .newLesson {
-               color: rgb(255, 174, 231);
+               color: green;
                font-weight: 700;
             }
          }
@@ -172,7 +173,75 @@
             background-color: rgba(255, 255, 255, 0.445);
          }
          
-   
+      }
+
+      .progressInfoHolder {
+         width: 100vw;
+         height: 120px;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         background-color: rgba(255, 255, 255, 0.1);
+         backdrop-filter: blur(3px);
+         border: 1px solid rgba(255, 255, 255, 0.514);
+         border-radius: 100px 100px 0 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         gap: 5px;
+         padding: 20px;
+         overflow: hidden;
+         
+
+         .continue {
+            padding: 10px 30px;
+            border: none;
+            background-color: rgb(238, 238, 238);
+            border-radius: 10px;
+            z-index: 1;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+            
+            &:active {
+               box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
+               scale: 0.98;
+            }
+         }
+
+         .number {
+            color: rgb(96, 0, 116);
+            font-size: 20px;
+            z-index: 1;
+         }
+
+         .counter {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 0;
+            background-color: rgba(195, 0, 255, 0.3);
+            width: 100%;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+         }
+
+         .completed {
+            position: absolute;
+            top: 100%;
+            width: 100vw;
+            height: 100%;
+            background-color: rgb(195, 0, 255);
+            z-index: 2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+         }
+
+         .show {
+            top: 0;
+         }
       }
    }
    

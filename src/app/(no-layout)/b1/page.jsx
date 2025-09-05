@@ -19,24 +19,39 @@ function B1() {
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(90).fill(false));
    const [allowStart, setAllowStart] = useState(false)
+   const [nextLesson, setNextLesson] = useState(0) // NEW
+   const [progress, setProgress] = useState(0) // NEW
+   const [completed, setCompleted] = useState(false) // NEW
    
 
    useEffect(() => {
+      const current = JSON.parse(localStorage.getItem(`currentLesson-B1`)) || 0; // NEW
+      current < 90 ? setNextLesson(Number(current) + 1) : null // NEW
+      
+      const currentProgress = (Number(current) * 100) / 90 // NEW
+
+      progress == 100 && setTimeout(() => { // NEW
+         setCompleted(true)
+      }, 2000)
+
+      setTimeout(() => { // NEW
+         setProgress(Number(currentProgress.toFixed(1)))
+      }, 1000)
+
       const newSwitches = Array(90).fill(false);
       for (let i = 1; i <= 90; i++) {
          const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-B1`)) || [];
          const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-B1`)) || [];
-         const partials = JSON.parse(localStorage.getItem(`partialWords-${i}-B1`)) || [];
-         const wordsA2Count = JSON.parse(localStorage.getItem('wordsCount-A2') || false);
+         
+         // const wordsA2Count = JSON.parse(localStorage.getItem('wordsCount-A2') || false);
+         // setAllowStart(wordsA2Count)
 
-         setAllowStart(wordsA2Count)
-
-         if (knowns.length > 0 || unknowns.length > 0 || partials.length > 0) {
+         if (knowns.length > 0 || unknowns.length > 0) {
             newSwitches[i - 1] = true;
          }
       }
       setSwitches(newSwitches);
-   }, []);
+   }, [progress]);
 
 
    const router = useRouter()
@@ -149,6 +164,25 @@ function B1() {
                );
             })}
             </div>
+
+            { // NEW
+               nextLesson !== 1 && // NEW
+               <div className={styles.progressInfoHolder}>
+                  <div className={styles.number}>{progress}% done</div>
+                  <div className={styles.counter}
+                     style={{height: progress + '%'}}
+                  ></div>
+
+                  <button className={styles.continue}>
+                     <Link href={`/b1/${nextLesson}`}>Start New Lesson: {nextLesson}</Link>
+                  </button>
+
+                  <div className={`${styles.completed} ${completed && styles.show}`}>
+                     COMPLETED :)
+                  </div>
+                  
+               </div>
+            }
          </div>
 
          {isLoading && (

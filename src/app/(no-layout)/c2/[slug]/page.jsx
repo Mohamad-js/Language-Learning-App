@@ -164,6 +164,7 @@ export default function Lessons({ params }) {
       localStorage.setItem(`unknownWords-${slug}-C2`, JSON.stringify(unknownWords));
       localStorage.setItem(`wordsCount-C2`, JSON.stringify(c2WordsCount));
       localStorage.setItem(`totalWordsCount`, JSON.stringify(totalWordsCount));
+      localStorage.setItem(`currentLesson-C2`, JSON.stringify(slug));
    }
 
    const animation = () => {
