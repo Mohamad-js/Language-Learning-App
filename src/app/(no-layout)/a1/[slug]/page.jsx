@@ -88,8 +88,8 @@ export default function Lessons({ params }) {
          const c2WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-C2`) || 0);
          const previewState = JSON.parse(localStorage.getItem('preview') || false);
          const lessonsLearnt = slug
-         const wordsLearnt = slug * 10 + Number(a2WordsLearnt) + Number(b1WordsLearnt) + Number(b2WordsLearnt) + Number(c1WordsLearnt) + Number(c2WordsLearnt)
-         const totalWordsLearnt = wordsLearnt
+         const totalWordsLearnt = slug * 10 + Number(a2WordsLearnt) + Number(b1WordsLearnt) + Number(b2WordsLearnt) + Number(c1WordsLearnt) + Number(c2WordsLearnt)
+         const wordsLearnt = slug * 10
          
          setPreview(previewState)
          setA1WordsCount(wordsLearnt)
