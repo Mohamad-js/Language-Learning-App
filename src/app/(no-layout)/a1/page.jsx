@@ -17,6 +17,7 @@ function A1() {
    const [switches, setSwitches] = useState(Array(117).fill(false));
    const [nextLesson, setNextLesson] = useState(0)
    const [progress, setProgress] = useState(0)
+   const [completed, setCompleted] = useState(false)
 
 
    useEffect(() => {
@@ -24,6 +25,10 @@ function A1() {
       setNextLesson(Number(current) + 1)
       
       const currentProgress = (Number(current) * 100) / 117
+
+      progress == 100 && setTimeout(() => {
+         setCompleted(true)
+      }, 2000)
 
       setTimeout(() => {
          setProgress(Number(currentProgress.toFixed(1)))
@@ -39,7 +44,7 @@ function A1() {
          }
       }
       setSwitches(newSwitches);
-   }, []);
+   }, [progress]);
 
    const router = useRouter()
    useEffect(() => {
@@ -162,6 +167,13 @@ function A1() {
                   <button className={styles.continue}>
                      <Link href={`/a1/${nextLesson}`}>Start New Lesson: {nextLesson}</Link>
                   </button>
+
+                  {
+                     completed &&
+                     <div className={styles.completed}>
+                        COMPLETED :)
+                     </div>
+                  }
                </div>
             }
 
