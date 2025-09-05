@@ -15,19 +15,33 @@ function A1() {
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(117).fill(false));
+   const [nextLesson, setNextLesson] = useState(0)
+   const [currentLesson, setCurrentLesson] = useState(0)
+   const [progress, setProgress] = useState(0)
+
 
    useEffect(() => {
+      const current = JSON.parse(localStorage.getItem(`currentLesson-A1`)) || 0;
+      setNextLesson(Number(current) + 1)
+      setCurrentLesson(Number(current))
+      
+      const currentProgress = (Number(current) * 100) / 117
+
+      setTimeout(() => {
+         setProgress(Number(currentProgress.toFixed(1)))
+      }, 1000)
+
       const newSwitches = Array(117).fill(false);
       for (let i = 1; i <= 117; i++) {
          const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A1`)) || [];
          const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A1`)) || [];
-         const partials = JSON.parse(localStorage.getItem(`partialWords-${i}-A1`)) || [];
-         if (knowns.length > 0 || unknowns.length > 0 || partials.length > 0) {
-         newSwitches[i - 1] = true;
+
+         if (knowns.length > 0 || unknowns.length > 0) {
+            newSwitches[i - 1] = true;
          }
       }
       setSwitches(newSwitches);
-   }, []);
+   }, [currentLesson]);
 
    const router = useRouter()
    useEffect(() => {
@@ -137,6 +151,17 @@ function A1() {
                   </div>
                );
             })}
+            </div>
+
+            <div className={styles.progressInfoHolder}>
+               <div className={styles.number}>{progress} %</div>
+               <div className={styles.counter}
+                  style={{width: progress + '%'}}
+               ></div>
+               
+               <button className={styles.continue}>
+                  <Link href={`/a1/${nextLesson}`}>Start New Lesson: {nextLesson}</Link>
+               </button>
             </div>
          </div>
 

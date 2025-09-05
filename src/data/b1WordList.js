@@ -1769,7 +1769,7 @@ export const b1WordList = [
    },
    {
       "id": 14,
-      "word": " Ang kənˈkluːʒn/",
+      "word": "conclusion",
       "AmE": "/kənˈkluːʒn/",
       "definition": "the final part of something, especially a speech, performance, etc.",
       "examples": [
