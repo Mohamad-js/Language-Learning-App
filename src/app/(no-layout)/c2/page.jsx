@@ -31,10 +31,12 @@ function C2() {
          setCompleted(true)
       }, 2000)
 
-      setTimeout(() => { // NEW
-         setProgress(Number(currentProgress.toFixed(1)))
-      }, 1000)
-
+      if(isLoading){
+         setTimeout(() => { // NEW
+            setProgress(Number(currentProgress.toFixed(1)))
+          }, 1000)
+      }
+      
       const newSwitches = Array(92).fill(false);
       for (let i = 1; i <= 92; i++) {
          const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-C2`)) || [];
