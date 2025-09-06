@@ -209,7 +209,7 @@
          }
 
          .number {
-            color: rgb(96, 0, 116);
+            color: rgb(0, 77, 0);
             font-size: 20px;
             z-index: 1;
          }
@@ -219,7 +219,7 @@
             left: 0;
             bottom: 0;
             z-index: 0;
-            background: linear-gradient(135deg, #00ff00, #d4ff00, #00ffff, #ff00ff, #800080);
+            background-color: rgb(77, 255, 77, 0.5);
             height: 100%;
             transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
          }
