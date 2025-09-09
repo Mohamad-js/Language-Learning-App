@@ -3,8 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
-  height: fit-content;
+  flex-wrap: wrap;
 }
 
 .progressRing {
@@ -77,8 +76,4 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   border-radius: 50%;
-   background-color: rgba(255, 255, 255, 0.1);
-   backdrop-filter: blur(10px);
-   border: 1px solid rgba(255, 255, 255, 0.555);
 }

@@ -3,7 +3,7 @@ import styles from './ProgressBar.module.css';
 
 export default function ProgressBar({
    inputNumber, title, percent, endNumber, circleWidth, lineWidth,
-   lineStroke, numberSize, titleSize
+   lineStroke, numberSize, titleSize, recWidth, recHeight
    }) {
   const [progress, setProgress] = useState(0);
 
@@ -23,7 +23,7 @@ export default function ProgressBar({
 
   return (
    <div className={styles.container}>
-      <div className={styles.momCircle}>
+      <div className={styles.momCircle} style={{ width: recWidth, height: recHeight}}>
          <svg className={styles.progressRing} width= {circleWidth} height={circleWidth}>
             <circle
                className={styles.progressRingBackground}
@@ -42,21 +42,21 @@ export default function ProgressBar({
             />
          </svg>
          {/* <div className={styles.sonCircle}></div> */}
-      </div>
-      <div className={styles.progressInfo}>
-         <div className={styles.top}>
-            <div className={styles.progress}
-               style={{ fontSize: numberSize}}
-            >{progress}</div>
-            {
-               percent ? <div className={styles.percent}
+         <div className={styles.progressInfo}>
+            <div className={styles.top}>
+               <div className={styles.progress}
                   style={{ fontSize: numberSize}}
-               >%</div> : null
-            }
+               >{progress}</div>
+               {
+                  percent ? <div className={styles.percent}
+                     style={{ fontSize: numberSize}}
+                  >%</div> : null
+               }
+            </div>
+            <div className={styles.progressText}
+               style={{ fontSize: titleSize}}
+            >{title}</div>
          </div>
-         <div className={styles.progressText}
-            style={{ fontSize: titleSize}}
-         >{title}</div>
       </div>
 
    </div>
