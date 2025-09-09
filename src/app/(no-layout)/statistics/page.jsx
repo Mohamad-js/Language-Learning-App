@@ -61,6 +61,11 @@ function Statistics(){
    const [wordsC2Total, setWordsC2Total] = useState(920)
    const [wordsC2Remain, setWordsC2Remain] = useState(920)
    const [wordsC2Progress, setWordsC2Progress] = useState(0)
+   
+   const [wordsTotalLearnt, setWordsTotalLearnt] = useState(null)
+   const [wordsTotalTotal, setWordsTotalTotal] = useState(6330)
+   const [wordsTotalRemain, setWordsTotalRemain] = useState(6330)
+   const [wordsTotalProgress, setWordsTotalProgress] = useState(0)
 
 
 
@@ -124,6 +129,13 @@ function Statistics(){
       const currentProgressC2 = (Number(currentC2) * 100) / 92
       setWordsC2Progress(Number(currentProgressC2.toFixed(1)))
 
+      
+      const currentTotal = wordsA1Learnt + wordsA2Learnt + wordsB1Learnt + wordsB2Learnt + wordsC1Learnt + wordsC2Learnt
+      setWordsTotalLearnt(currentTotal)
+      setWordsTotalRemain(wordsTotalTotal - currentTotal)
+      const currentProgressTotal = (Number(currentTotal) * 100) / 6330
+      setWordsTotalProgress(Number(currentProgressTotal.toFixed(1)))
+
 
       const totalWordsCount = JSON.parse(localStorage.getItem('totalWordsCount') || 0);
       setTotalWords(totalWordsCount)
@@ -133,13 +145,7 @@ function Statistics(){
       setWordsB2Learnt(wordsNumberB2)
       setWordsC1Learnt(wordsNumberC1)
       setWordsC2Learnt(wordsNumberC2)
-      
-      const totalA1 = JSON.parse(localStorage.getItem('totalProgress-A1') || 0);
-      const totalA2 = JSON.parse(localStorage.getItem('totalProgress-A2') || 0);
-      const totalB1 = JSON.parse(localStorage.getItem('totalProgress-B1') || 0);
-   
-      const currentTotal = Number(totalA1 + totalA2 + totalB1).toFixed(2)
-      setTotal(currentTotal)
+ 
       
    }, [wordsA1Total, wordsA1Learnt, wordsA1Remain])
 
@@ -151,6 +157,7 @@ function Statistics(){
          levelB2: false,
          levelC1: false,
          levelC2: false,
+         levelTotal: false
       })
 
       setwordsData({
@@ -170,6 +177,7 @@ function Statistics(){
          levelB2: false,
          levelC1: false,
          levelC2: false,
+         levelTotal: false
       })
 
       setwordsData({
@@ -189,6 +197,7 @@ function Statistics(){
          levelB2: false,
          levelC1: false,
          levelC2: false,
+         levelTotal: false
       })
 
       setwordsData({
@@ -208,6 +217,7 @@ function Statistics(){
          levelB2: true,
          levelC1: false,
          levelC2: false,
+         levelTotal: false
       })
 
       setwordsData({
@@ -227,6 +237,7 @@ function Statistics(){
          levelB2: false,
          levelC1: true,
          levelC2: false,
+         levelTotal: false
       })
 
       setwordsData({
@@ -244,8 +255,9 @@ function Statistics(){
          levelA2: false,
          levelB1: false,
          levelB2: false,
-         levelC2: false,
+         levelC1: false,
          levelC2: true,
+         levelTotal: false
       })
 
       setwordsData({
@@ -255,6 +267,26 @@ function Statistics(){
       })
 
       setWordsProgress(wordsC2Progress)
+   }
+   
+   const loadTotal = () => {
+      setActiveClass({
+         levelA1: false,
+         levelA2: false,
+         levelB1: false,
+         levelB2: false,
+         levelC1: false,
+         levelC2: false,
+         levelTotal: true,
+      })
+
+      setwordsData({
+         total: 6330,
+         learnt: wordsTotalLearnt,
+         remaining: wordsTotalRemain,
+      })
+
+      setWordsProgress(wordsTotalProgress)
    }
 
    console.log(activeClass.levelA1);
@@ -289,6 +321,7 @@ function Statistics(){
                      <div className={`${styles.level} ${activeClass.levelB2 && styles.selected}`} onClick={loadB2}>B2</div>
                      <div className={`${styles.level} ${activeClass.levelC1 && styles.selected}`} onClick={loadC1}>C1</div>
                      <div className={`${styles.level} ${activeClass.levelC2 && styles.selected}`} onClick={loadC2}>C2</div>
+                     <div className={`${styles.level} ${activeClass.levelTotal && styles.selected}`} onClick={loadTotal}>total</div>
                   </div>
                   <div className={styles.infoHolder}>
                      <div className={styles.info}>
@@ -319,71 +352,6 @@ function Statistics(){
                               lineStroke = {6}
                            />
                         </div>
-
-                        {/* <div className={styles.chart}>
-                           <ProgressBar
-                              inputNumber = {wordsA2Learnt}
-                              numberSize = {20}
-                              endNumber = {1240}
-                              circleWidth = '100'
-                              lineWidth = '47'
-                              title='A2 Words'
-                              titleSize = {15}
-                              lineStroke = {6}
-                           />
-                        </div>
-
-                        <div className={styles.chart}>
-                           <ProgressBar
-                              inputNumber = {wordsB1Learnt}
-                              numberSize = {20}
-                              endNumber = {900}
-                              circleWidth = '100'
-                              lineWidth = '47'
-                              title='B1 Words'
-                              titleSize = {15}
-                              lineStroke = {6}
-                           />
-                        </div>
-
-                        <div className={styles.chart}>
-                           <ProgressBar
-                              inputNumber = {wordsB2Learnt}
-                              numberSize = {20}
-                              endNumber = {800}
-                              circleWidth = '100'
-                              lineWidth = '47'
-                              title='B2 Words'
-                              titleSize = {15}
-                              lineStroke = {6}
-                           />
-                        </div>
-
-                        <div className={styles.chart}>
-                           <ProgressBar
-                              inputNumber = {wordsC1Learnt}
-                              numberSize = {20}
-                              endNumber = {1300}
-                              circleWidth = '100'
-                              lineWidth = '47'
-                              title='C1 Words'
-                              titleSize = {15}
-                              lineStroke = {6}
-                           />
-                        </div>
-
-                        <div className={styles.chart}>
-                           <ProgressBar
-                              inputNumber = {wordsC2Learnt}
-                              numberSize = {20}
-                              endNumber = {920}
-                              circleWidth = '100'
-                              lineWidth = '47'
-                              title='C2 Words'
-                              titleSize = {15}
-                              lineStroke = {6}
-                           />
-                        </div> */}
 
                         {/* <div className={styles.chart}>
                            <ProgressBar
