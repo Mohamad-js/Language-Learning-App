@@ -3,7 +3,8 @@ import styles from './ProgressBar.module.css';
 
 export default function ProgressBar({
    inputNumber, title, percent, endNumber, circleWidth, lineWidth,
-   lineStroke, numberSize, titleSize, recWidth, recHeight
+   lineStroke, numberSize, titleSize, recWidth, recHeight, strokeColor,
+   textColor, percentSize
    }) {
   const [progress, setProgress] = useState(0);
 
@@ -33,7 +34,7 @@ export default function ProgressBar({
             />
             <circle
                className={styles.progressRingFill}
-               style={{strokeWidth: lineStroke}}
+               style={{strokeWidth: lineStroke, stroke: strokeColor}}
                cx = {ribbonWidth}
                cy = {ribbonWidth}
                r={radius}
@@ -41,15 +42,15 @@ export default function ProgressBar({
                strokeDashoffset={strokeDashoffset}
             />
          </svg>
-         {/* <div className={styles.sonCircle}></div> */}
+
          <div className={styles.progressInfo}>
             <div className={styles.top}>
                <div className={styles.progress}
-                  style={{ fontSize: numberSize}}
+                  style={{ fontSize: numberSize, color: textColor }}
                >{progress}</div>
                {
                   percent ? <div className={styles.percent}
-                     style={{ fontSize: numberSize}}
+                     style={{ fontSize: percentSize, color: textColor }}
                   >%</div> : null
                }
             </div>

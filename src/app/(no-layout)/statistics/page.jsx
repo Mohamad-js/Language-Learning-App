@@ -149,7 +149,7 @@ function Statistics(){
       setWordsC2Learnt(wordsNumberC2)
  
       
-   }, [wordsA1Total, wordsA1Learnt, wordsA1Remain])
+   }, [wordsA1Total, wordsTotalTotal, wordsC2Learnt, wordsC1Learnt, wordsB2Learnt, wordsB1Learnt, wordsA2Learnt, wordsA1Learnt, wordsA1Remain])
 
    const loadA1 = () => {
       setActiveClass({
@@ -308,10 +308,10 @@ function Statistics(){
 
          <Image
             className={styles.background}
-            src="/images/back/stats.jpg"
-            alt=""
+            src="/images/back/backStat.jpg"
+            alt="background"
             fill
-            onLoad={handleImageLoad}
+            // onLoad={handleImageLoad}
          />
          
          <div className={styles.pageTitle}>How You Performed Until Now</div>
@@ -350,12 +350,15 @@ function Statistics(){
                         <ProgressBar
                            inputNumber = {wordsProgress}
                            numberSize = {20}
+                           percentSize = {15}
                            endNumber = {100}
-                           circleWidth = '150'
-                           lineWidth = '60'
+                           circleWidth = '120'
+                           lineWidth = '50'
                            percent={true}
                            titleSize = {15}
                            lineStroke = {6}
+                           strokeColor = 'rgb(82, 80, 255)'
+                           textColor = 'rgb(151, 150, 241)'
                         />
                      </div>
                   </div>
@@ -375,11 +378,11 @@ function Statistics(){
             </div>
          </div>
 
-         {isLoading && (
+         {/* {isLoading && (
             <div className={styles.bottomLayer}>
                <Loader />
             </div>
-         )}
+         )} */}
       </div>
    )
 }
