@@ -416,9 +416,7 @@ export default function Lessons({ params }) {
             </div>
 
             {isLoading && (
-               <div className={styles.bottomLayer}>
-                  <Loader />
-               </div>
+               <Loader />
             )}
          
          </div>
@@ -724,9 +722,7 @@ export default function Lessons({ params }) {
       }
 
       {isLoading && (
-         <div className={styles.bottomLayer}>
-            <Loader />
-         </div>
+         <Loader />
       )}
 
       </div>

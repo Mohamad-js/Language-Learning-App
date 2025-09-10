@@ -72,13 +72,7 @@ const Home = () => {
          </div>
    
          
-         {/* {
-            isLoading ?
-            <div className={styles.bottomLayer}>
-               <Loader /> 
-            </div>
-            : ''
-         } */}
+         { isLoading && <Loader /> }
       </div>
    );
 };

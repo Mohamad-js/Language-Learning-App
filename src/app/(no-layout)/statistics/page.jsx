@@ -311,7 +311,7 @@ function Statistics(){
             src="/images/back/backStat.jpg"
             alt="background"
             fill
-            // onLoad={handleImageLoad}
+            onLoad={handleImageLoad}
          />
          
          <div className={styles.pageTitle}>How You Performed Until Now</div>
@@ -327,7 +327,7 @@ function Statistics(){
                   <div className={`${styles.level} ${activeClass.levelB2 && styles.selected}`} onClick={loadB2}>B2</div>
                   <div className={`${styles.level} ${activeClass.levelC1 && styles.selected}`} onClick={loadC1}>C1</div>
                   <div className={`${styles.level} ${activeClass.levelC2 && styles.selected}`} onClick={loadC2}>C2</div>
-                  <div className={`${styles.level} ${activeClass.levelTotal && styles.selected}`} onClick={loadTotal}>total</div>
+                  <div className={`${styles.level} ${activeClass.levelTotal && styles.selected}`} onClick={loadTotal}>TOTAL</div>
                </div>
                <div className={styles.infoHolder}>
                   <div className={styles.info}>
@@ -352,8 +352,8 @@ function Statistics(){
                            numberSize = {20}
                            percentSize = {15}
                            endNumber = {100}
-                           circleWidth = '120'
-                           lineWidth = '50'
+                           circleWidth = '100'
+                           lineWidth = '45'
                            percent={true}
                            titleSize = {15}
                            lineStroke = {6}
@@ -378,11 +378,9 @@ function Statistics(){
             </div>
          </div>
 
-         {/* {isLoading && (
-            <div className={styles.bottomLayer}>
-               <Loader />
-            </div>
-         )} */}
+         {isLoading && (
+            <Loader />
+         )}
       </div>
    )
 }

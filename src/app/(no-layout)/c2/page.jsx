@@ -182,9 +182,7 @@ function C2() {
          </div>
 
          {isLoading && (
-            <div className={styles.bottomLayer}>
             <Loader />
-            </div>
          )}
 
          {/* {
