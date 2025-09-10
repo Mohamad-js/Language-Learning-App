@@ -5,14 +5,16 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
 import { useEffect } from 'react';
-<div className={styles.chart}>
-
-</div>
 import ProgressBar from '@/components/WhiteProgressBar/ProgressBar';
+import Image from 'next/image';
+import Loader from '@/components/loading/loading';
+
 
 
 function Statistics(){
-   const [total, setTotal] = useState(0)
+   const [isLoading, setIsLoading] = useState(true);
+   const [loadedImages, setLoadedImages] = useState(0);
+   const totalImages = 1;
 
    const [wordsData, setwordsData] = useState({
       total: 0,
@@ -289,86 +291,96 @@ function Statistics(){
       setWordsProgress(wordsTotalProgress)
    }
 
-   console.log(activeClass.levelA1);
+   const handleImageLoad = () => {
+      setLoadedImages((prev) => {
+         const newCount = prev + 1;
+         if (newCount >= totalImages) {
+            setIsLoading(false);
+         }
+         return newCount;
+      });
+   };
 
    return(
-      <>
-         <div className={styles.container}>
+      <div className={styles.container}>
 
-            <Back />
+         <Back />
 
-            <div className={styles.background}>
-               <Silk
-                  speed={5}
-                  scale={1}
-                  color="#d400ff"
-                  noiseIntensity={0}
-                  rotation={0}
-               />
-            </div>
+         <Image
+            className={styles.background}
+            src="/images/back/stats.jpg"
+            alt=""
+            fill
+            onLoad={handleImageLoad}
+         />
+         
+         <div className={styles.pageTitle}>How You Performed Until Now</div>
 
+         <div className={styles.progressBarHolder}>
 
-            <div className={styles.chart}>
-
-            </div>
-            <div className={styles.progressBarHolder}>
-               <div className={styles.dataCard}>
-                  <div className={styles.title}>Vocabulary</div>
-                  <div className={styles.levels}>
-                     <div className={`${styles.level} ${activeClass.levelA1 && styles.selected}`} onClick={loadA1}>A1</div>
-                     <div className={`${styles.level} ${activeClass.levelA2 && styles.selected}`} onClick={loadA2}>A2</div>
-                     <div className={`${styles.level} ${activeClass.levelB1 && styles.selected}`} onClick={loadB1}>B1</div>
-                     <div className={`${styles.level} ${activeClass.levelB2 && styles.selected}`} onClick={loadB2}>B2</div>
-                     <div className={`${styles.level} ${activeClass.levelC1 && styles.selected}`} onClick={loadC1}>C1</div>
-                     <div className={`${styles.level} ${activeClass.levelC2 && styles.selected}`} onClick={loadC2}>C2</div>
-                     <div className={`${styles.level} ${activeClass.levelTotal && styles.selected}`} onClick={loadTotal}>total</div>
-                  </div>
-                  <div className={styles.infoHolder}>
-                     <div className={styles.info}>
-                        <div className={styles.dataNode}>
-                           <div className={styles.text}>Total:</div>
-                           <div className={styles.number}>{wordsData.total}</div>
-                        </div>
-                        <div className={styles.dataNode}>
-                           <div className={styles.text}>Learnt:</div>
-                           <div className={styles.number}>{wordsData.learnt}</div>
-                        </div>
-                        <div className={styles.dataNode}>
-                           <div className={styles.text}>Remaining:</div>
-                           <div className={styles.number}>{wordsData.remaining}</div>
-                        </div>
+            <div className={styles.dataCard}>
+               <div className={styles.title}>Vocabulary</div>
+               <div className={styles.levels}>
+                  <div className={`${styles.level} ${activeClass.levelA1 && styles.selected}`} onClick={loadA1}>A1</div>
+                  <div className={`${styles.level} ${activeClass.levelA2 && styles.selected}`} onClick={loadA2}>A2</div>
+                  <div className={`${styles.level} ${activeClass.levelB1 && styles.selected}`} onClick={loadB1}>B1</div>
+                  <div className={`${styles.level} ${activeClass.levelB2 && styles.selected}`} onClick={loadB2}>B2</div>
+                  <div className={`${styles.level} ${activeClass.levelC1 && styles.selected}`} onClick={loadC1}>C1</div>
+                  <div className={`${styles.level} ${activeClass.levelC2 && styles.selected}`} onClick={loadC2}>C2</div>
+                  <div className={`${styles.level} ${activeClass.levelTotal && styles.selected}`} onClick={loadTotal}>total</div>
+               </div>
+               <div className={styles.infoHolder}>
+                  <div className={styles.info}>
+                     <div className={styles.dataNode}>
+                        <div className={styles.text}>Total:</div>
+                        <div className={styles.number}>{wordsData.total}</div>
                      </div>
+                     <div className={styles.dataNode}>
+                        <div className={styles.text}>Learnt:</div>
+                        <div className={styles.number}>{wordsData.learnt}</div>
+                     </div>
+                     <div className={styles.dataNode}>
+                        <div className={styles.text}>Remaining:</div>
+                        <div className={styles.number}>{wordsData.remaining}</div>
+                     </div>
+                  </div>
 
-                     <div className={styles.chartHolder}>
-                        <div className={styles.chart}>
-                           <ProgressBar
-                              inputNumber = {wordsProgress}
-                              numberSize = {20}
-                              endNumber = {100}
-                              circleWidth = '150'
-                              lineWidth = '60'
-                              percent={true}
-                              titleSize = {15}
-                              lineStroke = {6}
-                           />
-                        </div>
-
-                        {/* <div className={styles.chart}>
-                           <ProgressBar
-                              inputNumber = {totalWords}
-                              endNumber = {6340}
-                              circleWidth = '200'
-                              lineWidth = '90'
-                              title='Total Words'
-                           />
-                        </div> */}
-
+                  <div className={styles.chartHolder}>
+                     <div className={styles.chart}>
+                        <ProgressBar
+                           inputNumber = {wordsProgress}
+                           numberSize = {20}
+                           endNumber = {100}
+                           circleWidth = '150'
+                           lineWidth = '60'
+                           percent={true}
+                           titleSize = {15}
+                           lineStroke = {6}
+                        />
                      </div>
                   </div>
                </div>
             </div>
+
+            <div className={styles.dataCard}>
+               <div className={styles.underDev}>Grammar Stats Under Dev...</div>
+            </div>
+
+            <div className={styles.dataCard}>
+               <div className={styles.underDev}>Word Family Stats Under Dev...</div>
+            </div>
+
+            <div className={styles.dataCard}>
+               <div className={styles.underDev}>Collocations Stats Under Dev...</div>
+            </div>
          </div>
-      </>
+
+         {isLoading && (
+            <div className={styles.bottomLayer}>
+               <Loader />
+            </div>
+         )}
+      </div>
    )
 }
 
