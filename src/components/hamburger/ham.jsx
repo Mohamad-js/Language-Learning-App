@@ -79,7 +79,7 @@ function Ham(){
                </div>
                <Link href='/themes' className={styles.option}>
                   <IoIosOptions className={styles.icon} />
-                  <div className={styles.item}>Theme</div>
+                  <div className={styles.item}>Settings</div>
                </Link>
                <Link href='/review' className={styles.option}>
                   <RiRepeat2Fill className={styles.icon} />
