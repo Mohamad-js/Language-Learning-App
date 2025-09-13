@@ -48,7 +48,7 @@ function Ham(){
    console.log(menu);
 
    return(
-      <>
+      <div className={styles.hamHolder}>
          <div className={styles.container} onClick={resetWarning}>
             <label className={styles.hamburger}>
                <input type="checkbox" onClick={(e) => e.stopPropagation()}/>
@@ -103,7 +103,7 @@ function Ham(){
                </div>
             </div>
          }
-      </>
+      </div>
    )
 }
 
