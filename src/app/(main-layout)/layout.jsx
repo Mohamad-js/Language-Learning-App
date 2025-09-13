@@ -3,7 +3,8 @@ import { Analytics } from "@vercel/analytics/react"
 import { Providers } from "@/app/providers";
 import "./globals.css";
 import Navigation from "@/components/Navigation/navigation";
-import Menu from "@/components/menu/menu";
+import Ham from "@/components/hamburger/ham";
+// import Menu from "@/components/menu/menu";
 
 
 
@@ -31,7 +32,8 @@ export default function RootLayout({ children }) {
       </head>
          <body>
             <Providers>
-               <Menu />
+               {/* <Menu /> */}
+               <Ham />
                {children}
                <Navigation />
                <SpeedInsights />

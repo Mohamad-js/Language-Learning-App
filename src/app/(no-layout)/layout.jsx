@@ -1,9 +1,10 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import { Providers } from "../providers";
-import Menu from "@/components/menu/menu";
 import RegisterServiceWorker from "../registerServiceWorker";
 import "./globals.css";
+// import Menu from "@/components/menu/menu";
+import Ham from "@/components/hamburger/ham";
 
 
 export const metadata = {
@@ -22,7 +23,8 @@ export default function RootLayout({ children }) {
       <html lang="en">
          <body>
             <RegisterServiceWorker />
-            <Menu />
+            {/* <Menu /> */}
+            <Ham />
             <Providers>
                {children}
             </Providers>
