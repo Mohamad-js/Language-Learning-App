@@ -44,7 +44,6 @@ function Words(){
    }, [loadedImages]);
 
 
-
    return(
       <>
          <div className={styles.container}>

@@ -17,23 +17,23 @@ function B2() {
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(80).fill(false));
    const [allowStart, setAllowStart] = useState(false)
-   const [nextLesson, setNextLesson] = useState(0) // NEW
-   const [progress, setProgress] = useState(0) // NEW
-   const [completed, setCompleted] = useState(false) // NEW
+   const [nextLesson, setNextLesson] = useState(0)
+   const [progress, setProgress] = useState(0)
+   const [completed, setCompleted] = useState(false)
    
 
    useEffect(() => {
-      const current = JSON.parse(localStorage.getItem(`currentLesson-B2`)) || 0; // NEW
-      current < 80 ? setNextLesson(Number(current) + 1) : null // NEW
+      const current = JSON.parse(localStorage.getItem(`currentLesson-B2`)) || 0;
+      current < 80 ? setNextLesson(Number(current) + 1) : null
 
       if(!isLoading) {
-         const currentProgress = (Number(current) * 100) / 80 // NEW
+         const currentProgress = (Number(current) * 100) / 80
    
-         progress == 100 && setTimeout(() => { // NEW
+         progress == 100 && setTimeout(() => {
             setCompleted(true)
          }, 2000)
    
-         setTimeout(() => { // NEW
+         setTimeout(() => {
             setProgress(Number(currentProgress.toFixed(1)))
          }, 1000)
       }
@@ -83,7 +83,7 @@ function B2() {
    const firstNonDoneIndex = switches.findIndex((switchState) => !switchState);
    const newLessonIndex = firstNonDoneIndex === -1 ? null : firstNonDoneIndex;
 
-   const switchPreview = () => { // NEW
+   const switchPreview = () => {
       localStorage.setItem(`preview`, JSON.stringify(true));
    }
 
@@ -166,8 +166,8 @@ function B2() {
             })}
             </div>
 
-            { // NEW
-               nextLesson !== 1 && // NEW
+            {
+               nextLesson !== 1 &&
                <div className={styles.progressInfoHolder}>
                   <div className={styles.number}>{progress}% done</div>
                   <div className={styles.counter}

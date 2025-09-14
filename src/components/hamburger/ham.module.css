@@ -102,7 +102,7 @@
       padding: 20px;
       height: fit-content;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       flex-direction: column;
       border-radius: 10px;

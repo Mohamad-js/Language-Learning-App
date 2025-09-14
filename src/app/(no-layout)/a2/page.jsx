@@ -16,22 +16,22 @@ function A2() {
    const totalImages = 1;
    const [switches, setSwitches] = useState(Array(124).fill(false));
    // const [allowStart, setAllowStart] = useState(false)
-   const [nextLesson, setNextLesson] = useState(0) // NEW
-   const [progress, setProgress] = useState(0) // NEW
-   const [completed, setCompleted] = useState(false) // NEW
+   const [nextLesson, setNextLesson] = useState(0)
+   const [progress, setProgress] = useState(0)
+   const [completed, setCompleted] = useState(false)
 
    useEffect(() => {
-      const current = JSON.parse(localStorage.getItem(`currentLesson-A2`)) || 0; // NEW
-      current < 124 ? setNextLesson(Number(current) + 1) : null // NEW
+      const current = JSON.parse(localStorage.getItem(`currentLesson-A2`)) || 0;
+      current < 124 ? setNextLesson(Number(current) + 1) : null
 
       if(!isLoading) {
-         const currentProgress = (Number(current) * 100) / 124 // NEW
+         const currentProgress = (Number(current) * 100) / 124
    
-         progress == 100 && setTimeout(() => { // NEW
+         progress == 100 && setTimeout(() => {
             setCompleted(true)
          }, 2000)
    
-         setTimeout(() => { // NEW
+         setTimeout(() => {
             setProgress(Number(currentProgress.toFixed(1)))
          }, 1000)
       }
@@ -164,8 +164,8 @@ function A2() {
             })}
             </div>
 
-            { // NEW
-               nextLesson !== 1 && // NEW
+            {
+               nextLesson !== 1 &&
                <div className={styles.progressInfoHolder}>
                   <div className={styles.number}>{progress}% done</div>
                   <div className={styles.counter}

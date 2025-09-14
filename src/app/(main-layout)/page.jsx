@@ -8,11 +8,14 @@ import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
 import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
-
+import { useTheme } from "@/components/context/ThemeContext";
 
 
 
 const Home = () => {
+   const { lightTheme } = useTheme();
+   const darkMode = !lightTheme;
+
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const timeoutRef = useRef(null);
@@ -87,20 +90,24 @@ const Home = () => {
       };
    }, []);
 
+   const darkColor = darkMode ? { color: 'white' } : {};
+   const darkTab = darkMode ? { backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', border: '1px solid rgba(0, 0, 0, 0.3)' } : {};
+   const darkEffect = darkMode ? [0.6, 0.6, 0.6, ] : [1, 1, 1];
+
 
    return (
       <div className={styles.bigMom}>
          <Iridescence
-            color={[1, 1, 1]}
+            color={darkEffect}
             mouseReact={false}
             amplitude={0.1}
             speed={1.0}
          />
 
          <div className={styles.pageHolder}>
-            <div className={styles.pageTitle}>Home Page</div>
+            <div className={styles.pageTitle} style={darkColor}>Home Page</div>
 
-            <div className={styles.topSection} onClick={toggleIdiomCard}>
+            <div className={styles.topSection} onClick={toggleIdiomCard} style={darkTab}>
                <div className={styles.motivTitle}>Today&apos;s Idiom</div>
                <div className={styles.motivText}>
                   {dailyIdiom?.example}
@@ -121,12 +128,13 @@ const Home = () => {
             }
 
             <div className={styles.activityHolder}>
-               <div className={styles.activityTitle}>Lessons to Learn</div>
+               <div className={styles.activityTitle} style={darkColor}>Lessons to Learn</div>
+
                <div className={styles.lessonsHolder}>
-                  <div className={styles.activity}>
+                  <div className={styles.activity} style={darkTab}>
                      <Link href='/words'>
                         <div className={styles.infoHolder}>
-                           <div className={styles.actBtn}>Vocabulary</div>
+                           <div className={styles.actBtn} style={darkColor}>Vocabulary</div>
                            <div className={styles.info}>
                               <div className={styles.infoText}>6 CEFR Levels</div>
                               <div className={styles.infoText}>5000 Words</div>
@@ -135,10 +143,10 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity}>
+                  <div className={styles.activity} style={darkTab}>
                      <Link href='/grammar'>
                         <div className={styles.infoHolder}>
-                           <div className={styles.actBtn}>Grammar</div>
+                           <div className={styles.actBtn} style={darkColor}>Grammar</div>
                            <div className={styles.info}>
                               <div className={styles.infoText}>38 Topics</div>
                               <div className={styles.infoText}>164 Lessons</div>
@@ -147,10 +155,10 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity}>
+                  <div className={styles.activity} style={darkTab}>
                      <Link href='/expressions'>
                         <div className={styles.infoHolder}>
-                           <div className={styles.actBtn}>Expressions</div>
+                           <div className={styles.actBtn} style={darkColor}>Expressions</div>
                            <div className={styles.info}>
                               <div className={styles.infoText}>Under Dev</div>
                            </div>
@@ -158,10 +166,10 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity}>
+                  <div className={styles.activity} style={darkTab}>
                      <Link href='/collocations'>
                         <div className={styles.infoHolder}>
-                           <div className={styles.actBtn}>Collocations</div>
+                           <div className={styles.actBtn} style={darkColor}>Collocations</div>
                            <div className={styles.info}>
                               <div className={styles.infoText}>Under Dev</div>
                            </div>
@@ -169,10 +177,10 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity}>
+                  <div className={styles.activity} style={darkTab}>
                      <Link href='/synonyms'>
                         <div className={styles.infoHolder}>
-                           <div className={styles.actBtn}>Synonyms</div>
+                           <div className={styles.actBtn} style={darkColor}>Synonyms</div>
                            <div className={styles.info}>
                               <div className={styles.infoText}>Under Dev</div>
                            </div>
@@ -180,10 +188,10 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity}>
+                  <div className={styles.activity} style={darkTab}>
                      <Link href='/family'>
                         <div className={styles.infoHolder}>
-                           <div className={styles.actBtn}>Word Family</div>
+                           <div className={styles.actBtn} style={darkColor}>Word Family</div>
                            <div className={styles.info}>
                               <div className={styles.infoText}>Under Dev</div>
                            </div>

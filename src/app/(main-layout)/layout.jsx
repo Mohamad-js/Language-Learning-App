@@ -1,11 +1,10 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
-import { Providers } from "@/app/providers";
 import "./globals.css";
 import Navigation from "@/components/Navigation/navigation";
 import Ham from "@/components/hamburger/ham";
 // import Menu from "@/components/menu/menu";
-
+import { ThemeProvider } from "@/components/context/ThemeContext";
 
 
 export const metadata = {
@@ -31,14 +30,14 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </head>
          <body>
-            <Providers>
+            <ThemeProvider>
                {/* <Menu /> */}
                <Ham />
                {children}
                <Navigation />
                <SpeedInsights />
                <Analytics />
-            </Providers>
+            </ThemeProvider>
          </body>
       </html>
   );
