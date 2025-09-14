@@ -24,15 +24,18 @@ function A1() {
       const current = JSON.parse(localStorage.getItem(`currentLesson-A1`)) || 0; // NEW
       current < 117 ? setNextLesson(Number(current) + 1) : null // NEW
       
-      const currentProgress = (Number(current) * 100) / 117 // NEW
+      if(!isLoading) {
+         const currentProgress = (Number(current) * 100) / 117 // NEW
+         
+         progress == 100 && setTimeout(() => { // NEW
+            setCompleted(true)
+         }, 2000)
+   
+         setTimeout(() => { // NEW
+            setProgress(Number(currentProgress.toFixed(1)))
+         }, 1000)
+      }
 
-      progress == 100 && setTimeout(() => { // NEW
-         setCompleted(true)
-      }, 2000)
-
-      setTimeout(() => { // NEW
-         setProgress(Number(currentProgress.toFixed(1)))
-      }, 1000)
 
       const newSwitches = Array(117).fill(false);
       for (let i = 1; i <= 117; i++) {
@@ -44,7 +47,7 @@ function A1() {
          }
       }
       setSwitches(newSwitches);
-   }, [progress]); // NEW
+   }, [progress, isLoading]); // NEW
 
    const router = useRouter()
    useEffect(() => {
@@ -63,6 +66,7 @@ function A1() {
    const handleImageLoad = () => {
       setLoadedImages((prev) => {
          const newCount = prev + 1;
+
          if (newCount >= totalImages) {
             setIsLoading(false);
          }

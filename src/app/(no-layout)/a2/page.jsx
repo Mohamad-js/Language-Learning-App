@@ -23,16 +23,19 @@ function A2() {
    useEffect(() => {
       const current = JSON.parse(localStorage.getItem(`currentLesson-A2`)) || 0; // NEW
       current < 124 ? setNextLesson(Number(current) + 1) : null // NEW
+
+      if(!isLoading) {
+         const currentProgress = (Number(current) * 100) / 124 // NEW
+   
+         progress == 100 && setTimeout(() => { // NEW
+            setCompleted(true)
+         }, 2000)
+   
+         setTimeout(() => { // NEW
+            setProgress(Number(currentProgress.toFixed(1)))
+         }, 1000)
+      }
       
-      const currentProgress = (Number(current) * 100) / 124 // NEW
-
-      progress == 100 && setTimeout(() => { // NEW
-         setCompleted(true)
-      }, 2000)
-
-      setTimeout(() => { // NEW
-         setProgress(Number(currentProgress.toFixed(1)))
-      }, 1000)
 
 
       const newSwitches = Array(124).fill(false);
@@ -48,7 +51,7 @@ function A2() {
          }
       }
       setSwitches(newSwitches);
-   }, [progress]);
+   }, [progress, isLoading]);
 
    const router = useRouter()
    useEffect(() => {
