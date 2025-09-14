@@ -32,11 +32,10 @@ function C2() {
             setCompleted(true)
          }, 2000)
    
-         if(isLoading){
-            setTimeout(() => { // NEW
-               setProgress(Number(currentProgress.toFixed(1)))
-             }, 1000)
-         }
+         setTimeout(() => { // NEW
+            setProgress(Number(currentProgress.toFixed(1)))
+         }, 1000)
+         
       }
       
       
