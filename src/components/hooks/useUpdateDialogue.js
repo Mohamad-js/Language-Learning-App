@@ -1,3 +1,5 @@
+'use client'
+
 // hooks/useUpdateDialog.js
 import { useEffect, useState } from 'react';
 import { versionData } from '@/app/lib/version';

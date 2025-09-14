@@ -1,3 +1,4 @@
+'use client'
 import styles from './back.module.css'
 import { IoIosArrowBack } from 'react-icons/io';
 import { useState, useEffect } from 'react';
