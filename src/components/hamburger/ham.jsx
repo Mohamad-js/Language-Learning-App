@@ -30,6 +30,10 @@ function Ham(){
       setMenu(prev => !prev)
    }
 
+   const closeMenu = () => {
+      setMenu(false);
+   };
+
    const resetAction = () => {
       setWarning(false)
       localStorage.clear()
@@ -45,13 +49,32 @@ function Ham(){
       setWarning(false)
    }
 
-   console.log(menu);
+   const navFromHam = (msg) => {
+      const routes = {
+         saved: '/saved',
+         statistics: '/statistics',
+         errors: '/errors',
+         themes: '/themes',
+         review: '/review'
+      };
+
+      if (routes[msg]) {
+         router.push(routes[msg]);
+         closeMenu();
+      }
+   }
 
    return(
       <div className={styles.hamHolder}>
          <div className={styles.container} onClick={resetWarning}>
             <label className={styles.hamburger}>
-               <input type="checkbox" onClick={(e) => e.stopPropagation()}/>
+               <input
+                  type="checkbox"
+                  checked={menu} // 👈 Controlled by state
+                  onChange={() => {}} // This is silence warning; we handle click on parent
+                  onClick={(e) => e.stopPropagation()}
+                  aria-hidden="true"
+               />
                <svg viewBox="0 0 32 32">
                   <path className={`${styles.line} ${styles.lineTopBottom} ${whiteColor}`} d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
                   <path className={`${styles.line} ${whiteColor}`} d="M7 16 27 16"></path>
@@ -65,26 +88,26 @@ function Ham(){
                   <MdOutlineRestartAlt className={styles.icon} />
                   <div className={styles.item} onClick={showWarning}>Restart App</div>
                </div>
-               <Link href='/saved' className={styles.option}>
+               <div className={styles.option} onClick={() => navFromHam('saved')}>
                   <CiSaveDown1 className={styles.icon} />
                   <div className={styles.item}>Saved</div>
-               </Link>
-               <Link href='/statistics' className={styles.option}>
+               </div>
+               <div className={styles.option} onClick={() => navFromHam('statistics')}>
                   <MdInsertChartOutlined className={styles.icon} />
                   <div className={styles.item}>Statistics</div>
-               </Link>
-               <div className={styles.option}>
+               </div>
+               <div className={styles.option} onClick={() => navFromHam('errors')}>
                   <BiErrorCircle className={styles.icon} />
                   <div className={styles.item}>My Errors</div>
                </div>
-               <Link href='/themes' className={styles.option}>
+               <div className={styles.option} onClick={() => navFromHam('themes')}>
                   <IoIosOptions className={styles.icon} />
                   <div className={styles.item}>Settings</div>
-               </Link>
-               <Link href='/review' className={styles.option}>
+               </div>
+               <div className={styles.option} onClick={() => navFromHam('review')}>
                   <RiRepeat2Fill className={styles.icon} />
                   <div className={styles.item}>Review</div>
-               </Link>
+               </div>
             </div>
          </div>
          
