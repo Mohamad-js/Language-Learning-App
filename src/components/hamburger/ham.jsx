@@ -71,6 +71,7 @@ function Ham(){
 
    const darkColor = darkMode ? { color: 'white' } : {};
    const darkStroke = darkMode ? { stroke: 'white' } : {};
+   const darkBack = darkMode ? { backgroundColor: 'black' } : {};
 
    return(
       <div className={styles.hamHolder}>
@@ -91,9 +92,7 @@ function Ham(){
             </label>
          </div>
 
-         <div className={`${styles.menuLayer} ${menu && styles.appear}`}
-         style={darkMode ? { backgroundColor: 'rgba(0, 0, 0, 0.5)' } : undefined}
-         >
+         <div className={`${styles.menuLayer} ${menu && styles.appear}`} style={darkBack}>
             
             <div className={styles.menu}>
                <ThemeToggle />
