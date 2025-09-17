@@ -7,6 +7,15 @@
    align-items: center;
    flex-direction: column;
    padding: 20px;
+
+   .ether {
+      position: absolute;
+      width: 100%;
+      height: 100dvh;
+      top: 0;
+      left: 0;
+      background-color: black;
+   }
    
 
    .pageHolder {
@@ -48,7 +57,15 @@
          .motivText {
             font-size: 15px;
          }
-      }   
+      }
+
+   
+   .darkTop {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      color: white;
+      border: 1px solid white;
+   }
    
       .activityHolder {
          height: fit-content;
@@ -115,6 +132,13 @@
          }
       }
    }
+
+   .darkIdiom {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      color: white;
+      border: 1px solid white;
+   }
 }
 
             
@@ -166,6 +190,13 @@
             font-size: 15px;
          }
       }
+   }
+
+   .darkTab {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      color: white;
+      border: 1px solid white;
    }
 }
       

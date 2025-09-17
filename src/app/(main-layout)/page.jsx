@@ -9,6 +9,7 @@ import { idioms } from "@/data/idioms";
 import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
+import LiquidEther from "@/components/ether/ether";
 
 
 
@@ -91,23 +92,45 @@ const Home = () => {
    }, []);
 
    const darkColor = darkMode ? { color: 'white' } : {};
-   const darkTab = darkMode ? { backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', border: '1px solid rgba(0, 0, 0, 0.3)' } : {};
-   const darkEffect = darkMode ? [0.6, 0.6, 0.6, ] : [1, 1, 1];
 
 
    return (
       <div className={styles.bigMom}>
-         <Iridescence
-            color={darkEffect}
-            mouseReact={false}
-            amplitude={0.1}
-            speed={1.0}
-         />
+         {
+         lightTheme ? 
+            <Iridescence
+               color={[1, 1, 1]}
+               mouseReact={false}
+               amplitude={0.1}
+               speed={1.0}
+            />
+         :
+            <div className={styles.ether}>
+               <LiquidEther
+                  colors={[ '#16001e', '#d76aff', '#d400ff' ]}
+                  mouseForce={7}
+                  cursorSize={100}
+                  isViscous={false}
+                  viscous={30}
+                  iterationsViscous={32}
+                  iterationsPoisson={32}
+                  resolution={0.5}
+                  isBounce={true}
+                  autoDemo={true}
+                  autoSpeed={0.5}
+                  autoIntensity={2.2}
+                  takeoverDuration={0.25}
+                  autoResumeDelay={3000}
+                  autoRampDuration={0.6}
+               />
+            </div>
+         }
+
 
          <div className={styles.pageHolder}>
             <div className={styles.pageTitle} style={darkColor}>Home Page</div>
 
-            <div className={styles.topSection} onClick={toggleIdiomCard} style={darkTab}>
+            <div className={`${styles.topSection} ${darkMode ? styles.darkTop : ''}`} onClick={toggleIdiomCard}>
                <div className={styles.motivTitle}>Today&apos;s Idiom</div>
                <div className={styles.motivText}>
                   {dailyIdiom?.example}
@@ -117,11 +140,11 @@ const Home = () => {
             {
                showIdiom && 
                <div className={styles.idiomInfoHolder}>
-                  <div className={styles.idiomCard}>
+                  <div className={`${styles.idiomCard} ${darkMode ? styles.darkIdiom : ''}`}>
                      <div className={styles.closeIconHolder} onClick={toggleIdiomCard}>
-                        <IoCloseOutline className={styles.close} />
+                        <IoCloseOutline className={styles.close} style={darkColor}/>
                      </div>
-                     <div className={styles.idiom}>{dailyIdiom?.idiom}</div>
+                     <div className={styles.idiom} style={darkColor}>{dailyIdiom?.idiom}</div>
                      <div className={styles.meaning}>{dailyIdiom?.meaning}</div>
                   </div>
                </div>
@@ -131,7 +154,7 @@ const Home = () => {
                <div className={styles.activityTitle} style={darkColor}>Lessons to Learn</div>
 
                <div className={styles.lessonsHolder}>
-                  <div className={styles.activity} style={darkTab}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
                      <Link href='/words'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Vocabulary</div>
@@ -143,7 +166,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity} style={darkTab}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
                      <Link href='/grammar'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Grammar</div>
@@ -155,7 +178,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity} style={darkTab}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
                      <Link href='/expressions'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Expressions</div>
@@ -166,7 +189,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity} style={darkTab}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
                      <Link href='/collocations'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Collocations</div>
@@ -177,7 +200,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity} style={darkTab}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
                      <Link href='/synonyms'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Synonyms</div>
@@ -188,7 +211,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={styles.activity} style={darkTab}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
                      <Link href='/family'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Word Family</div>
