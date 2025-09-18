@@ -9,7 +9,7 @@ import { idioms } from "@/data/idioms";
 import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
-import LiquidEther from "@/components/ether/ether";
+import Aurora from "@/components/aurora/aurora";
 
 
 
@@ -105,24 +105,14 @@ const Home = () => {
                speed={1.0}
             />
          :
-            <div className={styles.ether}>
-               <LiquidEther
-                  colors={[ '#16001e', '#d76aff', '#d400ff' ]}
-                  mouseForce={7}
-                  cursorSize={100}
-                  isViscous={false}
-                  viscous={30}
-                  iterationsViscous={32}
-                  iterationsPoisson={32}
-                  resolution={0.5}
-                  isBounce={true}
-                  autoDemo={true}
-                  autoSpeed={0.5}
-                  autoIntensity={2.2}
-                  takeoverDuration={0.25}
-                  autoResumeDelay={3000}
-                  autoRampDuration={0.6}
+            <div className={styles.ether}>  
+               <Aurora
+                  colorStops={["#5d00ff", "#aa00ff", "#ff00e6"]}
+                  blend={10}
+                  amplitude={1}
+                  speed={1}
                />
+
             </div>
          }
 
