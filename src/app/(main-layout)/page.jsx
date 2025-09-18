@@ -181,9 +181,9 @@ const Home = () => {
                   <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
                      <Link href='/expressions'>
                         <div className={styles.infoHolder}>
-                           <div className={styles.actBtn} style={darkColor}>Expressions</div>
+                           <div className={styles.actBtn} style={darkColor}>Prepositions</div>
                            <div className={styles.info}>
-                              <div className={styles.infoText}>Under Dev</div>
+                              <div className={styles.infoText}>Soon</div>
                            </div>
                         </div>
                      </Link>
@@ -194,7 +194,7 @@ const Home = () => {
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Collocations</div>
                            <div className={styles.info}>
-                              <div className={styles.infoText}>Under Dev</div>
+                              <div className={styles.infoText}>Soon</div>
                            </div>
                         </div>
                      </Link>
@@ -205,7 +205,7 @@ const Home = () => {
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Synonyms</div>
                            <div className={styles.info}>
-                              <div className={styles.infoText}>Under Dev</div>
+                              <div className={styles.infoText}>Soon</div>
                            </div>
                         </div>
                      </Link>
@@ -216,7 +216,7 @@ const Home = () => {
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Word Family</div>
                            <div className={styles.info}>
-                              <div className={styles.infoText}>Under Dev</div>
+                              <div className={styles.infoText}>Soon</div>
                            </div>
                         </div>
                      </Link>

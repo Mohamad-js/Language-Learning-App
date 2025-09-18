@@ -1,12 +1,11 @@
 'use client'
 import styles from './navigation.module.css'
 import Link from "next/link";
-import { IoBookOutline, IoBook, IoReaderOutline, IoReader  } from "react-icons/io5";
+import { IoBook, IoReader  } from "react-icons/io5";
 import { ImHeadphones } from "react-icons/im";
 import { usePathname } from 'next/navigation';
-import { PiUserSound, PiUserSoundFill  } from "react-icons/pi";
-import { GoHome, GoHomeFill } from "react-icons/go";
-import { useState } from 'react';
+import { PiUserSoundFill  } from "react-icons/pi";
+import { GoHomeFill } from "react-icons/go";
 
 
 function Navigation(){
