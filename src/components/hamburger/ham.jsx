@@ -22,8 +22,7 @@ import { useTheme } from "../context/ThemeContext";
 function Ham(){
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
-   const [moreVocabs, setMoreVocabs] = useState(false)
-   const [moreQuiz, setMoreQuiz] = useState(false)
+   const [page, setPage] = useState('learn')
 
    const [menu, setMenu] = useState(false)
    const [warning, setWarning] = useState(false)
@@ -115,98 +114,115 @@ function Ham(){
             
             <div className={styles.menu}>
                <ThemeToggle />
-               <div className={styles.optionsHolder} style={darkColor}>
-                  <div className={styles.optionsTitle}>Learning Resources</div>
-                  
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('home')}>
-                     <GoHomeFill className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Home</div>
-                  </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('words')}>
-                     <VscWholeWord className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Vocabulary</div>
-                  </div>
+               <div className={styles.tabsHolder}>
+                  <div className={`${(page === 'learn' && lightTheme) ? styles.optionsTitle : (page === 'learn' && darkMode) ? styles.optionsDark : styles.default}`} onClick = {() => setPage('learn')}
+                  >Learning Resources</div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('grammar')}>
-                     <MdOutlineSpellcheck className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Grammar</div>
-                  </div>
-
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('prepositions')}>
-                     <TbComponentsOff className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Prepositions</div>
-                  </div>
-
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('collocations')}>
-                     <HiMiniRectangleGroup className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Collocations</div>
-                  </div>
-
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('synonyms')}>
-                     <LuGroup className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Synonyms</div>
-                  </div>
-
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('speaking')}>
-                     <PiUserSoundFill className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Speaking</div>
-                  </div>
-
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('writing')}>
-                     <IoReader className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Writing</div>
-                  </div>
-
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('listening')}>
-                     <ImHeadphones className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Listening</div>
-                  </div>
-
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('reading')}>
-                     <IoBook className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Reading</div>
-                  </div>
+                  <div className={`${(page === 'more' && lightTheme) ? styles.optionsTitle : (page === 'more' && darkMode) ? styles.optionsDark : styles.default}`} onClick = {() => setPage('more')}
+                  >More Pages</div>
                </div>
 
-               <div className={styles.optionsHolder} style={darkColor}>
-                  <div className={styles.optionsTitle}>More Pages</div>
+               <div className={styles.optionsMom}>
+                  {
+                     page === 'learn' ?
+                     <div className={styles.optionsHolder} style={darkColor}>
+                        
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('home')}>
+                           <GoHomeFill className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Home</div>
+                        </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`}>
-                     <MdOutlineRestartAlt className={styles.icon} style={darkColor}/>
-                     <div className={styles.item} onClick={showWarning}>Restart App</div>
-                  </div>
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('words')}>
+                           <VscWholeWord className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Vocabulary</div>
+                        </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('saved')}>
-                     <CiSaveDown1 className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Saved</div>
-                  </div>
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('grammar')}>
+                           <MdOutlineSpellcheck className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Grammar</div>
+                        </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('statistics')}>
-                     <MdInsertChartOutlined className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Statistics</div>
-                  </div>
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('prepositions')}>
+                           <TbComponentsOff className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Prepositions</div>
+                        </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('errors')}>
-                     <BiErrorCircle className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>My Errors</div>
-                  </div>
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('collocations')}>
+                           <HiMiniRectangleGroup className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Collocations</div>
+                        </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('quiz')}>
-                     <GoQuestion className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Quiz</div>
-                  </div>
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('synonyms')}>
+                           <LuGroup className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Synonyms</div>
+                        </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('review')}>
-                     <RiRepeat2Fill className={styles.icon} style={darkColor}/>
-                     <div className={styles.item}>Review</div>
-                  </div>
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('speaking')}>
+                           <PiUserSoundFill className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Speaking</div>
+                        </div>
 
-                  <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('settings')}>
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('writing')}>
+                           <IoReader className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Writing</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('listening')}>
+                           <ImHeadphones className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Listening</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('reading')}>
+                           <IoBook className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Reading</div>
+                        </div>
+                     </div>
+
+                     : page === 'more' ?
+
+                     <div className={styles.optionsHolder} style={darkColor}>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`}>
+                           <MdOutlineRestartAlt className={styles.icon} style={darkColor}/>
+                           <div className={styles.item} onClick={showWarning}>Restart App</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('saved')}>
+                           <CiSaveDown1 className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Saved</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('statistics')}>
+                           <MdInsertChartOutlined className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Statistics</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('errors')}>
+                           <BiErrorCircle className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>My Errors</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('quiz')}>
+                           <GoQuestion className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Quiz</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('review')}>
+                           <RiRepeat2Fill className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Review</div>
+                        </div>
+
+                     </div>
+                     : null
+                  }
+
+                  <div className={`${styles.option2} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('settings')}>
                      <IoSettings className={styles.icon} style={darkColor}/>
                      <div className={styles.item}>Settings</div>
                   </div>
                </div>
+
 
             </div>
 
