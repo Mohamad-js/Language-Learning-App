@@ -1,8 +1,3 @@
-// public/sw-custom.js
-// This will be your custom service worker that handles push notifications
-// while preserving all the Workbox functionality
-
-// Push notification handlers
 self.addEventListener('push', function(event) {
   let data = {};
   if (event.data) {
@@ -28,6 +23,3 @@ self.addEventListener('notificationclick', function(event) {
     clients.openWindow(url)
   );
 });
-
-// The actual Workbox service worker code will be injected here automatically
-// by the next-pwa plugin
