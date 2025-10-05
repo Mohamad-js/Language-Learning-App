@@ -5,6 +5,7 @@ import "./globals.css";
 // import Menu from "@/components/menu/menu";
 import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from "@/components/context/ThemeContext";
+import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
 
 
 export const metadata = {

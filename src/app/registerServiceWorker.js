@@ -1,24 +1,24 @@
-// app/registerServiceWorker.js (or similar)
-"use client";
+// app/components/ServiceWorkerRegistrar.js
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-export default function RegisterServiceWorker() {
+export default function ServiceWorkerRegistrar() {
   useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").then((registration) => {
-        registration.addEventListener("updatefound", () => {
-          const newWorker = registration.installing;
-          newWorker.addEventListener("statechange", () => {
-            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
-              // Prompt user to refresh for new content
-              if (confirm("New version available! Refresh to update?")) {
-                newWorker.postMessage({ action: "skipWaiting" });
-              }
-            }
-          });
+    console.log('🔍 ServiceWorkerRegistrar: useEffect triggered');
+    
+    if ('serviceWorker' in navigator) {
+      console.log('🔍 ServiceWorkerRegistrar: serviceWorker API available');
+      
+      navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        .then((registration) => {
+          console.log('✅ Service worker registered successfully:', registration);
+        })
+        .catch((error) => {
+          console.error('❌ Service worker registration failed:', error);
         });
-      });
+    } else {
+      console.log('❌ ServiceWorkerRegistrar: serviceWorker API NOT available');
     }
   }, []);
 
