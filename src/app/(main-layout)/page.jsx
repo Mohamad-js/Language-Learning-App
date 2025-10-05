@@ -10,6 +10,7 @@ import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
 import Aurora from "@/components/aurora/aurora";
+import NotificationButton from "@/components/NotifBtn/NotificationButton";
 
 
 
@@ -213,6 +214,9 @@ const Home = () => {
                   </div>
                </div>
             </div>
+
+            
+            <NotificationButton />
          </div>
 
          {/* {isLoading && (

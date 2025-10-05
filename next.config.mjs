@@ -5,6 +5,7 @@ const pwaConfig = withPWA({
   register: true, // Automatically register service worker
   skipWaiting: true, // Force new service worker to activate immediately
   disable: process.env.NODE_ENV === 'development', // Disable PWA in development
+  sw: 'sw-custom.js',
   runtimeCaching: [
     {
       urlPattern: /^\/version\.json/i, // Ensure version.json is always fetched fresh
