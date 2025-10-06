@@ -6,7 +6,8 @@ import Ham from "@/components/hamburger/ham";
 // import Menu from "@/components/menu/menu";
 import { ThemeProvider } from "@/components/context/ThemeContext";
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
-
+import { config } from 'dotenv';
+config();
 
 export const metadata = {
    title: "iGhazal App",

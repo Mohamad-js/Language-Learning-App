@@ -1,12 +1,11 @@
-// app/components/ServiceWorkerRegistrar.js
 'use client';
 
 import { useEffect } from 'react';
 
 export default function ServiceWorkerRegistrar() {
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+      navigator.serviceWorker.register('/sw-custom.js')
         .then((registration) => {
           console.log('Service worker registered successfully:', registration);
         })

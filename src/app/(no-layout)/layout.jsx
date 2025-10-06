@@ -1,12 +1,12 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
-import RegisterServiceWorker from "../registerServiceWorker";
 import "./globals.css";
 // import Menu from "@/components/menu/menu";
 import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from "@/components/context/ThemeContext";
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
-
+import { config } from 'dotenv';
+config();
 
 export const metadata = {
   title: "Ghazalim English App",
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
       <html lang="en">
          <body>
-            <RegisterServiceWorker />
+            <ServiceWorkerRegistrar />
             <ThemeProvider>
                {/* <Menu /> */}
                <Ham />

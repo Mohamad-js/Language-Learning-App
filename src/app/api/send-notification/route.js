@@ -1,16 +1,26 @@
 import webpush from 'web-push';
-
-// Configure VAPID keys from environment variables
-webpush.setVapidDetails(
-  'mailto:your-email@example.com',
-  process.env.VAPID_PUBLIC_KEY,
-  process.env.VAPID_PRIVATE_KEY
-);
+import { config } from 'dotenv';
+config(); // Load .env file
 
 export async function POST(request) {
+  console.log('Environment variables:', process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY, process.env.VAPID_PRIVATE_KEY);
+  if (process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
+    webpush.setVapidDetails(
+      'mailto:mohamadgomar1997@gmail.com',
+      process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY,
+      process.env.VAPID_PRIVATE_KEY
+    );
+    console.log('VAPID keys set successfully');
+  } else {
+    console.warn('VAPID keys not set, skipping configuration');
+    return new Response(JSON.stringify({ success: false, error: 'VAPID keys missing' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
   try {
     const { subscription, title, body } = await request.json();
-    
     if (!subscription) {
       return new Response(JSON.stringify({ success: false, error: 'No subscription provided' }), {
         status: 400,
@@ -24,15 +34,13 @@ export async function POST(request) {
       icon: '/logo-192.png'
     });
     
-    // Send the push notification
     await webpush.sendNotification(subscription, payload);
-    
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     });
   } catch (error) {
-    console.error('Push notification error:', error);
+    console.error('Push notification error:', error.message, error.stack);
     return new Response(JSON.stringify({ success: false, error: error.message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
