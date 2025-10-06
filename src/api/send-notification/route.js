@@ -1,4 +1,3 @@
-// app/api/send-notification/route.js
 import webpush from 'web-push';
 
 // Configure VAPID keys from environment variables
