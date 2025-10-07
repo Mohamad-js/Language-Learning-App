@@ -11,7 +11,6 @@ import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
 import Aurora from "@/components/aurora/aurora";
 import NotificationButton from "@/components/NotifBtn/NotificationButton";
-import { registerPush } from "@/lib/pushNotifications";
 
 
 const Home = () => {
@@ -217,10 +216,6 @@ const Home = () => {
 
             
             <NotificationButton />
-
-            <button onClick={registerPush}>
-               Enable Push Notifications
-            </button>
          </div>
 
          {/* {isLoading && (
