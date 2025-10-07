@@ -59,47 +59,48 @@ export default function NotificationButton() {
     }
   };
 
-   const subscribeToPush = async () => {
-      if (subscribed || loading) return;
-      
-      setLoading(true);
-      setError(null);
+const subscribeToPush = async () => {
+  if (subscribed || loading) return;
 
-      try {
-         const registration = await navigator.serviceWorker.ready;
-         const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+  setLoading(true);
+  setError(null);
 
-         if (!vapidKey) {
-         throw new Error('VAPID key missing. Check environment variables.');
-         }
+  try {
+    const registration = await navigator.serviceWorker.ready;
+    const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
 
-         const sub = await registration.pushManager.subscribe({
-         userVisibleOnly: true,
-         applicationServerKey: urlBase64ToUint8Array(vapidKey)
-         });
+    if (!vapidKey) {
+      throw new Error('VAPID key missing. Check environment variables.');
+    }
 
-         // Save to API
-         const res = await fetch('/api/subscribe', {
-         method: 'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify(sub)
-         });
+    const sub = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(vapidKey),
+    });
 
-         const result = await res.json();
-         if (result.success) {
-         setSubscribed(true);
-         setSubscription(sub);
-         console.log('✅ Successfully subscribed to push notifications');
-         } else {
-         throw new Error(result.error || 'Unknown API error');
-         }
-      } catch (err) {
-         console.error('❌ Subscription failed:', err);
-         setError('Subscription failed: ' + err.message);
-      } finally {
-         setLoading(false);
-      }
-   };
+    // ✅ Save to API
+    const res = await fetch('/api/save-subscription', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(sub),
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      setSubscribed(true);
+      setSubscription(sub);
+      console.log('✅ Successfully subscribed to push notifications');
+    } else {
+      throw new Error(result.error || 'Unknown API error');
+    }
+  } catch (err) {
+    console.error('❌ Subscription failed:', err);
+    setError('Subscription failed: ' + err.message);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const sendTestNotification = async () => {
     if (!subscription) return;

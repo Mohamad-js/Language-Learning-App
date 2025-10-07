@@ -1,30 +1,78 @@
-if(!self.define){let s,e={};const a=(a,c)=>(a=new URL(a+".js",c).href,e[a]||new Promise(e=>{if("document"in self){const s=document.createElement("script");s.src=a,s.onload=e,document.head.appendChild(s)}else s=a,importScripts(a),e()}).then(()=>{let s=e[a];if(!s)throw new Error(`Module ${a} didn’t register its module`);return s}));self.define=(c,i)=>{const n=s||("document"in self?document.currentScript.src:"")||location.href;if(e[n])return;let r={};const t=s=>a(s,n),o={module:{uri:n},exports:r,require:t};e[n]=Promise.all(c.map(s=>o[s]||t(s))).then(s=>(i(...s),r))}}define(["./workbox-6f5b1947"],function(s){"use strict";importScripts(),self.skipWaiting(),s.clientsClaim(),s.precacheAndRoute([{url:"/_next/static/chunks/118-cdf740db84c27bef.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/1595-468b56de9d079c01.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/2032-e0d68b0c44a14022.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/2117-1b9dc828c14a3532.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/292-ca49db824ad2b31a.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/3878-d86895503ade0628.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/3d47b92a-e663adc9dbeef1f5.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/4213-e5f048c295be711f.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/52ab8b6c-5196a4b8ca77f52e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/53c13509-e73213a669cb1d9b.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/578c2090-bc5172d4df649b1f.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/59650de3-77977fe71175750a.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/5e22fd23-ddfe07eeb28525d8.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/619edb50-e58cea0f3a8fe574.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/6484-1f53ce027e263abf.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/6651-f7f8ea818ca51fc1.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/7648-28decf3764c8bc56.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/795d4814-66d89db3b5923f9e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/94730671-2484428a92f35642.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/9c4e2130-579356ca77e862a1.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(main-layout)/layout-db8b032076dae13e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(main-layout)/listening/page-a41991527026ae01.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(main-layout)/page-38bcc97abf0c653b.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(main-layout)/reading/page-e2612d8b2bd6934e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(main-layout)/speaking/page-fe75a27d9c8e7665.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(main-layout)/writing/page-327ab0c7f59d9f65.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/a1/%5Bslug%5D/page-a28113aa7838c20c.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/a1/page-f0a305f3a74366da.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/a2/%5Bslug%5D/page-39d71aba6ae7fbd8.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/a2/page-8048fd447283b468.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/b1/%5Bslug%5D/page-96d03ffec713c952.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/b1/page-f322bedd8831b3e1.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/b2/%5Bslug%5D/page-b6840764dafe5ddc.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/b2/page-3651a5ec8b1fc39d.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/c1/%5Bslug%5D/page-7244aa233a2d0b10.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/c1/page-b03a631e4c497286.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/c2/%5Bslug%5D/page-b1fd99c9dd2cf0c7.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/c2/page-517227f65cb14508.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/collocations/page-f0bb718d0445cb02.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/errors/page-cd787880db7c3f02.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/expressions/page-1026b2ab86fa6b2f.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/family/page-942f876ad564e7c8.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/grammar/noun/page-5d081a99870e4e5e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/grammar/page-9c9b74870bc588df.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/layout-4b238cecaa477690.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/collocations/page-4f75cc38ec3afb31.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/errors/page-06e0e5dcd4851713.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/expressions/page-361c6f2c8fa430bf.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/family/page-4806d99407cd6680.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/grammar/page-ec3a38c66e7da444.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/page-839f1ddfec5ac28d.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/synonyms/page-8e3715c117797d27.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/review/words/page-d7781b8300f57558.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/saved/page-910b9084d4036ac6.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/statistics/page-d7700b3ddbfde83e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/synonyms/page-7cab417c08108152.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/themes/page-80937928ffa9cb4e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/(no-layout)/words/page-b884201dc241ffb4.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/app/_not-found/page-e857b3732d9ed8de.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/bd904a5c-5df211930db8d6ec.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/e34aaff9-d72ae00c39e71c0c.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/eec3d76d-65891b564a2f7684.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/f7333993-bd559ada1b6dd268.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/f8025e75-fb5eadea10c5667c.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/f97e080b-9a28f4a6e803936c.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/fd9d1056-b7e5b80e4f75a358.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/framework-a63c59c368572696.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/main-89c49bccdf5c9a8e.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/main-app-29d0795647e68150.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/pages/_app-78ddf957b9a9b996.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/pages/_error-7ce03bcf1df914ce.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/chunks/polyfills-42372ed130431b0a.js",revision:"846118c33b2c0e922d7b3a7676f81f6f"},{url:"/_next/static/chunks/webpack-509d19a86c6513ba.js",revision:"r_3mEFETnQY0s1LGINBoF"},{url:"/_next/static/css/04677cc29e75cde4.css",revision:"04677cc29e75cde4"},{url:"/_next/static/css/28ac5355493cfd6c.css",revision:"28ac5355493cfd6c"},{url:"/_next/static/css/2b51fb770ec1f221.css",revision:"2b51fb770ec1f221"},{url:"/_next/static/css/2ea338f5c5dbb569.css",revision:"2ea338f5c5dbb569"},{url:"/_next/static/css/339e9dd202fc625b.css",revision:"339e9dd202fc625b"},{url:"/_next/static/css/40466e4620190b9d.css",revision:"40466e4620190b9d"},{url:"/_next/static/css/4f01b8809fc18f98.css",revision:"4f01b8809fc18f98"},{url:"/_next/static/css/61034a5dd69df7ec.css",revision:"61034a5dd69df7ec"},{url:"/_next/static/css/68c1a711fcba858f.css",revision:"68c1a711fcba858f"},{url:"/_next/static/css/6ad2eb5e4744d185.css",revision:"6ad2eb5e4744d185"},{url:"/_next/static/css/6d66dba49bd0b363.css",revision:"6d66dba49bd0b363"},{url:"/_next/static/css/70c13f386805daef.css",revision:"70c13f386805daef"},{url:"/_next/static/css/8dd7ff50b281458e.css",revision:"8dd7ff50b281458e"},{url:"/_next/static/css/942c3b3aa401d86d.css",revision:"942c3b3aa401d86d"},{url:"/_next/static/css/a50eeb31d71e524c.css",revision:"a50eeb31d71e524c"},{url:"/_next/static/css/a6d333b4c25be924.css",revision:"a6d333b4c25be924"},{url:"/_next/static/css/a9ca8cce97c2b53e.css",revision:"a9ca8cce97c2b53e"},{url:"/_next/static/css/b95cce40b9da9abb.css",revision:"b95cce40b9da9abb"},{url:"/_next/static/css/bed1149b91c5ab1e.css",revision:"bed1149b91c5ab1e"},{url:"/_next/static/css/c061b4f7846f5ccd.css",revision:"c061b4f7846f5ccd"},{url:"/_next/static/css/c35e373c43fc8c1f.css",revision:"c35e373c43fc8c1f"},{url:"/_next/static/css/c5618f933d5ded2a.css",revision:"c5618f933d5ded2a"},{url:"/_next/static/css/ef46db3751d8e999.css",revision:"ef46db3751d8e999"},{url:"/_next/static/css/fa42851b2d7e5f4c.css",revision:"fa42851b2d7e5f4c"},{url:"/_next/static/media/Vazir-Bold.8b5ce51f.ttf",revision:"8b5ce51f"},{url:"/_next/static/media/Vazir-Thin.df2f04fe.ttf",revision:"df2f04fe"},{url:"/_next/static/r_3mEFETnQY0s1LGINBoF/_buildManifest.js",revision:"0ea7e7088aabf697ba3d8aa8c7b54a89"},{url:"/_next/static/r_3mEFETnQY0s1LGINBoF/_ssgManifest.js",revision:"b6652df95db52feb4daf4eca35380933"},{url:"/fonts/Vazir-Bold.ttf",revision:"e5dd55b99484565a6737631963bf6fe7"},{url:"/fonts/Vazir-Thin.ttf",revision:"24abcd2229462232c025d90b63196a48"},{url:"/images/back/A1Back.jpg",revision:"a13c942ab686c44cfbb8131859c5cde3"},{url:"/images/back/A1Slug.jpg",revision:"db75ce985cb899ac13f7932511b989f6"},{url:"/images/back/A2Back.jpg",revision:"6c298fdc244067d3f3366e8ae4c799b9"},{url:"/images/back/A2Slug.jpg",revision:"94fb2b4410fce1c3a351a00538494a7a"},{url:"/images/back/B1Back.jpg",revision:"efe5bd2992c671707c0048217080feb9"},{url:"/images/back/B1Slug.jpg",revision:"e1d9776b191ad60329195d17ec318fbf"},{url:"/images/back/B2Back.jpg",revision:"f738ce8fd26f8cc3e7bae85c4ef089f8"},{url:"/images/back/B2Slug.jpg",revision:"f12d23a43666ed66c681d447e2ad0e27"},{url:"/images/back/C1Back.jpg",revision:"d3d5f5e925c58f1846e627a9bc1adf49"},{url:"/images/back/C1Slug.jpg",revision:"f10dc44c8ddba01fa88625adbcae7f0f"},{url:"/images/back/C2Back.jpg",revision:"09308442cd659517e07dfd1ee0b28393"},{url:"/images/back/C2Slug.jpg",revision:"09f2ab512ec8839d65d900217051035a"},{url:"/images/back/backStat.jpg",revision:"dbc020de0ed5c78758ce261cf6500164"},{url:"/images/back/backVideo.mp4",revision:"d1f1ec935871b82ac1c86f3d334513ea"},{url:"/images/back/background.jpg",revision:"2806df6c216f59c26e8975fbf4202b77"},{url:"/images/back/congrats.jpg",revision:"d3f9374e314c96a0812a99cf1541713a"},{url:"/images/back/grammar.jpg",revision:"85ae081687e1da2fae7e61a4a4aafd54"},{url:"/images/back/grammarBack.jpg",revision:"0e9f0147c687d61246c27867fdcb68f6"},{url:"/images/back/previewA1.jpg",revision:"de84bdb251189a0889daeb167f1db55e"},{url:"/images/back/previewA2.jpg",revision:"4c049cd759cd579401e119992f8e4550"},{url:"/images/back/previewB1.jpg",revision:"579d4513fed8c3603842c20332bcc31d"},{url:"/images/back/previewB2.jpg",revision:"a24a26da7264676c33e173e68216492a"},{url:"/images/back/previewC1.jpg",revision:"41981e6dff947a3ab8ef4935b2a507ba"},{url:"/images/back/previewC2.jpg",revision:"22cc8d45f8756f608cd48ebae8b893d4"},{url:"/images/back/review.jpg",revision:"6ea5693a75c792284a6ee1d48aa468a4"},{url:"/images/back/reviewBack.jpg",revision:"4dfea8e8fbb9f8ce6b5e0df5253e479e"},{url:"/images/back/updates.jpg",revision:"30723deddf7c126e11440262682fb187"},{url:"/images/illustrations/______.jpg",revision:"197e3959064226868cd99e63cfa29cf5"},{url:"/images/illustrations/act4.jpg",revision:"7679c5e5c0b3cf75249abcdbc61b64b9"},{url:"/images/illustrations/act5..jpg",revision:"7e0ba6ae47c2f40d4297d3aca7a73e07"},{url:"/images/illustrations/lock.png",revision:"a4c0a9675e0fdc28047c997ce2d4bd84"},{url:"/images/illustrations/progress.png",revision:"794df5cfee3b0dccf34621691e0474c5"},{url:"/logo-192.png",revision:"8b48b0db516f4911d8bba15c16602d4b"},{url:"/logo-512.png",revision:"a688deae0cbe056d596aa73ff4f185a0"},{url:"/manifest.json",revision:"287f3cd57439dc183b9aefa40ed4678e"},{url:"/soundTracks/LessonOne.m4a",revision:"48c6b25ce635cdc1141d7e7194f7d3a8"}],{ignoreURLParametersMatching:[]}),s.cleanupOutdatedCaches(),s.registerRoute("/",new s.NetworkFirst({cacheName:"start-url",plugins:[{cacheWillUpdate:async({request:s,response:e,event:a,state:c})=>e&&"opaqueredirect"===e.type?new Response(e.body,{status:200,statusText:"OK",headers:e.headers}):e}]}),"GET"),s.registerRoute(/^\/version\.json/i,new s.NetworkOnly({cacheName:"version",plugins:[]}),"GET"),s.registerRoute(/^\/_next\/static\/.*/i,new s.CacheFirst({cacheName:"static-assets",plugins:[new s.ExpirationPlugin({maxAgeSeconds:1209600,maxEntries:100})]}),"GET"),s.registerRoute(/^\/(?!api|_next|favicon\.ico|version\.json).*/i,new s.StaleWhileRevalidate({cacheName:"pages",plugins:[new s.ExpirationPlugin({maxAgeSeconds:1209600})]}),"GET"),s.registerRoute(/^\/api\/.*/i,new s.NetworkFirst({cacheName:"api",plugins:[new s.ExpirationPlugin({maxAgeSeconds:86400})]}),"GET")});
+import { clientsClaim } from 'workbox-core';
+import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
+import { registerRoute } from 'workbox-routing';
+import { NetworkFirst, StaleWhileRevalidate, CacheFirst, NetworkOnly } from 'workbox-strategies';
+import { ExpirationPlugin } from 'workbox-expiration';
 
-self.addEventListener('push', (event) => {
-  const data = event.data ? event.data.json() : {};
-  const options = {
-    body: data.body || 'New notification',
-    icon: '/logo-192.png',
-    badge: '/logo-192.png',
-    data: {
-      url: data.url || '/',
-    },
-  };
-  event.waitUntil(self.registration.showNotification(data.title || 'Notification', options));
+self.skipWaiting();
+clientsClaim();
+
+// --- Caching ---
+cleanupOutdatedCaches();
+precacheAndRoute(self.__WB_MANIFEST || []);
+
+// Cache pages
+registerRoute(
+  /^\/(?!api|_next|favicon\.ico|version\.json).*/i,
+  new StaleWhileRevalidate({
+    cacheName: 'pages',
+    plugins: [new ExpirationPlugin({ maxAgeSeconds: 14 * 24 * 60 * 60 })],
+  }),
+  'GET'
+);
+
+// Cache static Next.js assets
+registerRoute(
+  /^\/_next\/static\/.*/i,
+  new CacheFirst({
+    cacheName: 'static-assets',
+    plugins: [new ExpirationPlugin({ maxAgeSeconds: 14 * 24 * 60 * 60, maxEntries: 100 })],
+  }),
+  'GET'
+);
+
+// Cache API responses
+registerRoute(
+  /^\/api\/.*/i,
+  new NetworkFirst({
+    cacheName: 'api',
+    plugins: [new ExpirationPlugin({ maxAgeSeconds: 24 * 60 * 60 })],
+  }),
+  'GET'
+);
+
+// Handle version.json (for update checking)
+registerRoute(
+  /^\/version\.json/i,
+  new NetworkOnly({ cacheName: 'version' }),
+  'GET'
+);
+
+// --- Push Notifications ---
+self.addEventListener('push', event => {
+  console.log('Push event received:', event);
+  const data = event.data ? event.data.json() : { title: 'Default Title', body: 'Default Body' };
+  console.log('Push data:', data);
+
+  event.waitUntil(
+    self.registration.showNotification(data.title || 'Default Title', {
+      body: data.body || 'Default Body',
+      icon: data.icon || '/logo-192.png',
+      badge: data.badge || '/logo-192.png',
+      data: { url: data.url || '/' }
+    })
+  );
 });
 
-self.addEventListener('notificationclick', (event) => {
+self.addEventListener('notificationclick', event => {
+  console.log('Notification clicked:', event.notification);
   event.notification.close();
   event.waitUntil(
-    clients.matchAll({ type: 'window' }).then((windowClients) => {
+    clients.matchAll({ type: 'window' }).then(windowClients => {
       for (const client of windowClients) {
-        if (client.url === event.notification.data.url && 'focus' in client) {
-          return client.focus();
-        }
+        if (client.url === event.notification.data.url && 'focus' in client) return client.focus();
       }
-      if (clients.openWindow) {
-        return clients.openWindow(event.notification.data.url);
-      }
+      if (clients.openWindow) return clients.openWindow(event.notification.data.url);
     })
   );
 });
