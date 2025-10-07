@@ -12,6 +12,14 @@ import { useTheme } from "@/components/context/ThemeContext";
 import Aurora from "@/components/aurora/aurora";
 import NotificationButton from "@/components/NotifBtn/NotificationButton";
 
+// ✅ Utility for VAPID key conversion
+function urlBase64ToUint8Array(base64String) {
+   const padding = '='.repeat((4 - base64String.length % 4) % 4);
+   const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+   const rawData = atob(base64);
+   return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0)));
+}
+
 
 const Home = () => {
    const { lightTheme } = useTheme();
@@ -92,6 +100,62 @@ const Home = () => {
    }, []);
 
    const darkColor = darkMode ? { color: 'white' } : {};
+
+   useEffect(() => {
+      async function registerPushNotifications() {
+         if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+            console.warn('❌ Push notifications are not supported in this browser.');
+            return;
+         }
+
+         try {
+            const registration = await navigator.serviceWorker.ready;
+
+            const permission = await Notification.requestPermission();
+            if (permission !== 'granted') {
+            console.warn('🚫 Notification permission denied by user.');
+            return;
+            }
+
+            const existingSubscription = await registration.pushManager.getSubscription();
+            if (!existingSubscription) {
+            const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+            if (!vapidPublicKey) {
+               console.error('❌ Missing NEXT_PUBLIC_VAPID_PUBLIC_KEY in environment variables.');
+               return;
+            }
+
+            const subscription = await registration.pushManager.subscribe({
+               userVisibleOnly: true,
+               applicationServerKey: urlBase64ToUint8Array(vapidPublicKey),
+            });
+
+            console.log('✅ New push subscription created:', subscription);
+
+            // Send subscription to your backend
+            const res = await fetch('/api/subscribe', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(subscription),
+            });
+
+            const result = await res.json();
+            if (result.success) {
+               console.log('📡 Subscription saved successfully.');
+            } else {
+               console.error('⚠️ Failed to save subscription:', result.error);
+            }
+            } else {
+            console.log('ℹ️ Already subscribed to push notifications.');
+            }
+         } catch (error) {
+            console.error('❌ Error setting up push notifications:', error);
+         }
+      }
+
+      registerPushNotifications();
+   }, []);
+
 
 
    return (
