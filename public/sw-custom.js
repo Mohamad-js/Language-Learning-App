@@ -7,72 +7,65 @@ import { ExpirationPlugin } from 'workbox-expiration';
 self.skipWaiting();
 clientsClaim();
 
-// --- Caching ---
+// 🧹 Caching
 cleanupOutdatedCaches();
 precacheAndRoute(self.__WB_MANIFEST || []);
 
-// Cache pages
-registerRoute(
-  /^\/(?!api|_next|favicon\.ico|version\.json).*/i,
-  new StaleWhileRevalidate({
-    cacheName: 'pages',
-    plugins: [new ExpirationPlugin({ maxAgeSeconds: 14 * 24 * 60 * 60 })],
-  }),
-  'GET'
-);
+// Cache API routes
+registerRoute(/^\/api\/.*/i, new NetworkFirst({ cacheName: 'api' }));
 
-// Cache static Next.js assets
-registerRoute(
-  /^\/_next\/static\/.*/i,
-  new CacheFirst({
-    cacheName: 'static-assets',
-    plugins: [new ExpirationPlugin({ maxAgeSeconds: 14 * 24 * 60 * 60, maxEntries: 100 })],
-  }),
-  'GET'
-);
+// ✅ Push Notifications
+self.addEventListener('push', (event) => {
+  console.log('📩 Push event received:', event);
 
-// Cache API responses
-registerRoute(
-  /^\/api\/.*/i,
-  new NetworkFirst({
-    cacheName: 'api',
-    plugins: [new ExpirationPlugin({ maxAgeSeconds: 24 * 60 * 60 })],
-  }),
-  'GET'
-);
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch (err) {
+    console.error('❌ Failed to parse push data:', err);
+  }
 
-// Handle version.json (for update checking)
-registerRoute(
-  /^\/version\.json/i,
-  new NetworkOnly({ cacheName: 'version' }),
-  'GET'
-);
+  const title = data.title || 'Default Notification';
+  const body = data.body || 'You got a new message!';
+  const icon = data.icon || '/logo-192.png';
+  const url = data.url || '/';
 
-// --- Push Notifications ---
-self.addEventListener('push', event => {
-  console.log('Push event received:', event);
-  const data = event.data ? event.data.json() : { title: 'Default Title', body: 'Default Body' };
-  console.log('Push data:', data);
+  console.log('🧠 Notification details:', { title, body, icon, url });
+
+  const options = {
+    body,
+    icon,
+    badge: '/logo-192.png',
+    data: { url },
+    vibrate: [100, 50, 100],
+    actions: [
+      { action: 'open', title: 'Open App' },
+      { action: 'dismiss', title: 'Dismiss' },
+    ],
+  };
 
   event.waitUntil(
-    self.registration.showNotification(data.title || 'Default Title', {
-      body: data.body || 'Default Body',
-      icon: data.icon || '/logo-192.png',
-      badge: data.badge || '/logo-192.png',
-      data: { url: data.url || '/' }
-    })
+    self.registration.showNotification(title, options)
   );
 });
 
-self.addEventListener('notificationclick', event => {
-  console.log('Notification clicked:', event.notification);
+// ✅ Handle clicks
+self.addEventListener('notificationclick', (event) => {
+  console.log('🖱 Notification clicked:', event.notification);
   event.notification.close();
+
+  const targetUrl = event.notification.data?.url || '/';
+
   event.waitUntil(
-    clients.matchAll({ type: 'window' }).then(windowClients => {
-      for (const client of windowClients) {
-        if (client.url === event.notification.data.url && 'focus' in client) return client.focus();
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      for (const client of clientList) {
+        if (client.url === targetUrl && 'focus' in client) {
+          return client.focus();
+        }
       }
-      if (clients.openWindow) return clients.openWindow(event.notification.data.url);
+      if (clients.openWindow) {
+        return clients.openWindow(targetUrl);
+      }
     })
   );
 });
