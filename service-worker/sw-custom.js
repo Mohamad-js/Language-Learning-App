@@ -1,7 +1,7 @@
 import { clientsClaim } from 'workbox-core';
 import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { NetworkFirst, StaleWhileRevalidate, CacheFirst, NetworkOnly } from 'workbox-strategies';
+import { NetworkFirst, CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
 
 self.skipWaiting();
@@ -11,8 +11,42 @@ clientsClaim();
 cleanupOutdatedCaches();
 precacheAndRoute(self.__WB_MANIFEST || []);
 
-// Cache API routes
-registerRoute(/^\/api\/.*/i, new NetworkFirst({ cacheName: 'api' }));
+// ✅ Cache API routes — expires after 30 entries or 7 days
+registerRoute(
+  /^\/api\/.*/i,
+  new NetworkFirst({
+    cacheName: 'api-cache',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 30,
+        maxAgeSeconds: 7 * 24 * 60 * 60, // 7 days
+      }),
+    ],
+  })
+);
+
+// ✅ Cache images — expires after 60 images or 30 days
+registerRoute(
+  ({ request }) => request.destination === 'image',
+  new CacheFirst({
+    cacheName: 'image-cache',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+      }),
+    ],
+  })
+);
+
+// ✅ Cache static assets (CSS, JS, fonts) with Stale-While-Revalidate
+registerRoute(
+  ({ request }) =>
+    ['script', 'style', 'font'].includes(request.destination),
+  new StaleWhileRevalidate({
+    cacheName: 'static-resources',
+  })
+);
 
 // ✅ Push Notifications
 self.addEventListener('push', (event) => {
@@ -42,14 +76,16 @@ self.addEventListener('push', (event) => {
       { action: 'open', title: 'Open App' },
       { action: 'dismiss', title: 'Dismiss' },
     ],
+    requireInteraction: true,
   };
 
+  console.log('🪄 Showing notification now...');
   event.waitUntil(
     self.registration.showNotification(title, options)
   );
 });
 
-// ✅ Handle clicks
+// ✅ Handle notification clicks
 self.addEventListener('notificationclick', (event) => {
   console.log('🖱 Notification clicked:', event.notification);
   event.notification.close();
@@ -59,13 +95,12 @@ self.addEventListener('notificationclick', (event) => {
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
       for (const client of clientList) {
-        if (client.url === targetUrl && 'focus' in client) {
+        if (client.url.includes(targetUrl) && 'focus' in client) {
           return client.focus();
         }
       }
-      if (clients.openWindow) {
-        return clients.openWindow(targetUrl);
-      }
+      if (clients.openWindow) return clients.openWindow(targetUrl);
     })
   );
 });
+

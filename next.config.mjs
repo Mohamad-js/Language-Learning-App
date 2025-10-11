@@ -5,7 +5,7 @@ const withPWA = withPWAInit({
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === 'development',
-  swSrc: 'public/sw-custom.js', // your custom source file
+  swSrc: 'service-worker/sw-custom.js', // ✅ this points to your custom source file
   buildExcludes: [
     /app-build-manifest\.json$/,
     /middleware-manifest\.json$/,

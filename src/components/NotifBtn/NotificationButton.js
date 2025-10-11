@@ -10,27 +10,32 @@ export default function NotificationButton() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Check initial state
   useEffect(() => {
+    console.log('Initial notification permission:', Notification.permission);
     if ('Notification' in window) {
       setPermission(Notification.permission);
     }
+
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.ready
-        .then(reg => reg.pushManager.getSubscription())
-        .then(sub => {
+        .then((reg) => {
+          console.log('Service worker ready:', reg);
+          return reg.pushManager.getSubscription();
+        })
+        .then((sub) => {
           if (sub) {
+            console.log('Existing subscription found:', sub);
             setSubscribed(true);
             setSubscription(sub);
           }
         })
-        .catch(err => console.warn('Could not check subscription:', err));
+        .catch((err) => console.error('Could not check subscription:', err));
     }
   }, []);
 
-  // Auto-subscribe when permission becomes 'granted'
   useEffect(() => {
     if (permission === 'granted' && !subscribed && !loading) {
+      console.log('Auto-subscribing to push notifications...');
       subscribeToPush();
     }
   }, [permission, subscribed, loading]);
@@ -51,69 +56,87 @@ export default function NotificationButton() {
   const requestPermission = async () => {
     setError(null);
     if ('Notification' in window) {
-      const perm = await Notification.requestPermission();
-      setPermission(perm);
-      if (perm !== 'granted') {
-        setError('Permission denied. Please enable notifications in your browser settings.');
+      console.log('Requesting notification permission...');
+      try {
+        const perm = await Notification.requestPermission();
+        console.log('Permission result:', perm);
+        setPermission(perm);
+        if (perm !== 'granted') {
+          setError('Notification permission denied by user.');
+          console.log('🚫 Notification permission denied by user.');
+        }
+      } catch (err) {
+        console.error('Error requesting permission:', err);
+        setError('Error requesting permission: ' + err.message);
       }
+    } else {
+      setError('Notifications not supported in this browser.');
     }
   };
 
-const subscribeToPush = async () => {
-  if (subscribed || loading) return;
+  const subscribeToPush = async () => {
+    if (subscribed || loading) return;
 
-  setLoading(true);
-  setError(null);
+    setLoading(true);
+    setError(null);
 
-  try {
-    const registration = await navigator.serviceWorker.ready;
-    const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+    try {
+      console.log('Waiting for service worker to be ready...');
+      const registration = await navigator.serviceWorker.ready;
+      console.log('Service worker ready:', registration);
 
-    if (!vapidKey) {
-      throw new Error('VAPID key missing. Check environment variables.');
+      const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+      if (!vapidKey) throw new Error('Missing VAPID public key.');
+      console.log('VAPID key:', vapidKey);
+
+      console.log('Subscribing to push...');
+      const sub = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey),
+      });
+      console.log('Push subscription created:', sub);
+
+      console.log('Saving subscription to backend...');
+      const res = await fetch('/api/save-subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(sub),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        setSubscribed(true);
+        setSubscription(sub);
+        console.log('✅ Successfully subscribed to push notifications');
+      } else {
+        throw new Error(result.error || 'Failed to save subscription.');
+      }
+    } catch (err) {
+      console.error('❌ Subscription failed:', err);
+      setError('Subscription failed: ' + err.message);
+    } finally {
+      setLoading(false);
     }
-
-    const sub = await registration.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array(vapidKey),
-    });
-
-    // ✅ Save to API
-    const res = await fetch('/api/save-subscription', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(sub),
-    });
-
-    const result = await res.json();
-    if (result.success) {
-      setSubscribed(true);
-      setSubscription(sub);
-      console.log('✅ Successfully subscribed to push notifications');
-    } else {
-      throw new Error(result.error || 'Unknown API error');
-    }
-  } catch (err) {
-    console.error('❌ Subscription failed:', err);
-    setError('Subscription failed: ' + err.message);
-  } finally {
-    setLoading(false);
-  }
-};
-
+  };
 
   const sendTestNotification = async () => {
-    if (!subscription) return;
+    if (!subscription) {
+      alert('You are not subscribed yet.');
+      return;
+    }
+
     try {
+      console.log('Sending test notification...');
       const res = await fetch('/api/send-notification', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subscription,
           title: 'Test Notification',
-          body: 'Your push setup is working! 🎉'
-        })
+          body: 'Your push setup is working! 🎉',
+        }),
       });
+
       const result = await res.json();
       if (result.success) {
         alert('Test notification sent! Check your device.');
@@ -128,29 +151,61 @@ const subscribeToPush = async () => {
   return (
     <div style={{ padding: '10px', margin: '10px 0' }}>
       {error && (
-        <div style={{ color: 'red', padding: '8px', backgroundColor: '#ffe6e6', borderRadius: '4px', marginBottom: '10px' }}>
+        <div
+          style={{
+            color: 'red',
+            padding: '8px',
+            backgroundColor: '#ffe6e6',
+            borderRadius: '4px',
+            marginBottom: '10px',
+          }}
+        >
           {error}
         </div>
       )}
 
       {!subscribed && permission !== 'granted' && (
-        <button onClick={requestPermission} style={{ padding: '10px 16px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px' }}>
+        <button
+          onClick={requestPermission}
+          style={{
+            padding: '10px 16px',
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+          }}
+        >
           Enable Notifications
         </button>
       )}
 
       {permission === 'granted' && !subscribed && (
-        <button 
-          onClick={subscribeToPush} 
+        <button
+          onClick={subscribeToPush}
           disabled={loading}
-          style={{ padding: '10px 16px', backgroundColor: loading ? '#6c757d' : '#28a745', color: 'white', border: 'none', borderRadius: '4px' }}
+          style={{
+            padding: '10px 16px',
+            backgroundColor: loading ? '#6c757d' : '#28a745',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+          }}
         >
           {loading ? 'Subscribing...' : 'Subscribe to Push Notifications'}
         </button>
       )}
 
       {subscribed && (
-        <button onClick={sendTestNotification} style={{ padding: '10px 16px', backgroundColor: '#17a2b8', color: 'white', border: 'none', borderRadius: '4px' }}>
+        <button
+          onClick={sendTestNotification}
+          style={{
+            padding: '10px 16px',
+            backgroundColor: '#17a2b8',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+          }}
+        >
           Send Test Notification
         </button>
       )}
