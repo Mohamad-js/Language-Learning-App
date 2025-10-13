@@ -11,7 +11,7 @@ import Back from '@/components/backButton/back';
 function Words(){
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
-   const totalImages = 1;
+   const totalImages = 1
 
    const router = useRouter()
    useEffect(() => {

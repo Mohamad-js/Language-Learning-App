@@ -10,9 +10,9 @@ import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
 import Aurora from "@/components/aurora/aurora";
-import NotificationButton from "@/components/NotifBtn/NotificationButton";
 
-// ✅ Utility for VAPID key conversion
+
+
 function urlBase64ToUint8Array(base64String) {
    const padding = '='.repeat((4 - base64String.length % 4) % 4);
    const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
@@ -214,7 +214,7 @@ const Home = () => {
                            <div className={styles.actBtn} style={darkColor}>Vocabulary</div>
                            <div className={styles.info}>
                               <div className={styles.infoText}>6 CEFR Levels</div>
-                              <div className={styles.infoText}>5000 Words</div>
+                              <div className={styles.infoText}>6330 Words</div>
                            </div>
                         </div>
                      </Link>
@@ -279,7 +279,6 @@ const Home = () => {
             </div>
 
             
-            <NotificationButton />
          </div>
 
          {/* {isLoading && (

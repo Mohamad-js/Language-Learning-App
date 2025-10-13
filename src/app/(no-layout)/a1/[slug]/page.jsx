@@ -25,8 +25,9 @@ export default function Lessons({ params }) {
    const [btn, setBtn] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
    const [savedA1Vocabs, setSavedA1Vocabs] = useState([])
-   const [confirmBox, setConfirmBox] = useState(false)
-   const [cancelBox, setCancelBox] = useState(false)
+   const [showPrompt, setShowPrompt] = useState(false)
+   const [confirm, setConfirm] = useState(null)
+   const [cancel, setCancel] = useState(null)
    const [close, setClose] = useState(false)
    const [appear, setAppear] = useState(false)
    const [fade, setFade] = useState(false)
@@ -40,7 +41,7 @@ export default function Lessons({ params }) {
    const [anime, setAnime] = useState(false)
    const [btnPressed, setBtnPressed] = useState(null)
    const [preview, setPreview] = useState(false) // NEW
-   
+
 
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -221,11 +222,16 @@ export default function Lessons({ params }) {
             return !(item.word === ws.word.word && item.role === ws.word.role)
          }))
 
-         setCancelBox(true)
+         setShowPrompt(true)
+         setConfirm(true)
 
          setTimeout(() => {
-            setCancelBox(false);
+            setShowPrompt(false);
          }, 3000);
+
+         setTimeout(() => {
+            setConfirm(false);
+         }, 4000);
 
       } else {
          setSavedA1Vocabs((prev) => [
@@ -233,11 +239,17 @@ export default function Lessons({ params }) {
             foundWord[0]
          ])
 
-         setConfirmBox(true)
+         setShowPrompt(true)
+         setCancel(true)
 
          setTimeout(() => {
-            setConfirmBox(false);
+            setShowPrompt(false);
          }, 3000);
+
+         
+         setTimeout(() => {
+            setCancel(false);
+         }, 4000);
       }
    }
    
@@ -424,6 +436,7 @@ export default function Lessons({ params }) {
    }
 
 
+
    return (
       <div className={styles.container}>
 
@@ -573,29 +586,37 @@ export default function Lessons({ params }) {
    
          {stage === 'learning' && (
          <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}>
+
+            <Image className={styles.image}
+               src='/images/back/learnA1.png'
+               fill
+               alt='background'
+            />
+
             {(() => {
                const learningWords = [...unknownWords]; // ...partialWords WAS DELETED
                const ws = learningWords[learningWordIndex];
                return (
                <>
-                  <div className={styles.actionsHolder}>
-                     <p className={styles.title}>The words you need to learn</p>
-                     <p className={styles.actions} onClick={() => saveHandle(ws)}>
-                        {  
-                           (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark className={styles.save}/> : <FaRegBookmark className={styles.save}/>  
-                        }
-                     </p>
-                  </div>
                   <div className={styles.wordBlock}>
                      <div className={styles.wordHolder}>
-                        <p className={styles.wordTitle}>{ws.word.word}</p>
+                        <div className={styles.mainWord}>
+                           <p className={styles.wordTitle}>{ws.word.word}</p>
+                           <div className={styles.actions} onClick={() => saveHandle(ws)}>
+                              {  
+                                 (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark className={styles.save}/> : <FaRegBookmark className={styles.save}/>  
+                              }
+                           </div>
+                        </div>
                         <div className={styles.infoHolder}>
                            <p className={styles.phonetics}>American: {ws.word.AmE}</p>
                            <p className={styles.phonetics}>British: {ws.word.BrE}</p>
                         </div>
                         <div className={styles.role}>{ws.word.role}</div>
                      </div>
+
                      <div className={styles.definition}>{ws.word.definition}</div>
+
                      <div className={styles.examplesHolder}>
                         <p><strong>Examples:</strong></p>
                         <ul className={styles.examplesList}>
@@ -642,8 +663,18 @@ export default function Lessons({ params }) {
                            </div>
                      }
                   </div>
+                  
+                  <div className={`${styles.confirmDefault} ${showPrompt && styles.confirmShow}`}>
+                     <div className={styles.confirmMsg}>
+                        {
+                           confirm ? 'Removed Successfully' : 'Saved Successfully'
+                        }
+                     </div>
+                     <div className={styles.cancelBtn} onClick={() => saveHandle(ws)}>Undo</div>
+                  </div>
                </>
                );
+
             })()}
          </div>
          )}
@@ -687,14 +718,9 @@ export default function Lessons({ params }) {
             </div>
          </div>
       )}
+      
 
       {
-         confirmBox ? <div className={styles.confirm}>Saved Successfully</div>
-         :
-         cancelBox ? <div  className={styles.cancel}>Removed Successfully</div> : null
-      }
-
-      { // NEW
          showCongrats &&
          <>
             showConfetti ? <Confetti /> : null

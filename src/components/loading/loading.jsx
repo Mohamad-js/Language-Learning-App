@@ -16,7 +16,7 @@ function Loader(){
             <span></span>
             <span></span>
          </div>
-         <div className={styles.loaderText}>loading</div>
+         <div className={styles.loaderText}>LOADING</div>
       </div>
    )
 }
