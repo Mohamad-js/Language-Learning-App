@@ -588,7 +588,7 @@ export default function Lessons({ params }) {
          <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}>
 
             <Image className={styles.image}
-               src='/images/back/learnA1.png'
+               src='/images/back/LearnA1.jpg'
                fill
                alt='background'
             />
