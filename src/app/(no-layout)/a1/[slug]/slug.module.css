@@ -21,7 +21,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       z-index: 2;
    }
    
@@ -620,163 +619,158 @@
    }
 }
 
-   .learnCard {
+.learnCard {
+   position: absolute;
+   opacity: 0;
+   top: 50px;
+   height: 100dvh;
+   padding: 15px;
+   width: 100%;
+   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+   overflow: hidden;
+   
+   .image {
+      object-fit: cover;
+      z-index: 0;
+      object-position: right;
+   }
+   
+   .actionsHolder {
       position: absolute;
-      opacity: 0;
-      top: 50px;
-      background-color: rgba(255, 255, 255, 0.2);
-      height: 100dvh;
-      padding: 15px;
+      top: 10px;
+      left: 0;
+      padding-left: 15px;
       width: 100%;
-      color: white;
-      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-      overflow: hidden;
-
-      .image {
-         object-fit: cover;
-         z-index: 0;
+      height: fit-content;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      
+      
+      .title {
+         font-size: 15px;
+         font-weight: 700;
       }
       
-      .actionsHolder {
-         position: absolute;
-         top: 10px;
-         left: 0;
-         padding-left: 15px;
+
+   }
+
+
+   .wordBlock {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: flex-end;
+      align-items: start;
+      padding-bottom: 100px;
+      
+      
+      .wordHolder {
          width: 100%;
+         display: flex;
          height: fit-content;
-         display: flex;
-         justify-content: space-between;
-         align-items: start;
-         
-         
-         .title {
-            font-size: 15px;
-            font-weight: 700;
-         }
-         
-
-      }
-
-
-      .wordBlock {
-         height: 100%;
-         display: flex;
          flex-direction: column;
-         justify-content: flex-end;
-         align-content: flex-end;
          align-items: start;
-         gap: 30px;
-         color: rgb(255, 255, 255);
-         padding-bottom: 100px;
-
+         z-index: 1;
          
-         .wordHolder {
+         .mainWord {
             width: 100%;
             display: flex;
-            height: fit-content;
-            flex-direction: column;
-            align-items: start;
-            z-index: 1;
-            
-            .mainWord {
-               width: 100%;
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
+            justify-content: flex-start;
+            align-items: center;
 
-               .actions {
-                  width: 50px;
-                  height: 30px;
+            .actions {
+               width: 50px;
+               height: 30px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               
+               .save {
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  
-                  .save {
-                     display: flex;
-                     justify-content: center;
-                     align-items: center;
-                     font-size: 25px;
-                  }
-               }
-            }
-            
-            
-            .wordTitle {
-               font-size: 50px;
-               height: 70px;
-               color: #ffffff;
-
-            }
-
-            .infoHolder {
-               width: 100%;
-               display: flex;
-               gap: 20px;
-               
-               
-               .phonetics {
-                  font-size: 15px;
-               }
-            }
-
-            .role {
-               font: arial 20px;
-            }
-         }
-         
-         .btnHolder {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            padding: 20px;
-            width: 100%;
-            height: fit-content;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            
-
-            .button {
-               padding: 5px 25px;
-               font-size: 13px;
-               font-weight: 700;
-               border-radius: 10px;
-               color: rgb(0, 0, 0);
-               background-color: rgb(255, 255, 255);
-               cursor: pointer;
-               bottom: 0;
-               transition: background-color 0.2s;
-
-               &:active {
-                  background-color: white;
+                  font-size: 25px;
                }
             }
          }
          
-         .definition {
-            height: 50px;
-            width: 100%;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            z-index: 1;
-            font-weight: 1000;
-         }
          
-         .examplesHolder {
+         .wordTitle {
+            font-size: 50px;
+            height: 70px;
+
+         }
+
+         .infoHolder {
             width: 100%;
-            z-index: 1;
-            height: fit-content;
+            gap: 20px;
             
-            .examplesList {
-               display: flex;
-               flex-direction: column;
-               gap: 5px;
-               list-style-type: disc;
-               padding-left: 1.25rem;
+            
+            .phonetics {
+               font-size: 15px;
             }
          }
 
-
+         .role {
+            font: arial 20px;
+         }
       }
+      
+      .btnHolder {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         padding: 20px;
+         width: 100%;
+         height: fit-content;
+         display: flex;
+         justify-content: center;
+         gap: 10px;
+         
+
+         .button {
+            padding: 5px 25px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+            bottom: 0;
+            transition: background-color 0.2s;
+
+            &:active {
+               background-color: white;
+            }
+         }
+      }
+      
+      .definition {
+         height: 50px;
+         width: 100%;
+         font-size: 20px;
+         display: flex;
+         align-items: center;
+         z-index: 1;
+         font-weight: 1000;
+      }
+      
+      .examplesHolder {
+         width: 100%;
+         z-index: 1;
+         height: fit-content;
+         
+         .examplesList {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            list-style-type: disc;
+            padding-left: 1.25rem;
+         }
+      }
+
+
    }
+}

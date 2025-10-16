@@ -8,10 +8,14 @@ import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';
 import Loader from '@/components/loading/loading';
 import { a1WordList } from '@/data/a1WordList';
+import { useTheme } from "@/components/context/ThemeContext";
 
 
 
 export default function Lessons({ params }) {
+   const { lightTheme } = useTheme();
+   const darkMode = !lightTheme;
+
    const [wordList, setwordList] = useState(null)
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
@@ -447,8 +451,13 @@ export default function Lessons({ params }) {
             onLoad={handleImageLoad}
          />
 
-         <div className={styles.lessonTitle}>Lesson {lessonNumber}</div>
-         <div className={styles.lessonLevel}>A1</div>
+         <div className={styles.lessonTitle}
+            style={darkMode ? {color: 'white'} : {}}
+         >Lesson {lessonNumber}</div>
+
+         <div className={styles.lessonLevel}
+            style={darkMode ? {color: 'white'} : {}}
+         >A1</div>
 
          {stage === 'assessment' && (
 
@@ -585,16 +594,26 @@ export default function Lessons({ params }) {
          }
    
          {stage === 'learning' && (
-         <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}>
-
-            <Image className={styles.image}
-               src='/images/back/LearnA1.jpg'
-               fill
-               alt='background'
-            />
+         <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}
+            style={darkMode ? {color: 'white'} : {}}
+         >
+            {
+               darkMode ? 
+               <Image className={styles.image}
+                  src='/images/back/DarkLearnA1.jpg'
+                  fill
+                  alt='background'
+               />
+               :
+               <Image className={styles.image}
+                  src='/images/back/A1LearnSection.jpg'
+                  fill
+                  alt='background'
+               />
+            }
 
             {(() => {
-               const learningWords = [...unknownWords]; // ...partialWords WAS DELETED
+               const learningWords = [...unknownWords];
                const ws = learningWords[learningWordIndex];
                return (
                <>
