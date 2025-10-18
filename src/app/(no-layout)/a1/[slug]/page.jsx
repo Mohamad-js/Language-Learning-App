@@ -444,12 +444,24 @@ export default function Lessons({ params }) {
    return (
       <div className={styles.container}>
 
-         <Image className={styles.img}
-            src= '/images/back/A1Slug.jpg'
-            alt= 'background image'
-            fill
-            onLoad={handleImageLoad}
-         />
+         {
+            darkMode ?
+            <Image className={styles.img}
+               src= '/images/back/A1SlugDark.jpg'
+               alt= 'background image'
+               fill
+               onLoad={handleImageLoad}
+            />
+            :
+            <Image className={styles.img}
+               src= '/images/back/A1Slug.jpg'
+               alt= 'background image'
+               fill
+               onLoad={handleImageLoad}
+            />
+
+         }
+
 
          <div className={styles.lessonTitle}
             style={darkMode ? {color: 'white'} : {}}
@@ -462,7 +474,9 @@ export default function Lessons({ params }) {
          {stage === 'assessment' && (
 
          <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
-            <div className={styles.titleHolder}>
+            <div className={styles.titleHolder}
+               style={darkMode ? {color: 'white'} : {}}
+            >
                <h2 className={styles.check}>Knowledge Check</h2>
                <p className={styles.prompt}>Swipe right if you know the word.</p>
                <p className={styles.prompt}>Swipe left if you need to learn the word.</p>
@@ -568,7 +582,7 @@ export default function Lessons({ params }) {
          {
             stage === 'shiftMsg' && (
                <div className={`${styles.shiftCard} ${appear && styles.appear}`}>
-                  <div>Time to Learn the New Words</div>
+                  <div style={darkMode ? {color: 'white'} : {}}>Time to Learn the New Words</div>
                   <button className={styles.start}
                      onClick={startLearning}
                   >START</button>
@@ -603,12 +617,16 @@ export default function Lessons({ params }) {
                   src='/images/back/DarkLearnA1.jpg'
                   fill
                   alt='background'
+                  onLoad={handleImageLoad}
+
                />
                :
                <Image className={styles.image}
                   src='/images/back/A1LearnSection.jpg'
                   fill
                   alt='background'
+                  onLoad={handleImageLoad}
+
                />
             }
 

@@ -382,7 +382,6 @@
    }
 }
 
-/* components/Flashcard.module.css */
 .assessCard {
    display: flex;
    flex-direction: column;
@@ -402,7 +401,6 @@
 
 
       .check {
-         color: black;
          text-align: center;
          margin-bottom: 10px;
       }
@@ -410,7 +408,6 @@
       
       .prompt {
          text-align: center;
-         color: black;
          font-weight: 600;
       }
    }
@@ -770,7 +767,5 @@
             padding-left: 1.25rem;
          }
       }
-
-
    }
 }

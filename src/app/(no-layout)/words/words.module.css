@@ -54,6 +54,14 @@
             background-color: white;
          }
       }
+      
+      .levelDark {
+         background-color: rgb(70, 0, 144);
+         
+         &:active {
+            background-color: rgb(48, 0, 98);
+         }
+      }
    }
 
    & .programmer {

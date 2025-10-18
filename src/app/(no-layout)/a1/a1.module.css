@@ -207,7 +207,7 @@
          }
 
          .number {
-            color: rgb(141, 0, 101);
+            color: rgb(110, 0, 79);
             font-size: 20px;
             z-index: 1;
          }
@@ -217,7 +217,7 @@
             left: 0;
             bottom: 0;
             z-index: 0;
-            background-color: rgba(255, 0, 183, 0.3);
+            background-color: rgba(255, 0, 183, 0.502);
             height: 100%;
             transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
          }

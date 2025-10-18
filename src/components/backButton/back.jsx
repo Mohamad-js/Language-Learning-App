@@ -4,21 +4,15 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import ConfirmDialogue from '../confirmDialogue/confirmDialogue';
-
+import { useTheme } from '../context/ThemeContext';
 
 
 function Back({preventNavigation, warning, preview, goTo}){
+   const { lightTheme } = useTheme();
+   const darkMode = !lightTheme;
+   
    const router = useRouter()
    const [message, setMessage] = useState()
-
-   const pathname = usePathname()
-
-   const whiteColor =
-   pathname == '/grammar/noun' ? styles.newStyle :
-   pathname == '/a2' ? styles.newStyle :
-   pathname == '/b2' ? styles.newStyle :
-   pathname == '/c2' ? styles.newStyle :
-   pathname == '/statistics' ? styles.newStyle : null
 
    useEffect(() => {
       if(preview){
@@ -41,7 +35,7 @@ function Back({preventNavigation, warning, preview, goTo}){
 
    return(
       <div className={styles.container}>
-         <div className={`${styles.backHolder} ${whiteColor}`} onClick={handleBack}>
+         <div className={`${styles.backHolder} ${darkMode && styles.newStyle}`} onClick={handleBack}>
             <IoIosArrowBack className={styles.backSign} />
             <div className={styles.backText}>Back</div>
          </div>

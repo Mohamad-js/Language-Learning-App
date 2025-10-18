@@ -7,10 +7,13 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';
-
+import { useTheme } from '@/components/context/ThemeContext';
 
 
 function A1() {
+   const { lightTheme } = useTheme();
+   const darkMode = !lightTheme;
+
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
@@ -90,17 +93,30 @@ function A1() {
 
    return (
       <div className={styles.container}>
-         <Image
-            className={styles.background}
-            src="/images/back/A1Back.jpg"
-            alt=""
-            fill
-            onLoad={handleImageLoad}
-         />
+         {
+            darkMode ?
+            <Image
+               className={styles.background}
+               src="/images/back/A1Dark.jpg"
+               alt=""
+               fill
+               onLoad={handleImageLoad}
+            />
+            :
+            <Image
+               className={styles.background}
+               src="/images/back/A1Back.jpg"
+               alt=""
+               fill
+               onLoad={handleImageLoad}
+            />
+         }
 
          <Back />
 
-         <div className={styles.top}>
+         <div className={styles.top}
+            style={darkMode ? {color: 'white'} : {}}
+         >
             <div className={styles.mainTitle}>A1 Vocabulary</div>
             <div className={styles.subtitle}>Read and Practice the Words</div>
          </div>
@@ -119,11 +135,16 @@ function A1() {
                   <div
                      className={styles.lessonsHolder}
                      key={lessonNumber}
+                     style={darkMode ? {backgroundColor: '#ad0093'} : {}}
                   >
                      <div className={styles.dataHolder}>
-                        <div className={styles.lesson}>Lesson {lessonNumber}</div>
+                        <div className={styles.lesson}
+                           style={darkMode ? {color: '#ff7ee3'} : {}}
+                        >Lesson {lessonNumber}</div>
                         {isNew ? (
-                           <div className={styles.newLesson}>New Lesson</div>
+                           <div className={styles.newLesson}
+                              style={darkMode ? {color: 'white'} : {}}
+                           >New Lesson</div>
                         ) : (
                            <div className={styles.lessonWaiting}>Locked</div>
                         )}
@@ -141,8 +162,13 @@ function A1() {
 
                   </div>
                ) : (
-                  <div className={`${styles.lessonsHolder} ${styles.disabled}`} key={lessonNumber}>
-                     <div className={styles.lesson}>Lesson {lessonNumber}</div>
+                  <div className={`${styles.lessonsHolder} ${styles.disabled}`}
+                     key={lessonNumber}
+                     style={darkMode ? {backgroundColor: '#040071'} : {}}
+                  >
+                     <div className={styles.lesson}
+                        style={darkMode ? {color: 'white'} : {}}
+                     >Lesson {lessonNumber}</div>
                      {isDone ? (
                         <div className={styles.lessonDone}>
                            <button className={styles.lessonBtn}>
@@ -151,9 +177,13 @@ function A1() {
                            <TiTick className={styles.tick}/>
                         </div>
                      ) : isNew ? (
-                        <div className={styles.newLesson}>New Lesson</div>
+                        <div className={styles.newLesson}
+                           style={darkMode ? {color: 'white'} : {}}
+                        >New Lesson</div>
                      ) : (
-                        <div className={styles.lessonWaiting}>Locked</div>
+                        <div className={styles.lessonWaiting}
+                           style={darkMode ? {color: '#8f8fff'} : {}}
+                        >Locked</div>
                      )}
                   </div>
                );
@@ -162,8 +192,12 @@ function A1() {
 
             {
                nextLesson !== 1 &&
-               <div className={styles.progressInfoHolder}>
-                  <div className={styles.number}>{progress}% done</div>
+               <div className={styles.progressInfoHolder}
+                  style={darkMode ? {backgroundColor: '#00000068'} : {}}
+               >
+                  <div className={styles.number}
+                     style={darkMode ? {color: 'white'} : {}}
+                  >{progress}% done</div>
                   <div className={styles.counter}
                      style={{width: progress + '%'}}
                   ></div>

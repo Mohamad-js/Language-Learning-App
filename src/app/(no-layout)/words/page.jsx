@@ -6,9 +6,13 @@ import styles from './words.module.css'
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';
+import { useTheme } from '@/components/context/ThemeContext';
 
 
 function Words(){
+   const { lightTheme } = useTheme();
+   const darkMode = !lightTheme;
+
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1
@@ -47,39 +51,51 @@ function Words(){
    return(
       <>
          <div className={styles.container}>
-            <Image className={styles.image}
-               src='/images/back/background.jpg'
-               fill
-               alt='background'
-               onLoad={handleImageLoad}
-            />
+            {
+               darkMode ?
+               <Image className={styles.image}
+                  src='/images/back/wordsDark.jpg'
+                  fill
+                  alt='background'
+                  onLoad={handleImageLoad}
+               />
+               :
+               <Image className={styles.image}
+                  src='/images/back/background.jpg'
+                  fill
+                  alt='background'
+                  onLoad={handleImageLoad}
+               />
+            }
 
             <Back goTo ={'/'} />
 
             <div className={styles.mother}>
-               <div className={styles.title}>Choose Your CEFR Level</div>
+               <div className={styles.title}
+                  style={darkMode ? {color: 'white'} : {}}
+               >Choose Your CEFR Level</div>
 
-               <div className={styles.level}>
+               <div className={`${styles.level} ${darkMode && styles.levelDark}`}>
                   <Link href='/a1'>A1</Link>
                </div>
 
-               <div className={styles.level}>
+               <div className={`${styles.level} ${darkMode && styles.levelDark}`}>
                   <Link href='/a2'>A2</Link>
                </div>
 
-               <div className={styles.level}>
+               <div className={`${styles.level} ${darkMode && styles.levelDark}`}>
                   <Link href='/b1'>B1</Link>
                </div>
 
-               <div className={styles.level}>
+               <div className={`${styles.level} ${darkMode && styles.levelDark}`}>
                   <Link href='/b2'>B2</Link>
                </div>
 
-               <div className={styles.level}>
+               <div className={`${styles.level} ${darkMode && styles.levelDark}`}>
                   <Link href='/c1'>C1</Link>
                </div>
 
-               <div className={styles.level}>
+               <div className={`${styles.level} ${darkMode && styles.levelDark}`}>
                   <Link href='/c2'>C2</Link>
                </div>
 
