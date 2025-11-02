@@ -51,6 +51,7 @@ function WordsReview() {
    const [selectedLesson, setSelectedLesson] = useState('1');
    const [selectedLevel, setSelectedLevel] = useState('A1');
    const [currentWordIndex, setCurrentWordIndex] = useState(0);
+   const [showCopyMessage, setShowCopyMessage] = useState(false)
 
    // Load data on component mount
    useEffect(() => {
@@ -104,6 +105,34 @@ function WordsReview() {
       setSelectedLesson(e.target.value);
       setCurrentWordIndex(0);
    };
+
+   const copyWordsToClipboard = (words) => {
+      if (words.length === 0) return
+
+
+      // Extract just the word strings (adjust if your word field is nested differently)
+      const wordList = words.map(item => item.word).filter(Boolean); // filter out null/undefined
+
+      const textToCopy = wordList.join('\n'); // or ', ' for comma-separated
+
+      navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+         // Optional: show a success message
+         showCopyMsg()
+      })
+      .catch(err => {
+         console.error('Failed to copy words: ', err);
+         // Optional: fallback or user feedback
+      });
+   };
+
+   const showCopyMsg = () => {
+      setShowCopyMessage(true)
+
+      setTimeout(() => {
+         setShowCopyMessage(false)
+      }, 3000)
+   }
 
 
    return (
@@ -185,6 +214,19 @@ function WordsReview() {
                   <div className={styles.alarm}>No Words to Show</div>
                </div>
             }
+         </div>
+         
+         <div className={styles.copyButtonHolder}>
+            {
+               showCopyMessage && <div className={styles.copyMsg}>{filteredWords.length} Words Copied</div>
+            }
+
+            <button className={styles.copyButton}
+               onClick={() => copyWordsToClipboard(filteredWords)}
+               disabled={filteredWords.length === 0}
+            >
+               Copy
+            </button>
          </div>
 
       </div>

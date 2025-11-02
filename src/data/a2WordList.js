@@ -2029,7 +2029,7 @@ export const a2WordList = [
    },
    {
       "id": 16,
-      "word": "chip",
+      "word": "chips",
       "role": "noun",
       "BrE": "/tʃɪp/",
       "AmE": "/tʃɪp/",
