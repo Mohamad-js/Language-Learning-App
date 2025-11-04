@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FlipCard from '@/components/flashcard/FlipCard';
 import Back from '@/components/backButton/back';
+import BriefPrompt from '@/components/briefPrompt/briefPrompt';
 
 
 const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -127,11 +128,13 @@ function WordsReview() {
    };
 
    const showCopyMsg = () => {
-      setShowCopyMessage(true)
+      if(!showCopyMessage){
+         setShowCopyMessage(true)
 
-      setTimeout(() => {
-         setShowCopyMessage(false)
-      }, 3000)
+         setTimeout(() => {
+            setShowCopyMessage(false)
+         }, 3500)
+      }
    }
 
 
@@ -217,17 +220,21 @@ function WordsReview() {
          </div>
          
          <div className={styles.copyButtonHolder}>
-            {
-               showCopyMessage && <div className={styles.copyMsg}>{filteredWords.length} Words Copied</div>
-            }
 
             <button className={styles.copyButton}
                onClick={() => copyWordsToClipboard(filteredWords)}
                disabled={filteredWords.length === 0}
-            >
+               >
                Copy
             </button>
          </div>
+         {
+            showCopyMessage && 
+            <BriefPrompt
+               text={`${filteredWords.length} Words Copied`}
+            />
+            
+         }
 
       </div>
    );
