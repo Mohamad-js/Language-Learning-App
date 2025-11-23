@@ -14,7 +14,7 @@ export const a1WordList = [
    },
    {
       "id": 1,
-      "word": "about",
+      "word": "about ",
       "role": "preposition",
       "BrE": "/əˈbaʊt/",
       "AmE": "/əˈbaʊt/",
@@ -34,20 +34,20 @@ export const a1WordList = [
       "definition": "at a higher level or position",
       "examples": [
          "The bird is flying above.",
-         "The picture hangs above the sofa.",
-         "The temperature is above normal today."
+         "Can you score 16 or above in the test?",
+         "The temperature is around 45C or above."
       ]
    },
    {
       "id": 1,
-      "word": "above",
+      "word": "above ",
       "role": "preposition",
       "BrE": "/əˈbʌv/",
       "AmE": "/əˈbʌv/",
       "definition": "in a higher position than something",
       "examples": [
          "The lamp is above the table.",
-         "The plane flew above the clouds.",
+         "The plane can fly above the clouds.",
          "Her score was above the class average."
       ]
    },
@@ -59,14 +59,14 @@ export const a1WordList = [
       "AmE": "/əˈkrɔːs/",
       "definition": "from one side to the other",
       "examples": [
-         "He walked across.",
-         "She swam across the river.",
-         "The news spread across the town quickly."
+         "The road is safe. You can across.",
+         "The river is deep. It is dangerous to swim across.",
+         "As a goalkeeper, you should shoot the ball across."
       ]
    },
    {
       "id": 1,
-      "word": "across",
+      "word": "across ",
       "role": "preposition",
       "BrE": "/əˈkrɒs/",
       "AmE": "/əˈkrɔːs/",

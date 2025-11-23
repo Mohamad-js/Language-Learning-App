@@ -9,6 +9,8 @@ import Back from '@/components/backButton/back';
 import Loader from '@/components/loading/loading';
 import { a1WordList } from '@/data/a1WordList';
 import { useTheme } from "@/components/context/ThemeContext";
+import BriefPrompt from '@/components/briefPrompt/briefPrompt';
+import { RxSpeakerLoud } from "react-icons/rx";
 
 
 
@@ -44,7 +46,9 @@ export default function Lessons({ params }) {
    const [showCongrats, setShowCongrats] = useState(false)
    const [anime, setAnime] = useState(false)
    const [btnPressed, setBtnPressed] = useState(null)
-   const [preview, setPreview] = useState(false) // NEW
+   const [preview, setPreview] = useState(false)
+   const [showCopyMessage, setShowCopyMessage] = useState(false)
+   
 
 
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -439,7 +443,20 @@ export default function Lessons({ params }) {
       )
    }
 
+   const copyDef = (def) => {
+      navigator.clipboard.writeText(def)
+      showCopyMsg()
+   }
 
+   const showCopyMsg = () => {
+      if(!showCopyMessage){
+         setShowCopyMessage(true)
+
+         setTimeout(() => {
+            setShowCopyMessage(false)
+         }, 3500)
+      }
+   }
 
    return (
       <div className={styles.container}>
@@ -618,7 +635,6 @@ export default function Lessons({ params }) {
                   fill
                   alt='background'
                   onLoad={handleImageLoad}
-
                />
                :
                <Image className={styles.image}
@@ -626,9 +642,9 @@ export default function Lessons({ params }) {
                   fill
                   alt='background'
                   onLoad={handleImageLoad}
-
                />
             }
+
 
             {(() => {
                const learningWords = [...unknownWords];
@@ -636,6 +652,13 @@ export default function Lessons({ params }) {
                return (
                <>
                   <div className={styles.wordBlock}>
+                     <div className={styles.wordImage}>
+                        <Image className={styles.image}
+                           src={`/images/a1/${ws.word.word}.png`}
+                           fill
+                           alt='background'
+                        />
+                     </div>
                      <div className={styles.wordHolder}>
                         <div className={styles.mainWord}>
                            <p className={styles.wordTitle}>{ws.word.word}</p>
@@ -646,16 +669,22 @@ export default function Lessons({ params }) {
                            </div>
                         </div>
                         <div className={styles.infoHolder}>
-                           <p className={styles.phonetics}>American: {ws.word.AmE}</p>
-                           <p className={styles.phonetics}>British: {ws.word.BrE}</p>
+                           <p className={styles.phonetics}>
+                              {ws.word.AmE}
+                              <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+                           </p>
+                           <p className={styles.phonetics}>
+                              {ws.word.BrE}
+                              <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+                           </p>
                         </div>
                         <div className={styles.role}>{ws.word.role}</div>
                      </div>
 
-                     <div className={styles.definition}>{ws.word.definition}</div>
+                     <div className={styles.definition} onClick={() => copyDef(ws.word.definition)}>{ws.word.definition}</div>
 
                      <div className={styles.examplesHolder}>
-                        <p><strong>Examples:</strong></p>
+                        <p><strong>e.g.</strong></p>
                         <ul className={styles.examplesList}>
                            {ws.word.examples.map((example, i) => (
                            <li key={i}>{example}</li>
@@ -701,18 +730,20 @@ export default function Lessons({ params }) {
                      }
                   </div>
                   
-                  <div className={`${styles.confirmDefault} ${showPrompt && styles.confirmShow}`}>
-                     <div className={styles.confirmMsg}>
-                        {
-                           confirm ? 'Removed Successfully' : 'Saved Successfully'
-                        }
-                     </div>
-                     <div className={styles.cancelBtn} onClick={() => saveHandle(ws)}>Undo</div>
-                  </div>
                </>
                );
 
             })()}
+            <div className={`${styles.confirmDefault} ${showPrompt && styles.confirmShow}`}>
+               <div className={styles.mainHolder}>
+                  <div className={styles.confirmMsg}>
+                     {
+                        confirm ? 'Removed Successfully' : 'Saved Successfully'
+                     }
+                  </div>   
+               </div>
+               <div className={styles.cancelBtn} onClick={() => saveHandle(ws)}>Undo</div>
+            </div>
          </div>
          )}
    
@@ -788,6 +819,13 @@ export default function Lessons({ params }) {
       {isLoading && (
          <Loader />
       )}
+
+      {
+         showCopyMessage && 
+         <BriefPrompt
+            text={'Definition copied to clipboard'}
+         />
+      }
 
       </div>
    );

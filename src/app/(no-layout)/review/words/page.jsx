@@ -228,12 +228,12 @@ function WordsReview() {
                Copy
             </button>
          </div>
+         
          {
             showCopyMessage && 
             <BriefPrompt
                text={`${filteredWords.length} Words Copied`}
             />
-            
          }
 
       </div>
