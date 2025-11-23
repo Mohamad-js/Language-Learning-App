@@ -11,6 +11,7 @@ import { a1WordList } from '@/data/a1WordList';
 import { useTheme } from "@/components/context/ThemeContext";
 import BriefPrompt from '@/components/briefPrompt/briefPrompt';
 import { RxSpeakerLoud } from "react-icons/rx";
+import Wait from '@/components/wait/wait';
 
 
 
@@ -20,8 +21,11 @@ export default function Lessons({ params }) {
 
    const [wordList, setwordList] = useState(null)
    const [isLoading, setIsLoading] = useState(true);
+   const [isLoading2, setIsLoading2] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
+   const [loadedImages2, setLoadedImages2] = useState(0);
    const totalImages = 1;
+   const totalImages2 = 1;
 
    const [currentWordIndex, setCurrentWordIndex] = useState(0);
    const [learningWordIndex, setLearningWordIndex] = useState(0);
@@ -387,6 +391,16 @@ export default function Lessons({ params }) {
       });
    };
 
+   const handleImageLoad2 = () => {
+      setLoadedImages2((prev) => {
+         const newCount = prev + 1;
+         if (newCount >= totalImages2) {
+            setIsLoading2(false);
+         }
+         return newCount;
+      });
+   };
+
    const startOver = () => {
       location.reload()
    }
@@ -653,11 +667,14 @@ export default function Lessons({ params }) {
                <>
                   <div className={styles.wordBlock}>
                      <div className={styles.wordImage}>
+                        
                         <Image className={styles.image}
                            src={`/images/a1/${ws.word.word}.png`}
                            fill
-                           alt='background'
+                           alt='Word Pic'
+                           onLoad={handleImageLoad2}
                         />
+
                      </div>
                      <div className={styles.wordHolder}>
                         <div className={styles.mainWord}>
@@ -816,16 +833,20 @@ export default function Lessons({ params }) {
          </> 
       }
 
-      {isLoading && (
-         <Loader />
-      )}
+         {isLoading && (
+            <Loader />
+         )}
 
-      {
-         showCopyMessage && 
-         <BriefPrompt
-            text={'Definition copied to clipboard'}
-         />
-      }
+         {isLoading2 && stage ==='learning' && (
+            <Wait />         
+         )}
+
+         {
+            showCopyMessage && 
+            <BriefPrompt
+               text={'Definition copied to clipboard'}
+            />
+         }
 
       </div>
    );
