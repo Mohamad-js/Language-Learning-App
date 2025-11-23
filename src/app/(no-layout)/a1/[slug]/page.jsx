@@ -53,8 +53,6 @@ export default function Lessons({ params }) {
    const [preview, setPreview] = useState(false)
    const [showCopyMessage, setShowCopyMessage] = useState(false)
    
-
-
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
    const [isSwiping, setIsSwiping] = useState(false);
@@ -63,6 +61,9 @@ export default function Lessons({ params }) {
    const [translateX, setTranslateX] = useState(0);
    const [swipeDirection, setSwipeDirection] = useState(null);
    const cardRef = useRef(null);
+
+   const audioRef = useRef(null);
+   const [isPlaying, setIsPlaying] = useState(false);
 
 
    const { slug } = params;
@@ -472,6 +473,26 @@ export default function Lessons({ params }) {
       }
    }
 
+   const playAudio = () => {
+      if (audioRef.current) {
+         const promise = audioRef.current.play();
+         if (promise !== undefined) {
+         promise
+            .then(() => setIsPlaying(true))
+            .catch((error) => {
+               console.error('Audio play failed:', error);
+            });
+         }
+      }
+   };
+
+   const pauseAudio = () => {
+      if (audioRef.current) {
+         audioRef.current.pause();
+         setIsPlaying(false);
+      }
+   };
+
    return (
       <div className={styles.container}>
 
@@ -686,9 +707,18 @@ export default function Lessons({ params }) {
                            </div>
                         </div>
                         <div className={styles.infoHolder}>
-                           <p className={styles.phonetics}>
+                           <p className={styles.phonetics}
+                              onClick={isPlaying ? pauseAudio : playAudio}
+                           >
+                              <audio
+                                 ref={audioRef}
+                                 src={`/sounds/A1/${ws.word.word}.m4a`}
+                                 onEnded={() => setIsPlaying(false)}
+                              />
+
                               {ws.word.AmE}
                               <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+                           
                            </p>
                            <p className={styles.phonetics}>
                               {ws.word.BrE}

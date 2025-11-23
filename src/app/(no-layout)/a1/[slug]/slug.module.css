@@ -680,7 +680,7 @@
             
             .phonetics {
                font-size: 17px;
-               background-color: rgba(255, 255, 255, 0.7);
+               background-color: rgba(255, 255, 255, 0.6);
                width: 100%;
                padding: 10px;
                border-radius: 20px;
@@ -688,6 +688,10 @@
                justify-content: space-around;
                align-items: center;
 
+               &:active {
+                  background-color: white;
+                  scale: 1.01;
+               }
             }
          }
          
