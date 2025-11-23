@@ -55,8 +55,8 @@ export const a1WordList = [
       "id": 1,
       "word": "across",
       "role": "adverb",
-      "BrE": "/əˈkrɒs/",
-      "AmE": "/əˈkrɔːs/",
+      "BrE": "/əˈkrɔːs/",
+      "AmE": "/əˈkrɒs/",
       "definition": "from one side to the other",
       "examples": [
          "The road is safe. You can across.",
@@ -68,8 +68,8 @@ export const a1WordList = [
       "id": 1,
       "word": "across ",
       "role": "preposition",
-      "BrE": "/əˈkrɒs/",
-      "AmE": "/əˈkrɔːs/",
+      "BrE": "/əˈkrɔːs/",
+      "AmE": "/əˈkrɒs/",
       "definition": "from one side to the other of something",
       "examples": [
          "The bridge is across the river.",

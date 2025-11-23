@@ -12,6 +12,7 @@ import { useTheme } from "@/components/context/ThemeContext";
 import BriefPrompt from '@/components/briefPrompt/briefPrompt';
 import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
+import Audio from '@/components/audio/audio';
 
 
 
@@ -37,7 +38,6 @@ export default function Lessons({ params }) {
    const [savedA1Vocabs, setSavedA1Vocabs] = useState([])
    const [showPrompt, setShowPrompt] = useState(false)
    const [confirm, setConfirm] = useState(null)
-   const [cancel, setCancel] = useState(null)
    const [close, setClose] = useState(false)
    const [appear, setAppear] = useState(false)
    const [fade, setFade] = useState(false)
@@ -62,8 +62,10 @@ export default function Lessons({ params }) {
    const [swipeDirection, setSwipeDirection] = useState(null);
    const cardRef = useRef(null);
 
-   const audioRef = useRef(null);
-   const [isPlaying, setIsPlaying] = useState(false);
+   const audioRefAmE = useRef(null);
+   const audioRefBrE = useRef(null);
+   const [isPlayingBrE, setIsPlayingBrE] = useState(false);
+   const [isPlayingAmE, setIsPlayingAmE] = useState(false);
 
 
    const { slug } = params;
@@ -253,7 +255,7 @@ export default function Lessons({ params }) {
          ])
 
          setShowPrompt(true)
-         setCancel(true)
+         setConfirm(false)
 
          setTimeout(() => {
             setShowPrompt(false);
@@ -261,7 +263,7 @@ export default function Lessons({ params }) {
 
          
          setTimeout(() => {
-            setCancel(false);
+            setConfirm(true);
          }, 4000);
       }
    }
@@ -473,23 +475,49 @@ export default function Lessons({ params }) {
       }
    }
 
-   const playAudio = () => {
-      if (audioRef.current) {
-         const promise = audioRef.current.play();
+   const playAudioBrE = () => {
+      const audio = audioRefBrE.current
+      if (audio) {
+         const promise = audio.play();
+         audio.currentTime = 0
+
          if (promise !== undefined) {
-         promise
-            .then(() => setIsPlaying(true))
-            .catch((error) => {
-               console.error('Audio play failed:', error);
-            });
+            promise
+               .then(() => setIsPlayingBrE(true))
+               .catch((error) => {
+                  console.error('Audio play failed:', error);
+               });
          }
       }
    };
 
-   const pauseAudio = () => {
-      if (audioRef.current) {
-         audioRef.current.pause();
-         setIsPlaying(false);
+   const playAudioAmE = () => {
+      const audio = audioRefAmE.current
+      if (audio) {
+         const promise = audio.play();
+         audio.currentTime = 0
+
+         if (promise !== undefined) {
+            promise
+               .then(() => setIsPlayingAmE(true))
+               .catch((error) => {
+                  console.error('Audio play failed:', error);
+               });
+         }
+      }
+   };
+
+   const pauseAudioBrE = () => {
+      if (audioRefBrE.current) {
+         audioRefBrE.current.pause();
+         setIsPlayingBrE(false);
+      }
+   };
+
+   const pauseAudioAmE = () => {
+      if (audioRefAmE.current) {
+         audioRefAmE.current.pause();
+         setIsPlayingAmE(false);
       }
    };
 
@@ -695,35 +723,55 @@ export default function Lessons({ params }) {
                            alt='Word Pic'
                            onLoad={handleImageLoad2}
                         />
+                        <div className={styles.overlay}></div>
+                        <p className={styles.wordTitle}>{ws.word.word}</p>
 
+                        <div className={styles.actions} onClick={() => saveHandle(ws)}>
+                           {  
+                              (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark className={styles.save}/> : <FaRegBookmark className={styles.save}/>  
+                           }
+                        </div>
                      </div>
                      <div className={styles.wordHolder}>
-                        <div className={styles.mainWord}>
-                           <p className={styles.wordTitle}>{ws.word.word}</p>
-                           <div className={styles.actions} onClick={() => saveHandle(ws)}>
-                              {  
-                                 (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark className={styles.save}/> : <FaRegBookmark className={styles.save}/>  
-                              }
-                           </div>
-                        </div>
                         <div className={styles.infoHolder}>
-                           <p className={styles.phonetics}
-                              onClick={isPlaying ? pauseAudio : playAudio}
+                           <div className={styles.phonetics}
+                              onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
                            >
                               <audio
-                                 ref={audioRef}
-                                 src={`/sounds/A1/${ws.word.word}.m4a`}
-                                 onEnded={() => setIsPlaying(false)}
+                                 ref={audioRefAmE}
+                                 src={`/sounds/A1/${ws.word.word}-AmE.m4a`}
+                                 onEnded={() => setIsPlayingAmE(false)}
                               />
 
                               {ws.word.AmE}
-                              <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+
+                              {
+                                 isPlayingAmE ?
+                                 <Audio />
+                                 :
+                                 <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+                              }
                            
-                           </p>
-                           <p className={styles.phonetics}>
+                           </div>
+
+                           <div className={styles.phonetics}
+                              onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
+                           >
+                              <audio
+                                 ref={audioRefBrE}
+                                 src={`/sounds/A1/${ws.word.word}-BrE.m4a`}
+                                 onEnded={() => setIsPlayingBrE(false)}
+                              />
+
                               {ws.word.BrE}
-                              <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
-                           </p>
+
+                              {
+                                 isPlayingBrE ?
+                                 <Audio />
+                                 :
+                                 <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+                              }
+                           </div>
                         </div>
                         <div className={styles.role}>{ws.word.role}</div>
                      </div>
@@ -777,20 +825,20 @@ export default function Lessons({ params }) {
                      }
                   </div>
                   
+                  <div className={`${styles.confirmDefault} ${showPrompt && styles.confirmShow}`}>
+                     <div className={styles.mainHolder}>
+                        <div className={styles.confirmMsg}>
+                           {
+                              confirm ? 'Removed Successfully' : 'Saved Successfully'
+                           }
+                        </div>   
+                     </div>
+                     <div className={styles.cancelBtn} onClick={() => saveHandle(ws)}>Undo</div>
+                  </div>
                </>
                );
 
             })()}
-            <div className={`${styles.confirmDefault} ${showPrompt && styles.confirmShow}`}>
-               <div className={styles.mainHolder}>
-                  <div className={styles.confirmMsg}>
-                     {
-                        confirm ? 'Removed Successfully' : 'Saved Successfully'
-                     }
-                  </div>   
-               </div>
-               <div className={styles.cancelBtn} onClick={() => saveHandle(ws)}>Undo</div>
-            </div>
          </div>
          )}
    

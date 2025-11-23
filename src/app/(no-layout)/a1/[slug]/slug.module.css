@@ -178,11 +178,6 @@
             flex-direction: column;
             align-items: start;
 
-            
-            .wordTitle {
-               font-size: 50px;
-               height: 70px;
-            }
 
             .infoHolder {
                width: 100%;
@@ -570,16 +565,15 @@
 .learnCard {
    position: absolute;
    opacity: 0;
-   top: 50px;
    height: 100dvh;
-   padding: 15px;
+   padding: 50px 15px 15px 15px;
    width: 100%;
    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
    overflow: hidden;
    display: flex;
-   justify-content: center;
-   align-items: center;
    flex-direction: column;
+   justify-content: start;
+   align-items: center;
 
    
    .image {
@@ -631,6 +625,40 @@
             object-fit: cover;
             object-position: center;
          }
+
+         .actions {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .save {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               font-size: 25px;
+            }
+            }
+
+         .overlay {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            height: 70px;
+            background-image: linear-gradient(to top, black 0%, transparent 100%);
+         }
+
+         .wordTitle {
+            position: absolute;
+            font-size: 40px;
+            line-height: 1;
+            left: 15px;
+            bottom: 10px;
+            color: white;
+         }
       }
       
       .wordHolder {
@@ -640,28 +668,6 @@
          flex-direction: column;
          align-items: start;
          z-index: 1;
-         
-         .mainWord {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-
-            .actions {
-               width: 50px;
-               height: 30px;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               
-               .save {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  font-size: 25px;
-               }
-            }
-         }
          
          
          .wordTitle {
@@ -682,10 +688,10 @@
                font-size: 17px;
                background-color: rgba(255, 255, 255, 0.6);
                width: 100%;
-               padding: 10px;
+               padding: 15px;
                border-radius: 20px;
                display: flex;
-               justify-content: space-around;
+               justify-content: space-between;
                align-items: center;
 
                &:active {
@@ -783,7 +789,7 @@
    }
 
    .confirmShow {
-      bottom: 60px;
+      bottom: 10px;
       opacity: 1;
    }
 }
