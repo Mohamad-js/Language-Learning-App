@@ -9,7 +9,6 @@ import Back from '@/components/backButton/back';
 import Loader from '@/components/loading/loading';
 import { a1WordList } from '@/data/a1WordList';
 import { useTheme } from "@/components/context/ThemeContext";
-import BriefPrompt from '@/components/briefPrompt/briefPrompt';
 import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
 import Audio from '@/components/audio/audio';
@@ -51,7 +50,6 @@ export default function Lessons({ params }) {
    const [anime, setAnime] = useState(false)
    const [btnPressed, setBtnPressed] = useState(null)
    const [preview, setPreview] = useState(false)
-   const [showCopyMessage, setShowCopyMessage] = useState(false)
    
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -245,10 +243,10 @@ export default function Lessons({ params }) {
          toast.error(
             <div className={styles.toastHolder}>
                <div className={styles.toastTitle2}>
-                  Deleted Successfully
+                  The Word Deleted
                </div>
                <div className={styles.info}>
-                  The word you had saved is removed now.
+                  The word you had saved is now removed
                </div>
             </div>
             ,
@@ -278,7 +276,7 @@ export default function Lessons({ params }) {
                   Saved Successfully
                </div>
                <div className={styles.info}>
-                  You can see the word in the Saved section.
+                  The word was added to the Saved page
                </div>
             </div>
             ,
@@ -492,18 +490,27 @@ export default function Lessons({ params }) {
 
    const copyDef = (def) => {
       navigator.clipboard.writeText(def)
-      showCopyMsg()
+
+      toast(
+         <div className={styles.toastHolder}>
+            The Definition Copied to Clipboard
+         </div>
+         ,
+         {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Slide,
+            closeButton: false,
+         }
+      )
    }
 
-   const showCopyMsg = () => {
-      if(!showCopyMessage){
-         setShowCopyMessage(true)
-
-         setTimeout(() => {
-            setShowCopyMessage(false)
-         }, 3500)
-      }
-   }
 
    const playAudioBrE = () => {
       const audio = audioRefBrE.current
@@ -907,13 +914,6 @@ export default function Lessons({ params }) {
          {isLoading2 && stage ==='learning' && (
             <Wait />         
          )}
-
-         {
-            showCopyMessage && 
-            <BriefPrompt
-               text={'Definition copied to clipboard'}
-            />
-         }
 
       </div>
    );
