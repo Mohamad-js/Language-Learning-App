@@ -609,9 +609,10 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: start;
       align-items: start;
       z-index: 10;
+      gap: 20px;
       
       .wordImage {
          position: relative;
@@ -672,8 +673,7 @@
          
          .wordTitle {
             font-size: 50px;
-            height: 70px;
-            
+            padding: 20px 0;
          }
          
          .infoHolder {
@@ -686,7 +686,7 @@
             
             .phonetics {
                font-size: 17px;
-               background-color: rgba(255, 255, 255, 0.6);
+               background-color: rgba(255, 255, 255, 0.5);
                width: 100%;
                padding: 15px;
                border-radius: 20px;
@@ -699,12 +699,21 @@
                   scale: 1.01;
                }
             }
+
+            .isPlaying {
+               background-color: rgba(255, 255, 255, 0.8);
+            }
          }
          
-         .role {
-            font: arial 20px;
-            padding: 10px;
-         }
+      }
+
+      .role {
+         font: arial 20px;
+         padding: 10px;
+         width: 100%;
+         text-align: center;
+         background-color: rgba(255, 255, 255, 0.5);
+         border-radius: 20px;
       }
       
       .btnHolder {
@@ -720,12 +729,14 @@
          
 
          .button {
-            padding: 5px 25px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 10px;
-            color: rgb(0, 0, 0);
-            background-color: rgb(255, 255, 255);
+            width: 100%;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 20px;
+            color: rgb(62, 62, 62);
+            background-color: #ffffff6b;
+            backdrop-filter: blur(5px);
+            border: 1px solid white;
             cursor: pointer;
             bottom: 0;
             transition: background-color 0.2s;
@@ -738,17 +749,23 @@
       
       .definition {
          width: 100%;
-         font-size: 20px;
+         font-size: 16px;
          display: flex;
          align-items: center;
          z-index: 1;
          font-weight: 1000;
+         background-color: rgba(255, 255, 255, 0.5);
+         border-radius: 20px;
+         padding: 15px;
       }
       
       .examplesHolder {
          width: 100%;
          z-index: 1;
          height: fit-content;
+         background-color: rgba(255, 255, 255, 0.5);
+         border-radius: 20px;
+         padding: 15px;
          
          .examplesList {
             display: flex;
@@ -791,5 +808,19 @@
    .confirmShow {
       bottom: 10px;
       opacity: 1;
+   }
+}
+
+.toastHolder {
+   background-color: rgb(255, 255, 255);
+
+   .toastTitle {
+      color: green;
+      font-weight: 1000;
+   }
+
+   .toastTitle2 {
+      color: red;
+      font-weight: 1000;
    }
 }

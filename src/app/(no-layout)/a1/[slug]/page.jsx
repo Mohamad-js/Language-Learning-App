@@ -13,7 +13,7 @@ import BriefPrompt from '@/components/briefPrompt/briefPrompt';
 import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
 import Audio from '@/components/audio/audio';
-
+import { toast, Slide } from 'react-toastify';
 
 
 export default function Lessons({ params }) {
@@ -205,21 +205,26 @@ export default function Lessons({ params }) {
 
    const handleNextLearningWord = () => {
       const learningWords = [...unknownWords];
-      if (learningWordIndex + 1 < learningWords.length) {
+      if (learningWordIndex + 1 < learningWords.length && (!isPlayingBrE && !isPlayingAmE)) {
          setLearningWordIndex(learningWordIndex + 1);
-      } else if(learningWordIndex + 1 == learningWords.length) {
+      } else if(learningWordIndex + 1 == learningWords.length && (!isPlayingBrE && !isPlayingAmE)) {
          setBtn(true)
       } 
    };
    
    const handleBackLearningWord = () => {
-      if (learningWordIndex - 1 >= 0) {
+      if (learningWordIndex - 1 >= 0 && (!isPlayingBrE && !isPlayingAmE)) {
          setLearningWordIndex(learningWordIndex - 1);
          setBtn(false)
-      } else {
+      } else if(!isPlayingBrE && !isPlayingAmE) {
          alert('This is the first word');
       }
    };
+
+   const restartLearning = () => {
+      setLearningWordIndex(0)
+      setBtn(false)
+   }
 
    const saveHandle = (ws) => {
       const savedVocab = ws.word.word
@@ -237,16 +242,29 @@ export default function Lessons({ params }) {
             return !(item.word === ws.word.word && item.role === ws.word.role)
          }))
 
-         setShowPrompt(true)
-         setConfirm(true)
-
-         setTimeout(() => {
-            setShowPrompt(false);
-         }, 3000);
-
-         setTimeout(() => {
-            setConfirm(false);
-         }, 4000);
+         toast.error(
+            <div className={styles.toastHolder}>
+               <div className={styles.toastTitle2}>
+                  Deleted Successfully
+               </div>
+               <div className={styles.info}>
+                  The word you had saved is removed now.
+               </div>
+            </div>
+            ,
+            {
+               position: "top-right",
+               autoClose: 3000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,
+               theme: "light",
+               transition: Slide,
+               closeButton: false,
+            }
+         )
 
       } else {
          setSavedA1Vocabs((prev) => [
@@ -254,17 +272,29 @@ export default function Lessons({ params }) {
             foundWord[0]
          ])
 
-         setShowPrompt(true)
-         setConfirm(false)
-
-         setTimeout(() => {
-            setShowPrompt(false);
-         }, 3000);
-
-         
-         setTimeout(() => {
-            setConfirm(true);
-         }, 4000);
+         toast.success(
+            <div className={styles.toastHolder}>
+               <div className={styles.toastTitle}>
+                  Saved Successfully
+               </div>
+               <div className={styles.info}>
+                  You can see the word in the Saved section.
+               </div>
+            </div>
+            ,
+            {
+               position: "top-right",
+               autoClose: 3000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,
+               theme: "light",
+               transition: Slide,
+               closeButton: false,
+            }
+         )
       }
    }
    
@@ -734,7 +764,7 @@ export default function Lessons({ params }) {
                      </div>
                      <div className={styles.wordHolder}>
                         <div className={styles.infoHolder}>
-                           <div className={styles.phonetics}
+                           <div className={`${styles.phonetics} ${isPlayingAmE ? styles.isPlaying : {}}`}
                               onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
                            >
                               <audio
@@ -749,12 +779,12 @@ export default function Lessons({ params }) {
                                  isPlayingAmE ?
                                  <Audio />
                                  :
-                                 <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+                                 <RxSpeakerLoud style={{color: '#b8b8b8', fontSize: '20px'}}/>
                               }
                            
                            </div>
 
-                           <div className={styles.phonetics}
+                           <div className={`${styles.phonetics} ${isPlayingBrE ? styles.isPlaying : {}}`}
                               onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
                            >
                               <audio
@@ -769,17 +799,17 @@ export default function Lessons({ params }) {
                                  isPlayingBrE ?
                                  <Audio />
                                  :
-                                 <RxSpeakerLoud style={{color: '#878787', fontSize: '20px'}}/>
+                                 <RxSpeakerLoud style={{color: '#b8b8b8', fontSize: '20px'}}/>
                               }
                            </div>
                         </div>
-                        <div className={styles.role}>{ws.word.role}</div>
                      </div>
+
+                     <div className={styles.role}>{ws.word.role}</div>
 
                      <div className={styles.definition} onClick={() => copyDef(ws.word.definition)}>{ws.word.definition}</div>
 
                      <div className={styles.examplesHolder}>
-                        <p><strong>e.g.</strong></p>
                         <ul className={styles.examplesList}>
                            {ws.word.examples.map((example, i) => (
                            <li key={i}>{example}</li>
@@ -791,7 +821,7 @@ export default function Lessons({ params }) {
                            <div className={styles.btnHolder}>
                               <button
                                  className={styles.button}
-                                 onClick={() => setStage('revision')}
+                                 onClick={restartLearning}
                               >
                                  Review
                               </button>
@@ -841,47 +871,6 @@ export default function Lessons({ params }) {
             })()}
          </div>
          )}
-   
-         {stage === 'revision' && (
-         <div className={styles.revisionCard}>
-            <p className={styles.title}>What you learnt in this lesson:</p>
-            {(() => {
-               const revisionWords = [...unknownWords];
-               return revisionWords.map((ws, index) => (
-               <div key={index} className={styles.wordBlock}>
-                  <div className={styles.wordHolder}>
-                     <p className={styles.wordTitle}>{ws.word.word}</p>
-                     <div className={styles.infoHolder}>
-                        <p className={styles.phonetics}>{ws.word.AmE}</p>
-                        <p className={styles.phonetics}>{ws.word.BrE}</p>
-                        <div className={styles.role}>{ws.word.role}</div>
-                     </div>
-                  </div>
-                  <div className={styles.definition}>{ws.word.definition}</div>
-                  <div className={styles.examplesHolder}>
-                     <p><strong>Examples:</strong></p>
-                     <ul className={styles.examplesList}>
-                        {ws.word.examples.map((example, i) => (
-                        <li key={i}>{example}</li>
-                        ))}
-                     </ul>
-                  </div>
-               </div>
-               ));
-            })()}
-            <div className={styles.btnHolder}>
-               {
-                  lessonNumber < wholeLessons ?
-                  <button className={styles.button} onClick={nextLesson}>Next Lesson</button>
-                  :
-                  <button className={styles.button} onClick={nextLevel}>Start A2</button>
-               }
-
-               <button className={styles.button} onClick={done}>Save</button>
-            </div>
-         </div>
-      )}
-      
 
       {
          showCongrats &&

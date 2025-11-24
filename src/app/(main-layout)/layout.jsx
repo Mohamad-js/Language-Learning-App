@@ -3,9 +3,9 @@ import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import Navigation from "@/components/Navigation/navigation";
 import Ham from "@/components/hamburger/ham";
-// import Menu from "@/components/menu/menu";
 import { ThemeProvider } from "@/components/context/ThemeContext";
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
+import ToastProvider from "@/components/ToastProvider/toastProvider";
 import { config } from 'dotenv';
 config();
 
@@ -33,13 +33,14 @@ export default function RootLayout({ children }) {
       </head>
          <body>
             <ThemeProvider>
-               <ServiceWorkerRegistrar />
-               {/* <Menu /> */}
-               <Ham />
-               {children}
-               <Navigation />
-               <SpeedInsights />
-               <Analytics />
+               <ToastProvider>
+                  <ServiceWorkerRegistrar />
+                  <Ham />
+                  {children}
+                  <Navigation />
+                  <SpeedInsights />
+                  <Analytics />
+               </ToastProvider>
             </ThemeProvider>
          </body>
       </html>

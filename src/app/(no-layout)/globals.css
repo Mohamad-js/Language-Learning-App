@@ -50,3 +50,8 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+.toast-style {
+   color: red;
+   background-color: blue;
+}

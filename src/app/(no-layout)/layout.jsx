@@ -5,6 +5,7 @@ import "./globals.css";
 import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from "@/components/context/ThemeContext";
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
+import ToastProvider from "@/components/ToastProvider/toastProvider";
 import { config } from 'dotenv';
 config();
 
@@ -25,9 +26,10 @@ export default function RootLayout({ children }) {
          <body>
             <ServiceWorkerRegistrar />
             <ThemeProvider>
-               {/* <Menu /> */}
-               <Ham />
-               {children}
+               <ToastProvider>
+                  <Ham />
+                  {children}
+               </ToastProvider>
             </ThemeProvider>
             <SpeedInsights />
             <Analytics />
