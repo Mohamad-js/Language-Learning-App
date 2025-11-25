@@ -611,7 +611,6 @@
       flex-direction: column;
       justify-content: start;
       align-items: start;
-      z-index: 10;
       gap: 20px;
       
       .wordImage {
@@ -714,6 +713,7 @@
          text-align: center;
          background-color: rgba(255, 255, 255, 0.5);
          border-radius: 20px;
+         z-index: 1;
       }
       
       .btnHolder {

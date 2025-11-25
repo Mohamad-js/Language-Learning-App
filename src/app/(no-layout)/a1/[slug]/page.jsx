@@ -773,6 +773,7 @@ export default function Lessons({ params }) {
                         <div className={styles.infoHolder}>
                            <div className={`${styles.phonetics} ${isPlayingAmE ? styles.isPlaying : {}}`}
                               onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
+                              style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
                            >
                               <audio
                                  ref={audioRefAmE}
@@ -793,6 +794,7 @@ export default function Lessons({ params }) {
 
                            <div className={`${styles.phonetics} ${isPlayingBrE ? styles.isPlaying : {}}`}
                               onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
+                              style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
                            >
                               <audio
                                  ref={audioRefBrE}
@@ -812,11 +814,17 @@ export default function Lessons({ params }) {
                         </div>
                      </div>
 
-                     <div className={styles.role}>{ws.word.role}</div>
+                     <div className={styles.role}
+                        style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
+                     >{ws.word.role}</div>
 
-                     <div className={styles.definition} onClick={() => copyDef(ws.word.definition)}>{ws.word.definition}</div>
+                     <div className={styles.definition} onClick={() => copyDef(ws.word.definition)}
+                        style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}   
+                     >{ws.word.definition}</div>
 
-                     <div className={styles.examplesHolder}>
+                     <div className={styles.examplesHolder}
+                        style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
+                     >
                         <ul className={styles.examplesList}>
                            {ws.word.examples.map((example, i) => (
                            <li key={i}>{example}</li>
@@ -829,18 +837,25 @@ export default function Lessons({ params }) {
                               <button
                                  className={styles.button}
                                  onClick={restartLearning}
+                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
                               >
                                  Review
                               </button>
 
                               {
                               lessonNumber < wholeLessons ?
-                                 <button className={styles.button} onClick={nextLesson}>Lesson {lessonNumber + 1}</button>
+                                 <button className={styles.button} onClick={nextLesson}
+                                    style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}   
+                                 >Lesson {lessonNumber + 1}</button>
                                  :
-                                 <button className={styles.button} onClick={nextLevel}>Start A2</button>  
+                                 <button className={styles.button} onClick={nextLevel}
+                                    style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
+                                 >Start A2</button>  
                               }
 
-                              <button className={styles.button} onClick={done}>Save</button>
+                              <button className={styles.button} onClick={done}
+                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
+                              >Save</button>
                            </div>
 
                            : 
@@ -849,28 +864,19 @@ export default function Lessons({ params }) {
                               <button
                                  className={styles.button}
                                  onClick={handleBackLearningWord}
+                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
                               >
                                  Back
                               </button>
                               <button
                                  className={styles.button}
                                  onClick={handleNextLearningWord}
+                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
                               >
                                  Next
                               </button>
                            </div>
                      }
-                  </div>
-                  
-                  <div className={`${styles.confirmDefault} ${showPrompt && styles.confirmShow}`}>
-                     <div className={styles.mainHolder}>
-                        <div className={styles.confirmMsg}>
-                           {
-                              confirm ? 'Removed Successfully' : 'Saved Successfully'
-                           }
-                        </div>   
-                     </div>
-                     <div className={styles.cancelBtn} onClick={() => saveHandle(ws)}>Undo</div>
                   </div>
                </>
                );
