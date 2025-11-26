@@ -741,7 +741,7 @@ export default function Lessons({ params }) {
                   src='/images/back/A1LearnSection.jpg'
                   fill
                   alt='background'
-                  onLoad={handleImageLoad}
+                  onLoad={handleImageLoad}   
                />
             }
 
