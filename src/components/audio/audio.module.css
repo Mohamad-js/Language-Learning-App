@@ -9,7 +9,7 @@
   display: block;
   position: relative;
   background: currentColor;
-  color: #ff009d;
+  color: #828282;
   box-sizing: border-box;
   animation: animloader 0.3s 0.3s linear infinite alternate;
 }

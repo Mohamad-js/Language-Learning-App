@@ -731,7 +731,7 @@ export default function Lessons({ params }) {
             {
                darkMode ? 
                <Image className={styles.image}
-                  src='/images/back/DarkLearnA1.jpg'
+                  src='/images/back/DarkA1Learn.jpg'
                   fill
                   alt='background'
                   onLoad={handleImageLoad}
@@ -773,7 +773,7 @@ export default function Lessons({ params }) {
                         <div className={styles.infoHolder}>
                            <div className={`${styles.phonetics} ${isPlayingAmE ? styles.isPlaying : {}}`}
                               onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
-                              style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
+                              style={darkMode ? {backgroundColor: '#00000081', border: '1px solid white'} : {}}
                            >
                               <audio
                                  ref={audioRefAmE}
@@ -794,7 +794,7 @@ export default function Lessons({ params }) {
 
                            <div className={`${styles.phonetics} ${isPlayingBrE ? styles.isPlaying : {}}`}
                               onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
-                              style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
+                              style={darkMode ? {backgroundColor: '#00000081', border: '1px solid white'} : {}}
                            >
                               <audio
                                  ref={audioRefBrE}
@@ -815,15 +815,15 @@ export default function Lessons({ params }) {
                      </div>
 
                      <div className={styles.role}
-                        style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
+                        style={darkMode ? {backgroundColor: '#00000081', border: '1px solid white'} : {}}
                      >{ws.word.role}</div>
 
                      <div className={styles.definition} onClick={() => copyDef(ws.word.definition)}
-                        style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}   
+                        style={darkMode ? {backgroundColor: '#00000081', border: '1px solid white'} : {}}   
                      >{ws.word.definition}</div>
 
                      <div className={styles.examplesHolder}
-                        style={darkMode ? {backgroundColor: '#00000025', border: '1px solid white'} : {}}
+                        style={darkMode ? {backgroundColor: '#00000081', border: '1px solid white'} : {}}
                      >
                         <ul className={styles.examplesList}>
                            {ws.word.examples.map((example, i) => (
