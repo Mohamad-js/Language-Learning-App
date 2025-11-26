@@ -731,7 +731,7 @@ export default function Lessons({ params }) {
             {
                darkMode ? 
                <Image className={styles.image}
-                  src='/images/back/DarkLearnA1.jpg'
+                  src='/images/back/DarkLearningA1.jpg'
                   fill
                   alt='background'
                   onLoad={handleImageLoad}
