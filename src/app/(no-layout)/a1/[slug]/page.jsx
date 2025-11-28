@@ -182,6 +182,29 @@ export default function Lessons({ params }) {
       localStorage.setItem(`totalWordsCount`, JSON.stringify(totalWordsCount));
       localStorage.setItem(`currentLesson-A1`, JSON.stringify(slug));
       
+      toast.success(
+         <div className={styles.toastHolder}>
+            <div className={styles.toastTitle}>
+               Progress Saved
+            </div>
+            <div className={styles.info}>
+               The words you studied are saved successfully
+            </div>
+         </div>
+         ,
+         {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Slide,
+            closeButton: false,
+         }
+      )
    }
 
    const animation = () => {

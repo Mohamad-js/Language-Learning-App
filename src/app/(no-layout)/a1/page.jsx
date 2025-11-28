@@ -2,12 +2,14 @@
 import styles from './a1.module.css';
 import { TiTick } from "react-icons/ti";
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';
 import { useTheme } from '@/components/context/ThemeContext';
+import { toast, Slide } from 'react-toastify';
+
 
 
 function A1() {
@@ -33,7 +35,7 @@ function A1() {
          progress == 100 && setTimeout(() => {
             setCompleted(true)
          }, 2000)
-   
+         
          setTimeout(() => {
             setProgress(Number(currentProgress.toFixed(1)))
          }, 1000)

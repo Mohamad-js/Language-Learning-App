@@ -332,7 +332,7 @@ export const a1WordList = [
    {
       
       "id": 3,
-      "word": "all",
+      "word": "all ",
       "role": "pronoun",
       "BrE": "/ɔːl/",
       "AmE": "/ɔːl/",
