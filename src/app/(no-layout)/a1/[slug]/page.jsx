@@ -201,6 +201,12 @@ export default function Lessons({ params }) {
       }
    }, [savedA1Vocabs, slug]);
 
+   useEffect(() => {
+      setLoadedImages2(0);
+      setIsLoading2(true);
+   }, [learningWordIndex]);
+
+
    const handleNextLearningWord = () => {
       const learningWords = [...unknownWords];
       if (learningWordIndex + 1 < learningWords.length && (!isPlayingBrE && !isPlayingAmE)) {
