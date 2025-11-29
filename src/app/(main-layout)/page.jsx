@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Loader from "@/components/loading/loading";
 import styles from './page.module.css'
 import Iridescence from "@/components/Iridescence/iridescence";
@@ -10,7 +10,7 @@ import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
 import Aurora from "@/components/aurora/aurora";
-
+import Tour from "@/components/tour/tour";
 
 
 function urlBase64ToUint8Array(base64String) {
@@ -30,8 +30,65 @@ const Home = () => {
    const timeoutRef = useRef(null);
    const { showDialog, version, updates, titles, closeDialog } = useUpdateDialog();
 
+   const [tourOpen, setTourOpen] = useState(false);
+   const [isClient, setIsClient] = useState(false);
 
+   useEffect(() => {
+      setIsClient(true);
+      const hasSeenTour = localStorage.getItem('joyride-tour-completed');
+      if (!hasSeenTour) {
+         setTourOpen(true);
+      }
+   }, []);
 
+   const steps = [
+      {
+         target: '#tour_start',
+         title: 'Welcome :)',
+         content: 'This is the Home page. Your language learning journey starts from here :)',
+         disableBeacon: true,
+      },
+      {
+         target: '#tour_idiom',
+         title: 'Daily Idiom',
+         content: 'This card shows an idiom every day in an example. You can click on it to check the idiom and its definition.',
+      },
+      {
+         target: '#tour_words',
+         title: 'Vocabulary Section',
+         content: 'This section teaches you 6330 most common vocabularies in English based on their CEFR level through examples and images.',
+      },
+      {
+         target: '#tour_grammar',
+         title: 'Grammar Section',
+         content: 'You can learn 164 most important English grammar rules through easy explanations and many examples.',
+      },
+      {
+         target: '#tour_prep',
+         title: 'Prepositions Section',
+         content: 'For each word you learn in Vocabularies section, you will learn its important prepositions here.',
+      },
+      {
+         target: '#tour_colloc',
+         title: 'Collocations Section',
+         content: 'For each word you learn in Vocabularies section, you will find its useful collocations here.',
+      },
+      {
+         target: '#tour_syn',
+         title: 'Synonyms Section',
+         content: 'For each word you learn in Vocabularies section, you can learn its synonyms and the difference between them.',
+      },
+      {
+         target: '#tour_family',
+         title: 'Word Family Section',
+         content: 'For each word you learn in Vocabularies section, you can learn its word families in this section.',
+      },
+   ];
+
+   const handleTourComplete = () => {
+      setTourOpen(false);
+      localStorage.setItem('joyride-tour-completed', 'true');
+   };
 
    const updateIdiom = () => {
       const now = new Date();
@@ -101,62 +158,6 @@ const Home = () => {
 
    const darkColor = darkMode ? { color: 'white' } : {};
 
-   useEffect(() => {
-      async function registerPushNotifications() {
-         if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
-            console.warn('❌ Push notifications are not supported in this browser.');
-            return;
-         }
-
-         try {
-            const registration = await navigator.serviceWorker.ready;
-
-            const permission = await Notification.requestPermission();
-            if (permission !== 'granted') {
-            console.warn('🚫 Notification permission denied by user.');
-            return;
-            }
-
-            const existingSubscription = await registration.pushManager.getSubscription();
-            if (!existingSubscription) {
-            const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
-            if (!vapidPublicKey) {
-               console.error('❌ Missing NEXT_PUBLIC_VAPID_PUBLIC_KEY in environment variables.');
-               return;
-            }
-
-            const subscription = await registration.pushManager.subscribe({
-               userVisibleOnly: true,
-               applicationServerKey: urlBase64ToUint8Array(vapidPublicKey),
-            });
-
-            console.log('✅ New push subscription created:', subscription);
-
-            // Send subscription to your backend
-            const res = await fetch('/api/subscribe', {
-               method: 'POST',
-               headers: { 'Content-Type': 'application/json' },
-               body: JSON.stringify(subscription),
-            });
-
-            const result = await res.json();
-            if (result.success) {
-               console.log('📡 Subscription saved successfully.');
-            } else {
-               console.error('⚠️ Failed to save subscription:', result.error);
-            }
-            } else {
-            console.log('ℹ️ Already subscribed to push notifications.');
-            }
-         } catch (error) {
-            console.error('❌ Error setting up push notifications:', error);
-         }
-      }
-
-      registerPushNotifications();
-   }, []);
-
-
 
    return (
       <div className={styles.bigMom}>
@@ -182,9 +183,12 @@ const Home = () => {
 
 
          <div className={styles.pageHolder}>
-            <div className={styles.pageTitle} style={darkColor}>Home Page</div>
+            <div className={styles.pageTitle} style={darkColor} id="tour_start">Home Page</div>
 
-            <div className={`${styles.topSection} ${darkMode ? styles.darkTop : ''}`} onClick={toggleIdiomCard}>
+            <div className={`${styles.topSection} ${darkMode ? styles.darkTop : ''}`}
+               onClick={toggleIdiomCard}
+               id="tour_idiom"
+            >
                <div className={styles.motivTitle}>Today&apos;s Idiom</div>
                <div className={styles.motivText}>
                   {dailyIdiom?.example}
@@ -208,7 +212,7 @@ const Home = () => {
                <div className={styles.activityTitle} style={darkColor}>Lessons to Learn</div>
 
                <div className={styles.lessonsHolder}>
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_words'>
                      <Link href='/words'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Vocabulary</div>
@@ -220,7 +224,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_grammar'>
                      <Link href='/grammar'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Grammar</div>
@@ -232,7 +236,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_prep'>
                      <Link href='/expressions'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Prepositions</div>
@@ -243,7 +247,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_colloc'>
                      <Link href='/collocations'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Collocations</div>
@@ -254,7 +258,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_syn'>
                      <Link href='/synonyms'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Synonyms</div>
@@ -265,7 +269,7 @@ const Home = () => {
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`}>
+                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_family'>
                      <Link href='/family'>
                         <div className={styles.infoHolder}>
                            <div className={styles.actBtn} style={darkColor}>Word Family</div>
@@ -281,11 +285,7 @@ const Home = () => {
             
          </div>
 
-         {/* {isLoading && (
-            <Loader />
-         )} */}
-
-         {
+         {/* {
             showDialog &&
             <UpdateMsg
                updates = {updates}
@@ -293,9 +293,16 @@ const Home = () => {
                titles = {titles}
                version = {version}
             />
-         }
+         } */}
 
-
+         {isClient && tourOpen && (
+            <Tour
+               steps={steps}
+               run={tourOpen}
+               onTourComplete={handleTourComplete}
+            />
+         )}
+         
       </div>
    );
 };

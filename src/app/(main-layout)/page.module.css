@@ -24,13 +24,12 @@
       height: 100dvh;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: start;
       justify-content: start;
       gap: 10px;
       
       
       .pageTitle {
-         width: 100%;
          text-align: start;
          font-size: 20px;
          font-weight: 700;
