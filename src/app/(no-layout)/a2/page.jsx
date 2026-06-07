@@ -14,7 +14,7 @@ function A2() {
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
-   const [switches, setSwitches] = useState(Array(124).fill(false));
+   const [switches, setSwitches] = useState(Array(112).fill(false));
    // const [allowStart, setAllowStart] = useState(false)
    const [nextLesson, setNextLesson] = useState(0)
    const [progress, setProgress] = useState(0)
@@ -22,10 +22,10 @@ function A2() {
 
    useEffect(() => {
       const current = JSON.parse(localStorage.getItem(`currentLesson-A2`)) || 0;
-      current < 124 ? setNextLesson(Number(current) + 1) : null
+      current < 112 ? setNextLesson(Number(current) + 1) : null
 
       if(!isLoading) {
-         const currentProgress = (Number(current) * 100) / 124
+         const currentProgress = (Number(current) * 100) / 112
    
          progress == 100 && setTimeout(() => {
             setCompleted(true)
@@ -38,13 +38,10 @@ function A2() {
       
 
 
-      const newSwitches = Array(124).fill(false);
-      for (let i = 1; i <= 124; i++) {
+      const newSwitches = Array(112).fill(false);
+      for (let i = 1; i <= 112; i++) {
          const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A2`)) || [];
          const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A2`)) || [];
-         
-         // const wordsA1Count = JSON.parse(localStorage.getItem('wordsCount-A1') || false);
-         // setAllowStart(wordsA1Count)
 
          if (knowns.length > 0 || unknowns.length > 0) {
             newSwitches[i - 1] = true;

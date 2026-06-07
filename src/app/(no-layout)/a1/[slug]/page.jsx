@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './slug.module.css';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6"
+import { BsArrowRepeat } from "react-icons/bs";
 import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';
 import Loader from '@/components/loading/loading';
@@ -27,12 +28,12 @@ export default function Lessons({ params }) {
    const totalImages = 1;
    const totalImages2 = 1;
 
-   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-   const [learningWordIndex, setLearningWordIndex] = useState(0);
-   const [stage, setStage] = useState('assessment');
+   const [currentWordIndex, setCurrentWordIndex] = useState(0)
+   const [learningWordIndex, setLearningWordIndex] = useState(0)
+   const [stage, setStage] = useState('assessment')
    const [knownWords, setKnownWords] = useState([]);
    const [unknownWords, setUnknownWords] = useState([]);
-   const [btn, setBtn] = useState(false)
+   const [finalWindow, setFinalWindow] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
    const [savedA1Vocabs, setSavedA1Vocabs] = useState([])
    const [showPrompt, setShowPrompt] = useState(false)
@@ -41,6 +42,7 @@ export default function Lessons({ params }) {
    const [appear, setAppear] = useState(false)
    const [fade, setFade] = useState(false)
    const [show, setShow] = useState(false)
+   const [excellent, setExcellent] = useState(false)
    const [totalA1Progress, setTotalA1Progress] = useState(null)
    const [lessonsA1, setLessonsA1] = useState(null)
    const [totalWordsCount, setTotalWordsCount] = useState(null)
@@ -229,20 +231,23 @@ export default function Lessons({ params }) {
       setIsLoading2(true);
    }, [learningWordIndex]);
 
+   
+   const learningWords = [...unknownWords];
+
 
    const handleNextLearningWord = () => {
-      const learningWords = [...unknownWords];
       if (learningWordIndex + 1 < learningWords.length && (!isPlayingBrE && !isPlayingAmE)) {
          setLearningWordIndex(learningWordIndex + 1);
       } else if(learningWordIndex + 1 == learningWords.length && (!isPlayingBrE && !isPlayingAmE)) {
-         setBtn(true)
+         setFinalWindow(true)
       } 
    };
    
    const handleBackLearningWord = () => {
       if (learningWordIndex - 1 >= 0 && (!isPlayingBrE && !isPlayingAmE)) {
          setLearningWordIndex(learningWordIndex - 1);
-         setBtn(false)
+         setFinalWindow(false)
+
       } else if(!isPlayingBrE && !isPlayingAmE) {
          alert('This is the first word');
       }
@@ -250,7 +255,7 @@ export default function Lessons({ params }) {
 
    const restartLearning = () => {
       setLearningWordIndex(0)
-      setBtn(false)
+      setFinalWindow(false)
    }
 
    const saveHandle = (ws) => {
@@ -332,15 +337,7 @@ export default function Lessons({ params }) {
    const wholeLessons = wordList?.[wordList.length - 1].id
 
    const startLearning = () => {
-      setAppear(false);
 
-      setTimeout(() => {
-         setStage('learning');
-      }, 1000);
-
-      setTimeout(() => {
-         setFade(true);
-      }, 1500);
    }
 
    // logics for the assesment card
@@ -375,8 +372,7 @@ export default function Lessons({ params }) {
    };
 
    const handleSwipe = (direction) => {
-      setCounter(prev => prev + 10)
-
+      
       if(direction === 'right'){
          setTranslateX(1000)
          handleAnswer('known')
@@ -396,44 +392,60 @@ export default function Lessons({ params }) {
    const handleAnswer = (status) => {
       const currentWord = specificLessonWords[currentWordIndex];
 
-      // Update known or unknown words based on status
       if (status === 'known') {
          setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
+
       } else if (status === 'unknown') {
          setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
       }
 
-      // Check if there are more words to process
       if (currentWordIndex + 1 < specificLessonWords.length) {
+         const progressPercentage = 100 / specificLessonWords.length
+         setCounter(prev => prev + Number(progressPercentage.toFixed(0)))
+
          setCurrentWordIndex(currentWordIndex + 1);
       } else {
-         // Use the current status to determine the next stage
+         setCounter(100)
+
          const willHaveUnknownWords = status === 'unknown' ? true : unknownWords.length > 0;
 
-         setClose(true);
          if (willHaveUnknownWords) {
-               setTimeout(() => {
+            setClose(true);
+               
+            setTimeout(() => {
                setStage('shiftMsg');
-            }, 1000);
-
+            }, 500);
+               
             setTimeout(() => {
                setAppear(true);
-            }, 1500);
+            }, 600);
+
+            setTimeout(() => {
+               setAppear(false);
+            }, 4000);
+
+            setTimeout(() => {
+               setStage('learning');
+            }, 4500);
+
+            setTimeout(() => {
+               setFade(true);
+            }, 5000);
 
          } else {
             setTimeout(() => {
-               setStage('excellent');
-            }, 1000);
+               setExcellent(true)
+            }, 500);
 
             setTimeout(() => {
                setShow(true);
-            }, 2000);
+            }, 600);
          }
       }
    };
 
    if (!specificLessonWords || specificLessonWords.length === 0) {
-      return <div className={styles.noCards}>No flashcards available</div>;
+      return <div className='w-screen min-h-dvh flex items-center justify-center'>No flashcards available</div>;
    }
 
    const visibleCards = [];
@@ -462,7 +474,12 @@ export default function Lessons({ params }) {
    };
 
    const startOver = () => {
-      location.reload()
+      setCurrentWordIndex(0);
+      setCurrentCardIndex(0);
+      setCounter(0);
+
+      setKnownWords([]);
+      setUnknownWords([]);
    }
 
    if(preview){
@@ -587,19 +604,37 @@ export default function Lessons({ params }) {
       }
    };
 
+   // Skip Assessment (Learn All)
+   const skipAssessment = () => {
+      const allWords = specificLessonWords.map(word => ({
+         word,
+         type: 'unknown',
+         lesson: lessonNumber,
+         level: 'A1'
+      }));
+
+      setUnknownWords(allWords);
+      setCounter(100);
+
+      setTimeout(() => {
+         setStage('learning');
+         setFade(true);
+      }, 200);
+   };
+
    return (
-      <div className={styles.container}>
+      <div className='min-w-screen min-h-dvh'>
 
          {
             darkMode ?
-            <Image className={styles.img}
+            <Image className='z-0'
                src= '/images/back/A1SlugDark.jpg'
                alt= 'background image'
                fill
                onLoad={handleImageLoad}
             />
             :
-            <Image className={styles.img}
+            <Image className='z-0'
                src= '/images/back/A1Slug.jpg'
                alt= 'background image'
                fill
@@ -608,35 +643,38 @@ export default function Lessons({ params }) {
 
          }
 
+         <div className="absolute w-full flex items-center h-15 z-1">
+            <div className='w-full pl-3'
+            >Lesson {lessonNumber}</div>
 
-         <div className={styles.lessonTitle}
-            style={darkMode ? {color: 'white'} : {}}
-         >Lesson {lessonNumber}</div>
-
-         <div className={styles.lessonLevel}
-            style={darkMode ? {color: 'white'} : {}}
-         >A1</div>
+            <div className='w-full'
+               style={darkMode ? {color: 'white'} : {}}
+            >A1</div>
+         </div>
 
          {stage === 'assessment' && (
 
-         <div className={`${styles.assessCard} ${close && styles.shiftMsg}`}>
-            <div className={styles.titleHolder}
-               style={darkMode ? {color: 'white'} : {}}
-            >
-               <h2 className={styles.check}>Knowledge Check</h2>
-               <p className={styles.prompt}>Swipe right if you know the word.</p>
-               <p className={styles.prompt}>Swipe left if you need to learn the word.</p>
+         <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10  flex flex-col items-center justify-around touch-pan-y`}>
+            <div className='w-full z-1 text-white'>
+               <h2 className='text-center font-bold'>Knowledge Check</h2>
+               <p className='text-center'>Swipe right if you know the word.</p>
+               <p className='text-center'>Swipe left if you need to learn the word.</p>
             </div>
-           <div className={styles.cardStack}>
-               {visibleCards.map((card, index) => (
+
+           <div className='relative w-dvw h-80 flex items-center justify-center overflow-hidden'>
+               {
+               visibleCards.map((card, index) => (
                   <div
                      key={`${card.word}-${(currentCardIndex + index) % specificLessonWords.length}`}
+
                      ref={index === 0 ? cardRef : null}
-                     className={`${styles.card} ${
-                     index === 0 && isSwiping ? styles.swiping : ''
-                     } ${index === 0 && swipeDirection && isSwiped ? styles[swipeDirection] : ''} ${
-                     styles[`card${index}`]
-                     }`}
+
+                     className={`absolute rounded-4xl w-[80vw] h-full bg-white flex items-center justify-center p-10 ${
+                     index === 0 && isSwiping ? 'transition-none' : 'transition-all'
+                     } 
+                     
+                     ${index == 0 ? 'z-3' : index == 1 ? 'z-2 translate-y-2.5 scale-95' : index == 2 ? 'z-1 translate-y-5 scale-90' : ''}`}
+
                      style={
                      index === 0
                         ? {
@@ -652,12 +690,13 @@ export default function Lessons({ params }) {
                            }
                         : {}
                      }
+
                      onTouchStart={index === 0 ? handleTouchStart : undefined}
                      onTouchMove={index === 0 ? handleTouchMove : undefined}
                      onTouchEnd={index === 0 ? handleTouchEnd : undefined}
                   >
-                     <div className={styles.cardContent}>
-                        <h2
+                     <div className='text-center h-full flex items-center justify-evenly flex-col'>
+                        <h2 className='text-4xl'
                         style={
                         index === 0
                         ? {
@@ -710,63 +749,72 @@ export default function Lessons({ params }) {
                ))}
 
             </div>
-            <div className={styles.counterHolder}>
-               <div className={styles.number}>{counter} %</div>
-               <div className={styles.counterCourse}>
-                  <div className={styles.counter}
+            <div className='h-10 w-full z-1'>
+               <div className='text-white'>{counter} %</div>
+               <div className='h-5 bg-white/10 rounded-2xl'>
+                  <div className='bg-white h-full rounded-2xl transition-all'
                      style={{width: counter + '%'}}
                   ></div>
                </div>
             </div>
 
-            <button className={styles.restart} onClick={startOver}>Start Again</button>
+            <div className="w-full flex items-center justify-end gap-2">
+               <button className='w-15 h-15 text-white bg-black/10 border border-white/40 rounded-[50%] active:bg-white/30 z-1 flex items-center justify-center' onClick={startOver}>
+                  <BsArrowRepeat size={30} />
+               </button>
 
+               <button
+                  className='w-15 h-15 bg-black/10 border border-white/40 text-white rounded-[50%] active:bg-white/30 z-1'
+                  onClick={skipAssessment}
+               >
+                  Skip
+               </button>
+            </div>
+
+
+            {
+               excellent && (
+                  <div className='absolute w-full h-dvh p-25 top-0 bg-black/10 backdrop-blur-lg flex items-center justify-center flex-col z-3 gap-3'>
+                     <div className={`relative text-xl transition-all duration-400 text-black ${show ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>All done. Brilliant :)</div>
+                     <div className='w-full flex flex-col gap-3'>
+                        <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={done}>Save</button>
+                        {
+                           lessonNumber < wholeLessons ?
+                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={nextLesson}>Next Lesson</button>
+                           :
+                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={nextLevel}>Start A2</button>
+                        }
+                     </div>
+                  </div>
+               )
+            }
          </div>
             
          )}
 
          {
             stage === 'shiftMsg' && (
-               <div className={`${styles.shiftCard} ${appear && styles.appear}`}>
-                  <div style={darkMode ? {color: 'white'} : {}}>Time to Learn the New Words</div>
-                  <button className={styles.start}
-                     onClick={startLearning}
-                  >START</button>
+               <div className='absolute w-full h-dvh top-0 flex items-center justify-center'>
+                  <div className={`relative opacity-0 transition-all duration-500 ease-out text-white text-xl ${appear ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>Time to Learn the New Words</div>
                </div>
             )
          }
 
-         {
-            stage === 'excellent' && ( // NEW
-               <div className={`${styles.done} ${show && styles.show}`}>
-                  <div className={styles.doneTitle}>All done. Brilliant :)</div>
-                  <div className={styles.btnHolder}>
-                     <button className={styles.back} onClick={done}>Save</button>
-                     {
-                        lessonNumber < wholeLessons ?
-                        <button className={styles.back} onClick={nextLesson}>Next Lesson</button>
-                        :
-                        <button className={styles.back} onClick={nextLevel}>Start A2</button>
-                     }
-                  </div>
-               </div>
-            )
-         }
    
          {stage === 'learning' && (
-         <div className={`${styles.learnCard} ${fade && styles.fadeIn}`}
+         <div className={`absolute w-full h-full top-0 p-5 pt-12 overflow-hidden flex items-center justify-start flex-col ${fade && styles.fadeIn}`}
             style={darkMode ? {color: 'white'} : {}}
          >
             {
-               darkMode ? 
-               <Image className={styles.image}
+               darkMode ?
+               <Image className='object-cover z-0'
                   src='/images/back/DarkLearningA1.jpg'
                   fill
                   alt='background'
                   onLoad={handleImageLoad}
                />
                :
-               <Image className={styles.image}
+               <Image className='object-cover z-0'
                   src='/images/back/A1LearnSection.jpg'
                   fill
                   alt='background'
@@ -780,29 +828,28 @@ export default function Lessons({ params }) {
                const ws = learningWords[learningWordIndex];
                return (
                <>
-                  <div className={styles.wordBlock}>
-                     <div className={styles.wordImage}>
+                  <div className='w-full h-dvh flex flex-col justify-start items-start gap-3'>
+                     <div className='relative w-full h-80 overflow-hidden rounded-2xl'>
                         
-                        <Image className={styles.image}
+                        <Image className='object-cover'
                            src={`/images/a1/${ws.word.word}.png`}
                            fill
                            alt='Word Pic'
                            onLoad={handleImageLoad2}
                         />
-                        <div className={styles.overlay}></div>
-                        <p className={styles.wordTitle}>{ws.word.word}</p>
+                        <div className='absolute w-full bottom-0 h-20 bg-linear-to-t from-black to-transparent'></div>
+                        <p className='absolute left-3 bottom-2 text-white text-4xl'>{ws.word.word}</p>
 
-                        <div className={styles.actions} onClick={() => saveHandle(ws)}>
+                        <div className='absolute right-3 bottom-4 text-white text-2xl flex justify-center items-center' onClick={() => saveHandle(ws)}>
                            {  
-                              (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark className={styles.save}/> : <FaRegBookmark className={styles.save}/>  
+                              (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark /> : <FaRegBookmark />  
                            }
                         </div>
                      </div>
-                     <div className={styles.wordHolder}>
-                        <div className={styles.infoHolder}>
-                           <div className={`${styles.phonetics} ${isPlayingAmE ? styles.isPlaying : {}}`}
+                     <div className='w-full flex flex-col items-start z-1'>
+                        <div className='w-full gap-5 flex items-center justify-center'>
+                           <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
                               onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
-                              style={darkMode ? {backgroundColor: '#00000054', border: '1px solid white'} : {}}
                            >
                               <audio
                                  ref={audioRefAmE}
@@ -821,9 +868,8 @@ export default function Lessons({ params }) {
                            
                            </div>
 
-                           <div className={`${styles.phonetics} ${isPlayingBrE ? styles.isPlaying : {}}`}
+                           <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
                               onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
-                              style={darkMode ? {backgroundColor: '#00000054', border: '1px solid white'} : {}}
                            >
                               <audio
                                  ref={audioRefBrE}
@@ -843,69 +889,88 @@ export default function Lessons({ params }) {
                         </div>
                      </div>
 
-                     <div className={styles.role}
-                        style={darkMode ? {backgroundColor: '#00000054', border: '1px solid white'} : {}}
+                     <div className='w-full bg-white/50 p-2 z-1 text-center rounded-2xl'
                      >{ws.word.role}</div>
 
-                     <div className={styles.definition} onClick={() => copyDef(ws.word.definition)}
-                        style={darkMode ? {backgroundColor: '#00000054', border: '1px solid white'} : {}}   
+                     <div className='w-full flex items-center bg-white/50 p-4 z-1 rounded-2xl'
+                        onClick={() => copyDef(ws.word.definition)}   
                      >{ws.word.definition}</div>
 
-                     <div className={styles.examplesHolder}
-                        style={darkMode ? {backgroundColor: '#00000054', border: '1px solid white'} : {}}
+                     <div className='w-full bg-white/50 rounded-2xl p-4 z-1'
                      >
-                        <ul className={styles.examplesList}>
-                           {ws.word.examples.map((example, i) => (
-                           <li key={i}>{example}</li>
+                        <ul className='w-full flex flex-col gap-5'>
+                           {
+                              ws.word.examples.map((example, i) => (
+                                 <div key={i} className="flex flex-col">
+                                    <li className='font-bold'>{example.collocation}</li>
+                                    <h3>{example.example}</h3>
+                                 </div>
                            ))}
                         </ul>
                      </div>
                      {
-                        btn ? // NEW
-                           <div className={styles.btnHolder}>
-                              <button
-                                 className={styles.button}
-                                 onClick={restartLearning}
-                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
-                              >
-                                 Review
-                              </button>
+                        finalWindow &&
+                           <div className='absolute top-0 w-full h-dvh bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'>
 
-                              {
-                              lessonNumber < wholeLessons ?
-                                 <button className={styles.button} onClick={nextLesson}
-                                    style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}   
-                                 >Lesson {lessonNumber + 1}</button>
-                                 :
-                                 <button className={styles.button} onClick={nextLevel}
-                                    style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
-                                 >Start A2</button>  
-                              }
+                              <div className="text-white text-bold text-4xl">Great!</div>
+                              <div className="text-white text-bold text-lg mb-5">Great! You finished lesson {lessonNumber}</div>
 
-                              <button className={styles.button} onClick={done}
-                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
-                              >Save</button>
+                              <div className="w-full flex gap-2 justify-center">
+
+                                 <button
+                                    className='py-2 w-25 bg-white rounded-xl active:scale-95'
+                                    onClick={restartLearning}
+                                 >
+                                    Review
+                                 </button>
+
+                                 {
+                                    lessonNumber < wholeLessons ?
+                                       <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
+                                          onClick={nextLesson}   
+                                       >Lesson {lessonNumber + 1}</button>
+                                       :
+                                       <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
+                                          onClick={nextLevel}
+                                       >Start A2</button>  
+                                 }
+
+                                 <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
+                                    onClick={done}
+                                 >Save</button>
+                              </div>
+
                            </div>
 
-                           : 
+                        }
 
-                           <div className={styles.btnHolder}>
-                              <button
-                                 className={styles.button}
-                                 onClick={handleBackLearningWord}
-                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
-                              >
-                                 Back
-                              </button>
-                              <button
-                                 className={styles.button}
-                                 onClick={handleNextLearningWord}
-                                 style={darkMode ? {backgroundColor: '#ffffff', border: '1px solid white'} : {}}
-                              >
-                                 Next
-                              </button>
-                           </div>
-                     }
+                        <div className='absolute bottom-0 w-full flex items-center justify-center gap-3 left-0 p-5'>
+                           <button
+                              className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                              onClick={handleBackLearningWord}
+                           >
+                              Back
+                           </button>
+                           {
+                              learningWordIndex + 1 == learningWords.length ? 
+
+                                 <button
+                                    className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                                    onClick={handleNextLearningWord}
+                                 >
+                                    Done
+                                 </button>
+                              :
+                                 <button
+                                    className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                                    onClick={handleNextLearningWord}
+                                 >
+                                    Next
+                                 </button>
+                              
+                           }
+                        </div>
+                     
                   </div>
                </>
                );

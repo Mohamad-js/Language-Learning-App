@@ -1,15887 +1,10260 @@
 export const a1WordList = [
    {
       "id": 1,
-      "word": "about",
-      "role": "adverb",
-      "BrE": "/əˈbaʊt/",
-      "AmE": "/əˈbaʊt/",
-      "definition": "a little more or less than; approximately",
-      "examples": [
-         "The movie is about two hours long.",
-         "She is about 20 years old.",
-         "The project will take about a week to finish."
-      ]
-   },
-   {
-      "id": 1,
-      "word": "about ",
-      "role": "preposition",
-      "BrE": "/əˈbaʊt/",
-      "AmE": "/əˈbaʊt/",
-      "definition": "on the subject of something",
-      "examples": [
-         "This book is about animals.",
-         "We talked about our holiday plans.",
-         "She gave a presentation about climate change."
-      ]
-   },
-   {
-      "id": 1,
-      "word": "above",
-      "role": "adverb",
-      "BrE": "/əˈbʌv/",
-      "AmE": "/əˈbʌv/",
-      "definition": "at a higher level or position",
-      "examples": [
-         "The bird is flying above.",
-         "Can you score 16 or above in the test?",
-         "The temperature is around 45C or above."
-      ]
-   },
-   {
-      "id": 1,
-      "word": "above ",
-      "role": "preposition",
-      "BrE": "/əˈbʌv/",
-      "AmE": "/əˈbʌv/",
-      "definition": "in a higher position than something",
-      "examples": [
-         "The lamp is above the table.",
-         "The plane can fly above the clouds.",
-         "Her score was above the class average."
-      ]
-   },
-   {
-      "id": 1,
-      "word": "across",
-      "role": "adverb",
-      "BrE": "/əˈkrɔːs/",
-      "AmE": "/əˈkrɒs/",
-      "definition": "from one side to the other",
-      "examples": [
-         "The road is safe. You can across.",
-         "The river is deep. It is dangerous to swim across.",
-         "As a goalkeeper, you should shoot the ball across."
-      ]
-   },
-   {
-      "id": 1,
-      "word": "across ",
-      "role": "preposition",
-      "BrE": "/əˈkrɔːs/",
-      "AmE": "/əˈkrɒs/",
-      "definition": "from one side to the other of something",
-      "examples": [
-         "The bridge is across the river.",
-         "They walked across the park to school.",
-         "She sent a letter across the country."
-      ]
-   },
-   {
-      
-      "id": 1,
-      "word": "action",
-      "role": "noun",
-      "BrE": "/ˈækʃn/",
-      "AmE": "/ˈækʃn/",
-      "definition": "something that you do",
-      "examples": [
-         "His action was very kind.",
-         "The action of helping others is good.",
-         "Quick action saved the burning house."
-      ]
-   },
-   {
-      
-      "id": 1,
-      "word": "activity",
-      "role": "noun",
-      "BrE": "/ækˈtɪvəti/",
-      "AmE": "/ækˈtɪvəti/",
-      "definition": "something that you do for interest or pleasure",
-      "examples": [
-         "Drawing is a fun activity.",
-         "The school offers many activities.",
-         "Outdoor activities improve our health."
-      ]
-   },
-   {
-      
-      "id": 1,
-      "word": "actor",
-      "role": "noun",
-      "BrE": "/ˈæktə(r)/",
-      "AmE": "/ˈæktər/",
-      "definition": "a person who acts in plays or films",
-      "examples": [
-         "He is a famous actor.",
-         "The actor played a king in the movie.",
-         "She met an actor at the film festival."
-      ]
-   },
-   {
-      
-      "id": 1,
-      "word": "actress",
-      "role": "noun",
-      "BrE": "/ˈæktrəs/",
-      "AmE": "/ˈæktrəs/",
-      "definition": "a woman who acts in plays or films",
-      "examples": [
-         "She is a great actress.",
-         "The actress won an award for her role.",
-         "A young actress starred in the new film."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "add",
-      "role": "verb",
-      "BrE": "/æd/",
-      "AmE": "/æd/",
-      "definition": "to put something with something else",
-      "examples": [
-         "Add sugar to the tea.",
-         "She added milk to her coffee.",
-         "He added his name to the list."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "address",
-      "role": "noun",
-      "BrE": "/əˈdres/",
-      "AmE": "/əˈdres/",
-      "definition": "details of where somebody lives or works",
-      "examples": [
-         "My address is 123 Main Street.",
-         "She wrote her address on the envelope.",
-         "The address on the package was wrong."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "adult",
-      "role": "noun",
-      "BrE": "/ˈædʌlt/",
-      "AmE": "/əˈdʌlt/",
-      "definition": "a person who is fully grown",
-      "examples": [
-         "This movie is for adults.",
-         "Adults must buy a ticket.",
-         "The event is open to adults only."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "advice",
-      "role": "noun",
-      "BrE": "/ədˈvaɪs/",
-      "AmE": "/ədˈvaɪs/",
-      "definition": "an opinion you give someone about what they should do",
-      "examples": [
-         "She gave me good advice.",
-         "His advice helped me choose a job.",
-         "I need advice about my homework."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "afraid",
-      "role": "adjective",
-      "BrE": "/əˈfreɪd/",
-      "AmE": "/əˈfreɪd/",
-      "definition": "feeling fear or worry",
-      "examples": [
-         "I am afraid of dogs.",
-         "She was afraid to go outside.",
-         "He is afraid of failing the exam."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "after",
-      "role": "preposition",
-      "BrE": "/ˈɑːftə(r)/",
-      "AmE": "/ˈæftər/",
-      "definition": "later than something",
-      "examples": [
-         "We eat dinner after six.",
-         "She called after the meeting.",
-         "He arrived after everyone left."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "afternoon",
-      "role": "noun",
-      "BrE": "/ˌɑːftəˈnuːn/",
-      "AmE": "/ˌæftərˈnuːn/",
-      "definition": "the time from 12 noon until evening",
-      "examples": [
-         "See you this afternoon!",
-         "We play football in the afternoon.",
-         "The meeting is scheduled for the afternoon."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "again",
-      "role": "adverb",
-      "BrE": "/əˈɡen/",
-      "AmE": "/əˈɡen/",
-      "definition": "one more time; another time",
-      "examples": [
-         "Say it again, please.",
-         "She visited the park again.",
-         "He forgot his lines and started again."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "age",
-      "role": "noun",
-      "BrE": "/eɪdʒ/",
-      "AmE": "/eɪdʒ/",
-      "definition": "how old someone or something is",
-      "examples": [
-         "What is your age?",
-         "Her age is 15 years old.",
-         "The age of the building is 100 years."
-      ]
-   },
-   {
-      
-      "id": 2,
-      "word": "ago",
-      "role": "adverb",
-      "BrE": "/əˈɡəʊ/",
-      "AmE": "/əˈɡoʊ/",
-      "definition": "in the past; back in time from now",
-      "examples": [
-         "I saw her two days ago.",
-         "He moved here a year ago.",
-         "The movie came out a long time ago."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "agree",
-      "role": "verb",
-      "BrE": "/əˈɡriː/",
-      "AmE": "/əˈɡriː/",
-      "definition": "to have the same opinion as someone",
-      "examples": [
-         "I agree with you.",
-         "They agree on the plan.",
-         "She agreed to help with the project."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "air",
-      "role": "noun",
-      "BrE": "/eə(r)/",
-      "AmE": "/er/",
-      "definition": "the mixture of gases that we breathe",
-      "examples": [
-         "The air is fresh today.",
-         "We need clean air to breathe.",
-         "Polluted air is bad for health."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "airport",
-      "role": "noun",
-      "BrE": "/ˈeəpɔːt/",
-      "AmE": "/ˈerpɔːrt/",
-      "definition": "a place where planes land and take off",
-      "examples": [
-         "The airport is big.",
-         "We arrived at the airport early.",
-         "The airport was crowded with travelers."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "all",
-      "role": "determiner",
-      "BrE": "/ɔːl/",
-      "AmE": "/ɔːl/",
-      "definition": "every one of a group",
-      "examples": [
-         "All students are here.",
-         "She ate all the cake.",
-         "All the books are on the shelf."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "all ",
-      "role": "pronoun",
-      "BrE": "/ɔːl/",
-      "AmE": "/ɔːl/",
-      "definition": "everything or everyone",
-      "examples": [
-         "All is ready now.",
-         "All of us are going.",
-         "All she wants is a new phone."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "also",
-      "role": "adverb",
-      "BrE": "/ˈɔːlsəʊ/",
-      "AmE": "/ˈɔːlsoʊ/",
-      "definition": "in addition; too",
-      "examples": [
-         "I like tea and also coffee.",
-         "She sings and also dances.",
-         "He is smart and also very kind."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "always",
-      "role": "adverb",
-      "BrE": "/ˈɔːlweɪz/",
-      "AmE": "/ˈɔːlweɪz/",
-      "definition": "at all times; every time",
-      "examples": [
-         "She is always happy.",
-         "He always arrives on time.",
-         "They always eat dinner together."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "amazing",
-      "role": "adjective",
-      "BrE": "/əˈmeɪzɪŋ/",
-      "AmE": "/əˈmeɪzɪŋ/",
-      "definition": "very surprising, wonderful, or impressive",
-      "examples": [
-         "The view is amazing.",
-         "Her dance was truly amazing.",
-         "The amazing story made us cry."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "and",
-      "role": "conjunction",
-      "BrE": "/ænd/",
-      "AmE": "/ænd/",
-      "definition": "used to connect words or parts of sentences",
-      "examples": [
-         "I like tea and coffee.",
-         "She sings and plays the piano.",
-         "He bought a book and a pen."
-      ]
-   },
-   {
-      
-      "id": 3,
-      "word": "angry",
-      "role": "adjective",
-      "BrE": "/ˈæŋɡri/",
-      "AmE": "/ˈæŋɡri/",
-      "definition": "having strong feelings because something is unfair or bad",
-      "examples": [
-         "He is angry with me.",
-         "She was angry about the mistake.",
-         "The teacher got angry when we were late."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "animal",
-      "role": "noun",
-      "BrE": "/ˈænɪml/",
-      "AmE": "/ˈænɪml/",
-      "definition": "a living creature such as a dog or cat",
-      "examples": [
-         "I have a pet animal.",
-         "The zoo has many animals.",
-         "This animal lives in the forest."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "another",
-      "role": "determiner",
-      "BrE": "/əˈnʌðə(r)/",
-      "AmE": "/əˈnʌðər/",
-      "definition": "one more; an additional one",
-      "examples": [
-         "I want another apple.",
-         "She bought another pair of shoes.",
-         "He asked for another chance to try."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "another",
-      "role": "pronoun",
-      "BrE": "/əˈnʌðə(r)/",
-      "AmE": "/əˈnʌðər/",
-      "definition": "an additional person or thing",
-      "examples": [
-         "Can you give me another?",
-         "I ate one cookie, then took another.",
-         "One left, so she chose another."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "answer",
-      "role": "noun",
-      "BrE": "/ˈɑːnsə(r)/",
-      "AmE": "/ˈænsər/",
-      "definition": "something you say or write when someone asks you a question",
-      "examples": [
-         "His answer was yes.",
-         "She gave a correct answer.",
-         "The answer to the question was clear."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "answer",
-      "role": "verb",
-      "BrE": "/ˈɑːnsə(r)/",
-      "AmE": "/ˈænsər/",
-      "definition": "to say or write something as a reply",
-      "examples": [
-         "Please answer the question.",
-         "He answered the phone quickly.",
-         "She answered with a smile."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "any",
-      "role": "determiner",
-      "BrE": "/ˈeni/",
-      "AmE": "/ˈeni/",
-      "definition": "used to refer to one, some, or all things or people",
-      "examples": [
-         "Do you have any pens?",
-         "Any student can join the club.",
-         "I don’t have any time today."
-      ]
-   },
-   {
-      "id": 4,
-      "word": "reply",
-      "role": "noun",
-      "BrE": "/rɪˈplaɪ/",
-      "AmE": "/rɪˈplaɪ/",
-      "definition": "an answer or response",
-      "examples": [
-         "His reply was short.",
-         "She waited for a reply.",
-         "The reply clarified the situation."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "anyone",
-      "role": "pronoun",
-      "BrE": "/ˈeniwʌn/",
-      "AmE": "/ˈeniwʌn/",
-      "definition": "any person",
-      "examples": [
-         "Can anyone help me?",
-         "Anyone can join the party.",
-         "Is anyone coming to the meeting?"
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "anything",
-      "role": "pronoun",
-      "BrE": "/ˈeniθɪŋ/",
-      "AmE": "/ˈeniθɪŋ/",
-      "definition": "any thing, no matter what",
-      "examples": [
-         "I don’t want anything.",
-         "Did you buy anything at the shop?",
-         "Anything you need, just ask me."
-      ]
-   },
-   {
-      
-      "id": 4,
-      "word": "apartment",
-      "role": "noun",
-      "BrE": "/əˈpɑːtmənt/",
-      "AmE": "/əˈpɑːrtmənt/",
-      "definition": "a set of rooms for living in, usually on one floor",
-      "examples": [
-         "I live in an apartment.",
-         "Her apartment is on the third floor.",
-         "The apartment has a big kitchen."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "apple",
-      "role": "noun",
-      "BrE": "/ˈæpl/",
-      "AmE": "/ˈæpl/",
-      "definition": "a round fruit with red or green skin",
-      "examples": [
-         "I ate an apple.",
-         "She bought red apples at the market.",
-         "An apple a day keeps you healthy."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "April",
-      "role": "noun",
-      "BrE": "/ˈeɪprəl/",
-      "AmE": "/ˈeɪprəl/",
-      "definition": "the fourth month of the year",
-      "examples": [
-         "My birthday is in April.",
-         "April is a spring month.",
-         "We have a holiday in April."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "area",
-      "role": "noun",
-      "BrE": "/ˈeəriə/",
-      "AmE": "/ˈeriə/",
-      "definition": "a part of a place or space",
-      "examples": [
-         "This is a quiet area.",
-         "The park is a green area.",
-         "The area near the school is safe."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "arm",
-      "role": "noun",
-      "BrE": "/ɑːm/",
-      "AmE": "/ɑːrm/",
-      "definition": "the part of the body between the shoulder and the hand",
-      "examples": [
-         "My arm hurts.",
-         "She broke her arm playing football.",
-         "He carried the bag in his arms."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "around",
-      "role": "adverb",
-      "BrE": "/əˈraʊnd/",
-      "AmE": "/əˈraʊnd/",
-      "definition": "in a circle or in different places",
-      "examples": [
-         "We walked around.",
-         "She looked around the room.",
-         "They traveled around the city."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "around",
-      "role": "preposition",
-      "BrE": "/əˈraʊnd/",
-      "AmE": "/əˈraʊnd/",
-      "definition": "in a circle or surrounding something",
-      "examples": [
-         "Trees are around the house.",
-         "We sat around the table.",
-         "A fence is around the garden."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "arrive",
-      "role": "verb",
-      "BrE": "/əˈraɪv/",
-      "AmE": "/əˈraɪv/",
-      "definition": "to get to a place",
-      "examples": [
-         "We arrive at six.",
-         "The train arrived at the station.",
-         "She arrived late for the meeting."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "art",
-      "role": "noun",
-      "BrE": "/ɑːt/",
-      "AmE": "/ɑːrt/",
-      "definition": "the activity of creating paintings, drawings, or other objects",
-      "examples": [
-         "I like art.",
-         "Her art is in the museum.",
-         "He studies art at school."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "article",
-      "role": "noun",
-      "BrE": "/ˈɑːtɪkl/",
-      "AmE": "/ˈɑːrtɪkl/",
-      "definition": "a piece of writing in a newspaper or magazine",
-      "examples": [
-         "I read an article.",
-         "The article was about animals.",
-         "She wrote an article for the school paper."
-      ]
-   },
-   {
-      
-      "id": 5,
-      "word": "artist",
-      "role": "noun",
-      "BrE": "/ˈɑːtɪst/",
-      "AmE": "/ˈɑːrtɪst/",
-      "definition": "a person who creates art, such as paintings",
-      "examples": [
-         "She is an artist.",
-         "The artist painted a big picture.",
-         "This artist is famous for landscapes."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "as",
-      "role": "preposition",
-      "BrE": "/æz/",
-      "AmE": "/æz/",
-      "definition": "used to describe the job or role of someone",
-      "examples": [
-         "He works as a teacher.",
-         "She is employed as a nurse.",
-         "I started as a waiter last year."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "ask",
-      "role": "verb",
-      "BrE": "/ɑːsk/",
-      "AmE": "/æsk/",
-      "definition": "to say or write something to get an answer",
-      "examples": [
-         "Ask me a question.",
-         "She asked for help with homework.",
-         "He asked about the new project."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "at",
-      "role": "preposition",
-      "BrE": "/æt/",
-      "AmE": "/æt/",
-      "definition": "used to show a place or time",
-      "examples": [
-         "I am at school.",
-         "Meet me at the park at six.",
-         "She works at the library."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "August",
-      "role": "noun",
-      "BrE": "/ˈɔːɡəst/",
-      "AmE": "/ˈɔːɡəst/",
-      "definition": "the eighth month of the year",
-      "examples": [
-         "August is hot.",
-         "We go on holiday in August.",
-         "Her birthday is on August 10th."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "aunt",
-      "role": "noun",
-      "BrE": "/ɑːnt/",
-      "AmE": "/ænt/",
-      "definition": "the sister of your mother or father",
-      "examples": [
-         "My aunt is kind.",
-         "Her aunt lives in London.",
-         "I visit my aunt every weekend."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "autumn",
-      "role": "noun",
-      "BrE": "/ˈɔːtəm/",
-      "AmE": "/ˈɔːtəm/",
-      "definition": "the season between summer and winter",
-      "examples": [
-         "Autumn is cool.",
-         "Leaves fall in autumn.",
-         "We love walking in autumn."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "away",
-      "role": "adverb",
-      "BrE": "/əˈweɪ/",
-      "AmE": "/əˈweɪ/",
-      "definition": "to or at a distance from a place",
-      "examples": [
-         "Go away!",
-         "The beach is far away.",
-         "She moved away from her hometown."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "baby",
-      "role": "noun",
-      "BrE": "/ˈbeɪbi/",
-      "AmE": "/ˈbeɪbi/",
-      "definition": "a very young child",
-      "examples": [
-         "The baby is sleeping.",
-         "She has a new baby.",
-         "The baby cried all night."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "back",
-      "role": "adverb",
-      "BrE": "/bæk/",
-      "AmE": "/bæk/",
-      "definition": "to the place where something was before",
-      "examples": [
-         "Come back soon!",
-         "He went back to his room.",
-         "She looked back at the house."
-      ]
-   },
-   {
-      
-      "id": 6,
-      "word": "back",
-      "role": "noun",
-      "BrE": "/bæk/",
-      "AmE": "/bæk/",
-      "definition": "the part of the body from the neck to the bottom",
-      "examples": [
-         "My back hurts.",
-         "He carried a bag on his back.",
-         "She fell and hurt her back."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "bad",
-      "role": "adjective",
-      "BrE": "/bæd/",
-      "AmE": "/bæd/",
-      "definition": "not good or pleasant",
-      "examples": [
-         "The weather is bad.",
-         "He had a bad day at school.",
-         "This is a bad time to call."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "bag",
-      "role": "noun",
-      "BrE": "/bæɡ/",
-      "AmE": "/bæɡ/",
-      "definition": "a container made of paper or plastic for carrying things",
-      "examples": [
-         "I have a school bag.",
-         "She put apples in the bag.",
-         "His bag is full of books."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "ball",
-      "role": "noun",
-      "BrE": "/bɔːl/",
-      "AmE": "/bɔːl/",
-      "definition": "a round object used in games and sports",
-      "examples": [
-         "Kick the ball!",
-         "We played with a red ball.",
-         "The ball went over the fence."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "banana",
-      "role": "noun",
-      "BrE": "/bəˈnɑːnə/",
-      "AmE": "/bəˈnænə/",
-      "definition": "a long, curved fruit with yellow skin",
-      "examples": [
-         "I ate a banana.",
-         "She likes bananas for breakfast.",
-         "He bought a bunch of bananas."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "band",
-      "role": "noun",
-      "BrE": "/bænd/",
-      "AmE": "/bænd/",
-      "definition": "a group of people who play music together",
-      "examples": [
-         "The band is playing.",
-         "I like this rock band.",
-         "The band performed at the festival."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "bank",
-      "role": "noun",
-      "BrE": "/bæŋk/",
-      "AmE": "/bæŋk/",
-      "definition": "a place where people keep money",
-      "examples": [
-         "I go to the bank.",
-         "She saves money in the bank.",
-         "The bank is open until five."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "bath",
-      "role": "noun",
-      "BrE": "/bɑːθ/",
-      "AmE": "/bæθ/",
-      "definition": "a large container you fill with water to wash your body",
-      "examples": [
-         "I take a bath.",
-         "The baby likes a warm bath.",
-         "She takes a bath every evening."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "bathroom",
-      "role": "noun",
-      "BrE": "/ˈbɑːθruːm/",
-      "AmE": "/ˈbæθruːm/",
-      "definition": "a room with a toilet, a bath, or a shower",
-      "examples": [
-         "The bathroom is upstairs.",
-         "I cleaned the bathroom today.",
-         "The house has two bathrooms."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "be",
-      "role": "verb",
-      "BrE": "/biː/",
-      "AmE": "/biː/",
-      "definition": "used to show existence or describe someone or something",
-      "examples": [
-         "I am happy.",
-         "She is a teacher.",
-         "They are at the park now."
-      ]
-   },
-   {
-      
-      "id": 7,
-      "word": "be",
-      "role": "auxiliary verb",
-      "BrE": "/biː/",
-      "AmE": "/biː/",
-      "definition": "used to form continuous tenses or the passive",
-      "examples": [
-         "She is reading.",
-         "They are playing football.",
-         "The room is being cleaned."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "beach",
-      "role": "noun",
-      "BrE": "/biːtʃ/",
-      "AmE": "/biːtʃ/",
-      "definition": "an area of sand or stones by the sea",
-      "examples": [
-         "I love the beach.",
-         "We walked on the beach.",
-         "The beach was crowded today."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "beautiful",
-      "role": "adjective",
-      "BrE": "/ˈbjuːtɪfl/",
-      "AmE": "/ˈbjuːtɪfl/",
-      "definition": "very attractive or pleasing",
-      "examples": [
-         "She is beautiful.",
-         "The flower is very beautiful.",
-         "The sunset was beautiful tonight."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "because",
-      "role": "conjunction",
-      "BrE": "/bɪˈkɒz/",
-      "AmE": "/bɪˈkɔːz/",
-      "definition": "for the reason that",
-      "examples": [
-         "I’m late because of traffic.",
-         "She cried because she was sad.",
-         "He stayed home because it rained."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "become",
-      "role": "verb",
-      "BrE": "/bɪˈkʌm/",
-      "AmE": "/bɪˈkʌm/",
-      "definition": "to start to be something",
-      "examples": [
-         "She became a doctor.",
-         "The weather became cold.",
-         "He became famous after the movie."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "bed",
-      "role": "noun",
-      "BrE": "/bed/",
-      "AmE": "/bed/",
-      "definition": "a piece of furniture for sleeping on",
-      "examples": [
-         "I sleep in a bed.",
-         "The bed is very comfortable.",
-         "She made the bed this morning."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "bedroom",
-      "role": "noun",
-      "BrE": "/ˈbedruːm/",
-      "AmE": "/ˈbedruːm/",
-      "definition": "a room for sleeping in",
-      "examples": [
-         "My bedroom is big.",
-         "She painted her bedroom blue.",
-         "The bedroom has a large window."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "beer",
-      "role": "noun",
-      "BrE": "/bɪə(r)/",
-      "AmE": "/bɪr/",
-      "definition": "an alcoholic drink made from grain",
-      "examples": [
-         "He drinks beer.",
-         "They ordered a cold beer.",
-         "The bar serves many types of beer."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "before",
-      "role": "preposition",
-      "BrE": "/bɪˈfɔː(r)/",
-      "AmE": "/bɪˈfɔːr/",
-      "definition": "earlier than something or someone",
-      "examples": [
-         "Come before seven.",
-         "I ate breakfast before school.",
-         "She finished her work before lunch."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "begin",
-      "role": "verb",
-      "BrE": "/bɪˈɡɪn/",
-      "AmE": "/bɪˈɡɪn/",
-      "definition": "to start something",
-      "examples": [
-         "Let’s begin the game.",
-         "The movie begins at eight.",
-         "She began writing a book."
-      ]
-   },
-   {
-      
-      "id": 8,
-      "word": "beginning",
-      "role": "noun",
-      "BrE": "/bɪˈɡɪnɪŋ/",
-      "AmE": "/bɪˈɡɪnɪŋ/",
-      "definition": "the start of something",
-      "examples": [
-         "The beginning is easy.",
-         "The book has a good beginning.",
-         "At the beginning of the year, we plan."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "behind",
-      "role": "adverb",
-      "BrE": "/bɪˈhaɪnd/",
-      "AmE": "/bɪˈhaɪnd/",
-      "definition": "at or to the back of something",
-      "examples": [
-         "Look behind you!",
-         "She stood behind the door.",
-         "He was behind in his homework."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "behind",
-      "role": "preposition",
-      "BrE": "/bɪˈhaɪnd/",
-      "AmE": "/bɪˈhaɪnd/",
-      "definition": "at the back of something",
-      "examples": [
-         "The cat is behind the sofa.",
-         "He hid behind a tree.",
-         "The shop is behind the station."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "believe",
-      "role": "verb",
-      "BrE": "/bɪˈliːv/",
-      "AmE": "/bɪˈliːv/",
-      "definition": "to think that something is true",
-      "examples": [
-         "I believe you.",
-         "She believes in hard work.",
-         "He believes the story is true."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "below",
-      "role": "adverb",
-      "BrE": "/bɪˈləʊ/",
-      "AmE": "/bɪˈloʊ/",
-      "definition": "at a lower level",
-      "examples": [
-         "The fish swim below.",
-         "See the note below.",
-         "The temperature fell below zero."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "below",
-      "role": "preposition",
-      "BrE": "/bɪˈləʊ/",
-      "AmE": "/bɪˈloʊ/",
-      "definition": "in a lower position than something",
-      "examples": [
-         "The shelf is below the window.",
-         "Her score was below average.",
-         "The village is below the mountain."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "best",
-      "role": "adjective",
-      "BrE": "/best/",
-      "AmE": "/best/",
-      "definition": "better than all others",
-      "examples": [
-         "This is the best cake.",
-         "She is my best friend.",
-         "He did his best in the exam."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "better",
-      "role": "adjective",
-      "BrE": "/ˈbetə(r)/",
-      "AmE": "/ˈbetər/",
-      "definition": "comparative of good; of a higher quality",
-      "examples": [
-         "This book is better.",
-         "Her grades are better now.",
-         "This is a better choice for us."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "between",
-      "role": "preposition",
-      "BrE": "/bɪˈtwiːn/",
-      "AmE": "/bɪˈtwiːn/",
-      "definition": "in the space or time separating two things",
-      "examples": [
-         "The house is between two trees.",
-         "We meet between 3 and 4 p.m.",
-         "She stood between her friends."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "bicycle",
-      "role": "noun",
-      "BrE": "/ˈbaɪsɪkl/",
-      "AmE": "/ˈbaɪsɪkl/",
-      "definition": "a vehicle with two wheels that you ride",
-      "examples": [
-         "I ride a bicycle.",
-         "He bought a new bicycle.",
-         "She rides her bicycle to school."
-      ]
-   },
-   {
-      
-      "id": 9,
-      "word": "big",
-      "role": "adjective",
-      "BrE": "/bɪɡ/",
-      "AmE": "/bɪɡ/",
-      "definition": "large in size or amount",
-      "examples": [
-         "The dog is big.",
-         "They live in a big house.",
-         "He has a big problem to solve."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "bike",
-      "role": "noun",
-      "BrE": "/baɪk/",
-      "AmE": "/baɪk/",
-      "definition": "a bicycle or motorcycle",
-      "examples": [
-         "I have a bike.",
-         "She rides her bike every day.",
-         "His bike is parked outside."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "bill",
-      "role": "noun",
-      "BrE": "/bɪl/",
-      "AmE": "/bɪl/",
-      "definition": "a document showing the amount you must pay",
-      "examples": [
-         "I paid the bill.",
-         "The restaurant gave us the bill.",
-         "The electricity bill was high."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "bird",
-      "role": "noun",
-      "BrE": "/bɜːd/",
-      "AmE": "/bɜːrd/",
-      "definition": "an animal with wings and feathers",
-      "examples": [
-         "I see a bird.",
-         "The bird is in the tree.",
-         "A small bird flew into the garden."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "birthday",
-      "role": "noun",
-      "BrE": "/ˈbɜːθdeɪ/",
-      "AmE": "/ˈbɜːrθdeɪ/",
-      "definition": "the day each year when someone was born",
-      "examples": [
-         "Today is my birthday.",
-         "Her birthday is in June.",
-         "We had a party for his birthday."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "black",
-      "role": "adjective",
-      "BrE": "/blæk/",
-      "AmE": "/blæk/",
-      "definition": "having the darkest colour, like the night",
-      "examples": [
-         "I have a black cat.",
-         "She wears a black dress.",
-         "The sky was black at night."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "black",
-      "role": "noun",
-      "BrE": "/blæk/",
-      "AmE": "/blæk/",
-      "definition": "the colour of the night",
-      "examples": [
-         "Black is my favourite colour.",
-         "The room was painted in black.",
-         "She chose black for her new car."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "blog",
-      "role": "noun",
-      "BrE": "/blɒɡ/",
-      "AmE": "/blɑːɡ/",
-      "definition": "a website with regular writing about a topic",
-      "examples": [
-         "I read a blog.",
-         "She writes a travel blog.",
-         "His blog is about healthy food."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "blonde",
-      "role": "adjective",
-      "BrE": "/blɒnd/",
-      "AmE": "/blɑːnd/",
-      "definition": "having light yellow hair",
-      "examples": [
-         "She has blonde hair.",
-         "The girl with blonde hair smiled.",
-         "Her blonde curls look beautiful."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "blue",
-      "role": "adjective",
-      "BrE": "/bluː/",
-      "AmE": "/bluː/",
-      "definition": "having the colour of the sky or sea",
-      "examples": [
-         "The sky is blue.",
-         "He wears a blue shirt.",
-         "Her blue eyes are very pretty."
-      ]
-   },
-   {
-      
-      "id": 10,
-      "word": "blue",
-      "role": "noun",
-      "BrE": "/bluː/",
-      "AmE": "/bluː/",
-      "definition": "the colour of the sky or sea",
-      "examples": [
-         "Blue is a nice colour.",
-         "She painted the room blue.",
-         "The car is a bright shade of blue."
-      ]
-   },
-   
-   {
-      
-      "id": 11,
-      "word": "boat",
-      "role": "noun",
-      "BrE": "/bəʊt/",
-      "AmE": "/boʊt/",
-      "definition": "a small vehicle used for travelling on water",
-      "examples": [
-         "We saw a boat.",
-         "They rowed a boat on the lake.",
-         "The boat sailed across the river."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "body",
-      "role": "noun",
-      "BrE": "/ˈbɒdi/",
-      "AmE": "/ˈbɑːdi/",
-      "definition": "all the physical parts of a person or animal",
-      "examples": [
-         "My body is tired.",
-         "She exercises to keep her body fit.",
-         "The body needs water every day."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "book",
-      "role": "noun",
-      "BrE": "/bʊk/",
-      "AmE": "/bʊk/",
-      "definition": "a set of printed pages with a cover",
-      "examples": [
-         "I read a book.",
-         "This book is about history.",
-         "She bought a book for school."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "boot",
-      "role": "noun",
-      "BrE": "/buːt/",
-      "AmE": "/buːt/",
-      "definition": "a type of shoe that covers the foot and ankle",
-      "examples": [
-         "I wear boots.",
-         "Her boots are black and shiny.",
-         "He put on boots for the hike."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "bored",
-      "role": "adjective",
-      "BrE": "/bɔːd/",
-      "AmE": "/bɔːrd/",
-      "definition": "feeling tired and unhappy because something is not interesting",
-      "examples": [
-         "I am bored.",
-         "She was bored in class.",
-         "He felt bored without his phone."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "boring",
-      "role": "adjective",
-      "BrE": "/ˈbɔːrɪŋ/",
-      "AmE": "/ˈbɔːrɪŋ/",
-      "definition": "not interesting or exciting",
-      "examples": [
-         "The movie was boring.",
-         "This book is so boring.",
-         "The lesson felt boring to her."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "born",
-      "role": "verb",
-      "BrE": "/bɔːn/",
-      "AmE": "/bɔːrn/",
-      "definition": "to come out of a mother’s body and start to exist",
-      "examples": [
-         "She was born in May.",
-         "He was born in a small village.",
-         "The baby was born last night."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "both",
-      "role": "determiner",
-      "BrE": "/bəʊθ/",
-      "AmE": "/boʊθ/",
-      "definition": "used to refer to two people or things together",
-      "examples": [
-         "Both cats are cute.",
-         "Both of my brothers are tall.",
-         "Both teams played very well."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "both",
-      "role": "pronoun",
-      "BrE": "/bəʊθ/",
-      "AmE": "/boʊθ/",
-      "definition": "two people or things together",
-      "examples": [
-         "Both are here.",
-         "I like both of these books.",
-         "Both of them arrived on time."
-      ]
-   },
-   {
-      
-      "id": 11,
-      "word": "bottle",
-      "role": "noun",
-      "BrE": "/ˈbɒtl/",
-      "AmE": "/ˈbɑːtl/",
-      "definition": "a container with a narrow neck, usually for liquids",
-      "examples": [
-         "I drank a bottle of water.",
-         "She bought a bottle of juice.",
-         "The bottle of milk is in the fridge."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "box",
-      "role": "noun",
-      "BrE": "/bɒks/",
-      "AmE": "/bɑːks/",
-      "definition": "a container with a flat base and sides",
-      "examples": [
-         "I have a box.",
-         "The shoes are in a box.",
-         "She packed her books in a box."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "boy",
-      "role": "noun",
-      "BrE": "/bɔɪ/",
-      "AmE": "/bɔɪ/",
-      "definition": "a young male person",
-      "examples": [
-         "The boy is running.",
-         "That boy plays football well.",
-         "The boy helped his mother at home."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "boyfriend",
-      "role": "noun",
-      "BrE": "/ˈbɔɪfrend/",
-      "AmE": "/ˈbɔɪfrend/",
-      "definition": "a man or boy that someone is having a romantic relationship with",
-      "examples": [
-         "Her boyfriend is nice.",
-         "She met her boyfriend at school.",
-         "My boyfriend gave me a gift."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "bread",
-      "role": "noun",
-      "BrE": "/bred/",
-      "AmE": "/bred/",
-      "definition": "a food made from flour, water, and yeast",
-      "examples": [
-         "I eat bread.",
-         "She made fresh bread today.",
-         "We bought bread from the bakery."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "break",
-      "role": "noun",
-      "BrE": "/breɪk/",
-      "AmE": "/breɪk/",
-      "definition": "a short period of rest or pause",
-      "examples": [
-         "We have a break.",
-         "The break is at ten o’clock.",
-         "She took a break from studying."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "break",
-      "role": "verb",
-      "BrE": "/breɪk/",
-      "AmE": "/breɪk/",
-      "definition": "to make something split or become damaged",
-      "examples": [
-         "Don’t break the glass.",
-         "He broke his pencil in class.",
-         "The plate broke when it fell."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "breakfast",
-      "role": "noun",
-      "BrE": "/ˈbrekfəst/",
-      "AmE": "/ˈbrekfəst/",
-      "definition": "the meal you eat in the morning",
-      "examples": [
-         "I eat breakfast.",
-         "Breakfast is cereal and milk.",
-         "She had breakfast at seven."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "bring",
-      "role": "verb",
-      "BrE": "/brɪŋ/",
-      "AmE": "/brɪŋ/",
-      "definition": "to carry or take something with you",
-      "examples": [
-         "Bring your book.",
-         "She brought her lunch to school.",
-         "He brought a gift for the party."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "brother",
-      "role": "noun",
-      "BrE": "/ˈbrʌðə(r)/",
-      "AmE": "/ˈbrʌðər/",
-      "definition": "a male person with the same parents as you",
-      "examples": [
-         "My brother is tall.",
-         "Her brother plays football.",
-         "I help my brother with homework."
-      ]
-   },
-   {
-      
-      "id": 12,
-      "word": "brown",
-      "role": "adjective",
-      "BrE": "/braʊn/",
-      "AmE": "/braʊn/",
-      "definition": "having the colour of earth or wood",
-      "examples": [
-         "I have a brown dog.",
-         "She wears a brown jacket.",
-         "The brown leaves fell from the tree."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "brown",
-      "role": "noun",
-      "BrE": "/braʊn/",
-      "AmE": "/braʊn/",
-      "definition": "the colour of earth or wood",
-      "examples": [
-         "Brown is a warm colour.",
-         "The walls are painted brown.",
-         "She chose brown for her bag."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "build",
-      "role": "verb",
-      "BrE": "/bɪld/",
-      "AmE": "/bɪld/",
-      "definition": "to make something by putting parts together",
-      "examples": [
-         "They build a house.",
-         "He built a small table.",
-         "We are building a new school."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "building",
-      "role": "noun",
-      "BrE": "/ˈbɪldɪŋ/",
-      "AmE": "/ˈbɪldɪŋ/",
-      "definition": "a structure such as a house or school",
-      "examples": [
-         "The building is tall.",
-         "Our school is a big building.",
-         "The new building has many rooms."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "bus",
-      "role": "noun",
-      "BrE": "/bʌs/",
-      "AmE": "/bʌs/",
-      "definition": "a large vehicle that carries passengers",
-      "examples": [
-         "I take the bus.",
-         "The bus stops at the station.",
-         "She rides the bus to work."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "business",
-      "role": "noun",
-      "BrE": "/ˈbɪznəs/",
-      "AmE": "/ˈbɪznəs/",
-      "definition": "the activity of buying and selling goods or services",
-      "examples": [
-         "He has a business.",
-         "Her business is growing fast.",
-         "The shop is a family business."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "busy",
-      "role": "adjective",
-      "BrE": "/ˈbɪzi/",
-      "AmE": "/ˈbɪzi/",
-      "definition": "having a lot to do",
-      "examples": [
-         "I am busy today.",
-         "She is busy with homework.",
-         "The shop is busy on weekends."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "but",
-      "role": "conjunction",
-      "BrE": "/bət/",
-      "AmE": "/bət/",
-      "definition": "used to introduce a statement that contrasts with something",
-      "examples": [
-         "I tried, but failed.",
-         "She’s nice but very shy.",
-         "He wanted to go, but he was tired."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "butter",
-      "role": "noun",
-      "BrE": "/ˈbʌtə(r)/",
-      "AmE": "/ˈbʌtər/",
-      "definition": "a soft yellow food made from cream",
-      "examples": [
-         "I put butter on bread.",
-         "She bought butter at the store.",
-         "The recipe needs a lot of butter."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "buy",
-      "role": "verb",
-      "BrE": "/baɪ/",
-      "AmE": "/baɪ/",
-      "definition": "to get something by paying money for it",
-      "examples": [
-         "I buy milk.",
-         "She bought a new dress.",
-         "He buys books every month."
-      ]
-   },
-   {
-      
-      "id": 13,
-      "word": "by",
-      "role": "preposition",
-      "BrE": "/baɪ/",
-      "AmE": "/baɪ/",
-      "definition": "near or beside something; through the means of",
-      "examples": [
-         "The park is by the river.",
-         "She travels by bus.",
-         "The book was written by her."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "bye",
-      "role": "exclamation",
-      "BrE": "/baɪ/",
-      "AmE": "/baɪ/",
-      "definition": "used to say goodbye",
-      "examples": [
-         "Bye, see you!",
-         "She said bye and left.",
-         "He waved and shouted, ‘Bye!’"
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "cafe",
-      "role": "noun",
-      "BrE": "/ˈkæfeɪ/",
-      "AmE": "/kæˈfeɪ/",
-      "definition": "a small restaurant where you can buy drinks and snacks",
-      "examples": [
-         "We met at a cafe.",
-         "The cafe serves good coffee.",
-         "She works in a cafe downtown."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "cake",
-      "role": "noun",
-      "BrE": "/keɪk/",
-      "AmE": "/keɪk/",
-      "definition": "a sweet food made from flour, eggs, and sugar",
-      "examples": [
-         "I ate a cake.",
-         "She baked a chocolate cake.",
-         "The cake was for her birthday."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "call",
-      "role": "noun",
-      "BrE": "/kɔːl/",
-      "AmE": "/kɔːl/",
-      "definition": "a telephone conversation",
-      "examples": [
-         "I got a call.",
-         "She made a call to her friend.",
-         "The call lasted ten minutes."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "call",
-      "role": "verb",
-      "BrE": "/kɔːl/",
-      "AmE": "/kɔːl/",
-      "definition": "to telephone someone or give something a name",
-      "examples": [
-         "Call me later.",
-         "She called her dog Max.",
-         "He called his friend yesterday."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "camera",
-      "role": "noun",
-      "BrE": "/ˈkæmərə/",
-      "AmE": "/ˈkæmərə/",
-      "definition": "a piece of equipment for taking photographs or filming",
-      "examples": [
-         "I have a camera.",
-         "She took a photo with her camera.",
-         "The camera is new and expensive."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "can",
-      "role": "modal verb",
-      "BrE": "/kæn/",
-      "AmE": "/kæn/",
-      "definition": "to be able to do something",
-      "examples": [
-         "I can swim.",
-         "She can speak English well.",
-         "Can you come to the party?"
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "cannot",
-      "role": "modal verb",
-      "BrE": "/ˈkænɒt/",
-      "AmE": "/ˈkænɑːt/",
-      "definition": "the negative form of can, meaning not able to",
-      "examples": [
-         "I cannot run fast.",
-         "She cannot come today.",
-         "He cannot solve this problem."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "capital",
-      "role": "adjective",
-      "BrE": "/ˈkæpɪtl/",
-      "AmE": "/ˈkæpɪtl/",
-      "definition": "relating to the most important city of a country",
-      "examples": [
-         "The capital city is big.",
-         "We visited the capital museum.",
-         "The capital region has many jobs."
-      ]
-   },
-   {
-      
-      "id": 14,
-      "word": "capital",
-      "role": "noun",
-      "BrE": "/ˈkæpɪtl/",
-      "AmE": "/ˈkæpɪtl/",
-      "definition": "the most important city in a country",
-      "examples": [
-         "Paris is a capital.",
-         "The capital of France is Paris.",
-         "We flew to the capital last week."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "car",
-      "role": "noun",
-      "BrE": "/kɑː(r)/",
-      "AmE": "/kɑːr/",
-      "definition": "a vehicle with four wheels for travelling on roads",
-      "examples": [
-         "I have a car.",
-         "She drives a red car.",
-         "The car is parked outside."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "card",
-      "role": "noun",
-      "BrE": "/kɑːd/",
-      "AmE": "/kɑːrd/",
-      "definition": "a piece of paper or plastic used for payment or identification",
-      "examples": [
-         "I use a card.",
-         "She paid with a credit card.",
-         "He lost his library card."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "career",
-      "role": "noun",
-      "BrE": "/kəˈrɪə(r)/",
-      "AmE": "/kəˈrɪr/",
-      "definition": "a job or profession that someone does for a long time",
-      "examples": [
-         "She has a good career.",
-         "His career is in teaching.",
-         "She wants a career in music."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "carrot",
-      "role": "noun",
-      "BrE": "/ˈkærət/",
-      "AmE": "/ˈkærət/",
-      "definition": "a long orange vegetable",
-      "examples": [
-         "I ate a carrot.",
-         "She cooked carrots for dinner.",
-         "The carrot soup was delicious."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "carry",
-      "role": "verb",
-      "BrE": "/ˈkæri/",
-      "AmE": "/ˈkæri/",
-      "definition": "to hold something and take it somewhere",
-      "examples": [
-         "I carry a bag.",
-         "He carried the box upstairs.",
-         "She carries her phone everywhere."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "cat",
-      "role": "noun",
-      "BrE": "/kæt/",
-      "AmE": "/kæt/",
-      "definition": "a small animal with fur, often kept as a pet",
-      "examples": [
-         "My cat is black.",
-         "The cat sleeps on the sofa.",
-         "Her cat likes to chase birds."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "CD",
-      "role": "noun",
-      "BrE": "/ˌsiː ˈdiː/",
-      "AmE": "/ˌsiː ˈdiː/",
-      "definition": "a small disc used to store music or data",
-      "examples": [
-         "I bought a CD.",
-         "She plays her music CD.",
-         "The CD has all her favorite songs."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "cent",
-      "role": "noun",
-      "BrE": "/sent/",
-      "AmE": "/sent/",
-      "definition": "a small unit of money in some countries",
-      "examples": [
-         "It costs one cent.",
-         "I found a cent on the ground.",
-         "The candy is fifty cents."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "centre",
-      "role": "noun",
-      "BrE": "/ˈsentə(r)/",
-      "AmE": "/ˈsentər/",
-      "definition": "the middle point or part of something",
-      "examples": [
-         "The city centre is busy.",
-         "We met in the town centre.",
-         "The centre of the park has a fountain."
-      ]
-   },
-   {
-      
-      "id": 15,
-      "word": "century",
-      "role": "noun",
-      "BrE": "/ˈsentʃəri/",
-      "AmE": "/ˈsentʃəri/",
-      "definition": "a period of 100 years",
-      "examples": [
-         "This is the 21st century.",
-         "The building is from the 19th century.",
-         "A century ago, life was different."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "chair",
-      "role": "noun",
-      "BrE": "/tʃeə(r)/",
-      "AmE": "/tʃer/",
-      "definition": "a piece of furniture for one person to sit on",
-      "examples": [
-         "I sit on a chair.",
-         "The chair is by the table.",
-         "She bought a new chair for her room."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "change",
-      "role": "noun",
-      "BrE": "/tʃeɪndʒ/",
-      "AmE": "/tʃeɪndʒ/",
-      "definition": "the act of becoming different",
-      "examples": [
-         "I need change for the bus.",
-         "The change in weather was sudden.",
-         "She made a change to her plan."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "change",
-      "role": "verb",
-      "BrE": "/tʃeɪndʒ/",
-      "AmE": "/tʃeɪndʒ/",
-      "definition": "to make or become different",
-      "examples": [
-         "I change my clothes.",
-         "She changed her hairstyle.",
-         "He wants to change his job."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "chart",
-      "role": "noun",
-      "BrE": "/tʃɑːt/",
-      "AmE": "/tʃɑːrt/",
-      "definition": "a picture or diagram showing information",
-      "examples": [
-         "Look at the chart.",
-         "The chart shows our progress.",
-         "She made a chart for the project."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "cheap",
-      "role": "adjective",
-      "BrE": "/tʃiːp/",
-      "AmE": "/tʃiːp/",
-      "definition": "not expensive; low in price",
-      "examples": [
-         "This shirt is cheap.",
-         "She bought a cheap phone.",
-         "The shop sells cheap clothes."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "check",
-      "role": "verb",
-      "BrE": "/tʃek/",
-      "AmE": "/tʃek/",
-      "definition": "to look at something to make sure it is correct",
-      "examples": [
-         "Check your bag.",
-         "He checked his homework.",
-         "She checked the time on her phone."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "cheese",
-      "role": "noun",
-      "BrE": "/tʃiːz/",
-      "AmE": "/tʃiːz/",
-      "definition": "a food made from milk",
-      "examples": [
-         "I like cheese.",
-         "She put cheese on the pizza.",
-         "The shop sells many types of cheese."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "chicken",
-      "role": "noun",
-      "BrE": "/ˈtʃɪkɪn/",
-      "AmE": "/ˈtʃɪkɪn/",
-      "definition": "a bird kept for its eggs and meat",
-      "examples": [
-         "We ate chicken.",
-         "She cooked chicken for dinner.",
-         "The farm has many chickens."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "child",
-      "role": "noun",
-      "BrE": "/tʃaɪld/",
-      "AmE": "/tʃaɪld/",
-      "definition": "a young person who is not yet an adult",
-      "examples": [
-         "The child is playing.",
-         "She has one child.",
-         "The child drew a picture."
-      ]
-   },
-   {
-      
-      "id": 16,
-      "word": "chocolate",
-      "role": "noun",
-      "BrE": "/ˈtʃɒklət/",
-      "AmE": "/ˈtʃɑːklət/",
-      "definition": "a sweet brown food or drink made from cocoa",
-      "examples": [
-         "I love chocolate.",
-         "She bought a chocolate bar.",
-         "The cake is made of chocolate."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "choose",
-      "role": "verb",
-      "BrE": "/tʃuːz/",
-      "AmE": "/tʃuːz/",
-      "definition": "to decide which thing or person you want",
-      "examples": [
-         "I choose a book.",
-         "She chose a blue dress.",
-         "He chose to stay at home."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "cinema",
-      "role": "noun",
-      "BrE": "/ˈsɪnəmə/",
-      "AmE": "/ˈsɪnəmə/",
-      "definition": "a place where people watch films",
-      "examples": [
-         "We went to the cinema.",
-         "The cinema is near the park.",
-         "She loves watching movies at the cinema."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "city",
-      "role": "noun",
-      "BrE": "/ˈsɪti/",
-      "AmE": "/ˈsɪti/",
-      "definition": "a large and important town",
-      "examples": [
-         "I live in a city.",
-         "The city is very busy.",
-         "She visited a big city."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "class",
-      "role": "noun",
-      "BrE": "/klɑːs/",
-      "AmE": "/klæs/",
-      "definition": "a group of students who learn together",
-      "examples": [
-         "I have a class today.",
-         "The class is learning English.",
-         "Our class has twenty students."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "classroom",
-      "role": "noun",
-      "BrE": "/ˈklɑːsruːm/",
-      "AmE": "/ˈklæsruːm/",
-      "definition": "a room where students learn",
-      "examples": [
-         "The classroom is big.",
-         "We study in the classroom.",
-         "The classroom has new desks."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "clean",
-      "role": "adjective",
-      "BrE": "/kliːn/",
-      "AmE": "/kliːn/",
-      "definition": "not dirty",
-      "examples": [
-         "The room is clean.",
-         "Her clothes are always clean.",
-         "The kitchen was clean after work."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "clean",
-      "role": "verb",
-      "BrE": "/kliːn/",
-      "AmE": "/kliːn/",
-      "definition": "to make something not dirty",
-      "examples": [
-         "I clean the house.",
-         "She cleaned the windows.",
-         "He cleans his room every week."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "climb",
-      "role": "verb",
-      "BrE": "/klaɪm/",
-      "AmE": "/klaɪm/",
-      "definition": "to go up something, like a hill or tree",
-      "examples": [
-         "I climb the tree.",
-         "He climbed the mountain.",
-         "She loves to climb steep hills."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "clock",
-      "role": "noun",
-      "BrE": "/klɒk/",
-      "AmE": "/klɑːk/",
-      "definition": "a device that shows the time",
-      "examples": [
-         "The clock is ticking.",
-         "I looked at the clock.",
-         "The clock on the wall is old."
-      ]
-   },
-   {
-      
-      "id": 17,
-      "word": "close",
-      "role": "verb",
-      "BrE": "/kləʊz/",
-      "AmE": "/kloʊz/",
-      "definition": "to shut something",
-      "examples": [
-         "Close the door.",
-         "She closed her book.",
-         "He closed the shop early."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "clothes",
-      "role": "noun",
-      "BrE": "/kləʊðz/",
-      "AmE": "/kloʊðz/",
-      "definition": "things you wear, like shirts and trousers",
-      "examples": [
-         "I wear clothes.",
-         "Her clothes are new.",
-         "He washed his clothes yesterday."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "club",
-      "role": "noun",
-      "BrE": "/klʌb/",
-      "AmE": "/klʌb/",
-      "definition": "a group of people who meet for an activity",
-      "examples": [
-         "I joined a club.",
-         "The club meets every week.",
-         "She is in the school chess club."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "coat",
-      "role": "noun",
-      "BrE": "/kəʊt/",
-      "AmE": "/koʊt/",
-      "definition": "a piece of clothing worn over other clothes",
-      "examples": [
-         "I wear a coat.",
-         "Her coat is warm and red.",
-         "He forgot his coat at home."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "coffee",
-      "role": "noun",
-      "BrE": "/ˈkɒfi/",
-      "AmE": "/ˈkɔːfi/",
-      "definition": "a hot drink made from roasted beans",
-      "examples": [
-         "I drink coffee.",
-         "She likes black coffee.",
-         "We had coffee after lunch."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "cold",
-      "role": "adjective",
-      "BrE": "/kəʊld/",
-      "AmE": "/koʊld/",
-      "definition": "having a low temperature",
-      "examples": [
-         "The water is cold.",
-         "It’s cold outside today.",
-         "She felt cold in the morning."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "cold",
-      "role": "noun",
-      "BrE": "/kəʊld/",
-      "AmE": "/koʊld/",
-      "definition": "an illness with a blocked nose and sore throat",
-      "examples": [
-         "I have a cold.",
-         "Her cold lasted a week.",
-         "He caught a cold from the rain."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "college",
-      "role": "noun",
-      "BrE": "/ˈkɒlɪdʒ/",
-      "AmE": "/ˈkɑːlɪdʒ/",
-      "definition": "a place where people study after high school",
-      "examples": [
-         "I go to college.",
-         "She studies at a big college.",
-         "The college offers many courses."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "colour",
-      "role": "noun",
-      "BrE": "/ˈkʌlə(r)/",
-      "AmE": "/ˈkʌlər/",
-      "definition": "something like red, blue, or yellow",
-      "examples": [
-         "My favourite colour is blue.",
-         "She painted the wall a bright colour.",
-         "The dress comes in many colours."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "come",
-      "role": "verb",
-      "BrE": "/kʌm/",
-      "AmE": "/kʌm/",
-      "definition": "to move or travel towards a place",
-      "examples": [
-         "Come here, please.",
-         "She comes to school by bus.",
-         "He came to the party late."
-      ]
-   },
-   {
-      
-      "id": 18,
-      "word": "common",
-      "role": "adjective",
-      "BrE": "/ˈkɒmən/",
-      "AmE": "/ˈkɑːmən/",
-      "definition": "happening or found often",
-      "examples": [
-         "This is a common name.",
-         "Colds are common in winter.",
-         "It’s common to eat rice here."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "company",
-      "role": "noun",
-      "BrE": "/ˈkʌmpəni/",
-      "AmE": "/ˈkʌmpəni/",
-      "definition": "a business that sells goods or services",
-      "examples": [
-         "She works for a company.",
-         "The company makes cars.",
-         "He started a new company."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "compare",
-      "role": "verb",
-      "BrE": "/kəmˈpeə(r)/",
-      "AmE": "/kəmˈper/",
-      "definition": "to look at things to see how they are different or similar",
-      "examples": [
-         "Compare the two books.",
-         "She compared prices at the shop.",
-         "He compared his work to hers."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "complete",
-      "role": "adjective",
-      "BrE": "/kəmˈpliːt/",
-      "AmE": "/kəmˈpliːt/",
-      "definition": "having all parts; finished",
-      "examples": [
-         "The set is complete.",
-         "Her homework is complete.",
-         "The project is now complete."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "complete",
-      "role": "verb",
-      "BrE": "/kəmˈpliːt/",
-      "AmE": "/kəmˈpliːt/",
-      "definition": "to finish something",
-      "examples": [
-         "I complete my work.",
-         "She completed the puzzle.",
-         "He completed the course early."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "computer",
-      "role": "noun",
-      "BrE": "/kəmˈpjuːtə(r)/",
-      "AmE": "/kəmˈpjuːtər/",
-      "definition": "an electronic machine for storing and organizing information",
-      "examples": [
-         "I use a computer.",
-         "The computer is on the desk.",
-         "She bought a new computer."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "concert",
-      "role": "noun",
-      "BrE": "/ˈkɒnsət/",
-      "AmE": "/ˈkɑːnsərt/",
-      "definition": "a performance of music",
-      "examples": [
-         "We went to a concert.",
-         "The concert was amazing.",
-         "She sings at the concert tonight."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "conversation",
-      "role": "noun",
-      "BrE": "/ˌkɒnvəˈseɪʃn/",
-      "AmE": "/ˌkɑːnvərˈseɪʃn/",
-      "definition": "talking between people",
-      "examples": [
-         "We had a conversation.",
-         "The conversation was about school.",
-         "He enjoyed their long conversation."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "cook",
-      "role": "verb",
-      "BrE": "/kʊk/",
-      "AmE": "/kʊk/",
-      "definition": "to prepare food by heating it",
-      "examples": [
-         "I cook dinner.",
-         "She cooked pasta for us.",
-         "He is cooking a big meal."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "cooking",
-      "role": "noun",
-      "BrE": "/ˈkʊkɪŋ/",
-      "AmE": "/ˈkʊkɪŋ/",
-      "definition": "the activity of preparing food",
-      "examples": [
-         "Cooking is fun.",
-         "She loves cooking Italian food.",
-         "His cooking is always delicious."
-      ]
-   },
-   {
-      
-      "id": 19,
-      "word": "cool",
-      "role": "adjective",
-      "BrE": "/kuːl/",
-      "AmE": "/kuːl/",
-      "definition": "slightly cold; fashionable or attractive",
-      "examples": [
-         "The water is cool.",
-         "His new shoes are cool.",
-         "The weather is cool today."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "correct",
-      "role": "adjective",
-      "BrE": "/kəˈrekt/",
-      "AmE": "/kəˈrekt/",
-      "definition": "right; without mistakes",
-      "examples": [
-         "Your answer is correct.",
-         "She gave the correct time.",
-         "His spelling is always correct."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "correct",
-      "role": "verb",
-      "BrE": "/kəˈrekt/",
-      "AmE": "/kəˈrekt/",
-      "definition": "to make something right",
-      "examples": [
-         "I correct my work.",
-         "She corrected her mistake.",
-         "He corrected the student’s test."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "cost",
-      "role": "noun",
-      "BrE": "/kɒst/",
-      "AmE": "/kɑːst/",
-      "definition": "the amount of money you need to buy something",
-      "examples": [
-         "The cost is low.",
-         "The cost of the book is ten dollars.",
-         "The cost of living is high."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "cost",
-      "role": "verb",
-      "BrE": "/kɒst/",
-      "AmE": "/kɑːst/",
-      "definition": "to have a price",
-      "examples": [
-         "This costs five dollars.",
-         "The ticket costs too much.",
-         "Her new phone cost a lot."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "could",
-      "role": "modal verb",
-      "BrE": "/kəd/",
-      "AmE": "/kəd/",
-      "definition": "used to show possibility or past ability",
-      "examples": [
-         "I could run fast.",
-         "She could come to the party.",
-         "Could you help me with this?"
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "country",
-      "role": "noun",
-      "BrE": "/ˈkʌntri/",
-      "AmE": "/ˈkʌntri/",
-      "definition": "an area of land with its own government",
-      "examples": [
-         "I love my country.",
-         "She visited a new country.",
-         "This country has many mountains."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "course",
-      "role": "noun",
-      "BrE": "/kɔːs/",
-      "AmE": "/kɔːrs/",
-      "definition": "a series of lessons on a subject",
-      "examples": [
-         "I take a course.",
-         "She joined an English course.",
-         "The course lasts three months."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "cousin",
-      "role": "noun",
-      "BrE": "/ˈkʌzn/",
-      "AmE": "/ˈkʌzn/",
-      "definition": "a child of your aunt or uncle",
-      "examples": [
-         "My cousin is funny.",
-         "She visited her cousin.",
-         "His cousin lives in another city."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "cow",
-      "role": "noun",
-      "BrE": "/kaʊ/",
-      "AmE": "/kaʊ/",
-      "definition": "a large animal kept for milk or meat",
-      "examples": [
-         "The cow is in the field.",
-         "Farmers have many cows.",
-         "The cow gives milk every day."
-      ]
-   },
-   {
-      
-      "id": 20,
-      "word": "cream",
-      "role": "noun",
-      "BrE": "/kriːm/",
-      "AmE": "/kriːm/",
-      "definition": "a thick liquid made from milk",
-      "examples": [
-         "I like cream in coffee.",
-         "She used cream for the cake.",
-         "The dessert has whipped cream."
-      ]
-   }, 
-   
-   {
-      
-      "id": 21,
-      "word": "create",
-      "role": "verb",
-      "BrE": "/kriˈeɪt/",
-      "AmE": "/kriˈeɪt/",
-      "definition": "to make something new",
-      "examples": [
-         "I create a picture.",
-         "She created a new game.",
-         "He created a website for his class."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "culture",
-      "role": "noun",
-      "BrE": "/ˈkʌltʃə(r)/",
-      "AmE": "/ˈkʌltʃər/",
-      "definition": "the customs and beliefs of a group of people",
-      "examples": [
-         "I like her culture.",
-         "We learned about Japanese culture.",
-         "The festival celebrates local culture."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "cup",
-      "role": "noun",
-      "BrE": "/kʌp/",
-      "AmE": "/kʌp/",
-      "definition": "a small container for drinking tea, coffee, etc.",
-      "examples": [
-         "I drink from a cup.",
-         "She bought a new cup.",
-         "The cup is full of tea."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "customer",
-      "role": "noun",
-      "BrE": "/ˈkʌstəmə(r)/",
-      "AmE": "/ˈkʌstəmər/",
-      "definition": "a person who buys goods or services",
-      "examples": [
-         "The customer is happy.",
-         "He helped a customer in the shop.",
-         "The customer ordered food online."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "cut",
-      "role": "verb",
-      "BrE": "/kʌt/",
-      "AmE": "/kʌt/",
-      "definition": "to use a knife to divide something",
-      "examples": [
-         "I cut the paper.",
-         "She cut the cake into pieces.",
-         "He cut his finger by accident."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "dad",
-      "role": "noun",
-      "BrE": "/dæd/",
-      "AmE": "/dæd/",
-      "definition": "a father",
-      "examples": [
-         "My dad is at home.",
-         "Her dad drives a car.",
-         "Dad helped me with my homework."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "dance",
-      "role": "noun",
-      "BrE": "/dɑːns/",
-      "AmE": "/dæns/",
-      "definition": "a series of movements to music",
-      "examples": [
-         "I like to dance.",
-         "The dance was fun to watch.",
-         "She learned a new dance at school."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "dance",
-      "role": "verb",
-      "BrE": "/dɑːns/",
-      "AmE": "/dæns/",
-      "definition": "to move your body to music",
-      "examples": [
-         "I dance with friends.",
-         "She dances very well.",
-         "They danced at the party."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "dancer",
-      "role": "noun",
-      "BrE": "/ˈdɑːnsə(r)/",
-      "AmE": "/ˈdænsər/",
-      "definition": "a person who dances",
-      "examples": [
-         "She is a dancer.",
-         "The dancer was amazing.",
-         "He became a professional dancer."
-      ]
-   },
-   {
-      
-      "id": 21,
-      "word": "dancing",
-      "role": "noun",
-      "BrE": "/ˈdɑːnsɪŋ/",
-      "AmE": "/ˈdænsɪŋ/",
-      "definition": "the activity of moving to music",
-      "examples": [
-         "Dancing is fun.",
-         "She loves dancing to music.",
-         "Dancing helps her stay active."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "dangerous",
-      "role": "adjective",
-      "BrE": "/ˈdeɪndʒərəs/",
-      "AmE": "/ˈdeɪndʒərəs/",
-      "definition": "able to cause harm",
-      "examples": [
-         "The road is dangerous.",
-         "That dog can be dangerous.",
-         "It’s dangerous to swim here."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "dark",
-      "role": "adjective",
-      "BrE": "/dɑːk/",
-      "AmE": "/dɑːrk/",
-      "definition": "with little or no light; closer to black",
-      "examples": [
-         "The room is dark.",
-         "She has dark hair.",
-         "The sky is dark at night."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "date",
-      "role": "noun",
-      "BrE": "/deɪt/",
-      "AmE": "/deɪt/",
-      "definition": "a particular day or time",
-      "examples": [
-         "What’s the date today?",
-         "The date of the party is Friday.",
-         "Her birth date is in July."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "daughter",
-      "role": "noun",
-      "BrE": "/ˈdɔːtə(r)/",
-      "AmE": "/ˈdɔːtər/",
-      "definition": "a female child",
-      "examples": [
-         "My daughter is six.",
-         "Her daughter plays football.",
-         "The daughter helped her mother."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "day",
-      "role": "noun",
-      "BrE": "/deɪ/",
-      "AmE": "/deɪ/",
-      "definition": "a period of 24 hours",
-      "examples": [
-         "Today is a sunny day.",
-         "We meet every day.",
-         "She works five days a week."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "dear",
-      "role": "adjective",
-      "BrE": "/dɪə(r)/",
-      "AmE": "/dɪr/",
-      "definition": "loved or valued very much",
-      "examples": [
-         "She is my dear friend.",
-         "This book is very dear to me.",
-         "Her dear dog is always with her."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "December",
-      "role": "noun",
-      "BrE": "/dɪˈsembə(r)/",
-      "AmE": "/dɪˈsembər/",
-      "definition": "the twelfth month of the year",
-      "examples": [
-         "December is cold.",
-         "We have a holiday in December.",
-         "Her birthday is on December 25th."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "decide",
-      "role": "verb",
-      "BrE": "/dɪˈsaɪd/",
-      "AmE": "/dɪˈsaɪd/",
-      "definition": "to choose something after thinking",
-      "examples": [
-         "I decide to stay.",
-         "She decided to buy a car.",
-         "He decided where to go on holiday."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "delicious",
-      "role": "adjective",
-      "BrE": "/dɪˈlɪʃəs/",
-      "AmE": "/dɪˈlɪʃəs/",
-      "definition": "tasting or smelling very good",
-      "examples": [
-         "The cake is delicious.",
-         "She cooked a delicious meal.",
-         "This fruit is absolutely delicious."
-      ]
-   },
-   {
-      
-      "id": 22,
-      "word": "describe",
-      "role": "verb",
-      "BrE": "/dɪˈskraɪb/",
-      "AmE": "/dɪˈskraɪb/",
-      "definition": "to say what something or someone is like",
-      "examples": [
-         "Describe your house.",
-         "She described her holiday.",
-         "He described the painting in detail."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "description",
-      "role": "noun",
-      "BrE": "/dɪˈskrɪpʃn/",
-      "AmE": "/dɪˈskrɪpʃn/",
-      "definition": "words that tell what something is like",
-      "examples": [
-         "Give a description.",
-         "Her description of the place was clear.",
-         "The book has a good description."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "design",
-      "role": "noun",
-      "BrE": "/dɪˈzaɪn/",
-      "AmE": "/dɪˈzaɪn/",
-      "definition": "a plan or drawing of something",
-      "examples": [
-         "I like the design.",
-         "The dress has a nice design.",
-         "He made a design for the house."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "design",
-      "role": "verb",
-      "BrE": "/dɪˈzaɪn/",
-      "AmE": "/dɪˈzaɪn/",
-      "definition": "to plan or create something",
-      "examples": [
-         "She designs clothes.",
-         "He designed a new chair.",
-         "They design apps for phones."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "desk",
-      "role": "noun",
-      "BrE": "/desk/",
-      "AmE": "/desk/",
-      "definition": "a table for writing or working",
-      "examples": [
-         "I sit at a desk.",
-         "Her desk is in the classroom.",
-         "The desk has books and pens."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "detail",
-      "role": "noun",
-      "BrE": "/ˈdiːteɪl/",
-      "AmE": "/ˈdiːteɪl/",
-      "definition": "a small piece of information",
-      "examples": [
-         "Give me one detail.",
-         "She wrote every detail.",
-         "The detail in the story was clear."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "dialogue",
-      "role": "noun",
-      "BrE": "/ˈdaɪəlɒɡ/",
-      "AmE": "/ˈdaɪəlɑːɡ/",
-      "definition": "a conversation in a book, play, or film",
-      "examples": [
-         "The dialogue was funny.",
-         "The film has great dialogue.",
-         "She wrote dialogue for the play."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "dictionary",
-      "role": "noun",
-      "BrE": "/ˈdɪkʃənri/",
-      "AmE": "/ˈdɪkʃəneri/",
-      "definition": "a book that explains the meanings of words",
-      "examples": [
-         "I use a dictionary.",
-         "She checked the word in a dictionary.",
-         "The dictionary is on the desk."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "die",
-      "role": "verb",
-      "BrE": "/daɪ/",
-      "AmE": "/daɪ/",
-      "definition": "to stop living",
-      "examples": [
-         "The plant may die.",
-         "Her fish died last week.",
-         "Some trees die in winter."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "diet",
-      "role": "noun",
-      "BrE": "/ˈdaɪət/",
-      "AmE": "/ˈdaɪət/",
-      "definition": "the food you eat regularly",
-      "examples": [
-         "My diet is healthy.",
-         "She is on a vegetable diet.",
-         "His diet includes fruit every day."
-      ]
-   },
-   {
-      
-      "id": 23,
-      "word": "difference",
-      "role": "noun",
-      "BrE": "/ˈdɪfrəns/",
-      "AmE": "/ˈdɪfrəns/",
-      "definition": "the way in which things are not the same",
-      "examples": [
-         "There is a difference.",
-         "The difference between them is clear.",
-         "She noticed a difference in price."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "different",
-      "role": "adjective",
-      "BrE": "/ˈdɪfrənt/",
-      "AmE": "/ˈdɪfrənt/",
-      "definition": "not the same",
-      "examples": [
-         "This book is different.",
-         "Her dress is different from mine.",
-         "They have different ideas."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "difficult",
-      "role": "adjective",
-      "BrE": "/ˈdɪfɪkəlt/",
-      "AmE": "/ˈdɪfɪkəlt/",
-      "definition": "not easy to do or understand",
-      "examples": [
-         "The test is difficult.",
-         "Math is difficult for her.",
-         "It’s difficult to learn a language."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "dinner",
-      "role": "noun",
-      "BrE": "/ˈdɪnə(r)/",
-      "AmE": "/ˈdɪnər/",
-      "definition": "the main meal of the day, usually in the evening",
-      "examples": [
-         "I eat dinner.",
-         "Dinner is at seven o’clock.",
-         "She cooked dinner for her family."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "dirty",
-      "role": "adjective",
-      "BrE": "/ˈdɜːti/",
-      "AmE": "/ˈdɜːrti/",
-      "definition": "not clean",
-      "examples": [
-         "My shoes are dirty.",
-         "The room was very dirty.",
-         "His clothes got dirty playing."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "discuss",
-      "role": "verb",
-      "BrE": "/dɪˈskʌs/",
-      "AmE": "/dɪˈskʌs/",
-      "definition": "to talk about something with others",
-      "examples": [
-         "We discuss the plan.",
-         "She discussed the book with friends.",
-         "They discussed their holiday ideas."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "dish",
-      "role": "noun",
-      "BrE": "/dɪʃ/",
-      "AmE": "/dɪʃ/",
-      "definition": "a plate or bowl for food",
-      "examples": [
-         "I washed a dish.",
-         "The dish is full of food.",
-         "She served soup in a big dish."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "do",
-      "role": "verb",
-      "BrE": "/duː/",
-      "AmE": "/duː/",
-      "definition": "to perform an action or activity",
-      "examples": [
-         "I do my homework.",
-         "She does yoga every day.",
-         "He did the dishes after dinner."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "do",
-      "role": "auxiliary verb",
-      "BrE": "/duː/",
-      "AmE": "/duː/",
-      "definition": "used to form questions and negatives",
-      "examples": [
-         "Do you like tea?",
-         "She doesn’t want to go.",
-         "Do they play football?"
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "doctor",
-      "role": "noun",
-      "BrE": "/ˈdɒktə(r)/",
-      "AmE": "/ˈdɑːktər/",
-      "definition": "a person who helps sick people",
-      "examples": [
-         "I saw a doctor.",
-         "The doctor is very kind.",
-         "She visited the doctor yesterday."
-      ]
-   },
-   {
-      
-      "id": 24,
-      "word": "dog",
-      "role": "noun",
-      "BrE": "/dɒɡ/",
-      "AmE": "/dɔːɡ/",
-      "definition": "an animal often kept as a pet",
-      "examples": [
-         "My dog is big.",
-         "The dog barked at night.",
-         "She walks her dog every morning."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "dollar",
-      "role": "noun",
-      "BrE": "/ˈdɒlə(r)/",
-      "AmE": "/ˈdɑːlər/",
-      "definition": "a unit of money in some countries",
-      "examples": [
-         "It costs one dollar.",
-         "She has ten dollars.",
-         "The book is worth five dollars."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "door",
-      "role": "noun",
-      "BrE": "/dɔː(r)/",
-      "AmE": "/dɔːr/",
-      "definition": "a piece of wood or glass you open to enter a room",
-      "examples": [
-         "Open the door.",
-         "The door is painted red.",
-         "She knocked on the door."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "down",
-      "role": "adverb",
-      "BrE": "/daʊn/",
-      "AmE": "/daʊn/",
-      "definition": "to or at a lower place",
-      "examples": [
-         "Sit down, please.",
-         "The cat jumped down.",
-         "She walked down the stairs."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "down",
-      "role": "preposition",
-      "BrE": "/daʊn/",
-      "AmE": "/daʊn/",
-      "definition": "from a higher to a lower place",
-      "examples": [
-         "We go down the hill.",
-         "The ball rolled down the street.",
-         "She looked down from the window."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "downstairs",
-      "role": "adverb",
-      "BrE": "/ˌdaʊnˈsteəz/",
-      "AmE": "/ˌdaʊnˈsterz/",
-      "definition": "to or on a lower floor of a building",
-      "examples": [
-         "Go downstairs now.",
-         "She ran downstairs to eat.",
-         "The kitchen is downstairs."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "draw",
-      "role": "verb",
-      "BrE": "/drɔː/",
-      "AmE": "/drɔː/",
-      "definition": "to make a picture with a pencil or pen",
-      "examples": [
-         "I draw a house.",
-         "She drew a cat on paper.",
-         "He draws pictures every day."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "dress",
-      "role": "noun",
-      "BrE": "/dres/",
-      "AmE": "/dres/",
-      "definition": "a piece of clothing worn by women or girls",
-      "examples": [
-         "She wears a dress.",
-         "The dress is blue and long.",
-         "Her new dress looks beautiful."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "dress",
-      "role": "verb",
-      "BrE": "/dres/",
-      "AmE": "/dres/",
-      "definition": "to put on clothes",
-      "examples": [
-         "I dress quickly.",
-         "She dressed for the party.",
-         "He dressed in a suit for work."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "drink",
-      "role": "noun",
-      "BrE": "/drɪŋk/",
-      "AmE": "/drɪŋk/",
-      "definition": "a liquid you swallow",
-      "examples": [
-         "I need a drink.",
-         "She bought a cold drink.",
-         "The drink was sweet and tasty."
-      ]
-   },
-   {
-      
-      "id": 25,
-      "word": "drink",
-      "role": "verb",
-      "BrE": "/drɪŋk/",
-      "AmE": "/drɪŋk/",
-      "definition": "to take liquid into your mouth",
-      "examples": [
-         "I drink water.",
-         "He drinks coffee every morning.",
-         "She drank juice at lunch."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "drive",
-      "role": "verb",
-      "BrE": "/draɪv/",
-      "AmE": "/draɪv/",
-      "definition": "to control a vehicle like a car",
-      "examples": [
-         "I drive a car.",
-         "She drives to school.",
-         "He drove to the city yesterday."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "driver",
-      "role": "noun",
-      "BrE": "/ˈdraɪvə(r)/",
-      "AmE": "/ˈdraɪvər/",
-      "definition": "a person who drives a vehicle",
-      "examples": [
-         "The driver is careful.",
-         "She is a good driver.",
-         "The bus driver stopped at the station."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "during",
-      "role": "preposition",
-      "BrE": "/ˈdjʊərɪŋ/",
-      "AmE": "/ˈdʊrɪŋ/",
-      "definition": "throughout or at some time in a period",
-      "examples": [
-         "I read during lunch.",
-         "She slept during the film.",
-         "He worked during the summer."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "DVD",
-      "role": "noun",
-      "BrE": "/ˌdiː viː ˈdiː/",
-      "AmE": "/ˌdiː viː ˈdiː/",
-      "definition": "a disc used to store films or data",
-      "examples": [
-         "I watched a DVD.",
-         "She bought a new DVD.",
-         "The DVD has a funny movie."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "each",
-      "role": "adverb",
-      "BrE": "/iːtʃ/",
-      "AmE": "/iːtʃ/",
-      "definition": "every one of two or more things or people",
-      "examples": [
-         "Each student got a book.",
-         "They each have a pen.",
-         "Each of us chose a colour."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "each",
-      "role": "determiner",
-      "BrE": "/iːtʃ/",
-      "AmE": "/iːtʃ/",
-      "definition": "every one of two or more things or people",
-      "examples": [
-         "Each child is happy.",
-         "Each book is different.",
-         "Each student needs a pencil."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "each",
-      "role": "pronoun",
-      "BrE": "/iːtʃ/",
-      "AmE": "/iːtʃ/",
-      "definition": "every one of two or more people or things",
-      "examples": [
-         "Each is unique.",
-         "Each of them sang a song.",
-         "Each was given a gift."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "ear",
-      "role": "noun",
-      "BrE": "/ɪə(r)/",
-      "AmE": "/ɪr/",
-      "definition": "the part of the body used for hearing",
-      "examples": [
-         "My ear hurts.",
-         "She whispered in his ear.",
-         "He cleaned his ears carefully."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "early",
-      "role": "adjective",
-      "BrE": "/ˈɜːli/",
-      "AmE": "/ˈɜːrli/",
-      "definition": "near the beginning of a time period",
-      "examples": [
-         "I wake up early.",
-         "The early bus is at six.",
-         "She arrived early for the meeting."
-      ]
-   },
-   {
-      
-      "id": 26,
-      "word": "early",
-      "role": "adverb",
-      "BrE": "/ˈɜːli/",
-      "AmE": "/ˈɜːrli/",
-      "definition": "before the expected time",
-      "examples": [
-         "I came early.",
-         "She finished her work early.",
-         "He arrived early at school."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "east",
-      "role": "adjective",
-      "BrE": "/iːst/",
-      "AmE": "/iːst/",
-      "definition": "in or towards the direction where the sun rises",
-      "examples": [
-         "The east window is open.",
-         "The east side is sunny.",
-         "Her house faces east."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "east",
-      "role": "adverb",
-      "BrE": "/iːst/",
-      "AmE": "/iːst/",
-      "definition": "towards the direction where the sun rises",
-      "examples": [
-         "We traveled east.",
-         "The wind blows east.",
-         "She looked east to see the sunrise."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "east",
-      "role": "noun",
-      "BrE": "/iːst/",
-      "AmE": "/iːst/",
-      "definition": "the direction where the sun rises",
-      "examples": [
-         "The east is beautiful.",
-         "The sun rises in the east.",
-         "Their farm is in the east."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "easy",
-      "role": "adjective",
-      "BrE": "/ˈiːzi/",
-      "AmE": "/ˈiːzi/",
-      "definition": "not difficult",
-      "examples": [
-         "This game is easy.",
-         "The test was very easy.",
-         "Her job is easy to learn."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "eat",
-      "role": "verb",
-      "BrE": "/iːt/",
-      "AmE": "/iːt/",
-      "definition": "to put food in your mouth and swallow it",
-      "examples": [
-         "I eat an apple.",
-         "She eats breakfast daily.",
-         "He ate pizza for dinner."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "egg",
-      "role": "noun",
-      "BrE": "/eɡ/",
-      "AmE": "/eɡ/",
-      "definition": "a food with a hard shell, produced by birds",
-      "examples": [
-         "I ate an egg.",
-         "She cooked two eggs.",
-         "The recipe needs three eggs."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "eight",
-      "role": "number",
-      "BrE": "/eɪt/",
-      "AmE": "/eɪt/",
-      "definition": "the number 8",
-      "examples": [
-         "I have eight books.",
-         "She is eight years old.",
-         "Eight students are in the class."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "eighteen",
-      "role": "number",
-      "BrE": "/ˌeɪˈtiːn/",
-      "AmE": "/ˌeɪˈtiːn/",
-      "definition": "the number 18",
-      "examples": [
-         "He is eighteen.",
-         "I bought eighteen apples.",
-         "Eighteen people came to the party."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "eighty",
-      "role": "number",
-      "BrE": "/ˈeɪti/",
-      "AmE": "/ˈeɪti/",
-      "definition": "the number 80",
-      "examples": [
-         "She is eighty years old.",
-         "The shop has eighty items.",
-         "Eighty students joined the club."
-      ]
-   },
-   {
-      
-      "id": 27,
-      "word": "elephant",
-      "role": "noun",
-      "BrE": "/ˈelɪfənt/",
-      "AmE": "/ˈelɪfənt/",
-      "definition": "a large animal with a long trunk",
-      "examples": [
-         "I saw an elephant.",
-         "The elephant is at the zoo.",
-         "An elephant has big ears."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "eleven",
-      "role": "number",
-      "BrE": "/ɪˈlevn/",
-      "AmE": "/ɪˈlevn/",
-      "definition": "the number 11",
-      "examples": [
-         "I have eleven pens.",
-         "She is eleven years old.",
-         "Eleven players are on the team."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "else",
-      "role": "adverb",
-      "BrE": "/els/",
-      "AmE": "/els/",
-      "definition": "in addition or different",
-      "examples": [
-         "What else is there?",
-         "I don’t want anything else.",
-         "Who else was at the party?"
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "email",
-      "role": "noun",
-      "BrE": "/ˈiːmeɪl/",
-      "AmE": "/ˈiːmeɪl/",
-      "definition": "a message sent using a computer",
-      "examples": [
-         "I sent an email.",
-         "She got an email from a friend.",
-         "The email was about the meeting."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "email",
-      "role": "verb",
-      "BrE": "/ˈiːmeɪl/",
-      "AmE": "/ˈiːmeɪl/",
-      "definition": "to send a message using a computer",
-      "examples": [
-         "I email my teacher.",
-         "She emailed her homework.",
-         "He emails his friends daily."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "end",
-      "role": "noun",
-      "BrE": "/end/",
-      "AmE": "/end/",
-      "definition": "the final part of something",
-      "examples": [
-         "The film has an end.",
-         "The book’s end was sad.",
-         "We reached the end of the road."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "end",
-      "role": "verb",
-      "BrE": "/end/",
-      "AmE": "/end/",
-      "definition": "to finish something",
-      "examples": [
-         "The class ends soon.",
-         "She ended the call.",
-         "The game ended with a tie."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "enjoy",
-      "role": "verb",
-      "BrE": "/ɪnˈdʒɔɪ/",
-      "AmE": "/ɪnˈdʒɔɪ/",
-      "definition": "to like doing something",
-      "examples": [
-         "I enjoy music.",
-         "She enjoys reading books.",
-         "He enjoyed the party last night."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "enough",
-      "role": "adverb",
-      "BrE": "/ɪˈnʌf/",
-      "AmE": "/ɪˈnʌf/",
-      "definition": "as much or as many as needed",
-      "examples": [
-         "I ate enough.",
-         "She studied enough for the test.",
-         "We have enough chairs for everyone."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "enough",
-      "role": "determiner",
-      "BrE": "/ɪˈnʌf/",
-      "AmE": "/ɪˈnʌf/",
-      "definition": "as much or as many as needed",
-      "examples": [
-         "I have enough food.",
-         "She has enough money.",
-         "Enough people came to the party."
-      ]
-   },
-   {
-      
-      "id": 28,
-      "word": "enough",
-      "role": "pronoun",
-      "BrE": "/ɪˈnʌf/",
-      "AmE": "/ɪˈnʌf/",
-      "definition": "as much or as many as needed",
-      "examples": [
-         "Enough is here.",
-         "I bought enough for everyone.",
-         "Is there enough for the class?"
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "euro",
-      "role": "noun",
-      "BrE": "/ˈjʊərəʊ/",
-      "AmE": "/ˈjʊroʊ/",
-      "definition": "the unit of money in some European countries",
-      "examples": [
-         "It costs one euro.",
-         "She paid ten euros for the book.",
-         "The shirt is twenty euros."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "even",
-      "role": "adverb",
-      "BrE": "/ˈiːvn/",
-      "AmE": "/ˈiːvn/",
-      "definition": "used to emphasize something surprising",
-      "examples": [
-         "Even I can do it.",
-         "She didn’t even call me.",
-         "Even the teacher made a mistake."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "evening",
-      "role": "noun",
-      "BrE": "/ˈiːvnɪŋ/",
-      "AmE": "/ˈiːvnɪŋ/",
-      "definition": "the time of day between afternoon and night",
-      "examples": [
-         "Good evening!",
-         "We meet in the evening.",
-         "She studies every evening."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "event",
-      "role": "noun",
-      "BrE": "/ɪˈvent/",
-      "AmE": "/ɪˈvent/",
-      "definition": "something that happens, especially something important",
-      "examples": [
-         "The event was fun.",
-         "A big event is tomorrow.",
-         "She planned the school event."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "ever",
-      "role": "adverb",
-      "BrE": "/ˈevə(r)/",
-      "AmE": "/ˈevər/",
-      "definition": "at any time",
-      "examples": [
-         "Have you ever seen it?",
-         "She has never been there.",
-         "Do you ever go to the park?"
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "every",
-      "role": "determiner",
-      "BrE": "/ˈevri/",
-      "AmE": "/ˈevri/",
-      "definition": "all the people or things in a group",
-      "examples": [
-         "Every student is here.",
-         "I read every book.",
-         "Every child got a gift."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "everybody",
-      "role": "pronoun",
-      "BrE": "/ˈevribɒdi/",
-      "AmE": "/ˈevribɑːdi/",
-      "definition": "every person",
-      "examples": [
-         "Everybody is happy.",
-         "Everybody likes the teacher.",
-         "Everybody came to the party."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "everyone",
-      "role": "pronoun",
-      "BrE": "/ˈevriwʌn/",
-      "AmE": "/ˈevriwʌn/",
-      "definition": "every person",
-      "examples": [
-         "Everyone is here.",
-         "Everyone enjoyed the film.",
-         "Everyone helped with the work."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "everything",
-      "role": "pronoun",
-      "BrE": "/ˈevriθɪŋ/",
-      "AmE": "/ˈevriθɪŋ/",
-      "definition": "all things",
-      "examples": [
-         "Everything is ready.",
-         "She packed everything in a bag.",
-         "Everything in the shop is new."
-      ]
-   },
-   {
-      
-      "id": 29,
-      "word": "exam",
-      "role": "noun",
-      "BrE": "/ɪɡˈzæm/",
-      "AmE": "/ɪɡˈzæm/",
-      "definition": "a test of what you know or can do",
-      "examples": [
-         "I have an exam.",
-         "The exam was very hard.",
-         "She studied for the math exam."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "example",
-      "role": "noun",
-      "BrE": "/ɪɡˈzɑːmpl/",
-      "AmE": "/ɪɡˈzæmpl/",
-      "definition": "something that shows what others are like",
-      "examples": [
-         "Give me an example.",
-         "This is a good example.",
-         "Her work is an example for us."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "excited",
-      "role": "adjective",
-      "BrE": "/ɪkˈsaɪtɪd/",
-      "AmE": "/ɪkˈsaɪtɪd/",
-      "definition": "feeling happy and enthusiastic",
-      "examples": [
-         "I am excited.",
-         "She’s excited about the trip.",
-         "He was excited to see his friend."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "exciting",
-      "role": "adjective",
-      "BrE": "/ɪkˈsaɪtɪŋ/",
-      "AmE": "/ɪkˈsaɪtɪŋ/",
-      "definition": "making you feel excited",
-      "examples": [
-         "The game is exciting.",
-         "It was an exciting movie.",
-         "Her story is really exciting."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "exercise",
-      "role": "noun",
-      "BrE": "/ˈeksəsaɪz/",
-      "AmE": "/ˈeksərsaɪz/",
-      "definition": "physical activity to stay healthy",
-      "examples": [
-         "I do exercise daily.",
-         "Running is good exercise.",
-         "She does exercise at the gym."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "exercise",
-      "role": "verb",
-      "BrE": "/ˈeksəsaɪz/",
-      "AmE": "/ˈeksərsaɪz/",
-      "definition": "to do physical activity to stay healthy",
-      "examples": [
-         "I exercise every day.",
-         "She exercises in the park.",
-         "He exercises to stay strong."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "expensive",
-      "role": "adjective",
-      "BrE": "/ɪkˈspensɪv/",
-      "AmE": "/ɪkˈspensɪv/",
-      "definition": "costing a lot of money",
-      "examples": [
-         "This bag is expensive.",
-         "Her phone was very expensive.",
-         "The restaurant is too expensive."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "explain",
-      "role": "verb",
-      "BrE": "/ɪkˈspleɪn/",
-      "AmE": "/ɪkˈspleɪn/",
-      "definition": "to make something clear or easy to understand",
-      "examples": [
-         "Explain the word.",
-         "She explained the rules.",
-         "He explained his idea clearly."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "extra",
-      "role": "adjective",
-      "BrE": "/ˈekstrə/",
-      "AmE": "/ˈekstrə/",
-      "definition": "more than what is usual",
-      "examples": [
-         "I need extra time.",
-         "She bought extra food.",
-         "He took an extra pen to school."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "eye",
-      "role": "noun",
+      "category": "Subject Pronouns",
+      "word": "I",
+      "role": "Pronoun",
       "BrE": "/aɪ/",
       "AmE": "/aɪ/",
-      "definition": "the part of the body used for seeing",
-      "examples": [
-         "My eye is blue.",
-         "She closed her eyes.",
-         "He has a problem with one eye."
-      ]
-   },
-   {
-      
-      "id": 30,
-      "word": "face",
-      "role": "noun",
-      "BrE": "/feɪs/",
-      "AmE": "/feɪs/",
-      "definition": "the front part of the head",
-      "examples": [
-         "Her face is happy.",
-         "He washed his face.",
-         "A smile appeared on her face."
-      ]
-   },
-   
-   {
-      
-      "id": 31,
-      "word": "fact",
-      "role": "noun",
-      "BrE": "/fækt/",
-      "AmE": "/fækt/",
-      "definition": "something that is true",
-      "examples": [
-         "This is a fact.",
-         "She told me a fact about birds.",
-         "The fact is that he was late."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "fall",
-      "role": "verb",
-      "BrE": "/fɔːl/",
-      "AmE": "/fɔːl/",
-      "definition": "to go down quickly to the ground",
-      "examples": [
-         "I fall sometimes.",
-         "The book fell off the table.",
-         "She fell while running in the park."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "family",
-      "role": "noun",
-      "BrE": "/ˈfæməli/",
-      "AmE": "/ˈfæməli/",
-      "definition": "a group of people related to each other",
-      "examples": [
-         "My family is big.",
-         "Her family lives in a village.",
-         "The family had dinner together."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "famous",
-      "role": "adjective",
-      "BrE": "/ˈfeɪməs/",
-      "AmE": "/ˈfeɪməs/",
-      "definition": "known by many people",
-      "examples": [
-         "He is a famous singer.",
-         "The city is famous for art.",
-         "She met a famous actor yesterday."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "far",
-      "role": "adverb",
-      "BrE": "/fɑː(r)/",
-      "AmE": "/fɑːr/",
-      "definition": "at or to a great distance",
-      "examples": [
-         "The shop is far.",
-         "He walked far from home.",
-         "She traveled far to see her friend."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "fast",
-      "role": "adjective",
-      "BrE": "/fɑːst/",
-      "AmE": "/fæst/",
-      "definition": "moving or happening quickly",
-      "examples": [
-         "The car is fast.",
-         "She runs very fast.",
-         "A fast train arrived early."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "fast",
-      "role": "adverb",
-      "BrE": "/fɑːst/",
-      "AmE": "/fæst/",
-      "definition": "quickly",
-      "examples": [
-         "He runs fast.",
-         "The bus goes fast.",
-         "She finished her work fast."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "father",
-      "role": "noun",
-      "BrE": "/ˈfɑːðə(r)/",
-      "AmE": "/ˈfɑːðər/",
-      "definition": "a male parent",
-      "examples": [
-         "My father is kind.",
-         "Her father works in a bank.",
-         "The father read a story to his son."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "favourite",
-      "role": "adjective",
-      "BrE": "/ˈfeɪvərɪt/",
-      "AmE": "/ˈfeɪvərɪt/",
-      "definition": "liked more than others",
-      "examples": [
-         "Blue is my favourite colour.",
-         "Her favourite book is short.",
-         "This is his favourite restaurant."
-      ]
-   },
-   {
-      
-      "id": 31,
-      "word": "February",
-      "role": "noun",
-      "BrE": "/ˈfebruəri/",
-      "AmE": "/ˈfebruˌeri/",
-      "definition": "the second month of the year",
-      "examples": [
-         "February is cold.",
-         "My birthday is in February.",
-         "We have a holiday in February."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "feel",
-      "role": "verb",
-      "BrE": "/fiːl/",
-      "AmE": "/fiːl/",
-      "definition": "to experience an emotion or sensation",
-      "examples": [
-         "I feel happy.",
-         "She feels tired after work.",
-         "He felt cold in the morning."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "feeling",
-      "role": "noun",
-      "BrE": "/ˈfiːlɪŋ/",
-      "AmE": "/ˈfiːlɪŋ/",
-      "definition": "an emotion or sensation",
-      "examples": [
-         "I have a good feeling.",
-         "Her feeling was one of joy.",
-         "He shared his feelings with her."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "festival",
-      "role": "noun",
-      "BrE": "/ˈfestɪvl/",
-      "AmE": "/ˈfestɪvl/",
-      "definition": "a special event with music, food, or activities",
-      "examples": [
-         "The festival was fun.",
-         "We went to a music festival.",
-         "The town holds a festival yearly."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "few",
-      "role": "determiner",
-      "BrE": "/fjuː/",
-      "AmE": "/fjuː/",
-      "definition": "a small number of",
-      "examples": [
-         "I have few books.",
-         "She has few friends here.",
-         "Few people came to the event."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "few",
-      "role": "pronoun",
-      "BrE": "/fjuː/",
-      "AmE": "/fjuː/",
-      "definition": "a small number of people or things",
-      "examples": [
-         "Few are here.",
-         "Few of them stayed late.",
-         "Few of the cakes were eaten."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "film",
-      "role": "noun",
-      "BrE": "/fɪlm/",
-      "AmE": "/fɪlm/",
-      "definition": "a movie shown in a cinema or on television",
-      "examples": [
-         "I watched a film.",
-         "The film was very funny.",
-         "She saw a new film yesterday."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "find",
-      "role": "verb",
-      "BrE": "/faɪnd/",
-      "AmE": "/faɪnd/",
-      "definition": "to discover something or someone",
-      "examples": [
-         "I find my keys.",
-         "She found a new book.",
-         "He found his phone under the bed."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "fine",
-      "role": "adjective",
-      "BrE": "/faɪn/",
-      "AmE": "/faɪn/",
-      "definition": "good or acceptable",
-      "examples": [
-         "I feel fine.",
-         "The weather is fine today.",
-         "Her work is absolutely fine."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "finish",
-      "role": "verb",
-      "BrE": "/ˈfɪnɪʃ/",
-      "AmE": "/ˈfɪnɪʃ/",
-      "definition": "to complete something",
-      "examples": [
-         "I finish my homework.",
-         "She finished the book.",
-         "He finished his work early."
-      ]
-   },
-   {
-      
-      "id": 32,
-      "word": "fire",
-      "role": "noun",
-      "BrE": "/faɪə(r)/",
-      "AmE": "/faɪr/",
-      "definition": "burning that produces heat and light",
-      "examples": [
-         "The fire is warm.",
-         "We sat by the fire.",
-         "The fire burned all night."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "first",
-      "role": "adjective",
-      "BrE": "/fɜːst/",
-      "AmE": "/fɜːrst/",
-      "definition": "coming before all others",
-      "examples": [
-         "She was the first student.",
-         "The first book is short.",
-         "He won first place in the race."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "first",
-      "role": "adverb",
-      "BrE": "/fɜːst/",
-      "AmE": "/fɜːrst/",
-      "definition": "before anyone or anything else",
-      "examples": [
-         "I arrived first.",
-         "She spoke first in class.",
-         "He finished the race first."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "fish",
-      "role": "noun",
-      "BrE": "/fɪʃ/",
-      "AmE": "/fɪʃ/",
-      "definition": "an animal that lives in water",
-      "examples": [
-         "I see a fish.",
-         "She has a pet fish.",
-         "The fish swim in the tank."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "five",
-      "role": "number",
-      "BrE": "/faɪv/",
-      "AmE": "/faɪv/",
-      "definition": "the number 5",
-      "examples": [
-         "I have five books.",
-         "She is five years old.",
-         "Five students are in the room."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "flat",
-      "role": "noun",
-      "BrE": "/flæt/",
-      "AmE": "/flæt/",
-      "definition": "a set of rooms for living in, usually on one floor",
-      "examples": [
-         "I live in a flat.",
-         "Her flat is small but nice.",
-         "The flat has two bedrooms."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "floor",
-      "role": "noun",
-      "BrE": "/flɔː(r)/",
-      "AmE": "/flɔːr/",
-      "definition": "the part of a room you walk on",
-      "examples": [
-         "The floor is clean.",
-         "She sat on the floor.",
-         "The floor in the house is wood."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "flower",
-      "role": "noun",
-      "BrE": "/ˈflaʊə(r)/",
-      "AmE": "/ˈflaʊər/",
-      "definition": "the colourful part of a plant",
-      "examples": [
-         "I picked a flower.",
-         "The garden has many flowers.",
-         "She gave her mum a flower."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "fly",
-      "role": "verb",
-      "BrE": "/flaɪ/",
-      "AmE": "/flaɪ/",
-      "definition": "to move through the air",
-      "examples": [
-         "Birds fly in the sky.",
-         "She flew to Paris.",
-         "The plane flies at night."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "follow",
-      "role": "verb",
-      "BrE": "/ˈfɒləʊ/",
-      "AmE": "/ˈfɑːloʊ/",
-      "definition": "to go after someone or something",
-      "examples": [
-         "Follow me, please.",
-         "He followed the teacher.",
-         "She follows the path to school."
-      ]
-   },
-   {
-      
-      "id": 33,
-      "word": "food",
-      "role": "noun",
-      "BrE": "/fuːd/",
-      "AmE": "/fuːd/",
-      "definition": "things that people or animals eat",
-      "examples": [
-         "I like food.",
-         "The food is delicious.",
-         "She cooked Italian food."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "foot",
-      "role": "noun",
-      "BrE": "/fʊt/",
-      "AmE": "/fʊt/",
-      "definition": "the part of the body you walk on",
-      "examples": [
-         "My foot hurts.",
-         "He kicked the ball with his foot.",
-         "She stood on one foot."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "football",
-      "role": "noun",
-      "BrE": "/ˈfʊtbɔːl/",
-      "AmE": "/ˈfʊtbɔːl/",
-      "definition": "a game played with a ball by two teams",
-      "examples": [
-         "I play football.",
-         "The football match was exciting.",
-         "He watches football every weekend."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "for",
-      "role": "preposition",
-      "BrE": "/fə(r)/",
-      "AmE": "/fər/",
-      "definition": "used to show purpose, time, or who something is intended for",
-      "examples": [
-         "This is for you.",
-         "I waited for an hour.",
-         "She bought a gift for her friend."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "foreign",
-      "role": "adjective",
-      "BrE": "/ˈfɒrən/",
-      "AmE": "/ˈfɔːrən/",
-      "definition": "from or connected to another country",
-      "examples": [
-         "I learn a foreign language.",
-         "She met a foreign student.",
-         "He likes foreign films."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "forest",
-      "role": "noun",
-      "BrE": "/ˈfɒrɪst/",
-      "AmE": "/ˈfɔːrɪst/",
-      "definition": "a large area with many trees",
-      "examples": [
-         "The forest is green.",
-         "We walked in the forest.",
-         "Animals live in the forest."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "forget",
-      "role": "verb",
-      "BrE": "/fəˈɡet/",
-      "AmE": "/fərˈɡet/",
-      "definition": "to not remember something",
-      "examples": [
-         "I forget my keys.",
-         "She forgot her homework.",
-         "He forgot to call his mum."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "fork",
-      "role": "noun",
-      "BrE": "/fɔːk/",
-      "AmE": "/fɔːrk/",
-      "definition": "a tool with points used for eating",
-      "examples": [
-         "I use a fork.",
-         "The fork is on the table.",
-         "She ate her food with a fork."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "four",
-      "role": "number",
-      "BrE": "/fɔː(r)/",
-      "AmE": "/fɔːr/",
-      "definition": "the number 4",
-      "examples": [
-         "I have four cats.",
-         "She is four years old.",
-         "Four books are on the desk."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "fourteen",
-      "role": "number",
-      "BrE": "/ˌfɔːˈtiːn/",
-      "AmE": "/ˌfɔːrˈtiːn/",
-      "definition": "the number 14",
-      "examples": [
-         "He is fourteen.",
-         "I bought fourteen apples.",
-         "Fourteen students joined the club."
-      ]
-   },
-   {
-      
-      "id": 34,
-      "word": "fourth",
-      "role": "adjective",
-      "BrE": "/fɔːθ/",
-      "AmE": "/fɔːrθ/",
-      "definition": "coming after three others",
-      "examples": [
-         "This is the fourth book.",
-         "She came in fourth place.",
-         "The fourth day was sunny."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "free",
-      "role": "adjective",
-      "BrE": "/friː/",
-      "AmE": "/friː/",
-      "definition": "costing no money; not busy",
-      "examples": [
-         "The ticket is free.",
-         "She is free this afternoon.",
-         "The museum has free entry."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "Friday",
-      "role": "noun",
-      "BrE": "/ˈfraɪdeɪ/",
-      "AmE": "/ˈfraɪdeɪ/",
-      "definition": "the fifth day of the week",
-      "examples": [
-         "Friday is tomorrow.",
-         "We meet on Friday.",
-         "She has a test on Friday."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "friend",
-      "role": "noun",
-      "BrE": "/frend/",
-      "AmE": "/frend/",
-      "definition": "a person you like and know well",
-      "examples": [
-         "My friend is nice.",
-         "She met her friend at school.",
-         "He has many friends in the city."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "friendly",
-      "role": "adjective",
-      "BrE": "/ˈfrendli/",
-      "AmE": "/ˈfrendli/",
-      "definition": "kind and pleasant",
-      "examples": [
-         "She is friendly.",
-         "The dog is very friendly.",
-         "He gave a friendly smile."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "from",
-      "role": "preposition",
-      "BrE": "/frɒm/",
-      "AmE": "/frəm/",
-      "definition": "used to show where something starts",
-      "examples": [
-         "I am from London.",
-         "She got a letter from him.",
-         "The train is from Paris."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "front",
-      "role": "noun",
-      "BrE": "/frʌnt/",
-      "AmE": "/frʌnt/",
-      "definition": "the part of something that faces forward",
-      "examples": [
-         "The front of the house is red.",
-         "Sit in the front of the bus.",
-         "The front of the book has a picture."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "fruit",
-      "role": "noun",
-      "BrE": "/fruːt/",
-      "AmE": "/fruːt/",
-      "definition": "food that grows on trees or plants, like apples",
-      "examples": [
-         "I eat fruit.",
-         "She bought some fruit.",
-         "The fruit is fresh and sweet."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "full",
-      "role": "adjective",
-      "BrE": "/fʊl/",
-      "AmE": "/fʊl/",
-      "definition": "containing as much as possible",
-      "examples": [
-         "The glass is full.",
-         "Her bag is full of books.",
-         "The room was full of people."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "fun",
-      "role": "adjective",
-      "BrE": "/fʌn/",
-      "AmE": "/fʌn/",
-      "definition": "enjoyable or entertaining",
-      "examples": [
-         "The game is fun.",
-         "It was a fun party.",
-         "Her class is always fun."
-      ]
-   },
-   {
-      
-      "id": 35,
-      "word": "fun",
-      "role": "noun",
-      "BrE": "/fʌn/",
-      "AmE": "/fʌn/",
-      "definition": "enjoyment or pleasure",
-      "examples": [
-         "We had fun.",
-         "The trip was full of fun.",
-         "Playing games is great fun."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "funny",
-      "role": "adjective",
-      "BrE": "/ˈfʌni/",
-      "AmE": "/ˈfʌni/",
-      "definition": "making you laugh",
-      "examples": [
-         "The joke is funny.",
-         "She told a funny story.",
-         "The film was really funny."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "future",
-      "role": "noun",
-      "BrE": "/ˈfjuːtʃə(r)/",
-      "AmE": "/ˈfjuːtʃər/",
-      "definition": "the time that will come",
-      "examples": [
-         "The future is bright.",
-         "She plans for her future.",
-         "In the future, I want to travel."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "game",
-      "role": "noun",
-      "BrE": "/ɡeɪm/",
-      "AmE": "/ɡeɪm/",
-      "definition": "an activity or sport with rules",
-      "examples": [
-         "I play a game.",
-         "The game was exciting.",
-         "She won the card game."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "garden",
-      "role": "noun",
-      "BrE": "/ˈɡɑːdn/",
-      "AmE": "/ˈɡɑːrdn/",
-      "definition": "a place where plants or flowers are grown",
-      "examples": [
-         "The garden is pretty.",
-         "She works in the garden.",
-         "The garden has roses and trees."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "get",
-      "role": "verb",
-      "BrE": "/ɡet/",
-      "AmE": "/ɡet/",
-      "definition": "to receive or obtain something",
-      "examples": [
-         "I get a gift.",
-         "She got a new phone.",
-         "He gets good grades at school."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "girl",
-      "role": "noun",
-      "BrE": "/ɡɜːl/",
-      "AmE": "/ɡɜːrl/",
-      "definition": "a young female person",
-      "examples": [
-         "The girl is happy.",
-         "She is a kind girl.",
-         "The girl sang at the concert."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "girlfriend",
-      "role": "noun",
-      "BrE": "/ˈɡɜːlfrend/",
-      "AmE": "/ˈɡɜːrlfrend/",
-      "definition": "a woman or girl someone has a romantic relationship with",
-      "examples": [
-         "My girlfriend is nice.",
-         "His girlfriend is a dancer.",
-         "She met her girlfriend at school."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "give",
-      "role": "verb",
-      "BrE": "/ɡɪv/",
-      "AmE": "/ɡɪv/",
-      "definition": "to hand something to someone",
-      "examples": [
-         "Give me the book.",
-         "She gave him a present.",
-         "He gives money to charity."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "glass",
-      "role": "noun",
-      "BrE": "/ɡlɑːs/",
-      "AmE": "/ɡlæs/",
-      "definition": "a container for drinking, made of glass",
-      "examples": [
-         "I drink from a glass.",
-         "The glass is full of water.",
-         "She broke a glass in the kitchen."
-      ]
-   },
-   {
-      
-      "id": 36,
-      "word": "go",
-      "role": "verb",
-      "BrE": "/ɡəʊ/",
-      "AmE": "/ɡoʊ/",
-      "definition": "to move or travel to a place",
-      "examples": [
-         "I go to school.",
-         "She went to the park.",
-         "He goes to work by car."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "good",
-      "role": "adjective",
-      "BrE": "/ɡʊd/",
-      "AmE": "/ɡʊd/",
-      "definition": "of high quality or pleasant",
-      "examples": [
-         "This is a good book.",
-         "She is a good student.",
-         "The food tastes really good."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "goodbye",
-      "role": "exclamation",
-      "BrE": "/ˌɡʊdˈbaɪ/",
-      "AmE": "/ˌɡʊdˈbaɪ/",
-      "definition": "used when you leave someone",
-      "examples": [
-         "Goodbye, see you!",
-         "She said goodbye to her friend.",
-         "He waved goodbye at the station."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "grandfather",
-      "role": "noun",
-      "BrE": "/ˈɡrænfɑːðə(r)/",
-      "AmE": "/ˈɡrænfɑːðər/",
-      "definition": "the father of your mother or father",
-      "examples": [
-         "My grandfather is old.",
-         "Her grandfather tells stories.",
-         "He visits his grandfather weekly."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "grandmother",
-      "role": "noun",
-      "BrE": "/ˈɡrænmʌðə(r)/",
-      "AmE": "/ˈɡrænmʌðər/",
-      "definition": "the mother of your mother or father",
-      "examples": [
-         "My grandmother is kind.",
-         "Her grandmother bakes cakes.",
-         "She lives with her grandmother."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "great",
-      "role": "adjective",
-      "BrE": "/ɡreɪt/",
-      "AmE": "/ɡreɪt/",
-      "definition": "very good or large",
-      "examples": [
-         "This is a great day.",
-         "She had a great time.",
-         "The party was really great."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "green",
-      "role": "adjective",
-      "BrE": "/ɡriːn/",
-      "AmE": "/ɡriːn/",
-      "definition": "having the colour of grass",
-      "examples": [
-         "The grass is green.",
-         "She wears a green dress.",
-         "The green trees are tall."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "green",
-      "role": "noun",
-      "BrE": "/ɡriːn/",
-      "AmE": "/ɡriːn/",
-      "definition": "the colour of grass",
-      "examples": [
-         "Green is my favourite colour.",
-         "The wall is painted green.",
-         "She chose green for her room."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "grey",
-      "role": "adjective",
-      "BrE": "/ɡreɪ/",
-      "AmE": "/ɡreɪ/",
-      "definition": "having the colour between black and white",
-      "examples": [
-         "Her hair is grey.",
-         "The sky is grey today.",
-         "He wears a grey jacket."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "grey",
-      "role": "noun",
-      "BrE": "/ɡreɪ/",
-      "AmE": "/ɡreɪ/",
-      "definition": "the colour between black and white",
-      "examples": [
-         "Grey is a calm colour.",
-         "The car is painted grey.",
-         "She likes grey for her clothes."
-      ]
-   },
-   {
-      
-      "id": 37,
-      "word": "group",
-      "role": "noun",
-      "BrE": "/ɡruːp/",
-      "AmE": "/ɡruːp/",
-      "definition": "a number of people or things together",
-      "examples": [
-         "We are a group.",
-         "The group meets every week.",
-         "She joined a study group."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "guitar",
-      "role": "noun",
-      "BrE": "/ɡɪˈtɑː(r)/",
-      "AmE": "/ɡɪˈtɑːr/",
-      "definition": "a musical instrument with strings",
-      "examples": [
-         "I play the guitar.",
-         "He bought a new guitar.",
-         "She plays the guitar in a band."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "hair",
-      "role": "noun",
-      "BrE": "/heə(r)/",
-      "AmE": "/her/",
-      "definition": "the thin strands that grow on your head",
-      "examples": [
-         "Her hair is long.",
-         "He cut his hair short.",
-         "The hair on the brush is black."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "half",
-      "role": "noun",
-      "BrE": "/hɑːf/",
-      "AmE": "/hæf/",
-      "definition": "one of two equal parts of something",
-      "examples": [
-         "I ate half the cake.",
-         "She gave me half her sandwich.",
-         "Half of the class is here."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "hand",
-      "role": "noun",
-      "BrE": "/hænd/",
-      "AmE": "/hænd/",
-      "definition": "the part of the body at the end of the arm",
-      "examples": [
-         "My hand is clean.",
-         "She held the book in her hand.",
-         "He raised his hand to answer."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "happy",
-      "role": "adjective",
-      "BrE": "/ˈhæpi/",
-      "AmE": "/ˈhæpi/",
-      "definition": "feeling or showing pleasure",
-      "examples": [
-         "I am happy today.",
-         "She looks happy with her gift.",
-         "The happy children played outside."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "hard",
-      "role": "adjective",
-      "BrE": "/hɑːd/",
-      "AmE": "/hɑːrd/",
-      "definition": "difficult or not soft",
-      "examples": [
-         "This test is hard.",
-         "The ground is hard and dry.",
-         "Her job is very hard."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "hard",
-      "role": "adverb",
-      "BrE": "/hɑːd/",
-      "AmE": "/hɑːrd/",
-      "definition": "with a lot of effort",
-      "examples": [
-         "She works hard.",
-         "He studied hard for the exam.",
-         "They played hard in the game."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "hat",
-      "role": "noun",
-      "BrE": "/hæt/",
-      "AmE": "/hæt/",
-      "definition": "a covering for the head",
-      "examples": [
-         "I wear a hat.",
-         "Her hat is red and big.",
-         "He lost his hat in the park."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "have",
-      "role": "verb",
-      "BrE": "/hæv/",
-      "AmE": "/hæv/",
-      "definition": "to own or hold something",
-      "examples": [
-         "I have a dog.",
-         "She has a new phone.",
-         "He has two cats at home."
-      ]
-   },
-   {
-      
-      "id": 38,
-      "word": "he",
-      "role": "pronoun",
+      "definition": "The word you use to talk about yourself",
+      "examples": [
+         {
+            "collocation": "I am",
+            "example": "I am a student."
+         },
+         {
+            "collocation": "I like",
+            "example": "I like apples."
+         },
+         {
+            "collocation": "I live",
+            "example": "I live in a big house."
+         }
+      ]
+   },
+   {
+      "id": 1,
+      "category": "Subject Pronouns",
+      "word": "You",
+      "role": "Pronoun",
+      "BrE": "/juː/",
+      "AmE": "/juː/",
+      "definition": "The person or people the speaker is talking to",
+      "examples": [
+         {
+            "collocation": "You are",
+            "example": "You are my friend."
+         },
+         {
+            "collocation": "Do you",
+            "example": "Do you like music?"
+         },
+         {
+            "collocation": "You have",
+            "example": "You have a nice car."
+         }
+      ]
+   },
+   {
+      "id": 1,
+      "category": "Subject Pronouns",
+      "word": "He",
+      "role": "Pronoun",
       "BrE": "/hiː/",
       "AmE": "/hiː/",
-      "definition": "a male person or animal",
-      "examples": [
-         "He is my friend.",
-         "He plays football well.",
-         "He went to the shop."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "head",
-      "role": "noun",
-      "BrE": "/hed/",
-      "AmE": "/hed/",
-      "definition": "the part of the body above the neck",
-      "examples": [
-         "My head hurts.",
-         "She has a hat on her head.",
-         "He nodded his head to agree."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "health",
-      "role": "noun",
-      "BrE": "/helθ/",
-      "AmE": "/helθ/",
-      "definition": "the condition of your body",
-      "examples": [
-         "My health is good.",
-         "She cares about her health.",
-         "Exercise is good for health."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "healthy",
-      "role": "adjective",
-      "BrE": "/ˈhelθi/",
-      "AmE": "/ˈhelθi/",
-      "definition": "having good health",
-      "examples": [
-         "She is healthy.",
-         "He eats healthy food.",
-         "A healthy diet helps you grow."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "hear",
-      "role": "verb",
-      "BrE": "/hɪə(r)/",
-      "AmE": "/hɪr/",
-      "definition": "to notice sounds with your ears",
-      "examples": [
-         "I hear a bird.",
-         "She heard the music.",
-         "He can hear the dog barking."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "hello",
-      "role": "exclamation",
-      "BrE": "/həˈləʊ/",
-      "AmE": "/həˈloʊ/",
-      "definition": "used to greet someone",
-      "examples": [
-         "Hello, how are you?",
-         "She said hello to her teacher.",
-         "He shouted hello from the door."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "help",
-      "role": "noun",
-      "BrE": "/help/",
-      "AmE": "/help/",
-      "definition": "the act of helping someone",
-      "examples": [
-         "I need help.",
-         "She asked for help with math.",
-         "His help made the work easier."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "help",
-      "role": "verb",
-      "BrE": "/help/",
-      "AmE": "/help/",
-      "definition": "to do something to make things easier for someone",
-      "examples": [
-         "I help my mum.",
-         "She helped him with homework.",
-         "He helps at the shop."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "her",
-      "role": "pronoun",
-      "BrE": "/hə(r)/",
-      "AmE": "/hər/",
-      "definition": "a female person or animal",
-      "examples": [
-         "Her bag is red.",
-         "I gave her a book.",
-         "Her cat is very cute."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "here",
-      "role": "adverb",
-      "BrE": "/hɪə(r)/",
-      "AmE": "/hɪr/",
-      "definition": "in or to this place",
-      "examples": [
-         "Come here, please.",
-         "She lives here in the city.",
-         "The book is here on the table."
-      ]
-   },
-   {
-      
-      "id": 39,
-      "word": "hi",
-      "role": "exclamation",
-      "BrE": "/haɪ/",
-      "AmE": "/haɪ/",
-      "definition": "used to greet someone in an informal way",
-      "examples": [
-         "Hi, how are you?",
-         "She said hi to her friend.",
-         "He waved and said hi."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "high",
-      "role": "adjective",
-      "BrE": "/haɪ/",
-      "AmE": "/haɪ/",
-      "definition": "having a large distance from bottom to top",
-      "examples": [
-         "The mountain is high.",
-         "She jumped from a high wall.",
-         "The high building is new."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "him",
-      "role": "pronoun",
-      "BrE": "/hɪm/",
-      "AmE": "/hɪm/",
-      "definition": "a male person or animal",
-      "examples": [
-         "I saw him.",
-         "She gave him a gift.",
-         "The dog followed him home."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "his",
-      "role": "determiner",
-      "BrE": "/hɪz/",
-      "AmE": "/hɪz/",
-      "definition": "belonging to a male person or animal",
-      "examples": [
-         "His book is here.",
-         "I like his new car.",
-         "His dog is very friendly."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "history",
-      "role": "noun",
-      "BrE": "/ˈhɪstri/",
-      "AmE": "/ˈhɪstri/",
-      "definition": "the study of past events",
-      "examples": [
-         "I like history.",
-         "She studies history at school.",
-         "The book is about world history."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "hobby",
-      "role": "noun",
-      "BrE": "/ˈhɒbi/",
-      "AmE": "/ˈhɑːbi/",
-      "definition": "an activity you enjoy doing in your free time",
-      "examples": [
-         "My hobby is reading.",
-         "Her hobby is painting.",
-         "He has a hobby of collecting coins."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "holiday",
-      "role": "noun",
-      "BrE": "/ˈhɒlədeɪ/",
-      "AmE": "/ˈhɑːlədeɪ/",
-      "definition": "a time when you do not go to work or school",
-      "examples": [
-         "We went on holiday.",
-         "The holiday is in July.",
-         "She planned a holiday by the sea."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "home",
-      "role": "noun",
-      "BrE": "/həʊm/",
-      "AmE": "/hoʊm/",
-      "definition": "the place where you live",
-      "examples": [
-         "I am at home.",
-         "Her home is in the city.",
-         "He goes home after school."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "homework",
-      "role": "noun",
-      "BrE": "/ˈhəʊmwɜːk/",
-      "AmE": "/ˈhoʊmwɜːrk/",
-      "definition": "school work you do at home",
-      "examples": [
-         "I do my homework.",
-         "She finished her homework.",
-         "The homework was difficult."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "horse",
-      "role": "noun",
-      "BrE": "/hɔːs/",
-      "AmE": "/hɔːrs/",
-      "definition": "a large animal used for riding or pulling things",
-      "examples": [
-         "I saw a horse.",
-         "She rides a horse.",
-         "The horse ran in the field."
-      ]
-   },
-   {
-      
-      "id": 40,
-      "word": "hospital",
-      "role": "noun",
-      "BrE": "/ˈhɒspɪtl/",
-      "AmE": "/ˈhɑːspɪtl/",
-      "definition": "a place where sick people are treated",
-      "examples": [
-         "The hospital is big.",
-         "She visited her dad in hospital.",
-         "He works at the hospital."
-      ]
-   },
-   
-   {
-      
-      "id": 41,
-      "word": "hot",
-      "role": "adjective",
-      "BrE": "/hɒt/",
-      "AmE": "/hɑːt/",
-      "definition": "having a high temperature",
-      "examples": [
-         "The soup is hot.",
-         "It’s hot outside today.",
-         "She drank hot tea slowly."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "hotel",
-      "role": "noun",
-      "BrE": "/həʊˈtel/",
-      "AmE": "/hoʊˈtel/",
-      "definition": "a place where people stay and pay for a room",
-      "examples": [
-         "We stayed at a hotel.",
-         "The hotel is near the beach.",
-         "She booked a room in the hotel."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "hour",
-      "role": "noun",
-      "BrE": "/aʊə(r)/",
-      "AmE": "/aʊr/",
-      "definition": "a period of 60 minutes",
-      "examples": [
-         "The class is one hour.",
-         "He waited for an hour.",
-         "The film lasted two hours."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "house",
-      "role": "noun",
-      "BrE": "/haʊs/",
-      "AmE": "/haʊs/",
-      "definition": "a building where people live",
-      "examples": [
-         "My house is big.",
-         "She lives in a small house.",
-         "The house has a red door."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "how",
-      "role": "adverb",
-      "BrE": "/haʊ/",
-      "AmE": "/haʊ/",
-      "definition": "in what way or to what extent",
-      "examples": [
-         "How are you?",
-         "How do you make this?",
-         "How far is the school from here?"
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "however",
-      "role": "adverb",
-      "BrE": "/haʊˈevə(r)/",
-      "AmE": "/haʊˈevər/",
-      "definition": "used to introduce a statement that contrasts with something",
-      "examples": [
-         "I tried; however, I failed.",
-         "She was tired; however, she worked.",
-         "It’s cold; however, he went out."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "hundred",
-      "role": "number",
-      "BrE": "/ˈhʌndrəd/",
-      "AmE": "/ˈhʌndrəd/",
-      "definition": "the number 100",
-      "examples": [
-         "I have a hundred books.",
-         "She walked a hundred steps.",
-         "A hundred people were at the event."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "hungry",
-      "role": "adjective",
-      "BrE": "/ˈhʌŋɡri/",
-      "AmE": "/ˈhʌŋɡri/",
-      "definition": "wanting or needing food",
-      "examples": [
-         "I am hungry.",
-         "The dog looks hungry.",
-         "She felt hungry after the walk."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "husband",
-      "role": "noun",
-      "BrE": "/ˈhʌzbənd/",
-      "AmE": "/ˈhʌzbənd/",
-      "definition": "the man a woman is married to",
-      "examples": [
-         "Her husband is kind.",
-         "My husband cooks well.",
-         "She met her husband at work."
-      ]
-   },
-   {
-      
-      "id": 41,
-      "word": "I",
-      "role": "pronoun",
-      "BrE": "/aɪ/",
-      "AmE": "/aɪ/",
-      "definition": "the person speaking",
-      "examples": [
-         "I am happy.",
-         "I go to school daily.",
-         "I bought a new book yesterday."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "ice",
-      "role": "noun",
-      "BrE": "/aɪs/",
-      "AmE": "/aɪs/",
-      "definition": "frozen water",
-      "examples": [
-         "I want ice in my drink.",
-         "The ice is cold and hard.",
-         "She slipped on the ice."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "idea",
-      "role": "noun",
-      "BrE": "/aɪˈdɪə/",
-      "AmE": "/aɪˈdiːə/",
-      "definition": "a plan or suggestion",
-      "examples": [
-         "I have an idea.",
-         "Her idea was great.",
-         "He shared his idea with the class."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "if",
-      "role": "conjunction",
-      "BrE": "/ɪf/",
-      "AmE": "/ɪf/",
-      "definition": "used to talk about possible situations",
-      "examples": [
-         "If it rains, stay home.",
-         "I’ll come if I’m free.",
-         "She studies if she has time."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "important",
-      "role": "adjective",
-      "BrE": "/ɪmˈpɔːtnt/",
-      "AmE": "/ɪmˈpɔːrtnt/",
-      "definition": "having a lot of value or influence",
-      "examples": [
-         "This is important.",
-         "Her job is very important.",
-         "The meeting is important for us."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "in",
-      "role": "preposition",
-      "BrE": "/ɪn/",
-      "AmE": "/ɪn/",
-      "definition": "inside a place or thing",
-      "examples": [
-         "I am in the room.",
-         "She lives in a city.",
-         "The book is in my bag."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "information",
-      "role": "noun",
-      "BrE": "/ˌɪnfəˈmeɪʃn/",
-      "AmE": "/ˌɪnfərˈmeɪʃn/",
-      "definition": "facts or details about something",
-      "examples": [
-         "I need information.",
-         "She gave me information about the school.",
-         "The book has useful information."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "interest",
-      "role": "noun",
-      "BrE": "/ˈɪntrəst/",
-      "AmE": "/ˈɪntrəst/",
-      "definition": "something you enjoy doing or learning about",
-      "examples": [
-         "My interest is music.",
-         "He has an interest in art.",
-         "Her interests include sports."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "interested",
-      "role": "adjective",
-      "BrE": "/ˈɪntrəstɪd/",
-      "AmE": "/ˈɪntrəstɪd/",
-      "definition": "wanting to know or learn about something",
-      "examples": [
-         "I am interested in books.",
-         "She is interested in history.",
-         "He was interested in the film."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "interesting",
-      "role": "adjective",
-      "BrE": "/ˈɪntrəstɪŋ/",
-      "AmE": "/ˈɪntrəstɪŋ/",
-      "definition": "making you want to know more",
-      "examples": [
-         "The book is interesting.",
-         "Her story was very interesting.",
-         "This class is really interesting."
-      ]
-   },
-   {
-      
-      "id": 42,
-      "word": "internet",
-      "role": "noun",
-      "BrE": "/ˈɪntənet/",
-      "AmE": "/ˈɪntərnet/",
-      "definition": "a global computer network for sharing information",
-      "examples": [
-         "I use the internet.",
-         "She found it on the internet.",
-         "The internet helps with homework."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "into",
-      "role": "preposition",
-      "BrE": "/ˈɪntə/",
-      "AmE": "/ˈɪntə/",
-      "definition": "moving towards the inside of something",
-      "examples": [
-         "I went into the house.",
-         "She jumped into the pool.",
-         "He put the book into his bag."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "it",
-      "role": "pronoun",
-      "BrE": "/ɪt/",
-      "AmE": "/ɪt/",
-      "definition": "used to refer to a thing or situation",
-      "examples": [
-         "It is a nice day.",
-         "I found it on the table.",
-         "It was raining this morning."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "January",
-      "role": "noun",
-      "BrE": "/ˈdʒænjuəri/",
-      "AmE": "/ˈdʒænjuˌeri/",
-      "definition": "the first month of the year",
-      "examples": [
-         "January is cold.",
-         "My birthday is in January.",
-         "We start school in January."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "jeans",
-      "role": "noun",
-      "BrE": "/dʒiːnz/",
-      "AmE": "/dʒiːnz/",
-      "definition": "trousers made of strong cotton",
-      "examples": [
-         "I wear jeans.",
-         "Her jeans are blue.",
-         "He bought new jeans yesterday."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "job",
-      "role": "noun",
-      "BrE": "/dʒɒb/",
-      "AmE": "/dʒɑːb/",
-      "definition": "work that you do for money",
-      "examples": [
-         "I have a job.",
-         "She got a new job.",
-         "His job is at the bank."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "join",
-      "role": "verb",
-      "BrE": "/dʒɔɪn/",
-      "AmE": "/dʒɔɪn/",
-      "definition": "to become a member of a group",
-      "examples": [
-         "I join the club.",
-         "She joined the team.",
-         "He wants to join the class."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "journey",
-      "role": "noun",
-      "BrE": "/ˈdʒɜːni/",
-      "AmE": "/ˈdʒɜːrni/",
-      "definition": "a trip from one place to another",
-      "examples": [
-         "The journey was long.",
-         "We enjoyed the train journey.",
-         "Her journey to school is short."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "July",
-      "role": "noun",
-      "BrE": "/dʒuˈlaɪ/",
-      "AmE": "/dʒuˈlaɪ/",
-      "definition": "the seventh month of the year",
-      "examples": [
-         "July is warm.",
-         "We go on holiday in July.",
-         "Her birthday is on July 10th."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "June",
-      "role": "noun",
-      "BrE": "/dʒuːn/",
-      "AmE": "/dʒuːn/",
-      "definition": "the sixth month of the year",
-      "examples": [
-         "June is sunny.",
-         "School ends in June.",
-         "We visited the beach in June."
-      ]
-   },
-   {
-      
-      "id": 43,
-      "word": "just",
-      "role": "adverb",
-      "BrE": "/dʒʌst/",
-      "AmE": "/dʒʌst/",
-      "definition": "exactly or only a moment ago",
-      "examples": [
-         "I just arrived.",
-         "She just finished her work.",
-         "It’s just a small problem."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "key",
-      "role": "noun",
-      "BrE": "/kiː/",
-      "AmE": "/kiː/",
-      "definition": "a piece of metal used to lock or unlock something",
-      "examples": [
-         "I lost my key.",
-         "She found the house key.",
-         "The key is on the table."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "kind",
-      "role": "adjective",
-      "BrE": "/kaɪnd/",
-      "AmE": "/kaɪnd/",
-      "definition": "friendly and helpful",
-      "examples": [
-         "He is kind.",
-         "She was kind to the child.",
-         "The kind teacher helped me."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "kind",
-      "role": "noun",
-      "BrE": "/kaɪnd/",
-      "AmE": "/kaɪnd/",
-      "definition": "a type or sort of something",
-      "examples": [
-         "What kind of food?",
-         "I like this kind of music.",
-         "She bought a kind of fruit."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "kitchen",
-      "role": "noun",
-      "BrE": "/ˈkɪtʃɪn/",
-      "AmE": "/ˈkɪtʃɪn/",
-      "definition": "a room where food is prepared",
-      "examples": [
-         "I cook in the kitchen.",
-         "The kitchen is clean.",
-         "She made dinner in the kitchen."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "know",
-      "role": "verb",
-      "BrE": "/nəʊ/",
-      "AmE": "/noʊ/",
-      "definition": "to have information in your mind",
-      "examples": [
-         "I know her name.",
-         "She knows the answer.",
-         "He knows how to drive."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "language",
-      "role": "noun",
-      "BrE": "/ˈlæŋɡwɪdʒ/",
-      "AmE": "/ˈlæŋɡwɪdʒ/",
-      "definition": "a system of communication using words",
-      "examples": [
-         "I learn a language.",
-         "She speaks two languages.",
-         "English is a global language."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "large",
-      "role": "adjective",
-      "BrE": "/lɑːdʒ/",
-      "AmE": "/lɑːrdʒ/",
-      "definition": "big in size",
-      "examples": [
-         "The house is large.",
-         "He has a large dog.",
-         "She bought a large pizza."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "last",
-      "role": "adjective",
-      "BrE": "/lɑːst/",
-      "AmE": "/læst/",
-      "definition": "most recent or final",
-      "examples": [
-         "This is my last book.",
-         "She was here last week.",
-         "The last bus leaves soon."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "late",
-      "role": "adjective",
-      "BrE": "/leɪt/",
-      "AmE": "/leɪt/",
-      "definition": "happening or arriving after the expected time",
-      "examples": [
-         "I was late today.",
-         "The train is late again.",
-         "She arrived late for class."
-      ]
-   },
-   {
-      
-      "id": 44,
-      "word": "later",
-      "role": "adverb",
-      "BrE": "/ˈleɪtə(r)/",
-      "AmE": "/ˈleɪtər/",
-      "definition": "after the present time",
-      "examples": [
-         "See you later.",
-         "She called me later.",
-         "We can talk later today."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "learn",
-      "role": "verb",
-      "BrE": "/lɜːn/",
-      "AmE": "/lɜːrn/",
-      "definition": "to get knowledge or a skill",
-      "examples": [
-         "I learn English.",
-         "She learned to swim.",
-         "He is learning to cook."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "leave",
-      "role": "verb",
-      "BrE": "/liːv/",
-      "AmE": "/liːv/",
-      "definition": "to go away from a place",
-      "examples": [
-         "I leave home early.",
-         "She left the room quickly.",
-         "He leaves for school at seven."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "left",
-      "role": "adjective",
-      "BrE": "/left/",
-      "AmE": "/left/",
-      "definition": "on or towards the side of the body where the heart is",
-      "examples": [
-         "My left hand hurts.",
-         "Turn left at the corner.",
-         "She writes with her left hand."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "leg",
-      "role": "noun",
-      "BrE": "/leɡ/",
-      "AmE": "/leɡ/",
-      "definition": "the part of the body used for walking",
-      "examples": [
-         "My leg is strong.",
-         "He hurt his leg playing.",
-         "The dog has a short leg."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "lesson",
-      "role": "noun",
-      "BrE": "/ˈlesn/",
-      "AmE": "/ˈlesn/",
-      "definition": "a period of learning or teaching",
-      "examples": [
-         "I have a lesson.",
-         "The lesson was about history.",
-         "She attends a piano lesson."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "let",
-      "role": "verb",
-      "BrE": "/let/",
-      "AmE": "/let/",
-      "definition": "to allow something",
-      "examples": [
-         "Let me help.",
-         "She let him borrow her book.",
-         "He lets the dog sleep inside."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "letter",
-      "role": "noun",
-      "BrE": "/ˈletə(r)/",
-      "AmE": "/ˈletər/",
-      "definition": "a written message sent to someone",
-      "examples": [
-         "I wrote a letter.",
-         "She got a letter from him.",
-         "The letter arrived yesterday."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "life",
-      "role": "noun",
-      "BrE": "/laɪf/",
-      "AmE": "/laɪf/",
-      "definition": "the state of being alive",
-      "examples": [
-         "Life is beautiful.",
-         "She loves her busy life.",
-         "His life changed after the trip."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "light",
-      "role": "adjective",
-      "BrE": "/laɪt/",
-      "AmE": "/laɪt/",
-      "definition": "not heavy; bright",
-      "examples": [
-         "The bag is light.",
-         "The room is light and airy.",
-         "She wears light colours."
-      ]
-   },
-   {
-      
-      "id": 45,
-      "word": "light",
-      "role": "noun",
-      "BrE": "/laɪt/",
-      "AmE": "/laɪt/",
-      "definition": "something that makes things bright",
-      "examples": [
-         "Turn on the light.",
-         "The light is too bright.",
-         "She needs a light to read."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "like",
-      "role": "preposition",
-      "BrE": "/laɪk/",
-      "AmE": "/laɪk/",
-      "definition": "similar to something",
-      "examples": [
-         "It’s like a game.",
-         "She sings like a bird.",
-         "This tastes like chocolate."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "like",
-      "role": "verb",
-      "BrE": "/laɪk/",
-      "AmE": "/laɪk/",
-      "definition": "to enjoy something",
-      "examples": [
-         "I like to read.",
-         "She likes ice cream.",
-         "He likes playing football."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "listen",
-      "role": "verb",
-      "BrE": "/ˈlɪsn/",
-      "AmE": "/ˈlɪsn/",
-      "definition": "to pay attention to sounds",
-      "examples": [
-         "I listen to music.",
-         "She listened to the teacher.",
-         "He listens to the radio daily."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "little",
-      "role": "adjective",
-      "BrE": "/ˈlɪtl/",
-      "AmE": "/ˈlɪtl/",
-      "definition": "small in size or amount",
-      "examples": [
-         "I have a little dog.",
-         "She ate a little cake.",
-         "The little boy is happy."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "live",
-      "role": "verb",
-      "BrE": "/lɪv/",
-      "AmE": "/lɪv/",
-      "definition": "to have your home in a place",
-      "examples": [
-         "I live in a city.",
-         "She lives with her family.",
-         "He lived there for two years."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "long",
-      "role": "adjective",
-      "BrE": "/lɒŋ/",
-      "AmE": "/lɔːŋ/",
-      "definition": "having a great length or time",
-      "examples": [
-         "The road is long.",
-         "Her hair is very long.",
-         "The film was too long."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "look",
-      "role": "verb",
-      "BrE": "/lʊk/",
-      "AmE": "/lʊk/",
-      "definition": "to use your eyes to see",
-      "examples": [
-         "Look at the bird.",
-         "She looked at the book.",
-         "He looked out the window."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "lose",
-      "role": "verb",
-      "BrE": "/luːz/",
-      "AmE": "/luːz/",
-      "definition": "to not be able to find something",
-      "examples": [
-         "I lose my pen.",
-         "She lost her keys again.",
-         "He lost his phone at school."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "lot",
-      "role": "noun",
-      "BrE": "/lɒt/",
-      "AmE": "/lɑːt/",
-      "definition": "a large number or amount",
-      "examples": [
-         "I have a lot of books.",
-         "She eats a lot of fruit.",
-         "A lot of people were there."
-      ]
-   },
-   {
-      
-      "id": 46,
-      "word": "love",
-      "role": "noun",
-      "BrE": "/lʌv/",
-      "AmE": "/lʌv/",
-      "definition": "a strong feeling of affection",
-      "examples": [
-         "Love is important.",
-         "She has love for her family.",
-         "His love for music is strong."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "love",
-      "role": "verb",
-      "BrE": "/lʌv/",
-      "AmE": "/lʌv/",
-      "definition": "to have strong feelings of affection",
-      "examples": [
-         "I love my dog.",
-         "She loves to read books.",
-         "He loves his new school."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "lunch",
-      "role": "noun",
-      "BrE": "/lʌntʃ/",
-      "AmE": "/lʌntʃ/",
-      "definition": "a meal eaten in the middle of the day",
-      "examples": [
-         "I eat lunch at noon.",
-         "Her lunch is a sandwich.",
-         "We had lunch at the cafe."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "make",
-      "role": "verb",
-      "BrE": "/meɪk/",
-      "AmE": "/meɪk/",
-      "definition": "to create or produce something",
-      "examples": [
-         "I make a cake.",
-         "She made a new dress.",
-         "He makes toys for kids."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "man",
-      "role": "noun",
-      "BrE": "/mæn/",
-      "AmE": "/mæn/",
-      "definition": "an adult male person",
-      "examples": [
-         "The man is tall.",
-         "A man helped me today.",
-         "She saw a man at the shop."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "many",
-      "role": "determiner",
-      "BrE": "/ˈmeni/",
-      "AmE": "/ˈmeni/",
-      "definition": "a large number of",
-      "examples": [
-         "I have many books.",
-         "Many people like music.",
-         "She has many friends at school."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "March",
-      "role": "noun",
-      "BrE": "/mɑːtʃ/",
-      "AmE": "/mɑːrtʃ/",
-      "definition": "the third month of the year",
-      "examples": [
-         "March is rainy.",
-         "My birthday is in March.",
-         "We have a holiday in March."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "market",
-      "role": "noun",
-      "BrE": "/ˈmɑːkɪt/",
-      "AmE": "/ˈmɑːrkɪt/",
-      "definition": "a place where people buy and sell things",
-      "examples": [
-         "I go to the market.",
-         "The market sells fruit.",
-         "She bought fish at the market."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "married",
-      "role": "adjective",
-      "BrE": "/ˈmærid/",
-      "AmE": "/ˈmærid/",
-      "definition": "having a husband or wife",
-      "examples": [
-         "She is married.",
-         "They are a married couple.",
-         "He got married last year."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "May",
-      "role": "noun",
-      "BrE": "/meɪ/",
-      "AmE": "/meɪ/",
-      "definition": "the fifth month of the year",
-      "examples": [
-         "May is warm.",
-         "We have a party in May.",
-         "Her birthday is on May 15th."
-      ]
-   },
-   {
-      
-      "id": 47,
-      "word": "me",
-      "role": "pronoun",
-      "BrE": "/miː/",
-      "AmE": "/miː/",
-      "definition": "the person speaking",
-      "examples": [
-         "Give it to me.",
-         "She helped me with homework.",
-         "He called me yesterday."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "meal",
-      "role": "noun",
-      "BrE": "/miːl/",
-      "AmE": "/miːl/",
-      "definition": "food eaten at a particular time",
-      "examples": [
-         "I eat a meal.",
-         "She cooked a big meal.",
-         "The meal was delicious."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "meat",
-      "role": "noun",
-      "BrE": "/miːt/",
-      "AmE": "/miːt/",
-      "definition": "food from the body of an animal",
-      "examples": [
-         "I eat meat.",
-         "She cooked meat for dinner.",
-         "The shop sells fresh meat."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "meet",
-      "role": "verb",
-      "BrE": "/miːt/",
-      "AmE": "/miːt/",
-      "definition": "to see and talk to someone for the first time",
-      "examples": [
-         "I meet my friend.",
-         "She met him at school.",
-         "They meet every weekend."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "milk",
-      "role": "noun",
-      "BrE": "/mɪlk/",
-      "AmE": "/mɪlk/",
-      "definition": "a white liquid from cows or other animals",
-      "examples": [
-         "I drink milk.",
-         "She bought milk at the shop.",
-         "The milk is in the fridge."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "minute",
-      "role": "noun",
-      "BrE": "/ˈmɪnɪt/",
-      "AmE": "/ˈmɪnɪt/",
-      "definition": "a period of 60 seconds",
-      "examples": [
-         "Wait a minute.",
-         "The class is ten minutes long.",
-         "She was late by five minutes."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "Miss",
-      "role": "noun",
-      "BrE": "/mɪs/",
-      "AmE": "/mɪs/",
-      "definition": "a title for an unmarried woman",
-      "examples": [
-         "Miss Smith is my teacher.",
-         "She is called Miss Jones.",
-         "Miss Brown teaches English."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "mistake",
-      "role": "noun",
-      "BrE": "/mɪˈsteɪk/",
-      "AmE": "/mɪˈsteɪk/",
-      "definition": "something that is not correct",
-      "examples": [
-         "I made a mistake.",
-         "Her mistake was small.",
-         "He corrected his mistake."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "modern",
-      "role": "adjective",
-      "BrE": "/ˈmɒdn/",
-      "AmE": "/ˈmɑːdərn/",
-      "definition": "new and using the latest ideas or technology",
-      "examples": [
-         "The phone is modern.",
-         "She lives in a modern house.",
-         "The school has modern computers."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "Monday",
-      "role": "noun",
-      "BrE": "/ˈmʌndeɪ/",
-      "AmE": "/ˈmʌndeɪ/",
-      "definition": "the first day of the week",
-      "examples": [
-         "Monday is busy.",
-         "We start school on Monday.",
-         "She has a meeting on Monday."
-      ]
-   },
-   {
-      
-      "id": 48,
-      "word": "money",
-      "role": "noun",
-      "BrE": "/ˈmʌni/",
-      "AmE": "/ˈmʌni/",
-      "definition": "what you use to buy things",
-      "examples": [
-         "I have some money.",
-         "She spent money on books.",
-         "He saved money for a car."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "month",
-      "role": "noun",
-      "BrE": "/mʌnθ/",
-      "AmE": "/mʌnθ/",
-      "definition": "one of the twelve parts of a year",
-      "examples": [
-         "This month is July.",
-         "She works every month.",
-         "The trip is next month."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "more",
-      "role": "adverb",
-      "BrE": "/mɔː(r)/",
-      "AmE": "/mɔːr/",
-      "definition": "a greater amount or number",
-      "examples": [
-         "I want more cake.",
-         "She needs more time.",
-         "He has more books than me."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "morning",
-      "role": "noun",
-      "BrE": "/ˈmɔːnɪŋ/",
-      "AmE": "/ˈmɔːrnɪŋ/",
-      "definition": "the time of day from midnight to noon",
-      "examples": [
-         "Good morning!",
-         "I run in the morning.",
-         "She studies every morning."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "mother",
-      "role": "noun",
-      "BrE": "/ˈmʌðə(r)/",
-      "AmE": "/ˈmʌðər/",
-      "definition": "a female parent",
-      "examples": [
-         "My mother is kind.",
-         "Her mother cooks well.",
-         "The mother helped her child."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "mountain",
-      "role": "noun",
-      "BrE": "/ˈmaʊntən/",
-      "AmE": "/ˈmaʊntən/",
-      "definition": "a very high hill",
-      "examples": [
-         "The mountain is tall.",
-         "We climbed a mountain.",
-         "She saw snow on the mountain."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "mouse",
-      "role": "noun",
-      "BrE": "/maʊs/",
-      "AmE": "/maʊs/",
-      "definition": "a small animal with a long tail",
-      "examples": [
-         "I saw a mouse.",
-         "The mouse ran fast.",
-         "She found a mouse in the house."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "mouth",
-      "role": "noun",
-      "BrE": "/maʊθ/",
-      "AmE": "/maʊθ/",
-      "definition": "the part of the face used for eating and speaking",
-      "examples": [
-         "My mouth is dry.",
-         "He opened his mouth wide.",
-         "She smiled with her mouth."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "move",
-      "role": "verb",
-      "BrE": "/muːv/",
-      "AmE": "/muːv/",
-      "definition": "to change position or place",
-      "examples": [
-         "I move the chair.",
-         "She moved to a new city.",
-         "He moved the table outside."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "movie",
-      "role": "noun",
-      "BrE": "/ˈmuːvi/",
-      "AmE": "/ˈmuːvi/",
-      "definition": "a story shown on a screen",
-      "examples": [
-         "I watch a movie.",
-         "The movie was funny.",
-         "She saw a movie at the cinema."
-      ]
-   },
-   {
-      
-      "id": 49,
-      "word": "Mr",
-      "role": "noun",
-      "BrE": "/ˈmɪstə(r)/",
-      "AmE": "/ˈmɪstər/",
-      "definition": "a title used before a man’s name",
-      "examples": [
-         "Mr Smith is my teacher.",
-         "She spoke to Mr Brown.",
-         "Mr Jones lives next door."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "Mrs",
-      "role": "noun",
-      "BrE": "/ˈmɪsɪz/",
-      "AmE": "/ˈmɪsɪz/",
-      "definition": "a title used before a married woman’s name",
-      "examples": [
-         "Mrs Brown is kind.",
-         "She is called Mrs Wilson.",
-         "Mrs Lee teaches math."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "much",
-      "role": "adverb",
-      "BrE": "/mʌtʃ/",
-      "AmE": "/mʌtʃ/",
-      "definition": "a large amount",
-      "examples": [
-         "I don’t eat much.",
-         "She likes him very much.",
-         "He doesn’t talk much."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "mum",
-      "role": "noun",
-      "BrE": "/mʌm/",
-      "AmE": "/mʌm/",
-      "definition": "a mother",
-      "examples": [
-         "My mum is at home.",
-         "Her mum bakes cakes.",
-         "Mum helped me with my project."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "museum",
-      "role": "noun",
-      "BrE": "/mjuˈziːəm/",
-      "AmE": "/mjuˈziːəm/",
-      "definition": "a place where old or important things are shown",
-      "examples": [
-         "We visited a museum.",
-         "The museum has old art.",
-         "She works in the city museum."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "music",
-      "role": "noun",
-      "BrE": "/ˈmjuːzɪk/",
-      "AmE": "/ˈmjuːzɪk/",
-      "definition": "sounds arranged in a way that is pleasant to hear",
-      "examples": [
-         "I like music.",
-         "She plays music at home.",
-         "The music at the party was loud."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "my",
-      "role": "determiner",
-      "BrE": "/maɪ/",
-      "AmE": "/maɪ/",
-      "definition": "belonging to the person speaking",
-      "examples": [
-         "My book is new.",
-         "This is my favourite song.",
-         "My house is near the park."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "name",
-      "role": "noun",
-      "BrE": "/neɪm/",
-      "AmE": "/neɪm/",
-      "definition": "the word or words that a person or thing is called",
-      "examples": [
-         "My name is Anna.",
-         "What’s the name of the dog?",
-         "She wrote her name on the book."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "near",
-      "role": "preposition",
-      "BrE": "/nɪə(r)/",
-      "AmE": "/nɪr/",
-      "definition": "not far from something",
-      "examples": [
-         "I live near the school.",
-         "The shop is near my house.",
-         "She sat near the window."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "need",
-      "role": "verb",
-      "BrE": "/niːd/",
-      "AmE": "/niːd/",
-      "definition": "to want something because it is necessary",
-      "examples": [
-         "I need water.",
-         "She needs a new pen.",
-         "He needs to finish his work."
-      ]
-   },
-   {
-      
-      "id": 50,
-      "word": "never",
-      "role": "adverb",
-      "BrE": "/ˈnevə(r)/",
-      "AmE": "/ˈnevər/",
-      "definition": "not at any time",
-      "examples": [
-         "I never eat meat.",
-         "She never goes to bed late.",
-         "He has never seen snow."
-      ]
-   },
-   
-   {
-      
-      "id": 51,
-      "word": "new",
-      "role": "adjective",
-      "BrE": "/njuː/",
-      "AmE": "/nuː/",
-      "definition": "not old or used",
-      "examples": [
-         "I have a new book.",
-         "She bought a new dress.",
-         "His new phone is very fast."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "news",
-      "role": "noun",
-      "BrE": "/njuːz/",
-      "AmE": "/nuːz/",
-      "definition": "information about recent events",
-      "examples": [
-         "I watch the news.",
-         "The news was interesting.",
-         "She heard good news today."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "next",
-      "role": "adjective",
-      "BrE": "/nekst/",
-      "AmE": "/nekst/",
-      "definition": "coming after this one",
-      "examples": [
-         "The next day is Tuesday.",
-         "She’s in the next room.",
-         "The next bus arrives soon."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "nice",
-      "role": "adjective",
-      "BrE": "/naɪs/",
-      "AmE": "/naɪs/",
-      "definition": "pleasant or kind",
-      "examples": [
-         "She is nice.",
-         "The weather is nice today.",
-         "He gave me a nice gift."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "night",
-      "role": "noun",
-      "BrE": "/naɪt/",
-      "AmE": "/naɪt/",
-      "definition": "the time when it is dark outside",
-      "examples": [
-         "I sleep at night.",
-         "The stars shine at night.",
-         "She stayed up late last night."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "nine",
-      "role": "number",
-      "BrE": "/naɪn/",
-      "AmE": "/naɪn/",
-      "definition": "the number 9",
-      "examples": [
-         "I have nine pens.",
-         "She is nine years old.",
-         "Nine students are in the class."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "nineteen",
-      "role": "number",
-      "BrE": "/ˌnaɪnˈtiːn/",
-      "AmE": "/ˌnaɪnˈtiːn/",
-      "definition": "the number 19",
-      "examples": [
-         "He is nineteen.",
-         "I bought nineteen apples.",
-         "Nineteen people came to the party."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "ninety",
-      "role": "number",
-      "BrE": "/ˈnaɪnti/",
-      "AmE": "/ˈnaɪnti/",
-      "definition": "the number 90",
-      "examples": [
-         "She is ninety years old.",
-         "The shop has ninety items.",
-         "Ninety students joined the club."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "no",
-      "role": "exclamation",
-      "BrE": "/nəʊ/",
-      "AmE": "/noʊ/",
-      "definition": "used to give a negative answer",
-      "examples": [
-         "No, I don’t want it.",
-         "She said no to the question.",
-         "No, he can’t come today."
-      ]
-   },
-   {
-      
-      "id": 51,
-      "word": "nobody",
-      "role": "pronoun",
-      "BrE": "/ˈnəʊbədi/",
-      "AmE": "/ˈnoʊbədi/",
-      "definition": "no person",
-      "examples": [
-         "Nobody is here.",
-         "Nobody saw the cat.",
-         "Nobody answered the phone."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "north",
-      "role": "noun",
-      "BrE": "/nɔːθ/",
-      "AmE": "/nɔːrθ/",
-      "definition": "the direction towards the top of a map",
-      "examples": [
-         "The north is cold.",
-         "We live in the north.",
-         "The sun rises far from the north."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "north",
-      "role": "adjective",
-      "BrE": "/nɔːθ/",
-      "AmE": "/nɔːrθ/",
-      "definition": "in or towards the north",
-      "examples": [
-         "The north wind is cold.",
-         "She lives in north London.",
-         "The north side of the house is cool."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "north",
-      "role": "adverb",
-      "BrE": "/nɔːθ/",
-      "AmE": "/nɔːrθ/",
-      "definition": "towards the north",
-      "examples": [
-         "We traveled north.",
-         "The birds fly north.",
-         "She looked north to see the mountains."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "nose",
-      "role": "noun",
-      "BrE": "/nəʊz/",
-      "AmE": "/noʊz/",
-      "definition": "the part of the face used for smelling",
-      "examples": [
-         "My nose is cold.",
-         "She touched her nose.",
-         "The dog’s nose is wet."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "not",
-      "role": "adverb",
-      "BrE": "/nɒt/",
-      "AmE": "/nɑːt/",
-      "definition": "used to make a sentence negative",
-      "examples": [
-         "I am not tired.",
-         "She does not like tea.",
-         "He’s not coming to the party."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "nothing",
-      "role": "pronoun",
-      "BrE": "/ˈnʌθɪŋ/",
-      "AmE": "/ˈnʌθɪŋ/",
-      "definition": "not anything",
-      "examples": [
-         "Nothing is here.",
-         "I found nothing in the box.",
-         "She said nothing about it."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "November",
-      "role": "noun",
-      "BrE": "/nəʊˈvembə(r)/",
-      "AmE": "/noʊˈvembər/",
-      "definition": "the eleventh month of the year",
-      "examples": [
-         "November is cool.",
-         "My birthday is in November.",
-         "We have a holiday in November."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "now",
-      "role": "adverb",
-      "BrE": "/naʊ/",
-      "AmE": "/naʊ/",
-      "definition": "at the present time",
-      "examples": [
-         "I am busy now.",
-         "She is here now.",
-         "Let’s start the game now."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "number",
-      "role": "noun",
-      "BrE": "/ˈnʌmbə(r)/",
-      "AmE": "/ˈnʌmbər/",
-      "definition": "a word or symbol that shows amount or position",
-      "examples": [
-         "My number is ten.",
-         "Her phone number is new.",
-         "The number of students is twenty."
-      ]
-   },
-   {
-      
-      "id": 52,
-      "word": "October",
-      "role": "noun",
-      "BrE": "/ɒkˈtəʊbə(r)/",
-      "AmE": "/ɑːkˈtoʊbər/",
-      "definition": "the tenth month of the year",
-      "examples": [
-         "October is autumn.",
-         "We have a party in October.",
-         "Her birthday is on October 5th."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "of",
-      "role": "preposition",
-      "BrE": "/əv/",
-      "AmE": "/əv/",
-      "definition": "used to show possession or connection",
-      "examples": [
-         "The book of mine.",
-         "She is a friend of his.",
-         "The colour of the car is red."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "off",
-      "role": "adverb",
-      "BrE": "/ɒf/",
-      "AmE": "/ɔːf/",
-      "definition": "away from a place or thing",
-      "examples": [
-         "The light is off.",
-         "She took her hat off.",
-         "He fell off the chair."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "often",
-      "role": "adverb",
-      "BrE": "/ˈɒfn/",
-      "AmE": "/ˈɔːfn/",
-      "definition": "many times",
-      "examples": [
-         "I often read.",
-         "She often visits her friend.",
-         "He often plays football."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "old",
-      "role": "adjective",
-      "BrE": "/əʊld/",
-      "AmE": "/oʊld/",
-      "definition": "having lived or existed for a long time",
-      "examples": [
-         "The house is old.",
-         "He has an old car.",
-         "She found an old book."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "on",
-      "role": "preposition",
-      "BrE": "/ɒn/",
-      "AmE": "/ɑːn/",
-      "definition": "touching the surface of something",
-      "examples": [
-         "The book is on the table.",
-         "She has a hat on her head.",
-         "The picture is on the wall."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "once",
-      "role": "adverb",
-      "BrE": "/wʌns/",
-      "AmE": "/wʌns/",
-      "definition": "one time only",
-      "examples": [
-         "I went once.",
-         "She called me once.",
-         "He visited once last year."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "one",
-      "role": "number",
-      "BrE": "/wʌn/",
-      "AmE": "/wʌn/",
-      "definition": "the number 1",
-      "examples": [
-         "I have one book.",
-         "She bought one apple.",
-         "One student is absent."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "only",
-      "role": "adverb",
-      "BrE": "/ˈəʊnli/",
-      "AmE": "/ˈoʊnli/",
-      "definition": "no one or nothing else",
-      "examples": [
-         "Only I am here.",
-         "She only likes tea.",
-         "He only has one pen."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "open",
-      "role": "adjective",
-      "BrE": "/ˈəʊpən/",
-      "AmE": "/ˈoʊpən/",
-      "definition": "not closed",
-      "examples": [
-         "The door is open.",
-         "The shop is open now.",
-         "She left the window open."
-      ]
-   },
-   {
-      
-      "id": 53,
-      "word": "open",
-      "role": "verb",
-      "BrE": "/ˈəʊpən/",
-      "AmE": "/ˈoʊpən/",
-      "definition": "to make something not closed",
-      "examples": [
-         "I open the door.",
-         "She opened her book.",
-         "He opens the shop every morning."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "or",
-      "role": "conjunction",
-      "BrE": "/ɔː(r)/",
-      "AmE": "/ɔːr/",
-      "definition": "used to show a choice between things",
-      "examples": [
-         "Tea or coffee?",
-         "Do you want this or that?",
-         "She can come or stay home."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "orange",
-      "role": "noun",
-      "BrE": "/ˈɒrɪndʒ/",
-      "AmE": "/ˈɔːrɪndʒ/",
-      "definition": "a fruit or the colour of that fruit",
-      "examples": [
-         "I eat an orange.",
-         "Her dress is orange.",
-         "The orange is sweet."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "our",
-      "role": "determiner",
-      "BrE": "/aʊə(r)/",
-      "AmE": "/aʊr/",
-      "definition": "belonging to us",
-      "examples": [
-         "This is our house.",
-         "Our dog is playful.",
-         "Our teacher is kind."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "out",
-      "role": "adverb",
-      "BrE": "/aʊt/",
-      "AmE": "/aʊt/",
-      "definition": "away from the inside of a place",
-      "examples": [
-         "Go out now.",
-         "She ran out of the room.",
-         "He took the dog out."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "over",
-      "role": "preposition",
-      "BrE": "/ˈəʊvə(r)/",
-      "AmE": "/ˈoʊvər/",
-      "definition": "above or across something",
-      "examples": [
-         "The bird flew over.",
-         "She jumped over the wall.",
-         "The bridge is over the river."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "page",
-      "role": "noun",
-      "BrE": "/peɪdʒ/",
-      "AmE": "/peɪdʒ/",
-      "definition": "one side of a piece of paper in a book",
-      "examples": [
-         "Read page ten.",
-         "She wrote on the page.",
-         "The book has a torn page."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "paint",
-      "role": "verb",
-      "BrE": "/peɪnt/",
-      "AmE": "/peɪnt/",
-      "definition": "to put colour on something using a brush",
-      "examples": [
-         "I paint a picture.",
-         "She painted the wall blue.",
-         "He paints houses for a job."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "painting",
-      "role": "noun",
-      "BrE": "/ˈpeɪntɪŋ/",
-      "AmE": "/ˈpeɪntɪŋ/",
-      "definition": "a picture made with paint",
-      "examples": [
-         "The painting is beautiful.",
-         "She made a painting of a tree.",
-         "His painting is in the museum."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "pair",
-      "role": "noun",
-      "BrE": "/peə(r)/",
-      "AmE": "/per/",
-      "definition": "two things that go together",
-      "examples": [
-         "I have a pair of shoes.",
-         "She bought a pair of socks.",
-         "The pair of gloves is new."
-      ]
-   },
-   {
-      
-      "id": 54,
-      "word": "paper",
-      "role": "noun",
-      "BrE": "/ˈpeɪpə(r)/",
-      "AmE": "/ˈpeɪpər/",
-      "definition": "material used for writing or drawing",
-      "examples": [
-         "I write on paper.",
-         "She drew on a paper.",
-         "The paper is white and clean."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "parent",
-      "role": "noun",
-      "BrE": "/ˈpeərənt/",
-      "AmE": "/ˈperənt/",
-      "definition": "a mother or father",
-      "examples": [
-         "My parent is kind.",
-         "Her parents are teachers.",
-         "The parent helped with homework."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "park",
-      "role": "noun",
-      "BrE": "/pɑːk/",
-      "AmE": "/pɑːrk/",
-      "definition": "a public area with grass and trees",
-      "examples": [
-         "I play in the park.",
-         "The park is near my house.",
-         "She walks her dog in the park."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "part",
-      "role": "noun",
-      "BrE": "/pɑːt/",
-      "AmE": "/pɑːrt/",
-      "definition": "one of the pieces of something",
-      "examples": [
-         "This is a part of the book.",
-         "She ate part of the cake.",
-         "He fixed a part of the car."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "party",
-      "role": "noun",
-      "BrE": "/ˈpɑːti/",
-      "AmE": "/ˈpɑːrti/",
-      "definition": "a social event with food and music",
-      "examples": [
-         "I go to a party.",
-         "The party was fun.",
-         "She invited me to her party."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "past",
-      "role": "preposition",
-      "BrE": "/pɑːst/",
-      "AmE": "/pæst/",
-      "definition": "beyond a point in time or place",
-      "examples": [
-         "It’s past six.",
-         "She walked past the shop.",
-         "The bus went past the school."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "pay",
-      "role": "verb",
-      "BrE": "/peɪ/",
-      "AmE": "/peɪ/",
-      "definition": "to give money for something",
-      "examples": [
-         "I pay for food.",
-         "She paid for the book.",
-         "He pays his bills online."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "pen",
-      "role": "noun",
-      "BrE": "/pen/",
-      "AmE": "/pen/",
-      "definition": "a tool for writing with ink",
-      "examples": [
-         "I write with a pen.",
-         "Her pen is blue.",
-         "He lost his pen at school."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "pencil",
-      "role": "noun",
-      "BrE": "/ˈpensl/",
-      "AmE": "/ˈpensl/",
-      "definition": "a tool for writing or drawing with a lead",
-      "examples": [
-         "I use a pencil.",
-         "She sharpened her pencil.",
-         "The pencil is on the desk."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "people",
-      "role": "noun",
-      "BrE": "/ˈpiːpl/",
-      "AmE": "/ˈpiːpl/",
-      "definition": "more than one person",
-      "examples": [
-         "People are kind.",
-         "Many people came to the park.",
-         "She helps people in her job."
-      ]
-   },
-   {
-      
-      "id": 55,
-      "word": "person",
-      "role": "noun",
-      "BrE": "/ˈpɜːsn/",
-      "AmE": "/ˈpɜːrsn/",
-      "definition": "a human being",
-      "examples": [
-         "He is a nice person.",
-         "She met a person at the shop.",
-         "That person helped me."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "phone",
-      "role": "noun",
-      "BrE": "/fəʊn/",
-      "AmE": "/foʊn/",
-      "definition": "a device for talking to people far away",
-      "examples": [
-         "I use my phone.",
-         "Her phone is new.",
-         "He left his phone at home."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "photo",
-      "role": "noun",
-      "BrE": "/ˈfəʊtəʊ/",
-      "AmE": "/ˈfoʊtoʊ/",
-      "definition": "a picture taken with a camera",
-      "examples": [
-         "I took a photo.",
-         "She showed me a photo.",
-         "The photo is of her dog."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "piano",
-      "role": "noun",
-      "BrE": "/piˈænəʊ/",
-      "AmE": "/piˈænoʊ/",
-      "definition": "a musical instrument with keys",
-      "examples": [
-         "I play the piano.",
-         "Her piano is old.",
-         "He had a piano lesson."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "picture",
-      "role": "noun",
-      "BrE": "/ˈpɪktʃə(r)/",
-      "AmE": "/ˈpɪktʃər/",
-      "definition": "an image, drawing, or photograph",
-      "examples": [
-         "I drew a picture.",
-         "The picture is on the wall.",
-         "She took a picture of the tree."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "place",
-      "role": "noun",
-      "BrE": "/pleɪs/",
-      "AmE": "/pleɪs/",
-      "definition": "a particular area or position",
-      "examples": [
-         "This is a nice place.",
-         "She visited a new place.",
-         "The place was quiet and calm."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "play",
-      "role": "verb",
-      "BrE": "/pleɪ/",
-      "AmE": "/pleɪ/",
-      "definition": "to take part in a game or activity",
-      "examples": [
-         "I play football.",
-         "She plays with her dog.",
-         "He played chess with his friend."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "player",
-      "role": "noun",
-      "BrE": "/ˈpleɪə(r)/",
-      "AmE": "/ˈpleɪər/",
-      "definition": "a person who plays a game or sport",
-      "examples": [
-         "He is a good player.",
-         "The player scored a goal.",
-         "She’s a great tennis player."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "please",
-      "role": "exclamation",
-      "BrE": "/pliːz/",
-      "AmE": "/pliːz/",
-      "definition": "used to make a polite request",
-      "examples": [
-         "Please, help me.",
-         "Can you please open the door?",
-         "Please come to the party."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "point",
-      "role": "noun",
-      "BrE": "/pɔɪnt/",
-      "AmE": "/pɔɪnt/",
-      "definition": "a particular place or idea",
-      "examples": [
-         "This is the point.",
-         "She made a good point.",
-         "The meeting point is the park."
-      ]
-   },
-   {
-      
-      "id": 56,
-      "word": "police",
-      "role": "noun",
-      "BrE": "/pəˈliːs/",
-      "AmE": "/pəˈliːs/",
-      "definition": "people who keep law and order",
-      "examples": [
-         "The police are here.",
-         "She called the police.",
-         "The police helped the lost child."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "poor",
-      "role": "adjective",
-      "BrE": "/pɔː(r)/",
-      "AmE": "/pʊr/",
-      "definition": "having little money or being of low quality",
-      "examples": [
-         "He is poor.",
-         "The poor dog was hungry.",
-         "She had a poor score on the test."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "possible",
-      "role": "adjective",
-      "BrE": "/ˈpɒsəbl/",
-      "AmE": "/ˈpɑːsəbl/",
-      "definition": "able to happen or be done",
-      "examples": [
-         "It is possible.",
-         "She found a possible answer.",
-         "Is it possible to come early?"
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "present",
-      "role": "noun",
-      "BrE": "/ˈpreznt/",
-      "AmE": "/ˈpreznt/",
-      "definition": "a gift",
-      "examples": [
-         "I got a present.",
-         "She gave him a present.",
-         "The present was a book."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "pretty",
-      "role": "adjective",
-      "BrE": "/ˈprɪti/",
-      "AmE": "/ˈprɪti/",
-      "definition": "attractive in a pleasant way",
-      "examples": [
-         "The flower is pretty.",
-         "She wore a pretty dress.",
-         "The park looks pretty today."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "price",
-      "role": "noun",
-      "BrE": "/praɪs/",
-      "AmE": "/praɪs/",
-      "definition": "the amount of money needed to buy something",
-      "examples": [
-         "The price is high.",
-         "She checked the price of the book.",
-         "The price of the ticket is low."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "problem",
-      "role": "noun",
-      "BrE": "/ˈprɒbləm/",
-      "AmE": "/ˈprɑːbləm/",
-      "definition": "something that causes difficulty",
-      "examples": [
-         "I have a problem.",
-         "She solved the math problem.",
-         "The problem was hard to fix."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "programme",
-      "role": "noun",
-      "BrE": "/ˈprəʊɡræm/",
-      "AmE": "/ˈproʊɡræm/",
-      "definition": "a plan or a show on television or radio",
-      "examples": [
-         "I watch a programme.",
-         "The programme was funny.",
-         "She likes science programmes."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "put",
-      "role": "verb",
-      "BrE": "/pʊt/",
-      "AmE": "/pʊt/",
-      "definition": "to place something somewhere",
-      "examples": [
-         "I put the book down.",
-         "She put her bag on the table.",
-         "He puts his shoes by the door."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "question",
-      "role": "noun",
-      "BrE": "/ˈkwestʃən/",
-      "AmE": "/ˈkwestʃən/",
-      "definition": "something you ask",
-      "examples": [
-         "I have a question.",
-         "She asked a question in class.",
-         "The question was about the book."
-      ]
-   },
-   {
-      
-      "id": 57,
-      "word": "quick",
-      "role": "adjective",
-      "BrE": "/kwɪk/",
-      "AmE": "/kwɪk/",
-      "definition": "fast or taking little time",
-      "examples": [
-         "He is quick.",
-         "She gave a quick answer.",
-         "The quick fox ran away."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "quiet",
-      "role": "adjective",
-      "BrE": "/ˈkwaɪət/",
-      "AmE": "/ˈkwaɪət/",
-      "definition": "making little or no noise",
-      "examples": [
-         "The room is quiet.",
-         "She has a quiet voice.",
-         "The quiet forest was peaceful."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "radio",
-      "role": "noun",
-      "BrE": "/ˈreɪdiəʊ/",
-      "AmE": "/ˈreɪdioʊ/",
-      "definition": "a device for listening to music or news",
-      "examples": [
-         "I listen to the radio.",
-         "The radio plays music.",
-         "She turned on the radio."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "rain",
-      "role": "noun",
-      "BrE": "/reɪn/",
-      "AmE": "/reɪn/",
-      "definition": "water falling from the sky",
-      "examples": [
-         "It’s rain outside.",
-         "The rain is heavy today.",
-         "She got wet in the rain."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "read",
-      "role": "verb",
-      "BrE": "/riːd/",
-      "AmE": "/riːd/",
-      "definition": "to look at and understand words",
-      "examples": [
-         "I read a book.",
-         "She reads every day.",
-         "He read the letter carefully."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "ready",
-      "role": "adjective",
-      "BrE": "/ˈredi/",
-      "AmE": "/ˈredi/",
-      "definition": "prepared for something",
-      "examples": [
-         "I am ready.",
-         "She is ready for school.",
-         "The food is ready to eat."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "red",
-      "role": "adjective",
-      "BrE": "/red/",
-      "AmE": "/red/",
-      "definition": "having the colour of blood",
-      "examples": [
-         "The apple is red.",
-         "She has a red bag.",
-         "His red car is new."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "red",
-      "role": "noun",
-      "BrE": "/red/",
-      "AmE": "/red/",
-      "definition": "the colour of blood",
-      "examples": [
-         "Red is bright.",
-         "She painted the wall red.",
-         "I like red for my shirt."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "remember",
-      "role": "verb",
-      "BrE": "/rɪˈmembə(r)/",
-      "AmE": "/rɪˈmembər/",
-      "definition": "to keep something in your mind",
-      "examples": [
-         "I remember her name.",
-         "She remembered the story.",
-         "He remembers his old school."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "restaurant",
-      "role": "noun",
-      "BrE": "/ˈrestrɒnt/",
-      "AmE": "/ˈrestərənt/",
-      "definition": "a place where you can buy and eat meals",
-      "examples": [
-         "We eat at a restaurant.",
-         "The restaurant is busy.",
-         "She works in a restaurant."
-      ]
-   },
-   {
-      
-      "id": 58,
-      "word": "rice",
-      "role": "noun",
-      "BrE": "/raɪs/",
-      "AmE": "/raɪs/",
-      "definition": "small grains used as food",
-      "examples": [
-         "I eat rice.",
-         "She cooked rice for dinner.",
-         "The rice is in the bowl."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "rich",
-      "role": "adjective",
-      "BrE": "/rɪtʃ/",
-      "AmE": "/rɪtʃ/",
-      "definition": "having a lot of money",
-      "examples": [
-         "He is rich.",
-         "She lives in a rich area.",
-         "The rich man bought a car."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "right",
-      "role": "adjective",
-      "BrE": "/raɪt/",
-      "AmE": "/raɪt/",
-      "definition": "correct or on the side of the body opposite to left",
-      "examples": [
-         "The answer is right.",
-         "Turn right at the corner.",
-         "She writes with her right hand."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "right",
-      "role": "adverb",
-      "BrE": "/raɪt/",
-      "AmE": "/raɪt/",
-      "definition": "correctly or towards the right side",
-      "examples": [
-         "I did it right.",
-         "Look right before crossing.",
-         "She turned right at the shop."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "river",
-      "role": "noun",
-      "BrE": "/ˈrɪvə(r)/",
-      "AmE": "/ˈrɪvər/",
-      "definition": "a large flow of water",
-      "examples": [
-         "The river is wide.",
-         "She swam in the river.",
-         "The river flows through the town."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "road",
-      "role": "noun",
-      "BrE": "/rəʊd/",
-      "AmE": "/roʊd/",
-      "definition": "a way for vehicles and people to travel",
-      "examples": [
-         "The road is long.",
-         "She lives on this road.",
-         "The road to school is busy."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "room",
-      "role": "noun",
-      "BrE": "/ruːm/",
-      "AmE": "/ruːm/",
-      "definition": "a part of a building with walls",
-      "examples": [
-         "My room is big.",
-         "She cleaned her room.",
-         "The room has a big window."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "run",
-      "role": "verb",
-      "BrE": "/rʌn/",
-      "AmE": "/rʌn/",
-      "definition": "to move quickly on your feet",
-      "examples": [
-         "I run in the park.",
-         "She runs every morning.",
-         "He ran to catch the bus."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "sad",
-      "role": "adjective",
-      "BrE": "/sæd/",
-      "AmE": "/sæd/",
-      "definition": "feeling unhappy",
-      "examples": [
-         "I am sad today.",
-         "She was sad about the news.",
-         "The sad story made her cry."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "same",
-      "role": "adjective",
-      "BrE": "/seɪm/",
-      "AmE": "/seɪm/",
-      "definition": "not different",
-      "examples": [
-         "We have the same book.",
-         "She wears the same dress.",
-         "They live in the same town."
-      ]
-   },
-   {
-      
-      "id": 59,
-      "word": "Saturday",
-      "role": "noun",
-      "BrE": "/ˈsætədeɪ/",
-      "AmE": "/ˈsætərdeɪ/",
-      "definition": "the sixth day of the week",
-      "examples": [
-         "Saturday is fun.",
-         "We play on Saturday.",
-         "She visits her friend on Saturday."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "say",
-      "role": "verb",
-      "BrE": "/seɪ/",
-      "AmE": "/seɪ/",
-      "definition": "to speak or tell something",
-      "examples": [
-         "I say hello.",
-         "She said her name.",
-         "He says he is tired."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "school",
-      "role": "noun",
-      "BrE": "/skuːl/",
-      "AmE": "/skuːl/",
-      "definition": "a place where children learn",
-      "examples": [
-         "I go to school.",
-         "Her school is big.",
-         "The school has a new teacher."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "sea",
-      "role": "noun",
-      "BrE": "/siː/",
-      "AmE": "/siː/",
-      "definition": "a large area of water",
-      "examples": [
-         "The sea is blue.",
-         "She swam in the sea.",
-         "We saw fish in the sea."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "second",
-      "role": "adjective",
-      "BrE": "/ˈsekənd/",
-      "AmE": "/ˈsekənd/",
-      "definition": "coming after the first",
-      "examples": [
-         "This is the second book.",
-         "She came in second place.",
-         "The second day was sunny."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "see",
-      "role": "verb",
-      "BrE": "/siː/",
-      "AmE": "/siː/",
-      "definition": "to notice with your eyes",
-      "examples": [
-         "I see a bird.",
-         "She saw a movie.",
-         "He sees his friend every day."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "sell",
-      "role": "verb",
-      "BrE": "/sel/",
-      "AmE": "/sel/",
-      "definition": "to give something for money",
-      "examples": [
-         "I sell my book.",
-         "She sells fruit at the market.",
-         "He sold his old phone."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "send",
-      "role": "verb",
-      "BrE": "/send/",
-      "AmE": "/send/",
-      "definition": "to make something go to another place",
-      "examples": [
-         "I send a letter.",
-         "She sent an email.",
-         "He sends a gift every year."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "September",
-      "role": "noun",
-      "BrE": "/sepˈtembə(r)/",
-      "AmE": "/sepˈtembər/",
-      "definition": "the ninth month of the year",
-      "examples": [
-         "September is cool.",
-         "School starts in September.",
-         "Her birthday is on September 20th."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "seven",
-      "role": "number",
-      "BrE": "/ˈsevn/",
-      "AmE": "/ˈsevn/",
-      "definition": "the number 7",
-      "examples": [
-         "I have seven books.",
-         "She is seven years old.",
-         "Seven students are in the room."
-      ]
-   },
-   {
-      
-      "id": 60,
-      "word": "seventeen",
-      "role": "number",
-      "BrE": "/ˌsevənˈtiːn/",
-      "AmE": "/ˌsevənˈtiːn/",
-      "definition": "the number 17",
-      "examples": [
-         "He is seventeen.",
-         "I bought seventeen pens.",
-         "Seventeen people were at the party."
-      ]
-   },
-   
-   {
-      
-      "id": 61,
-      "word": "seventy",
-      "role": "number",
-      "BrE": "/ˈsevnti/",
-      "AmE": "/ˈsevnti/",
-      "definition": "the number 70",
-      "examples": [
-         "She is seventy years old.",
-         "I have seventy books.",
-         "Seventy people came to the event."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "she",
-      "role": "pronoun",
+      "definition": "A boy or man that you talk about",
+      "examples": [
+         {
+            "collocation": "He is",
+            "example": "He is a teacher."
+         },
+         {
+            "collocation": "He plays",
+            "example": "He plays football."
+         },
+         {
+            "collocation": "He lives",
+            "example": "He lives in London."
+         }
+      ]
+   },
+   {
+      "id": 1,
+      "category": "Subject Pronouns",
+      "word": "She",
+      "role": "Pronoun",
       "BrE": "/ʃiː/",
       "AmE": "/ʃiː/",
-      "definition": "a female person or animal",
-      "examples": [
-         "She is my friend.",
-         "She likes to read.",
-         "She went to the park."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "shirt",
-      "role": "noun",
-      "BrE": "/ʃɜːt/",
-      "AmE": "/ʃɜːrt/",
-      "definition": "a piece of clothing worn on the upper body",
-      "examples": [
-         "I wear a shirt.",
-         "His shirt is blue.",
-         "She bought a new shirt."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "shoe",
-      "role": "noun",
-      "BrE": "/ʃuː/",
-      "AmE": "/ʃuː/",
-      "definition": "a covering for the foot",
-      "examples": [
-         "My shoe is black.",
-         "She lost her shoe.",
-         "He wears big shoes."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "shop",
-      "role": "noun",
-      "BrE": "/ʃɒp/",
-      "AmE": "/ʃɑːp/",
-      "definition": "a place where things are sold",
-      "examples": [
-         "I go to the shop.",
-         "The shop sells food.",
-         "She works in a book shop."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "short",
-      "role": "adjective",
-      "BrE": "/ʃɔːt/",
-      "AmE": "/ʃɔːrt/",
-      "definition": "having little length or time",
-      "examples": [
-         "The book is short.",
-         "Her hair is short.",
-         "The film was very short."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "show",
-      "role": "verb",
-      "BrE": "/ʃəʊ/",
-      "AmE": "/ʃoʊ/",
-      "definition": "to let someone see something",
-      "examples": [
-         "Show me your book.",
-         "She showed me a photo.",
-         "He shows his drawing to the class."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "sing",
-      "role": "verb",
-      "BrE": "/sɪŋ/",
-      "AmE": "/sɪŋ/",
-      "definition": "to make music with your voice",
-      "examples": [
-         "I sing a song.",
-         "She sings very well.",
-         "He sang at the party."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "sister",
-      "role": "noun",
-      "BrE": "/ˈsɪstə(r)/",
-      "AmE": "/ˈsɪstər/",
-      "definition": "a female sibling",
-      "examples": [
-         "My sister is kind.",
-         "Her sister is at school.",
-         "The sister helped with homework."
-      ]
-   },
-   {
-      
-      "id": 61,
-      "word": "sit",
-      "role": "verb",
-      "BrE": "/sɪt/",
-      "AmE": "/sɪt/",
-      "definition": "to rest on a chair or seat",
-      "examples": [
-         "I sit on the chair.",
-         "She sat by the window.",
-         "He sits at the front of the class."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "six",
-      "role": "number",
-      "BrE": "/sɪks/",
-      "AmE": "/sɪks/",
-      "definition": "the number 6",
-      "examples": [
-         "I have six pens.",
-         "She is six years old.",
-         "Six students are in the room."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "sixteen",
-      "role": "number",
-      "BrE": "/ˌsɪksˈtiːn/",
-      "AmE": "/ˌsɪksˈtiːn/",
-      "definition": "the number 16",
-      "examples": [
-         "He is sixteen.",
-         "I bought sixteen apples.",
-         "Sixteen people joined the club."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "sixty",
-      "role": "number",
-      "BrE": "/ˈsɪksti/",
-      "AmE": "/ˈsɪksti/",
-      "definition": "the number 60",
-      "examples": [
-         "She is sixty years old.",
-         "I have sixty books.",
-         "Sixty people were at the party."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "sleep",
-      "role": "verb",
-      "BrE": "/sliːp/",
-      "AmE": "/sliːp/",
-      "definition": "to rest with your eyes closed",
-      "examples": [
-         "I sleep at night.",
-         "She sleeps for eight hours.",
-         "He slept late this morning."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "small",
-      "role": "adjective",
-      "BrE": "/smɔːl/",
-      "AmE": "/smɔːl/",
-      "definition": "not big in size",
-      "examples": [
-         "The dog is small.",
-         "She has a small bag.",
-         "The small house is cozy."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "snow",
-      "role": "noun",
-      "BrE": "/snəʊ/",
-      "AmE": "/snoʊ/",
-      "definition": "soft white pieces of frozen water falling from the sky",
-      "examples": [
-         "I like snow.",
-         "The snow is white.",
-         "She played in the snow."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "so",
-      "role": "adverb",
-      "BrE": "/səʊ/",
-      "AmE": "/soʊ/",
-      "definition": "to a great degree or therefore",
-      "examples": [
-         "I am so tired.",
-         "She was late, so she ran.",
-         "He is so happy today."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "some",
-      "role": "determiner",
-      "BrE": "/sʌm/",
-      "AmE": "/sʌm/",
-      "definition": "a certain amount or number",
-      "examples": [
-         "I have some books.",
-         "She bought some fruit.",
-         "Some people are here."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "something",
-      "role": "pronoun",
-      "BrE": "/ˈsʌmθɪŋ/",
-      "AmE": "/ˈsʌmθɪŋ/",
-      "definition": "an unknown or unspecified thing",
-      "examples": [
-         "I see something.",
-         "She found something new.",
-         "He gave me something small."
-      ]
-   },
-   {
-      
-      "id": 62,
-      "word": "sometimes",
-      "role": "adverb",
-      "BrE": "/ˈsʌmtaɪmz/",
-      "AmE": "/ˈsʌmtaɪmz/",
-      "definition": "on some occasions but not always",
-      "examples": [
-         "I sometimes walk.",
-         "She sometimes reads at night.",
-         "He sometimes forgets his keys."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "son",
-      "role": "noun",
-      "BrE": "/sʌn/",
-      "AmE": "/sʌn/",
-      "definition": "a male child",
-      "examples": [
-         "My son is young.",
-         "Her son plays football.",
-         "The son helped his dad."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "song",
-      "role": "noun",
-      "BrE": "/sɒŋ/",
-      "AmE": "/sɔːŋ/",
-      "definition": "music with words that you sing",
-      "examples": [
-         "I like this song.",
-         "She sang a song.",
-         "The song is on the radio."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "soon",
-      "role": "adverb",
-      "BrE": "/suːn/",
-      "AmE": "/suːn/",
-      "definition": "in a short time",
-      "examples": [
-         "I’ll come soon.",
-         "She will finish soon.",
-         "He arrives soon after lunch."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "sorry",
-      "role": "exclamation",
-      "BrE": "/ˈsɒri/",
-      "AmE": "/ˈsɑːri/",
-      "definition": "used to apologize or show sadness",
-      "examples": [
-         "Sorry, I’m late.",
-         "She said sorry for the mistake.",
-         "He was sorry about the news."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "south",
-      "role": "noun",
-      "BrE": "/saʊθ/",
-      "AmE": "/saʊθ/",
-      "definition": "the direction towards the bottom of a map",
-      "examples": [
-         "The south is warm.",
-         "We live in the south.",
-         "The birds fly south."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "south",
-      "role": "adjective",
-      "BrE": "/saʊθ/",
-      "AmE": "/saʊθ/",
-      "definition": "in or towards the south",
-      "examples": [
-         "The south wind is warm.",
-         "She lives in south London.",
-         "The south side of the house is sunny."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "south",
-      "role": "adverb",
-      "BrE": "/saʊθ/",
-      "AmE": "/saʊθ/",
-      "definition": "towards the south",
-      "examples": [
-         "We traveled south.",
-         "The plane flies south.",
-         "She looked south to the sea."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "speak",
-      "role": "verb",
-      "BrE": "/spiːk/",
-      "AmE": "/spiːk/",
-      "definition": "to say words or talk",
-      "examples": [
-         "I speak English.",
-         "She spoke to her friend.",
-         "He speaks loudly in class."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "sport",
-      "role": "noun",
-      "BrE": "/spɔːt/",
-      "AmE": "/spɔːrt/",
-      "definition": "a physical activity with rules",
-      "examples": [
-         "I like sport.",
-         "She plays a sport at school.",
-         "Football is his favourite sport."
-      ]
-   },
-   {
-      
-      "id": 63,
-      "word": "spring",
-      "role": "noun",
-      "BrE": "/sprɪŋ/",
-      "AmE": "/sprɪŋ/",
-      "definition": "the season after winter",
-      "examples": [
-         "Spring is warm.",
-         "Flowers grow in spring.",
-         "We visit the park in spring."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "stand",
-      "role": "verb",
-      "BrE": "/stænd/",
-      "AmE": "/stænd/",
-      "definition": "to be on your feet",
-      "examples": [
-         "I stand up.",
-         "She stood by the door.",
-         "He stands in line at the shop."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "star",
-      "role": "noun",
-      "BrE": "/stɑː(r)/",
-      "AmE": "/stɑːr/",
-      "definition": "a bright object in the night sky",
-      "examples": [
-         "I see a star.",
-         "The stars shine at night.",
-         "She drew a star on the paper."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "start",
-      "role": "verb",
-      "BrE": "/stɑːt/",
-      "AmE": "/stɑːrt/",
-      "definition": "to begin something",
-      "examples": [
-         "I start my work.",
-         "She started a new book.",
-         "He starts school tomorrow."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "station",
-      "role": "noun",
-      "BrE": "/ˈsteɪʃn/",
-      "AmE": "/ˈsteɪʃn/",
-      "definition": "a place for trains or buses",
-      "examples": [
-         "I go to the station.",
-         "The station is busy.",
-         "She waited at the train station."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "stay",
-      "role": "verb",
-      "BrE": "/steɪ/",
-      "AmE": "/steɪ/",
-      "definition": "to remain in a place",
-      "examples": [
-         "I stay at home.",
-         "She stayed with her friend.",
-         "He stays at a hotel."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "stop",
-      "role": "verb",
-      "BrE": "/stɒp/",
-      "AmE": "/stɑːp/",
-      "definition": "to finish or end something",
-      "examples": [
-         "I stop the game.",
-         "She stopped talking.",
-         "He stopped the car quickly."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "store",
-      "role": "noun",
-      "BrE": "/stɔː(r)/",
-      "AmE": "/stɔːr/",
-      "definition": "a place where things are sold",
-      "examples": [
-         "I go to the store.",
-         "The store sells clothes.",
-         "She bought food at the store."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "street",
-      "role": "noun",
-      "BrE": "/striːt/",
-      "AmE": "/striːt/",
-      "definition": "a public road in a town or city",
-      "examples": [
-         "I live on this street.",
-         "The street is busy.",
-         "She walked down the street."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "strong",
-      "role": "adjective",
-      "BrE": "/strɒŋ/",
-      "AmE": "/strɔːŋ/",
-      "definition": "having a lot of power or strength",
-      "examples": [
-         "He is strong.",
-         "The strong wind blew.",
-         "She lifted the strong box."
-      ]
-   },
-   {
-      
-      "id": 64,
-      "word": "student",
-      "role": "noun",
-      "BrE": "/ˈstjuːdnt/",
-      "AmE": "/ˈstuːdnt/",
-      "definition": "a person who is learning",
-      "examples": [
-         "I am a student.",
-         "She is a good student.",
-         "The student read the book."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "study",
-      "role": "verb",
-      "BrE": "/ˈstʌdi/",
-      "AmE": "/ˈstʌdi/",
-      "definition": "to learn about something",
-      "examples": [
-         "I study English.",
-         "She studies at home.",
-         "He studied for the test."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "summer",
-      "role": "noun",
-      "BrE": "/ˈsʌmə(r)/",
-      "AmE": "/ˈsʌmər/",
-      "definition": "the season after spring",
-      "examples": [
-         "Summer is hot.",
-         "We swim in summer.",
-         "The summer holiday is long."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "sun",
-      "role": "noun",
-      "BrE": "/sʌn/",
-      "AmE": "/sʌn/",
-      "definition": "the star that gives light and heat to Earth",
-      "examples": [
-         "The sun is bright.",
-         "She sat in the sun.",
-         "The sun shines every day."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "Sunday",
-      "role": "noun",
-      "BrE": "/ˈsʌndeɪ/",
-      "AmE": "/ˈsʌndeɪ/",
-      "definition": "the seventh day of the week",
-      "examples": [
-         "Sunday is relaxing.",
-         "We rest on Sunday.",
-         "She visits family on Sunday."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "supermarket",
-      "role": "noun",
-      "BrE": "/ˈsuːpəmɑːkɪt/",
-      "AmE": "/ˈsuːpərmɑːrkɪt/",
-      "definition": "a large shop selling food and other items",
-      "examples": [
-         "I go to the supermarket.",
-         "The supermarket is big.",
-         "She bought milk at the supermarket."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "sure",
-      "role": "adjective",
-      "BrE": "/ʃʊə(r)/",
-      "AmE": "/ʃʊr/",
-      "definition": "certain or confident",
-      "examples": [
-         "I am sure.",
-         "She is sure of the answer.",
-         "He’s sure he locked the door."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "swim",
-      "role": "verb",
-      "BrE": "/swɪm/",
-      "AmE": "/swɪm/",
-      "definition": "to move through water using your body",
-      "examples": [
-         "I swim in the pool.",
-         "She swims every day.",
-         "He swam in the sea."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "table",
-      "role": "noun",
-      "BrE": "/ˈteɪbl/",
-      "AmE": "/ˈteɪbl/",
-      "definition": "a piece of furniture with a flat top",
-      "examples": [
-         "The table is big.",
-         "She put the book on the table.",
-         "He eats at the table."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "take",
-      "role": "verb",
-      "BrE": "/teɪk/",
-      "AmE": "/teɪk/",
-      "definition": "to get or carry something",
-      "examples": [
-         "I take my bag.",
-         "She took the bus to school.",
-         "He takes a book to read."
-      ]
-   },
-   {
-      
-      "id": 65,
-      "word": "talk",
-      "role": "verb",
-      "BrE": "/tɔːk/",
-      "AmE": "/tɔːk/",
-      "definition": "to speak or have a conversation",
-      "examples": [
-         "I talk to my friend.",
-         "She talked about the book.",
-         "He talks on the phone."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "tall",
-      "role": "adjective",
-      "BrE": "/tɔːl/",
-      "AmE": "/tɔːl/",
-      "definition": "having a great height",
-      "examples": [
-         "He is tall.",
-         "The tall tree is green.",
-         "She saw a tall building."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "tea",
-      "role": "noun",
-      "BrE": "/tiː/",
-      "AmE": "/tiː/",
-      "definition": "a hot drink made from leaves",
-      "examples": [
-         "I drink tea.",
-         "She likes hot tea.",
-         "The tea is in a cup."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "teacher",
-      "role": "noun",
-      "BrE": "/ˈtiːtʃə(r)/",
-      "AmE": "/ˈtiːtʃər/",
-      "definition": "a person who teaches",
-      "examples": [
-         "My teacher is kind.",
-         "The teacher helps students.",
-         "She is a math teacher."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "television",
-      "role": "noun",
-      "BrE": "/ˈtelɪvɪʒn/",
-      "AmE": "/ˈtelɪvɪʒn/",
-      "definition": "a device for watching programmes",
-      "examples": [
-         "I watch television.",
-         "The television is new.",
-         "She turned on the television."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "tell",
-      "role": "verb",
-      "BrE": "/tel/",
-      "AmE": "/tel/",
-      "definition": "to give information to someone",
-      "examples": [
-         "I tell a story.",
-         "She told me her name.",
-         "He tells jokes to his friends."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "ten",
-      "role": "number",
-      "BrE": "/ten/",
-      "AmE": "/ten/",
-      "definition": "the number 10",
-      "examples": [
-         "I have ten books.",
-         "She is ten years old.",
-         "Ten students are in the class."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "test",
-      "role": "noun",
-      "BrE": "/test/",
-      "AmE": "/test/",
-      "definition": "an exam to check knowledge",
-      "examples": [
-         "I have a test.",
-         "The test was easy.",
-         "She studied for the math test."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "than",
-      "role": "conjunction",
-      "BrE": "/ðæn/",
-      "AmE": "/ðæn/",
-      "definition": "used to compare two things",
-      "examples": [
-         "I am taller than her.",
-         "She is faster than him.",
-         "This book is better than that."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "thank",
-      "role": "verb",
-      "BrE": "/θæŋk/",
-      "AmE": "/θæŋk/",
-      "definition": "to express gratitude",
-      "examples": [
-         "I thank my friend.",
-         "She thanked the teacher.",
-         "He thanks her for the help."
-      ]
-   },
-   {
-      
-      "id": 66,
-      "word": "that",
-      "role": "determiner",
-      "BrE": "/ðæt/",
-      "AmE": "/ðæt/",
-      "definition": "used to point to a specific thing",
-      "examples": [
-         "That is my book.",
-         "She likes that dress.",
-         "That car is fast."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "the",
-      "role": "determiner",
-      "BrE": "/ðə/",
-      "AmE": "/ðə/",
-      "definition": "used to refer to a specific thing",
-      "examples": [
-         "The cat is on the mat.",
-         "She read the book.",
-         "The sun is bright today."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "their",
-      "role": "determiner",
-      "BrE": "/ðeə(r)/",
-      "AmE": "/ðer/",
-      "definition": "belonging to them",
-      "examples": [
-         "Their house is big.",
-         "I saw their dog.",
-         "Their books are on the table."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "them",
-      "role": "pronoun",
-      "BrE": "/ðem/",
-      "AmE": "/ðem/",
-      "definition": "a group of people or things",
-      "examples": [
-         "I saw them.",
-         "She gave them a gift.",
-         "He helped them with homework."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "then",
-      "role": "adverb",
-      "BrE": "/ðen/",
-      "AmE": "/ðen/",
-      "definition": "at that time or next",
-      "examples": [
-         "I was young then.",
-         "She ate, then slept.",
-         "He finished his work, then left."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "there",
-      "role": "adverb",
-      "BrE": "/ðeə(r)/",
-      "AmE": "/ðer/",
-      "definition": "in or to that place",
-      "examples": [
-         "I go there.",
-         "She lives there.",
-         "The book is over there."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "they",
-      "role": "pronoun",
-      "BrE": "/ðeɪ/",
-      "AmE": "/ðeɪ/",
-      "definition": "a group of people or things",
-      "examples": [
-         "They are my friends.",
-         "They play football.",
-         "They went to the park."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "thing",
-      "role": "noun",
-      "BrE": "/θɪŋ/",
-      "AmE": "/θɪŋ/",
-      "definition": "an object or item",
-      "examples": [
-         "I need a thing.",
-         "She bought a new thing.",
-         "This thing is heavy."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "think",
-      "role": "verb",
-      "BrE": "/θɪŋk/",
-      "AmE": "/θɪŋk/",
-      "definition": "to have an opinion or idea",
-      "examples": [
-         "I think it’s good.",
-         "She thinks about her future.",
-         "He thought the film was funny."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "third",
-      "role": "adjective",
-      "BrE": "/θɜːd/",
-      "AmE": "/θɜːrd/",
-      "definition": "coming after two others",
-      "examples": [
-         "This is the third book.",
-         "She came in third place.",
-         "The third day was sunny."
-      ]
-   },
-   {
-      
-      "id": 67,
-      "word": "thirteen",
-      "role": "number",
-      "BrE": "/ˌθɜːˈtiːn/",
-      "AmE": "/ˌθɜːrˈtiːn/",
-      "definition": "the number 13",
-      "examples": [
-         "He is thirteen.",
-         "I have thirteen pens.",
-         "Thirteen students are here."
-      ]
-   },
-   {
-      
-      "id": 68,
-      "word": "thirty",
-      "role": "number",
-      "BrE": "/ˈθɜːti/",
-      "AmE": "/ˈθɜːrti/",
-      "definition": "the number 30",
-      "examples": [
-         "She is thirty years old.",
-         "I have thirty books.",
-         "Thirty people were at the party."
-      ]
-   },
-   {
-      
-      "id": 68,
-      "word": "this",
-      "role": "determiner",
-      "BrE": "/ðɪs/",
-      "AmE": "/ðɪs/",
-      "definition": "used to point to a specific thing near you",
-      "examples": [
-         "This is my book.",
-         "This cat is cute.",
-         "This house is big."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "Thursday",
-      "role": "noun",
-      "BrE": "/ˈθɜːzdeɪ/",
-      "AmE": "/ˈθɜːrzdeɪ/",
-      "definition": "the fourth day of the week",
-      "examples": [
-         "Thursday is busy.",
-         "We meet on Thursday.",
-         "She has a test on Thursday."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "ticket",
-      "role": "noun",
-      "BrE": "/ˈtɪkɪt/",
-      "AmE": "/ˈtɪkɪt/",
-      "definition": "a piece of paper that allows entry or travel",
-      "examples": [
-         "I have a ticket.",
-         "She bought a train ticket.",
-         "The ticket is for the film."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "time",
-      "role": "noun",
-      "BrE": "/taɪm/",
-      "AmE": "/taɪm/",
-      "definition": "what is measured in hours and minutes",
-      "examples": [
-         "What time is it?",
-         "She has no time today.",
-         "The time for the meeting is two."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "to",
-      "role": "preposition",
-      "BrE": "/tə/",
-      "AmE": "/tə/",
-      "definition": "used to show direction or purpose",
-      "examples": [
-         "I go to school.",
-         "She gave a book to him.",
-         "He walks to the park."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "today",
-      "role": "adverb",
-      "BrE": "/təˈdeɪ/",
-      "AmE": "/təˈdeɪ/",
-      "definition": "on this day",
-      "examples": [
-         "I am busy today.",
-         "She studies today.",
-         "He went to the shop today."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "together",
-      "role": "adverb",
-      "BrE": "/təˈɡeðə(r)/",
-      "AmE": "/təˈɡeðər/",
-      "definition": "with another person or thing",
-      "examples": [
-         "We play together.",
-         "They work together.",
-         "She and her friend sat together."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "tomorrow",
-      "role": "adverb",
-      "BrE": "/təˈmɒrəʊ/",
-      "AmE": "/təˈmɑːroʊ/",
-      "definition": "the day after today",
-      "examples": [
-         "I’ll come tomorrow.",
-         "She has a test tomorrow.",
-         "Tomorrow is a sunny day."
-      ]
-   },
-   {
-      "id": 68,
-      "word": "too",
-      "role": "adverb",
-      "BrE": "/tuː/",
-      "AmE": "/tuː/",
-      "definition": "also or more than wanted",
-      "examples": [
-         "I want to come too.",
-         "She is too tired.",
-         "The bag is too heavy."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "town",
-      "role": "noun",
-      "BrE": "/taʊn/",
-      "AmE": "/taʊn/",
-      "definition": "a place with many houses and shops",
-      "examples": [
-         "I live in a town.",
-         "The town is small.",
-         "She visited the town center."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "train",
-      "role": "noun",
-      "BrE": "/treɪn/",
-      "AmE": "/treɪn/",
-      "definition": "a vehicle that travels on rails",
-      "examples": [
-         "I take the train.",
-         "The train is fast.",
-         "She caught the train to London."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "travel",
-      "role": "verb",
-      "BrE": "/ˈtrævl/",
-      "AmE": "/ˈtrævl/",
-      "definition": "to go from one place to another",
-      "examples": [
-         "I travel by car.",
-         "She travels to school.",
-         "He traveled to Paris last year."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "tree",
-      "role": "noun",
-      "BrE": "/triː/",
-      "AmE": "/triː/",
-      "definition": "a tall plant with a trunk and branches",
-      "examples": [
-         "The tree is tall.",
-         "She climbed the tree.",
-         "The tree has green leaves."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "try",
-      "role": "verb",
-      "BrE": "/traɪ/",
-      "AmE": "/traɪ/",
-      "definition": "to make an effort to do something",
-      "examples": [
-         "I try to learn.",
-         "She tried to open the door.",
-         "He tries to win the game."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "Tuesday",
-      "role": "noun",
-      "BrE": "/ˈtjuːzdeɪ/",
-      "AmE": "/ˈtuːzdeɪ/",
-      "definition": "the second day of the week",
-      "examples": [
-         "Tuesday is busy.",
-         "We meet on Tuesday.",
-         "She has a class on Tuesday."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "turn",
-      "role": "verb",
-      "BrE": "/tɜːn/",
-      "AmE": "/tɜːrn/",
-      "definition": "to change direction or position",
-      "examples": [
-         "I turn left.",
-         "She turned the page.",
-         "He turned to see the dog."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "twelve",
-      "role": "number",
-      "BrE": "/twelv/",
-      "AmE": "/twelv/",
-      "definition": "the number 12",
-      "examples": [
-         "I have twelve books.",
-         "She is twelve years old.",
-         "Twelve students are in the class."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "twenty",
-      "role": "number",
-      "BrE": "/ˈtwenti/",
-      "AmE": "/ˈtwenti/",
-      "definition": "the number 20",
-      "examples": [
-         "I have twenty pens.",
-         "She is twenty years old.",
-         "Twenty people were at the party."
-      ]
-   },
-   {
-      "id": 69,
-      "word": "two",
-      "role": "number",
-      "BrE": "/tuː/",
-      "AmE": "/tuː/",
-      "definition": "the number 2",
-      "examples": [
-         "I have two cats.",
-         "She bought two apples.",
-         "Two students are absent."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "umbrella",
-      "role": "noun",
-      "BrE": "/ʌmˈbrelə/",
-      "AmE": "/ʌmˈbrelə/",
-      "definition": "an object to protect from rain",
-      "examples": [
-         "I use an umbrella.",
-         "Her umbrella is red.",
-         "She forgot her umbrella at home."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "under",
-      "role": "preposition",
-      "BrE": "/ˈʌndə(r)/",
-      "AmE": "/ˈʌndər/",
-      "definition": "below something",
-      "examples": [
-         "The cat is under the table.",
-         "She looked under the bed.",
-         "He hid under a tree."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "understand",
-      "role": "verb",
-      "BrE": "/ˌʌndəˈstænd/",
-      "AmE": "/ˌʌndərˈstænd/",
-      "definition": "to know the meaning of something",
-      "examples": [
-         "I understand English.",
-         "She understands the lesson.",
-         "He understood the question."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "up",
-      "role": "adverb",
-      "BrE": "/ʌp/",
-      "AmE": "/ʌp/",
-      "definition": "towards a higher place",
-      "examples": [
-         "I look up.",
-         "She climbed up the hill.",
-         "He went up to his room."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "us",
-      "role": "pronoun",
-      "BrE": "/ʌs/",
-      "AmE": "/ʌs/",
-      "definition": "the people speaking",
-      "examples": [
-         "Give it to us.",
-         "She helped us with work.",
-         "He invited us to the party."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "use",
-      "role": "verb",
-      "BrE": "/juːz/",
-      "AmE": "/juːz/",
-      "definition": "to do something with an object",
-      "examples": [
-         "I use a pen.",
-         "She uses her phone.",
-         "He used a map to find the way."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "usually",
-      "role": "adverb",
-      "BrE": "/ˈjuːʒuəli/",
-      "AmE": "/ˈjuːʒuəli/",
-      "definition": "most of the time",
-      "examples": [
-         "I usually walk.",
-         "She usually reads at night.",
-         "He usually eats breakfast early."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "very",
-      "role": "adverb",
-      "BrE": "/ˈveri/",
-      "AmE": "/ˈveri/",
-      "definition": "to a great degree",
-      "examples": [
-         "I am very happy.",
-         "She is very tired.",
-         "The book is very interesting."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "visit",
-      "role": "verb",
-      "BrE": "/ˈvɪzɪt/",
-      "AmE": "/ˈvɪzɪt/",
-      "definition": "to go to see a person or place",
-      "examples": [
-         "I visit my friend.",
-         "She visited the museum.",
-         "He visits his family weekly."
-      ]
-   },
-   {
-      "id": 70,
-      "word": "wait",
-      "role": "verb",
-      "BrE": "/weɪt/",
-      "AmE": "/weɪt/",
-      "definition": "to stay until something happens",
-      "examples": [
-         "I wait for the bus.",
-         "She waited for her friend.",
-         "He waits at the station."
-      ]
-   },
-   
-   {
-      "id": 71,
-      "word": "walk",
-      "role": "verb",
-      "BrE": "/wɔːk/",
-      "AmE": "/wɔːk/",
-      "definition": "to move on foot",
-      "examples": [
-         "I walk to school.",
-         "She walks in the park.",
-         "He walked home after work."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "wall",
-      "role": "noun",
-      "BrE": "/wɔːl/",
-      "AmE": "/wɔːl/",
-      "definition": "a vertical structure of a building or room",
-      "examples": [
-         "The wall is white.",
-         "She painted the wall blue.",
-         "A picture is on the wall."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "want",
-      "role": "verb",
-      "BrE": "/wɒnt/",
-      "AmE": "/wɑːnt/",
-      "definition": "to wish or need something",
-      "examples": [
-         "I want a book.",
-         "She wants to learn English.",
-         "He wanted a new phone."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "warm",
-      "role": "adjective",
-      "BrE": "/wɔːm/",
-      "AmE": "/wɔːrm/",
-      "definition": "having a comfortable temperature",
-      "examples": [
-         "The room is warm.",
-         "Her coat is warm.",
-         "The warm water feels nice."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "watch",
-      "role": "verb",
-      "BrE": "/wɒtʃ/",
-      "AmE": "/wɑːtʃ/",
-      "definition": "to look at something for a period of time",
-      "examples": [
-         "I watch TV.",
-         "She watched a movie.",
-         "He watches birds in the park."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "watch",
-      "role": "noun",
-      "BrE": "/wɒtʃ/",
-      "AmE": "/wɑːtʃ/",
-      "definition": "a device for telling the time",
-      "examples": [
-         "My watch is new.",
-         "She lost her watch.",
-         "The watch shows the time."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "water",
-      "role": "noun",
-      "BrE": "/ˈwɔːtə(r)/",
-      "AmE": "/ˈwɔːtər/",
-      "definition": "a clear liquid you drink",
-      "examples": [
-         "I drink water.",
-         "The water is cold.",
-         "She filled a glass with water."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "way",
-      "role": "noun",
-      "BrE": "/weɪ/",
-      "AmE": "/weɪ/",
-      "definition": "a method or path to do something",
-      "examples": [
-         "This is the way.",
-         "She found a new way to study.",
-         "The way to the park is short."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "we",
-      "role": "pronoun",
-      "BrE": "/wiː/",
-      "AmE": "/wiː/",
-      "definition": "the people speaking",
-      "examples": [
-         "We are happy.",
-         "We go to school together.",
-         "We watched a film yesterday."
-      ]
-   },
-   {
-      "id": 71,
-      "word": "wear",
-      "role": "verb",
-      "BrE": "/weə(r)/",
-      "AmE": "/wer/",
-      "definition": "to have clothes on your body",
-      "examples": [
-         "I wear a hat.",
-         "She wears a red dress.",
-         "He wore jeans to the party."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "weather",
-      "role": "noun",
-      "BrE": "/ˈweðə(r)/",
-      "AmE": "/ˈweðər/",
-      "definition": "the conditions in the air, like rain or sun",
-      "examples": [
-         "The weather is sunny.",
-         "Bad weather stopped the game.",
-         "She checked the weather today."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "Wednesday",
-      "role": "noun",
-      "BrE": "/ˈwenzdeɪ/",
-      "AmE": "/ˈwenzdeɪ/",
-      "definition": "the third day of the week",
-      "examples": [
-         "Wednesday is busy.",
-         "We meet on Wednesday.",
-         "She has a class on Wednesday."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "week",
-      "role": "noun",
-      "BrE": "/wiːk/",
-      "AmE": "/wiːk/",
-      "definition": "a period of seven days",
-      "examples": [
-         "I work this week.",
-         "She studies every week.",
-         "The week was very busy."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "weekend",
-      "role": "noun",
-      "BrE": "/ˌwiːkˈend/",
-      "AmE": "/ˌwiːkˈend/",
-      "definition": "Saturday and Sunday",
-      "examples": [
-         "I rest at the weekend.",
-         "She visits family at the weekend.",
-         "The weekend was fun."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "well",
-      "role": "adverb",
-      "BrE": "/wel/",
-      "AmE": "/wel/",
-      "definition": "in a good way",
-      "examples": [
-         "I sing well.",
-         "She plays football well.",
-         "He did his homework well."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "west",
-      "role": "noun",
-      "BrE": "/west/",
-      "AmE": "/west/",
-      "definition": "the direction where the sun sets",
-      "examples": [
-         "The west is sunny.",
-         "We live in the west.",
-         "The sun sets in the west."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "west",
-      "role": "adjective",
-      "BrE": "/west/",
-      "AmE": "/west/",
-      "definition": "in or towards the west",
-      "examples": [
-         "The west wind is cool.",
-         "She lives in west London.",
-         "The west side of the house is shady."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "west",
-      "role": "adverb",
-      "BrE": "/west/",
-      "AmE": "/west/",
-      "definition": "towards the west",
-      "examples": [
-         "We traveled west.",
-         "The birds fly west.",
-         "She looked west to the hills."
-      ]
-   },
-   {
-      "id": 72,
-      "word": "what",
-      "role": "pronoun",
-      "BrE": "/wɒt/",
-      "AmE": "/wɑːt/",
-      "definition": "used to ask about something",
-      "examples": [
-         "What is this?",
-         "What time is it?",
-         "What did she say?"
-      ]
-   },
-   {
-      "id": 72,
-      "word": "when",
-      "role": "adverb",
-      "BrE": "/wen/",
-      "AmE": "/wen/",
-      "definition": "used to ask about time",
-      "examples": [
-         "When is the party?",
-         "When did he arrive?",
-         "When does the class start?"
-      ]
-   },
-   {
-      "id": 73,
-      "word": "where",
-      "role": "adverb",
-      "BrE": "/weə(r)/",
-      "AmE": "/wer/",
-      "definition": "used to ask about place or position",
-      "examples": [
-         "Where is my book?",
-         "Where does she live?",
-         "Where are you going?"
-      ]
-   },
-   {
-      "id": 73,
-      "word": "which",
-      "role": "pronoun",
-      "BrE": "/wɪtʃ/",
-      "AmE": "/wɪtʃ/",
-      "definition": "used to ask about one thing from a group",
-      "examples": [
-         "Which book is yours?",
-         "Which one do you like?",
-         "Which dress should she wear?"
-      ]
-   },
-   {
-      "id": 73,
-      "word": "white",
-      "role": "adjective",
-      "BrE": "/waɪt/",
-      "AmE": "/waɪt/",
-      "definition": "having the colour of snow or milk",
-      "examples": [
-         "The wall is white.",
-         "She has a white dress.",
-         "His white car is clean."
-      ]
-   },
-   {
-      "id": 73,
-      "word": "white",
-      "role": "noun",
-      "BrE": "/waɪt/",
-      "AmE": "/waɪt/",
-      "definition": "the colour of snow or milk",
-      "examples": [
-         "White is bright.",
-         "She painted the room white.",
-         "I like white for my shirt."
-      ]
-   },
-   {
-      "id": 73,
-      "word": "who",
-      "role": "pronoun",
-      "BrE": "/huː/",
-      "AmE": "/huː/",
-      "definition": "used to ask about a person",
-      "examples": [
-         "Who is she?",
-         "Who took my pen?",
-         "Who was at the party?"
-      ]
-   },
-   {
-      "id": 73,
-      "word": "why",
-      "role": "adverb",
-      "BrE": "/waɪ/",
-      "AmE": "/waɪ/",
-      "definition": "used to ask the reason for something",
-      "examples": [
-         "Why are you late?",
-         "Why did she leave?",
-         "Why is the sky blue?"
-      ]
-   },
-   {
-      "id": 73,
-      "word": "wife",
-      "role": "noun",
-      "BrE": "/waɪf/",
-      "AmE": "/waɪf/",
-      "definition": "the woman a man is married to",
-      "examples": [
-         "His wife is kind.",
-         "My wife cooks well.",
-         "She met her wife at work."
-      ]
-   },
-   {
-      "id": 73,
-      "word": "window",
-      "role": "noun",
-      "BrE": "/ˈwɪndəʊ/",
-      "AmE": "/ˈwɪndoʊ/",
-      "definition": "an opening in a wall for light and air",
-      "examples": [
-         "The window is open.",
-         "She looked out the window.",
-         "The window in my room is big."
-      ]
-   },
-   {
-      "id": 73,
-      "word": "winter",
-      "role": "noun",
-      "BrE": "/ˈwɪntə(r)/",
-      "AmE": "/ˈwɪntər/",
-      "definition": "the season after autumn",
-      "examples": [
-         "Winter is cold.",
-         "We ski in winter.",
-         "The winter was very snowy."
-      ]
-   },
-   {
-      "id": 73,
-      "word": "with",
-      "role": "preposition",
-      "BrE": "/wɪð/",
-      "AmE": "/wɪð/",
-      "definition": "together or using something",
-      "examples": [
-         "I am with my friend.",
-         "She writes with a pen.",
-         "He went with his sister."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "woman",
-      "role": "noun",
-      "BrE": "/ˈwʊmən/",
-      "AmE": "/ˈwʊmən/",
-      "definition": "an adult female person",
-      "examples": [
-         "The woman is kind.",
-         "A woman helped me.",
-         "She saw a woman at the shop."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "work",
-      "role": "noun",
-      "BrE": "/wɜːk/",
-      "AmE": "/wɜːrk/",
-      "definition": "a job or activity you do",
-      "examples": [
-         "I have work today.",
-         "Her work is at a school.",
-         "His work keeps him busy."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "work",
-      "role": "verb",
-      "BrE": "/wɜːk/",
-      "AmE": "/wɜːrk/",
-      "definition": "to do a job or task",
-      "examples": [
-         "I work in an office.",
-         "She works as a teacher.",
-         "He worked late yesterday."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "world",
-      "role": "noun",
-      "BrE": "/wɜːld/",
-      "AmE": "/wɜːrld/",
-      "definition": "the Earth or all people and places",
-      "examples": [
-         "The world is big.",
-         "She travels the world.",
-         "He wants to save the world."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "write",
-      "role": "verb",
-      "BrE": "/raɪt/",
-      "AmE": "/raɪt/",
-      "definition": "to make words on paper or a screen",
-      "examples": [
-         "I write a letter.",
-         "She writes in her book.",
-         "He wrote a story for class."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "year",
-      "role": "noun",
-      "BrE": "/jɪə(r)/",
-      "AmE": "/jɪr/",
-      "definition": "a period of twelve months",
-      "examples": [
-         "This year is fun.",
-         "She is ten years old.",
-         "The year 2025 is here."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "yellow",
-      "role": "adjective",
-      "BrE": "/ˈjeləʊ/",
-      "AmE": "/ˈjeloʊ/",
-      "definition": "having the colour of lemons or the sun",
-      "examples": [
-         "The flower is yellow.",
-         "She has a yellow bag.",
-         "His yellow car is bright."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "yellow",
-      "role": "noun",
-      "BrE": "/ˈjeləʊ/",
-      "AmE": "/ˈjeloʊ/",
-      "definition": "the colour of lemons or the sun",
-      "examples": [
-         "Yellow is bright.",
-         "She painted the wall yellow.",
-         "I like yellow for my shirt."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "yes",
-      "role": "exclamation",
-      "BrE": "/jes/",
-      "AmE": "/jes/",
-      "definition": "used to agree or confirm",
-      "examples": [
-         "Yes, I can come.",
-         "She said yes to the question.",
-         "Yes, the book is mine."
-      ]
-   },
-   {
-      "id": 74,
-      "word": "yesterday",
-      "role": "adverb",
-      "BrE": "/ˈjestədeɪ/",
-      "AmE": "/ˈjestərdeɪ/",
-      "definition": "the day before today",
-      "examples": [
-         "I was busy yesterday.",
-         "She called me yesterday.",
-         "Yesterday was a sunny day."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "you",
-      "role": "pronoun",
-      "BrE": "/juː/",
-      "AmE": "/juː/",
-      "definition": "the person or people being spoken to",
-      "examples": [
-         "You are my friend.",
-         "Can you help me?",
-         "You went to the park."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "young",
-      "role": "adjective",
-      "BrE": "/jʌŋ/",
-      "AmE": "/jʌŋ/",
-      "definition": "having a low age",
-      "examples": [
-         "The boy is young.",
-         "She has a young sister.",
-         "The young dog is playful."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "your",
-      "role": "determiner",
-      "BrE": "/jɔː(r)/",
-      "AmE": "/jʊr/",
-      "definition": "belonging to you",
-      "examples": [
-         "This is your book.",
-         "Your dog is cute.",
-         "Is this your pen?"
-      ]
-   },
-   {
-      "id": 75,
-      "word": "zoo",
-      "role": "noun",
-      "BrE": "/zuː/",
-      "AmE": "/zuː/",
-      "definition": "a place where animals are kept for people to see",
-      "examples": [
-         "I went to the zoo.",
-         "The zoo has lions.",
-         "She visited the zoo with friends."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "always",
-      "role": "adverb",
-      "BrE": "/ˈɔːlweɪz/",
-      "AmE": "/ˈɔːlweɪz/",
-      "definition": "every time or forever",
-      "examples": [
-         "I always eat breakfast.",
-         "She is always happy.",
-         "He always arrives on time."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "any",
-      "role": "determiner",
-      "BrE": "/ˈeni/",
-      "AmE": "/ˈeni/",
-      "definition": "some, no matter which",
-      "examples": [
-         "Do you have any pens?",
-         "She doesn’t have any time.",
-         "Any book will do."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "ask",
-      "role": "verb",
-      "BrE": "/ɑːsk/",
-      "AmE": "/æsk/",
-      "definition": "to say something to get an answer",
-      "examples": [
-         "I ask a question.",
-         "She asked for help.",
-         "He asks about the homework."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "both",
-      "role": "determiner",
-      "BrE": "/bəʊθ/",
-      "AmE": "/boʊθ/",
-      "definition": "referring to two things or people",
-      "examples": [
-         "Both books are good.",
-         "They both like to play.",
-         "Both students passed the test."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "bring",
-      "role": "verb",
-      "BrE": "/brɪŋ/",
-      "AmE": "/brɪŋ/",
-      "definition": "to carry something to a place",
-      "examples": [
-         "I bring my book.",
-         "She brought food to the party.",
-         "He brings his dog to the park."
-      ]
-   },
-   {
-      "id": 75,
-      "word": "busy",
-      "role": "adjective",
-      "BrE": "/ˈbɪzi/",
-      "AmE": "/ˈbɪzi/",
-      "definition": "having a lot to do",
-      "examples": [
-         "I am busy today.",
-         "She has a busy day.",
-         "The busy street is loud."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "call",
-      "role": "verb",
-      "BrE": "/kɔːl/",
-      "AmE": "/kɔːl/",
-      "definition": "to phone or name something",
-      "examples": [
-         "I call my friend.",
-         "She called her dog Max.",
-         "He calls his mum every day."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "careful",
-      "role": "adjective",
-      "BrE": "/ˈkeəfl/",
-      "AmE": "/ˈkerfl/",
-      "definition": "taking care to avoid mistakes or danger",
-      "examples": [
-         "Be careful!",
-         "She is careful with her work.",
-         "He was careful crossing the road."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "clean",
-      "role": "adjective",
-      "BrE": "/kliːn/",
-      "AmE": "/kliːn/",
-      "definition": "not dirty",
-      "examples": [
-         "The room is clean.",
-         "Her clothes are clean.",
-         "He keeps his car clean."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "clean",
-      "role": "verb",
-      "BrE": "/kliːn/",
-      "AmE": "/kliːn/",
-      "definition": "to make something not dirty",
-      "examples": [
-         "I clean the table.",
-         "She cleaned her room.",
-         "He cleans the house every week."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "close",
-      "role": "verb",
-      "BrE": "/kləʊz/",
-      "AmE": "/kloʊz/",
-      "definition": "to shut something",
-      "examples": [
-         "I close the door.",
-         "She closed the book.",
-         "He closes the shop at night."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "cold",
-      "role": "adjective",
-      "BrE": "/kəʊld/",
-      "AmE": "/koʊld/",
-      "definition": "having a low temperature",
-      "examples": [
-         "The water is cold.",
-         "It’s cold outside.",
-         "She felt cold in the wind."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "come",
-      "role": "verb",
-      "BrE": "/kʌm/",
-      "AmE": "/kʌm/",
-      "definition": "to move to a place",
-      "examples": [
-         "Come to my house.",
-         "She came to the party.",
-         "He comes to school early."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "cook",
-      "role": "verb",
-      "BrE": "/kʊk/",
-      "AmE": "/kʊk/",
-      "definition": "to prepare food by heating it",
-      "examples": [
-         "I cook dinner.",
-         "She cooks very well.",
-         "He cooked a meal for friends."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "cool",
-      "role": "adjective",
-      "BrE": "/kuːl/",
-      "AmE": "/kuːl/",
-      "definition": "slightly cold or fashionable",
-      "examples": [
-         "The room is cool.",
-         "Her jacket is cool.",
-         "It’s cool in the shade."
-      ]
-   },
-   {
-      "id": 76,
-      "word": "dance",
-      "role": "verb",
-      "BrE": "/dɑːns/",
-      "AmE": "/dæns/",
-      "definition": "to move to music",
-      "examples": [
-         "I dance at the party.",
-         "She dances very well.",
-         "He danced with his friend."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "dark",
-      "role": "adjective",
-      "BrE": "/dɑːk/",
-      "AmE": "/dɑːrk/",
-      "definition": "having little or no light",
-      "examples": [
-         "The room is dark.",
-         "It’s dark at night.",
-         "She has dark hair."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "day",
-      "role": "noun",
-      "BrE": "/deɪ/",
-      "AmE": "/deɪ/",
-      "definition": "a period of 24 hours",
-      "examples": [
-         "Today is a nice day.",
-         "She works every day.",
-         "The day was warm and sunny."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "different",
-      "role": "adjective",
-      "BrE": "/ˈdɪfrənt/",
-      "AmE": "/ˈdɪfrənt/",
-      "definition": "not the same",
-      "examples": [
-         "This book is different.",
-         "She has a different dress.",
-         "They live in different towns."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "do",
-      "role": "verb",
-      "BrE": "/duː/",
-      "AmE": "/duː/",
-      "definition": "to perform an action",
-      "examples": [
-         "I do my homework.",
-         "She does her job well.",
-         "He did the dishes after dinner."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "draw",
-      "role": "verb",
-      "BrE": "/drɔː/",
-      "AmE": "/drɔː/",
-      "definition": "to make a picture with a pen or pencil",
-      "examples": [
-         "I draw a tree.",
-         "She drew a house.",
-         "He draws pictures every day."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "drink",
-      "role": "verb",
-      "BrE": "/drɪŋk/",
-      "AmE": "/drɪŋk/",
-      "definition": "to take liquid into your mouth",
-      "examples": [
-         "I drink water.",
-         "She drinks tea every morning.",
-         "He drank juice at lunch."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "easy",
-      "role": "adjective",
-      "BrE": "/ˈiːzi/",
-      "AmE": "/ˈiːzi/",
-      "definition": "not difficult",
-      "examples": [
-         "This test is easy.",
-         "She found an easy book.",
-         "The game was easy to play."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "eat",
-      "role": "verb",
-      "BrE": "/iːt/",
-      "AmE": "/iːt/",
-      "definition": "to put food in your mouth and swallow",
-      "examples": [
-         "I eat an apple.",
-         "She eats breakfast daily.",
-         "He ate dinner with his family."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "egg",
-      "role": "noun",
-      "BrE": "/eɡ/",
-      "AmE": "/eɡ/",
-      "definition": "a food produced by birds, often eaten",
-      "examples": [
-         "I eat an egg.",
-         "She cooked two eggs.",
-         "The egg is in the fridge."
-      ]
-   },
-   {
-      "id": 77,
-      "word": "every",
-      "role": "determiner",
-      "BrE": "/ˈevri/",
-      "AmE": "/ˈevri/",
-      "definition": "each one of a group",
-      "examples": [
-         "Every book is good.",
-         "She reads every day.",
-         "Every student passed the test."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "excuse",
-      "role": "exclamation",
-      "BrE": "/ɪkˈskjuːz/",
-      "AmE": "/ɪkˈskjuːz/",
-      "definition": "used to get attention or apologize",
-      "examples": [
-         "Excuse me, please.",
-         "Excuse me, where’s the shop?",
-         "She said excuse me and left."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "family",
-      "role": "noun",
-      "BrE": "/ˈfæməli/",
-      "AmE": "/ˈfæməli/",
-      "definition": "a group of people related to each other",
-      "examples": [
-         "My family is big.",
-         "She loves her family.",
-         "The family went on holiday."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "fast",
-      "role": "adjective",
-      "BrE": "/fɑːst/",
-      "AmE": "/fæst/",
-      "definition": "moving or acting quickly",
-      "examples": [
-         "The car is fast.",
-         "She runs very fast.",
-         "He has a fast bike."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "father",
-      "role": "noun",
-      "BrE": "/ˈfɑːðə(r)/",
-      "AmE": "/ˈfɑːðər/",
-      "definition": "a male parent",
-      "examples": [
-         "My father is tall.",
-         "Her father is a teacher.",
-         "The father helped his son."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "find",
-      "role": "verb",
-      "BrE": "/faɪnd/",
-      "AmE": "/faɪnd/",
-      "definition": "to discover something",
-      "examples": [
-         "I find my keys.",
-         "She found a new book.",
-         "He found his phone under the bed."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "first",
-      "role": "adjective",
-      "BrE": "/fɜːst/",
-      "AmE": "/fɜːrst/",
-      "definition": "coming before all others",
-      "examples": [
-         "This is the first book.",
-         "She was first in line.",
-         "The first day was sunny."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "fish",
-      "role": "noun",
-      "BrE": "/fɪʃ/",
-      "AmE": "/fɪʃ/",
-      "definition": "an animal that lives in water",
-      "examples": [
-         "I see a fish.",
-         "She has a pet fish.",
-         "The fish swims in the sea."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "five",
-      "role": "number",
-      "BrE": "/faɪv/",
-      "AmE": "/faɪv/",
-      "definition": "the number 5",
-      "examples": [
-         "I have five books.",
-         "She is five years old.",
-         "Five students are here."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "floor",
-      "role": "noun",
-      "BrE": "/flɔː(r)/",
-      "AmE": "/flɔːr/",
-      "definition": "the surface you walk on inside a building",
-      "examples": [
-         "The floor is clean.",
-         "She dropped her pen on the floor.",
-         "The floor in the room is wood."
-      ]
-   },
-   {
-      "id": 78,
-      "word": "food",
-      "role": "noun",
-      "BrE": "/fuːd/",
-      "AmE": "/fuːd/",
-      "definition": "things you eat",
-      "examples": [
-         "I like food.",
-         "She cooked tasty food.",
-         "The food is on the table."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "four",
-      "role": "number",
-      "BrE": "/fɔː(r)/",
-      "AmE": "/fɔːr/",
-      "definition": "the number 4",
-      "examples": [
-         "I have four pens.",
-         "She has four cats.",
-         "Four students are in the class."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "Friday",
-      "role": "noun",
-      "BrE": "/ˈfraɪdeɪ/",
-      "AmE": "/ˈfraɪdeɪ/",
-      "definition": "the fifth day of the week",
-      "examples": [
-         "Friday is fun.",
-         "We meet on Friday.",
-         "She has a test on Friday."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "friend",
-      "role": "noun",
-      "BrE": "/frend/",
-      "AmE": "/frend/",
-      "definition": "a person you like and know well",
-      "examples": [
-         "My friend is nice.",
-         "She met her friend at school.",
-         "He plays with his friends."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "fun",
-      "role": "adjective",
-      "BrE": "/fʌn/",
-      "AmE": "/fʌn/",
-      "definition": "enjoyable or entertaining",
-      "examples": [
-         "The game is fun.",
-         "She had a fun day.",
-         "The fun party lasted all night."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "game",
-      "role": "noun",
-      "BrE": "/ɡeɪm/",
-      "AmE": "/ɡeɪm/",
-      "definition": "an activity with rules for enjoyment",
-      "examples": [
-         "I play a game.",
-         "She likes board games.",
-         "The game was exciting."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "garden",
-      "role": "noun",
-      "BrE": "/ˈɡɑːdn/",
-      "AmE": "/ˈɡɑːrdn/",
-      "definition": "an area where plants or flowers grow",
-      "examples": [
-         "The garden is green.",
-         "She works in the garden.",
-         "He planted flowers in the garden."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "get",
-      "role": "verb",
-      "BrE": "/ɡet/",
-      "AmE": "/ɡet/",
-      "definition": "to receive or obtain something",
-      "examples": [
-         "I get a book.",
-         "She got a new phone.",
-         "He gets home at six."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "girl",
-      "role": "noun",
-      "BrE": "/ɡɜːl/",
-      "AmE": "/ɡɜːrl/",
-      "definition": "a young female person",
-      "examples": [
-         "The girl is happy.",
-         "She is a kind girl.",
-         "The girl reads a book."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "give",
-      "role": "verb",
-      "BrE": "/ɡɪv/",
-      "AmE": "/ɡɪv/",
-      "definition": "to hand something to someone",
-      "examples": [
-         "I give her a pen.",
-         "She gave me a gift.",
-         "He gives food to the dog."
-      ]
-   },
-   {
-      "id": 79,
-      "word": "go",
-      "role": "verb",
-      "BrE": "/ɡəʊ/",
-      "AmE": "/ɡoʊ/",
-      "definition": "to move to a place",
-      "examples": [
-         "I go to school.",
-         "She went to the shop.",
-         "He goes to the park daily."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "good",
-      "role": "adjective",
-      "BrE": "/ɡʊd/",
-      "AmE": "/ɡʊd/",
-      "definition": "having high quality or being pleasant",
-      "examples": [
-         "This is a good book.",
-         "She is a good student.",
-         "The good food was tasty."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "great",
-      "role": "adjective",
-      "BrE": "/ɡreɪt/",
-      "AmE": "/ɡreɪt/",
-      "definition": "very good or large",
-      "examples": [
-         "It’s a great day.",
-         "She had a great time.",
-         "He saw a great movie."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "green",
-      "role": "adjective",
-      "BrE": "/ɡriːn/",
-      "AmE": "/ɡriːn/",
-      "definition": "having the colour of grass",
-      "examples": [
-         "The tree is green.",
-         "She has a green bag.",
-         "His green shirt is new."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "green",
-      "role": "noun",
-      "BrE": "/ɡriːn/",
-      "AmE": "/ɡriːn/",
-      "definition": "the colour of grass",
-      "examples": [
-         "Green is my favourite.",
-         "She painted the wall green.",
-         "I like green for my room."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "hair",
-      "role": "noun",
-      "BrE": "/heə(r)/",
-      "AmE": "/her/",
-      "definition": "the thin strands growing on your head",
-      "examples": [
-         "Her hair is long.",
-         "He cut his hair short.",
-         "The hair on the brush is black."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "happy",
-      "role": "adjective",
-      "BrE": "/ˈhæpi/",
-      "AmE": "/ˈhæpi/",
-      "definition": "feeling or showing pleasure",
-      "examples": [
-         "I am happy today.",
-         "She was happy at the party.",
-         "The happy dog wagged its tail."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "hat",
-      "role": "noun",
-      "BrE": "/hæt/",
-      "AmE": "/hæt/",
-      "definition": "a covering for the head",
-      "examples": [
-         "I wear a hat.",
-         "Her hat is red.",
-         "He lost his hat in the wind."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "have",
-      "role": "verb",
-      "BrE": "/hæv/",
-      "AmE": "/hæv/",
-      "definition": "to possess or own something",
-      "examples": [
-         "I have a book.",
-         "She has a new phone.",
-         "He had a great time."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "he",
-      "role": "pronoun",
-      "BrE": "/hiː/",
-      "AmE": "/hiː/",
-      "definition": "a male person or animal",
-      "examples": [
-         "He is my friend.",
-         "He likes to read.",
-         "He went to the shop."
-      ]
-   },
-   {
-      "id": 80,
-      "word": "hello",
-      "role": "exclamation",
-      "BrE": "/həˈləʊ/",
-      "AmE": "/həˈloʊ/",
-      "definition": "used to greet someone",
-      "examples": [
-         "Hello, how are you?",
-         "She said hello to her friend.",
-         "He shouted hello at the door."
-      ]
-   },
-   
-   {
-      "id": 81,
-      "word": "help",
-      "role": "verb",
-      "BrE": "/help/",
-      "AmE": "/help/",
-      "definition": "to make something easier for someone",
-      "examples": [
-         "I help my friend.",
-         "She helped with the homework.",
-         "He helps his mum in the kitchen."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "her",
-      "role": "pronoun",
-      "BrE": "/hə(r)/",
-      "AmE": "/hər/",
-      "definition": "a female person or animal",
-      "examples": [
-         "I saw her.",
-         "She gave her book to me.",
-         "Her dog is very playful."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "here",
-      "role": "adverb",
-      "BrE": "/hɪə(r)/",
-      "AmE": "/hɪr/",
-      "definition": "in or to this place",
-      "examples": [
-         "Come here.",
-         "She lives here.",
-         "The book is here on the table."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "high",
-      "role": "adjective",
-      "BrE": "/haɪ/",
-      "AmE": "/haɪ/",
-      "definition": "having a large distance from bottom to top",
-      "examples": [
-         "The wall is high.",
-         "She climbed a high tree.",
-         "The high mountain was snowy."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "him",
-      "role": "pronoun",
-      "BrE": "/hɪm/",
-      "AmE": "/hɪm/",
-      "definition": "a male person or animal",
-      "examples": [
-         "I saw him.",
-         "She gave him a pen.",
-         "His dog ran to him."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "his",
-      "role": "determiner",
-      "BrE": "/hɪz/",
-      "AmE": "/hɪz/",
-      "definition": "belonging to a male person or animal",
-      "examples": [
-         "This is his book.",
-         "His cat is black.",
-         "I saw his new car."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "home",
-      "role": "noun",
-      "BrE": "/həʊm/",
-      "AmE": "/hoʊm/",
-      "definition": "the place where you live",
-      "examples": [
-         "I go home.",
-         "Her home is big.",
-         "He stayed at home today."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "hot",
-      "role": "adjective",
-      "BrE": "/hɒt/",
-      "AmE": "/hɑːt/",
-      "definition": "having a high temperature",
-      "examples": [
-         "The tea is hot.",
-         "It’s hot outside.",
-         "She drank hot soup."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "house",
-      "role": "noun",
-      "BrE": "/haʊs/",
-      "AmE": "/haʊs/",
-      "definition": "a building where people live",
-      "examples": [
-         "My house is big.",
-         "She lives in a house.",
-         "The house has a red door."
-      ]
-   },
-   {
-      "id": 81,
-      "word": "how",
-      "role": "adverb",
-      "BrE": "/haʊ/",
-      "AmE": "/haʊ/",
-      "definition": "used to ask about the way or amount",
-      "examples": [
-         "How are you?",
-         "How does it work?",
-         "How many books do you have?"
-      ]
-   },
-   {
-      "id": 82,
-      "word": "hundred",
-      "role": "number",
-      "BrE": "/ˈhʌndrəd/",
-      "AmE": "/ˈhʌndrəd/",
-      "definition": "the number 100",
-      "examples": [
-         "I have a hundred coins.",
-         "She read a hundred pages.",
-         "A hundred people were at the event."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "I",
-      "role": "pronoun",
-      "BrE": "/aɪ/",
-      "AmE": "/aɪ/",
-      "definition": "the person speaking",
-      "examples": [
-         "I am happy.",
-         "I like to read.",
-         "I went to the park."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "in",
-      "role": "preposition",
-      "BrE": "/ɪn/",
-      "AmE": "/ɪn/",
-      "definition": "inside or within a place or time",
-      "examples": [
-         "I am in the room.",
-         "She lives in London.",
-         "He reads in the evening."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "it",
-      "role": "pronoun",
+      "definition": "A girl or woman that you talk about",
+      "examples": [
+         {
+            "collocation": "She is",
+            "example": "She is my sister."
+         },
+         {
+            "collocation": "She speaks",
+            "example": "She speaks English."
+         },
+         {
+            "collocation": "She reads",
+            "example": "She reads a book every day."
+         }
+      ]
+   },
+   {
+      "id": 1,
+      "category": "Subject Pronouns",
+      "word": "It",
+      "role": "Pronoun",
       "BrE": "/ɪt/",
       "AmE": "/ɪt/",
-      "definition": "used for a thing, animal, or situation",
-      "examples": [
-         "It is a book.",
-         "I like it.",
-         "It was a sunny day."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "January",
-      "role": "noun",
-      "BrE": "/ˈdʒænjuəri/",
-      "AmE": "/ˈdʒænjuəri/",
-      "definition": "the first month of the year",
-      "examples": [
-         "January is cold.",
-         "My birthday is in January.",
-         "We have a holiday in January."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "job",
-      "role": "noun",
-      "BrE": "/dʒɒb/",
-      "AmE": "/dʒɑːb/",
-      "definition": "work that you do for money",
-      "examples": [
-         "I have a job.",
-         "Her job is teaching.",
-         "He found a new job."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "July",
-      "role": "noun",
-      "BrE": "/dʒuˈlaɪ/",
-      "AmE": "/dʒuˈlaɪ/",
-      "definition": "the seventh month of the year",
-      "examples": [
-         "July is warm.",
-         "We travel in July.",
-         "Her birthday is in July."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "June",
-      "role": "noun",
-      "BrE": "/dʒuːn/",
-      "AmE": "/dʒuːn/",
-      "definition": "the sixth month of the year",
-      "examples": [
-         "June is sunny.",
-         "School ends in June.",
-         "His party is in June."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "kind",
-      "role": "adjective",
-      "BrE": "/kaɪnd/",
-      "AmE": "/kaɪnd/",
-      "definition": "friendly and helpful",
-      "examples": [
-         "She is kind.",
-         "He was kind to the dog.",
-         "The kind teacher helped me."
-      ]
-   },
-   {
-      "id": 82,
-      "word": "know",
-      "role": "verb",
-      "BrE": "/nəʊ/",
-      "AmE": "/noʊ/",
-      "definition": "to have information in your mind",
-      "examples": [
-         "I know her name.",
-         "She knows the answer.",
-         "He knew the way home."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "learn",
-      "role": "verb",
-      "BrE": "/lɜːn/",
-      "AmE": "/lɜːrn/",
-      "definition": "to gain knowledge or a skill",
-      "examples": [
-         "I learn English.",
-         "She learned to swim.",
-         "He learns math at school."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "left",
-      "role": "adjective",
-      "BrE": "/left/",
-      "AmE": "/left/",
-      "definition": "the side opposite to right",
-      "examples": [
-         "My left hand hurts.",
-         "She turned left.",
-         "The book is on the left side."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "letter",
-      "role": "noun",
-      "BrE": "/ˈletə(r)/",
-      "AmE": "/ˈletər/",
-      "definition": "a written message sent to someone",
-      "examples": [
-         "I write a letter.",
-         "She got a letter.",
-         "The letter is on the table."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "like",
-      "role": "verb",
-      "BrE": "/laɪk/",
-      "AmE": "/laɪk/",
-      "definition": "to enjoy or want something",
-      "examples": [
-         "I like to read.",
-         "She likes ice cream.",
-         "He liked the new movie."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "listen",
-      "role": "verb",
-      "BrE": "/ˈlɪsn/",
-      "AmE": "/ˈlɪsn/",
-      "definition": "to hear and pay attention",
-      "examples": [
-         "I listen to music.",
-         "She listened to the teacher.",
-         "He listens to the radio."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "little",
-      "role": "adjective",
-      "BrE": "/ˈlɪtl/",
-      "AmE": "/ˈlɪtl/",
-      "definition": "small in size or amount",
-      "examples": [
-         "The cat is little.",
-         "She has a little bag.",
-         "He ate a little food."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "live",
-      "role": "verb",
-      "BrE": "/lɪv/",
-      "AmE": "/lɪv/",
-      "definition": "to have your home in a place",
-      "examples": [
-         "I live in a house.",
-         "She lives in London.",
-         "He lived there for a year."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "long",
-      "role": "adjective",
-      "BrE": "/lɒŋ/",
-      "AmE": "/lɔːŋ/",
-      "definition": "having a great length or time",
-      "examples": [
-         "The road is long.",
-         "She has long hair.",
-         "The long book was interesting."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "look",
-      "role": "verb",
-      "BrE": "/lʊk/",
-      "AmE": "/lʊk/",
-      "definition": "to use your eyes to see",
-      "examples": [
-         "I look at the sky.",
-         "She looked at the book.",
-         "He looks out the window."
-      ]
-   },
-   {
-      "id": 83,
-      "word": "love",
-      "role": "verb",
-      "BrE": "/lʌv/",
-      "AmE": "/lʌv/",
-      "definition": "to like something very much",
-      "examples": [
-         "I love music.",
-         "She loves her dog.",
-         "He loved the new film."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "make",
-      "role": "verb",
-      "BrE": "/meɪk/",
-      "AmE": "/meɪk/",
-      "definition": "to create or produce something",
-      "examples": [
-         "I make a cake.",
-         "She made a drawing.",
-         "He makes toys for children."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "man",
-      "role": "noun",
-      "BrE": "/mæn/",
-      "AmE": "/mæn/",
-      "definition": "an adult male person",
-      "examples": [
-         "The man is tall.",
-         "She saw a man at the shop.",
-         "The man helped me."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "many",
-      "role": "determiner",
-      "BrE": "/ˈmeni/",
-      "AmE": "/ˈmeni/",
-      "definition": "a large number of things or people",
-      "examples": [
-         "I have many books.",
-         "Many people came.",
-         "She has many friends."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "March",
-      "role": "noun",
-      "BrE": "/mɑːtʃ/",
-      "AmE": "/mɑːrtʃ/",
-      "definition": "the third month of the year",
-      "examples": [
-         "March is cool.",
-         "We travel in March.",
-         "Her birthday is in March."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "May",
-      "role": "noun",
-      "BrE": "/meɪ/",
-      "AmE": "/meɪ/",
-      "definition": "the fifth month of the year",
-      "examples": [
-         "May is warm.",
-         "School ends in May.",
-         "His party is in May."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "me",
-      "role": "pronoun",
-      "BrE": "/miː/",
-      "AmE": "/miː/",
-      "definition": "the person speaking",
-      "examples": [
-         "Give it to me.",
-         "She saw me at the park.",
-         "He helped me with my bag."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "milk",
-      "role": "noun",
-      "BrE": "/mɪlk/",
-      "AmE": "/mɪlk/",
-      "definition": "a white liquid from cows or other animals",
-      "examples": [
-         "I drink milk.",
-         "She bought milk.",
-         "The milk is in the fridge."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "money",
-      "role": "noun",
-      "BrE": "/ˈmʌni/",
-      "AmE": "/ˈmʌni/",
-      "definition": "what you use to buy things",
-      "examples": [
-         "I have money.",
-         "She spent money on books.",
-         "He saved money for a trip."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "month",
-      "role": "noun",
-      "BrE": "/mʌnθ/",
-      "AmE": "/mʌnθ/",
-      "definition": "a period of about 30 days",
-      "examples": [
-         "This month is busy.",
-         "She travels every month.",
-         "The month of June is warm."
-      ]
-   },
-   {
-      "id": 84,
-      "word": "morning",
-      "role": "noun",
-      "BrE": "/ˈmɔːnɪŋ/",
-      "AmE": "/ˈmɔːrnɪŋ/",
-      "definition": "the time from midnight to midday",
-      "examples": [
-         "Good morning!",
-         "She runs in the morning.",
-         "The morning was sunny."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "mother",
-      "role": "noun",
-      "BrE": "/ˈmʌðə(r)/",
-      "AmE": "/ˈmʌðər/",
-      "definition": "a female parent",
-      "examples": [
-         "My mother is kind.",
-         "Her mother is a doctor.",
-         "The mother read a story."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "music",
-      "role": "noun",
-      "BrE": "/ˈmjuːzɪk/",
-      "AmE": "/ˈmjuːzɪk/",
-      "definition": "sounds that are pleasant, like songs",
-      "examples": [
-         "I like music.",
-         "She plays music.",
-         "The music was loud."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "my",
-      "role": "determiner",
-      "BrE": "/maɪ/",
-      "AmE": "/maɪ/",
-      "definition": "belonging to the person speaking",
-      "examples": [
-         "This is my book.",
-         "My dog is small.",
-         "I lost my pen."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "name",
-      "role": "noun",
-      "BrE": "/neɪm/",
-      "AmE": "/neɪm/",
-      "definition": "the word for a person or thing",
-      "examples": [
-         "My name is Tom.",
-         "What is her name?",
-         "The name of the book is fun."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "near",
-      "role": "preposition",
-      "BrE": "/nɪə(r)/",
-      "AmE": "/nɪr/",
-      "definition": "close to something in distance",
-      "examples": [
-         "I live near the park.",
-         "She sat near the window.",
-         "The shop is near my house."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "need",
-      "role": "verb",
-      "BrE": "/niːd/",
-      "AmE": "/niːd/",
-      "definition": "to require something",
-      "examples": [
-         "I need a pen.",
-         "She needs help.",
-         "He needed a new bag."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "never",
-      "role": "adverb",
-      "BrE": "/ˈnevə(r)/",
-      "AmE": "/ˈnevər/",
-      "definition": "not at any time",
-      "examples": [
-         "I never eat fish.",
-         "She never goes there.",
-         "He never forgets his keys."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "new",
-      "role": "adjective",
-      "BrE": "/njuː/",
-      "AmE": "/nuː/",
-      "definition": "not old or used",
-      "examples": [
-         "I have a new book.",
-         "She bought a new dress.",
-         "His new phone is fast."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "news",
-      "role": "noun",
-      "BrE": "/njuːz/",
-      "AmE": "/nuːz/",
-      "definition": "information about recent events",
-      "examples": [
-         "I watch the news.",
-         "The news was interesting.",
-         "She heard good news today."
-      ]
-   },
-   {
-      "id": 85,
-      "word": "next",
-      "role": "adjective",
-      "BrE": "/nekst/",
-      "AmE": "/nekst/",
-      "definition": "coming after this one",
-      "examples": [
-         "The next day is Tuesday.",
-         "She’s in the next room.",
-         "The next bus arrives soon."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "nice",
-      "role": "adjective",
-      "BrE": "/naɪs/",
-      "AmE": "/naɪs/",
-      "definition": "pleasant or kind",
-      "examples": [
-         "She is nice.",
-         "The weather is nice today.",
-         "He gave me a nice gift."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "night",
-      "role": "noun",
-      "BrE": "/naɪt/",
-      "AmE": "/naɪt/",
-      "definition": "the time when it is dark outside",
-      "examples": [
-         "I sleep at night.",
-         "The stars shine at night.",
-         "She stayed up late last night."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "nine",
-      "role": "number",
-      "BrE": "/naɪn/",
-      "AmE": "/naɪn/",
-      "definition": "the number 9",
-      "examples": [
-         "I have nine pens.",
-         "She is nine years old.",
-         "Nine students are in the class."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "nineteen",
-      "role": "number",
-      "BrE": "/ˌnaɪnˈtiːn/",
-      "AmE": "/ˌnaɪnˈtiːn/",
-      "definition": "the number 19",
-      "examples": [
-         "He is nineteen.",
-         "I bought nineteen apples.",
-         "Nineteen people came to the party."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "ninety",
-      "role": "number",
-      "BrE": "/ˈnaɪnti/",
-      "AmE": "/ˈnaɪnti/",
-      "definition": "the number 90",
-      "examples": [
-         "She is ninety years old.",
-         "The shop has ninety items.",
-         "Ninety students joined the club."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "no",
-      "role": "exclamation",
-      "BrE": "/nəʊ/",
-      "AmE": "/noʊ/",
-      "definition": "used to give a negative answer",
-      "examples": [
-         "No, I don’t want it.",
-         "She said no to the question.",
-         "No, he can’t come today."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "nobody",
-      "role": "pronoun",
-      "BrE": "/ˈnəʊbədi/",
-      "AmE": "/ˈnoʊbədi/",
-      "definition": "no person",
-      "examples": [
-         "Nobody is here.",
-         "Nobody saw the cat.",
-         "Nobody answered the phone."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "north",
-      "role": "noun",
-      "BrE": "/nɔːθ/",
-      "AmE": "/nɔːrθ/",
-      "definition": "the direction towards the top of a map",
-      "examples": [
-         "The north is cold.",
-         "We live in the north.",
-         "The sun rises far from the north."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "north",
-      "role": "adjective",
-      "BrE": "/nɔːθ/",
-      "AmE": "/nɔːrθ/",
-      "definition": "in or towards the north",
-      "examples": [
-         "The north wind is cold.",
-         "She lives in north London.",
-         "The north side of the house is cool."
-      ]
-   },
-   {
-      "id": 86,
-      "word": "north",
-      "role": "adverb",
-      "BrE": "/nɔːθ/",
-      "AmE": "/nɔːrθ/",
-      "definition": "towards the north",
-      "examples": [
-         "We traveled north.",
-         "The birds fly north.",
-         "She looked north to see the mountains."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "nose",
-      "role": "noun",
-      "BrE": "/nəʊz/",
-      "AmE": "/noʊz/",
-      "definition": "the part of the face used for smelling",
-      "examples": [
-         "My nose is cold.",
-         "She touched her nose.",
-         "The dog’s nose is wet."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "not",
-      "role": "adverb",
-      "BrE": "/nɒt/",
-      "AmE": "/nɑːt/",
-      "definition": "used to make a sentence negative",
-      "examples": [
-         "I am not tired.",
-         "She does not like tea.",
-         "He’s not coming to the party."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "nothing",
-      "role": "pronoun",
-      "BrE": "/ˈnʌθɪŋ/",
-      "AmE": "/ˈnʌθɪŋ/",
-      "definition": "not anything",
-      "examples": [
-         "Nothing is here.",
-         "I found nothing in the box.",
-         "She said nothing about it."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "November",
-      "role": "noun",
-      "BrE": "/nəʊˈvembə(r)/",
-      "AmE": "/noʊˈvembər/",
-      "definition": "the eleventh month of the year",
-      "examples": [
-         "November is cool.",
-         "My birthday is in November.",
-         "We have a holiday in November."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "now",
-      "role": "adverb",
-      "BrE": "/naʊ/",
-      "AmE": "/naʊ/",
-      "definition": "at the present time",
-      "examples": [
-         "I am busy now.",
-         "She is here now.",
-         "Let’s start the game now."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "number",
-      "role": "noun",
-      "BrE": "/ˈnʌmbə(r)/",
-      "AmE": "/ˈnʌmbər/",
-      "definition": "a word or symbol that shows amount or position",
-      "examples": [
-         "My number is ten.",
-         "Her phone number is new.",
-         "The number of students is twenty."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "October",
-      "role": "noun",
-      "BrE": "/ɒkˈtəʊbə(r)/",
-      "AmE": "/ɑːkˈtoʊbər/",
-      "definition": "the tenth month of the year",
-      "examples": [
-         "October is autumn.",
-         "We have a party in October.",
-         "Her birthday is on October 5th."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "of",
-      "role": "preposition",
-      "BrE": "/əv/",
-      "AmE": "/əv/",
-      "definition": "used to show possession or connection",
-      "examples": [
-         "The book of mine.",
-         "She is a friend of his.",
-         "The colour of the car is red."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "off",
-      "role": "adverb",
-      "BrE": "/ɒf/",
-      "AmE": "/ɔːf/",
-      "definition": "away from a place or thing",
-      "examples": [
-         "The light is off.",
-         "She took her hat off.",
-         "He fell off the chair."
-      ]
-   },
-   {
-      "id": 87,
-      "word": "often",
-      "role": "adverb",
-      "BrE": "/ˈɒfn/",
-      "AmE": "/ˈɔːfn/",
-      "definition": "many times",
-      "examples": [
-         "I often read.",
-         "She often visits her friend.",
-         "He often plays football."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "old",
-      "role": "adjective",
-      "BrE": "/əʊld/",
-      "AmE": "/oʊld/",
-      "definition": "having lived or existed for a long time",
-      "examples": [
-         "The house is old.",
-         "He has an old car.",
-         "She found an old book."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "on",
-      "role": "preposition",
-      "BrE": "/ɒn/",
-      "AmE": "/ɑːn/",
-      "definition": "touching the surface of something",
-      "examples": [
-         "The book is on the table.",
-         "She has a hat on her head.",
-         "The picture is on the wall."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "once",
-      "role": "adverb",
-      "BrE": "/wʌns/",
-      "AmE": "/wʌns/",
-      "definition": "one time only",
-      "examples": [
-         "I went once.",
-         "She called me once.",
-         "He visited once last year."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "one",
-      "role": "number",
-      "BrE": "/wʌn/",
-      "AmE": "/wʌn/",
-      "definition": "the number 1",
-      "examples": [
-         "I have one book.",
-         "She bought one apple.",
-         "One student is absent."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "only",
-      "role": "adverb",
-      "BrE": "/ˈəʊnli/",
-      "AmE": "/ˈoʊnli/",
-      "definition": "no one or nothing else",
-      "examples": [
-         "Only I am here.",
-         "She only likes tea.",
-         "He only has one pen."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "open",
-      "role": "adjective",
-      "BrE": "/ˈəʊpən/",
-      "AmE": "/ˈoʊpən/",
-      "definition": "not closed",
-      "examples": [
-         "The door is open.",
-         "The shop is open now.",
-         "She left the window open."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "open",
-      "role": "verb",
-      "BrE": "/ˈəʊpən/",
-      "AmE": "/ˈoʊpən/",
-      "definition": "to make something not closed",
-      "examples": [
-         "I open the door.",
-         "She opened her book.",
-         "He opens the shop every morning."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "or",
-      "role": "conjunction",
-      "BrE": "/ɔː(r)/",
-      "AmE": "/ɔːr/",
-      "definition": "used to show a choice between things",
-      "examples": [
-         "Tea or coffee?",
-         "Do you want this or that?",
-         "She can come or stay home."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "orange",
-      "role": "noun",
-      "BrE": "/ˈɒrɪndʒ/",
-      "AmE": "/ˈɔːrɪndʒ/",
-      "definition": "a fruit or the colour of that fruit",
-      "examples": [
-         "I eat an orange.",
-         "Her dress is orange.",
-         "The orange is sweet."
-      ]
-   },
-   {
-      "id": 88,
-      "word": "our",
-      "role": "determiner",
-      "BrE": "/aʊə(r)/",
-      "AmE": "/aʊr/",
-      "definition": "belonging to us",
-      "examples": [
-         "This is our house.",
-         "Our dog is playful.",
-         "Our teacher is kind."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "out",
-      "role": "adverb",
-      "BrE": "/aʊt/",
-      "AmE": "/aʊt/",
-      "definition": "away from the inside of a place",
-      "examples": [
-         "Go out now.",
-         "She ran out of the room.",
-         "He took the dog out."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "over",
-      "role": "preposition",
-      "BrE": "/ˈəʊvə(r)/",
-      "AmE": "/ˈoʊvər/",
-      "definition": "above or across something",
-      "examples": [
-         "The bird flew over.",
-         "She jumped over the wall.",
-         "The bridge is over the river."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "page",
-      "role": "noun",
-      "BrE": "/peɪdʒ/",
-      "AmE": "/peɪdʒ/",
-      "definition": "one side of a piece of paper in a book",
-      "examples": [
-         "Read page ten.",
-         "She wrote on the page.",
-         "The book has a torn page."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "paint",
-      "role": "verb",
-      "BrE": "/peɪnt/",
-      "AmE": "/peɪnt/",
-      "definition": "to put colour on something using a brush",
-      "examples": [
-         "I paint a picture.",
-         "She painted the wall blue.",
-         "He paints houses for a job."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "painting",
-      "role": "noun",
-      "BrE": "/ˈpeɪntɪŋ/",
-      "AmE": "/ˈpeɪntɪŋ/",
-      "definition": "a picture made with paint",
-      "examples": [
-         "The painting is beautiful.",
-         "She made a painting of a tree.",
-         "His painting is in the museum."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "pair",
-      "role": "noun",
-      "BrE": "/peə(r)/",
-      "AmE": "/per/",
-      "definition": "two things that go together",
-      "examples": [
-         "I have a pair of shoes.",
-         "She bought a pair of socks.",
-         "The pair of gloves is new."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "paper",
-      "role": "noun",
-      "BrE": "/ˈpeɪpə(r)/",
-      "AmE": "/ˈpeɪpər/",
-      "definition": "material used for writing or drawing",
-      "examples": [
-         "I write on paper.",
-         "She drew on a paper.",
-         "The paper is white and clean."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "parent",
-      "role": "noun",
-      "BrE": "/ˈpeərənt/",
-      "AmE": "/ˈperənt/",
-      "definition": "a mother or father",
-      "examples": [
-         "My parent is kind.",
-         "Her parents are teachers.",
-         "The parent helped with homework."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "park",
-      "role": "noun",
-      "BrE": "/pɑːk/",
-      "AmE": "/pɑːrk/",
-      "definition": "a public area with grass and trees",
-      "examples": [
-         "I play in the park.",
-         "The park is near my house.",
-         "She walks her dog in the park."
-      ]
-   },
-   {
-      "id": 89,
-      "word": "part",
-      "role": "noun",
-      "BrE": "/pɑːt/",
-      "AmE": "/pɑːrt/",
-      "definition": "one of the pieces of something",
-      "examples": [
-         "This is a part of the book.",
-         "She ate part of the cake.",
-         "He fixed a part of the car."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "party",
-      "role": "noun",
-      "BrE": "/ˈpɑːti/",
-      "AmE": "/ˈpɑːrti/",
-      "definition": "a social event with food and music",
-      "examples": [
-         "I go to a party.",
-         "The party was fun.",
-         "She invited me to her party."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "past",
-      "role": "preposition",
-      "BrE": "/pɑːst/",
-      "AmE": "/pæst/",
-      "definition": "beyond a point in time or place",
-      "examples": [
-         "It’s past six.",
-         "She walked past the shop.",
-         "The bus went past the school."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "pay",
-      "role": "verb",
-      "BrE": "/peɪ/",
-      "AmE": "/peɪ/",
-      "definition": "to give money for something",
-      "examples": [
-         "I pay for food.",
-         "She paid for the book.",
-         "He pays his bills online."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "pen",
-      "role": "noun",
-      "BrE": "/pen/",
-      "AmE": "/pen/",
-      "definition": "a tool for writing with ink",
-      "examples": [
-         "I write with a pen.",
-         "Her pen is blue.",
-         "He lost his pen at school."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "pencil",
-      "role": "noun",
-      "BrE": "/ˈpensl/",
-      "AmE": "/ˈpensl/",
-      "definition": "a tool for writing or drawing with a lead",
-      "examples": [
-         "I use a pencil.",
-         "She sharpened her pencil.",
-         "The pencil is on the desk."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "people",
-      "role": "noun",
-      "BrE": "/ˈpiːpl/",
-      "AmE": "/ˈpiːpl/",
-      "definition": "more than one person",
-      "examples": [
-         "People are kind.",
-         "Many people came to the park.",
-         "She helps people in her job."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "person",
-      "role": "noun",
-      "BrE": "/ˈpɜːsn/",
-      "AmE": "/ˈpɜːrsn/",
-      "definition": "a human being",
-      "examples": [
-         "He is a nice person.",
-         "She met a person at the shop.",
-         "That person helped me."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "phone",
-      "role": "noun",
-      "BrE": "/fəʊn/",
-      "AmE": "/foʊn/",
-      "definition": "a device for talking to people far away",
-      "examples": [
-         "I use my phone.",
-         "Her phone is new.",
-         "He left his phone at home."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "photo",
-      "role": "noun",
-      "BrE": "/ˈfəʊtəʊ/",
-      "AmE": "/ˈfoʊtoʊ/",
-      "definition": "a picture taken with a camera",
-      "examples": [
-         "I took a photo.",
-         "She showed me a photo.",
-         "The photo is of her dog."
-      ]
-   },
-   {
-      "id": 90,
-      "word": "piano",
-      "role": "noun",
-      "BrE": "/piˈænəʊ/",
-      "AmE": "/piˈænoʊ/",
-      "definition": "a musical instrument with keys",
-      "examples": [
-         "I play the piano.",
-         "Her piano is old.",
-         "He had a piano lesson."
-      ]
-   },
-   
-   {
-      "id": 91,
-      "word": "picture",
-      "role": "noun",
-      "BrE": "/ˈpɪktʃə(r)/",
-      "AmE": "/ˈpɪktʃər/",
-      "definition": "an image or drawing on paper or a screen",
-      "examples": [
-         "I see a picture.",
-         "She drew a picture of a tree.",
-         "The picture is on the wall."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "place",
-      "role": "noun",
-      "BrE": "/pleɪs/",
-      "AmE": "/pleɪs/",
-      "definition": "a particular area or location",
-      "examples": [
-         "This is a nice place.",
-         "She found a place to sit.",
-         "The place was very quiet."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "play",
-      "role": "verb",
-      "BrE": "/pleɪ/",
-      "AmE": "/pleɪ/",
-      "definition": "to do something for fun or in a game",
-      "examples": [
-         "I play football.",
-         "She plays with her dog.",
-         "He played chess with his friend."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "please",
-      "role": "exclamation",
-      "BrE": "/pliːz/",
-      "AmE": "/pliːz/",
-      "definition": "used to make a request polite",
-      "examples": [
-         "Please help me.",
-         "Can you close the door, please?",
-         "Please, tell me your name."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "point",
-      "role": "verb",
-      "BrE": "/pɔɪnt/",
-      "AmE": "/pɔɪnt/",
-      "definition": "to show direction with your finger",
-      "examples": [
-         "I point at the sky.",
-         "She pointed to the book.",
-         "He points at the map."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "pretty",
-      "role": "adjective",
-      "BrE": "/ˈprɪti/",
-      "AmE": "/ˈprɪti/",
-      "definition": "attractive in a delicate way",
-      "examples": [
-         "The flower is pretty.",
-         "She has a pretty dress.",
-         "The pretty garden is green."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "put",
-      "role": "verb",
-      "BrE": "/pʊt/",
-      "AmE": "/pʊt/",
-      "definition": "to place something somewhere",
-      "examples": [
-         "I put the book here.",
-         "She put her bag on the table.",
-         "He puts his shoes by the door."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "question",
-      "role": "noun",
-      "BrE": "/ˈkwestʃən/",
-      "AmE": "/ˈkwestʃən/",
-      "definition": "something you ask to get information",
-      "examples": [
-         "I have a question.",
-         "She asked a question.",
-         "The question was about math."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "quick",
-      "role": "adjective",
-      "BrE": "/kwɪk/",
-      "AmE": "/kwɪk/",
-      "definition": "doing something fast",
-      "examples": [
-         "The cat is quick.",
-         "She gave a quick answer.",
-         "He runs in a quick way."
-      ]
-   },
-   {
-      "id": 91,
-      "word": "quiet",
-      "role": "adjective",
-      "BrE": "/ˈkwaɪət/",
-      "AmE": "/ˈkwaɪət/",
-      "definition": "making little or no noise",
-      "examples": [
-         "The room is quiet.",
-         "She likes a quiet place.",
-         "The quiet night helped her sleep."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "read",
-      "role": "verb",
-      "BrE": "/riːd/",
-      "AmE": "/riːd/",
-      "definition": "to look at and understand words",
-      "examples": [
-         "I read a book.",
-         "She reads every day.",
-         "He read a story to the class."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "red",
-      "role": "adjective",
-      "BrE": "/red/",
-      "AmE": "/red/",
-      "definition": "having the colour of blood",
-      "examples": [
-         "The apple is red.",
-         "She has a red bag.",
-         "His red car is new."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "red",
-      "role": "noun",
-      "BrE": "/red/",
-      "AmE": "/red/",
-      "definition": "the colour of blood",
-      "examples": [
-         "Red is bright.",
-         "She painted the wall red.",
-         "I like red for my shirt."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "right",
-      "role": "adjective",
-      "BrE": "/raɪt/",
-      "AmE": "/raɪt/",
-      "definition": "correct or on the side opposite to left",
-      "examples": [
-         "This is the right answer.",
-         "She turned right.",
-         "His right hand is strong."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "room",
-      "role": "noun",
-      "BrE": "/ruːm/",
-      "AmE": "/ruːm/",
-      "definition": "a part of a building with walls",
-      "examples": [
-         "My room is big.",
-         "She cleaned the room.",
-         "The room has a large window."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "run",
-      "role": "verb",
-      "BrE": "/rʌn/",
-      "AmE": "/rʌn/",
-      "definition": "to move quickly on foot",
-      "examples": [
-         "I run to school.",
-         "She runs in the park.",
-         "He ran to catch the bus."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "sad",
-      "role": "adjective",
-      "BrE": "/sæd/",
-      "AmE": "/sæd/",
-      "definition": "unhappy or showing sorrow",
-      "examples": [
-         "I am sad today.",
-         "She was sad about the news.",
-         "The sad story made him cry."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "same",
-      "role": "adjective",
-      "BrE": "/seɪm/",
-      "AmE": "/seɪm/",
-      "definition": "not different",
-      "examples": [
-         "We have the same book.",
-         "She wears the same dress.",
-         "They live in the same town."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "Saturday",
-      "role": "noun",
-      "BrE": "/ˈsætədeɪ/",
-      "AmE": "/ˈsætərdeɪ/",
-      "definition": "the sixth day of the week",
-      "examples": [
-         "Saturday is fun.",
-         "We play on Saturday.",
-         "She visits friends on Saturday."
-      ]
-   },
-   {
-      "id": 92,
-      "word": "say",
-      "role": "verb",
-      "BrE": "/seɪ/",
-      "AmE": "/seɪ/",
-      "definition": "to speak or express something aloud",
-      "examples": [
-         "I say hello.",
-         "She said her name.",
-         "He says he is tired."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "school",
-      "role": "noun",
-      "BrE": "/skuːl/",
-      "AmE": "/skuːl/",
-      "definition": "a place where children learn",
-      "examples": [
-         "I go to school.",
-         "Her school is big.",
-         "The school has a playground."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "sea",
-      "role": "noun",
-      "BrE": "/siː/",
-      "AmE": "/siː/",
-      "definition": "a large body of salt water",
-      "examples": [
-         "The sea is blue.",
-         "She swam in the sea.",
-         "The sea is near the town."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "second",
-      "role": "adjective",
-      "BrE": "/ˈsekənd/",
-      "AmE": "/ˈsekənd/",
-      "definition": "coming after the first",
-      "examples": [
-         "This is the second book.",
-         "She came in second place.",
-         "The second day was rainy."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "see",
-      "role": "verb",
-      "BrE": "/siː/",
-      "AmE": "/siː/",
-      "definition": "to use your eyes to look",
-      "examples": [
-         "I see a bird.",
-         "She saw a movie.",
-         "He sees his friend every day."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "September",
-      "role": "noun",
-      "BrE": "/sepˈtembə(r)/",
-      "AmE": "/sepˈtembər/",
-      "definition": "the ninth month of the year",
-      "examples": [
-         "September is cool.",
-         "School starts in September.",
-         "Her birthday is in September."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "seven",
-      "role": "number",
-      "BrE": "/ˈsevn/",
-      "AmE": "/ˈsevn/",
-      "definition": "the number 7",
-      "examples": [
-         "I have seven pens.",
-         "She is seven years old.",
-         "Seven students are in the room."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "seventeen",
-      "role": "number",
-      "BrE": "/ˌsevnˈtiːn/",
-      "AmE": "/ˌsevnˈtiːn/",
-      "definition": "the number 17",
-      "examples": [
-         "He is seventeen.",
-         "I bought seventeen apples.",
-         "Seventeen people joined the club."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "sheep",
-      "role": "noun",
-      "BrE": "/ʃiːp/",
-      "AmE": "/ʃiːp/",
-      "definition": "an animal with wool, kept for meat or wool",
-      "examples": [
-         "I see a sheep.",
-         "The sheep is in the field.",
-         "She counted sheep to sleep."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "shorts",
-      "role": "noun",
-      "BrE": "/ʃɔːts/",
-      "AmE": "/ʃɔːrts/",
-      "definition": "short trousers ending above the knee",
-      "examples": [
-         "I wear shorts.",
-         "His shorts are blue.",
-         "She runs in her shorts."
-      ]
-   },
-   {
-      "id": 93,
-      "word": "sick",
-      "role": "adjective",
-      "BrE": "/sɪk/",
-      "AmE": "/sɪk/",
-      "definition": "not feeling well",
-      "examples": [
-         "I am sick today.",
-         "She felt sick after lunch.",
-         "The sick dog stayed home."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "sky",
-      "role": "noun",
-      "BrE": "/skaɪ/",
-      "AmE": "/skaɪ/",
-      "definition": "the space above the Earth where clouds are",
-      "examples": [
-         "The sky is blue.",
-         "She looked at the sky.",
-         "The sky was clear today."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "sleep",
-      "role": "noun",
-      "BrE": "/sliːp/",
-      "AmE": "/sliːp/",
-      "definition": "the state of resting with eyes closed",
-      "examples": [
-         "I need sleep.",
-         "She had a good sleep.",
-         "He gets eight hours of sleep."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "slow",
-      "role": "adjective",
-      "BrE": "/sləʊ/",
-      "AmE": "/sloʊ/",
-      "definition": "not fast",
-      "examples": [
-         "The car is slow.",
-         "She walks in a slow way.",
-         "The slow train stopped often."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "smile",
-      "role": "verb",
-      "BrE": "/smaɪl/",
-      "AmE": "/smaɪl/",
-      "definition": "to make a happy expression with your mouth",
-      "examples": [
-         "I smile at her.",
-         "She smiled at the baby.",
-         "He smiles when he is happy."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "snow",
-      "role": "verb",
-      "BrE": "/snəʊ/",
-      "AmE": "/snoʊ/",
-      "definition": "when snow falls from the sky",
-      "examples": [
-         "It will snow today.",
-         "It snowed last night.",
-         "She loves when it snows."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "somebody",
-      "role": "pronoun",
-      "BrE": "/ˈsʌmbədi/",
-      "AmE": "/ˈsʌmbədi/",
-      "definition": "an unknown or unspecified person",
-      "examples": [
-         "Somebody is here.",
-         "She saw somebody in the park.",
-         "Somebody left a book here."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "sound",
-      "role": "noun",
-      "BrE": "/saʊnd/",
-      "AmE": "/saʊnd/",
-      "definition": "something you hear",
-      "examples": [
-         "I hear a sound.",
-         "The sound was loud.",
-         "She heard a strange sound."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "stand",
-      "role": "noun",
-      "BrE": "/stænd/",
-      "AmE": "/stænd/",
-      "definition": "a place where things are sold or displayed",
-      "examples": [
-         "The market has a stand.",
-         "She bought fruit at the stand.",
-         "The stand sells flowers."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "start",
-      "role": "noun",
-      "BrE": "/stɑːt/",
-      "AmE": "/stɑːrt/",
-      "definition": "the beginning of something",
-      "examples": [
-         "The start is now.",
-         "The race had a good start.",
-         "She was at the start of the line."
-      ]
-   },
-   {
-      "id": 94,
-      "word": "store",
-      "role": "verb",
-      "BrE": "/stɔː(r)/",
-      "AmE": "/stɔːr/",
-      "definition": "to keep something for future use",
-      "examples": [
-         "I store my books.",
-         "She stores food in the fridge.",
-         "He stored his clothes in a box."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "story",
-      "role": "noun",
-      "BrE": "/ˈstɔːri/",
-      "AmE": "/ˈstɔːri/",
-      "definition": "a description of events, real or imagined",
-      "examples": [
-         "I read a story.",
-         "She told a funny story.",
-         "The story was about a dog."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "study",
-      "role": "noun",
-      "BrE": "/ˈstʌdi/",
-      "AmE": "/ˈstʌdi/",
-      "definition": "the act of learning something",
-      "examples": [
-         "I do my study.",
-         "Her study time is at night.",
-         "The study of math is fun."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "sunny",
-      "role": "adjective",
-      "BrE": "/ˈsʌni/",
-      "AmE": "/ˈsʌni/",
-      "definition": "bright with sunlight",
-      "examples": [
-         "It is sunny today.",
-         "She loves sunny weather.",
-         "The sunny beach was warm."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "sweet",
-      "role": "adjective",
-      "BrE": "/swiːt/",
-      "AmE": "/swiːt/",
-      "definition": "having a taste like sugar",
-      "examples": [
-         "The cake is sweet.",
-         "She ate a sweet apple.",
-         "He likes sweet drinks."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "talk",
-      "role": "noun",
-      "BrE": "/tɔːk/",
-      "AmE": "/tɔːk/",
-      "definition": "a conversation or discussion",
-      "examples": [
-         "We had a talk.",
-         "Her talk was interesting.",
-         "The talk was about school."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "teacher",
-      "role": "noun",
-      "BrE": "/ˈtiːtʃə(r)/",
-      "AmE": "/ˈtiːtʃər/",
-      "definition": "a person who teaches",
-      "examples": [
-         "The teacher is kind.",
-         "She met her teacher.",
-         "The teacher gave us homework."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "team",
-      "role": "noun",
-      "BrE": "/tiːm/",
-      "AmE": "/tiːm/",
-      "definition": "a group of people who play or work together",
-      "examples": [
-         "I am in a team.",
-         "Her team won the game.",
-         "The team played well."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "tell",
-      "role": "noun",
-      "BrE": "/tel/",
-      "AmE": "/tel/",
-      "definition": "the act of giving information",
-      "examples": [
-         "His tell was clear.",
-         "She gave a tell about the story.",
-         "The tell was about her day."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "tennis",
-      "role": "noun",
-      "BrE": "/ˈtenɪs/",
-      "AmE": "/ˈtenɪs/",
-      "definition": "a sport played with a racket and ball",
-      "examples": [
-         "I play tennis.",
-         "She likes tennis a lot.",
-         "He watched a tennis match."
-      ]
-   },
-   {
-      "id": 95,
-      "word": "test",
-      "role": "verb",
-      "BrE": "/test/",
-      "AmE": "/test/",
-      "definition": "to check knowledge or ability",
-      "examples": [
-         "I test my skills.",
-         "She tested the students.",
-         "He was tested on math."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "thank you",
-      "role": "exclamation",
-      "BrE": "/ˈθæŋk juː/",
-      "AmE": "/ˈθæŋk juː/",
-      "definition": "used to show gratitude",
-      "examples": [
-         "Thank you for the gift.",
-         "She said thank you to him.",
-         "Thank you, I like it!"
-      ]
-   },
-   {
-      "id": 96,
-      "word": "thing",
-      "role": "noun",
-      "BrE": "/θɪŋ/",
-      "AmE": "/θɪŋ/",
-      "definition": "an object or item",
-      "examples": [
-         "This is a thing.",
-         "She bought a new thing.",
-         "The thing on the table is mine."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "time",
-      "role": "noun",
-      "BrE": "/taɪm/",
-      "AmE": "/taɪm/",
-      "definition": "what is measured in hours and minutes",
-      "examples": [
-         "What time is it?",
-         "She has no time today.",
-         "The time for the meeting is two."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "tired",
-      "role": "adjective",
-      "BrE": "/ˈtaɪəd/",
-      "AmE": "/ˈtaɪərd/",
-      "definition": "needing rest or sleep",
-      "examples": [
-         "I am tired.",
-         "She was tired after work.",
-         "The tired dog slept all day."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "to",
-      "role": "preposition",
-      "BrE": "/tə/",
-      "AmE": "/tə/",
-      "definition": "used to show direction or purpose",
-      "examples": [
-         "I go to school.",
-         "She gave a book to him.",
-         "He walks to the park."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "today",
-      "role": "noun",
-      "BrE": "/təˈdeɪ/",
-      "AmE": "/təˈdeɪ/",
-      "definition": "this day",
-      "examples": [
-         "Today is sunny.",
-         "She is busy today.",
-         "We play football today."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "together",
-      "role": "adjective",
-      "BrE": "/təˈɡeðə(r)/",
-      "AmE": "/təˈɡeðər/",
-      "definition": "being with another person or thing",
-      "examples": [
-         "We are together.",
-         "They work in a together way.",
-         "The together group was happy."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "tomorrow",
-      "role": "noun",
-      "BrE": "/təˈmɒrəʊ/",
-      "AmE": "/təˈmɑːroʊ/",
-      "definition": "the day after today",
-      "examples": [
-         "Tomorrow is Monday.",
-         "She will come tomorrow.",
-         "We have a test tomorrow."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "too",
-      "role": "adverb",
-      "BrE": "/tuː/",
-      "AmE": "/tuː/",
-      "definition": "also or more than wanted",
-      "examples": [
-         "I want to come too.",
-         "She is too tired.",
-         "The bag is too heavy."
-      ]
-   },
-   {
-      "id": 96,
-      "word": "train",
-      "role": "verb",
-      "BrE": "/treɪn/",
-      "AmE": "/treɪn/",
-      "definition": "to learn or teach a skill",
-      "examples": [
-         "I train for sports.",
-         "She trains her dog.",
-         "He trained to be a teacher."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "tree",
-      "role": "noun",
-      "BrE": "/triː/",
-      "AmE": "/triː/",
-      "definition": "a tall plant with a trunk and branches",
-      "examples": [
-         "The tree is green.",
-         "She climbed the tree.",
-         "The tree has many leaves."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "true",
-      "role": "adjective",
-      "BrE": "/truː/",
-      "AmE": "/truː/",
-      "definition": "correct or realPMI",
-      "examples": [
-         "Is it true?",
-         "Her story is true.",
-         "He said it was true."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "try",
-      "role": "noun",
-      "BrE": "/traɪ/",
-      "AmE": "/traɪ/",
-      "definition": "an attempt to do something",
-      "examples": [
-         "I made a try.",
-         "Her try was successful.",
-         "His try at the game failed."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "turn",
-      "role": "noun",
-      "BrE": "/tɜːn/",
-      "AmE": "/tɜːrn/",
-      "definition": "a chance to do something",
-      "examples": [
-         "It’s my turn.",
-         "She took her turn.",
-         "His turn came last."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "TV",
-      "role": "noun",
-      "BrE": "/ˌtiː ˈviː/",
-      "AmE": "/ˌtiː ˈviː/",
-      "definition": "a device for watching programmes",
-      "examples": [
-         "I watch TV.",
-         "She turned on the TV.",
-         "The TV shows news."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "umbrella",
-      "role": "noun",
-      "BrE": "/ʌmˈbrelə/",
-      "AmE": "/ʌmˈbrelə/",
-      "definition": "an object to protect from rain",
-      "examples": [
-         "I use an umbrella.",
-         "Her umbrella is red.",
-         "He forgot his umbrella."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "understand",
-      "role": "verb",
-      "BrE": "/ˌʌndəˈstænd/",
-      "AmE": "/ˌʌndərˈstænd/",
-      "definition": "to know the meaning of something",
-      "examples": [
-         "I understand you.",
-         "She understands the book.",
-         "He understood the lesson."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "up",
-      "role": "preposition",
-      "BrE": "/ʌp/",
-      "AmE": "/ʌp/",
-      "definition": "towards a higher place",
-      "examples": [
-         "I go up the stairs.",
-         "She climbed up the hill.",
-         "The balloon went up."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "use",
-      "role": "noun",
-      "BrE": "/juːs/",
-      "AmE": "/juːs/",
-      "definition": "the act of using something",
-      "examples": [
-         "The use of pens is common.",
-         "She made good use of time.",
-         "His use of tools was skillful."
-      ]
-   },
-   {
-      "id": 97,
-      "word": "very",
-      "role": "adjective",
-      "BrE": "/ˈveri/",
-      "AmE": "/ˈveri/",
-      "definition": "to a great degree",
-      "examples": [
-         "It’s very cold.",
-         "She is very happy.",
-         "The very big dog ran fast."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "visit",
-      "role": "noun",
-      "BrE": "/ˈvɪzɪt/",
-      "AmE": "/ˈvɪzɪt/",
-      "definition": "an act of going to see a person or place",
-      "examples": [
-         "I made a visit.",
-         "Her visit was fun.",
-         "The visit to the zoo was great."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "wait",
-      "role": "noun",
-      "BrE": "/weɪt/",
-      "AmE": "/weɪt/",
-      "definition": "the act of staying until something happens",
-      "examples": [
-         "I had a long wait.",
-         "Her wait was short.",
-         "The wait for the bus was cold."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "walk",
-      "role": "noun",
-      "BrE": "/wɔːk/",
-      "AmE": "/wɔːk/",
-      "definition": "a short trip on foot",
-      "examples": [
-         "I took a walk.",
-         "She went for a walk.",
-         "The walk in the park was nice."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "want",
-      "role": "noun",
-      "BrE": "/wɒnt/",
-      "AmE": "/wɑːnt/",
-      "definition": "a desire for something",
-      "examples": [
-         "My want is a new book.",
-         "Her want is to travel.",
-         "His want for food was clear."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "water",
-      "role": "verb",
-      "BrE": "/ˈwɔːtə(r)/",
-      "AmE": "/ˈwɔːtər/",
-      "definition": "to pour water on plants",
-      "examples": [
-         "I water the plants.",
-         "She watered the flowers.",
-         "He waters the garden daily."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "way",
-      "role": "noun",
-      "BrE": "/weɪ/",
-      "AmE": "/weɪ/",
-      "definition": "a method or path",
-      "examples": [
-         "This is the way.",
-         "She found a new way to learn.",
-         "The way to school is short."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "wear",
-      "role": "noun",
-      "BrE": "/weə(r)/",
-      "AmE": "/wer/",
-      "definition": "the act of wearing something",
-      "examples": [
-         "Her wear is stylish.",
-         "The wear of hats is common.",
-         "His wear was casual."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "week",
-      "role": "noun",
-      "BrE": "/wiːk/",
-      "AmE": "/wiːk/",
-      "definition": "a period of seven days",
-      "examples": [
-         "This week is busy.",
-         "She studies every week.",
-         "The week was full of fun."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "well",
-      "role": "adjective",
-      "BrE": "/wel/",
-      "AmE": "/wel/",
-      "definition": "healthy or in good condition",
-      "examples": [
-         "I am well.",
-         "She feels well today.",
-         "The well dog runs fast."
-      ]
-   },
-   {
-      "id": 98,
-      "word": "what",
-      "role": "determiner",
-      "BrE": "/wɒt/",
-      "AmE": "/wɑːt/",
-      "definition": "used to ask about something",
-      "examples": [
-         "What book is this?",
-         "What time is the class?",
-         "What colour is her dress?"
-      ]
-   },
-   {
-      "id": 99,
-      "word": "when",
-      "role": "conjunction",
-      "BrE": "/wen/",
-      "AmE": "/wen/",
-      "definition": "at the time that",
-      "examples": [
-         "I smile when I’m happy.",
-         "She left when it rained.",
-         "He calls when he’s free."
-      ]
-   },
-   {
-      "id": 99,
-      "word": "where",
-      "role": "conjunction",
-      "BrE": "/weə(r)/",
-      "AmE": "/wer/",
-      "definition": "in or to the place that",
-      "examples": [
-         "I go where she goes.",
-         "Stay where you are.",
-         "He lives where it’s quiet."
-      ]
-   },
-   {
-      "id": 99,
-      "word": "which",
-      "role": "determiner",
-      "BrE": "/wɪtʃ/",
-      "AmE": "/wɪtʃ/",
-      "definition": "used to specify one thing from a group",
-      "examples": [
-         "Which book is yours?",
-         "Which pen do you want?",
-         "Which car is faster?"
-      ]
-   },
-   {
-      "id": 99,
-      "word": "white",
-      "role": "adjective",
-      "BrE": "/waɪt/",
-      "AmE": "/waɪt/",
-      "definition": "having the colour of snow",
-      "examples": [
-         "The wall is white.",
-         "She has a white dress.",
-         "His white shirt is clean."
-      ]
-   },
-   {
-      "id": 99,
-      "word": "who",
-      "role": "pronoun",
-      "BrE": "/huː/",
-      "AmE": "/huː/",
-      "definition": "used to refer to a person",
-      "examples": [
-         "Who is that?",
-         "She’s the one who helped.",
-         "Who took my book?"
-      ]
-   },
-   {
-      "id": 99,
-      "word": "why",
-      "role": "conjunction",
-      "BrE": "/waɪ/",
-      "AmE": "/waɪ/",
-      "definition": "the reason for something",
-      "examples": [
-         "I know why she’s late.",
-         "Tell me why you did it.",
-         "That’s why I’m here."
-      ]
-   },
-   {
-      "id": 99,
-      "word": "wind",
-      "role": "noun",
-      "BrE": "/wɪnd/",
-      "AmE": "/wɪnd/",
-      "definition": "air moving across the Earth",
-      "examples": [
-         "The wind is strong.",
-         "She felt the wind outside.",
-         "The wind blew the leaves."
-      ]
-   },
-   {
-      "id": 99,
-      "word": "window",
-      "role": "noun",
-      "BrE": "/ˈwɪndəʊ/",
-      "AmE": "/ˈwɪndoʊ/",
-      "definition": "an opening in a wall for light or air",
-      "examples": [
-         "The window is open.",
-         "She looked out the window.",
-         "The window is big."
-      ]
-   },
-   {
-      "id": 99,
-      "word": "winter",
-      "role": "noun",
-      "BrE": "/ˈwɪntə(r)/",
-      "AmE": "/ˈwɪntər/",
-      "definition": "the season after autumn",
-      "examples": [
-         "Winter is cold.",
-         "We ski in winter.",
-         "The winter was snowy."
-      ]
-   },
-   {
-      "id": 99,
-      "word": "with",
-      "role": "preposition",
-      "BrE": "/wɪð/",
-      "AmE": "/wɪð/",
-      "definition": "together or using something",
-      "examples": [
-         "I am with my friend.",
-         "She writes with a pen.",
-         "He went with his sister."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "woman",
-      "role": "noun",
-      "BrE": "/ˈwʊmən/",
-      "AmE": "/ˈwʊmən/",
-      "definition": "an adult female person",
-      "examples": [
-         "The woman is kind.",
-         "She is a strong woman.",
-         "A woman helped me."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "work",
-      "role": "noun",
-      "BrE": "/wɜːk/",
-      "AmE": "/wɜːrk/",
-      "definition": "a job or activity you do",
-      "examples": [
-         "I have work today.",
-         "Her work is teaching.",
-         "His work keeps him busy."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "world",
-      "role": "noun",
-      "BrE": "/wɜːld/",
-      "AmE": "/wɜːrld/",
-      "definition": "the Earth or all people and places",
-      "examples": [
-         "The world is big.",
-         "She travels the world.",
-         "He wants to see the world."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "write",
-      "role": "verb",
-      "BrE": "/raɪt/",
-      "AmE": "/raɪt/",
-      "definition": "to make words on paper or a screen",
-      "examples": [
-         "I write a letter.",
-         "She wrote a story.",
-         "He writes in his notebook."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "year",
-      "role": "noun",
-      "BrE": "/jɪə(r)/",
-      "AmE": "/jɪr/",
-      "definition": "a period of twelve months",
-      "examples": [
-         "This year is fun.",
-         "She is ten years old.",
-         "The year was very warm."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "yellow",
-      "role": "adjective",
-      "BrE": "/ˈjeləʊ/",
-      "AmE": "/ˈjeloʊ/",
-      "definition": "having the colour of lemons",
-      "examples": [
-         "The flower is yellow.",
-         "She has a yellow bag.",
-         "His yellow car is bright."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "yes",
-      "role": "exclamation",
-      "BrE": "/jes/",
-      "AmE": "/jes/",
-      "definition": "used to agree or confirm",
-      "examples": [
-         "Yes, I agree.",
-         "She said yes to the plan.",
-         "Yes, I’ll come."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "yesterday",
-      "role": "noun",
-      "BrE": "/ˈjestədeɪ/",
-      "AmE": "/ˈjestərdeɪ/",
-      "definition": "the day before today",
-      "examples": [
-         "Yesterday was sunny.",
-         "She called me yesterday.",
-         "We went there yesterday."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "you",
-      "role": "pronoun",
-      "BrE": "/juː/",
-      "AmE": "/juː/",
-      "definition": "the person or people being spoken to",
-      "examples": [
-         "You are my friend.",
-         "Can you help me?",
-         "You went to the park."
-      ]
-   },
-   {
-      "id": 100,
-      "word": "young",
-      "role": "adjective",
-      "BrE": "/jʌŋ/",
-      "AmE": "/jʌŋ/",
-      "definition": "having a low age",
-      "examples": [
-         "The boy is young.",
-         "She has a young sister.",
-         "The young dog is playful."
-      ]
-   },
-   
-   {
-      "id": 101,
-      "word": "address",
-      "role": "noun",
-      "BrE": "/əˈdres/",
-      "AmE": "/əˈdres/",
-      "definition": "the details of where someone lives or works",
-      "examples": [
-         "My address is simple.",
-         "She wrote her address.",
-         "The address is on the letter."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "afternoon",
-      "role": "noun",
-      "BrE": "/ˌæftəˈnuːn/",
-      "AmE": "/ˌæftərˈnuːn/",
-      "definition": "the time from midday to evening",
-      "examples": [
-         "Good afternoon!",
-         "She works in the afternoon.",
-         "The afternoon was warm."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "again",
-      "role": "adverb",
-      "BrE": "/əˈɡen/",
-      "AmE": "/əˈɡen/",
-      "definition": "one more time",
-      "examples": [
-         "Say it again.",
-         "She called again yesterday.",
-         "He will try again tomorrow."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "age",
-      "role": "noun",
-      "BrE": "/eɪdʒ/",
-      "AmE": "/eɪdʒ/",
-      "definition": "how old someone or something is",
-      "examples": [
-         "My age is ten.",
-         "Her age is a secret.",
-         "The age of the tree is old."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "reply",
-      "role": "verb",
-      "BrE": "/rɪˈplaɪ/",
-      "AmE": "/rɪˈplaɪ/",
-      "definition": "to answer or respond to something",
-      "examples": [
-         "She replied to the email.",
-         "He replied with a smile.",
-         "They replied promptly to the question."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "arm",
-      "role": "noun",
-      "BrE": "/ɑːm/",
-      "AmE": "/ɑːrm/",
-      "definition": "the part of the body from shoulder to hand",
-      "examples": [
-         "My arm is strong.",
-         "She hurt her arm.",
-         "He raised his arm to wave."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "arrive",
-      "role": "verb",
-      "BrE": "/əˈraɪv/",
-      "AmE": "/əˈraɪv/",
-      "definition": "to reach a place",
-      "examples": [
-         "I arrive at school.",
-         "She arrived late.",
-         "He arrives home at six."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "bag",
-      "role": "noun",
-      "BrE": "/bæɡ/",
-      "AmE": "/bæɡ/",
-      "definition": "a container for carrying things",
-      "examples": [
-         "My bag is heavy.",
-         "She bought a new bag.",
-         "The bag is on the chair."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "ball",
-      "role": "noun",
-      "BrE": "/bɔːl/",
-      "AmE": "/bɔːl/",
-      "definition": "a round object used in games",
-      "examples": [
-         "I kick a ball.",
-         "She plays with a ball.",
-         "The ball is in the garden."
-      ]
-   },
-   {
-      "id": 101,
-      "word": "begin",
-      "role": "verb",
-      "BrE": "/bɪˈɡɪn/",
-      "AmE": "/bɪˈɡɪn/",
-      "definition": "to start something",
-      "examples": [
-         "I begin my work.",
-         "She began to read.",
-         "He begins school today."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "behind",
-      "role": "preposition",
-      "BrE": "/bɪˈhaɪnd/",
-      "AmE": "/bɪˈhaɪnd/",
-      "definition": "at the back of something",
-      "examples": [
-         "The cat is behind the door.",
-         "She stood behind me.",
-         "He hid behind the tree."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "best",
-      "role": "adjective",
-      "BrE": "/best/",
-      "AmE": "/best/",
-      "definition": "the most excellent",
-      "examples": [
-         "This is my best book.",
-         "She is my best friend.",
-         "He did his best work."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "bike",
-      "role": "noun",
-      "BrE": "/baɪk/",
-      "AmE": "/baɪk/",
-      "definition": "a bicycle",
-      "examples": [
-         "I ride a bike.",
-         "Her bike is red.",
-         "He rides his bike to school."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "bird",
-      "role": "noun",
-      "BrE": "/bɜːd/",
-      "AmE": "/bɜːrd/",
-      "definition": "an animal with wings and feathers",
-      "examples": [
-         "I see a bird.",
-         "The bird is in the tree.",
-         "She watched a bird fly."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "black",
-      "role": "adjective",
-      "BrE": "/blæk/",
-      "AmE": "/blæk/",
-      "definition": "having the darkest colour",
-      "examples": [
-         "The cat is black.",
-         "She has a black dress.",
-         "His black shoes are new."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "blue",
-      "role": "adjective",
-      "BrE": "/bluː/",
-      "AmE": "/bluː/",
-      "definition": "having the colour of the sky",
-      "examples": [
-         "The sky is blue.",
-         "She wore a blue hat.",
-         "His blue bag is big."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "boat",
-      "role": "noun",
-      "BrE": "/bəʊt/",
-      "AmE": "/boʊt/",
-      "definition": "a vehicle that travels on water",
-      "examples": [
-         "I see a boat.",
-         "She sailed a boat.",
-         "The boat is on the lake."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "body",
-      "role": "noun",
-      "BrE": "/ˈbɒdi/",
-      "AmE": "/ˈbɑːdi/",
-      "definition": "the whole physical structure of a person",
-      "examples": [
-         "My body is strong.",
-         "She exercises her body.",
-         "He hurt his body playing."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "box",
-      "role": "noun",
-      "BrE": "/bɒks/",
-      "AmE": "/bɑːks/",
-      "definition": "a container with a flat base",
-      "examples": [
-         "I have a box.",
-         "She put toys in the box.",
-         "The box is under the bed."
-      ]
-   },
-   {
-      "id": 102,
-      "word": "bread",
-      "role": "noun",
-      "BrE": "/bred/",
-      "AmE": "/bred/",
-      "definition": "a food made from flour and water",
-      "examples": [
-         "I eat bread.",
-         "She bought fresh bread.",
-         "The bread is on the table."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "breakfast",
-      "role": "noun",
-      "BrE": "/ˈbrekfəst/",
-      "AmE": "/ˈbrekfəst/",
-      "definition": "the meal eaten in the morning",
-      "examples": [
-         "I eat breakfast.",
-         "She had a big breakfast.",
-         "Breakfast is at seven."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "bridge",
-      "role": "noun",
-      "BrE": "/brɪdʒ/",
-      "AmE": "/brɪdʒ/",
-      "definition": "a structure over a river or road",
-      "examples": [
-         "The bridge is old.",
-         "She crossed the bridge.",
-         "The bridge is near the park."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "brother",
-      "role": "noun",
-      "BrE": "/ˈbrʌðə(r)/",
-      "AmE": "/ˈbrʌðər/",
-      "definition": "a male sibling",
-      "examples": [
-         "My brother is tall.",
-         "She loves her brother.",
-         "The brother helped with homework."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "brown",
-      "role": "adjective",
-      "BrE": "/braʊn/",
-      "AmE": "/braʊn/",
-      "definition": "having the colour of wood or soil",
-      "examples": [
-         "The dog is brown.",
-         "She has a brown bag.",
-         "His brown shoes are old."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "bus",
-      "role": "noun",
-      "BrE": "/bʌs/",
-      "AmE": "/bʌs/",
-      "definition": "a large vehicle for many passengers",
-      "examples": [
-         "I take the bus.",
-         "She missed the bus.",
-         "The bus stops at the school."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "buy",
-      "role": "verb",
-      "BrE": "/baɪ/",
-      "AmE": "/baɪ/",
-      "definition": "to get something with money",
-      "examples": [
-         "I buy a book.",
-         "She bought new shoes.",
-         "He buys food every week."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "cake",
-      "role": "noun",
-      "BrE": "/keɪk/",
-      "AmE": "/keɪk/",
-      "definition": "a sweet food made from flour and sugar",
-      "examples": [
-         "I eat cake.",
-         "She made a chocolate cake.",
-         "The cake was delicious."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "car",
-      "role": "noun",
-      "BrE": "/kɑː(r)/",
-      "AmE": "/kɑːr/",
-      "definition": "a vehicle with four wheels",
-      "examples": [
-         "My car is red.",
-         "She drives a car.",
-         "The car is in the garage."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "chair",
-      "role": "noun",
-      "BrE": "/tʃeə(r)/",
-      "AmE": "/tʃer/",
-      "definition": "a seat for one person",
-      "examples": [
-         "I sit on a chair.",
-         "She bought a new chair.",
-         "The chair is by the table."
-      ]
-   },
-   {
-      "id": 103,
-      "word": "child",
-      "role": "noun",
-      "BrE": "/tʃaɪld/",
-      "AmE": "/tʃaɪld/",
-      "definition": "a young person",
-      "examples": [
-         "The child is happy.",
-         "She has one child.",
-         "The child plays in the park."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "city",
-      "role": "noun",
-      "BrE": "/ˈsɪti/",
-      "AmE": "/ˈsɪti/",
-      "definition": "a large town",
-      "examples": [
-         "I live in a city.",
-         "She visited a big city.",
-         "The city is very busy."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "class",
-      "role": "noun",
-      "BrE": "/klɑːs/",
-      "AmE": "/klæs/",
-      "definition": "a group of students learning together",
-      "examples": [
-         "I go to class.",
-         "Her class is fun.",
-         "The class starts at nine."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "clock",
-      "role": "noun",
-      "BrE": "/klɒk/",
-      "AmE": "/klɑːk/",
-      "definition": "a device that shows the time",
-      "examples": [
-         "The clock is big.",
-         "She looked at the clock.",
-         "The clock shows three."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "clothes",
-      "role": "noun",
-      "BrE": "/kləʊðz/",
-      "AmE": "/kloʊðz/",
-      "definition": "things you wear",
-      "examples": [
-         "My clothes are new.",
-         "She washed her clothes.",
-         "The clothes are in the bag."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "cloud",
-      "role": "noun",
-      "BrE": "/klaʊd/",
-      "AmE": "/klaʊd/",
-      "definition": "a white or grey mass in the sky",
-      "examples": [
-         "I see a cloud.",
-         "The cloud is white.",
-         "Clouds covered the sky."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "coffee",
-      "role": "noun",
-      "BrE": "/ˈkɒfi/",
-      "AmE": "/ˈkɔːfi/",
-      "definition": "a hot drink made from beans",
-      "examples": [
-         "I drink coffee.",
-         "She likes strong coffee.",
-         "The coffee is on the table."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "colour",
-      "role": "noun",
-      "BrE": "/ˈkʌlə(r)/",
-      "AmE": "/ˈkʌlər/",
-      "definition": "what you see, like red or blue",
-      "examples": [
-         "My favourite colour is blue.",
-         "She chose a bright colour.",
-         "The colour of the car is red."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "computer",
-      "role": "noun",
-      "BrE": "/kəmˈpjuːtə(r)/",
-      "AmE": "/kəmˈpjuːtər/",
-      "definition": "an electronic device for information",
-      "examples": [
-         "I use a computer.",
-         "She bought a new computer.",
-         "The computer is on the desk."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "country",
-      "role": "noun",
-      "BrE": "/ˈkʌntri/",
-      "AmE": "/ˈkʌntri/",
-      "definition": "a nation or area outside cities",
-      "examples": [
-         "I love my country.",
-         "She lives in the country.",
-         "The country has green fields."
-      ]
-   },
-   {
-      "id": 104,
-      "word": "cup",
-      "role": "noun",
-      "BrE": "/kʌp/",
-      "AmE": "/kʌp/",
-      "definition": "a small container for drinking",
-      "examples": [
-         "I drink from a cup.",
-         "She has a red cup.",
-         "The cup is full of tea."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "daughter",
-      "role": "noun",
-      "BrE": "/ˈdɔːtə(r)/",
-      "AmE": "/ˈdɔːtər/",
-      "definition": "a female child",
-      "examples": [
-         "My daughter is young.",
-         "She loves her daughter.",
-         "The daughter plays piano."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "day",
-      "role": "noun",
-      "BrE": "/deɪ/",
-      "AmE": "/deɪ/",
-      "definition": "a period of 24 hours",
-      "examples": [
-         "Today is a nice day.",
-         "She works every day.",
-         "The day was warm and sunny."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "desk",
-      "role": "noun",
-      "BrE": "/desk/",
-      "AmE": "/desk/",
-      "definition": "a table for working or studying",
-      "examples": [
-         "My desk is big.",
-         "She put her book on the desk.",
-         "The desk is in the room."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "dinner",
-      "role": "noun",
-      "BrE": "/ˈdɪnə(r)/",
-      "AmE": "/ˈdɪnər/",
-      "definition": "the main meal of the day",
-      "examples": [
-         "I eat dinner.",
-         "She cooked dinner.",
-         "Dinner is at seven."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "dog",
-      "role": "noun",
-      "BrE": "/dɒɡ/",
-      "AmE": "/dɔːɡ/",
-      "definition": "a common pet animal",
-      "examples": [
-         "My dog is small.",
-         "She walks her dog.",
-         "The dog runs in the park."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "door",
-      "role": "noun",
-      "BrE": "/dɔː(r)/",
-      "AmE": "/dɔːr/",
-      "definition": "a way to enter or leave a room",
-      "examples": [
-         "The door is open.",
-         "She closed the door.",
-         "The door is red."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "dress",
-      "role": "noun",
-      "BrE": "/dres/",
-      "AmE": "/dres/",
-      "definition": "a piece of clothing for women or girls",
-      "examples": [
-         "Her dress is blue.",
-         "She wore a new dress.",
-         "The dress is in the shop."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "drink",
-      "role": "noun",
-      "BrE": "/drɪŋk/",
-      "AmE": "/drɪŋk/",
-      "definition": "a liquid you swallow",
-      "examples": [
-         "I want a drink.",
-         "She bought a cold drink.",
-         "The drink is in the fridge."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "ear",
-      "role": "noun",
-      "BrE": "/ɪə(r)/",
-      "AmE": "/ɪr/",
-      "definition": "the part of the body used for hearing",
-      "examples": [
-         "My ear hurts.",
-         "She whispered in his ear.",
-         "The ear of the dog is soft."
-      ]
-   },
-   {
-      "id": 105,
-      "word": "eat",
-      "role": "verb",
-      "BrE": "/iːt/",
-      "AmE": "/iːt/",
-      "definition": "to put food in your mouth and swallow",
-      "examples": [
-         "I eat an apple.",
-         "She eats breakfast daily.",
-         "He ate dinner with his family."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "eight",
-      "role": "number",
-      "BrE": "/eɪt/",
-      "AmE": "/eɪt/",
-      "definition": "the number 8",
-      "examples": [
-         "I have eight books.",
-         "She is eight years old.",
-         "Eight students are here."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "evening",
-      "role": "noun",
-      "BrE": "/ˈiːvnɪŋ/",
-      "AmE": "/ˈiːvnɪŋ/",
-      "definition": "the time from late afternoon to night",
-      "examples": [
-         "Good evening!",
-         "She reads in the evening.",
-         "The evening was cool."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "eye",
-      "role": "noun",
-      "BrE": "/aɪ/",
-      "AmE": "/aɪ/",
-      "definition": "the part of the body used for seeing",
-      "examples": [
-         "My eye is blue.",
-         "She closed her eyes.",
-         "The eye of the cat is green."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "face",
-      "role": "noun",
-      "BrE": "/feɪs/",
-      "AmE": "/feɪs/",
-      "definition": "the front part of the head",
-      "examples": [
-         "Her face is happy.",
-         "He washed his face.",
-         "The face in the photo is clear."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "farm",
-      "role": "noun",
-      "BrE": "/fɑːm/",
-      "AmE": "/fɑːrm/",
-      "definition": "a place where animals or crops are grown",
-      "examples": [
-         "I visit a farm.",
-         "She works on a farm.",
-         "The farm has many cows."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "fast",
-      "role": "adverb",
-      "BrE": "/fɑːst/",
-      "AmE": "/fæst/",
-      "definition": "quickly",
-      "examples": [
-         "I run fast.",
-         "She drives fast.",
-         "He walks fast to school."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "fish",
-      "role": "verb",
-      "BrE": "/fɪʃ/",
-      "AmE": "/fɪʃ/",
-      "definition": "to try to catch fish",
-      "examples": [
-         "I fish in the river.",
-         "She fished all day.",
-         "He fishes with his dad."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "flower",
-      "role": "noun",
-      "BrE": "/ˈflaʊə(r)/",
-      "AmE": "/ˈflaʊər/",
-      "definition": "the colourful part of a plant",
-      "examples": [
-         "The flower is red.",
-         "She picked a flower.",
-         "The flower is in the garden."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "fly",
-      "role": "verb",
-      "BrE": "/flaɪ/",
-      "AmE": "/flaɪ/",
-      "definition": "to move through the air",
-      "examples": [
-         "Birds fly in the sky.",
-         "She flies to London.",
-         "He flew a kite yesterday."
-      ]
-   },
-   {
-      "id": 106,
-      "word": "food",
-      "role": "noun",
-      "BrE": "/fuːd/",
-      "AmE": "/fuːd/",
-      "definition": "things you eat",
-      "examples": [
-         "I like food.",
-         "She cooked tasty food.",
-         "The food is on the table."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "foot",
-      "role": "noun",
-      "BrE": "/fʊt/",
-      "AmE": "/fʊt/",
-      "definition": "the part of the body you walk on",
-      "examples": [
-         "My foot hurts.",
-         "She washed her feet.",
-         "The foot of the dog is wet."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "friend",
-      "role": "noun",
-      "BrE": "/frend/",
-      "AmE": "/frend/",
-      "definition": "a person you like and know well",
-      "examples": [
-         "My friend is nice.",
-         "She met her friend at school.",
-         "He plays with his friends."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "fruit",
-      "role": "noun",
-      "BrE": "/fruːt/",
-      "AmE": "/fruːt/",
-      "definition": "sweet food from plants, like apples",
-      "examples": [
-         "I eat fruit.",
-         "She likes fresh fruit.",
-         "The fruit is in the bowl."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "funny",
-      "role": "adjective",
-      "BrE": "/ˈfʌni/",
-      "AmE": "/ˈfʌni/",
-      "definition": "making you laugh",
-      "examples": [
-         "The story is funny.",
-         "She told a funny joke.",
-         "His funny face made me smile."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "garden",
-      "role": "noun",
-      "BrE": "/ˈɡɑːdn/",
-      "AmE": "/ˈɡɑːrdn/",
-      "definition": "an area where plants or flowers grow",
-      "examples": [
-         "The garden is green.",
-         "She works in the garden.",
-         "He planted flowers in the garden."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "girl",
-      "role": "noun",
-      "BrE": "/ɡɜːl/",
-      "AmE": "/ɡɜːrl/",
-      "definition": "a young female person",
-      "examples": [
-         "The girl is happy.",
-         "She is a kind girl.",
-         "The girl reads a book."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "glass",
-      "role": "noun",
-      "BrE": "/ɡlɑːs/",
-      "AmE": "/ɡlæs/",
-      "definition": "a container for drinking made of glass",
-      "examples": [
-         "I drink from a glass.",
-         "She broke a glass.",
-         "The glass is full of water."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "goodbye",
-      "role": "exclamation",
-      "BrE": "/ˌɡʊdˈbaɪ/",
-      "AmE": "/ˌɡʊdˈbaɪ/",
-      "definition": "used when leaving someone",
-      "examples": [
-         "Goodbye, see you!",
-         "She said goodbye to her friend.",
-         "He waved goodbye at the door."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "grass",
-      "role": "noun",
-      "BrE": "/ɡrɑːs/",
-      "AmE": "/ɡræs/",
-      "definition": "a green plant covering the ground",
-      "examples": [
-         "The grass is green.",
-         "She sat on the grass.",
-         "The grass needs cutting."
-      ]
-   },
-   {
-      "id": 107,
-      "word": "hand",
-      "role": "noun",
-      "BrE": "/hænd/",
-      "AmE": "/hænd/",
-      "definition": "the part of the body at the end of the arm",
-      "examples": [
-         "My hand is clean.",
-         "She held his hand.",
-         "The hand of the clock moves."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "head",
-      "role": "noun",
-      "BrE": "/hed/",
-      "AmE": "/hed/",
-      "definition": "the top part of the body",
-      "examples": [
-         "My head hurts.",
-         "She touched her head.",
-         "The head of the dog is big."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "holiday",
-      "role": "noun",
-      "BrE": "/ˈhɒlədeɪ/",
-      "AmE": "/ˈhɑːlədeɪ/",
-      "definition": "a time when you don’t work or study",
-      "examples": [
-         "I love holidays.",
-         "She went on holiday.",
-         "The holiday was fun."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "horse",
-      "role": "noun",
-      "BrE": "/hɔːs/",
-      "AmE": "/hɔːrs/",
-      "definition": "a large animal used for riding",
-      "examples": [
-         "I see a horse.",
-         "She rides a horse.",
-         "The horse runs fast."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "hospital",
-      "role": "noun",
-      "BrE": "/ˈhɒspɪtl/",
-      "AmE": "/ˈhɑːspɪtl/",
-      "definition": "a place where sick people are treated",
-      "examples": [
-         "The hospital is big.",
-         "She works in a hospital.",
-         "He visited the hospital."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "hotel",
-      "role": "noun",
-      "BrE": "/həʊˈtel/",
-      "AmE": "/hoʊˈtel/",
-      "definition": "a place where people stay and pay",
-      "examples": [
-         "I stay in a hotel.",
-         "She booked a hotel.",
-         "The hotel is near the sea."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "hour",
-      "role": "noun",
-      "BrE": "/aʊə(r)/",
-      "AmE": "/aʊr/",
-      "definition": "a period of 60 minutes",
-      "examples": [
-         "I wait an hour.",
-         "She slept for an hour.",
-         "The class is one hour long."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "ice",
-      "role": "noun",
-      "BrE": "/aɪs/",
-      "AmE": "/aɪs/",
-      "definition": "frozen water",
-      "examples": [
-         "The ice is cold.",
-         "She put ice in her drink.",
-         "Ice covered the lake."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "idea",
-      "role": "noun",
-      "BrE": "/aɪˈdɪə/",
-      "AmE": "/aɪˈdiːə/",
-      "definition": "a thought or plan",
-      "examples": [
-         "I have an idea.",
-         "She had a good idea.",
-         "His idea was to play."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "important",
-      "role": "adjective",
-      "BrE": "/ɪmˈpɔːtnt/",
-      "AmE": "/ɪmˈpɔːrtnt/",
-      "definition": "having great value or meaning",
-      "examples": [
-         "This is important.",
-         "She has an important job.",
-         "The important book is here."
-      ]
-   },
-   {
-      "id": 108,
-      "word": "inside",
-      "role": "preposition",
-      "BrE": "/ɪnˈsaɪd/",
-      "AmE": "/ɪnˈsaɪd/",
-      "definition": "in or into something",
-      "examples": [
-         "I am inside the house.",
-         "She looked inside the box.",
-         "The cat is inside the room."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "juice",
-      "role": "noun",
-      "BrE": "/dʒuːs/",
-      "AmE": "/dʒuːs/",
-      "definition": "a liquid from fruit or vegetables",
-      "examples": [
-         "I drink juice.",
-         "She likes orange juice.",
-         "The juice is in the glass."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "jump",
-      "role": "verb",
-      "BrE": "/dʒʌmp/",
-      "AmE": "/dʒʌmp/",
-      "definition": "to push yourself off the ground",
-      "examples": [
-         "I jump high.",
-         "She jumped over the rope.",
-         "He jumps in the park."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "key",
-      "role": "noun",
-      "BrE": "/kiː/",
-      "AmE": "/kiː/",
-      "definition": "a metal object to open a lock",
-      "examples": [
-         "I lost my key.",
-         "She found the key.",
-         "The key is on the table."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "kitchen",
-      "role": "noun",
-      "BrE": "/ˈkɪtʃɪn/",
-      "AmE": "/ˈkɪtʃɪn/",
-      "definition": "a room where food is prepared",
-      "examples": [
-         "The kitchen is clean.",
-         "She cooks in the kitchen.",
-         "The kitchen has a big table."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "leg",
-      "role": "noun",
-      "BrE": "/leɡ/",
-      "AmE": "/leɡ/",
-      "definition": "the part of the body you walk with",
-      "examples": [
-         "My leg is strong.",
-         "She hurt her leg.",
-         "The leg of the dog is fast."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "lesson",
-      "role": "noun",
-      "BrE": "/ˈlesn/",
-      "AmE": "/ˈlesn/",
-      "definition": "a period of learning",
-      "examples": [
-         "I have a lesson.",
-         "She likes her lesson.",
-         "The lesson was about math."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "light",
-      "role": "noun",
-      "BrE": "/laɪt/",
-      "AmE": "/laɪt/",
-      "definition": "energy that makes things visible",
-      "examples": [
-         "The light is bright.",
-         "She turned on the light.",
-         "The light is in the room."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "like",
-      "role": "preposition",
-      "BrE": "/laɪk/",
-      "AmE": "/laɪk/",
-      "definition": "similar to something",
-      "examples": [
-         "It looks like rain.",
-         "She sings like a bird.",
-         "He runs like his brother."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "live",
-      "role": "adjective",
-      "BrE": "/laɪv/",
-      "AmE": "/laɪv/",
-      "definition": "alive or happening now",
-      "examples": [
-         "The live show is fun.",
-         "She saw a live concert.",
-         "The live animal is in the zoo."
-      ]
-   },
-   {
-      "id": 109,
-      "word": "love",
-      "role": "noun",
-      "BrE": "/lʌv/",
-      "AmE": "/lʌv/",
-      "definition": "a strong feeling of affection",
-      "examples": [
-         "I feel love.",
-         "Her love for music is big.",
-         "His love for dogs is clear."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "market",
-      "role": "noun",
-      "BrE": "/ˈmɑːkɪt/",
-      "AmE": "/ˈmɑːrkɪt/",
-      "definition": "a place where things are sold",
-      "examples": [
-         "I go to the market.",
-         "She bought fruit at the market.",
-         "The market is busy today."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "minute",
-      "role": "noun",
-      "BrE": "/ˈmɪnɪt/",
-      "AmE": "/ˈmɪnɪt/",
-      "definition": "a period of 60 seconds",
-      "examples": [
-         "Wait a minute.",
-         "She was late by a minute.",
-         "The minute passed quickly."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "moon",
-      "role": "noun",
-      "BrE": "/muːn/",
-      "AmE": "/muːn/",
-      "definition": "the large object in the night sky",
-      "examples": [
-         "The moon is bright.",
-         "She saw the moon.",
-         "The moon is full tonight."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "mountain",
-      "role": "noun",
-      "BrE": "/ˈmaʊntən/",
-      "AmE": "/ˈmaʊntən/",
-      "definition": "a very high hill",
-      "examples": [
-         "The mountain is big.",
-         "She climbed the mountain.",
-         "The mountain has snow."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "mouth",
-      "role": "noun",
-      "BrE": "/maʊθ/",
-      "AmE": "/maʊθ/",
-      "definition": "the part of the face for eating and speaking",
-      "examples": [
-         "My mouth is dry.",
-         "She opened her mouth.",
-         "The mouth of the dog is big."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "music",
-      "role": "noun",
-      "BrE": "/ˈmjuːzɪk/",
-      "AmE": "/ˈmjuːzɪk/",
-      "definition": "sounds that are pleasant, like songs",
-      "examples": [
-         "I like music.",
-         "She plays music.",
-         "The music was loud."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "night",
-      "role": "noun",
-      "BrE": "/naɪt/",
-      "AmE": "/naɪt/",
-      "definition": "the time when it is dark outside",
-      "examples": [
-         "I sleep at night.",
-         "The stars shine at night.",
-         "She stayed up late last night."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "noise",
-      "role": "noun",
-      "BrE": "/nɔɪz/",
-      "AmE": "/nɔɪz/",
-      "definition": "a loud or unpleasant sound",
-      "examples": [
-         "I hear a noise.",
-         "She made a noise.",
-         "The noise was from the car."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "open",
-      "role": "verb",
-      "BrE": "/ˈəʊpən/",
-      "AmE": "/ˈoʊpən/",
-      "definition": "to make something not closed",
-      "examples": [
-         "I open the door.",
-         "She opened her book.",
-         "He opens the shop every morning."
-      ]
-   },
-   {
-      "id": 110,
-      "word": "outside",
-      "role": "preposition",
-      "BrE": "/ˌaʊtˈsaɪd/",
-      "AmE": "/ˌaʊtˈsaɪd/",
-      "definition": "not inside something",
-      "examples": [
-         "I play outside.",
-         "She waited outside the house.",
-         "The dog is outside the door."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "park",
-      "role": "verb",
-      "BrE": "/pɑːk/",
-      "AmE": "/pɑːrk/",
-      "definition": "to stop and leave a vehicle",
-      "examples": [
-         "I park my car.",
-         "She parked near the shop.",
-         "He parks in the garage."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "pen",
-      "role": "noun",
-      "BrE": "/pen/",
-      "AmE": "/pen/",
-      "definition": "a tool for writing with ink",
-      "examples": [
-         "I write with a pen.",
-         "Her pen is blue.",
-         "He lost his pen at school."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "place",
-      "role": "verb",
-      "BrE": "/pleɪs/",
-      "AmE": "/pleɪs/",
-      "definition": "to put something in a position",
-      "examples": [
-         "I place the book here.",
-         "She placed her bag on the table.",
-         "He places his shoes by the door."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "play",
-      "role": "noun",
-      "BrE": "/pleɪ/",
-      "AmE": "/pleɪ/",
-      "definition": "an activity done for fun",
-      "examples": [
-         "I enjoy play time.",
-         "Her play was with dolls.",
-         "The play in the park was fun."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "rain",
-      "role": "noun",
-      "BrE": "/reɪn/",
-      "AmE": "/reɪn/",
-      "definition": "water falling from the sky",
-      "examples": [
-         "The rain is heavy.",
-         "She likes the rain.",
-         "Rain fell all day."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "read",
-      "role": "noun",
-      "BrE": "/riːd/",
-      "AmE": "/riːd/",
-      "definition": "the act of reading",
-      "examples": [
-         "I had a good read.",
-         "Her read was interesting.",
-         "The read of the book was fun."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "river",
-      "role": "noun",
-      "BrE": "/ˈrɪvə(r)/",
-      "AmE": "/ˈrɪvər/",
-      "definition": "a large flow of water",
-      "examples": [
-         "The river is wide.",
-         "She swam in the river.",
-         "The river flows to the sea."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "road",
-      "role": "noun",
-      "BrE": "/rəʊd/",
-      "AmE": "/roʊd/",
-      "definition": "a path for vehicles or walking",
-      "examples": [
-         "The road is long.",
-         "She lives on this road.",
-         "The road to the city is busy."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "run",
-      "role": "noun",
-      "BrE": "/rʌn/",
-      "AmE": "/rʌn/",
-      "definition": "the act of running",
-      "examples": [
-         "I went for a run.",
-         "Her run was fast.",
-         "The run in the park was fun."
-      ]
-   },
-   {
-      "id": 111,
-      "word": "school",
-      "role": "noun",
-      "BrE": "/skuːl/",
-      "AmE": "/skuːl/",
-      "definition": "a place where children learn",
-      "examples": [
-         "I go to school.",
-         "Her school is big.",
-         "The school has a playground."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "sea",
-      "role": "noun",
-      "BrE": "/siː/",
-      "AmE": "/siː/",
-      "definition": "a large body of salt water",
-      "examples": [
-         "The sea is blue.",
-         "She swam in the sea.",
-         "The sea is near the town."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "shop",
-      "role": "noun",
-      "BrE": "/ʃɒp/",
-      "AmE": "/ʃɑːp/",
-      "definition": "a place where things are sold",
-      "examples": [
-         "I go to the shop.",
-         "She bought a dress in the shop.",
-         "The shop is open now."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "sing",
-      "role": "verb",
-      "BrE": "/sɪŋ/",
-      "AmE": "/sɪŋ/",
-      "definition": "to make musical sounds with your voice",
-      "examples": [
-         "I sing a song.",
-         "She sings beautifully.",
-         "He sang at the party."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "sister",
-      "role": "noun",
-      "BrE": "/ˈsɪstə(r)/",
-      "AmE": "/ˈsɪstər/",
-      "definition": "a female sibling",
-      "examples": [
-         "My sister is kind.",
-         "She plays with her sister.",
-         "The sister helped with homework."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "sit",
-      "role": "verb",
-      "BrE": "/sɪt/",
-      "AmE": "/sɪt/",
-      "definition": "to rest on a chair or surface",
-      "examples": [
-         "I sit on a chair.",
-         "She sat on the bench.",
-         "He sits in the classroom."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "six",
-      "role": "number",
-      "BrE": "/sɪks/",
-      "AmE": "/sɪks/",
-      "definition": "the number 6",
-      "examples": [
-         "I have six books.",
-         "She is six years old.",
-         "Six students are in the class."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "sleep",
-      "role": "verb",
-      "BrE": "/sliːp/",
-      "AmE": "/sliːp/",
-      "definition": "to rest with eyes closed",
-      "examples": [
-         "I sleep at night.",
-         "She slept for eight hours.",
-         "He sleeps in a big bed."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "snow",
-      "role": "noun",
-      "BrE": "/snəʊ/",
-      "AmE": "/snoʊ/",
-      "definition": "soft white pieces falling from the sky",
-      "examples": [
-         "The snow is white.",
-         "She played in the snow.",
-         "Snow covered the ground."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "son",
-      "role": "noun",
-      "BrE": "/sʌn/",
-      "AmE": "/sʌn/",
-      "definition": "a male child",
-      "examples": [
-         "My son is young.",
-         "She loves her son.",
-         "The son plays football."
-      ]
-   },
-   {
-      "id": 112,
-      "word": "star",
-      "role": "noun",
-      "BrE": "/stɑː(r)/",
-      "AmE": "/stɑːr/",
-      "definition": "a bright object in the night sky",
-      "examples": [
-         "I see a star.",
-         "She looked at the stars.",
-         "The star is bright tonight."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "stop",
-      "role": "verb",
-      "BrE": "/stɒp/",
-      "AmE": "/stɑːp/",
-      "definition": "to end an action or movement",
-      "examples": [
-         "I stop the car.",
-         "She stopped talking.",
-         "He stops at the shop."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "street",
-      "role": "noun",
-      "BrE": "/striːt/",
-      "AmE": "/striːt/",
-      "definition": "a road in a city or town",
-      "examples": [
-         "The street is busy.",
-         "She lives on this street.",
-         "The street has many shops."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "student",
-      "role": "noun",
-      "BrE": "/ˈstjuːdnt/",
-      "AmE": "/ˈstuːdnt/",
-      "definition": "a person who studies",
-      "examples": [
-         "I am a student.",
-         "She is a good student.",
-         "The student reads a book."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "sun",
-      "role": "noun",
-      "BrE": "/sʌn/",
-      "AmE": "/sʌn/",
-      "definition": "the star that gives light and heat",
-      "examples": [
-         "The sun is bright.",
-         "She sat in the sun.",
-         "The sun rises in the morning."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "table",
-      "role": "noun",
-      "BrE": "/ˈteɪbl/",
-      "AmE": "/ˈteɪbl/",
-      "definition": "a piece of furniture with a flat top",
-      "examples": [
-         "The table is big.",
-         "She put her book on the table.",
-         "The table is in the kitchen."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "talk",
-      "role": "verb",
-      "BrE": "/tɔːk/",
-      "AmE": "/tɔːk/",
-      "definition": "to speak or have a conversation",
-      "examples": [
-         "I talk to my friend.",
-         "She talked about school.",
-         "He talks with his teacher."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "tea",
-      "role": "noun",
-      "BrE": "/tiː/",
-      "AmE": "/tiː/",
-      "definition": "a hot drink made from leaves",
-      "examples": [
-         "I drink tea.",
-         "She likes green tea.",
-         "The tea is in the cup."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "teach",
-      "role": "verb",
-      "BrE": "/tiːtʃ/",
-      "AmE": "/tiːtʃ/",
-      "definition": "to give lessons or knowledge",
-      "examples": [
-         "I teach math.",
-         "She teaches English.",
-         "He taught his class yesterday."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "ten",
-      "role": "number",
-      "BrE": "/ten/",
-      "AmE": "/ten/",
-      "definition": "the number 10",
-      "examples": [
-         "I have ten pens.",
-         "She is ten years old.",
-         "Ten students are here."
-      ]
-   },
-   {
-      "id": 113,
-      "word": "test",
-      "role": "noun",
-      "BrE": "/test/",
-      "AmE": "/test/",
-      "definition": "an exam to check knowledge",
-      "examples": [
-         "I have a test.",
-         "She passed the test.",
-         "The test was about English."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "their",
-      "role": "determiner",
-      "BrE": "/ðeə(r)/",
-      "AmE": "/ðer/",
-      "definition": "belonging to them",
-      "examples": [
-         "This is their book.",
-         "Their dog is big.",
-         "I saw their new car."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "there",
-      "role": "adverb",
-      "BrE": "/ðeə(r)/",
-      "AmE": "/ðer/",
-      "definition": "in or to that place",
-      "examples": [
-         "I go there.",
-         "She lives there.",
-         "The book is over there."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "they",
-      "role": "pronoun",
+      "definition": "A thing, an animal, or a situation",
+      "examples": [
+         {
+            "collocation": "It is",
+            "example": "It is a beautiful day."
+         },
+         {
+            "collocation": "Like it",
+            "example": "I like this book, it is funny."
+         },
+         {
+            "collocation": "Where is it",
+            "example": "Where is it?"
+         }
+      ]
+   },
+   {
+      "id": 1,
+      "category": "Subject Pronouns",
+      "word": "We",
+      "role": "Pronoun",
+      "BrE": "/wiː/",
+      "AmE": "/wiː/",
+      "definition": "The speaker and one or more other people together",
+      "examples": [
+         {
+            "collocation": "We are",
+            "example": "We are a happy family."
+         },
+         {
+            "collocation": "We go",
+            "example": "We go to school together."
+         },
+         {
+            "collocation": "We play",
+            "example": "We play tennis on Saturdays."
+         }
+      ]
+   },
+   {
+      "id": 1,
+      "category": "Subject Pronouns",
+      "word": "They",
+      "role": "Pronoun",
       "BrE": "/ðeɪ/",
       "AmE": "/ðeɪ/",
-      "definition": "a group of people or things",
+      "definition": "Two or more people, animals, or things",
       "examples": [
-         "They are my friends.",
-         "They play football.",
-         "They went to the park."
+         {
+            "collocation": "They are",
+            "example": "They are my classmates."
+         },
+         {
+            "collocation": "They live",
+            "example": "They live in a small town."
+         },
+         {
+            "collocation": "They like",
+            "example": "They like chocolate cake."
+         }
       ]
    },
    {
-      "id": 114,
-      "word": "think",
-      "role": "verb",
-      "BrE": "/θɪŋk/",
-      "AmE": "/θɪŋk/",
-      "definition": "to use your mind to consider",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "One",
+      "role": "Number",
+      "BrE": "/wʌn/",
+      "AmE": "/wʌn/",
+      "definition": "The number 1",
       "examples": [
-         "I think about you.",
-         "She thinks it’s a good idea.",
-         "He thought about the question."
+         {
+            "collocation": "One cat",
+            "example": "I have one cat."
+         },
+         {
+            "collocation": "One apple",
+            "example": "There is only one apple on the table."
+         },
+         {
+            "collocation": "One cup",
+            "example": "He wants one cup of water."
+         }
       ]
    },
    {
-      "id": 114,
-      "word": "three",
-      "role": "number",
-      "BrE": "/θriː/",
-      "AmE": "/θriː/",
-      "definition": "the number 3",
-      "examples": [
-         "I have three books.",
-         "She has three cats.",
-         "Three students are absent."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "Thursday",
-      "role": "noun",
-      "BrE": "/ˈθɜːzdeɪ/",
-      "AmE": "/ˈθɜːrzdeɪ/",
-      "definition": "the fourth day of the week",
-      "examples": [
-         "Thursday is busy.",
-         "We meet on Thursday.",
-         "She has a class on Thursday."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "ticket",
-      "role": "noun",
-      "BrE": "/ˈtɪkɪt/",
-      "AmE": "/ˈtɪkɪt/",
-      "definition": "a piece of paper for entry or travel",
-      "examples": [
-         "I have a ticket.",
-         "She bought a bus ticket.",
-         "The ticket is for the movie."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "time",
-      "role": "noun",
-      "BrE": "/taɪm/",
-      "AmE": "/taɪm/",
-      "definition": "what is measured in hours and minutes",
-      "examples": [
-         "What time is it?",
-         "She has no time today.",
-         "The time for the meeting is two."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "tired",
-      "role": "adjective",
-      "BrE": "/ˈtaɪəd/",
-      "AmE": "/ˈtaɪərd/",
-      "definition": "needing rest or sleep",
-      "examples": [
-         "I am tired.",
-         "She was tired after work.",
-         "The tired dog slept all day."
-      ]
-   },
-   {
-      "id": 114,
-      "word": "today",
-      "role": "adverb",
-      "BrE": "/təˈdeɪ/",
-      "AmE": "/təˈdeɪ/",
-      "definition": "on this day",
-      "examples": [
-         "I am busy today.",
-         "She comes today.",
-         "Today is a sunny day."
-      ]
-   },
-   {
-      "id": 115,
-      "word": "together",
-      "role": "adverb",
-      "BrE": "/təˈɡeðə(r)/",
-      "AmE": "/təˈɡeðər/",
-      "definition": "with each other",
-      "examples": [
-         "We play together.",
-         "They work together.",
-         "She and I went together."
-      ]
-   },
-   {
-      "id": 115,
-      "word": "tomorrow",
-      "role": "adverb",
-      "BrE": "/təˈmɒrəʊ/",
-      "AmE": "/təˈmɑːroʊ/",
-      "definition": "on the day after today",
-      "examples": [
-         "I’ll see you tomorrow.",
-         "She works tomorrow.",
-         "Tomorrow is a holiday."
-      ]
-   },
-   {
-      "id": 115,
-      "word": "train",
-      "role": "noun",
-      "BrE": "/treɪn/",
-      "AmE": "/treɪn/",
-      "definition": "a vehicle that travels on rails",
-      "examples": [
-         "I take the train.",
-         "She missed the train.",
-         "The train is very fast."
-      ]
-   },
-   {
-      "id": 115,
-      "word": "tree",
-      "role": "noun",
-      "BrE": "/triː/",
-      "AmE": "/triː/",
-      "definition": "a tall plant with a trunk and branches",
-      "examples": [
-         "The tree is green.",
-         "She climbed the tree.",
-         "The tree has many leaves."
-      ]
-   },
-   {
-      "id": 115,
-      "word": "try",
-      "role": "verb",
-      "BrE": "/traɪ/",
-      "AmE": "/traɪ/",
-      "definition": "to attempt to do something",
-      "examples": [
-         "I try to sing.",
-         "She tried to draw.",
-         "He tries to learn English."
-      ]
-   },
-   {
-      "id": 115,
-      "word": "turn",
-      "role": "verb",
-      "BrE": "/tɜːn/",
-      "AmE": "/tɜːrn/",
-      "definition": "to change direction or position",
-      "examples": [
-         "I turn left.",
-         "She turned the page.",
-         "He turns the car around."
-      ]
-   },
-   {
-      "id": 115,
-      "word": "two",
-      "role": "number",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Two",
+      "role": "Number",
       "BrE": "/tuː/",
       "AmE": "/tuː/",
-      "definition": "the number 2",
+      "definition": "The number 2",
       "examples": [
-         "I have two cats.",
-         "She bought two books.",
-         "Two students are here."
+         {
+            "collocation": "Two brothers",
+            "example": "She has two brothers."
+         },
+         {
+            "collocation": "Two birds",
+            "example": "I see two birds in the tree."
+         },
+         {
+            "collocation": "Two tickets",
+            "example": "We need two tickets, please."
+         }
       ]
    },
    {
-      "id": 115,
-      "word": "umbrella",
-      "role": "noun",
-      "BrE": "/ʌmˈbrelə/",
-      "AmE": "/ʌmˈbrelə/",
-      "definition": "an object to protect from rain",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Three",
+      "role": "Number",
+      "BrE": "/θriː/",
+      "AmE": "/θriː/",
+      "definition": "The number 3",
       "examples": [
-         "I use an umbrella.",
-         "Her umbrella is red.",
-         "He forgot his umbrella."
+         {
+            "collocation": "Three books",
+            "example": "There are three books on my desk."
+         },
+         {
+            "collocation": "Three cups",
+            "example": "He drinks three cups of milk every day."
+         },
+         {
+            "collocation": "Three dogs",
+            "example": "They have three dogs."
+         }
       ]
    },
    {
-      "id": 115,
-      "word": "up",
-      "role": "adverb",
-      "BrE": "/ʌp/",
-      "AmE": "/ʌp/",
-      "definition": "towards a higher place",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Four",
+      "role": "Number",
+      "BrE": "/fɔː(r)/",
+      "AmE": "/fɔːr/",
+      "definition": "The number 4",
       "examples": [
-         "I look up.",
-         "She climbed up the ladder.",
-         "The balloon went up high."
+         {
+            "collocation": "Four legs",
+            "example": "A chair has four legs."
+         },
+         {
+            "collocation": "Four pens",
+            "example": "I have four blue pens."
+         },
+         {
+            "collocation": "Four windows",
+            "example": "There are four windows in the classroom."
+         }
       ]
    },
    {
-      "id": 115,
-      "word": "use",
-      "role": "verb",
-      "BrE": "/juːz/",
-      "AmE": "/juːz/",
-      "definition": "to do something with an object",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Five",
+      "role": "Number",
+      "BrE": "/faɪv/",
+      "AmE": "/faɪv/",
+      "definition": "The number 5",
       "examples": [
-         "I use a pen.",
-         "She uses her phone.",
-         "He used a map to find the way."
+         {
+            "collocation": "Five fingers",
+            "example": "I have five fingers on my hand."
+         },
+         {
+            "collocation": "Five o'clock",
+            "example": "The lesson ends at five o'clock."
+         },
+         {
+            "collocation": "Five apples",
+            "example": "She buys five apples."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "very",
-      "role": "adverb",
-      "BrE": "/ˈveri/",
-      "AmE": "/ˈveri/",
-      "definition": "to a great degree",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Six",
+      "role": "Number",
+      "BrE": "/sɪks/",
+      "AmE": "/sɪks/",
+      "definition": "The number 6",
       "examples": [
-         "I am very happy.",
-         "She runs very fast.",
-         "The very cold day was snowy."
+         {
+            "collocation": "Six years old",
+            "example": "He is six years old."
+         },
+         {
+            "collocation": "Six eggs",
+            "example": "There are six eggs in the box."
+         },
+         {
+            "collocation": "Six chairs",
+            "example": "We need six chairs for the party."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "visit",
-      "role": "verb",
-      "BrE": "/ˈvɪzɪt/",
-      "AmE": "/ˈvɪzɪt/",
-      "definition": "to go to see a person or place",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Seven",
+      "role": "Number",
+      "BrE": "/ˈsevn/",
+      "AmE": "/ˈsevn/",
+      "definition": "The number 7",
       "examples": [
-         "I visit my friend.",
-         "She visited the zoo.",
-         "He visits his family often."
+         {
+            "collocation": "Seven days",
+            "example": "There are seven days in a week."
+         },
+         {
+            "collocation": "Seven years old",
+            "example": "My sister is seven years old."
+         },
+         {
+            "collocation": "Seven o'clock",
+            "example": "He wakes up at seven o'clock."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "wait",
-      "role": "verb",
-      "BrE": "/weɪt/",
-      "AmE": "/weɪt/",
-      "definition": "to stay until something happens",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Eight",
+      "role": "Number",
+      "BrE": "/eɪt/",
+      "AmE": "/eɪt/",
+      "definition": "The number 8",
       "examples": [
-         "I wait for the bus.",
-         "She waited for her friend.",
-         "He waits at the station."
+         {
+            "collocation": "Eight legs",
+            "example": "A spider has eight legs."
+         },
+         {
+            "collocation": "Eight o'clock",
+            "example": "The shop opens at eight o'clock."
+         },
+         {
+            "collocation": "Eight friends",
+            "example": "She has eight friends at school."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "wall",
-      "role": "noun",
-      "BrE": "/wɔːl/",
-      "AmE": "/wɔːl/",
-      "definition": "a vertical structure of a building",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Nine",
+      "role": "Number",
+      "BrE": "/naɪn/",
+      "AmE": "/naɪn/",
+      "definition": "The number 9",
       "examples": [
-         "The wall is white.",
-         "She painted the wall blue.",
-         "A picture is on the wall."
+         {
+            "collocation": "Nine o'clock",
+            "example": "The train arrives at nine o'clock."
+         },
+         {
+            "collocation": "Nine books",
+            "example": "I have nine books in my bag."
+         },
+         {
+            "collocation": "Nine years old",
+            "example": "My brother is nine years old."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "warm",
-      "role": "adjective",
-      "BrE": "/wɔːm/",
-      "AmE": "/wɔːrm/",
-      "definition": "having a comfortable temperature",
+      "id": 2,
+      "category": "Numbers 1-10",
+      "word": "Ten",
+      "role": "Number",
+      "BrE": "/ten/",
+      "AmE": "/ten/",
+      "definition": "The number 10",
       "examples": [
-         "The room is warm.",
-         "Her coat is warm.",
-         "The warm water feels nice."
+         {
+            "collocation": "Ten fingers",
+            "example": "I have ten fingers."
+         },
+         {
+            "collocation": "Ten students",
+            "example": "There are ten students in the room."
+         },
+         {
+            "collocation": "Ten dollars",
+            "example": "This book costs ten dollars."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "watch",
-      "role": "noun",
-      "BrE": "/wɒtʃ/",
-      "AmE": "/wɑːtʃ/",
-      "definition": "a device for telling the time",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Eleven",
+      "role": "Number",
+      "BrE": "/ɪˈlevn/",
+      "AmE": "/ɪˈlevn/",
+      "definition": "The number 11",
       "examples": [
-         "My watch is new.",
-         "She lost her watch.",
-         "The watch shows the time."
+         {
+            "collocation": "Eleven years old",
+            "example": "He is eleven years old."
+         },
+         {
+            "collocation": "Eleven o'clock",
+            "example": "The bus arrives at eleven o'clock."
+         },
+         {
+            "collocation": "Eleven people",
+            "example": "Eleven people live in this big building."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "water",
-      "role": "noun",
-      "BrE": "/ˈwɔːtə(r)/",
-      "AmE": "/ˈwɔːtər/",
-      "definition": "a clear liquid you drink",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Twelve",
+      "role": "Number",
+      "BrE": "/twelv/",
+      "AmE": "/twelv/",
+      "definition": "The number 12",
       "examples": [
-         "I drink water.",
-         "The water is cold.",
-         "She filled a glass with water."
+         {
+            "collocation": "Twelve months",
+            "example": "There are twelve months in a year."
+         },
+         {
+            "collocation": "Twelve o'clock",
+            "example": "We eat lunch at twelve o'clock."
+         },
+         {
+            "collocation": "Twelve eggs",
+            "example": "She buys twelve eggs at the store."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "weather",
-      "role": "noun",
-      "BrE": "/ˈweðə(r)/",
-      "AmE": "/ˈweðər/",
-      "definition": "the conditions in the air, like rain or sun",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Thirteen",
+      "role": "Number",
+      "BrE": "/ˌθɜːˈtiːn/",
+      "AmE": "/ˌθɜːrˈtiːn/",
+      "definition": "The number 13",
       "examples": [
-         "The weather is sunny.",
-         "Bad weather stopped the game.",
-         "She checked the weather today."
+         {
+            "collocation": "Thirteen dollars",
+            "example": "This book costs thirteen dollars."
+         },
+         {
+            "collocation": "Thirteen years old",
+            "example": "My cousin is thirteen years old."
+         },
+         {
+            "collocation": "Thirteen students",
+            "example": "There are thirteen students in the class."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "weekend",
-      "role": "noun",
-      "BrE": "/ˌwiːkˈend/",
-      "AmE": "/ˌwiːkˈend/",
-      "definition": "Saturday and Sunday",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Fourteen",
+      "role": "Number",
+      "BrE": "/ˌfɔːˈtiːn/",
+      "AmE": "/ˌfɔːrˈtiːn/",
+      "definition": "The number 14",
       "examples": [
-         "I rest at the weekend.",
-         "She visits family at the weekend.",
-         "The weekend was fun."
+         {
+            "collocation": "Fourteen days",
+            "example": "He stays here for fourteen days."
+         },
+         {
+            "collocation": "Fourteen hours",
+            "example": "She works fourteen hours a week."
+         },
+         {
+            "collocation": "Fourteen birds",
+            "example": "I see fourteen birds in the garden."
+         }
       ]
    },
    {
-      "id": 116,
-      "word": "well",
-      "role": "exclamation",
-      "BrE": "/wel/",
-      "AmE": "/wel/",
-      "definition": "used to start speaking or show surprise",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Fifteen",
+      "role": "Number",
+      "BrE": "/ˌfɪfˈtiːn/",
+      "AmE": "/ˌfɪfˈtiːn/",
+      "definition": "The number 15",
       "examples": [
-         "Well, I’m here!",
-         "Well, that’s a good idea.",
-         "Well, she did it!"
+         {
+            "collocation": "Fifteen minutes",
+            "example": "The game starts in fifteen minutes."
+         },
+         {
+            "collocation": "Fifteen years old",
+            "example": "She is fifteen years old."
+         },
+         {
+            "collocation": "Fifteen apples",
+            "example": "We have fifteen apples in the box."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "west",
-      "role": "noun",
-      "BrE": "/west/",
-      "AmE": "/west/",
-      "definition": "the direction where the sun sets",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Sixteen",
+      "role": "Number",
+      "BrE": "/ˌsɪksˈtiːn/",
+      "AmE": "/ˌsɪksˈtiːn/",
+      "definition": "The number 16",
       "examples": [
-         "The west is sunny.",
-         "We live in the west.",
-         "The sun sets in the west."
+         {
+            "collocation": "Sixteen pages",
+            "example": "This short story has sixteen pages."
+         },
+         {
+            "collocation": "Sixteen shirts",
+            "example": "He owns sixteen shirts."
+         },
+         {
+            "collocation": "Sixteen rooms",
+            "example": "The big house has sixteen rooms."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "what",
-      "role": "pronoun",
-      "BrE": "/wɒt/",
-      "AmE": "/wɑːt/",
-      "definition": "used to ask about something",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Seventeen",
+      "role": "Number",
+      "BrE": "/ˌsevnˈtiːn/",
+      "AmE": "/ˌsevnˈtiːn/",
+      "definition": "The number 17",
       "examples": [
-         "What is this?",
-         "What time is it?",
-         "What did she say?"
+         {
+            "collocation": "Seventeen books",
+            "example": "There are seventeen books on the shelf."
+         },
+         {
+            "collocation": "Seventeen years old",
+            "example": "My brother is seventeen years old."
+         },
+         {
+            "collocation": "Seventeen chairs",
+            "example": "We need seventeen chairs for the classroom."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "when",
-      "role": "adverb",
-      "BrE": "/wen/",
-      "AmE": "/wen/",
-      "definition": "used to ask about time",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Eighteen",
+      "role": "Number",
+      "BrE": "/ˌeɪˈtiːn/",
+      "AmE": "/ˌeɪˈtiːn/",
+      "definition": "The number 18",
       "examples": [
-         "When is the party?",
-         "When did he arrive?",
-         "When does the class start?"
+         {
+            "collocation": "Eighteen years old",
+            "example": "You are an adult at eighteen years old."
+         },
+         {
+            "collocation": "Eighteen dollars",
+            "example": "The red shirt costs eighteen dollars."
+         },
+         {
+            "collocation": "Eighteen pens",
+            "example": "She has eighteen pens in her bag."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "where",
-      "role": "adverb",
-      "BrE": "/weə(r)/",
-      "AmE": "/wer/",
-      "definition": "used to ask about place or position",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Nineteen",
+      "role": "Number",
+      "BrE": "/ˌnaɪnˈtiːn/",
+      "AmE": "/ˌnaɪnˈtiːn/",
+      "definition": "The number 19",
       "examples": [
-         "Where is my book?",
-         "Where does she live?",
-         "Where are you going?"
+         {
+            "collocation": "Nineteen children",
+            "example": "Nineteen children play in the park."
+         },
+         {
+            "collocation": "Nineteen years old",
+            "example": "She is nineteen years old."
+         },
+         {
+            "collocation": "Nineteen houses",
+            "example": "There are nineteen houses on this street."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "which",
-      "role": "pronoun",
-      "BrE": "/wɪtʃ/",
-      "AmE": "/wɪtʃ/",
-      "definition": "used to ask about one thing from a group",
+      "id": 3,
+      "category": "Numbers 11-20",
+      "word": "Twenty",
+      "role": "Number",
+      "BrE": "/ˈtwenti/",
+      "AmE": "/ˈtwenti/",
+      "definition": "The number 20",
       "examples": [
-         "Which book is yours?",
-         "Which one do you like?",
-         "Which dress should she wear?"
+         {
+            "collocation": "Twenty minutes",
+            "example": "I walk for twenty minutes every day."
+         },
+         {
+            "collocation": "Twenty dollars",
+            "example": "This beautiful hat costs twenty dollars."
+         },
+         {
+            "collocation": "Twenty students",
+            "example": "Twenty students sit in the classroom."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "white",
-      "role": "noun",
+      "id": 4,
+      "category": "Colors",
+      "word": "Red",
+      "role": "Adjective",
+      "BrE": "/red/",
+      "AmE": "/red/",
+      "definition": "Having the color of blood or tomatoes",
+      "examples": [
+         {
+            "collocation": "Red apple",
+            "example": "I eat a red apple every morning."
+         },
+         {
+            "collocation": "Red pen",
+            "example": "The teacher uses a red pen."
+         },
+         {
+            "collocation": "Red car",
+            "example": "He drives a beautiful red car."
+         }
+      ]
+   },
+   {
+      "id": 4,
+      "category": "Colors",
+      "word": "Blue",
+      "role": "Adjective",
+      "BrE": "/bluː/",
+      "AmE": "/bluː/",
+      "definition": "Having the color of the sky on a clear day",
+      "examples": [
+         {
+            "collocation": "Blue sky",
+            "example": "I look at the blue sky."
+         },
+         {
+            "collocation": "Blue jeans",
+            "example": "She wears blue jeans to school."
+         },
+         {
+            "collocation": "Blue eyes",
+            "example": "The baby has big blue eyes."
+         }
+      ]
+   },
+   {
+      "id": 4,
+      "category": "Colors",
+      "word": "Green",
+      "role": "Adjective",
+      "BrE": "/ɡriːn/",
+      "AmE": "/ɡriːn/",
+      "definition": "Having the color of grass or leaves",
+      "examples": [
+         {
+            "collocation": "Green grass",
+            "example": "We sit on the green grass."
+         },
+         {
+            "collocation": "Green tea",
+            "example": "My mother drinks green tea."
+         },
+         {
+            "collocation": "Green apples",
+            "example": "He likes green apples."
+         }
+      ]
+   },
+   {
+      "id": 4,
+      "category": "Colors",
+      "word": "Yellow",
+      "role": "Adjective",
+      "BrE": "/ˈjeləʊ/",
+      "AmE": "/ˈjeloʊ/",
+      "definition": "Having the color of lemons or bananas",
+      "examples": [
+         {
+            "collocation": "Yellow banana",
+            "example": "A yellow banana is sweet."
+         },
+         {
+            "collocation": "Yellow bus",
+            "example": "We ride the yellow school bus."
+         },
+         {
+            "collocation": "Yellow flower",
+            "example": "She sees a small yellow flower."
+         }
+      ]
+   },
+   {
+      "id": 4,
+      "category": "Colors",
+      "word": "Black",
+      "role": "Adjective",
+      "BrE": "/blæk/",
+      "AmE": "/blæk/",
+      "definition": "Having the darkest color, like night or coal",
+      "examples": [
+         {
+            "collocation": "Black cat",
+            "example": "There is a black cat in the garden."
+         },
+         {
+            "collocation": "Black shoes",
+            "example": "He wears clean black shoes."
+         },
+         {
+            "collocation": "Black hair",
+            "example": "My friend has long black hair."
+         }
+      ]
+   },
+   {
+      "id": 4,
+      "category": "Colors",
+      "word": "White",
+      "role": "Adjective",
       "BrE": "/waɪt/",
       "AmE": "/waɪt/",
-      "definition": "the colour of snow or milk",
+      "definition": "Having the color of milk or snow",
       "examples": [
-         "White is bright.",
-         "She painted the room white.",
-         "I like white for my shirt."
+         {
+            "collocation": "White milk",
+            "example": "I drink hot white milk."
+         },
+         {
+            "collocation": "White board",
+            "example": "The classroom has a big white board."
+         },
+         {
+            "collocation": "White shirt",
+            "example": "He buys a new white shirt."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "who",
-      "role": "pronoun",
-      "BrE": "/huː/",
-      "AmE": "/huː/",
-      "definition": "used to ask about a person",
+      "id": 4,
+      "category": "Colors",
+      "word": "Brown",
+      "role": "Adjective",
+      "BrE": "/braʊn/",
+      "AmE": "/braʊn/",
+      "definition": "Having the color of chocolate or wood",
       "examples": [
-         "Who is she?",
-         "Who took my pen?",
-         "Who was at the party?"
+         {
+            "collocation": "Brown bear",
+            "example": "We see a brown bear at the zoo."
+         },
+         {
+            "collocation": "Brown eyes",
+            "example": "She has pretty brown eyes."
+         },
+         {
+            "collocation": "Brown bag",
+            "example": "My lunch is in a brown bag."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "why",
-      "role": "adverb",
-      "BrE": "/waɪ/",
-      "AmE": "/waɪ/",
-      "definition": "used to ask the reason for something",
+      "id": 4,
+      "category": "Colors",
+      "word": "Pink",
+      "role": "Adjective",
+      "BrE": "/pɪŋk/",
+      "AmE": "/pɪŋk/",
+      "definition": "Having a pale red color, like a rose flower",
       "examples": [
-         "Why are you late?",
-         "Why did she leave?",
-         "Why is the sky blue?"
+         {
+            "collocation": "Pink dress",
+            "example": "The little girl loves her pink dress."
+         },
+         {
+            "collocation": "Pink balloon",
+            "example": "He holds a pink balloon."
+         },
+         {
+            "collocation": "Pink hat",
+            "example": "She wears a pink hat today."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "wife",
-      "role": "noun",
+      "id": 4,
+      "category": "Colors",
+      "word": "Purple",
+      "role": "Adjective",
+      "BrE": "/ˈpɜːpl/",
+      "AmE": "/ˈpɜːrpl/",
+      "definition": "Having a color that is a mix of red and blue",
+      "examples": [
+         {
+            "collocation": "Purple grapes",
+            "example": "I buy sweet purple grapes."
+         },
+         {
+            "collocation": "Purple pen",
+            "example": "She writes with a purple pen."
+         },
+         {
+            "collocation": "Purple flower",
+            "example": "We see a purple flower in the park."
+         }
+      ]
+   },
+   {
+      "id": 4,
+      "category": "Colors",
+      "word": "Orange",
+      "role": "Adjective",
+      "BrE": "/ˈɒrɪndʒ/",
+      "AmE": "/ˈɔːrɪndʒ/",
+      "definition": "Having a color that is a mix of red and yellow",
+      "examples": [
+         {
+            "collocation": "Orange juice",
+            "example": "I drink orange juice for breakfast."
+         },
+         {
+            "collocation": "Orange fish",
+            "example": "There is a small orange fish in the water."
+         },
+         {
+            "collocation": "Orange T-shirt",
+            "example": "He wears a bright orange T-shirt."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Hello",
+      "role": "Exclamation",
+      "BrE": "/həˈləʊ/",
+      "AmE": "/həˈloʊ/",
+      "definition": "A word you say when you meet someone or start a phone call",
+      "examples": [
+         {
+            "collocation": "Say hello",
+            "example": "I say hello to my teacher every morning."
+         },
+         {
+            "collocation": "Hello everyone",
+            "example": "Hello everyone, welcome to our classroom."
+         },
+         {
+            "collocation": "Hello there",
+            "example": "Hello there, how are you today?"
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Hi",
+      "role": "Exclamation",
+      "BrE": "/haɪ/",
+      "AmE": "/haɪ/",
+      "definition": "An informal word you say when you meet someone",
+      "examples": [
+         {
+            "collocation": "Hi there",
+            "example": "Hi there, nice to meet you."
+         },
+         {
+            "collocation": "Say hi",
+            "example": "I always say hi to my friends at school."
+         },
+         {
+            "collocation": "Hi everyone",
+            "example": "Hi everyone, let's play a game together."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Goodbye",
+      "role": "Exclamation",
+      "BrE": "/ˌɡʊdˈbaɪ/",
+      "AmE": "/ˌɡʊdˈbaɪ/",
+      "definition": "A word you say when you leave someone",
+      "examples": [
+         {
+            "collocation": "Say goodbye",
+            "example": "We say goodbye to our grandparents at the station."
+         },
+         {
+            "collocation": "Wave goodbye",
+            "example": "The children wave goodbye to their mother."
+         },
+         {
+            "collocation": "Goodbye for now",
+            "example": "Goodbye for now, see you tomorrow."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Bye",
+      "role": "Exclamation",
+      "BrE": "/baɪ/",
+      "AmE": "/baɪ/",
+      "definition": "A short and informal word you say when you leave someone",
+      "examples": [
+         {
+            "collocation": "Bye bye",
+            "example": "The little baby says bye bye."
+         },
+         {
+            "collocation": "Say bye",
+            "example": "I say bye to my dad before I go to school."
+         },
+         {
+            "collocation": "Bye for now",
+            "example": "Bye for now, have a nice day."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Please",
+      "role": "Exclamation",
+      "BrE": "/pliːz/",
+      "AmE": "/pliːz/",
+      "definition": "A polite word you use when you ask for something",
+      "examples": [
+         {
+            "collocation": "Yes please",
+            "example": "Do you want an apple? Yes please."
+         },
+         {
+            "collocation": "Please help",
+            "example": "Please help me with my homework."
+         },
+         {
+            "collocation": "Please sit",
+            "example": "Please sit down on the chair."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Thank you",
+      "role": "Exclamation",
+      "BrE": "/ˈθæŋk juː/",
+      "AmE": "/ˈθæŋk juː/",
+      "definition": "Polite words you use to show you are grateful for something",
+      "examples": [
+         {
+            "collocation": "Thank you very much",
+            "example": "Thank you very much for the beautiful flower."
+         },
+         {
+            "collocation": "Say thank you",
+            "example": "Children always say thank you to their parents."
+         },
+         {
+            "collocation": "Thank you for",
+            "example": "Thank you for the nice lunch."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Thanks",
+      "role": "Exclamation",
+      "BrE": "/θæŋks/",
+      "AmE": "/θæŋks/",
+      "definition": "An informal word you use to show you are grateful",
+      "examples": [
+         {
+            "collocation": "Thanks a lot",
+            "example": "Thanks a lot for your help."
+         },
+         {
+            "collocation": "Many thanks",
+            "example": "Many thanks for the delicious cake."
+         },
+         {
+            "collocation": "No thanks",
+            "example": "Do you want some tea? No thanks."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Sorry",
+      "role": "Adjective",
+      "BrE": "/ˈsɒri/",
+      "AmE": "/ˈsɑːri/",
+      "definition": "A word you say when you feel bad about a mistake or problem",
+      "examples": [
+         {
+            "collocation": "I am sorry",
+            "example": "I am sorry for the mistake."
+         },
+         {
+            "collocation": "Feel sorry",
+            "example": "I feel sorry for the sick dog."
+         },
+         {
+            "collocation": "Say sorry",
+            "example": "You must say sorry to your sister."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "Yes",
+      "role": "Exclamation",
+      "BrE": "/jes/",
+      "AmE": "/jes/",
+      "definition": "A word you use to agree, say okay, or answer a question positively",
+      "examples": [
+         {
+            "collocation": "Yes please",
+            "example": "Do you want some juice? Yes please."
+         },
+         {
+            "collocation": "Oh yes",
+            "example": "Is this your book? Oh yes, it is mine."
+         },
+         {
+            "collocation": "Yes of course",
+            "example": "Can I use your pen? Yes of course."
+         }
+      ]
+   },
+   {
+      "id": 5,
+      "category": "Greetings",
+      "word": "No",
+      "role": "Exclamation",
+      "BrE": "/nəʊ/",
+      "AmE": "/noʊ/",
+      "definition": "A word you use to disagree, say stop, or answer a question negatively",
+      "examples": [
+         {
+            "collocation": "No thanks",
+            "example": "Do you want a burger? No thanks."
+         },
+         {
+            "collocation": "Oh no",
+            "example": "Oh no, my watch is broken."
+         },
+         {
+            "collocation": "No problem",
+            "example": "Thank you for the help! No problem."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Man",
+      "role": "Noun",
+      "BrE": "/mæn/",
+      "AmE": "/mæn/",
+      "definition": "An adult male person",
+      "examples": [
+         {
+            "collocation": "Old man",
+            "example": "That old man lives next door."
+         },
+         {
+            "collocation": "Tall man",
+            "example": "The tall man is a teacher."
+         },
+         {
+            "collocation": "Nice man",
+            "example": "He is a very nice man."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Woman",
+      "role": "Noun",
+      "BrE": "/ˈwʊmən/",
+      "AmE": "/ˈwʊmən/",
+      "definition": "An adult female person",
+      "examples": [
+         {
+            "collocation": "Young woman",
+            "example": "The young woman speaks English well."
+         },
+         {
+            "collocation": "Beautiful woman",
+            "example": "She is a beautiful woman."
+         },
+         {
+            "collocation": "Nice woman",
+            "example": "Our new neighbor is a nice woman."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Child",
+      "role": "Noun",
+      "BrE": "/tʃaɪld/",
+      "AmE": "/tʃaɪld/",
+      "definition": "A young boy or girl",
+      "examples": [
+         {
+            "collocation": "Only child",
+            "example": "He is an only child."
+         },
+         {
+            "collocation": "Young child",
+            "example": "A young child needs a lot of sleep."
+         },
+         {
+            "collocation": "Happy child",
+            "example": "She is a happy child."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Boy",
+      "role": "Noun",
+      "BrE": "/bɔɪ/",
+      "AmE": "/bɔɪ/",
+      "definition": "A male child",
+      "examples": [
+         {
+            "collocation": "Little boy",
+            "example": "The little boy plays with a ball."
+         },
+         {
+            "collocation": "Good boy",
+            "example": "You are a good boy."
+         },
+         {
+            "collocation": "Young boy",
+            "example": "He is a young boy."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Girl",
+      "role": "Noun",
+      "BrE": "/ɡɜːl/",
+      "AmE": "/ɡɜːrl/",
+      "definition": "A female child",
+      "examples": [
+         {
+            "collocation": "Little girl",
+            "example": "The little girl has a pink dress."
+         },
+         {
+            "collocation": "Beautiful girl",
+            "example": "She is a beautiful girl."
+         },
+         {
+            "collocation": "Young girl",
+            "example": "The young girl likes music."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Baby",
+      "role": "Noun",
+      "BrE": "/ˈbeɪbi/",
+      "AmE": "/ˈbeɪbi/",
+      "definition": "A very young child who cannot walk or talk yet",
+      "examples": [
+         {
+            "collocation": "Baby boy",
+            "example": "They have a new baby boy."
+         },
+         {
+            "collocation": "Little baby",
+            "example": "The little baby sleeps in the bed."
+         },
+         {
+            "collocation": "Cute baby",
+            "example": "I like this cute baby."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Person",
+      "role": "Noun",
+      "BrE": "/ˈpɜːsn/",
+      "AmE": "/ˈpɜːrsn/",
+      "definition": "A human being",
+      "examples": [
+         {
+            "collocation": "Nice person",
+            "example": "My teacher is a nice person."
+         },
+         {
+            "collocation": "Good person",
+            "example": "He is a good person."
+         },
+         {
+            "collocation": "Happy person",
+            "example": "She is a very happy person."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "People",
+      "role": "Noun",
+      "BrE": "/piːpl/",
+      "AmE": "/piːpl/",
+      "definition": "More than one person",
+      "examples": [
+         {
+            "collocation": "Many people",
+            "example": "Many people live in this town."
+         },
+         {
+            "collocation": "Young people",
+            "example": "Young people like smartphones."
+         },
+         {
+            "collocation": "A lot of people",
+            "example": "There are a lot of people in the park."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Adult",
+      "role": "Noun",
+      "BrE": "/ˈædʌlt/",
+      "AmE": "/əˈdʌlt/",
+      "definition": "A fully grown person",
+      "examples": [
+         {
+            "collocation": "An adult",
+            "example": "He is an adult now."
+         },
+         {
+            "collocation": "Adult ticket",
+            "example": "An adult ticket costs ten dollars."
+         },
+         {
+            "collocation": "Become an adult",
+            "example": "You become an adult at eighteen."
+         }
+      ]
+   },
+   {
+      "id": 6,
+      "category": "Life Stages",
+      "word": "Friend",
+      "role": "Noun",
+      "BrE": "/frend/",
+      "AmE": "/frend/",
+      "definition": "A person you know well and like",
+      "examples": [
+         {
+            "collocation": "Best friend",
+            "example": "She is my best friend."
+         },
+         {
+            "collocation": "Good friend",
+            "example": "He is a good friend."
+         },
+         {
+            "collocation": "Make friends",
+            "example": "I make new friends at school."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Family",
+      "role": "Noun",
+      "BrE": "/ˈfæməli/",
+      "AmE": "/ˈfæməli/",
+      "definition": "A group of people who are related to each other, such as a mother, father, and their children",
+      "examples": [
+         {
+            "collocation": "Big family",
+            "example": "I have a big family with four sisters."
+         },
+         {
+            "collocation": "Happy family",
+            "example": "They are a very happy family."
+         },
+         {
+            "collocation": "Family dinner",
+            "example": "We have a family dinner every Sunday."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Mother",
+      "role": "Noun",
+      "BrE": "/ˈmʌðə/",
+      "AmE": "/ˈmʌðər/",
+      "definition": "A female parent",
+      "examples": [
+         {
+            "collocation": "Love mother",
+            "example": "I love my mother very much."
+         },
+         {
+            "collocation": "Kind mother",
+            "example": "She is a kind and gentle mother."
+         },
+         {
+            "collocation": "Mother's Day",
+            "example": "We buy flowers on Mother's Day."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Father",
+      "role": "Noun",
+      "BrE": "/ˈfɑːðə/",
+      "AmE": "/ˈfɑːðər/",
+      "definition": "A male parent",
+      "examples": [
+         {
+            "collocation": "Good father",
+            "example": "He is a good father to his children."
+         },
+         {
+            "collocation": "Father and son",
+            "example": "The father and son play football together."
+         },
+         {
+            "collocation": "My father",
+            "example": "My father works in a big office."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Parents",
+      "role": "Noun",
+      "BrE": "/ˈpeərənts/",
+      "AmE": "/ˈperənts/",
+      "definition": "A person's father and mother",
+      "examples": [
+         {
+            "collocation": "Love parents",
+            "example": "Children should love their parents."
+         },
+         {
+            "collocation": "Listen to parents",
+            "example": "I always listen to my parents' advice."
+         },
+         {
+            "collocation": "Proud parents",
+            "example": "They are proud parents of a clever girl."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Brother",
+      "role": "Noun",
+      "BrE": "/ˈbrʌðə/",
+      "AmE": "/ˈbrʌðər/",
+      "definition": "A boy or man who has the same parents as another person",
+      "examples": [
+         {
+            "collocation": "Older brother",
+            "example": "My older brother helps me with my homework."
+         },
+         {
+            "collocation": "Little brother",
+            "example": "I play video games with my little brother."
+         },
+         {
+            "collocation": "Twin brother",
+            "example": "He looks exactly like his twin brother."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Sister",
+      "role": "Noun",
+      "BrE": "/ˈsɪstə/",
+      "AmE": "/ˈsɪstər/",
+      "definition": "A girl or woman who has the same parents as another person",
+      "examples": [
+         {
+            "collocation": "Younger sister",
+            "example": "My younger sister goes to kindergarten."
+         },
+         {
+            "collocation": "Big sister",
+            "example": "She is a wonderful big sister to me."
+         },
+         {
+            "collocation": "Two sisters",
+            "example": "He has two sisters and one brother."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Son",
+      "role": "Noun",
+      "BrE": "/sʌn/",
+      "AmE": "/sʌn/",
+      "definition": "A person's male child",
+      "examples": [
+         {
+            "collocation": "Only son",
+            "example": "He is the only son in the family."
+         },
+         {
+            "collocation": "Young son",
+            "example": "They have a young son who loves trains."
+         },
+         {
+            "collocation": "First son",
+            "example": "Their first son was born last year."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Daughter",
+      "role": "Noun",
+      "BrE": "/ˈdɔːtə/",
+      "AmE": "/ˈdɔːtər/",
+      "definition": "A person's female child",
+      "examples": [
+         {
+            "collocation": "Little daughter",
+            "example": "The mother holds her little daughter's hand."
+         },
+         {
+            "collocation": "Clever daughter",
+            "example": "They have a very clever daughter."
+         },
+         {
+            "collocation": "Beautiful daughter",
+            "example": "She is the beautiful daughter of a doctor."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Husband",
+      "role": "Noun",
+      "BrE": "/ˈhʌzbənd/",
+      "AmE": "/ˈhʌzbənd/",
+      "definition": "The man that a woman or man is married to",
+      "examples": [
+         {
+            "collocation": "Good husband",
+            "example": "He is a loving and good husband."
+         },
+         {
+            "collocation": "Future husband",
+            "example": "She introduced me to her future husband."
+         },
+         {
+            "collocation": "Husband and wife",
+            "example": "They lived happily as husband and wife."
+         }
+      ]
+   },
+   {
+      "id": 7,
+      "category": "Family",
+      "word": "Wife",
+      "role": "Noun",
       "BrE": "/waɪf/",
       "AmE": "/waɪf/",
-      "definition": "the woman a man is married to",
+      "definition": "The woman that a woman or man is married to",
       "examples": [
-         "His wife is kind.",
-         "My wife cooks well.",
-         "She met her wife at work."
+         {
+            "collocation": "Loving wife",
+            "example": "He bought a beautiful ring for his loving wife."
+         },
+         {
+            "collocation": "Dear wife",
+            "example": "He writes a letter to his dear wife."
+         },
+         {
+            "collocation": "House wife",
+            "example": "She is a busy house wife with three kids."
+         }
       ]
    },
    {
-      "id": 117,
-      "word": "wind",
-      "role": "noun",
-      "BrE": "/wɪnd/",
-      "AmE": "/wɪnd/",
-      "definition": "air moving across the Earth",
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Head",
+      "role": "Noun",
+      "BrE": "/hed/",
+      "AmE": "/hed/",
+      "definition": "The upper part of the human body that contains the brain, eyes, ears, nose, and mouth",
       "examples": [
-         "The wind is strong.",
-         "She felt the wind outside.",
-         "The wind blew the leaves."
+         {
+            "collocation": "Shake head",
+            "example": "He shook his head to say no."
+         },
+         {
+            "collocation": "Turn head",
+            "example": "She turned her head to look at the door."
+         },
+         {
+            "collocation": "Head hurts",
+            "example": "My head hurts after a long day of work."
+         }
       ]
    },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Face",
+      "role": "Noun",
+      "BrE": "/feɪs/",
+      "AmE": "/feɪs/",
+      "definition": "The front part of the head, from the chin to the forehead",
+      "examples": [
+         {
+            "collocation": "Wash face",
+            "example": "I wash my face with cold water every morning."
+         },
+         {
+            "collocation": "Happy face",
+            "example": "The child had a happy face when she saw the cake."
+         },
+         {
+            "collocation": "Beautiful face",
+            "example": "She has a very kind and beautiful face."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Eye",
+      "role": "Noun",
+      "BrE": "/aɪ/",
+      "AmE": "/aɪ/",
+      "definition": "One of the two organs in your face that you use to see",
+      "examples": [
+         {
+            "collocation": "Close eyes",
+            "example": "Please close your eyes and try to sleep."
+         },
+         {
+            "collocation": "Blue eyes",
+            "example": "The little baby has big blue eyes."
+         },
+         {
+            "collocation": "Open eyes",
+            "example": "She opened her eyes slowly after the alarm rang."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Ear",
+      "role": "Noun",
+      "BrE": "/ɪə/",
+      "AmE": "/ɪr/",
+      "definition": "One of the two organs on each side of your head that you hear with",
+      "examples": [
+         {
+            "collocation": "Cover ears",
+            "example": "The loud music made him cover his ears."
+         },
+         {
+            "collocation": "Big ears",
+            "example": "The rabbit has very long and big ears."
+         },
+         {
+            "collocation": "Whisper in ear",
+            "example": "She whispered a secret directly into my ear."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Nose",
+      "role": "Noun",
+      "BrE": "/nəʊz/",
+      "AmE": "/noʊz/",
+      "definition": "The part of your face above your mouth that you use for breathing and smelling",
+      "examples": [
+         {
+            "collocation": "Blow nose",
+            "example": "Please use a clean tissue to blow your nose."
+         },
+         {
+            "collocation": "Long nose",
+            "example": "The puppet's nose became long when he lied."
+         },
+         {
+            "collocation": "Red nose",
+            "example": "His nose is completely red because of the freezing weather."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Mouth",
+      "role": "Noun",
+      "BrE": "/maʊθ/",
+      "AmE": "/maʊθ/",
+      "definition": "The opening in your face that you use for eating, speaking, and breathing",
+      "examples": [
+         {
+            "collocation": "Open mouth",
+            "example": "The doctor asked me to open my mouth wide."
+         },
+         {
+            "collocation": "Shut mouth",
+            "example": "He sat quietly in the classroom with his mouth shut."
+         },
+         {
+            "collocation": "Full mouth",
+            "example": "It is rude to talk with a full mouth."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Hair",
+      "role": "Noun",
+      "BrE": "/heə/",
+      "AmE": "/her/",
+      "definition": "The mass of thin threads that grows on a person's head",
+      "examples": [
+         {
+            "collocation": "Brush hair",
+            "example": "She always brushes her hair before going to bed."
+         },
+         {
+            "collocation": "Short hair",
+            "example": "He prefers to keep his hair short during summer."
+         },
+         {
+            "collocation": "Black hair",
+            "example": "My mother has beautiful, thick black hair."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Hand",
+      "role": "Noun",
+      "BrE": "/hænd/",
+      "AmE": "/hænd/",
+      "definition": "The part of the body at the end of the arm, including the fingers and thumb",
+      "examples": [
+         {
+            "collocation": "Wash hands",
+            "example": "You must wash your hands thoroughly before dinner."
+         },
+         {
+            "collocation": "Hold hands",
+            "example": "The young couple walked down the street holding hands."
+         },
+         {
+            "collocation": "Left hand",
+            "example": "He holds the tennis racket with his left hand."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Arm",
+      "role": "Noun",
+      "BrE": "/ɑːm/",
+      "AmE": "/ɑːrm/",
+      "definition": "One of the two long parts of your body that are attached to your shoulders",
+      "examples": [
+         {
+            "collocation": "Strong arms",
+            "example": "The weightlifter has incredibly strong arms."
+         },
+         {
+            "collocation": "Fold arms",
+            "example": "She stood near the window with her arms folded."
+         },
+         {
+            "collocation": "In arms",
+            "example": "The happy father held the sleeping baby in his arms."
+         }
+      ]
+   },
+   {
+      "id": 8,
+      "category": "The Human Body",
+      "word": "Leg",
+      "role": "Noun",
+      "BrE": "/leɡ/",
+      "AmE": "/leɡ/",
+      "definition": "Two long parts of the body that you use for standing, walking, and running",
+      "examples": [
+         {
+            "collocation": "Long legs",
+            "example": "The tall basketball player has very long legs."
+         },
+         {
+            "collocation": "Break leg",
+            "example": "He accidentally broke his leg while skiing last winter."
+         },
+         {
+            "collocation": "Cross legs",
+            "example": "She sat comfortably on the floor with her legs crossed."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Shirt",
+      "role": "Noun",
+      "BrE": "/ʃɜːt/",
+      "AmE": "/ʃɜːrt/",
+      "definition": "A piece of clothing that you wear on the top half of your body, usually with buttons and a collar",
+      "examples": [
+         {
+            "collocation": "White shirt",
+            "example": "He wears a clean white shirt to work."
+         },
+         {
+            "collocation": "Button a shirt",
+            "example": "She buttons her shirt in the morning."
+         },
+         {
+            "collocation": "New shirt",
+            "example": "I want a new shirt for the party."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "T-shirt",
+      "role": "Noun",
+      "BrE": "/ˈtiː ʃɜːt/",
+      "AmE": "/ˈtiː ʃɜːrt/",
+      "definition": "A soft, informal shirt with short sleeves and no collar",
+      "examples": [
+         {
+            "collocation": "Wear a T-shirt",
+            "example": "He wears a green T-shirt in summer."
+         },
+         {
+            "collocation": "Cotton T-shirt",
+            "example": "I like this soft cotton T-shirt."
+         },
+         {
+            "collocation": "Old T-shirt",
+            "example": "She plays in the garden in an old T-shirt."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Trousers",
+      "role": "Noun",
+      "BrE": "/ˈtraʊzəz/",
+      "AmE": "/ˈtraʊzərz/",
+      "definition": "A piece of clothing that covers the lower body and each leg separately",
+      "examples": [
+         {
+            "collocation": "Black trousers",
+            "example": "He wears black trousers at school."
+         },
+         {
+            "collocation": "Pair of trousers",
+            "example": "She buys a new pair of trousers."
+         },
+         {
+            "collocation": "Long trousers",
+            "example": "These long trousers are warm."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Jeans",
+      "role": "Noun",
+      "BrE": "/dʒiːnz/",
+      "AmE": "/dʒiːnz/",
+      "definition": "Strong trousers made of denim cloth, usually blue",
+      "examples": [
+         {
+            "collocation": "Blue jeans",
+            "example": "I wear blue jeans every day."
+         },
+         {
+            "collocation": "Pair of jeans",
+            "example": "My brother needs a new pair of jeans."
+         },
+         {
+            "collocation": "Tight jeans",
+            "example": "She does not like tight jeans."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Skirt",
+      "role": "Noun",
+      "BrE": "/skɜːt/",
+      "AmE": "/skɜːrt/",
+      "definition": "A piece of clothing for a woman or girl that hangs down from the waist",
+      "examples": [
+         {
+            "collocation": "Short skirt",
+            "example": "She wears a short skirt in hot weather."
+         },
+         {
+            "collocation": "Long skirt",
+            "example": "My teacher prefers a long skirt."
+         },
+         {
+            "collocation": "Pink skirt",
+            "example": "The little girl likes her pink skirt."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Dress",
+      "role": "Noun",
+      "BrE": "/dres/",
+      "AmE": "/dres/",
+      "definition": "A piece of clothing for a woman or girl that covers the top half of the body and hangs down over the legs",
+      "examples": [
+         {
+            "collocation": "Beautiful dress",
+            "example": "She wears a beautiful dress to the party."
+         },
+         {
+            "collocation": "Summer dress",
+            "example": "I buy a light summer dress."
+         },
+         {
+            "collocation": "New dress",
+            "example": "My mother has a new dress."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Jacket",
+      "role": "Noun",
+      "BrE": "/ˈdʒækɪt/",
+      "AmE": "/ˈdʒækɪt/",
+      "definition": "A short coat that covers the upper part of the body",
+      "examples": [
+         {
+            "collocation": "Warm jacket",
+            "example": "He wears a warm jacket in winter."
+         },
+         {
+            "collocation": "Leather jacket",
+            "example": "My brother owns a black leather jacket."
+         },
+         {
+            "collocation": "Take off a jacket",
+            "example": "I take off my jacket inside the house."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Shoe",
+      "role": "Noun",
+      "BrE": "/ʃuː/",
+      "AmE": "/ʃuː/",
+      "definition": "An item of clothing that you wear on your foot over a sock",
+      "examples": [
+         {
+            "collocation": "Pair of shoes",
+            "example": "She buys a pair of shoes."
+         },
+         {
+            "collocation": "Clean shoes",
+            "example": "He always wears clean shoes."
+         },
+         {
+            "collocation": "New shoes",
+            "example": "My new shoes hurt my feet."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Sock",
+      "role": "Noun",
+      "BrE": "/sɒk/",
+      "AmE": "/sɑːk/",
+      "definition": "A piece of clothing that covers your foot and ankle, worn inside a shoe",
+      "examples": [
+         {
+            "collocation": "Pair of socks",
+            "example": "I need a clean pair of socks."
+         },
+         {
+            "collocation": "White socks",
+            "example": "Tennis players usually wear white socks."
+         },
+         {
+            "collocation": "Warm socks",
+            "example": "My grandma makes warm socks for winter."
+         }
+      ]
+   },
+   {
+      "id": 9,
+      "category": "Clothes 1",
+      "word": "Hat",
+      "role": "Noun",
+      "BrE": "/hæt/",
+      "AmE": "/hæt/",
+      "definition": "A piece of clothing that you wear on your head",
+      "examples": [
+         {
+            "collocation": "Wear a hat",
+            "example": "He wears a hat on sunny days."
+         },
+         {
+            "collocation": "Take off a hat",
+            "example": "He takes off his hat inside the room."
+         },
+         {
+            "collocation": "Sun hat",
+            "example": "She buys a large sun hat for the beach."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Coat",
+      "role": "Noun",
+      "BrE": "/kəʊt/",
+      "AmE": "/koʊt/",
+      "definition": "A piece of clothes that keeps you warm outside",
+      "examples": [
+         {
+            "collocation": "Winter coat",
+            "example": "I wear a winter coat when it is cold."
+         },
+         {
+            "collocation": "Long coat",
+            "example": "She has a nice long coat."
+         },
+         {
+            "collocation": "Put on a coat",
+            "example": "Please put on a coat before you go outside."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Boot",
+      "role": "Noun",
+      "BrE": "/buːt/",
+      "AmE": "/buːt/",
+      "definition": "A strong shoe that goes up to the ankle",
+      "examples": [
+         {
+            "collocation": "Leather boot",
+            "example": "He wears a leather boot on each foot."
+         },
+         {
+            "collocation": "Winter boot",
+            "example": "Every winter boot keeps feet warm."
+         },
+         {
+            "collocation": "Clean your boot",
+            "example": "Please clean your boot after you play in the mud."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Shorts",
+      "role": "Noun",
+      "BrE": "/ʃɔːts/",
+      "AmE": "/ʃɔːrts/",
+      "definition": "Short pants that stop above the knee",
+      "examples": [
+         {
+            "collocation": "Summer shorts",
+            "example": "I like to wear summer shorts in the sun."
+         },
+         {
+            "collocation": "Blue shorts",
+            "example": "He wears his blue shorts to the park."
+         },
+         {
+            "collocation": "Pair of shorts",
+            "example": "This pair of shorts fits me well."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Glasses",
+      "role": "Noun",
+      "BrE": "/ˈɡlɑːsɪz/",
+      "AmE": "/ˈɡlæsɪz/",
+      "definition": "Something you use to see better",
+      "examples": [
+         {
+            "collocation": "Wear glasses",
+            "example": "I wear glasses to read my books."
+         },
+         {
+            "collocation": "New glasses",
+            "example": "She likes her new glasses."
+         },
+         {
+            "collocation": "Sun glasses",
+            "example": "He puts on his sun glasses at the beach."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Handbag",
+      "role": "Noun",
+      "BrE": "/ˈhændbæɡ/",
+      "AmE": "/ˈhændbæɡ/",
+      "definition": "A small bag for your things",
+      "examples": [
+         {
+            "collocation": "Leather handbag",
+            "example": "She carries a leather handbag every day."
+         },
+         {
+            "collocation": "Small handbag",
+            "example": "I have a small handbag for my phone."
+         },
+         {
+            "collocation": "Open your handbag",
+            "example": "Please open your handbag to find your keys."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Watch",
+      "role": "Noun",
+      "BrE": "/wɒtʃ/",
+      "AmE": "/wɑːtʃ/",
+      "definition": "A small clock you put on your wrist",
+      "examples": [
+         {
+            "collocation": "Gold watch",
+            "example": "He likes his gold watch."
+         },
+         {
+            "collocation": "Wear a watch",
+            "example": "You wear a watch to know the time."
+         },
+         {
+            "collocation": "Check your watch",
+            "example": "Please check your watch to see if we are late."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Ring",
+      "role": "Noun",
+      "BrE": "/rɪŋ/",
+      "AmE": "/rɪŋ/",
+      "definition": "A small band for your finger",
+      "examples": [
+         {
+            "collocation": "Silver ring",
+            "example": "She wears a pretty silver ring."
+         },
+         {
+            "collocation": "Diamond ring",
+            "example": "He gives her a diamond ring."
+         },
+         {
+            "collocation": "Wear a ring",
+            "example": "I wear a ring on my finger."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Scarf",
+      "role": "Noun",
+      "BrE": "/skɑːf/",
+      "AmE": "/skɑːrf/",
+      "definition": "A piece of cloth for your neck",
+      "examples": [
+         {
+            "collocation": "Warm scarf",
+            "example": "I wear a warm scarf when it is cold."
+         },
+         {
+            "collocation": "Wool scarf",
+            "example": "This wool scarf is very soft."
+         },
+         {
+            "collocation": "Wear a scarf",
+            "example": "Please wear a scarf in the snow."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Glove",
+      "role": "Noun",
+      "BrE": "/ɡlʌv/",
+      "AmE": "/ɡlʌv/",
+      "definition": "A thing that keeps your hand warm",
+      "examples": [
+         {
+            "collocation": "Leather glove",
+            "example": "He wears a leather glove on his hand."
+         },
+         {
+            "collocation": "Warm glove",
+            "example": "Every warm glove keeps hands dry."
+         },
+         {
+            "collocation": "Pair of glove",
+            "example": "I need a pair of glove for the cold."
+         }
+      ]
+   },
+   {
+      "id": 10,
+      "category": "Clothes 2",
+      "word": "Belt",
+      "role": "Noun",
+      "BrE": "/belt/",
+      "AmE": "/belt/",
+      "definition": "A band you put around your waist",
+      "examples": [
+         {
+            "collocation": "Leather belt",
+            "example": "He uses a leather belt for his pants."
+         },
+         {
+            "collocation": "Tight belt",
+            "example": "My tight belt holds my pants up."
+         },
+         {
+            "collocation": "Wear a belt",
+            "example": "You wear a belt with these pants."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "House",
+      "role": "Noun",
+      "BrE": "/haʊs/",
+      "AmE": "/haʊs/",
+      "definition": "A building where people live",
+      "examples": [
+         {
+            "collocation": "Big house",
+            "example": "They live in a big house."
+         },
+         {
+            "collocation": "Clean house",
+            "example": "We clean the house every day."
+         },
+         {
+            "collocation": "New house",
+            "example": "He buys a new house."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Room",
+      "role": "Noun",
+      "BrE": "/ruːm/",
+      "AmE": "/ruːm/",
+      "definition": "A part of a building with its own walls",
+      "examples": [
+         {
+            "collocation": "Small room",
+            "example": "My bedroom is a small room."
+         },
+         {
+            "collocation": "Living room",
+            "example": "The family sits in the living room."
+         },
+         {
+            "collocation": "Clean the room",
+            "example": "She cleans the room."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Door",
+      "role": "Noun",
+      "BrE": "/dɔː/",
+      "AmE": "/dɔːr/",
+      "definition": "A piece of wood or glass that you open to enter a room",
+      "examples": [
+         {
+            "collocation": "Open the door",
+            "example": "Please open the door."
+         },
+         {
+            "collocation": "Close the door",
+            "example": "He closes the door behind him."
+         },
+         {
+            "collocation": "Front door",
+            "example": "The front door is red."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Window",
+      "role": "Noun",
+      "BrE": "/ˈwɪndəʊ/",
+      "AmE": "/ˈwɪndoʊ/",
+      "definition": "An opening in a wall with glass to let in light",
+      "examples": [
+         {
+            "collocation": "Open the window",
+            "example": "I open the window to get fresh air."
+         },
+         {
+            "collocation": "Clean the window",
+            "example": "She washes the dirty window."
+         },
+         {
+            "collocation": "Look out the window",
+            "example": "He looks out the window."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Bed",
+      "role": "Noun",
+      "BrE": "/bed/",
+      "AmE": "/bed/",
+      "definition": "A piece of furniture that you sleep on",
+      "examples": [
+         {
+            "collocation": "Make the bed",
+            "example": "I make the bed every morning."
+         },
+         {
+            "collocation": "Go to bed",
+            "example": "The children go to bed early."
+         },
+         {
+            "collocation": "Soft bed",
+            "example": "The new bed is very soft."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Table",
+      "role": "Noun",
+      "BrE": "/ˈteɪbl/",
+      "AmE": "/ˈteɪbl/",
+      "definition": "A piece of furniture with a flat top and legs",
+      "examples": [
+         {
+            "collocation": "Set the table",
+            "example": "We set the table for dinner."
+         },
+         {
+            "collocation": "Kitchen table",
+            "example": "The food is on the kitchen table."
+         },
+         {
+            "collocation": "Round table",
+            "example": "They sit around the round table."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Chair",
+      "role": "Noun",
+      "BrE": "/tʃeə/",
+      "AmE": "/tʃer/",
+      "definition": "A piece of furniture for one person to sit on",
+      "examples": [
+         {
+            "collocation": "Sit on a chair",
+            "example": "He sits on a wooden chair."
+         },
+         {
+            "collocation": "Empty chair",
+            "example": "There is an empty chair here."
+         },
+         {
+            "collocation": "Comfortable chair",
+            "example": "This chair is very comfortable."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Kitchen",
+      "role": "Noun",
+      "BrE": "/ˈkɪtʃɪn/",
+      "AmE": "/ˈkɪtʃɪn/",
+      "definition": "A room where you prepare and cook food",
+      "examples": [
+         {
+            "collocation": "Cook in the kitchen",
+            "example": "She cooks dinner in the kitchen."
+         },
+         {
+            "collocation": "Clean kitchen",
+            "example": "We keep the kitchen very clean."
+         },
+         {
+            "collocation": "Small kitchen",
+            "example": "The apartment has a small kitchen."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Bathroom",
+      "role": "Noun",
+      "BrE": "/ˈbɑːθruːm/",
+      "AmE": "/ˈbæθruːm/",
+      "definition": "A room with a toilet and a place to wash",
+      "examples": [
+         {
+            "collocation": "Use the bathroom",
+            "example": "He needs to use the bathroom."
+         },
+         {
+            "collocation": "Clean bathroom",
+            "example": "The hotel has a clean bathroom."
+         },
+         {
+            "collocation": "Wash in the bathroom",
+            "example": "I wash my hands in the bathroom."
+         }
+      ]
+   },
+   {
+      "id": 11,
+      "category": "House",
+      "word": "Garden",
+      "role": "Noun",
+      "BrE": "/ˈɡɑːdn/",
+      "AmE": "/ˈɡɑːrdn/",
+      "definition": "A piece of land next to a house where plants grow",
+      "examples": [
+         {
+            "collocation": "Big garden",
+            "example": "They have a big garden with flowers."
+         },
+         {
+            "collocation": "Work in the garden",
+            "example": "My mother works in the garden."
+         },
+         {
+            "collocation": "Water the garden",
+            "example": "He waters the garden every day."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Bed",
+      "role": "Noun",
+      "BrE": "/bed/",
+      "AmE": "/bed/",
+      "definition": "A piece of furniture where you sleep at night",
+      "examples": [
+         {
+            "collocation": "Big bed",
+            "example": "I sleep in a big bed."
+         },
+         {
+            "collocation": "Go to bed",
+            "example": "Children go to bed at night."
+         },
+         {
+            "collocation": "Make the bed",
+            "example": "I make the bed every morning."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Chair",
+      "role": "Noun",
+      "BrE": "/tʃeə/",
+      "AmE": "/tʃer/",
+      "definition": "A seat for one person that has a back",
+      "examples": [
+         {
+            "collocation": "Sit in a chair",
+            "example": "I sit in a chair to eat."
+         },
+         {
+            "collocation": "Hard chair",
+            "example": "This is a very hard chair."
+         },
+         {
+            "collocation": "Wooden chair",
+            "example": "He sits on a wooden chair."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Table",
+      "role": "Noun",
+      "BrE": "/ˈteɪbl/",
+      "AmE": "/ˈteɪbl/",
+      "definition": "A flat surface with legs where you put things",
+      "examples": [
+         {
+            "collocation": "Kitchen table",
+            "example": "We eat at the kitchen table."
+         },
+         {
+            "collocation": "Set the table",
+            "example": "Please set the table for dinner."
+         },
+         {
+            "collocation": "Clean the table",
+            "example": "I clean the table after we eat."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Sofa",
+      "role": "Noun",
+      "BrE": "/ˈsəʊfə/",
+      "AmE": "/ˈsoʊfə/",
+      "definition": "A long seat where more than one person sits",
+      "examples": [
+         {
+            "collocation": "Soft sofa",
+            "example": "We sit on a soft sofa."
+         },
+         {
+            "collocation": "New sofa",
+            "example": "They have a new sofa."
+         },
+         {
+            "collocation": "Sit on the sofa",
+            "example": "I sit on the sofa to watch TV."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Desk",
+      "role": "Noun",
+      "BrE": "/desk/",
+      "AmE": "/desk/",
+      "definition": "A table where you work or study",
+      "examples": [
+         {
+            "collocation": "Work at a desk",
+            "example": "I work at a desk all day."
+         },
+         {
+            "collocation": "Small desk",
+            "example": "She has a small desk for her room."
+         },
+         {
+            "collocation": "Clean the desk",
+            "example": "Please clean the desk before you leave."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Bookcase",
+      "role": "Noun",
+      "BrE": "/ˈbʊkkeɪs/",
+      "AmE": "/ˈbʊkkeɪs/",
+      "definition": "A piece of furniture with shelves for books",
+      "examples": [
+         {
+            "collocation": "Tall bookcase",
+            "example": "He has a tall bookcase for his room."
+         },
+         {
+            "collocation": "Full bookcase",
+            "example": "This is a full bookcase."
+         },
+         {
+            "collocation": "Put books in a bookcase",
+            "example": "I put books in a bookcase."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Cupboard",
+      "role": "Noun",
+      "BrE": "/ˈkʌbəd/",
+      "AmE": "/ˈkʌbərd/",
+      "definition": "A place with doors to keep food or plates",
+      "examples": [
+         {
+            "collocation": "Kitchen cupboard",
+            "example": "I open the kitchen cupboard to find a plate."
+         },
+         {
+            "collocation": "Small cupboard",
+            "example": "She hides her snacks in a small cupboard."
+         },
+         {
+            "collocation": "Open the cupboard",
+            "example": "Please open the cupboard for me."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Mirror",
+      "role": "Noun",
+      "BrE": "/ˈmɪrə/",
+      "AmE": "/ˈmɪrər/",
+      "definition": "A piece of glass that shows your reflection",
+      "examples": [
+         {
+            "collocation": "Big mirror",
+            "example": "She looks at the big mirror."
+         },
+         {
+            "collocation": "Look in a mirror",
+            "example": "I look in a mirror to brush my hair."
+         },
+         {
+            "collocation": "Clean the mirror",
+            "example": "He helps to clean the mirror."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Lamp",
+      "role": "Noun",
+      "BrE": "/læmp/",
+      "AmE": "/læmp/",
+      "definition": "A thing that gives light in a room",
+      "examples": [
+         {
+            "collocation": "Desk lamp",
+            "example": "I use a desk lamp to read."
+         },
+         {
+            "collocation": "Bright lamp",
+            "example": "This is a very bright lamp."
+         },
+         {
+            "collocation": "Turn on a lamp",
+            "example": "Please turn on a lamp when it gets dark."
+         }
+      ]
+   },
+   {
+      "id": 12,
+      "category": "Furniture",
+      "word": "Clock",
+      "role": "Noun",
+      "BrE": "/klɒk/",
+      "AmE": "/klɑːk/",
+      "definition": "A thing that shows you the time",
+      "examples": [
+         {
+            "collocation": "Wall clock",
+            "example": "I see the time on the wall clock."
+         },
+         {
+            "collocation": "Big clock",
+            "example": "That is a big clock."
+         },
+         {
+            "collocation": "Check the clock",
+            "example": "Please check the clock for the time."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Apple",
+      "role": "Noun",
+      "BrE": "/ˈæpl/",
+      "AmE": "/ˈæpl/",
+      "definition": "A round fruit with red, green, or yellow skin",
+      "examples": [
+         {
+            "collocation": "Red apple",
+            "example": "I eat a sweet red apple."
+         },
+         {
+            "collocation": "Fresh apple",
+            "example": "She buys a fresh apple at the store."
+         },
+         {
+            "collocation": "Cut an apple",
+            "example": "He uses a knife to cut an apple."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Banana",
+      "role": "Noun",
+      "BrE": "/bəˈnɑːnə/",
+      "AmE": "/bəˈnænə/",
+      "definition": "A long curved fruit with yellow skin",
+      "examples": [
+         {
+            "collocation": "Yellow banana",
+            "example": "He peels a yellow banana."
+         },
+         {
+            "collocation": "Eat a banana",
+            "example": "Children like to eat a banana for a snack."
+         },
+         {
+            "collocation": "Ripe banana",
+            "example": "This is a very ripe banana."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Orange",
+      "role": "Noun",
+      "BrE": "/ˈɒrɪndʒ/",
+      "AmE": "/ˈɔːrɪndʒ/",
+      "definition": "A round fruit with a thick orange skin",
+      "examples": [
+         {
+            "collocation": "Orange juice",
+            "example": "I drink a glass of orange juice."
+         },
+         {
+            "collocation": "Sweet orange",
+            "example": "She tastes a sweet orange."
+         },
+         {
+            "collocation": "Peel an orange",
+            "example": "It is fun to peel an orange."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Pear",
+      "role": "Noun",
+      "BrE": "/peə(r)/",
+      "AmE": "/per/",
+      "definition": "A fruit that is narrow at the top and wide at the bottom",
+      "examples": [
+         {
+            "collocation": "Green pear",
+            "example": "He holds a green pear."
+         },
+         {
+            "collocation": "Soft pear",
+            "example": "The pear is very soft."
+         },
+         {
+            "collocation": "Eat a pear",
+            "example": "I want to eat a pear."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Grape",
+      "role": "Noun",
+      "BrE": "/ɡreɪp/",
+      "AmE": "/ɡreɪp/",
+      "definition": "A small round purple or green fruit that grows in bunches",
+      "examples": [
+         {
+            "collocation": "Purple grape",
+            "example": "She picks one purple grape."
+         },
+         {
+            "collocation": "Green grape",
+            "example": "The green grape tastes good."
+         },
+         {
+            "collocation": "Bunch of grape",
+            "example": "He buys a bunch of grape for us."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Mango",
+      "role": "Noun",
+      "BrE": "/ˈmæŋɡəʊ/",
+      "AmE": "/ˈmæŋɡoʊ/",
+      "definition": "A tropical fruit with juicy orange flesh",
+      "examples": [
+         {
+            "collocation": "Sweet mango",
+            "example": "The mango is very sweet."
+         },
+         {
+            "collocation": "Ripe mango",
+            "example": "I find a ripe mango on the tree."
+         },
+         {
+            "collocation": "Cut a mango",
+            "example": "Please cut a mango for me."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Watermelon",
+      "role": "Noun",
+      "BrE": "/ˈwɔːtəmelən/",
+      "AmE": "/ˈwɔːtərmelən/",
+      "definition": "A large fruit with a hard green skin and red inside",
+      "examples": [
+         {
+            "collocation": "Big watermelon",
+            "example": "They carry a big watermelon home."
+         },
+         {
+            "collocation": "Sweet watermelon",
+            "example": "This is a sweet watermelon."
+         },
+         {
+            "collocation": "Slice a watermelon",
+            "example": "He helps to slice a watermelon."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Kiwi",
+      "role": "Noun",
+      "BrE": "/ˈkiːwiː/",
+      "AmE": "/ˈkiːwiː/",
+      "definition": "A small fruit with brown fuzzy skin and green inside",
+      "examples": [
+         {
+            "collocation": "Fresh kiwi",
+            "example": "She adds a fresh kiwi to her salad."
+         },
+         {
+            "collocation": "Small kiwi",
+            "example": "This is a very small kiwi."
+         },
+         {
+            "collocation": "Eat a kiwi",
+            "example": "I like to eat a kiwi in the morning."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Coconut",
+      "role": "Noun",
+      "BrE": "/ˈkəʊkənʌt/",
+      "AmE": "/ˈkoʊkənʌt/",
+      "definition": "A large nut with a hard brown shell and white inside",
+      "examples": [
+         {
+            "collocation": "Brown coconut",
+            "example": "He picks up a brown coconut."
+         },
+         {
+            "collocation": "Hard coconut",
+            "example": "The shell of the coconut is very hard."
+         },
+         {
+            "collocation": "Open a coconut",
+            "example": "It is hard to open a coconut."
+         }
+      ]
+   },
+   {
+      "id": 13,
+      "category": "Fruits",
+      "word": "Pineapple",
+      "role": "Noun",
+      "BrE": "/ˈpaɪnæpl/",
+      "AmE": "/ˈpaɪnæpl/",
+      "definition": "A large tropical fruit with a spiky skin",
+      "examples": [
+         {
+            "collocation": "Fresh pineapple",
+            "example": "I buy a fresh pineapple today."
+         },
+         {
+            "collocation": "Sweet pineapple",
+            "example": "The pineapple is very sweet."
+         },
+         {
+            "collocation": "Cut a pineapple",
+            "example": "She learns how to cut a pineapple."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Carrot",
+      "role": "Noun",
+      "BrE": "/ˈkærət/",
+      "AmE": "/ˈkærət/",
+      "definition": "A long orange vegetable that grows in the ground",
+      "examples": [
+         {
+            "collocation": "Crunchy carrot",
+            "example": "I eat a crunchy carrot for a snack."
+         },
+         {
+            "collocation": "Fresh carrot",
+            "example": "She buys a fresh carrot at the shop."
+         },
+         {
+            "collocation": "Small carrot",
+            "example": "He gives a small carrot to the rabbit."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Onion",
+      "role": "Noun",
+      "BrE": "/ˈʌnjən/",
+      "AmE": "/ˈʌnjən/",
+      "definition": "A round vegetable with strong taste and smell",
+      "examples": [
+         {
+            "collocation": "White onion",
+            "example": "I cut a white onion for dinner."
+         },
+         {
+            "collocation": "Fresh onion",
+            "example": "She picks a fresh onion from the garden."
+         },
+         {
+            "collocation": "Small onion",
+            "example": "He uses a small onion in his meal."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Potato",
+      "role": "Noun",
+      "BrE": "/pəˈteɪtəʊ/",
+      "AmE": "/pəˈteɪtoʊ/",
+      "definition": "A round vegetable that grows under the ground",
+      "examples": [
+         {
+            "collocation": "Big potato",
+            "example": "I bake a big potato for lunch."
+         },
+         {
+            "collocation": "Hot potato",
+            "example": "The potato is very hot."
+         },
+         {
+            "collocation": "Small potato",
+            "example": "She cleans a small potato."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Tomato",
+      "role": "Noun",
+      "BrE": "/təˈmɑːtəʊ/",
+      "AmE": "/təˈmeɪtoʊ/",
+      "definition": "A red fruit that we eat as a vegetable",
+      "examples": [
+         {
+            "collocation": "Red tomato",
+            "example": "I slice a red tomato for my salad."
+         },
+         {
+            "collocation": "Fresh tomato",
+            "example": "She buys a fresh tomato today."
+         },
+         {
+            "collocation": "Sweet tomato",
+            "example": "The tomato has a sweet taste."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Bean",
+      "role": "Noun",
+      "BrE": "/biːn/",
+      "AmE": "/biːn/",
+      "definition": "A seed that grows in a pod and acts as food",
+      "examples": [
+         {
+            "collocation": "Green bean",
+            "example": "He puts a green bean on his plate."
+         },
+         {
+            "collocation": "Small bean",
+            "example": "She finds a small bean in the bag."
+         },
+         {
+            "collocation": "Eat a bean",
+            "example": "I like to eat a bean with my dinner."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Pea",
+      "role": "Noun",
+      "BrE": "/piː/",
+      "AmE": "/piː/",
+      "definition": "A small round green seed that we eat",
+      "examples": [
+         {
+            "collocation": "Green pea",
+            "example": "He eats one green pea."
+         },
+         {
+            "collocation": "Small pea",
+            "example": "The pea is very small."
+         },
+         {
+            "collocation": "Eat a pea",
+            "example": "I eat a pea with my fork."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Rice",
+      "role": "Noun",
+      "BrE": "/raɪs/",
+      "AmE": "/raɪs/",
+      "definition": "Small white or brown seeds that we boil to eat",
+      "examples": [
+         {
+            "collocation": "White rice",
+            "example": "I cook some white rice."
+         },
+         {
+            "collocation": "Hot rice",
+            "example": "She serves the hot rice now."
+         },
+         {
+            "collocation": "Eat rice",
+            "example": "We eat rice with our meal."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Bread",
+      "role": "Noun",
+      "BrE": "/bred/",
+      "AmE": "/bred/",
+      "definition": "A baked food made from flour and water",
+      "examples": [
+         {
+            "collocation": "Fresh bread",
+            "example": "He buys fresh bread at the bakery."
+         },
+         {
+            "collocation": "White bread",
+            "example": "I like to eat white bread."
+         },
+         {
+            "collocation": "Slice of bread",
+            "example": "She gives me a slice of bread."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Pasta",
+      "role": "Noun",
+      "BrE": "/ˈpæstə/",
+      "AmE": "/ˈpɑːstə/",
+      "definition": "A food made from flour and water shaped into pieces",
+      "examples": [
+         {
+            "collocation": "Hot pasta",
+            "example": "I serve hot pasta for dinner."
+         },
+         {
+            "collocation": "Eat pasta",
+            "example": "They like to eat pasta on Sundays."
+         },
+         {
+            "collocation": "Cook pasta",
+            "example": "He learns how to cook pasta."
+         }
+      ]
+   },
+   {
+      "id": 14,
+      "category": "Vegetables & Carbs",
+      "word": "Soup",
+      "role": "Noun",
+      "BrE": "/suːp/",
+      "AmE": "/suːp/",
+      "definition": "A liquid food made with vegetables or meat",
+      "examples": [
+         {
+            "collocation": "Hot soup",
+            "example": "I drink hot soup when it is cold."
+         },
+         {
+            "collocation": "Bowl of soup",
+            "example": "She has a bowl of soup."
+         },
+         {
+            "collocation": "Eat soup",
+            "example": "He uses a spoon to eat soup."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Meat",
+      "role": "Noun",
+      "BrE": "/miːt/",
+      "AmE": "/miːt/",
+      "definition": "Food that comes from an animal",
+      "examples": [
+         {
+            "collocation": "Fresh meat",
+            "example": "I buy fresh meat at the shop."
+         },
+         {
+            "collocation": "Eat meat",
+            "example": "People eat meat for dinner."
+         },
+         {
+            "collocation": "Cook meat",
+            "example": "He likes to cook meat on the grill."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Chicken",
+      "role": "Noun",
+      "BrE": "/ˈtʃɪkɪn/",
+      "AmE": "/ˈtʃɪkɪn/",
+      "definition": "A type of bird that provides food",
+      "examples": [
+         {
+            "collocation": "Hot chicken",
+            "example": "She serves hot chicken for us."
+         },
+         {
+            "collocation": "Eat chicken",
+            "example": "I eat chicken every week."
+         },
+         {
+            "collocation": "Cook chicken",
+            "example": "He learns how to cook chicken."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Fish",
+      "role": "Noun",
+      "BrE": "/fɪʃ/",
+      "AmE": "/fɪʃ/",
+      "definition": "A creature that lives in water and provides food",
+      "examples": [
+         {
+            "collocation": "Fresh fish",
+            "example": "They buy fresh fish at the market."
+         },
+         {
+            "collocation": "Eat fish",
+            "example": "I eat fish with rice."
+         },
+         {
+            "collocation": "Cook fish",
+            "example": "She wants to cook fish today."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Sausage",
+      "role": "Noun",
+      "BrE": "/ˈsɒsɪdʒ/",
+      "AmE": "/ˈsɔːsɪdʒ/",
+      "definition": "A long tube of meat that you cook",
+      "examples": [
+         {
+            "collocation": "Hot sausage",
+            "example": "He eats a hot sausage."
+         },
+         {
+            "collocation": "Cook sausage",
+            "example": "I cook sausage in a pan."
+         },
+         {
+            "collocation": "Eat sausage",
+            "example": "They eat sausage with bread."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Egg",
+      "role": "Noun",
+      "BrE": "/eɡ/",
+      "AmE": "/eɡ/",
+      "definition": "A round food that comes from a chicken",
+      "examples": [
+         {
+            "collocation": "Fresh egg",
+            "example": "She has a fresh egg for breakfast."
+         },
+         {
+            "collocation": "Eat an egg",
+            "example": "I eat an egg every morning."
+         },
+         {
+            "collocation": "Boil an egg",
+            "example": "He knows how to boil an egg."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Milk",
+      "role": "Noun",
+      "BrE": "/mɪlk/",
+      "AmE": "/mɪlk/",
+      "definition": "A white liquid that comes from cows",
+      "examples": [
+         {
+            "collocation": "Cold milk",
+            "example": "I drink cold milk."
+         },
+         {
+            "collocation": "Fresh milk",
+            "example": "She buys fresh milk at the store."
+         },
+         {
+            "collocation": "Glass of milk",
+            "example": "He pours a glass of milk."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Cheese",
+      "role": "Noun",
+      "BrE": "/tʃiːz/",
+      "AmE": "/tʃiːz/",
+      "definition": "A food made from milk",
+      "examples": [
+         {
+            "collocation": "Fresh cheese",
+            "example": "This is a block of fresh cheese."
+         },
+         {
+            "collocation": "Eat cheese",
+            "example": "I eat cheese with my bread."
+         },
+         {
+            "collocation": "Slice of cheese",
+            "example": "She cuts a slice of cheese."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Butter",
+      "role": "Noun",
+      "BrE": "/ˈbʌtə/",
+      "AmE": "/ˈbʌtər/",
+      "definition": "A soft yellow food made from milk that you put on bread",
+      "examples": [
+         {
+            "collocation": "Fresh butter",
+            "example": "He uses fresh butter."
+         },
+         {
+            "collocation": "Soft butter",
+            "example": "The butter is soft."
+         },
+         {
+            "collocation": "Put on butter",
+            "example": "I put on butter for my toast."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Ice cream",
+      "role": "Noun",
+      "BrE": "/aɪs kriːm/",
+      "AmE": "/aɪs kriːm/",
+      "definition": "A cold and sweet food made from milk",
+      "examples": [
+         {
+            "collocation": "Cold ice cream",
+            "example": "I eat cold ice cream in summer."
+         },
+         {
+            "collocation": "Sweet ice cream",
+            "example": "This is a sweet ice cream."
+         },
+         {
+            "collocation": "Eat ice cream",
+            "example": "She likes to eat ice cream."
+         }
+      ]
+   },
+   {
+      "id": 15,
+      "category": "Meat & Dairy",
+      "word": "Chocolate",
+      "role": "Noun",
+      "BrE": "/ˈtʃɒklət/",
+      "AmE": "/ˈtʃɔːklət/",
+      "definition": "A sweet food made from cocoa",
+      "examples": [
+         {
+            "collocation": "Sweet chocolate",
+            "example": "I love sweet chocolate."
+         },
+         {
+            "collocation": "Eat chocolate",
+            "example": "He likes to eat chocolate."
+         },
+         {
+            "collocation": "Piece of chocolate",
+            "example": "She gives me a piece of chocolate."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Juice",
+      "role": "Noun",
+      "BrE": "/dʒuːs/",
+      "AmE": "/dʒuːs/",
+      "definition": "A liquid from a fruit or vegetable",
+      "examples": [
+         {
+            "collocation": "Fresh juice",
+            "example": "I drink fresh juice every morning."
+         },
+         {
+            "collocation": "Sweet juice",
+            "example": "This is a sweet juice."
+         },
+         {
+            "collocation": "Glass of juice",
+            "example": "She holds a glass of juice."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Lemonade",
+      "role": "Noun",
+      "BrE": "/ˌleməˈneɪd/",
+      "AmE": "/ˌleməˈneɪd/",
+      "definition": "A cold drink made of lemon, sugar, and water",
+      "examples": [
+         {
+            "collocation": "Cold lemonade",
+            "example": "He drinks cold lemonade in the sun."
+         },
+         {
+            "collocation": "Sweet lemonade",
+            "example": "The lemonade is very sweet."
+         },
+         {
+            "collocation": "Glass of lemonade",
+            "example": "I want a glass of lemonade."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Coffee",
+      "role": "Noun",
+      "BrE": "/ˈkɒfi/",
+      "AmE": "/ˈkɔːfi/",
+      "definition": "A hot drink made from brown beans",
+      "examples": [
+         {
+            "collocation": "Hot coffee",
+            "example": "I like hot coffee in the morning."
+         },
+         {
+            "collocation": "Cup of coffee",
+            "example": "She drinks a cup of coffee."
+         },
+         {
+            "collocation": "Strong coffee",
+            "example": "He makes strong coffee."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Tea",
+      "role": "Noun",
+      "BrE": "/tiː/",
+      "AmE": "/tiː/",
+      "definition": "A hot drink made with dried leaves",
+      "examples": [
+         {
+            "collocation": "Hot tea",
+            "example": "We drink hot tea at home."
+         },
+         {
+            "collocation": "Cup of tea",
+            "example": "She makes a cup of tea."
+         },
+         {
+            "collocation": "Green tea",
+            "example": "He prefers to drink green tea."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Beer",
+      "role": "Noun",
+      "BrE": "/bɪə(r)/",
+      "AmE": "/bɪr/",
+      "definition": "A drink made from grain that often has alcohol",
+      "examples": [
+         {
+            "collocation": "Cold beer",
+            "example": "They serve cold beer at the bar."
+         },
+         {
+            "collocation": "Glass of beer",
+            "example": "He has a glass of beer."
+         },
+         {
+            "collocation": "Drink beer",
+            "example": "Some people like to drink beer."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Wine",
+      "role": "Noun",
+      "BrE": "/waɪn/",
+      "AmE": "/waɪn/",
+      "definition": "An alcoholic drink made from grapes",
+      "examples": [
+         {
+            "collocation": "Red wine",
+            "example": "She pours some red wine."
+         },
+         {
+            "collocation": "Glass of wine",
+            "example": "I have a glass of wine with dinner."
+         },
+         {
+            "collocation": "White wine",
+            "example": "They serve white wine at the party."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Water",
+      "role": "Noun",
+      "BrE": "/ˈwɔːtə(r)/",
+      "AmE": "/ˈwɔːtər/",
+      "definition": "A clear liquid that all people need to drink",
+      "examples": [
+         {
+            "collocation": "Cold water",
+            "example": "I drink cold water every day."
+         },
+         {
+            "collocation": "Glass of water",
+            "example": "He brings a glass of water."
+         },
+         {
+            "collocation": "Drink water",
+            "example": "Please drink water when you are thirsty."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Soda",
+      "role": "Noun",
+      "BrE": "/ˈsəʊdə/",
+      "AmE": "/ˈsoʊdə/",
+      "definition": "A sweet, fizzy drink",
+      "examples": [
+         {
+            "collocation": "Cold soda",
+            "example": "She wants a cold soda."
+         },
+         {
+            "collocation": "Sweet soda",
+            "example": "I do not like sweet soda."
+         },
+         {
+            "collocation": "Drink soda",
+            "example": "They drink soda with their meal."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Milk",
+      "role": "Noun",
+      "BrE": "/mɪlk/",
+      "AmE": "/mɪlk/",
+      "definition": "A white liquid from a cow that we drink",
+      "examples": [
+         {
+            "collocation": "Cold milk",
+            "example": "I drink cold milk with my snack."
+         },
+         {
+            "collocation": "Fresh milk",
+            "example": "She buys fresh milk."
+         },
+         {
+            "collocation": "Glass of milk",
+            "example": "He pours a glass of milk."
+         }
+      ]
+   },
+   {
+      "id": 16,
+      "category": "Drinks",
+      "word": "Smoothie",
+      "role": "Noun",
+      "BrE": "/ˈsmuːði/",
+      "AmE": "/ˈsmuːði/",
+      "definition": "A thick drink made from fruit",
+      "examples": [
+         {
+            "collocation": "Sweet smoothie",
+            "example": "I drink a sweet smoothie."
+         },
+         {
+            "collocation": "Fresh smoothie",
+            "example": "She makes a fresh smoothie."
+         },
+         {
+            "collocation": "Drink a smoothie",
+            "example": "He wants to drink a smoothie."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Dog",
+      "role": "Noun",
+      "BrE": "/dɒɡ/",
+      "AmE": "/dɔːɡ/",
+      "definition": "A common animal with four legs kept as a pet or for work",
+      "examples": [
+         {
+            "collocation": "Big dog",
+            "example": "They have a big dog at home."
+         },
+         {
+            "collocation": "Good dog",
+            "example": "He has a very good dog."
+         },
+         {
+            "collocation": "Walk a dog",
+            "example": "I walk my dog every day."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Cat",
+      "role": "Noun",
+      "BrE": "/kæt/",
+      "AmE": "/kæt/",
+      "definition": "A small animal with soft fur that people often keep as a pet",
+      "examples": [
+         {
+            "collocation": "Black cat",
+            "example": "She has a small black cat."
+         },
+         {
+            "collocation": "Sleepy cat",
+            "example": "The sleepy cat rests on the bed."
+         },
+         {
+            "collocation": "Feed a cat",
+            "example": "I feed my cat in the morning."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Pigeon",
+      "role": "Noun",
+      "BrE": "/ˈpɪdʒɪn/",
+      "AmE": "/ˈpɪdʒɪn/",
+      "definition": "A common grey bird often seen in cities",
+      "examples": [
+         {
+            "collocation": "Grey pigeon",
+            "example": "A grey pigeon sits on the roof."
+         },
+         {
+            "collocation": "City pigeon",
+            "example": "I see a city pigeon in the park."
+         },
+         {
+            "collocation": "Feed a pigeon",
+            "example": "He likes to feed a pigeon."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Parrot",
+      "role": "Noun",
+      "BrE": "/ˈpærət/",
+      "AmE": "/ˈpærət/",
+      "definition": "A brightly colored bird that can sometimes copy what people say",
+      "examples": [
+         {
+            "collocation": "Green parrot",
+            "example": "She owns a beautiful green parrot."
+         },
+         {
+            "collocation": "Loud parrot",
+            "example": "The loud parrot talks all day."
+         },
+         {
+            "collocation": "Pet parrot",
+            "example": "He has a pet parrot in a cage."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Fish",
+      "role": "Noun",
+      "BrE": "/fɪʃ/",
+      "AmE": "/fɪʃ/",
+      "definition": "An animal that lives in water and swims",
+      "examples": [
+         {
+            "collocation": "Small fish",
+            "example": "She watches the small fish swim."
+         },
+         {
+            "collocation": "Pet fish",
+            "example": "I keep a pet fish in a bowl."
+         },
+         {
+            "collocation": "Gold fish",
+            "example": "He buys a gold fish for his son."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Mouse",
+      "role": "Noun",
+      "BrE": "/maʊs/",
+      "AmE": "/maʊs/",
+      "definition": "A small animal with a long tail",
+      "examples": [
+         {
+            "collocation": "Small mouse",
+            "example": "A small mouse runs across the floor."
+         },
+         {
+            "collocation": "White mouse",
+            "example": "She keeps a white mouse as a pet."
+         },
+         {
+            "collocation": "Pet mouse",
+            "example": "He buys a cage for his pet mouse."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Rabbit",
+      "role": "Noun",
+      "BrE": "/ˈræbɪt/",
+      "AmE": "/ˈræbɪt/",
+      "definition": "A small animal with long ears and soft fur",
+      "examples": [
+         {
+            "collocation": "White rabbit",
+            "example": "The white rabbit has long ears."
+         },
+         {
+            "collocation": "Soft rabbit",
+            "example": "I pet the soft rabbit."
+         },
+         {
+            "collocation": "Feed a rabbit",
+            "example": "She gives a carrot to feed a rabbit."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Hamster",
+      "role": "Noun",
+      "BrE": "/ˈhæmstə(r)/",
+      "AmE": "/ˈhæmstər/",
+      "definition": "A small furry animal similar to a mouse often kept as a pet",
+      "examples": [
+         {
+            "collocation": "Pet hamster",
+            "example": "My pet hamster sleeps in the day."
+         },
+         {
+            "collocation": "Small hamster",
+            "example": "He holds a small hamster in his hand."
+         },
+         {
+            "collocation": "Cute hamster",
+            "example": "She buys a cute hamster."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Turtle",
+      "role": "Noun",
+      "BrE": "/ˈtɜːtl/",
+      "AmE": "/ˈtɜːrtl/",
+      "definition": "An animal with a hard shell on its back that moves slowly",
+      "examples": [
+         {
+            "collocation": "Small turtle",
+            "example": "He finds a small turtle near the pond."
+         },
+         {
+            "collocation": "Slow turtle",
+            "example": "The slow turtle walks on the grass."
+         },
+         {
+            "collocation": "Pet turtle",
+            "example": "I keep my pet turtle in a glass tank."
+         }
+      ]
+   },
+   {
+      "id": 17,
+      "category": "Pets",
+      "word": "Puppy",
+      "role": "Noun",
+      "BrE": "/ˈpʌpi/",
+      "AmE": "/ˈpʌpi/",
+      "definition": "A very young dog",
+      "examples": [
+         {
+            "collocation": "Cute puppy",
+            "example": "They bring home a cute puppy."
+         },
+         {
+            "collocation": "Small puppy",
+            "example": "The small puppy plays with a ball."
+         },
+         {
+            "collocation": "New puppy",
+            "example": "She feeds her new puppy."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "School",
+      "role": "Noun",
+      "BrE": "/skuːl/",
+      "AmE": "/skuːl/",
+      "definition": "A place where children go to learn",
+      "examples": [
+         {
+            "collocation": "Go to school",
+            "example": "I go to school by bus every day."
+         },
+         {
+            "collocation": "High school",
+            "example": "He starts high school next year."
+         },
+         {
+            "collocation": "Primary school",
+            "example": "She is a teacher at a primary school."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Class",
+      "role": "Noun",
+      "BrE": "/klɑːs/",
+      "AmE": "/klæs/",
+      "definition": "A group of students learning together or a period of teaching",
+      "examples": [
+         {
+            "collocation": "English class",
+            "example": "I have an English class in the morning."
+         },
+         {
+            "collocation": "In class",
+            "example": "Please do not talk loud in class."
+         },
+         {
+            "collocation": "Start class",
+            "example": "The teacher will start class soon."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Teacher",
+      "role": "Noun",
+      "BrE": "/ˈtiːtʃə(r)/",
+      "AmE": "/ˈtiːtʃər/",
+      "definition": "A person whose job is to teach students",
+      "examples": [
+         {
+            "collocation": "Good teacher",
+            "example": "She is a very good teacher."
+         },
+         {
+            "collocation": "Ask the teacher",
+            "example": "If you do not know, ask the teacher."
+         },
+         {
+            "collocation": "English teacher",
+            "example": "My English teacher is very kind."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Student",
+      "role": "Noun",
+      "BrE": "/ˈstjuːdnt/",
+      "AmE": "/ˈstuːdnt/",
+      "definition": "A person who is learning at school or university",
+      "examples": [
+         {
+            "collocation": "Good student",
+            "example": "He works hard and is a good student."
+         },
+         {
+            "collocation": "New student",
+            "example": "We have a new student in our class."
+         },
+         {
+            "collocation": "College student",
+            "example": "My brother is a college student."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Book",
+      "role": "Noun",
+      "BrE": "/bʊk/",
+      "AmE": "/bʊk/",
+      "definition": "A set of printed pages joined together in a cover to read",
+      "examples": [
+         {
+            "collocation": "Read a book",
+            "example": "I like to read a book before bed."
+         },
+         {
+            "collocation": "Open a book",
+            "example": "Please open a book to page ten."
+         },
+         {
+            "collocation": "Good book",
+            "example": "This is a very good book."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Pen",
+      "role": "Noun",
+      "BrE": "/pen/",
+      "AmE": "/pen/",
+      "definition": "An object used for writing with ink",
+      "examples": [
+         {
+            "collocation": "Blue pen",
+            "example": "I write my name with a blue pen."
+         },
+         {
+            "collocation": "Borrow a pen",
+            "example": "Can I borrow a pen for a minute?"
+         },
+         {
+            "collocation": "Write with a pen",
+            "example": "We have to write with a pen in this test."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Pencil",
+      "role": "Noun",
+      "BrE": "/ˈpensl/",
+      "AmE": "/ˈpensl/",
+      "definition": "A thin object with a black or colored center used for writing or drawing",
+      "examples": [
+         {
+            "collocation": "Sharp pencil",
+            "example": "I need a sharp pencil to draw."
+         },
+         {
+            "collocation": "Use a pencil",
+            "example": "Please use a pencil to write your answer."
+         },
+         {
+            "collocation": "Color pencil",
+            "example": "She draws a flower with a color pencil."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Paper",
+      "role": "Noun",
+      "BrE": "/ˈpeɪpə(r)/",
+      "AmE": "/ˈpeɪpər/",
+      "definition": "Thin, flat material used for writing or printing on",
+      "examples": [
+         {
+            "collocation": "Piece of paper",
+            "example": "Can I have a piece of paper?"
+         },
+         {
+            "collocation": "White paper",
+            "example": "He writes a letter on white paper."
+         },
+         {
+            "collocation": "Write on paper",
+            "example": "We write our notes on paper."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Ruler",
+      "role": "Noun",
+      "BrE": "/ˈruːlə(r)/",
+      "AmE": "/ˈruːlər/",
+      "definition": "A long, flat tool used for measuring or drawing straight lines",
+      "examples": [
+         {
+            "collocation": "Long ruler",
+            "example": "I need a long ruler for my math class."
+         },
+         {
+            "collocation": "Use a ruler",
+            "example": "Use a ruler to draw a straight line."
+         },
+         {
+            "collocation": "Wooden ruler",
+            "example": "He has a wooden ruler on his desk."
+         }
+      ]
+   },
+   {
+      "id": 18,
+      "category": "School",
+      "word": "Rubber",
+      "role": "Noun",
+      "BrE": "/ˈrʌbə(r)/",
+      "AmE": "/ˈrʌbər/",
+      "definition": "A small object used to remove pencil marks from paper",
+      "examples": [
+         {
+            "collocation": "Use a rubber",
+            "example": "If you make a mistake, use a rubber."
+         },
+         {
+            "collocation": "Small rubber",
+            "example": "She buys a small rubber for school."
+         },
+         {
+            "collocation": "Borrow a rubber",
+            "example": "Can I borrow a rubber to fix my drawing?"
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Computer",
+      "role": "Noun",
+      "BrE": "/kəmˈpjuːtə/",
+      "AmE": "/kəmˈpjuːtər/",
+      "definition": "A machine that helps you write, play, and learn",
+      "examples": [
+         {
+            "collocation": "New computer",
+            "example": "I have a new computer at home."
+         },
+         {
+            "collocation": "Play on a computer",
+            "example": "Children play on a computer after school."
+         },
+         {
+            "collocation": "Fast computer",
+            "example": "He works on a very fast computer."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Radio",
+      "role": "Noun",
+      "BrE": "/ˈreɪdiəʊ/",
+      "AmE": "/ˈreɪdioʊ/",
+      "definition": "A machine that plays music and news",
+      "examples": [
+         {
+            "collocation": "Listen to the radio",
+            "example": "I listen to the radio in my car."
+         },
+         {
+            "collocation": "Turn on the radio",
+            "example": "Please turn on the radio."
+         },
+         {
+            "collocation": "Old radio",
+            "example": "My grandfather has an old radio."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Television",
+      "role": "Noun",
+      "BrE": "/ˈtelɪvɪʒn/",
+      "AmE": "/ˈtelɪvɪʒn/",
+      "definition": "A machine that shows moving pictures and makes sound",
+      "examples": [
+         {
+            "collocation": "Watch television",
+            "example": "We watch television in the evening."
+         },
+         {
+            "collocation": "Big television",
+            "example": "They buy a big television for the room."
+         },
+         {
+            "collocation": "Turn off the television",
+            "example": "Please turn off the television when you go to bed."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Phone",
+      "role": "Noun",
+      "BrE": "/fəʊn/",
+      "AmE": "/foʊn/",
+      "definition": "A small machine you hold to talk to people far away",
+      "examples": [
+         {
+            "collocation": "Mobile phone",
+            "example": "She brings her mobile phone to work."
+         },
+         {
+            "collocation": "Answer the phone",
+            "example": "Please answer the phone when it rings."
+         },
+         {
+            "collocation": "New phone",
+            "example": "He wants to buy a new phone."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Camera",
+      "role": "Noun",
+      "BrE": "/ˈkæmrə/",
+      "AmE": "/ˈkæmrə/",
+      "definition": "A machine that takes photos or videos",
+      "examples": [
+         {
+            "collocation": "Digital camera",
+            "example": "I take photos with my digital camera."
+         },
+         {
+            "collocation": "New camera",
+            "example": "She tests her new camera in the park."
+         },
+         {
+            "collocation": "Hold the camera",
+            "example": "Please hold the camera still."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Tablet",
+      "role": "Noun",
+      "BrE": "/ˈtæblət/",
+      "AmE": "/ˈtæblət/",
+      "definition": "A flat computer with a screen that you touch",
+      "examples": [
+         {
+            "collocation": "New tablet",
+            "example": "He watches videos on his new tablet."
+         },
+         {
+            "collocation": "Small tablet",
+            "example": "She carries a small tablet in her bag."
+         },
+         {
+            "collocation": "Use a tablet",
+            "example": "Children use a tablet to learn math."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Keyboard",
+      "role": "Noun",
+      "BrE": "/ˈkiːbɔːd/",
+      "AmE": "/ˈkiːbɔːrd/",
+      "definition": "A board with buttons that you press to type on a computer",
+      "examples": [
+         {
+            "collocation": "Computer keyboard",
+            "example": "He types fast on his computer keyboard."
+         },
+         {
+            "collocation": "Black keyboard",
+            "example": "I have a black keyboard on my desk."
+         },
+         {
+            "collocation": "Clean the keyboard",
+            "example": "She likes to clean the keyboard."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Internet",
+      "role": "Noun",
+      "BrE": "/ˈɪntənet/",
+      "AmE": "/ˈɪntərnet/",
+      "definition": "A big system that connects computers everywhere",
+      "examples": [
+         {
+            "collocation": "Use the internet",
+            "example": "I use the internet to find answers."
+         },
+         {
+            "collocation": "Fast internet",
+            "example": "We need fast internet to watch movies."
+         },
+         {
+            "collocation": "Search the internet",
+            "example": "They search the internet for information."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Blog",
+      "role": "Noun",
+      "BrE": "/blɒɡ/",
+      "AmE": "/blɑːɡ/",
+      "definition": "A page on the internet where someone writes their thoughts",
+      "examples": [
+         {
+            "collocation": "Read a blog",
+            "example": "I read a blog about food."
+         },
+         {
+            "collocation": "Write a blog",
+            "example": "She likes to write a blog every week."
+         },
+         {
+            "collocation": "Travel blog",
+            "example": "He shares photos on his travel blog."
+         }
+      ]
+   },
+   {
+      "id": 19,
+      "category": "Technology",
+      "word": "Website",
+      "role": "Noun",
+      "BrE": "/ˈwebsaɪt/",
+      "AmE": "/ˈwebsaɪt/",
+      "definition": "A place on the internet with pages to read and look at",
+      "examples": [
+         {
+            "collocation": "New website",
+            "example": "The company builds a new website."
+         },
+         {
+            "collocation": "Visit a website",
+            "example": "I visit a website to buy shoes."
+         },
+         {
+            "collocation": "News website",
+            "example": "He reads stories on a news website."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Sport",
+      "role": "Noun",
+      "BrE": "/spɔːt/",
+      "AmE": "/spɔːrt/",
+      "definition": "A game you play to move your body and have fun",
+      "examples": [
+         {
+            "collocation": "Play a sport",
+            "example": "I play a sport after school."
+         },
+         {
+            "collocation": "Favorite sport",
+            "example": "My favorite sport is tennis."
+         },
+         {
+            "collocation": "Team sport",
+            "example": "He likes to play a team sport."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Football",
+      "role": "Noun",
+      "BrE": "/ˈfʊtbɔːl/",
+      "AmE": "/ˈfʊtbɔːl/",
+      "definition": "A game where two teams kick a ball to score goals",
+      "examples": [
+         {
+            "collocation": "Play football",
+            "example": "They play football in the park."
+         },
+         {
+            "collocation": "Football game",
+            "example": "We go to a football game."
+         },
+         {
+            "collocation": "Kick a football",
+            "example": "I learn to kick a football."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Basketball",
+      "role": "Noun",
+      "BrE": "/ˈbɑːskɪtbɔːl/",
+      "AmE": "/ˈbæskɪtbɔːl/",
+      "definition": "A game where you throw a ball through a hoop",
+      "examples": [
+         {
+            "collocation": "Play basketball",
+            "example": "I play basketball with my friends."
+         },
+         {
+            "collocation": "Basketball team",
+            "example": "She is on the school basketball team."
+         },
+         {
+            "collocation": "Bounce a basketball",
+            "example": "He likes to bounce a basketball."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Baseball",
+      "role": "Noun",
+      "BrE": "/ˈbeɪsbɔːl/",
+      "AmE": "/ˈbeɪsbɔːl/",
+      "definition": "A game where you hit a ball with a bat and run",
+      "examples": [
+         {
+            "collocation": "Play baseball",
+            "example": "They play baseball in the summer."
+         },
+         {
+            "collocation": "Baseball bat",
+            "example": "He swings the baseball bat."
+         },
+         {
+            "collocation": "Baseball game",
+            "example": "We watch a baseball game on TV."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Tennis",
+      "role": "Noun",
+      "BrE": "/ˈtenɪs/",
+      "AmE": "/ˈtenɪs/",
+      "definition": "A game where you hit a ball over a net with a racket",
+      "examples": [
+         {
+            "collocation": "Play tennis",
+            "example": "She learns to play tennis."
+         },
+         {
+            "collocation": "Tennis ball",
+            "example": "The dog chases a yellow tennis ball."
+         },
+         {
+            "collocation": "Tennis court",
+            "example": "We walk to the tennis court."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Badminton",
+      "role": "Noun",
+      "BrE": "/ˈbædmɪntən/",
+      "AmE": "/ˈbædmɪntən/",
+      "definition": "A game where you hit a light object over a net",
+      "examples": [
+         {
+            "collocation": "Play badminton",
+            "example": "We play badminton in the garden."
+         },
+         {
+            "collocation": "Badminton racket",
+            "example": "I need a new badminton racket."
+         },
+         {
+            "collocation": "Game of badminton",
+            "example": "I like a game of badminton."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Hockey",
+      "role": "Noun",
+      "BrE": "/ˈhɒki/",
+      "AmE": "/ˈhɑːki/",
+      "definition": "A game where you hit a puck or ball with a stick",
+      "examples": [
+         {
+            "collocation": "Play hockey",
+            "example": "He wants to play hockey."
+         },
+         {
+            "collocation": "Ice hockey",
+            "example": "They watch ice hockey in the winter."
+         },
+         {
+            "collocation": "Hockey stick",
+            "example": "She holds her hockey stick."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Soccer",
+      "role": "Noun",
+      "BrE": "/ˈsɒkə/",
+      "AmE": "/ˈsɑːkər/",
+      "definition": "A game where two teams kick a ball into a net",
+      "examples": [
+         {
+            "collocation": "Play soccer",
+            "example": "The kids play soccer outside."
+         },
+         {
+            "collocation": "Soccer team",
+            "example": "He plays for the local soccer team."
+         },
+         {
+            "collocation": "Soccer ball",
+            "example": "I kick the soccer ball."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Catch",
+      "role": "Verb",
+      "BrE": "/kætʃ/",
+      "AmE": "/kætʃ/",
+      "definition": "To stop and hold an object that moves through the air",
+      "examples": [
+         {
+            "collocation": "Catch a ball",
+            "example": "I catch a ball with two hands."
+         },
+         {
+            "collocation": "Catch it",
+            "example": "Throw the ball, and I catch it."
+         },
+         {
+            "collocation": "Hard to catch",
+            "example": "The fast ball is hard to catch."
+         }
+      ]
+   },
+   {
+      "id": 20,
+      "category": "Sports",
+      "word": "Throw",
+      "role": "Verb",
+      "BrE": "/θrəʊ/",
+      "AmE": "/θroʊ/",
+      "definition": "To send an object through the air with your hand",
+      "examples": [
+         {
+            "collocation": "Throw a ball",
+            "example": "I throw a ball to my dog."
+         },
+         {
+            "collocation": "Throw the ball",
+            "example": "She likes to throw the ball."
+         },
+         {
+            "collocation": "Throw fast",
+            "example": "He can throw fast."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "City",
+      "role": "Noun",
+      "BrE": "/ˈsɪti/",
+      "AmE": "/ˈsɪti/",
+      "definition": "A large place where many people live and work",
+      "examples": [
+         {
+            "collocation": "Big city",
+            "example": "I live in a big city."
+         },
+         {
+            "collocation": "City center",
+            "example": "We walk to the city center."
+         },
+         {
+            "collocation": "Beautiful city",
+            "example": "This is a very beautiful city."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Downtown",
+      "role": "Noun",
+      "BrE": "/ˌdaʊnˈtaʊn/",
+      "AmE": "/ˌdaʊnˈtaʊn/",
+      "definition": "The busy center of a town where people work and shop",
+      "examples": [
+         {
+            "collocation": "Go downtown",
+            "example": "I go downtown to buy clothes."
+         },
+         {
+            "collocation": "Live downtown",
+            "example": "She wants to live downtown."
+         },
+         {
+            "collocation": "Walk downtown",
+            "example": "We walk downtown for lunch."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Street",
+      "role": "Noun",
+      "BrE": "/striːt/",
+      "AmE": "/striːt/",
+      "definition": "A road in a town with houses or shops on the side",
+      "examples": [
+         {
+            "collocation": "Cross the street",
+            "example": "I cross the street safely."
+         },
+         {
+            "collocation": "Quiet street",
+            "example": "He lives on a quiet street."
+         },
+         {
+            "collocation": "Walk down the street",
+            "example": "We walk down the street to the park."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Park",
+      "role": "Noun",
+      "BrE": "/pɑːk/",
+      "AmE": "/pɑːrk/",
+      "definition": "A large green place with trees where people go to play",
+      "examples": [
+         {
+            "collocation": "Big park",
+            "example": "We play in the big park."
+         },
+         {
+            "collocation": "Walk in the park",
+            "example": "I walk in the park every day."
+         },
+         {
+            "collocation": "City park",
+            "example": "The city park has many tall trees."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Shop",
+      "role": "Noun",
+      "BrE": "/ʃɒp/",
+      "AmE": "/ʃɑːp/",
+      "definition": "A place where you buy things",
+      "examples": [
+         {
+            "collocation": "Small shop",
+            "example": "I buy milk from a small shop."
+         },
+         {
+            "collocation": "Shoe shop",
+            "example": "She goes to the shoe shop."
+         },
+         {
+            "collocation": "Open the shop",
+            "example": "They open the shop in the morning."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Store",
+      "role": "Noun",
+      "BrE": "/stɔː(r)/",
+      "AmE": "/stɔːr/",
+      "definition": "A large place where you go to buy things",
+      "examples": [
+         {
+            "collocation": "Big store",
+            "example": "I buy food at the big store."
+         },
+         {
+            "collocation": "Go to the store",
+            "example": "We go to the store for bread."
+         },
+         {
+            "collocation": "Clothing store",
+            "example": "He works in a clothing store."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Supermarket",
+      "role": "Noun",
+      "BrE": "/ˈsuːpəmɑːkɪt/",
+      "AmE": "/ˈsuːpərmɑːrkɪt/",
+      "definition": "A very big shop that sells food and things for the house",
+      "examples": [
+         {
+            "collocation": "Local supermarket",
+            "example": "I walk to the local supermarket."
+         },
+         {
+            "collocation": "Busy supermarket",
+            "example": "The busy supermarket has many people."
+         },
+         {
+            "collocation": "Buy at the supermarket",
+            "example": "We buy apples at the supermarket."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Hospital",
+      "role": "Noun",
+      "BrE": "/ˈhɒspɪtl/",
+      "AmE": "/ˈhɑːspɪtl/",
+      "definition": "A place where sick people go to get better",
+      "examples": [
+         {
+            "collocation": "Go to the hospital",
+            "example": "Sick people go to the hospital."
+         },
+         {
+            "collocation": "City hospital",
+            "example": "He works at the city hospital."
+         },
+         {
+            "collocation": "Big hospital",
+            "example": "The big hospital has many doctors."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Bank",
+      "role": "Noun",
+      "BrE": "/bæŋk/",
+      "AmE": "/bæŋk/",
+      "definition": "A place where you keep your money safe",
+      "examples": [
+         {
+            "collocation": "Go to the bank",
+            "example": "I go to the bank to get money."
+         },
+         {
+            "collocation": "Local bank",
+            "example": "She works at the local bank."
+         },
+         {
+            "collocation": "Inside the bank",
+            "example": "People wait inside the bank."
+         }
+      ]
+   },
+   {
+      "id": 21,
+      "category": "Town",
+      "word": "Restaurant",
+      "role": "Noun",
+      "BrE": "/ˈrestrɒnt/",
+      "AmE": "/ˈrestrɑːnt/",
+      "definition": "A place where you buy and eat food",
+      "examples": [
+         {
+            "collocation": "Good restaurant",
+            "example": "We eat at a good restaurant."
+         },
+         {
+            "collocation": "Italian restaurant",
+            "example": "I like the Italian restaurant."
+         },
+         {
+            "collocation": "Go to a restaurant",
+            "example": "They go to a restaurant for dinner."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Car",
+      "role": "Noun",
+      "BrE": "/kɑː(r)/",
+      "AmE": "/kɑːr/",
+      "definition": "A machine with four wheels that people drive on the road",
+      "examples": [
+         {
+            "collocation": "Fast car",
+            "example": "He drives a fast car."
+         },
+         {
+            "collocation": "Drive a car",
+            "example": "I drive a car to work."
+         },
+         {
+            "collocation": "New car",
+            "example": "She wants to buy a new car."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Bus",
+      "role": "Noun",
+      "BrE": "/bʌs/",
+      "AmE": "/bʌs/",
+      "definition": "A large vehicle that carries many people on the road",
+      "examples": [
+         {
+            "collocation": "Catch the bus",
+            "example": "I catch the bus to school."
+         },
+         {
+            "collocation": "Big bus",
+            "example": "We ride a big bus."
+         },
+         {
+            "collocation": "Wait for the bus",
+            "example": "She waits for the bus every morning."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Train",
+      "role": "Noun",
+      "BrE": "/treɪn/",
+      "AmE": "/treɪn/",
+      "definition": "A long vehicle that moves on tracks and carries people",
+      "examples": [
+         {
+            "collocation": "Fast train",
+            "example": "I take a fast train to the city."
+         },
+         {
+            "collocation": "Catch the train",
+            "example": "He runs to catch the train."
+         },
+         {
+            "collocation": "Ride a train",
+            "example": "We ride a train for fun."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Plane",
+      "role": "Noun",
+      "BrE": "/pleɪn/",
+      "AmE": "/pleɪn/",
+      "definition": "A flying machine with wings that takes people through the sky",
+      "examples": [
+         {
+            "collocation": "Fly a plane",
+            "example": "The pilot learns how to fly a plane."
+         },
+         {
+            "collocation": "Fast plane",
+            "example": "The fast plane lands now."
+         },
+         {
+            "collocation": "Board the plane",
+            "example": "We board the plane together."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Boat",
+      "role": "Noun",
+      "BrE": "/bəʊt/",
+      "AmE": "/boʊt/",
+      "definition": "A small vehicle that travels on water",
+      "examples": [
+         {
+            "collocation": "Small boat",
+            "example": "I sail a small boat."
+         },
+         {
+            "collocation": "Row a boat",
+            "example": "He learns how to row a boat."
+         },
+         {
+            "collocation": "Ride in a boat",
+            "example": "We ride in a boat on the lake."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Ship",
+      "role": "Noun",
+      "BrE": "/ʃɪp/",
+      "AmE": "/ʃɪp/",
+      "definition": "A very large boat that travels on the sea",
+      "examples": [
+         {
+            "collocation": "Big ship",
+            "example": "I see a big ship on the water."
+         },
+         {
+            "collocation": "Sail a ship",
+            "example": "The captain knows how to sail a ship."
+         },
+         {
+            "collocation": "Work on a ship",
+            "example": "He likes to work on a ship."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Bike",
+      "role": "Noun",
+      "BrE": "/baɪk/",
+      "AmE": "/baɪk/",
+      "definition": "A machine with two wheels that you ride",
+      "examples": [
+         {
+            "collocation": "Ride a bike",
+            "example": "I ride a bike in the park."
+         },
+         {
+            "collocation": "New bike",
+            "example": "He has a new bike."
+         },
+         {
+            "collocation": "Fast bike",
+            "example": "She wants a fast bike."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Bicycle",
+      "role": "Noun",
+      "BrE": "/ˈbaɪsɪkl/",
+      "AmE": "/ˈbaɪsɪkl/",
+      "definition": "A vehicle with two wheels that you move with your feet",
+      "examples": [
+         {
+            "collocation": "Ride a bicycle",
+            "example": "We ride a bicycle to school."
+         },
+         {
+            "collocation": "Blue bicycle",
+            "example": "She rides her blue bicycle."
+         },
+         {
+            "collocation": "Buy a bicycle",
+            "example": "I want to buy a bicycle today."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Motorbike",
+      "role": "Noun",
+      "BrE": "/ˈməʊtəbaɪk/",
+      "AmE": "/ˈmoʊtərbaɪk/",
+      "definition": "A fast vehicle with two wheels and an engine",
+      "examples": [
+         {
+            "collocation": "Ride a motorbike",
+            "example": "He likes to ride a motorbike."
+         },
+         {
+            "collocation": "Fast motorbike",
+            "example": "She has a fast motorbike."
+         },
+         {
+            "collocation": "Loud motorbike",
+            "example": "I hear a loud motorbike on the street."
+         }
+      ]
+   },
+   {
+      "id": 22,
+      "category": "Transportation",
+      "word": "Truck",
+      "role": "Noun",
+      "BrE": "/trʌk/",
+      "AmE": "/trʌk/",
+      "definition": "A large road vehicle that carries heavy things",
+      "examples": [
+         {
+            "collocation": "Drive a truck",
+            "example": "He drives a truck for his job."
+         },
+         {
+            "collocation": "Big truck",
+            "example": "I see a big truck on the road."
+         },
+         {
+            "collocation": "Red truck",
+            "example": "The red truck moves very fast."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Holiday",
+      "role": "Noun",
+      "BrE": "/ˈhɒlədeɪ/",
+      "AmE": "/ˈhɑːlədeɪ/",
+      "definition": "A time when you do not go to work or school and you rest or travel",
+      "examples": [
+         {
+            "collocation": "Summer holiday",
+            "example": "I have a long summer holiday."
+         },
+         {
+            "collocation": "Go on holiday",
+            "example": "We go on holiday to the beach."
+         },
+         {
+            "collocation": "Enjoy the holiday",
+            "example": "They enjoy the holiday very much."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Trip",
+      "role": "Noun",
+      "BrE": "/trɪp/",
+      "AmE": "/trɪp/",
+      "definition": "A short journey when you go somewhere and come back",
+      "examples": [
+         {
+            "collocation": "School trip",
+            "example": "We go on a school trip."
+         },
+         {
+            "collocation": "Short trip",
+            "example": "I take a short trip to the city."
+         },
+         {
+            "collocation": "Plan a trip",
+            "example": "She wants to plan a trip for next year."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Journey",
+      "role": "Noun",
+      "BrE": "/ˈdʒɜːni/",
+      "AmE": "/ˈdʒɜːrni/",
+      "definition": "A time when you travel from one place to another place",
+      "examples": [
+         {
+            "collocation": "Long journey",
+            "example": "It is a long journey to her house."
+         },
+         {
+            "collocation": "Safe journey",
+            "example": "Have a safe journey!"
+         },
+         {
+            "collocation": "Train journey",
+            "example": "I like the train journey."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Ticket",
+      "role": "Noun",
+      "BrE": "/ˈtɪkɪt/",
+      "AmE": "/ˈtɪkɪt/",
+      "definition": "A small piece of paper that shows you paid to travel or go inside",
+      "examples": [
+         {
+            "collocation": "Buy a ticket",
+            "example": "I buy a ticket for the bus."
+         },
+         {
+            "collocation": "Train ticket",
+            "example": "He has a train ticket."
+         },
+         {
+            "collocation": "Movie ticket",
+            "example": "She shows her movie ticket at the door."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Airport",
+      "role": "Noun",
+      "BrE": "/ˈeəpɔːt/",
+      "AmE": "/ˈerpɔːrt/",
+      "definition": "A place where planes fly from and fly to",
+      "examples": [
+         {
+            "collocation": "Go to the airport",
+            "example": "We go to the airport early."
+         },
+         {
+            "collocation": "Big airport",
+            "example": "This is a very big airport."
+         },
+         {
+            "collocation": "Wait at the airport",
+            "example": "I wait at the airport for my friend."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Station",
+      "role": "Noun",
+      "BrE": "/ˈsteɪʃn/",
+      "AmE": "/ˈsteɪʃn/",
+      "definition": "A place where trains or buses stop for people to get on or off",
+      "examples": [
+         {
+            "collocation": "Train station",
+            "example": "I walk to the train station."
+         },
+         {
+            "collocation": "Bus station",
+            "example": "She waits at the bus station."
+         },
+         {
+            "collocation": "Arrive at the station",
+            "example": "We arrive at the station on time."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Hotel",
+      "role": "Noun",
+      "BrE": "/həʊˈtel/",
+      "AmE": "/hoʊˈtel/",
+      "definition": "A place where you pay to sleep and eat when you travel",
+      "examples": [
+         {
+            "collocation": "Stay in a hotel",
+            "example": "We stay in a nice hotel."
+         },
+         {
+            "collocation": "Big hotel",
+            "example": "The big hotel has a pool."
+         },
+         {
+            "collocation": "Book a hotel",
+            "example": "He needs to book a hotel room."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Passport",
+      "role": "Noun",
+      "BrE": "/ˈpɑːspɔːt/",
+      "AmE": "/ˈpæspɔːrt/",
+      "definition": "A small book with your name and photo that you need to travel to other countries",
+      "examples": [
+         {
+            "collocation": "Show your passport",
+            "example": "Please show your passport."
+         },
+         {
+            "collocation": "New passport",
+            "example": "I need to get a new passport."
+         },
+         {
+            "collocation": "Forget the passport",
+            "example": "Do not forget the passport at home."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Luggage",
+      "role": "Noun",
+      "BrE": "/ˈlʌɡɪdʒ/",
+      "AmE": "/ˈlʌɡɪdʒ/",
+      "definition": "The bags and boxes you take when you travel",
+      "examples": [
+         {
+            "collocation": "Heavy luggage",
+            "example": "My luggage is very heavy."
+         },
+         {
+            "collocation": "Carry the luggage",
+            "example": "He helps me carry the luggage."
+         },
+         {
+            "collocation": "Lost luggage",
+            "example": "She looks for her lost luggage."
+         }
+      ]
+   },
+   {
+      "id": 23,
+      "category": "Travel",
+      "word": "Tourist",
+      "role": "Noun",
+      "BrE": "/ˈtʊərɪst/",
+      "AmE": "/ˈtʊrɪst/",
+      "definition": "A person who travels to visit a place for fun",
+      "examples": [
+         {
+            "collocation": "Happy tourist",
+            "example": "The happy tourist takes a photo."
+         },
+         {
+            "collocation": "Attract tourists",
+            "example": "Isfahan attracts lots of tourists every year."
+         },
+         {
+            "collocation": "Help a tourist",
+            "example": "I help a tourist find the park."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Sun",
+      "role": "Noun",
+      "BrE": "/sʌn/",
+      "AmE": "/sʌn/",
+      "definition": "The big yellow star that gives light and heat to the earth",
+      "examples": [
+         {
+            "collocation": "Hot sun",
+            "example": "The hot sun shines in the sky."
+         },
+         {
+            "collocation": "Morning sun",
+            "example": "I like to feel the morning sun."
+         },
+         {
+            "collocation": "Look at the sun",
+            "example": "You never look at the sun."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Moon",
+      "role": "Noun",
+      "BrE": "/muːn/",
+      "AmE": "/muːn/",
+      "definition": "The big round object that shines in the sky at night",
+      "examples": [
+         {
+            "collocation": "Full moon",
+            "example": "I see a full moon tonight."
+         },
+         {
+            "collocation": "Bright moon",
+            "example": "The bright moon gives us light."
+         },
+         {
+            "collocation": "Look at the moon",
+            "example": "We look at the moon."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Star",
+      "role": "Noun",
+      "BrE": "/stɑː(r)/",
+      "AmE": "/stɑːr/",
+      "definition": "A small bright light in the night sky",
+      "examples": [
+         {
+            "collocation": "Bright star",
+            "example": "I see a bright star."
+         },
+         {
+            "collocation": "Shooting star",
+            "example": "She looks for a shooting star."
+         },
+         {
+            "collocation": "See a star",
+            "example": "I see a star in the sky."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Sky",
+      "role": "Noun",
+      "BrE": "/skaɪ/",
+      "AmE": "/skaɪ/",
+      "definition": "The space above the earth where you see clouds and the sun",
+      "examples": [
+         {
+            "collocation": "Blue sky",
+            "example": "The blue sky looks beautiful."
+         },
+         {
+            "collocation": "Dark sky",
+            "example": "The dark sky has many stars."
+         },
+         {
+            "collocation": "Look up at the sky",
+            "example": "I look up at the sky."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Cloud",
+      "role": "Noun",
+      "BrE": "/klaʊd/",
+      "AmE": "/klaʊd/",
+      "definition": "A white or grey shape in the sky made of drops of water",
+      "examples": [
+         {
+            "collocation": "White cloud",
+            "example": "I see a white cloud in the sky."
+         },
+         {
+            "collocation": "Dark cloud",
+            "example": "A dark cloud brings rain."
+         },
+         {
+            "collocation": "Big cloud",
+            "example": "That is a very big cloud."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Rain",
+      "role": "Noun",
+      "BrE": "/reɪn/",
+      "AmE": "/reɪn/",
+      "definition": "Water that falls from the sky in drops",
+      "examples": [
+         {
+            "collocation": "Heavy rain",
+            "example": "The heavy rain makes me wet."
+         },
+         {
+            "collocation": "Walk in the rain",
+            "example": "I walk in the rain with an umbrella."
+         },
+         {
+            "collocation": "Cold rain",
+            "example": "The cold rain falls on the street."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Snow",
+      "role": "Noun",
+      "BrE": "/snəʊ/",
+      "AmE": "/snoʊ/",
+      "definition": "Soft white ice that falls from the sky",
+      "examples": [
+         {
+            "collocation": "White snow",
+            "example": "The white snow covers the tree."
+         },
+         {
+            "collocation": "Play in the snow",
+            "example": "Children play in the snow."
+         },
+         {
+            "collocation": "Heavy snow",
+            "example": "The heavy snow blocks the road."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Wind",
+      "role": "Noun",
+      "BrE": "/wɪnd/",
+      "AmE": "/wɪnd/",
+      "definition": "Air that moves outside",
+      "examples": [
+         {
+            "collocation": "Strong wind",
+            "example": "The strong wind blows the tree."
+         },
+         {
+            "collocation": "Cold wind",
+            "example": "I feel the cold wind on my face."
+         },
+         {
+            "collocation": "Hear the wind",
+            "example": "I hear the wind at night." 
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Water",
+      "role": "Noun",
+      "BrE": "/ˈwɔːtə(r)/",
+      "AmE": "/ˈwɔːtər/",
+      "definition": "A clear liquid that fills rivers and lakes",
+      "examples": [
+         {
+            "collocation": "Cold water",
+            "example": "I wash my face with cold water."
+         },
+         {
+            "collocation": "Drink water",
+            "example": "I drink water every day."
+         },
+         {
+            "collocation": "Deep water",
+            "example": "The boat sits in deep water."
+         }
+      ]
+   },
+   {
+      "id": 24,
+      "category": "Nature 1",
+      "word": "Fire",
+      "role": "Noun",
+      "BrE": "/ˈfaɪə(r)/",
+      "AmE": "/ˈfaɪər/",
+      "definition": "Bright light and heat that warms you",
+      "examples": [
+         {
+            "collocation": "Hot fire",
+            "example": "The hot fire keeps us warm."
+         },
+         {
+            "collocation": "Make a fire",
+            "example": "He makes a fire in the camp."
+         },
+         {
+            "collocation": "Set fire",
+            "example": "People set fire to the store."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Cow",
+      "role": "Noun",
+      "BrE": "/kaʊ/",
+      "AmE": "/kaʊ/",
+      "definition": "A large farm animal that gives milk",
+      "examples": [
+         {
+            "collocation": "Brown cow",
+            "example": "I see a brown cow."
+         },
+         {
+            "collocation": "Milk a cow",
+            "example": "The farmer milks a cow."
+         },
+         {
+            "collocation": "Farm cow",
+            "example": "The farm cow eats grass."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Horse",
+      "role": "Noun",
+      "BrE": "/hɔːs/",
+      "AmE": "/hɔːrs/",
+      "definition": "A large animal that people ride",
+      "examples": [
+         {
+            "collocation": "Ride a horse",
+            "example": "I ride a horse on the farm."
+         },
+         {
+            "collocation": "Fast horse",
+            "example": "The fast horse runs in the field."
+         },
+         {
+            "collocation": "Brown horse",
+            "example": "He has a brown horse."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Sheep",
+      "role": "Noun",
+      "BrE": "/ʃiːp/",
+      "AmE": "/ʃiːp/",
+      "definition": "A farm animal with thick wool",
+      "examples": [
+         {
+            "collocation": "White sheep",
+            "example": "The white sheep eats grass."
+         },
+         {
+            "collocation": "Flock of sheep",
+            "example": "He looks at the flock of sheep."
+         },
+         {
+            "collocation": "Small sheep",
+            "example": "She feeds the small sheep."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Goat",
+      "role": "Noun",
+      "BrE": "/ɡəʊt/",
+      "AmE": "/ɡoʊt/",
+      "definition": "A farm animal with horns that climbs well",
+      "examples": [
+         {
+            "collocation": "Small goat",
+            "example": "The small goat jumps on the rock."
+         },
+         {
+            "collocation": "White goat",
+            "example": "He buys a white goat."
+         },
+         {
+            "collocation": "Feed a goat",
+            "example": "I feed a goat."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Pig",
+      "role": "Noun",
+      "BrE": "/pɪɡ/",
+      "AmE": "/pɪɡ/",
+      "definition": "A farm animal with a flat nose and a short tail",
+      "examples": [
+         {
+            "collocation": "Pink pig",
+            "example": "The pink pig likes the mud."
+         },
+         {
+            "collocation": "Big pig",
+            "example": "That is a big pig."
+         },
+         {
+            "collocation": "Feed a pig",
+            "example": "He feeds a pig every day."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Duck",
+      "role": "Noun",
+      "BrE": "/dʌk/",
+      "AmE": "/dʌk/",
+      "definition": "A bird with short legs that lives near water",
+      "examples": [
+         {
+            "collocation": "White duck",
+            "example": "A white duck swims in the pond."
+         },
+         {
+            "collocation": "Feed a duck",
+            "example": "I feed a duck with bread."
+         },
+         {
+            "collocation": "Small duck",
+            "example": "The small duck walks fast."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Chicken",
+      "role": "Noun",
+      "BrE": "/ˈtʃɪkɪn/",
+      "AmE": "/ˈtʃɪkɪn/",
+      "definition": "A bird that people keep on a farm for its eggs",
+      "examples": [
+         {
+            "collocation": "Small chicken",
+            "example": "The small chicken runs around."
+         },
+         {
+            "collocation": "Farm chicken",
+            "example": "The farm chicken lays an egg."
+         },
+         {
+            "collocation": "Feed a chicken",
+            "example": "She helps to feed a chicken."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Donkey",
+      "role": "Noun",
+      "BrE": "/ˈdɒŋki/",
+      "AmE": "/ˈdɑːŋki/",
+      "definition": "An animal like a small horse with long ears",
+      "examples": [
+         {
+            "collocation": "Grey donkey",
+            "example": "The grey donkey carries heavy bags."
+         },
+         {
+            "collocation": "Ride a donkey",
+            "example": "Children ride a donkey."
+         },
+         {
+            "collocation": "Small donkey",
+            "example": "He owns a small donkey."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Goose",
+      "role": "Noun",
+      "BrE": "/ɡuːs/",
+      "AmE": "/ɡuːs/",
+      "definition": "A large bird with a long neck that lives near water",
+      "examples": [
+         {
+            "collocation": "White goose",
+            "example": "The white goose makes a loud sound."
+         },
+         {
+            "collocation": "Wild goose",
+            "example": "I see a wild goose in the sky."
+         },
+         {
+            "collocation": "Big goose",
+            "example": "He points at the big goose."
+         }
+      ]
+   },
+   {
+      "id": 25,
+      "category": "Farming",
+      "word": "Lamb",
+      "role": "Noun",
+      "BrE": "/læm/",
+      "AmE": "/læm/",
+      "definition": "A young sheep",
+      "examples": [
+         {
+            "collocation": "Little lamb",
+            "example": "The little lamb stays near its mother."
+         },
+         {
+            "collocation": "Soft lamb",
+            "example": "The soft lamb sleeps in the barn."
+         },
+         {
+            "collocation": "White lamb",
+            "example": "She holds a white lamb."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Tiger",
+      "role": "Noun",
+      "BrE": "/ˈtaɪɡə(r)/",
+      "AmE": "/ˈtaɪɡər/",
+      "definition": "A large wild cat with orange and black stripes",
+      "examples": [
+         {
+            "collocation": "Wild tiger",
+            "example": "A wild tiger lives in the jungle."
+         },
+         {
+            "collocation": "Big tiger",
+            "example": "I see a big tiger at the zoo."
+         },
+         {
+            "collocation": "Fast tiger",
+            "example": "The fast tiger runs to catch food."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Elephant",
+      "role": "Noun",
+      "BrE": "/ˈelɪfənt/",
+      "AmE": "/ˈelɪfənt/",
+      "definition": "A very large grey animal with big ears and a long nose",
+      "examples": [
+         {
+            "collocation": "Big elephant",
+            "example": "The big elephant drinks water."
+         },
+         {
+            "collocation": "Grey elephant",
+            "example": "A grey elephant walks slowly."
+         },
+         {
+            "collocation": "Feed an elephant",
+            "example": "I feed an elephant at the zoo."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Monkey",
+      "role": "Noun",
+      "BrE": "/ˈmʌŋki/",
+      "AmE": "/ˈmʌŋki/",
+      "definition": "A smart animal with a long tail that climbs trees",
+      "examples": [
+         {
+            "collocation": "Small monkey",
+            "example": "The small monkey jumps in the tree."
+         },
+         {
+            "collocation": "Funny monkey",
+            "example": "I laugh at the funny monkey."
+         },
+         {
+            "collocation": "Feed a monkey",
+            "example": "He likes to feed a monkey."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Giraffe",
+      "role": "Noun",
+      "BrE": "/dʒəˈrɑːf/",
+      "AmE": "/dʒəˈræf/",
+      "definition": "A tall animal with a very long neck and long legs",
+      "examples": [
+         {
+            "collocation": "Tall giraffe",
+            "example": "The tall giraffe eats leaves from the tree."
+         },
+         {
+            "collocation": "See a giraffe",
+            "example": "We see a giraffe at the zoo."
+         },
+         {
+            "collocation": "Yellow giraffe",
+            "example": "The yellow giraffe has brown spots."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Snake",
+      "role": "Noun",
+      "BrE": "/sneɪk/",
+      "AmE": "/sneɪk/",
+      "definition": "A long thin animal with no legs",
+      "examples": [
+         {
+            "collocation": "Long snake",
+            "example": "A long snake hides in the grass."
+         },
+         {
+            "collocation": "Green snake",
+            "example": "He finds a green snake."
+         },
+         {
+            "collocation": "Scary snake",
+            "example": "I do not like the scary snake."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Bear",
+      "role": "Noun",
+      "BrE": "/beə(r)/",
+      "AmE": "/ber/",
+      "definition": "A large strong animal with thick fur",
+      "examples": [
+         {
+            "collocation": "Big bear",
+            "example": "The big bear sleeps in a cave."
+         },
+         {
+            "collocation": "Brown bear",
+            "example": "I see a brown bear in the forest."
+         },
+         {
+            "collocation": "Wild bear",
+            "example": "A wild bear eats fish."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Crocodile",
+      "role": "Noun",
+      "BrE": "/ˈkrɒkədaɪl/",
+      "AmE": "/ˈkrɑːkədaɪl/",
+      "definition": "A large green animal with a long tail and big teeth that lives in water",
+      "examples": [
+         {
+            "collocation": "Big crocodile",
+            "example": "The big crocodile swims in the river."
+         },
+         {
+            "collocation": "Green crocodile",
+            "example": "The green crocodile has sharp teeth."
+         },
+         {
+            "collocation": "Wild crocodile",
+            "example": "We watch the wild crocodile."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Hippo",
+      "role": "Noun",
+      "BrE": "/ˈhɪpəʊ/",
+      "AmE": "/ˈhɪpoʊ/",
+      "definition": "A very large heavy animal that spends a lot of time in water",
+      "examples": [
+         {
+            "collocation": "Big hippo",
+            "example": "The big hippo rests in the water."
+         },
+         {
+            "collocation": "Grey hippo",
+            "example": "A grey hippo opens its mouth."
+         },
+         {
+            "collocation": "See a hippo",
+            "example": "I see a hippo at the zoo."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Zebra",
+      "role": "Noun",
+      "BrE": "/ˈzebrə/",
+      "AmE": "/ˈziːbrə/",
+      "definition": "A wild horse with black and white stripes",
+      "examples": [
+         {
+            "collocation": "Wild zebra",
+            "example": "The wild zebra runs fast."
+         },
+         {
+            "collocation": "See a zebra",
+            "example": "I see a zebra on the grass."
+         },
+         {
+            "collocation": "Fast zebra",
+            "example": "The fast zebra stays with the group."
+         }
+      ]
+   },
+   {
+      "id": 26,
+      "category": "Wild Animals",
+      "word": "Lion",
+      "role": "Noun",
+      "BrE": "/ˈlaɪən/",
+      "AmE": "/ˈlaɪən/",
+      "definition": "A large wild cat with golden hair",
+      "examples": [
+         {
+            "collocation": "Big lion",
+            "example": "The big lion sleeps under the tree."
+         },
+         {
+            "collocation": "Wild lion",
+            "example": "A wild lion hunts for food."
+         },
+         {
+            "collocation": "Hear a lion",
+            "example": "I hear a lion at the zoo."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Music",
+      "role": "Noun",
+      "BrE": "/ˈmjuːzɪk/",
+      "AmE": "/ˈmjuːzɪk/",
+      "definition": "Sounds that people make to listen to and enjoy",
+      "examples": [
+         {
+            "collocation": "Listen to music",
+            "example": "I listen to music every day."
+         },
+         {
+            "collocation": "Good music",
+            "example": "She makes good music."
+         },
+         {
+            "collocation": "Loud music",
+            "example": "He plays loud music."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Lyrics",
+      "role": "Noun",
+      "BrE": "/ˈlɪrɪks/",
+      "AmE": "/ˈlɪrɪks/",
+      "definition": "The words of a song",
+      "examples": [
+         {
+            "collocation": "Write lyrics",
+            "example": "He writes beautiful lyrics."
+         },
+         {
+            "collocation": "Sing the lyrics",
+            "example": "I sing the lyrics with my friend."
+         },
+         {
+            "collocation": "Sad lyrics",
+            "example": "The song has sad lyrics."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Guitar",
+      "role": "Noun",
+      "BrE": "/ɡɪˈtɑː(r)/",
+      "AmE": "/ɡɪˈtɑːr/",
+      "definition": "A musical instrument with six strings that you play with your fingers",
+      "examples": [
+         {
+            "collocation": "Play the guitar",
+            "example": "She plays the guitar well."
+         },
+         {
+            "collocation": "Acoustic guitar",
+            "example": "He buys an acoustic guitar."
+         },
+         {
+            "collocation": "New guitar",
+            "example": "I want a new guitar."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Piano",
+      "role": "Noun",
+      "BrE": "/piˈænəʊ/",
+      "AmE": "/piˈænoʊ/",
+      "definition": "A large musical instrument with black and white keys",
+      "examples": [
+         {
+            "collocation": "Play the piano",
+            "example": "I play the piano at home."
+         },
+         {
+            "collocation": "Grand piano",
+            "example": "A grand piano costs a lot of money."
+         },
+         {
+            "collocation": "Learn the piano",
+            "example": "He learns the piano."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Paint",
+      "role": "Verb",
+      "BrE": "/peɪnt/",
+      "AmE": "/peɪnt/",
+      "definition": "To make a picture with colors",
+      "examples": [
+         {
+            "collocation": "Paint a picture",
+            "example": "I paint a picture of a house."
+         },
+         {
+            "collocation": "Paint a wall",
+            "example": "He paints the wall blue."
+         },
+         {
+            "collocation": "Like to paint",
+            "example": "She likes to paint."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Novel",
+      "role": "Noun",
+      "BrE": "/ˈnɒvl/",
+      "AmE": "/ˈnɑːvl/",
+      "definition": "A long story in a book",
+      "examples": [
+         {
+            "collocation": "Read a novel",
+            "example": "I read a novel every week."
+         },
+         {
+            "collocation": "Write a novel",
+            "example": "He writes a new novel."
+         },
+         {
+            "collocation": "Famous novel",
+            "example": "She likes this famous novel."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Sketch",
+      "role": "Noun",
+      "BrE": "/sketʃ/",
+      "AmE": "/sketʃ/",
+      "definition": "A quick picture that you make without many details",
+      "examples": [
+         {
+            "collocation": "Draw a sketch",
+            "example": "I draw a quick sketch."
+         },
+         {
+            "collocation": "Pencil sketch",
+            "example": "He makes a pencil sketch."
+         },
+         {
+            "collocation": "Quick sketch",
+            "example": "She looks at the quick sketch."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Sing",
+      "role": "Verb",
+      "BrE": "/sɪŋ/",
+      "AmE": "/sɪŋ/",
+      "definition": "To make musical sounds with your voice",
+      "examples": [
+         {
+            "collocation": "Sing a song",
+            "example": "I sing a happy song."
+         },
+         {
+            "collocation": "Sing loudly",
+            "example": "He sings loudly in the shower."
+         },
+         {
+            "collocation": "Like to sing",
+            "example": "She likes to sing."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Draw",
+      "role": "Verb",
+      "BrE": "/drɔː/",
+      "AmE": "/drɔː/",
+      "definition": "To make a picture with a pen or pencil",
+      "examples": [
+         {
+            "collocation": "Draw a picture",
+            "example": "I draw a picture of a cat."
+         },
+         {
+            "collocation": "Draw well",
+            "example": "She draws very well."
+         },
+         {
+            "collocation": "Learn to draw",
+            "example": "He learns to draw."
+         }
+      ]
+   },
+   {
+      "id": 27,
+      "category": "Arts",
+      "word": "Dance",
+      "role": "Verb",
+      "BrE": "/dɑːns/",
+      "AmE": "/dæns/",
+      "definition": "To move your body to music",
+      "examples": [
+         {
+            "collocation": "Dance together",
+            "example": "We dance together at the party."
+         },
+         {
+            "collocation": "Love to dance",
+            "example": "She loves to dance."
+         },
+         {
+            "collocation": "Learn to dance",
+            "example": "He learns to dance."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Tree",
+      "role": "Noun",
+      "BrE": "/triː/",
+      "AmE": "/triː/",
+      "definition": "A tall plant that has a hard trunk and branches",
+      "examples": [
+         {
+            "collocation": "Tall tree",
+            "example": "The tall tree grows in the park."
+         },
+         {
+            "collocation": "Climb a tree",
+            "example": "I climb a tree in the garden."
+         },
+         {
+            "collocation": "Apple tree",
+            "example": "She plants an apple tree."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Flower",
+      "role": "Noun",
+      "BrE": "/ˈflaʊə(r)/",
+      "AmE": "/ˈflaʊər/",
+      "definition": "The colorful part of a plant",
+      "examples": [
+         {
+            "collocation": "Red flower",
+            "example": "I give a red flower to my mother."
+         },
+         {
+            "collocation": "Smell a flower",
+            "example": "He smells a flower."
+         },
+         {
+            "collocation": "Beautiful flower",
+            "example": "The beautiful flower grows in the sun."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Grass",
+      "role": "Noun",
+      "BrE": "/ɡrɑːs/",
+      "AmE": "/ɡræs/",
+      "definition": "A common green plant that covers the ground",
+      "examples": [
+         {
+            "collocation": "Green grass",
+            "example": "The cow eats the green grass."
+         },
+         {
+            "collocation": "Cut the grass",
+            "example": "He cuts the grass in the garden."
+         },
+         {
+            "collocation": "Sit on the grass",
+            "example": "We sit on the grass."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Leaf",
+      "role": "Noun",
+      "BrE": "/liːf/",
+      "AmE": "/liːf/",
+      "definition": "The flat green part of a plant or tree",
+      "examples": [
+         {
+            "collocation": "Green leaf",
+            "example": "I see a green leaf."
+         },
+         {
+            "collocation": "Fall leaf",
+            "example": "A dry leaf falls from the tree."
+         },
+         {
+            "collocation": "Dry leaf",
+            "example": "He steps on a dry leaf."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Sea",
+      "role": "Noun",
+      "BrE": "/siː/",
+      "AmE": "/siː/",
+      "definition": "The large area of salty water that covers much of the earth",
+      "examples": [
+         {
+            "collocation": "Blue sea",
+            "example": "The blue sea looks beautiful."
+         },
+         {
+            "collocation": "Swim in the sea",
+            "example": "I swim in the sea."
+         },
+         {
+            "collocation": "Deep sea",
+            "example": "Fish live in the deep sea."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Beach",
+      "role": "Noun",
+      "BrE": "/biːtʃ/",
+      "AmE": "/biːtʃ/",
+      "definition": "The area of sand or stones next to the sea",
+      "examples": [
+         {
+            "collocation": "Go to the beach",
+            "example": "We go to the beach in summer."
+         },
+         {
+            "collocation": "Sandy beach",
+            "example": "She walks on the sandy beach."
+         },
+         {
+            "collocation": "Play on the beach",
+            "example": "Children play on the beach."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "River",
+      "role": "Noun",
+      "BrE": "/ˈrɪvə(r)/",
+      "AmE": "/ˈrɪvər/",
+      "definition": "A long line of water that flows to the sea",
+      "examples": [
+         {
+            "collocation": "Long river",
+            "example": "The long river flows fast."
+         },
+         {
+            "collocation": "Swim in the river",
+            "example": "I swim in the river."
+         },
+         {
+            "collocation": "Cross the river",
+            "example": "They cross the river."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Mountain",
+      "role": "Noun",
+      "BrE": "/ˈmaʊntən/",
+      "AmE": "/ˈmaʊntn/",
+      "definition": "A very high hill",
+      "examples": [
+         {
+            "collocation": "High mountain",
+            "example": "We climb the high mountain."
+         },
+         {
+            "collocation": "Snowy mountain",
+            "example": "The snowy mountain looks cold."
+         },
+         {
+            "collocation": "See a mountain",
+            "example": "I see a mountain from my window."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Forest",
+      "role": "Noun",
+      "BrE": "/ˈfɒrɪst/",
+      "AmE": "/ˈfɔːrɪst/",
+      "definition": "A large area of land covered with trees",
+      "examples": [
+         {
+            "collocation": "Dark forest",
+            "example": "The dark forest has many trees."
+         },
+         {
+            "collocation": "Walk in the forest",
+            "example": "We walk in the forest."
+         },
+         {
+            "collocation": "Wild forest",
+            "example": "Animals live in the wild forest."
+         }
+      ]
+   },
+   {
+      "id": 28,
+      "category": "Nature 2",
+      "word": "Sand",
+      "role": "Noun",
+      "BrE": "/sænd/",
+      "AmE": "/sænd/",
+      "definition": "Very small grains of rock on the beach",
+      "examples": [
+         {
+            "collocation": "Hot sand",
+            "example": "The hot sand hurts my feet."
+         },
+         {
+            "collocation": "Play in the sand",
+            "example": "He plays in the sand."
+         },
+         {
+            "collocation": "Yellow sand",
+            "example": "I touch the yellow sand."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Be",
+      "role": "Verb",
+      "BrE": "/biː/",
+      "AmE": "/biː/",
+      "definition": "To exist or to show a state, fact, or feeling",
+      "examples": [
+         {
+            "collocation": "Be happy",
+            "example": "I want to be happy every day."
+         },
+         {
+            "collocation": "Be a doctor",
+            "example": "He wants to be a doctor when he grows up."
+         },
+         {
+            "collocation": "Be quiet",
+            "example": "Please be quiet in the class."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Have",
+      "role": "Verb",
+      "BrE": "/hæv/",
+      "AmE": "/hæv/",
+      "definition": "To own or hold something",
+      "examples": [
+         {
+            "collocation": "Have a pet",
+            "example": "I have a small cat at home."
+         },
+         {
+            "collocation": "Have a car",
+            "example": "He has a fast red car."
+         },
+         {
+            "collocation": "Have a break",
+            "example": "We have a short break now."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Do",
+      "role": "Verb",
+      "BrE": "/duː/",
+      "AmE": "/duː/",
+      "definition": "To perform an action or an activity",
+      "examples": [
+         {
+            "collocation": "Do homework",
+            "example": "I do my homework in the afternoon."
+         },
+         {
+            "collocation": "Do a job",
+            "example": "She does a very good job."
+         },
+         {
+            "collocation": "Do sports",
+            "example": "They do sports after school to stay healthy."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Make",
+      "role": "Verb",
+      "BrE": "/meɪk/",
+      "AmE": "/meɪk/",
+      "definition": "To create or build something new",
+      "examples": [
+         {
+            "collocation": "Make a cake",
+            "example": "I make a sweet cake for your birthday."
+         },
+         {
+            "collocation": "Make a fire",
+            "example": "He makes a hot fire at the camp."
+         },
+         {
+            "collocation": "Make a mistake",
+            "example": "We sometimes make a mistake in tests."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Go",
+      "role": "Verb",
+      "BrE": "/ɡəʊ/",
+      "AmE": "/ɡoʊ/",
+      "definition": "To move from one place to another place",
+      "examples": [
+         {
+            "collocation": "Go to school",
+            "example": "Children go to school by bus."
+         },
+         {
+            "collocation": "Go home",
+            "example": "I go home after a busy day."
+         },
+         {
+            "collocation": "Go downtown",
+            "example": "She wants to go downtown to shop."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Come",
+      "role": "Verb",
+      "BrE": "/kʌm/",
+      "AmE": "/kʌm/",
+      "definition": "To move toward a place or a person",
+      "examples": [
+         {
+            "collocation": "Come home",
+            "example": "He comes home late in the evening."
+         },
+         {
+            "collocation": "Come to a party",
+            "example": "Please come to my party tonight."
+         },
+         {
+            "collocation": "Come here",
+            "example": "My dog comes here when I call its name."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "See",
+      "role": "Verb",
+      "BrE": "/siː/",
+      "AmE": "/siː/",
+      "definition": "To look at something with your eyes",
+      "examples": [
+         {
+            "collocation": "See a bird",
+            "example": "I see a beautiful bird in the tree."
+         },
+         {
+            "collocation": "See a movie",
+            "example": "They see a funny movie together."
+         },
+         {
+            "collocation": "See the doctor",
+            "example": "She goes to see the doctor today."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Eat",
+      "role": "Verb",
+      "BrE": "/iːt/",
+      "AmE": "/iːt/",
+      "definition": "To put food in your mouth and swallow it",
+      "examples": [
+         {
+            "collocation": "Eat dinner",
+            "example": "We eat dinner at seven o'clock."
+         },
+         {
+            "collocation": "Eat an apple",
+            "example": "I eat a fresh apple every morning."
+         },
+         {
+            "collocation": "Eat meat",
+            "example": "He likes to eat meat with rice."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Drink",
+      "role": "Verb",
+      "BrE": "/drɪŋk/",
+      "AmE": "/drɪŋk/",
+      "definition": "To take a liquid into your mouth and swallow it",
+      "examples": [
+         {
+            "collocation": "Drink water",
+            "example": "I drink cold water when I am thirsty."
+         },
+         {
+            "collocation": "Drink milk",
+            "example": "The small child drinks fresh milk."
+         },
+         {
+            "collocation": "Drink coffee",
+            "example": "She prefers to drink hot coffee."
+         }
+      ]
+   },
+   {
+      "id": 29,
+      "category": "Basic Verbs",
+      "word": "Watch",
+      "role": "Verb",
+      "BrE": "/wɒtʃ/",
+      "AmE": "/wɑːtʃ/",
+      "definition": "To look at someone or something for a period of time",
+      "examples": [
+         {
+            "collocation": "Watch television",
+            "example": "They watch television after dinner."
+         },
+         {
+            "collocation": "Watch a game",
+            "example": "We watch a football game on TV."
+         },
+         {
+            "collocation": "Watch the birds",
+            "example": "She likes to watch the birds in the park."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Speak",
+      "role": "Verb",
+      "BrE": "/spiːk/",
+      "AmE": "/spiːk/",
+      "definition": "To use words to say something to someone",
+      "examples": [
+         {
+            "collocation": "Speak English",
+            "example": "I speak English with my teacher."
+         },
+         {
+            "collocation": "Speak softly",
+            "example": "He speaks softly in the library."
+         },
+         {
+            "collocation": "Speak to friends",
+            "example": "She likes to speak to her friends every day."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Call",
+      "role": "Verb",
+      "BrE": "/kɔːl/",
+      "AmE": "/kɔːl/",
+      "definition": "To telephone someone or shout their name",
+      "examples": [
+         {
+            "collocation": "Call my mother",
+            "example": "I call my mother every night."
+         },
+         {
+            "collocation": "Call a doctor",
+            "example": "Please call a doctor now."
+         },
+         {
+            "collocation": "Call a friend",
+            "example": "He uses his phone to call a friend."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Sleep",
+      "role": "Verb",
+      "BrE": "/sliːp/",
+      "AmE": "/sliːp/",
+      "definition": "To rest with your eyes closed in a natural state of deep relaxation",
+      "examples": [
+         {
+            "collocation": "Sleep well",
+            "example": "I always sleep well in a comfortable bed."
+         },
+         {
+            "collocation": "Sleep early",
+            "example": "She goes to sleep early on weekdays."
+         },
+         {
+            "collocation": "Need to sleep",
+            "example": "The tired child needs to sleep."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Wake up",
+      "role": "Verb",
+      "BrE": "/weɪk ʌp/",
+      "AmE": "/weɪk ʌp/",
+      "definition": "To stop sleeping and open your eyes",
+      "examples": [
+         {
+            "collocation": "Wake up early",
+            "example": "I wake up early every morning."
+         },
+         {
+            "collocation": "Wake up late",
+            "example": "He wakes up late on Sundays."
+         },
+         {
+            "collocation": "Time to wake up",
+            "example": "My alarm rings and it is time to wake up."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Wash",
+      "role": "Verb",
+      "BrE": "/wɒʃ/",
+      "AmE": "/wɑːʃ/",
+      "definition": "To clean something with water and soap",
+      "examples": [
+         {
+            "collocation": "Wash hands",
+            "example": "I wash my hands before dinner."
+         },
+         {
+            "collocation": "Wash dishes",
+            "example": "He helps to wash the dishes after food."
+         },
+         {
+            "collocation": "Wash clothes",
+            "example": "She washes her clothes on Saturdays."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Brush",
+      "role": "Verb",
+      "BrE": "/brʌʃ/",
+      "AmE": "/brʌʃ/",
+      "definition": "To clean or smooth something with a special tool",
+      "examples": [
+         {
+            "collocation": "Brush teeth",
+            "example": "I brush my teeth twice a day."
+         },
+         {
+            "collocation": "Brush hair",
+            "example": "She uses a comb to brush her hair."
+         },
+         {
+            "collocation": "Brush every morning",
+            "example": "He brushes his teeth every morning."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Cook",
+      "role": "Verb",
+      "BrE": "/kʊk/",
+      "AmE": "/kʊk/",
+      "definition": "To prepare food by heating it",
+      "examples": [
+         {
+            "collocation": "Cook dinner",
+            "example": "I cook a delicious dinner for my family."
+         },
+         {
+            "collocation": "Cook food",
+            "example": "The chef cooks food in the restaurant kitchen."
+         },
+         {
+            "collocation": "Like to cook",
+            "example": "She likes to cook healthy meals."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Work",
+      "role": "Verb",
+      "BrE": "/wɜːk/",
+      "AmE": "/wɜːrk/",
+      "definition": "To do a job to earn money or complete a task",
+      "examples": [
+         {
+            "collocation": "Work hard",
+            "example": "They work hard to finish the project."
+         },
+         {
+            "collocation": "Work at an office",
+            "example": "He works at a big office downtown."
+         },
+         {
+            "collocation": "Work every day",
+            "example": "I work every day except Sunday."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Help",
+      "role": "Verb",
+      "BrE": "/help/",
+      "AmE": "/help/",
+      "definition": "To give assistance or make it easier for someone to do something",
+      "examples": [
+         {
+            "collocation": "Help people",
+            "example": "Good doctors always help sick people."
+         },
+         {
+            "collocation": "Help my father",
+            "example": "I help my father to wash the car."
+         },
+         {
+            "collocation": "Ask for help",
+            "example": "She asks for help with her homework."
+         }
+      ]
+   },
+   {
+      "id": 30,
+      "category": "Daily Routines",
+      "word": "Find",
+      "role": "Verb",
+      "BrE": "/faɪnd/",
+      "AmE": "/faɪnd/",
+      "definition": "To discover something by chance or because you look for it",
+      "examples": [
+         {
+            "collocation": "Find keys",
+            "example": "I look everywhere to find my keys."
+         },
+         {
+            "collocation": "Find a job",
+            "example": "He wants to find a good job."
+         },
+         {
+            "collocation": "Find a solution",
+            "example": "We look at the map to find the way."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Say",
+      "role": "Verb",
+      "BrE": "/seɪ/",
+      "AmE": "/seɪ/",
+      "definition": "To speak words to show a thought or information",
+      "examples": [
+         {
+            "collocation": "Say hello",
+            "example": "I say hello to my teacher every morning."
+         },
+         {
+            "collocation": "Say a word",
+            "example": "Please do not say a word in the test."
+         },
+         {
+            "collocation": "Say goodbye",
+            "example": "We wave our hands and say goodbye."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Tell",
+      "role": "Verb",
+      "BrE": "/tel/",
+      "AmE": "/tel/",
+      "definition": "To give information or a story to a person with words",
+      "examples": [
+         {
+            "collocation": "Tell a story",
+            "example": "My grandfather likes to tell a funny story."
+         },
+         {
+            "collocation": "Tell the truth",
+            "example": "Good children always tell the truth."
+         },
+         {
+            "collocation": "Tell the time",
+            "example": "He uses his watch to tell the time."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Agree",
+      "role": "Verb",
+      "BrE": "/əˈɡriː/",
+      "AmE": "/əˈɡriː/",
+      "definition": "To have the same opinion as someone else",
+      "examples": [
+         {
+            "collocation": "Agree with you",
+            "example": "You are right, and I agree with you."
+         },
+         {
+            "collocation": "Agree on a plan",
+            "example": "We talk and agree on a plan for the weekend."
+         },
+         {
+            "collocation": "All agree",
+            "example": "The students all agree with the teacher."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Talk",
+      "role": "Verb",
+      "BrE": "/tɔːk/",
+      "AmE": "/tɔːk/",
+      "definition": "To speak to someone to share ideas or information",
+      "examples": [
+         {
+            "collocation": "Talk to friends",
+            "example": "I talk to my friends during the break."
+         },
+         {
+            "collocation": "Talk on the phone",
+            "example": "She likes to talk on the phone with her mother."
+         },
+         {
+            "collocation": "Talk loudly",
+            "example": "Please do not talk loudly in the hospital."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Ask",
+      "role": "Verb",
+      "BrE": "/ɑːsk/",
+      "AmE": "/æsk/",
+      "definition": "To use a question to find out information",
+      "examples": [
+         {
+            "collocation": "Ask a question",
+            "example": "I raise my hand to ask a question."
+         },
+         {
+            "collocation": "Ask for help",
+            "example": "If you do not understand, ask for help."
+         },
+         {
+            "collocation": "Ask the teacher",
+            "example": "He walks to the desk to ask the teacher."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Answer",
+      "role": "Verb",
+      "BrE": "/ˈɑːnsə(r)/",
+      "AmE": "/ˈænsər/",
+      "definition": "To say or write something back to a question",
+      "examples": [
+         {
+            "collocation": "Answer a question",
+            "example": "She knows how to answer the difficult question."
+         },
+         {
+            "collocation": "Answer the phone",
+            "example": "I run to answer the phone in the living room."
+         },
+         {
+            "collocation": "Quick answer",
+            "example": "He gives a quick answer to the boss."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Disagree",
+      "role": "Verb",
+      "BrE": "/ˌdɪsəˈɡriː/",
+      "AmE": "/ˌdɪsəˈɡriː/",
+      "definition": "To have a different opinion from someone else",
+      "examples": [
+         {
+            "collocation": "Disagree with someone",
+            "example": "I see your point, but I disagree with you."
+         },
+         {
+            "collocation": "Politely disagree",
+            "example": "They politely disagree during the meeting."
+         },
+         {
+            "collocation": "Disagree on food",
+            "example": "We disagree on what to eat for dinner."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Write",
+      "role": "Verb",
+      "BrE": "/raɪt/",
+      "AmE": "/raɪt/",
+      "definition": "To form letters or words on paper with a pen or pencil",
+      "examples": [
+         {
+            "collocation": "Write a letter",
+            "example": "I write a letter to my friend in England."
+         },
+         {
+            "collocation": "Write a book",
+            "example": "The famous author wants to write a new book."
+         },
+         {
+            "collocation": "Write your name",
+            "example": "Please write your name at the top of the paper."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Read",
+      "role": "Verb",
+      "BrE": "/riːd/",
+      "AmE": "/riːd/",
+      "definition": "To look at words and understand their meaning",
+      "examples": [
+         {
+            "collocation": "Read a book",
+            "example": "I read an interesting book before sleep."
+         },
+         {
+            "collocation": "Read a newspaper",
+            "example": "My father reads the newspaper every morning."
+         },
+         {
+            "collocation": "Learn to read",
+            "example": "Little children learn to read at school."
+         }
+      ]
+   },
+   {
+      "id": 31,
+      "category": "Communication",
+      "word": "Listen",
+      "role": "Verb",
+      "BrE": "/ˈlɪsn/",
+      "AmE": "/ˈlɪsn/",
+      "definition": "To pay attention to a sound with your ears",
+      "examples": [
+         {
+            "collocation": "Listen to music",
+            "example": "I use my headphones to listen to music."
+         },
+         {
+            "collocation": "Listen to the teacher",
+            "example": "Good students always listen to the teacher."
+         },
+         {
+            "collocation": "Listen carefully",
+            "example": "Please listen carefully to the instructions."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Walk",
+      "role": "Verb",
+      "BrE": "/wɔːk/",
+      "AmE": "/wɔːk/",
+      "definition": "To move on foot at a regular pace",
+      "examples": [
+         {
+            "collocation": "Walk to school",
+            "example": "I walk to school with my brother every morning."
+         },
+         {
+            "collocation": "Walk the dog",
+            "example": "He walks the dog in the park after dinner."
+         },
+         {
+            "collocation": "Walk slowly",
+            "example": "The old man walks slowly on the street."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Run",
+      "role": "Verb",
+      "BrE": "/rʌn/",
+      "AmE": "/rʌn/",
+      "definition": "To move on foot at a fast pace",
+      "examples": [
+         {
+            "collocation": "Run fast",
+            "example": "The soccer player runs fast to get the ball."
+         },
+         {
+            "collocation": "Run in the morning",
+            "example": "I run in the morning to stay healthy."
+         },
+         {
+            "collocation": "Run to the bus",
+            "example": "She runs to the bus stop because she is late."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Jump",
+      "role": "Verb",
+      "BrE": "/dʒʌmp/",
+      "AmE": "/dʒʌmp/",
+      "definition": "To push yourself into the air using your legs",
+      "examples": [
+         {
+            "collocation": "Jump high",
+            "example": "The happy children jump high on the bed."
+         },
+         {
+            "collocation": "Jump into water",
+            "example": "He wants to jump into the swimming pool."
+         },
+         {
+            "collocation": "Jump over a wall",
+            "example": "The clever cat jumps over the garden wall."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Swim",
+      "role": "Verb",
+      "BrE": "/swɪm/",
+      "AmE": "/swɪm/",
+      "definition": "To move through water using your body",
+      "examples": [
+         {
+            "collocation": "Swim in the pool",
+            "example": "I swim in the pool on hot summer days."
+         },
+         {
+            "collocation": "Learn to swim",
+            "example": "My little sister learns to swim with a coach."
+         },
+         {
+            "collocation": "Swim well",
+            "example": "Fish swim well because they live in the water."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Fly",
+      "role": "Verb",
+      "BrE": "/flaɪ/",
+      "AmE": "/flaɪ/",
+      "definition": "To move through the air like a bird or plane",
+      "examples": [
+         {
+            "collocation": "Fly a kite",
+            "example": "I fly a large kite at the beach."
+         },
+         {
+            "collocation": "Birds fly",
+            "example": "Many birds fly south during the cold winter."
+         },
+         {
+            "collocation": "Fly in a plane",
+            "example": "We fly in a big plane to go on vacation."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Drive",
+      "role": "Verb",
+      "BrE": "/draɪv/",
+      "AmE": "/draɪv/",
+      "definition": "To control a car or other vehicle",
+      "examples": [
+         {
+            "collocation": "Drive a car",
+            "example": "My father drives a white car to work."
+         },
+         {
+            "collocation": "Drive safely",
+            "example": "Good drivers always drive safely on the highway."
+         },
+         {
+            "collocation": "Learn to drive",
+            "example": "He wants to learn to drive next year."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Ride",
+      "role": "Verb",
+      "BrE": "/raɪd/",
+      "AmE": "/raɪd/",
+      "definition": "To travel on a bicycle, motorcycle, or animal",
+      "examples": [
+         {
+            "collocation": "Ride a bike",
+            "example": "I ride my bike to the park on weekends."
+         },
+         {
+            "collocation": "Ride a horse",
+            "example": "She knows how to ride a horse on the farm."
+         },
+         {
+            "collocation": "Ride a motorcycle",
+            "example": "He wears a helmet to ride his motorcycle."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Play",
+      "role": "Verb",
+      "BrE": "/pleɪ/",
+      "AmE": "/pleɪ/",
+      "definition": "To do activities for enjoyment or participate in a game",
+      "examples": [
+         {
+            "collocation": "Play soccer",
+            "example": "The boys play soccer after school every day."
+         },
+         {
+            "collocation": "Play games",
+            "example": "We play fun board games on rainy days."
+         },
+         {
+            "collocation": "Play with toys",
+            "example": "The baby likes to play with soft toys."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Juggle",
+      "role": "Verb",
+      "BrE": "/ˈdʒʌɡl/",
+      "AmE": "/ˈdʒʌɡl/",
+      "definition": "To throw several objects into the air and catch them continuously",
+      "examples": [
+         {
+            "collocation": "Juggle balls",
+            "example": "The circus performer can juggle three balls at once."
+         },
+         {
+            "collocation": "Learn to juggle",
+            "example": "I practice every day to learn to juggle oranges."
+         },
+         {
+            "collocation": "Juggle well",
+            "example": "She juggles well because she practices a lot."
+         }
+      ]
+   },
+   {
+      "id": 32,
+      "category": "Motion",
+      "word": "Climb",
+      "role": "Verb",
+      "BrE": "/klaɪm/",
+      "AmE": "/klaɪm/",
+      "definition": "To go up toward the top of something",
+      "examples": [
+         {
+            "collocation": "Climb a mountain",
+            "example": "They climb a high mountain during their holiday."
+         },
+         {
+            "collocation": "Climb a tree",
+            "example": "The little boy climbs a tree to look at the bird."
+         },
+         {
+            "collocation": "Climb stairs",
+            "example": "I climb the stairs to go to my bedroom."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Think",
+      "role": "Verb",
+      "BrE": "/θɪŋk/",
+      "AmE": "/θɪŋk/",
+      "definition": "To use your mind to consider ideas or opinions",
+      "examples": [
+         {
+            "collocation": "Think about you",
+            "example": "I think about my family when I travel."
+         },
+         {
+            "collocation": "Think carefully",
+            "example": "Please think carefully before you answer."
+         },
+         {
+            "collocation": "Think of an idea",
+            "example": "He wants to think of a good idea for the game."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Know",
+      "role": "Verb",
+      "BrE": "/nəʊ/",
+      "AmE": "/noʊ/",
+      "definition": "To have information or facts about something in your mind",
+      "examples": [
+         {
+            "collocation": "Know the answer",
+            "example": "She knows the answer to the difficult question."
+         },
+         {
+            "collocation": "Know a person",
+            "example": "I know the new student in our class."
+         },
+         {
+            "collocation": "Know the way",
+            "example": "He knows the way to the train station."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Understand",
+      "role": "Verb",
+      "BrE": "/ˌʌndəˈstænd/",
+      "AmE": "/ˌʌndərˈstænd/",
+      "definition": "To know the meaning of something completely",
+      "examples": [
+         {
+            "collocation": "Understand the lesson",
+            "example": "I listen carefully to understand the lesson."
+         },
+         {
+            "collocation": "Understand English",
+            "example": "She understands English when people speak slowly."
+         },
+         {
+            "collocation": "Understand a problem",
+            "example": "They work together to understand the math problem."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Remember",
+      "role": "Verb",
+      "BrE": "/rɪˈmembə(r)/",
+      "AmE": "/rɪˈmembər/",
+      "definition": "To keep information in your mind or bring it back from the past",
+      "examples": [
+         {
+            "collocation": "Remember my name",
+            "example": "I hope you remember my name when we meet."
+         },
+         {
+            "collocation": "Remember a face",
+            "example": "He remembers your face from the party."
+         },
+         {
+            "collocation": "Remember to buy",
+            "example": "She remembers to buy milk at the shop."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Forget",
+      "role": "Verb",
+      "BrE": "/fəˈɡet/",
+      "AmE": "/fərˈɡet/",
+      "definition": "To fail to remember information or a duty",
+      "examples": [
+         {
+            "collocation": "Forget keys",
+            "example": "I sometimes forget my keys inside the house."
+         },
+         {
+            "collocation": "Forget a name",
+            "example": "He tries hard but forgets her name."
+         },
+         {
+            "collocation": "Forget homework",
+            "example": "Please do not forget your homework tomorrow."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Believe",
+      "role": "Verb",
+      "BrE": "/bɪˈliːv/",
+      "AmE": "/bɪˈliːv/",
+      "definition": "To feel sure that something is true or real",
+      "examples": [
+         {
+            "collocation": "Believe you",
+            "example": "You tell the truth, so I believe you."
+         },
+         {
+            "collocation": "Believe in you",
+            "example": "Your parents believe in you and support your dream."
+         },
+         {
+            "collocation": "Believe a story",
+            "example": "Children believe the magical story."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Learn",
+      "role": "Verb",
+      "BrE": "/lɜːn/",
+      "AmE": "/lɜːrn/",
+      "definition": "To get knowledge or a new skill through study or practice",
+      "examples": [
+         {
+            "collocation": "Learn a language",
+            "example": "I want to learn a new language this year."
+         },
+         {
+            "collocation": "Learn to swim",
+            "example": "The little child learns to swim in the pool."
+         },
+         {
+            "collocation": "Learn fast",
+            "example": "Clever students learn fast at school."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Study",
+      "role": "Verb",
+      "BrE": "/ˈstʌdi/",
+      "AmE": "/ˈstʌdi/",
+      "definition": "To learn about a subject by reading books or going to school",
+      "examples": [
+         {
+            "collocation": "Study math",
+            "example": "I study math for two hours every day."
+         },
+         {
+            "collocation": "Study for a test",
+            "example": "They study for a big test in the library."
+         },
+         {
+            "collocation": "Study hard",
+            "example": "She studies hard to get excellent grades."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Decide",
+      "role": "Verb",
+      "BrE": "/dɪˈsaɪd/",
+      "AmE": "/dɪˈsaɪd/",
+      "definition": "To choose something after you think about the choices",
+      "examples": [
+         {
+            "collocation": "Decide to go",
+            "example": "We decide to go to the park this afternoon."
+         },
+         {
+            "collocation": "Decide early",
+            "example": "He decides early on his study plan."
+         },
+         {
+            "collocation": "Hard to decide",
+            "example": "There are many options, so it is hard to decide."
+         }
+      ]
+   },
+   {
+      "id": 33,
+      "category": "Mind",
+      "word": "Choose",
+      "role": "Verb",
+      "BrE": "/tʃuːz/",
+      "AmE": "/tʃuːz/",
+      "definition": "To pick one person or thing out of a group",
+      "examples": [
+         {
+            "collocation": "Choose a book",
+            "example": "I choose an interesting book to read."
+         },
+         {
+            "collocation": "Choose a color",
+            "example": "She chooses the yellow dress for the party."
+         },
+         {
+            "collocation": "Choose carefully",
+            "example": "Please choose your words carefully."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Buy",
+      "role": "Verb",
+      "BrE": "/baɪ/",
+      "AmE": "/baɪ/",
+      "definition": "To get something by paying money",
+      "examples": [
+         {
+            "collocation": "Buy food",
+            "example": "I buy food at the supermarket."
+         },
+         {
+            "collocation": "Buy a ticket",
+            "example": "He wants to buy a ticket for the train."
+         },
+         {
+            "collocation": "Buy a gift",
+            "example": "She buys a gift for her mother."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Sell",
+      "role": "Verb",
+      "BrE": "/sel/",
+      "AmE": "/sel/",
+      "definition": "To give something to someone for money",
+      "examples": [
+         {
+            "collocation": "Sell a car",
+            "example": "He wants to sell his old car."
+         },
+         {
+            "collocation": "Sell books",
+            "example": "The shop sells many books."
+         },
+         {
+            "collocation": "Sell items",
+            "example": "They sell items at the market."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Pay",
+      "role": "Verb",
+      "BrE": "/peɪ/",
+      "AmE": "/peɪ/",
+      "definition": "To give money for something you buy or a service",
+      "examples": [
+         {
+            "collocation": "Pay money",
+            "example": "I pay money for the meal."
+         },
+         {
+            "collocation": "Pay for a trip",
+            "example": "He pays for his train trip."
+         },
+         {
+            "collocation": "Pay at the shop",
+            "example": "She pays for the shirt at the shop."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Cost",
+      "role": "Verb",
+      "BrE": "/kɒst/",
+      "AmE": "/kɔːst/",
+      "definition": "To have a price",
+      "examples": [
+         {
+            "collocation": "Cost a lot",
+            "example": "That nice hotel costs a lot."
+         },
+         {
+            "collocation": "Low cost",
+            "example": "This small book has a low cost."
+         },
+         {
+            "collocation": "Cost much",
+            "example": "The ticket does not cost much."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Spend",
+      "role": "Verb",
+      "BrE": "/spend/",
+      "AmE": "/spend/",
+      "definition": "To use money to buy things",
+      "examples": [
+         {
+            "collocation": "Spend money",
+            "example": "I spend money on books."
+         },
+         {
+            "collocation": "Spend time",
+            "example": "He likes to spend time at the park."
+         },
+         {
+            "collocation": "Spend a lot",
+            "example": "She does not spend a lot on clothes."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Save",
+      "role": "Verb",
+      "BrE": "/seɪv/",
+      "AmE": "/seɪv/",
+      "definition": "To keep money for a later time",
+      "examples": [
+         {
+            "collocation": "Save money",
+            "example": "I save money for my holiday."
+         },
+         {
+            "collocation": "Save time",
+            "example": "He takes the bus to save time."
+         },
+         {
+            "collocation": "Save a place",
+            "example": "She saves a seat for me."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Give",
+      "role": "Verb",
+      "BrE": "/ɡɪv/",
+      "AmE": "/ɡɪv/",
+      "definition": "To hand something to someone else",
+      "examples": [
+         {
+            "collocation": "Give a book",
+            "example": "I give a book to my friend."
+         },
+         {
+            "collocation": "Give money",
+            "example": "He gives money to help people."
+         },
+         {
+            "collocation": "Give a hand",
+            "example": "She gives me a hand with the box."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Bring",
+      "role": "Verb",
+      "BrE": "/brɪŋ/",
+      "AmE": "/brɪŋ/",
+      "definition": "To take something or someone with you to a place",
+      "examples": [
+         {
+            "collocation": "Bring a bag",
+            "example": "I bring a bag to the shop."
+         },
+         {
+            "collocation": "Bring water",
+            "example": "He brings water for the trip."
+         },
+         {
+            "collocation": "Bring friends",
+            "example": "She brings her friends to the party."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Carry",
+      "role": "Verb",
+      "BrE": "/ˈkæri/",
+      "AmE": "/ˈkæri/",
+      "definition": "To hold something while you move",
+      "examples": [
+         {
+            "collocation": "Carry a box",
+            "example": "I carry a big box."
+         },
+         {
+            "collocation": "Carry luggage",
+            "example": "He helps me carry my heavy luggage."
+         },
+         {
+            "collocation": "Carry books",
+            "example": "She carries her books to school."
+         }
+      ]
+   },
+   {
+      "id": 34,
+      "category": "Transactions",
+      "word": "Hold",
+      "role": "Verb",
+      "BrE": "/həʊld/",
+      "AmE": "/hoʊld/",
+      "definition": "To have something in your hand",
+      "examples": [
+         {
+            "collocation": "Hold a hand",
+            "example": "I hold my friend's hand."
+         },
+         {
+            "collocation": "Hold a bag",
+            "example": "He holds a shopping bag."
+         },
+         {
+            "collocation": "Hold a pen",
+            "example": "She holds a pen to write."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Big",
+      "role": "Adjective",
+      "BrE": "/bɪɡ/",
+      "AmE": "/bɪɡ/",
+      "definition": "Large in size or amount",
+      "examples": [
+         {
+            "collocation": "Big house",
+            "example": "They live in a big house."
+         },
+         {
+            "collocation": "Big city",
+            "example": "I visit the big city."
+         },
+         {
+            "collocation": "Big dog",
+            "example": "The big dog runs fast."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Small",
+      "role": "Adjective",
+      "BrE": "/smɔːl/",
+      "AmE": "/smɔːl/",
+      "definition": "Not large in size",
+      "examples": [
+         {
+            "collocation": "Small cat",
+            "example": "I have a small cat."
+         },
+         {
+            "collocation": "Small room",
+            "example": "The room is very small."
+         },
+         {
+            "collocation": "Small shop",
+            "example": "He works in a small shop."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Tall",
+      "role": "Adjective",
+      "BrE": "/tɔːl/",
+      "AmE": "/tɔːl/",
+      "definition": "Having a great height",
+      "examples": [
+         {
+            "collocation": "Tall tree",
+            "example": "That is a very tall tree."
+         },
+         {
+            "collocation": "Tall man",
+            "example": "The tall man walks fast."
+         },
+         {
+            "collocation": "Tall building",
+            "example": "I see a tall building."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Short",
+      "role": "Adjective",
+      "BrE": "/ʃɔːt/",
+      "AmE": "/ʃɔːrt/",
+      "definition": "Not tall or not long",
+      "examples": [
+         {
+            "collocation": "Short hair",
+            "example": "He has short hair."
+         },
+         {
+            "collocation": "Short story",
+            "example": "I read a short story."
+         },
+         {
+            "collocation": "Short trip",
+            "example": "It is a short trip."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Long",
+      "role": "Adjective",
+      "BrE": "/lɒŋ/",
+      "AmE": "/lɔːŋ/",
+      "definition": "Having a great distance from end to end",
+      "examples": [
+         {
+            "collocation": "Long road",
+            "example": "It is a long road."
+         },
+         {
+            "collocation": "Long hair",
+            "example": "She has very long hair."
+         },
+         {
+            "collocation": "Long day",
+            "example": "I have a long day."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Tight",
+      "role": "Adjective",
+      "BrE": "/taɪt/",
+      "AmE": "/taɪt/",
+      "definition": "Holding firmly or fitting closely to the body",
+      "examples": [
+         {
+            "collocation": "Tight clothes",
+            "example": "The clothes feel tight."
+         },
+         {
+            "collocation": "Tight shoes",
+            "example": "My shoes are too tight."
+         },
+         {
+            "collocation": "Tight grip",
+            "example": "He has a tight grip."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Loose",
+      "role": "Adjective",
+      "BrE": "/luːs/",
+      "AmE": "/luːs/",
+      "definition": "Not fitting closely",
+      "examples": [
+         {
+            "collocation": "Loose shirt",
+            "example": "I like my loose shirt."
+         },
+         {
+            "collocation": "Loose fit",
+            "example": "This has a loose fit."
+         },
+         {
+            "collocation": "Loose end",
+            "example": "Tie the loose end."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "High",
+      "role": "Adjective",
+      "BrE": "/haɪ/",
+      "AmE": "/haɪ/",
+      "definition": "A large distance from bottom to top",
+      "examples": [
+         {
+            "collocation": "High mountain",
+            "example": "The high mountain is cold."
+         },
+         {
+            "collocation": "High wall",
+            "example": "The wall is too high."
+         },
+         {
+            "collocation": "High place",
+            "example": "He goes to a high place."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Heavy",
+      "role": "Adjective",
+      "BrE": "/ˈhevi/",
+      "AmE": "/ˈhevi/",
+      "definition": "Having a lot of weight",
+      "examples": [
+         {
+            "collocation": "Heavy box",
+            "example": "The box is very heavy."
+         },
+         {
+            "collocation": "Heavy bag",
+            "example": "I carry a heavy bag."
+         },
+         {
+            "collocation": "Heavy rain",
+            "example": "We have heavy rain."
+         }
+      ]
+   },
+   {
+      "id": 35,
+      "category": "Size",
+      "word": "Light",
+      "role": "Adjective",
+      "BrE": "/laɪt/",
+      "AmE": "/laɪt/",
+      "definition": "Not having much weight",
+      "examples": [
+         {
+            "collocation": "Light bag",
+            "example": "My bag is very light."
+         },
+         {
+            "collocation": "Light color",
+            "example": "I like the light color."
+         },
+         {
+            "collocation": "Light box",
+            "example": "The box is quite light."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Happy",
+      "role": "Adjective",
+      "BrE": "/ˈhæpi/",
+      "AmE": "/ˈhæpi/",
+      "definition": "Feeling pleasure and joy",
+      "examples": [
+         {
+            "collocation": "Happy child",
+            "example": "The happy child plays in the park."
+         },
+         {
+            "collocation": "Very happy",
+            "example": "I feel very happy today."
+         },
+         {
+            "collocation": "Happy day",
+            "example": "It is a happy day for us."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Sad",
+      "role": "Adjective",
+      "BrE": "/sæd/",
+      "AmE": "/sæd/",
+      "definition": "Not feeling happy; feeling sorrow",
+      "examples": [
+         {
+            "collocation": "Sad story",
+            "example": "This is a sad story."
+         },
+         {
+            "collocation": "Feel sad",
+            "example": "I feel sad when it rains."
+         },
+         {
+            "collocation": "Very sad",
+            "example": "The movie is very sad."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Angry",
+      "role": "Adjective",
+      "BrE": "/ˈæŋɡri/",
+      "AmE": "/ˈæŋɡri/",
+      "definition": "Feeling strong dislike or wanting to shout because of something bad",
+      "examples": [
+         {
+            "collocation": "Angry man",
+            "example": "The angry man shouts at the bus."
+         },
+         {
+            "collocation": "Feel angry",
+            "example": "I feel angry when people lie."
+         },
+         {
+            "collocation": "Look angry",
+            "example": "She looks angry now."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Tired",
+      "role": "Adjective",
+      "BrE": "/ˈtaɪəd/",
+      "AmE": "/ˈtaɪərd/",
+      "definition": "Needing to rest or sleep",
+      "examples": [
+         {
+            "collocation": "Feel tired",
+            "example": "I feel tired after work."
+         },
+         {
+            "collocation": "Very tired",
+            "example": "The boy is very tired."
+         },
+         {
+            "collocation": "Look tired",
+            "example": "They look tired after the trip."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Hungry",
+      "role": "Adjective",
+      "BrE": "/ˈhʌŋɡri/",
+      "AmE": "/ˈhʌŋɡri/",
+      "definition": "Feeling a need for food",
+      "examples": [
+         {
+            "collocation": "Feel hungry",
+            "example": "I feel hungry at noon."
+         },
+         {
+            "collocation": "Very hungry",
+            "example": "The cat is very hungry."
+         },
+         {
+            "collocation": "Look hungry",
+            "example": "They look hungry."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Amazed",
+      "role": "Adjective",
+      "BrE": "/əˈmeɪzd/",
+      "AmE": "/əˈmeɪzd/",
+      "definition": "Feeling great surprise and wonder",
+      "examples": [
+         {
+            "collocation": "Feel amazed",
+            "example": "I feel amazed by the view."
+         },
+         {
+            "collocation": "Look amazed",
+            "example": "She looks amazed."
+         },
+         {
+            "collocation": "Very amazed",
+            "example": "He is very amazed."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Eager",
+      "role": "Adjective",
+      "BrE": "/ˈiːɡə(r)/",
+      "AmE": "/ˈiːɡər/",
+      "definition": "Wanting to do something very much",
+      "examples": [
+         {
+            "collocation": "Eager to learn",
+            "example": "I am eager to learn English."
+         },
+         {
+            "collocation": "Feel eager",
+            "example": "He feels eager to start."
+         },
+         {
+            "collocation": "Very eager",
+            "example": "They are very eager."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Hopeless",
+      "role": "Adjective",
+      "BrE": "/ˈhəʊpləs/",
+      "AmE": "/ˈhoʊpləs/",
+      "definition": "Feeling that nothing will get better",
+      "examples": [
+         {
+            "collocation": "Feel hopeless",
+            "example": "I feel hopeless now."
+         },
+         {
+            "collocation": "Very hopeless",
+            "example": "It is a very hopeless situation."
+         },
+         {
+            "collocation": "Look hopeless",
+            "example": "The task looks hopeless."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Bored",
+      "role": "Adjective",
+      "BrE": "/bɔːd/",
+      "AmE": "/bɔːrd/",
+      "definition": "Feeling unhappy because you have nothing to do",
+      "examples": [
+         {
+            "collocation": "Feel bored",
+            "example": "I feel bored at home."
+         },
+         {
+            "collocation": "Very bored",
+            "example": "She is very bored."
+         },
+         {
+            "collocation": "Look bored",
+            "example": "They look bored."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Excited",
+      "role": "Adjective",
+      "BrE": "/ɪkˈsaɪtɪd/",
+      "AmE": "/ɪkˈsaɪtɪd/",
+      "definition": "Feeling very happy and full of energy about something",
+      "examples": [
+         {
+            "collocation": "Feel excited",
+            "example": "I feel excited for the party."
+         },
+         {
+            "collocation": "Very excited",
+            "example": "He is very excited."
+         },
+         {
+            "collocation": "Look excited",
+            "example": "She looks excited."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Afraid",
+      "role": "Adjective",
+      "BrE": "/əˈfreɪd/",
+      "AmE": "/əˈfreɪd/",
+      "definition": "Feeling fear because of something dangerous",
+      "examples": [
+         {
+            "collocation": "Feel afraid",
+            "example": "I feel afraid of the dark."
+         },
+         {
+            "collocation": "Very afraid",
+            "example": "He is very afraid."
+         },
+         {
+            "collocation": "Look afraid",
+            "example": "They look afraid."
+         }
+      ]
+   },
+   {
+      "id": 36,
+      "category": "Emotions",
+      "word": "Hopeful",
+      "role": "Adjective",
+      "BrE": "/ˈhəʊpfl/",
+      "AmE": "/ˈhoʊpfl/",
+      "definition": "Feeling that good things will happen",
+      "examples": [
+         {
+            "collocation": "Feel hopeful",
+            "example": "I feel hopeful for the future."
+         },
+         {
+            "collocation": "Very hopeful",
+            "example": "She is very hopeful."
+         },
+         {
+            "collocation": "Look hopeful",
+            "example": "They look hopeful."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Good",
+      "role": "Adjective",
+      "BrE": "/ɡʊd/",
+      "AmE": "/ɡʊd/",
+      "definition": "High quality or pleasant",
+      "examples": [
+         {
+            "collocation": "Good day",
+            "example": "I have a good day."
+         },
+         {
+            "collocation": "Good job",
+            "example": "He does a good job."
+         },
+         {
+            "collocation": "Good food",
+            "example": "This is good food."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Bad",
+      "role": "Adjective",
+      "BrE": "/bæd/",
+      "AmE": "/bæd/",
+      "definition": "Not good; low quality or unpleasant",
+      "examples": [
+         {
+            "collocation": "Bad luck",
+            "example": "It is bad luck."
+         },
+         {
+            "collocation": "Bad news",
+            "example": "He hears bad news."
+         },
+         {
+            "collocation": "Bad day",
+            "example": "I have a bad day."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Great",
+      "role": "Adjective",
+      "BrE": "/ɡreɪt/",
+      "AmE": "/ɡreɪt/",
+      "definition": "Very good or very large",
+      "examples": [
+         {
+            "collocation": "Great time",
+            "example": "We have a great time."
+         },
+         {
+            "collocation": "Great idea",
+            "example": "That is a great idea."
+         },
+         {
+            "collocation": "Great place",
+            "example": "This is a great place."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Beautiful",
+      "role": "Adjective",
+      "BrE": "/ˈbjuːtɪfl/",
+      "AmE": "/ˈbjuːtɪfl/",
+      "definition": "Very pleasant to look at or hear",
+      "examples": [
+         {
+            "collocation": "Beautiful flower",
+            "example": "I see a beautiful flower."
+         },
+         {
+            "collocation": "Beautiful day",
+            "example": "It is a beautiful day."
+         },
+         {
+            "collocation": "Beautiful song",
+            "example": "She sings a beautiful song."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Ugly",
+      "role": "Adjective",
+      "BrE": "/ˈʌɡli/",
+      "AmE": "/ˈʌɡli/",
+      "definition": "Not pleasant to look at",
+      "examples": [
+         {
+            "collocation": "Ugly picture",
+            "example": "It is an ugly picture."
+         },
+         {
+            "collocation": "Ugly place",
+            "example": "He does not like this ugly place."
+         },
+         {
+            "collocation": "Ugly toy",
+            "example": "The toy is ugly."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Cheap",
+      "role": "Adjective",
+      "BrE": "/tʃiːp/",
+      "AmE": "/tʃiːp/",
+      "definition": "Low in price",
+      "examples": [
+         {
+            "collocation": "Cheap ticket",
+            "example": "I buy a cheap ticket."
+         },
+         {
+            "collocation": "Cheap book",
+            "example": "The book is cheap."
+         },
+         {
+            "collocation": "Cheap meal",
+            "example": "We eat a cheap meal."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Expensive",
+      "role": "Adjective",
+      "BrE": "/ɪkˈspensɪv/",
+      "AmE": "/ɪkˈspensɪv/",
+      "definition": "High in price",
+      "examples": [
+         {
+            "collocation": "Expensive car",
+            "example": "He drives an expensive car."
+         },
+         {
+            "collocation": "Expensive hotel",
+            "example": "They stay in an expensive hotel."
+         },
+         {
+            "collocation": "Expensive gift",
+            "example": "It is an expensive gift."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Delicious",
+      "role": "Adjective",
+      "BrE": "/dɪˈlɪʃəs/",
+      "AmE": "/dɪˈlɪʃəs/",
+      "definition": "Very good to eat",
+      "examples": [
+         {
+            "collocation": "Delicious meal",
+            "example": "I eat a delicious meal."
+         },
+         {
+            "collocation": "Delicious cake",
+            "example": "The cake is delicious."
+         },
+         {
+            "collocation": "Delicious food",
+            "example": "She makes delicious food."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Terrible",
+      "role": "Adjective",
+      "BrE": "/ˈterəbl/",
+      "AmE": "/ˈterəbl/",
+      "definition": "Very bad or unpleasant",
+      "examples": [
+         {
+            "collocation": "Terrible day",
+            "example": "I have a terrible day."
+         },
+         {
+            "collocation": "Terrible weather",
+            "example": "We have terrible weather."
+         },
+         {
+            "collocation": "Terrible mistake",
+            "example": "It is a terrible mistake."
+         }
+      ]
+   },
+   {
+      "id": 37,
+      "category": "Quality",
+      "word": "Perfect",
+      "role": "Adjective",
+      "BrE": "/ˈpɜːfɪkt/",
+      "AmE": "/ˈpɜːrfɪkt/",
+      "definition": "With no mistakes or faults",
+      "examples": [
+         {
+            "collocation": "Perfect day",
+            "example": "It is a perfect day."
+         },
+         {
+            "collocation": "Perfect score",
+            "example": "He has a perfect score."
+         },
+         {
+            "collocation": "Perfect gift",
+            "example": "It is a perfect gift."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "North",
+      "role": "Noun",
+      "BrE": "/nɔːθ/",
+      "AmE": "/nɔːrθ/",
+      "definition": "The direction toward the top of a map",
+      "examples": [
+         {
+            "collocation": "Go north",
+            "example": "Birds fly north in the spring."
+         },
+         {
+            "collocation": "Look north",
+            "example": "We look north to see the mountain."
+         },
+         {
+            "collocation": "The north",
+            "example": "It is cold in the north."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "South",
+      "role": "Noun",
+      "BrE": "/saʊθ/",
+      "AmE": "/saʊθ/",
+      "definition": "The direction toward the bottom of a map",
+      "examples": [
+         {
+            "collocation": "Go south",
+            "example": "They travel south for the winter."
+         },
+         {
+            "collocation": "Look south",
+            "example": "I look south to find the sea."
+         },
+         {
+            "collocation": "The south",
+            "example": "The sun is warm in the south."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "East",
+      "role": "Noun",
+      "BrE": "/iːst/",
+      "AmE": "/iːst/",
+      "definition": "The direction where the sun rises",
+      "examples": [
+         {
+            "collocation": "Go east",
+            "example": "We drive east to the city."
+         },
+         {
+            "collocation": "Look east",
+            "example": "The window looks east."
+         },
+         {
+            "collocation": "The east",
+            "example": "The sun rises in the east."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "West",
+      "role": "Noun",
+      "BrE": "/west/",
+      "AmE": "/west/",
+      "definition": "The direction where the sun sets",
+      "examples": [
+         {
+            "collocation": "Go west",
+            "example": "He travels west to his home."
+         },
+         {
+            "collocation": "Look west",
+            "example": "We look west to watch the sunset."
+         },
+         {
+            "collocation": "The west",
+            "example": "The sun sets in the west."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "Left",
+      "role": "Adjective",
+      "BrE": "/left/",
+      "AmE": "/left/",
+      "definition": "The side of your body that is not right",
+      "examples": [
+         {
+            "collocation": "Turn left",
+            "example": "Turn left at the big tree."
+         },
+         {
+            "collocation": "On the left",
+            "example": "My house is on the left."
+         },
+         {
+            "collocation": "Left hand",
+            "example": "He writes with his left hand."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "Right",
+      "role": "Adjective",
+      "BrE": "/raɪt/",
+      "AmE": "/raɪt/",
+      "definition": "The side of your body that is not left",
+      "examples": [
+         {
+            "collocation": "Turn right",
+            "example": "Turn right at the shop."
+         },
+         {
+            "collocation": "On the right",
+            "example": "The park is on the right."
+         },
+         {
+            "collocation": "Right hand",
+            "example": "She holds a pen in her right hand."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "Up",
+      "role": "Adverb",
+      "BrE": "/ʌp/",
+      "AmE": "/ʌp/",
+      "definition": "Toward a higher place",
+      "examples": [
+         {
+            "collocation": "Look up",
+            "example": "Look up at the sky."
+         },
+         {
+            "collocation": "Go up",
+            "example": "Go up the stairs."
+         },
+         {
+            "collocation": "Jump up",
+            "example": "He likes to jump up."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "Down",
+      "role": "Adverb",
+      "BrE": "/daʊn/",
+      "AmE": "/daʊn/",
+      "definition": "Toward a lower place",
+      "examples": [
+         {
+            "collocation": "Look down",
+            "example": "Look down at the grass."
+         },
+         {
+            "collocation": "Go down",
+            "example": "Go down the hill."
+         },
+         {
+            "collocation": "Sit down",
+            "example": "Please sit down now."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "Front",
+      "role": "Noun",
+      "BrE": "/frʌnt/",
+      "AmE": "/frʌnt/",
+      "definition": "The part of something that faces forward",
+      "examples": [
+         {
+            "collocation": "In front",
+            "example": "I stand in front of the house."
+         },
+         {
+            "collocation": "Front door",
+            "example": "Open the front door."
+         },
+         {
+            "collocation": "At the front",
+            "example": "He sits at the front."
+         }
+      ]
+   },
+   {
+      "id": 38,
+      "category": "Directions",
+      "word": "Back",
+      "role": "Noun",
+      "BrE": "/bæk/",
+      "AmE": "/bæk/",
+      "definition": "The part of something that is behind",
+      "examples": [
+         {
+            "collocation": "At the back",
+            "example": "The garden is at the back."
+         },
+         {
+            "collocation": "Back door",
+            "example": "Use the back door."
+         },
+         {
+            "collocation": "Go back",
+            "example": "We go back to the start."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Inside",
+      "role": "Preposition",
+      "BrE": "/ɪnˈsaɪd/",
+      "AmE": "/ɪnˈsaɪd/",
+      "definition": "In or into a container or space",
+      "examples": [
+         {
+            "collocation": "Inside the house",
+            "example": "It is warm inside the house."
+         },
+         {
+            "collocation": "Inside a bag",
+            "example": "My keys are inside a bag."
+         },
+         {
+            "collocation": "Go inside",
+            "example": "Please go inside now."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Below",
+      "role": "Preposition",
+      "BrE": "/bɪˈləʊ/",
+      "AmE": "/bɪˈloʊ/",
+      "definition": "In a lower place or position than something",
+      "examples": [
+         {
+            "collocation": "Below the line",
+            "example": "Write your name below the line."
+         },
+         {
+            "collocation": "Below the clouds",
+            "example": "The plane flies below the clouds."
+         },
+         {
+            "collocation": "Look below",
+            "example": "I look below at the river."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "On",
+      "role": "Preposition",
+      "BrE": "/ɒn/",
+      "AmE": "/ɑːn/",
+      "definition": "Supported by or touching a surface",
+      "examples": [
+         {
+            "collocation": "On the table",
+            "example": "The book is on the table."
+         },
+         {
+            "collocation": "On the wall",
+            "example": "The picture is on the wall."
+         },
+         {
+            "collocation": "On the floor",
+            "example": "The cat sits on the floor."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Under",
+      "role": "Preposition",
+      "BrE": "/ˈʌndə(r)/",
+      "AmE": "/ˈʌndər/",
+      "definition": "In a position below something",
+      "examples": [
+         {
+            "collocation": "Under the table",
+            "example": "The dog sleeps under the table."
+         },
+         {
+            "collocation": "Under a tree",
+            "example": "We sit under a tree."
+         },
+         {
+            "collocation": "Under the bed",
+            "example": "The toy is under the bed."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Behind",
+      "role": "Preposition",
+      "BrE": "/bɪˈhaɪnd/",
+      "AmE": "/bɪˈhaɪnd/",
+      "definition": "At the back of something",
+      "examples": [
+         {
+            "collocation": "Behind the door",
+            "example": "He hides behind the door."
+         },
+         {
+            "collocation": "Behind the house",
+            "example": "The garden is behind the house."
+         },
+         {
+            "collocation": "Behind you",
+            "example": "There is a cat behind you."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Next to",
+      "role": "Preposition",
+      "BrE": "/nekst tuː/",
+      "AmE": "/nekst tuː/",
+      "definition": "Very close to someone or something",
+      "examples": [
+         {
+            "collocation": "Next to the door",
+            "example": "I stand next to the door."
+         },
+         {
+            "collocation": "Next to me",
+            "example": "She sits next to me."
+         },
+         {
+            "collocation": "Next to the park",
+            "example": "The shop is next to the park."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Between",
+      "role": "Preposition",
+      "BrE": "/bɪˈtwiːn/",
+      "AmE": "/bɪˈtwiːn/",
+      "definition": "In the space that separates two things",
+      "examples": [
+         {
+            "collocation": "Between two trees",
+            "example": "The house is between two trees."
+         },
+         {
+            "collocation": "Between you and me",
+            "example": "This is a secret between you and me."
+         },
+         {
+            "collocation": "Between classes",
+            "example": "I have a break between classes."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "In front of",
+      "role": "Preposition",
+      "BrE": "/ɪn frʌnt əv/",
+      "AmE": "/ɪn frʌnt əv/",
+      "definition": "Further forward than someone or something",
+      "examples": [
+         {
+            "collocation": "In front of the house",
+            "example": "We play in front of the house."
+         },
+         {
+            "collocation": "In front of me",
+            "example": "The car is in front of me."
+         },
+         {
+            "collocation": "In front of the school",
+            "example": "They wait in front of the school."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Over",
+      "role": "Preposition",
+      "BrE": "/ˈəʊvə(r)/",
+      "AmE": "/ˈoʊvər/",
+      "definition": "Across or above something",
+      "examples": [
+         {
+            "collocation": "Over the wall",
+            "example": "The cat jumps over the wall."
+         },
+         {
+            "collocation": "Over the river",
+            "example": "We fly over the river."
+         },
+         {
+            "collocation": "Over the head",
+            "example": "He puts the hat over his head."
+         }
+      ]
+   },
+   {
+      "id": 39,
+      "category": "Positions",
+      "word": "Above",
+      "role": "Preposition",
+      "BrE": "/əˈbʌv/",
+      "AmE": "/əˈbʌv/",
+      "definition": "In a higher position than something",
+      "examples": [
+         {
+            "collocation": "Above the door",
+            "example": "The light is above the door."
+         },
+         {
+            "collocation": "Above the clouds",
+            "example": "The sun shines above the clouds."
+         },
+         {
+            "collocation": "Above the table",
+            "example": "The lamp hangs above the table."
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "Who",
+      "role": "Pronoun",
+      "BrE": "/huː/",
+      "AmE": "/huː/",
+      "definition": "Used to ask about a person",
+      "examples": [
+         {
+            "collocation": "Who is that?",
+            "example": "Who is that man at the door?"
+         },
+         {
+            "collocation": "Who are you?",
+            "example": "Who are you with today?"
+         },
+         {
+            "collocation": "Who knows?",
+            "example": "Who knows the answer?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "What",
+      "role": "Pronoun",
+      "BrE": "/wɒt/",
+      "AmE": "/wʌt/",
+      "definition": "Used to ask about things or actions",
+      "examples": [
+         {
+            "collocation": "What is this?",
+            "example": "What is this item on the table?"
+         },
+         {
+            "collocation": "What time?",
+            "example": "What time is the class?"
+         },
+         {
+            "collocation": "What happens?",
+            "example": "What happens next?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "Where",
+      "role": "Adverb",
+      "BrE": "/weə(r)/",
+      "AmE": "/wer/",
+      "definition": "Used to ask about a place",
+      "examples": [
+         {
+            "collocation": "Where are you?",
+            "example": "Where are you at the moment?"
+         },
+         {
+            "collocation": "Where is it?",
+            "example": "Where is the red book?"
+         },
+         {
+            "collocation": "Where to go?",
+            "example": "Where do we go now?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "When",
+      "role": "Adverb",
+      "BrE": "/wen/",
+      "AmE": "/wen/",
+      "definition": "Used to ask about a time",
+      "examples": [
+         {
+            "collocation": "When is it?",
+            "example": "When is the party?"
+         },
+         {
+            "collocation": "When to leave?",
+            "example": "When do you leave the house?"
+         },
+         {
+            "collocation": "When are you free?",
+            "example": "When are you free for a talk?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "Why",
+      "role": "Adverb",
+      "BrE": "/waɪ/",
+      "AmE": "/waɪ/",
+      "definition": "Used to ask about a reason",
+      "examples": [
+         {
+            "collocation": "Why is that?",
+            "example": "Why is that door open?"
+         },
+         {
+            "collocation": "Why not?",
+            "example": "Why do you not like it?"
+         },
+         {
+            "collocation": "Why are you here?",
+            "example": "Why are you here so early?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "How",
+      "role": "Adverb",
+      "BrE": "/haʊ/",
+      "AmE": "/haʊ/",
+      "definition": "Used to ask about the way something happens",
+      "examples": [
+         {
+            "collocation": "How are you?",
+            "example": "How are you today?"
+         },
+         {
+            "collocation": "How to do it?",
+            "example": "How do you do this task?"
+         },
+         {
+            "collocation": "How is it?",
+            "example": "How is your new job?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "Which",
+      "role": "Pronoun",
+      "BrE": "/wɪtʃ/",
+      "AmE": "/wɪtʃ/",
+      "definition": "Used to ask to pick one from a group",
+      "examples": [
+         {
+            "collocation": "Which one?",
+            "example": "Which one do you choose?"
+         },
+         {
+            "collocation": "Which book?",
+            "example": "Which book is yours?"
+         },
+         {
+            "collocation": "Which way?",
+            "example": "Which way to the park?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "Whose",
+      "role": "Pronoun",
+      "BrE": "/huːz/",
+      "AmE": "/huːz/",
+      "definition": "Used to ask about who owns something",
+      "examples": [
+         {
+            "collocation": "Whose book?",
+            "example": "Whose book is on the table?"
+         },
+         {
+            "collocation": "Whose turn?",
+            "example": "Whose turn is it now?"
+         },
+         {
+            "collocation": "Whose car?",
+            "example": "Whose car is outside?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "How many",
+      "role": "Phrase",
+      "BrE": "/haʊ ˈmeni/",
+      "AmE": "/haʊ ˈmeni/",
+      "definition": "Used to ask about the amount or number of things",
+      "examples": [
+         {
+            "collocation": "How many books?",
+            "example": "How many books do you read?"
+         },
+         {
+            "collocation": "How many people?",
+            "example": "How many people are there?"
+         },
+         {
+            "collocation": "How many items?",
+            "example": "How many items do you buy?"
+         }
+      ]
+   },
+   {
+      "id": 40,
+      "category": "Question Words",
+      "word": "How old",
+      "role": "Phrase",
+      "BrE": "/haʊ əʊld/",
+      "AmE": "/haʊ oʊld/",
+      "definition": "Used to ask about the age of someone or something",
+      "examples": [
+         {
+            "collocation": "How old are you?",
+            "example": "How old are you now?"
+         },
+         {
+            "collocation": "How old is it?",
+            "example": "How old is this house?"
+         },
+         {
+            "collocation": "How old is your friend?",
+            "example": "How old is your friend?"
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Monday",
+      "role": "Noun",
+      "BrE": "/ˈmʌndeɪ/",
+      "AmE": "/ˈmʌndeɪ/",
+      "definition": "The first day of the working week",
+      "examples": [
+         {
+            "collocation": "On Monday",
+            "example": "I go to work on Monday."
+         },
+         {
+            "collocation": "Every Monday",
+            "example": "He has a class every Monday."
+         },
+         {
+            "collocation": "Next Monday",
+            "example": "We meet next Monday."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Tuesday",
+      "role": "Noun",
+      "BrE": "/ˈtjuːzdeɪ/",
+      "AmE": "/ˈtuːzdeɪ/",
+      "definition": "The day after Monday",
+      "examples": [
+         {
+            "collocation": "On Tuesday",
+            "example": "She visits her friend on Tuesday."
+         },
+         {
+            "collocation": "This Tuesday",
+            "example": "The party is this Tuesday."
+         },
+         {
+            "collocation": "Tuesday morning",
+            "example": "I wake up early on Tuesday morning."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Wednesday",
+      "role": "Noun",
+      "BrE": "/ˈwenzdeɪ/",
+      "AmE": "/ˈwenzdeɪ/",
+      "definition": "The day after Tuesday",
+      "examples": [
+         {
+            "collocation": "On Wednesday",
+            "example": "He plays soccer on Wednesday."
+         },
+         {
+            "collocation": "Every Wednesday",
+            "example": "They eat out every Wednesday."
+         },
+         {
+            "collocation": "Wednesday night",
+            "example": "I watch a movie on Wednesday night."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Thursday",
+      "role": "Noun",
+      "BrE": "/ˈθɜːzdeɪ/",
+      "AmE": "/ˈθɜːrzdeɪ/",
+      "definition": "The day after Wednesday",
+      "examples": [
+         {
+            "collocation": "On Thursday",
+            "example": "I study English on Thursday."
+         },
+         {
+            "collocation": "This Thursday",
+            "example": "She arrives this Thursday."
+         },
+         {
+            "collocation": "Thursday afternoon",
+            "example": "We walk in the park on Thursday afternoon."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Friday",
+      "role": "Noun",
+      "BrE": "/ˈfraɪdeɪ/",
+      "AmE": "/ˈfraɪdeɪ/",
+      "definition": "The day after Thursday",
+      "examples": [
+         {
+            "collocation": "On Friday",
+            "example": "He finishes work on Friday."
+         },
+         {
+            "collocation": "Friday evening",
+            "example": "They relax on Friday evening."
+         },
+         {
+            "collocation": "Every Friday",
+            "example": "I buy fresh bread every Friday."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Saturday",
+      "role": "Noun",
+      "BrE": "/ˈsætədeɪ/",
+      "AmE": "/ˈsætərdeɪ/",
+      "definition": "The first day of the weekend",
+      "examples": [
+         {
+            "collocation": "On Saturday",
+            "example": "I sleep late on Saturday."
+         },
+         {
+            "collocation": "Saturday night",
+            "example": "We go to a party on Saturday night."
+         },
+         {
+            "collocation": "Every Saturday",
+            "example": "She plays tennis every Saturday."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Sunday",
+      "role": "Noun",
+      "BrE": "/ˈsʌndeɪ/",
+      "AmE": "/ˈsʌndeɪ/",
+      "definition": "The last day of the week",
+      "examples": [
+         {
+            "collocation": "On Sunday",
+            "example": "He reads a book on Sunday."
+         },
+         {
+            "collocation": "Sunday morning",
+            "example": "We walk on Sunday morning."
+         },
+         {
+            "collocation": "Every Sunday",
+            "example": "I visit my parents every Sunday."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Weekend",
+      "role": "Noun",
+      "BrE": "/ˌwiːkˈend/",
+      "AmE": "/ˈwiːkend/",
+      "definition": "Saturday and Sunday",
+      "examples": [
+         {
+            "collocation": "At the weekend",
+            "example": "I rest at the weekend."
+         },
+         {
+            "collocation": "This weekend",
+            "example": "We plan a trip this weekend."
+         },
+         {
+            "collocation": "Busy weekend",
+            "example": "He has a busy weekend."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Weekly",
+      "role": "Adjective",
+      "BrE": "/ˈwiːkli/",
+      "AmE": "/ˈwiːkli/",
+      "definition": "Happening every week",
+      "examples": [
+         {
+            "collocation": "Weekly report",
+            "example": "I write a weekly report."
+         },
+         {
+            "collocation": "Weekly meeting",
+            "example": "We have a weekly meeting."
+         },
+         {
+            "collocation": "Weekly pay",
+            "example": "He gets his weekly pay."
+         }
+      ]
+   },
+   {
+      "id": 41,
+      "category": "Week",
+      "word": "Weekender",
+      "role": "Noun",
+      "BrE": "/ˈwiːkendə(r)/",
+      "AmE": "/ˈwiːkendər/",
+      "definition": "A person who spends the weekend away from home",
+      "examples": [
+         {
+            "collocation": "Active weekender",
+            "example": "He is an active weekender."
+         },
+         {
+            "collocation": "Happy weekender",
+            "example": "She is a happy weekender."
+         },
+         {
+            "collocation": "A true weekender",
+            "example": "He acts like a true weekender."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Spring",
+      "role": "Noun",
+      "BrE": "/sprɪŋ/",
+      "AmE": "/sprɪŋ/",
+      "definition": "The season between winter and summer",
+      "examples": [
+         {
+            "collocation": "In spring",
+            "example": "Flowers grow in spring."
+         },
+         {
+            "collocation": "Warm spring",
+            "example": "It is a warm spring."
+         },
+         {
+            "collocation": "Beautiful spring",
+            "example": "We like the beautiful spring."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Summer",
+      "role": "Noun",
+      "BrE": "/ˈsʌmə(r)/",
+      "AmE": "/ˈsʌmər/",
+      "definition": "The warmest season of the year",
+      "examples": [
+         {
+            "collocation": "In summer",
+            "example": "I go to the beach in summer."
+         },
+         {
+            "collocation": "Hot summer",
+            "example": "It is a hot summer."
+         },
+         {
+            "collocation": "Summer day",
+            "example": "This is a long summer day."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Autumn",
+      "role": "Noun",
+      "BrE": "/ˈɔːtəm/",
+      "AmE": "/ˈɔːtəm/",
+      "definition": "The season between summer and winter",
+      "examples": [
+         {
+            "collocation": "In autumn",
+            "example": "Leaves fall in autumn."
+         },
+         {
+            "collocation": "Cool autumn",
+            "example": "The autumn is cool."
+         },
+         {
+            "collocation": "Autumn day",
+            "example": "It is a short autumn day."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Winter",
+      "role": "Noun",
+      "BrE": "/ˈwɪntə(r)/",
+      "AmE": "/ˈwɪntər/",
+      "definition": "The coldest season of the year",
+      "examples": [
+         {
+            "collocation": "In winter",
+            "example": "It is cold in winter."
+         },
+         {
+            "collocation": "Cold winter",
+            "example": "We have a cold winter."
+         },
+         {
+            "collocation": "Winter day",
+            "example": "It is a dark winter day."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Morning",
+      "role": "Noun",
+      "BrE": "/ˈmɔːnɪŋ/",
+      "AmE": "/ˈmɔːrnɪŋ/",
+      "definition": "The early part of the day",
+      "examples": [
+         {
+            "collocation": "In the morning",
+            "example": "I drink tea in the morning."
+         },
+         {
+            "collocation": "Every morning",
+            "example": "He runs every morning."
+         },
+         {
+            "collocation": "Sunny morning",
+            "example": "It is a sunny morning."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Afternoon",
+      "role": "Noun",
+      "BrE": "/ˌɑːftəˈnuːn/",
+      "AmE": "/ˌæftərˈnuːn/",
+      "definition": "The part of the day between noon and evening",
+      "examples": [
+         {
+            "collocation": "In the afternoon",
+            "example": "We work in the afternoon."
+         },
+         {
+            "collocation": "This afternoon",
+            "example": "I study this afternoon."
+         },
+         {
+            "collocation": "Busy afternoon",
+            "example": "It is a busy afternoon."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Evening",
+      "role": "Noun",
+      "BrE": "/ˈiːvnɪŋ/",
+      "AmE": "/ˈiːvnɪŋ/",
+      "definition": "The part of the day between afternoon and night",
+      "examples": [
+         {
+            "collocation": "In the evening",
+            "example": "I eat in the evening."
+         },
+         {
+            "collocation": "Every evening",
+            "example": "She reads every evening."
+         },
+         {
+            "collocation": "Quiet evening",
+            "example": "It is a quiet evening."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Night",
+      "role": "Noun",
+      "BrE": "/naɪt/",
+      "AmE": "/naɪt/",
+      "definition": "The time when it is dark",
+      "examples": [
+         {
+            "collocation": "At night",
+            "example": "I sleep at night."
+         },
+         {
+            "collocation": "Every night",
+            "example": "He works every night."
+         },
+         {
+            "collocation": "Dark night",
+            "example": "It is a dark night."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Month",
+      "role": "Noun",
+      "BrE": "/mʌnθ/",
+      "AmE": "/mʌnθ/",
+      "definition": "One of the twelve periods of time in a year",
+      "examples": [
+         {
+            "collocation": "This month",
+            "example": "I have a plan this month."
+         },
+         {
+            "collocation": "Next month",
+            "example": "He goes away next month."
+         },
+         {
+            "collocation": "A month",
+            "example": "It takes a month."
+         }
+      ]
+   },
+   {
+      "id": 42,
+      "category": "Time Periods",
+      "word": "Year",
+      "role": "Noun",
+      "BrE": "/jɪə(r)/",
+      "AmE": "/jɪr/",
+      "definition": "A period of twelve months",
+      "examples": [
+         {
+            "collocation": "This year",
+            "example": "I study hard this year."
+         },
+         {
+            "collocation": "Every year",
+            "example": "We travel every year."
+         },
+         {
+            "collocation": "A new year",
+            "example": "It is a new year."
+         }
+      ]
+   },
+   {
+      "id": 43,
+      "category": "Possessive Adjectives",
+      "word": "My",
+      "role": "Adjective",
+      "BrE": "/maɪ/",
+      "AmE": "/maɪ/",
+      "definition": "Belonging to me",
+      "examples": [
+         {
+            "collocation": "My book",
+            "example": "This is my book."
+         },
+         {
+            "collocation": "My friend",
+            "example": "He is my friend."
+         },
+         {
+            "collocation": "My car",
+            "example": "I drive my car."
+         }
+      ]
+   },
+   {
+      "id": 43,
+      "category": "Possessive Adjectives",
+      "word": "Your",
+      "role": "Adjective",
+      "BrE": "/jɔː(r)/",
+      "AmE": "/jɔːr/",
+      "definition": "Belonging to you",
+      "examples": [
+         {
+            "collocation": "Your house",
+            "example": "Is this your house?"
+         },
+         {
+            "collocation": "Your pen",
+            "example": "Please take your pen."
+         },
+         {
+            "collocation": "Your job",
+            "example": "I like your job."
+         }
+      ]
+   },
+   {
+      "id": 43,
+      "category": "Possessive Adjectives",
+      "word": "His",
+      "role": "Adjective",
+      "BrE": "/hɪz/",
+      "AmE": "/hɪz/",
+      "definition": "Belonging to him",
+      "examples": [
+         {
+            "collocation": "His hat",
+            "example": "He wears his hat."
+         },
+         {
+            "collocation": "His bike",
+            "example": "This is his bike."
+         },
+         {
+            "collocation": "His dog",
+            "example": "I see his dog."
+         }
+      ]
+   },
+   {
+      "id": 43,
+      "category": "Possessive Adjectives",
+      "word": "Her",
+      "role": "Adjective",
+      "BrE": "/hɜː(r)/",
+      "AmE": "/hɜːr/",
+      "definition": "Belonging to her",
+      "examples": [
+         {
+            "collocation": "Her bag",
+            "example": "She carries her bag."
+         },
+         {
+            "collocation": "Her phone",
+            "example": "She uses her phone."
+         },
+         {
+            "collocation": "Her cat",
+            "example": "I feed her cat."
+         }
+      ]
+   },
+   {
+      "id": 43,
+      "category": "Possessive Adjectives",
+      "word": "Its",
+      "role": "Adjective",
+      "BrE": "/ɪts/",
+      "AmE": "/ɪts/",
+      "definition": "Belonging to it",
+      "examples": [
+         {
+            "collocation": "Its tail",
+            "example": "The dog wags its tail."
+         },
+         {
+            "collocation": "Its door",
+            "example": "The house has its door open."
+         },
+         {
+            "collocation": "Its food",
+            "example": "The bird eats its food."
+         }
+      ]
+   },
+   {
+      "id": 43,
+      "category": "Possessive Adjectives",
+      "word": "Our",
+      "role": "Adjective",
+      "BrE": "/ˈaʊə(r)/",
+      "AmE": "/ˈaʊər/",
+      "definition": "Belonging to us",
+      "examples": [
+         {
+            "collocation": "Our house",
+            "example": "We live in our house."
+         },
+         {
+            "collocation": "Our school",
+            "example": "We go to our school."
+         },
+         {
+            "collocation": "Our car",
+            "example": "We drive our car."
+         }
+      ]
+   },
+   {
+      "id": 43,
+      "category": "Possessive Adjectives",
+      "word": "Their",
+      "role": "Adjective",
+      "BrE": "/ðeə(r)/",
+      "AmE": "/ðer/",
+      "definition": "Belonging to them",
+      "examples": [
+         {
+            "collocation": "Their home",
+            "example": "They go to their home."
+         },
+         {
+            "collocation": "Their books",
+            "example": "They open their books."
+         },
+         {
+            "collocation": "Their kids",
+            "example": "I see their kids."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "And",
+      "role": "Conjunction",
+      "BrE": "/ænd/",
+      "AmE": "/ænd/",
+      "definition": "Used to join two words or ideas",
+      "examples": [
+         {
+            "collocation": "Bread and butter",
+            "example": "I eat bread and butter."
+         },
+         {
+            "collocation": "Fast and fun",
+            "example": "The game is fast and fun."
+         },
+         {
+            "collocation": "Me and you",
+            "example": "This is for me and you."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "But",
+      "role": "Conjunction",
+      "BrE": "/bʌt/",
+      "AmE": "/bʌt/",
+      "definition": "Used to show a difference between two ideas",
+      "examples": [
+         {
+            "collocation": "Small but fast",
+            "example": "The car is small but fast."
+         },
+         {
+            "collocation": "Like it but",
+            "example": "I like it, but I do not buy it."
+         },
+         {
+            "collocation": "Good but bad",
+            "example": "It is good but expensive."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "Or",
+      "role": "Conjunction",
+      "BrE": "/ɔː(r)/",
+      "AmE": "/ɔːr/",
+      "definition": "Used to show a choice between things",
+      "examples": [
+         {
+            "collocation": "Tea or coffee",
+            "example": "Do you want tea or coffee?"
+         },
+         {
+            "collocation": "Red or blue",
+            "example": "Pick red or blue."
+         },
+         {
+            "collocation": "Stay or go",
+            "example": "Do you want to stay or go?"
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "So",
+      "role": "Conjunction",
+      "BrE": "/səʊ/",
+      "AmE": "/soʊ/",
+      "definition": "Used to show a result or reason",
+      "examples": [
+         {
+            "collocation": "It is late so",
+            "example": "It is late, so I go home."
+         },
+         {
+            "collocation": "Tired so",
+            "example": "I am tired, so I sleep."
+         },
+         {
+            "collocation": "Rain so",
+            "example": "It rains, so I stay inside."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "Because",
+      "role": "Conjunction",
+      "BrE": "/bɪˈkəz/",
+      "AmE": "/bɪˈkəz/",
+      "definition": "Used to show the reason for something",
+      "examples": [
+         {
+            "collocation": "Because of rain",
+            "example": "I stay home because of rain."
+         },
+         {
+            "collocation": "Eat because",
+            "example": "I eat because I am hungry."
+         },
+         {
+            "collocation": "Laugh because",
+            "example": "She laughs because it is funny."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "If",
+      "role": "Conjunction",
+      "BrE": "/ɪf/",
+      "AmE": "/ɪf/",
+      "definition": "Used to show a condition",
+      "examples": [
+         {
+            "collocation": "If you want",
+            "example": "Take it if you want."
+         },
+         {
+            "collocation": "If it rains",
+            "example": "If it rains, we stay in."
+         },
+         {
+            "collocation": "If I know",
+            "example": "If I know, I tell you."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "As",
+      "role": "Conjunction",
+      "BrE": "/æz/",
+      "AmE": "/æz/",
+      "definition": "Used to show when two things happen at the same time or for a reason",
+      "examples": [
+         {
+            "collocation": "As I walk",
+            "example": "I think as I walk."
+         },
+         {
+            "collocation": "As you know",
+            "example": "As you know, it is time."
+         },
+         {
+            "collocation": "Do as I",
+            "example": "Do as I do."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "Than",
+      "role": "Conjunction",
+      "BrE": "/ðæn/",
+      "AmE": "/ðæn/",
+      "definition": "Used to compare two things",
+      "examples": [
+         {
+            "collocation": "More than",
+            "example": "It is more than I need."
+         },
+         {
+            "collocation": "Better than",
+            "example": "This is better than that."
+         },
+         {
+            "collocation": "Faster than",
+            "example": "He runs faster than me."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "However",
+      "role": "Adverb",
+      "BrE": "/haʊˈevə(r)/",
+      "AmE": "/haʊˈevər/",
+      "definition": "Used to say something that is different from what was said before",
+      "examples": [
+         {
+            "collocation": "It is good; however",
+            "example": "It is good; however, it is costly."
+         },
+         {
+            "collocation": "Small; however",
+            "example": "It is small; however, it works."
+         },
+         {
+            "collocation": "Nice; however",
+            "example": "The day is nice; however, I am busy."
+         }
+      ]
+   },
+   {
+      "id": 44,
+      "category": "Connectors 1",
+      "word": "Also",
+      "role": "Adverb",
+      "BrE": "/ˈɔːlsəʊ/",
+      "AmE": "/ˈɔːlsoʊ/",
+      "definition": "Used to add more information",
+      "examples": [
+         {
+            "collocation": "I also",
+            "example": "I also like to read."
+         },
+         {
+            "collocation": "It is also",
+            "example": "It is also very hot."
+         },
+         {
+            "collocation": "Also the",
+            "example": "Also, the food is good."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Before",
+      "role": "Adverb/Preposition",
+      "BrE": "/bɪˈfɔː(r)/",
+      "AmE": "/bɪˈfɔːr/",
+      "definition": "At an earlier time",
+      "examples": [
+         {
+            "collocation": "Before I go",
+            "example": "I wash my face before I go."
+         },
+         {
+            "collocation": "Before the day",
+            "example": "I work before the day ends."
+         },
+         {
+            "collocation": "Seen before",
+            "example": "I see this person before."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "After",
+      "role": "Adverb/Preposition",
+      "BrE": "/ˈɑːftə(r)/",
+      "AmE": "/ˈæftər/",
+      "definition": "At a later time",
+      "examples": [
+         {
+            "collocation": "After lunch",
+            "example": "I walk after lunch."
+         },
+         {
+            "collocation": "After I eat",
+            "example": "I rest after I eat."
+         },
+         {
+            "collocation": "After the game",
+            "example": "We talk after the game."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Always",
+      "role": "Adverb",
+      "BrE": "/ˈɔːlweɪz/",
+      "AmE": "/ˈɔːlweɪz/",
+      "definition": "At all times",
+      "examples": [
+         {
+            "collocation": "Always happy",
+            "example": "She is always happy."
+         },
+         {
+            "collocation": "Always go",
+            "example": "I always go to the shop."
+         },
+         {
+            "collocation": "Always on",
+            "example": "The light is always on."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Usually",
+      "role": "Adverb",
+      "BrE": "/ˈjuːʒuəli/",
+      "AmE": "/ˈjuːʒuəli/",
+      "definition": "Most of the time",
+      "examples": [
+         {
+            "collocation": "Usually eat",
+            "example": "I usually eat an apple."
+         },
+         {
+            "collocation": "Usually go",
+            "example": "We usually go to school."
+         },
+         {
+            "collocation": "Usually cold",
+            "example": "It is usually cold here."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Often",
+      "role": "Adverb",
+      "BrE": "/ˈɒfn/",
+      "AmE": "/ˈɔːfn/",
+      "definition": "Many times",
+      "examples": [
+         {
+            "collocation": "Often visit",
+            "example": "I often visit my friend."
+         },
+         {
+            "collocation": "Often talk",
+            "example": "They often talk at home."
+         },
+         {
+            "collocation": "Often read",
+            "example": "He often reads a book."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Sometimes",
+      "role": "Adverb",
+      "BrE": "/ˈsʌmtaɪmz/",
+      "AmE": "/ˈsʌmtaɪmz/",
+      "definition": "At some times, but not always",
+      "examples": [
+         {
+            "collocation": "Sometimes walk",
+            "example": "I sometimes walk to work."
+         },
+         {
+            "collocation": "Sometimes sad",
+            "example": "He is sometimes sad."
+         },
+         {
+            "collocation": "Sometimes cold",
+            "example": "The room is sometimes cold."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Once",
+      "role": "Adverb",
+      "BrE": "/wʌns/",
+      "AmE": "/wʌns/",
+      "definition": "One time",
+      "examples": [
+         {
+            "collocation": "Once a day",
+            "example": "I eat fruit once a day."
+         },
+         {
+            "collocation": "Once a week",
+            "example": "He goes to the gym once a week."
+         },
+         {
+            "collocation": "Go once",
+            "example": "I go to that place once."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Ever",
+      "role": "Adverb",
+      "BrE": "/ˈevə(r)/",
+      "AmE": "/ˈevər/",
+      "definition": "At any time",
+      "examples": [
+         {
+            "collocation": "Ever seen",
+            "example": "Have you ever seen this?"
+         },
+         {
+            "collocation": "Ever been",
+            "example": "I have ever been there."
+         },
+         {
+            "collocation": "Ever go",
+            "example": "Do you ever go out?"
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Soon",
+      "role": "Adverb",
+      "BrE": "/suːn/",
+      "AmE": "/suːn/",
+      "definition": "In a short time",
+      "examples": [
+         {
+            "collocation": "Come soon",
+            "example": "I come home soon."
+         },
+         {
+            "collocation": "See soon",
+            "example": "I see you soon."
+         },
+         {
+            "collocation": "Start soon",
+            "example": "The class starts soon."
+         }
+      ]
+   },
+   {
+      "id": 45,
+      "category": "Connectors 2",
+      "word": "Yet",
+      "role": "Adverb",
+      "BrE": "/jet/",
+      "AmE": "/jet/",
+      "definition": "Until now",
+      "examples": [
+         {
+            "collocation": "Not yet",
+            "example": "The train is not here yet."
+         },
+         {
+            "collocation": "Done yet?",
+            "example": "Are you done yet?"
+         },
+         {
+            "collocation": "Go yet",
+            "example": "I do not go yet."
+         }
+      ]
+   }
 ]

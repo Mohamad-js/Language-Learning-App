@@ -19,7 +19,7 @@ function A1() {
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
-   const [switches, setSwitches] = useState(Array(117).fill(false));
+   const [switches, setSwitches] = useState(Array(86).fill(false));
    const [nextLesson, setNextLesson] = useState(0)
    const [progress, setProgress] = useState(0)
    const [completed, setCompleted] = useState(false)
@@ -27,10 +27,10 @@ function A1() {
 
    useEffect(() => {
       const current = JSON.parse(localStorage.getItem(`currentLesson-A1`)) || 0;
-      current < 117 ? setNextLesson(Number(current) + 1) : null
+      current < 86 ? setNextLesson(Number(current) + 1) : null
       
       if(!isLoading) {
-         const currentProgress = (Number(current) * 100) / 117
+         const currentProgress = (Number(current) * 100) / 86
          
          progress == 100 && setTimeout(() => {
             setCompleted(true)
@@ -42,8 +42,8 @@ function A1() {
       }
 
 
-      const newSwitches = Array(117).fill(false);
-      for (let i = 1; i <= 117; i++) {
+      const newSwitches = Array(86).fill(false);
+      for (let i = 1; i <= 86; i++) {
          const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A1`)) || [];
          const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A1`)) || [];
 
@@ -92,6 +92,8 @@ function A1() {
       localStorage.setItem(`levelRequested`, JSON.stringify('A1'));
       router.push('/review/words')
    }
+
+   console.log(switches)
 
    return (
       <div className={styles.container}>
@@ -142,7 +144,7 @@ function A1() {
                      <div className={styles.dataHolder}>
                         <div className={styles.lesson}
                            style={darkMode ? {color: '#ff7ee3'} : {}}
-                        >Lesson {lessonNumber}</div>
+                        >Lesson {lessonNumber}: {}</div>
                         {isNew ? (
                            <div className={styles.newLesson}
                               style={darkMode ? {color: 'white'} : {}}

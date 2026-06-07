@@ -1,11 +1,13 @@
 import withPWAInit from 'next-pwa';
 
+const isTurbo = process.argv.includes('--turbo');
+
 const withPWA = withPWAInit({
   dest: 'public',
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === 'development',
-  swSrc: 'service-worker/sw-custom.js', // ✅ this points to your custom source file
+  swSrc: 'service-worker/sw-custom.js',
   buildExcludes: [
     /app-build-manifest\.json$/,
     /middleware-manifest\.json$/,
@@ -18,4 +20,5 @@ const nextConfig = {
   compiler: { emotion: true },
 };
 
-export default withPWA(nextConfig);
+// Only apply the PWA plugin if NOT using Turbo
+export default isTurbo ? nextConfig : withPWA(nextConfig);
