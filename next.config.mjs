@@ -1,6 +1,5 @@
 import withPWAInit from 'next-pwa';
 
-const isTurbo = process.argv.includes('--turbo');
 
 const withPWA = withPWAInit({
   dest: 'public',
@@ -21,4 +20,4 @@ const nextConfig = {
 };
 
 // Only apply the PWA plugin if NOT using Turbo
-export default isTurbo ? nextConfig : withPWA(nextConfig);
+export default withPWA(nextConfig);

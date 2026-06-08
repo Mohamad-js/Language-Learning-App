@@ -10,14 +10,16 @@ import { config } from 'dotenv';
 config();
 
 export const metadata = {
-  title: "Ghazalim English App",
-  description: "Powered by Mohamad Gomar",
-  viewport: {
-      width: 'device-width',
-      initialScale: 1.0,
-      maximumScale: 1.0,
-      userScalable: false,
-   },
+   title: "iGhazal App",
+   description: "Powered by Mohamad Gomar",
+   manifest: "/manifest.json",
+};
+
+export const viewport = {
+   width: 'device-width',
+   initialScale: 1.0,
+   maximumScale: 1.0,
+   userScalable: false,
 };
 
 export default function RootLayout({ children }) {

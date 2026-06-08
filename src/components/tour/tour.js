@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import Joyride from 'react-joyride';
+import { Joyride } from 'react-joyride';
 
 export default function Tour({ steps, run = true, onTourComplete }) {
   const [isClient, setIsClient] = useState(false);
