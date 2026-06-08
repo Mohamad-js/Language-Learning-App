@@ -11,8 +11,8 @@
 }
 
 * {
-  font-family: vazirl;
-  user-select: none;
+   font-family: vazirl;
+   user-select: none;
 }
 
 body {
@@ -27,27 +27,6 @@ a {
 a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, button, [role="button"]):active {
   -webkit-tap-highlight-color: transparent;
   outline: none;
-}
-
-/* src/App.css */
-html.lenis {
-  height: 100%;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: smooth;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
 }
 
 .toast-style {

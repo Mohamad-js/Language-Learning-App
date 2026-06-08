@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
    font-family: vazirl;
    src: url('../../../public/fonts/Vazir-Thin.ttf');
@@ -9,8 +11,8 @@
 }
 
 * {
-  font-family: vazirl;
-  user-select: none;
+   font-family: vazirl;
+   user-select: none;
 }
 
 a {

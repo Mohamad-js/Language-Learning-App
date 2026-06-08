@@ -1,8 +1,8 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef, useCallback } from "react";
 import Loader from "@/components/loading/loading";
-import styles from './page.module.css'
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
@@ -160,7 +160,8 @@ const Home = () => {
 
 
    return (
-      <div className={styles.bigMom}>
+      <div className='relative w-full min-h-dvh p-5 flex flex-col gap-3'>
+
          {
          lightTheme ? 
             <Iridescence
@@ -170,7 +171,7 @@ const Home = () => {
                speed={1.0}
             />
          :
-            <div className={styles.ether}>  
+            <div className='absolute min-h-dvh w-full left-0 top-0 bg-black'>  
                <Aurora
                   colorStops={["#5d00ff", "#aa00ff", "#ff00e6"]}
                   blend={10}
@@ -182,108 +183,106 @@ const Home = () => {
          }
 
 
-         <div className={styles.pageHolder}>
-            <div className={styles.pageTitle} style={darkColor} id="tour_start">Home Page</div>
+            <div className='' id="tour_start">Home Page</div>
 
-            <div className={`${styles.topSection} ${darkMode ? styles.darkTop : ''}`}
+            <div className='p-5 bg-white/40 backdrop-blur-sm rounded-2xl'
                onClick={toggleIdiomCard}
                id="tour_idiom"
             >
-               <div className={styles.motivTitle}>Today&apos;s Idiom</div>
-               <div className={styles.motivText}>
+               <div className='text-sm'>Today&apos;s Idiom</div>
+               <div>
                   {dailyIdiom?.example}
                </div>
             </div>
 
             {
                showIdiom && 
-               <div className={styles.idiomInfoHolder}>
-                  <div className={`${styles.idiomCard} ${darkMode ? styles.darkIdiom : ''}`}>
-                     <div className={styles.closeIconHolder} onClick={toggleIdiomCard}>
-                        <IoCloseOutline className={styles.close} style={darkColor}/>
+               <div className='absolute top-0 left-0 w-full h-full bg-black/50 z-1 flex justify-center items-center p-5'
+                  onClick={toggleIdiomCard}
+               >
+                  <div className='relative w-full p-5 pr-3 bg-white rounded-2xl flex flex-col gap-3'
+                     onClick={(e) => e.stopPropagation()}
+                  >
+                     <div className='w-full flex justify-between'>
+                        <div className="text-sm">Meaning</div>
+                        <IoCloseOutline size={30} className='' onClick={toggleIdiomCard} />
                      </div>
-                     <div className={styles.idiom} style={darkColor}>{dailyIdiom?.idiom}</div>
-                     <div className={styles.meaning}>{dailyIdiom?.meaning}</div>
+
+                     <div className='text-2xl'>{dailyIdiom?.idiom}</div>
+                     <div className='text-lg'>{dailyIdiom?.meaning}</div>
                   </div>
                </div>
             }
 
-            <div className={styles.activityHolder}>
-               <div className={styles.activityTitle} style={darkColor}>Lessons to Learn</div>
+            <div className='w-full flex flex-col gap-3 bg-white/40 backdrop-blur-sm p-5 rounded-2xl'>
+               <div className='text-lg text-center'>Start From Here</div>
 
-               <div className={styles.lessonsHolder}>
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_words'>
+               <div className='flex justify-between flex-wrap gap-y-2'>
+                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_words'>
                      <Link href='/words'>
-                        <div className={styles.infoHolder}>
-                           <div className={styles.actBtn} style={darkColor}>Vocabulary</div>
-                           <div className={styles.info}>
-                              <div className={styles.infoText}>6 CEFR Levels</div>
-                              <div className={styles.infoText}>6330 Words</div>
-                           </div>
+                        <div className='flex flex-col h-full justify-between'>
+                           <div className='text-xl font-bold text-black/70'>Vocabulary</div>
+                           <div className=''>6330 Words</div>
                         </div>
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_grammar'>
+                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_grammar'>
                      <Link href='/grammar'>
-                        <div className={styles.infoHolder}>
-                           <div className={styles.actBtn} style={darkColor}>Grammar</div>
-                           <div className={styles.info}>
-                              <div className={styles.infoText}>38 Topics</div>
-                              <div className={styles.infoText}>164 Lessons</div>
-                           </div>
+                        <div className='flex flex-col h-full justify-between'>
+                           <div className='text-xl font-bold text-black/70'>Grammar</div>
+                           <div className='text-black/70'>164 Lessons</div>
                         </div>
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_prep'>
+                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_prep'>
                      <Link href='/expressions'>
-                        <div className={styles.infoHolder}>
-                           <div className={styles.actBtn} style={darkColor}>Prepositions</div>
-                           <div className={styles.info}>
-                              <div className={styles.infoText}>Soon</div>
-                           </div>
+                        <div className='flex flex-col h-full justify-between'>
+                           <div className='text-xl font-bold text-black/70'>Prepositions</div>
+                           <div className='text-black/70'>Coming Soon</div>
                         </div>
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_colloc'>
+                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_colloc'>
                      <Link href='/collocations'>
-                        <div className={styles.infoHolder}>
-                           <div className={styles.actBtn} style={darkColor}>Collocations</div>
-                           <div className={styles.info}>
-                              <div className={styles.infoText}>Soon</div>
-                           </div>
+                        <div className='flex flex-col h-full justify-between'>
+                           <div className='text-xl font-bold text-black/70'>Collocations</div>
+                           <div className='text-black/70'>Coming Soon</div>
                         </div>
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_syn'>
+                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_syn'>
                      <Link href='/synonyms'>
-                        <div className={styles.infoHolder}>
-                           <div className={styles.actBtn} style={darkColor}>Synonyms</div>
-                           <div className={styles.info}>
-                              <div className={styles.infoText}>Soon</div>
-                           </div>
+                        <div className='flex flex-col h-full justify-between'>
+                           <div className='text-xl font-bold text-black/70'>Synonyms</div>
+                           <div className='text-black/70'>Coming Soon</div>
                         </div>
                      </Link>
                   </div>
 
-                  <div className={`${styles.activity} ${darkMode ? styles.darkTab : ''}`} id='tour_family'>
+                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_family'>
                      <Link href='/family'>
-                        <div className={styles.infoHolder}>
-                           <div className={styles.actBtn} style={darkColor}>Word Family</div>
-                           <div className={styles.info}>
-                              <div className={styles.infoText}>Soon</div>
-                           </div>
+                        <div className='flex flex-col h-full justify-between'>
+                           <div className='text-xl font-bold text-black/70'>Word Family</div>
+                           <div className='text-black/70'>Coming Soon</div>
                         </div>
                      </Link>
                   </div>
                </div>
+
+               <div className="relative w-full h-50">
+                  <Image
+                     src='/images/illustrations/studying.png'
+                     alt='Studying Illustration'
+                     fill
+                  />
+               </div>
             </div>
 
             
-         </div>
 
          {/* {
             showDialog &&
@@ -295,13 +294,13 @@ const Home = () => {
             />
          } */}
 
-         {isClient && tourOpen && (
+         {/* {isClient && tourOpen && (
             <Tour
                steps={steps}
                run={tourOpen}
                onTourComplete={handleTourComplete}
             />
-         )}
+         )} */}
          
       </div>
    );
