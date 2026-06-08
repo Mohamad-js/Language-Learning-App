@@ -215,7 +215,7 @@ const Home = () => {
             }
 
             <div className='w-full flex flex-col gap-3 bg-white/40 backdrop-blur-sm p-5 rounded-2xl'>
-               <div className='text-lg text-center'>Start From Here</div>
+               <div className='text-sm text-center'>Start Your Language Journey</div>
 
                <div className='flex justify-between flex-wrap gap-y-2'>
                   <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_words'>
@@ -275,6 +275,7 @@ const Home = () => {
 
                <div className="relative w-full h-50">
                   <Image
+                     className='object-cover'
                      src='/images/illustrations/studying.png'
                      alt='Studying Illustration'
                      fill
