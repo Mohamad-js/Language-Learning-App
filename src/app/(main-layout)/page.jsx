@@ -27,6 +27,8 @@ const Home = () => {
 
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
+   const [isCompact, setIsCompact] = useState(false);
+
    const timeoutRef = useRef(null);
    const { showDialog, version, updates, titles, closeDialog } = useUpdateDialog();
 
@@ -156,11 +158,19 @@ const Home = () => {
       };
    }, []);
 
-   const darkColor = darkMode ? { color: 'white' } : {};
+   useEffect(() => {
+      const mediaQuery = window.matchMedia("(max-width: 399px) and (max-height: 829px)");
+      
+      setIsCompact(mediaQuery.matches);
 
+      const handler = (event) => setIsCompact(event.matches);
+      mediaQuery.addEventListener("change", handler);
+      
+      return () => mediaQuery.removeEventListener("change", handler);
+   }, []);
 
    return (
-      <div className='relative w-full min-h-dvh p-5 flex flex-col gap-3'>
+      <div className='relative w-full h-screen p-5 pb-30 flex flex-col gap-3 super-compact:gap-1 compact:p-3 compact:pb-30 narrow:p-3 narrow:pb-30'>
 
          {
          lightTheme ? 
@@ -185,15 +195,18 @@ const Home = () => {
 
             <div className='' id="tour_start">Home Page</div>
 
-            <div className='p-5 bg-white/40 backdrop-blur-sm rounded-2xl'
+            
+            <div className='p-5 super-compact:p-3 bg-white/40 backdrop-blur-sm rounded-2xl'
                onClick={toggleIdiomCard}
                id="tour_idiom"
             >
                <div className='text-sm'>Today&apos;s Idiom</div>
-               <div>
+               <div className="super-compact:text-sm">
                   {dailyIdiom?.example}
                </div>
             </div>
+            
+
 
             {
                showIdiom && 
@@ -214,68 +227,73 @@ const Home = () => {
                </div>
             }
 
-            <div className='w-full flex flex-col gap-3 bg-white/40 backdrop-blur-sm p-5 rounded-2xl'>
-               <div className='text-sm text-center'>Start Your Language Journey</div>
+            <div className='w-full flex flex-col justify-between flex-1 gap-3 bg-white/40 backdrop-blur-sm p-5 super-compact:p-3 rounded-2xl'>
+               <div className="flex flex-col gap-2">
+                  {
+                     !isCompact &&
+                        <div className='text-sm text-center'>Start Your Language Journey</div>
+                  }
 
-               <div className='flex justify-between flex-wrap gap-y-2'>
-                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_words'>
-                     <Link href='/words'>
-                        <div className='flex flex-col h-full justify-between'>
-                           <div className='text-xl font-bold text-black/70'>Vocabulary</div>
-                           <div className=''>6330 Words</div>
-                        </div>
-                     </Link>
-                  </div>
+                  <div className='flex justify-between flex-wrap gap-y-2'>
+                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_words'>
+                        <Link href='/words'>
+                           <div className='flex flex-col h-full justify-between'>
+                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Vocabulary</div>
+                              <div className='text-black/70 super-compact:text-sm'>6330 Words</div>
+                           </div>
+                        </Link>
+                     </div>
 
-                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_grammar'>
-                     <Link href='/grammar'>
-                        <div className='flex flex-col h-full justify-between'>
-                           <div className='text-xl font-bold text-black/70'>Grammar</div>
-                           <div className='text-black/70'>164 Lessons</div>
-                        </div>
-                     </Link>
-                  </div>
+                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_grammar'>
+                        <Link href='/grammar'>
+                           <div className='flex flex-col h-full justify-between'>
+                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Grammar</div>
+                              <div className='text-black/70 super-compact:text-sm'>164 Lessons</div>
+                           </div>
+                        </Link>
+                     </div>
 
-                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_prep'>
-                     <Link href='/expressions'>
-                        <div className='flex flex-col h-full justify-between'>
-                           <div className='text-xl font-bold text-black/70'>Prepositions</div>
-                           <div className='text-black/70'>Coming Soon</div>
-                        </div>
-                     </Link>
-                  </div>
+                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_prep'>
+                        <Link href='/expressions'>
+                           <div className='flex flex-col h-full justify-between'>
+                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Prepositions</div>
+                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
+                           </div>
+                        </Link>
+                     </div>
 
-                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_colloc'>
-                     <Link href='/collocations'>
-                        <div className='flex flex-col h-full justify-between'>
-                           <div className='text-xl font-bold text-black/70'>Collocations</div>
-                           <div className='text-black/70'>Coming Soon</div>
-                        </div>
-                     </Link>
-                  </div>
+                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_colloc'>
+                        <Link href='/collocations'>
+                           <div className='flex flex-col h-full justify-between'>
+                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Collocations</div>
+                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
+                           </div>
+                        </Link>
+                     </div>
 
-                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_syn'>
-                     <Link href='/synonyms'>
-                        <div className='flex flex-col h-full justify-between'>
-                           <div className='text-xl font-bold text-black/70'>Synonyms</div>
-                           <div className='text-black/70'>Coming Soon</div>
-                        </div>
-                     </Link>
-                  </div>
+                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_syn'>
+                        <Link href='/synonyms'>
+                           <div className='flex flex-col h-full justify-between'>
+                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Synonyms</div>
+                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
+                           </div>
+                        </Link>
+                     </div>
 
-                  <div className='border border-white active:bg-white w-40 h-23 rounded-2xl p-3' id='tour_family'>
-                     <Link href='/family'>
-                        <div className='flex flex-col h-full justify-between'>
-                           <div className='text-xl font-bold text-black/70'>Word Family</div>
-                           <div className='text-black/70'>Coming Soon</div>
-                        </div>
-                     </Link>
+                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_family'>
+                        <Link href='/family'>
+                           <div className='flex flex-col h-full justify-between'>
+                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Word Family</div>
+                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
+                           </div>
+                        </Link>
+                     </div>
                   </div>
                </div>
 
-               <div className="relative w-full h-50">
+               <div className="relative w-full h-50 super-compact:h-38 compact:h-40">
                   <Image
-                     className='object-cover'
+                     className='object-cover object-bottom'
                      src='/images/illustrations/studying.png'
                      alt='Studying Illustration'
                      fill
