@@ -11,6 +11,12 @@ import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
 import Aurora from "@/components/aurora/aurora";
 import Tour from "@/components/tour/tour";
+import rawA1Vocabs from "../../../database/rawA1.json"
+import VocabularyManager from "@/components/VocabularyManager";
+
+
+
+
 
 
 function urlBase64ToUint8Array(base64String) {
@@ -24,7 +30,7 @@ function urlBase64ToUint8Array(base64String) {
 const Home = () => {
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
-
+   
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
    const [isCompact, setIsCompact] = useState(false);
@@ -42,7 +48,7 @@ const Home = () => {
          setTourOpen(true);
       }
    }, []);
-
+   
    const steps = [
       {
          target: '#tour_start',
@@ -171,6 +177,8 @@ const Home = () => {
 
    return (
       <div className='relative w-full h-screen p-5 pb-30 flex flex-col gap-3 super-compact:gap-1 compact:p-3 compact:pb-30 narrow:p-3 narrow:pb-30'>
+
+         <VocabularyManager initialData={rawA1Vocabs} />
 
          {
          lightTheme ? 

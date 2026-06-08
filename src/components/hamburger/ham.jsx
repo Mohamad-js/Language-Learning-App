@@ -79,6 +79,7 @@ function Ham(){
          writing: '/writing',
          listening: '/listening',
          reading: '/reading',
+         source: '/source',
       };
 
       if (routes[msg]) {
@@ -211,6 +212,11 @@ function Ham(){
                         <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('review')}>
                            <RiRepeat2Fill className={styles.icon} style={darkColor}/>
                            <div className={styles.item}>Review</div>
+                        </div>
+
+                        <div className={`${styles.option} ${darkMode && styles.darkStyles}`} onClick={() => navFromHam('source')}>
+                           <RiRepeat2Fill className={styles.icon} style={darkColor}/>
+                           <div className={styles.item}>Source</div>
                         </div>
 
                      </div>
