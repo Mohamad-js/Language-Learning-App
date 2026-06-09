@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { use, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './slug.module.css';
@@ -51,7 +51,7 @@ export default function Lessons({ params }) {
    const cardRef = useRef(null);
 
 
-   const { slug } = params;
+   const { slug } = use(params);
    
    useEffect(() => {
       setLessonNumber(Number(slug))

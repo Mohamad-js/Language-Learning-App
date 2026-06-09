@@ -1,6 +1,7 @@
 // src/components/CategoryList.jsx
 "use client";
 
+import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "@/components/ui/combobox"
 import { useState, useEffect } from "react";
 import { getWordsByCategory, getAllUniqueCategories } from "@/lib/db";
 
@@ -45,55 +46,52 @@ export default function CategoryList() {
       loadCategoryData();
    }, [selectedCategory]);
 
-return (
-      <div className="absolute top-0 left-0 w-full min-h-dvh flex justify-center items-start pt-20 p-5 bg-gray-50">
-         <div className="space-y-4 w-full max-w-2xl">
-            {/* Dynamic Category Selection Dropdown */}
-            <div className="flex items-center space-x-3">
-               <label className="font-medium text-gray-700">Choose Category:</label>
-               <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="p-2 border rounded-lg bg-white text-black shadow-sm flex-1 max-w-xs"
-                  disabled={categories.length === 0}
-               >
-                  {categories.length === 0 ? (
-                     <option>Loading categories...</option>
-                  ) : (
-                     categories.map((catName) => (
-                        <option key={catName} value={catName}>
-                           {catName}
-                        </option>
-                     ))
-                  )}
-               </select>
-            </div>
 
-            {loading ? (
-               <p className="text-gray-500 italic">Searching database...</p>
+return (
+   <div className="absolute top-0 left-0 w-full min-h-dvh flex flex-col justify-center items-start pt-13 p-5 bg-gray-200">
+      <div className="w-full flex-1 flex flex-col gap-3">
+
+         <Combobox 
+            items={categories}
+            value={selectedCategory}
+            onValueChange={(val) => setSelectedCategory(val)}
+         >
+            <ComboboxInput
+               className="focus-within:ring-0!"
+               placeholder="Select Category" />
+            <ComboboxContent >
+               <ComboboxEmpty>No items found.</ComboboxEmpty>
+               <ComboboxList className='bg-white text-black'>
+                  {(item) => (
+                     <ComboboxItem key={item} value={item}>
+                     {item}
+                     </ComboboxItem>
+                  )}
+               </ComboboxList>
+            </ComboboxContent>
+         </Combobox>
+
+         {
+            loading ? (
+               <p>Searching database...</p>
             ) : words.length === 0 ? (
-               <p className="text-gray-500">No words found under "{selectedCategory}".</p>
+               <p>No words found under "{selectedCategory}".</p>
             ) : (
-               // FIXED CONTAINER: Added max-h-[70vh] and overflow-y-auto
-               <div className="max-h-[80vh] overflow-y-auto bg-white border rounded-xl shadow-sm divide-y">
+               <div className="flex-1 flex flex-col overflow-y-auto divide-y divide-gray-400">
                   {words.map((item) => (
-                     <div key={item.id} className="p-4 flex justify-between items-start">
-                        <div className="w-full">
-                           <h3 className="text-lg font-bold text-gray-900">{item.word}</h3>
-                           <p className="text-sm text-gray-600 mb-2">{item.definition}</p>
-                           
-                           {item.examples.map((example, index) => (
-                              <div key={index} className="flex flex-col mt-2 p-2 bg-gray-50 rounded">
-                                 <div className="font-medium text-sm text-indigo-700">{example.collocation}</div>
-                                 <div className="text-sm text-gray-700">{example.example}</div>
-                              </div>
-                           ))}
+                     <div key={item.id} className="flex-1 p-3 flex justify-between items-center">
+                        <div className="w-full flex justify-between items-center">
+                           <p className="text-sm font-bold text-gray-800">{item.word}</p>
+                           <p className="text-sm text-gray-600">{item.role}</p>
+                           <p className="text-sm text-gray-600">{item.BrE}</p>
+                           <p className="text-sm text-gray-600">{item.AmE}</p>
                         </div>
                      </div>
                   ))}
                </div>
-            )}
-         </div>
+            )
+         }
       </div>
+   </div>
    );
 }
