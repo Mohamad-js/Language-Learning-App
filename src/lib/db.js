@@ -2,7 +2,7 @@ import { openDB } from 'idb';
 
 export const initDB = async () => {
    // Bumped version to 2 to force the browser to run the upgrade block
-   return openDB('VocabularyDB', 2, {
+   return openDB('VocabularyDB', 3, {
       upgrade(db) {
          if (!db.objectStoreNames.contains('words')) {
             const store = db.createObjectStore('words', { keyPath: 'id', autoIncrement: true });
@@ -127,8 +127,29 @@ export const updateInteractionStatus = async (knownWordsList, unknownWordsList) 
  */
 export const getWordsByLesson = async (lessonNumber) => {
    const db = await initDB();
-   return await db.getAllFromIndex('words', 'lesson', Number(lessonNumber));
+   const num = Number(lessonNumber);   // ensure it's a number
+
+   console.log(`[DB] getWordsByLesson called with: ${lessonNumber} (as number: ${num})`);
+
+   try {
+      // Try index first (fast)
+      const results = await db.getAllFromIndex('words', 'lesson', num);
+      console.log(`[DB] Index returned ${results.length} words`);
+      if (results.length > 0) return results;
+   } catch (err) {
+      console.warn('[DB] Index query failed:', err);
+   }
+
+   // Fallback - always works
+   console.log('[DB] Using fallback filter...');
+   const allWords = await db.getAll('words');
+   const filtered = allWords.filter(word => Number(word.lesson) === num);
+
+   console.log(`[DB] Fallback found ${filtered.length} words for lesson ${num}`);
+   return filtered;
 };
+
+
 
 export const resetAllProgress = async () => {
    const db = await initDB();

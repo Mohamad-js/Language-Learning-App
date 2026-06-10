@@ -8,6 +8,7 @@ export default function VocabularyManager({ initialData = [] }) {
       const handleSeeding = async () => {
          // Safety check: Don't run if no data was passed
          if (!initialData || initialData.length === 0) return;
+         
 
          const db = await initDB();
          const tx = db.transaction("words", "readwrite");
