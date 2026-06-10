@@ -799,6 +799,7 @@ export default function Lessons({ params }) {
             {(() => {
                const learningWords = [...unknownWords];
                const ws = learningWords[learningWordIndex];
+               console.log('ws:', ws)
                return (
                <>
                   <div className='w-full h-dvh flex flex-col justify-start items-start gap-3'>
@@ -826,7 +827,7 @@ export default function Lessons({ params }) {
                            >
                               <audio
                                  ref={audioRefAmE}
-                                 src={`/sounds/A1/${ws.word.word}-AmE.m4a`}
+                                 src={`/sounds/A1/${ws.word.word}-AmE.mp3`}
                                  onEnded={() => setIsPlayingAmE(false)}
                               />
 
@@ -846,7 +847,7 @@ export default function Lessons({ params }) {
                            >
                               <audio
                                  ref={audioRefBrE}
-                                 src={`/sounds/A1/${ws.word.word}-BrE.m4a`}
+                                 src={`/sounds/A1/${ws.word.word}-BrE.mp3`}
                                  onEnded={() => setIsPlayingBrE(false)}
                               />
 

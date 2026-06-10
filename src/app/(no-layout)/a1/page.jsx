@@ -99,7 +99,7 @@ function A1() {
 
 
                return (
-                  <div key={index} className={`w-full flex justify-between items-center gap-2 rounded-2xl ${lesson.status === 'done' ? 'bg-green-100' : lesson.status === 'ready' ? 'bg-white' : lesson.status === 'waiting' ? 'bg-red-100' : ''}`}>
+                  <div key={index} className={`w-full flex justify-between items-center gap-2 rounded-2xl ${lesson.status === 'done' ? 'bg-green-100' : lesson.status === 'ready' ? 'bg-white' : lesson.status === 'waiting' ? 'bg-red-200' : ''}`}>
                      <div className="flex flex-col gap-1 p-4">
                         <div className="font-bold text-gray-400">Lesson {lesson.lesson}:</div>
                         <div className="text-lg">{lesson.category}</div>
