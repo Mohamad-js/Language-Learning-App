@@ -16,7 +16,7 @@ import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { TbComponentsOff } from "react-icons/tb";
 import ThemeToggle from '../themeSwitch/themeToggle';
 import { useTheme } from "../context/ThemeContext";
-
+import { resetAllProgress } from '@/lib/db';
 
 
 
@@ -48,10 +48,16 @@ function Ham(){
       setMenu(false);
    };
 
-   const resetAction = () => {
-      setWarning(false)
-      localStorage.clear()
-      router.push('/')
+   const resetAction = async () => {
+      try {
+         await resetAllProgress()
+         setWarning(false)
+         localStorage.clear()
+         window.location.href = '/';
+
+      } catch (error){
+         console.error('Error Restarting:', error)
+      }
    }
 
    const showWarning = () => {

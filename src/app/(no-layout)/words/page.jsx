@@ -50,7 +50,7 @@ function Words(){
 
    return(
       <>
-         <div className='absolute top-0 left-0 w-full min-h-dvh pt-15'>
+         <div className='absolute top-0 left-0 w-full min-h-dvh flex flex-col pt-15'>
             {
                darkMode ?
                <Image className='-z-1'
@@ -70,33 +70,40 @@ function Words(){
 
             <Back goTo ={'/'} />
 
-            <div className='w-full h-full flex flex-wrap gap-5 p-5'>
-               <div className='w-full text-center'
-               >Choose Your CEFR Level</div>
+            <div className='w-full flex-1 flex flex-col gap-5 p-5'>
+               <div className='w-full text-center'>Choose Your CEFR Level</div>
 
-               <div className='min-w-30 h-30 flex-1 border border-white rounded-2xl flex items-center justify-center text-2xl bg-white/30 active:bg-white'>
-                  <Link href='/a1'>A1</Link>
-               </div>
-
-               <div className='min-w-30 h-30 flex-1 border border-white rounded-2xl flex items-center justify-center text-2xl bg-white/30 active:bg-white'>
-                  <Link href='/a2'>A2</Link>
-               </div>
-
-               <div className='min-w-30 h-30 flex-1 border border-white rounded-2xl flex items-center justify-center text-2xl bg-white/30 active:bg-white'>
-                  <Link href='/b1'>B1</Link>
-               </div>
-
-               <div className='min-w-30 h-30 flex-1 border border-white rounded-2xl flex items-center justify-center text-2xl bg-white/30 active:bg-white'>
-                  <Link href='/b2'>B2</Link>
-               </div>
-
-               <div className='min-w-30 h-30 flex-1 border border-white rounded-2xl flex items-center justify-center text-2xl bg-white/30 active:bg-white'>
-                  <Link href='/c1'>C1</Link>
-               </div>
-
-               <div className='min-w-30 h-30 flex-1 border border-white rounded-2xl flex items-center justify-center text-2xl bg-white/30 active:bg-white'>
-                  <Link href='/c2'>C2</Link>
-               </div>
+               <Link href='/a1' className='flex-1 flex flex-col'>
+                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                     A1
+                  </div>
+               </Link>
+               
+               <Link href='/a2' className='flex-1 flex flex-col'>
+                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                     A2
+                  </div>
+               </Link>
+               <Link href='/b1' className='flex-1 flex flex-col'>
+                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                     B1
+                  </div>
+               </Link>
+               <Link href='/b2' className='flex-1 flex flex-col'>
+                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                     B2
+                  </div>
+               </Link>
+               <Link href='/c1' className='flex-1 flex flex-col'>
+                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                     C1
+                  </div>
+               </Link>
+               <Link href='/c2' className='flex-1 flex flex-col'>
+                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                     C2
+                  </div>
+               </Link>
 
             </div>
 

@@ -8,19 +8,20 @@ import { BsArrowRepeat } from "react-icons/bs";
 import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';
 import Loader from '@/components/loading/loading';
-import { a1WordList } from '@/data/a1WordList';
 import { useTheme } from "@/components/context/ThemeContext";
 import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
 import Audio from '@/components/audio/audio';
 import { toast, Slide } from 'react-toastify';
+import { getWordsByLesson, updateInteractionStatus} from '@/lib/db';
+
 
 
 export default function Lessons({ params }) {
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
 
-   const [wordList, setwordList] = useState(null)
+   const [specificLessonWords, setSpecificLessonWords] = useState(null)
    const [isLoading, setIsLoading] = useState(true);
    const [isLoading2, setIsLoading2] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
@@ -70,66 +71,41 @@ export default function Lessons({ params }) {
 
    const { slug } = use(params)
    
+
    useEffect(() => {
-      if(slug){
-         setLessonNumber(Number(slug))
-      }
-   }, [slug])
+      if (!slug) return
+      setLessonNumber(Number(slug))
+
+      const loadLesson = async () => {
+         setIsLoading(true);
+         try {
+            const data = await getWordsByLesson(slug);
+            setSpecificLessonWords(data);
+
+         } catch (error) {
+            console.error("Failed to fetch words:", error);
+         } finally {
+            setIsLoading(false);
+         }
+      };
+
+      loadLesson();
+   }, [slug]);
+
+   console.log('SpecificLessonWords:', specificLessonWords)
    
    const router = useRouter()
-   useEffect(() => {
-      const handleDefaultBack = (event) => {
-         event.preventDefault()
-         router.push('/a1')
-         localStorage.setItem(`preview`, JSON.stringify(false))
-         setPreview(false) 
-      }
-
-      window.addEventListener('popstate', handleDefaultBack)
-      
-      return () => {
-         window.addEventListener('popstate', handleDefaultBack)
-      }
-   }, [router])
-
-
-// Retrieve data from localStorage on mount
-   useEffect(() => {
-      try {
-         setwordList(a1WordList)
-         const savedKnowns = JSON.parse(localStorage.getItem(`knownWords-${slug}-A1`) || '[]');
-         const savedUnknowns = JSON.parse(localStorage.getItem(`unknownWords-${slug}-A1`) || '[]');
-         const a2WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-A2`) || 0);
-         const b1WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-B1`) || 0);
-         const b2WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-B2`) || 0);
-         const c1WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-C1`) || 0);
-         const c2WordsLearnt = JSON.parse(localStorage.getItem(`wordsCount-C2`) || 0);
-         const previewState = JSON.parse(localStorage.getItem('preview') || false);
-         const lessonsLearnt = slug
-         const totalWordsLearnt = slug * 10 + Number(a2WordsLearnt) + Number(b1WordsLearnt) + Number(b2WordsLearnt) + Number(c1WordsLearnt) + Number(c2WordsLearnt)
-         const wordsLearnt = slug * 10
-         
-         setPreview(previewState)
-         setA1WordsCount(wordsLearnt)
-         setTotalWordsCount(totalWordsLearnt)
-         setLessonsA1(lessonsLearnt)
-         setKnownWords(savedKnowns);
-         setUnknownWords(savedUnknowns);
-      } catch (e) {
-         console.error('Error parsing localStorage data:', e);
-      }
-   }, [slug]); // Depend on slug to reload when lesson changes
 
    const done = () => {
       try {
          save()
 
-         if(totalWordsCount % 100 === 0){
-            animation()
-            setBtnPressed('done')
-         } else {
-            router.push('/a1')
-         }
+         // if(totalWordsCount % 100 === 0){
+         //    animation()
+         //    setBtnPressed('done')
+         // } else {
+         //    router.push('/a1')
+         // }
 
       } catch (e) {
          console.error('Error saving to localStorage:', e);
@@ -168,47 +144,56 @@ export default function Lessons({ params }) {
       }
    }
 
-   const closeCongrats = () => {
-      setShowCongrats(false)
-      setAnime(false)
-      save()
+   // const closeCongrats = () => {
+   //    setShowCongrats(false)
+   //    setAnime(false)
+   //    save()
 
-      btnPressed === 'done' ? router.push('/a1') :
-      btnPressed === 'nextLesson' ? router.push(`/a1/${lessonNumber + 1}`) :
-      btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
-   }
+   //    btnPressed === 'done' ? router.push('/a1') :
+   //    btnPressed === 'nextLesson' ? router.push(`/a1/${lessonNumber + 1}`) :
+   //    btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
+   // }
 
-   const save = () => {
-      localStorage.setItem(`knownWords-${slug}-A1`, JSON.stringify(knownWords));
-      localStorage.setItem(`unknownWords-${slug}-A1`, JSON.stringify(unknownWords));
-      localStorage.setItem(`totalProgress-A1`, JSON.stringify(totalA1Progress));
-      localStorage.setItem(`wordsCount-A1`, JSON.stringify(a1WordsCount));
-      localStorage.setItem(`totalWordsCount`, JSON.stringify(totalWordsCount));
-      localStorage.setItem(`currentLesson-A1`, JSON.stringify(slug));
-      
-      toast.success(
-         <div className={styles.toastHolder}>
-            <div className={styles.toastTitle}>
-               Progress Saved
+   const saveProgress = async (msg) => {
+
+      try {
+         await updateInteractionStatus(knownWords, unknownWords);
+
+         toast.success(
+            <div className={styles.toastHolder}>
+               <div className={styles.toastTitle}>
+                  Progress Saved
+               </div>
+               <div className={styles.info}>
+                  The words you studied are saved successfully
+               </div>
             </div>
-            <div className={styles.info}>
-               The words you studied are saved successfully
-            </div>
-         </div>
-         ,
-         {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Slide,
-            closeButton: false,
+            ,
+            {
+               position: "top-right",
+               autoClose: 3000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,
+               theme: "light",
+               transition: Slide,
+               closeButton: false,
+            }
+         )
+
+         if (msg === 'save'){
+            router.push('/a1')
+         } else if(msg === 'nextLesson'){
+            router.push(`/a1/${lessonNumber + 1}`)
+         } else if(msg === 'nextLevel'){
+            router.push('/a2')
          }
-      )
+
+      } catch (error){
+         console.error('Error in updating the bd status:', error)
+      }
    }
 
    const animation = () => {
@@ -217,16 +202,6 @@ export default function Lessons({ params }) {
       setTimeout(() => setAnime(true), 500)
       setTimeout(() => setShowConfetti(false), 3000)
    }
-
-   // Save data to localStorage when state changes
-   useEffect(() => {
-      try {
-         localStorage.setItem(`savedA1Vocabs-${slug}-A1`, JSON.stringify(savedA1Vocabs));
-
-      } catch (e) {
-         console.error('Error saving to localStorage:', e);
-      }
-   }, [savedA1Vocabs, slug]);
 
    useEffect(() => {
       setLoadedImages2(0);
@@ -264,9 +239,9 @@ export default function Lessons({ params }) {
       const savedVocab = ws.word.word
       const savedVocabRole = ws.word.role
 
-      const foundWord = wordList?.filter((item, index) => {
+      const foundWord = specificLessonWords?.filter((item, index) => {
          if(item.word === savedVocab && item.role === savedVocabRole) {
-            wordList[index].saved = !wordList[index].saved
+            specificLessonWords[index].saved = !specificLessonWords[index].saved
             return item
          }
       })
@@ -331,12 +306,8 @@ export default function Lessons({ params }) {
          )
       }
    }
-   
-   const specificLessonWords = wordList?.filter((item) => {
-      return item.id == slug
-   })
 
-   const wholeLessons = wordList?.[wordList.length - 1].id
+   const wholeLessons = 45
 
    const startLearning = () => {
 
@@ -779,12 +750,12 @@ export default function Lessons({ params }) {
                   <div className='absolute w-full h-dvh p-25 top-0 bg-black/10 backdrop-blur-lg flex items-center justify-center flex-col z-3 gap-3'>
                      <div className={`relative text-xl transition-all duration-400 text-black ${show ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>All done. Brilliant :)</div>
                      <div className='w-full flex flex-col gap-3'>
-                        <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={done}>Save</button>
+                        <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={() => saveProgress('save')}>Save</button>
                         {
                            lessonNumber < wholeLessons ?
-                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={nextLesson}>Next Lesson</button>
+                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={() => saveProgress('nextLesson')}>Next Lesson</button>
                            :
-                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={nextLevel}>Start A2</button>
+                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={() => saveProgress('nextLevel')}>Start A2</button>
                         }
                      </div>
                   </div>
@@ -929,16 +900,16 @@ export default function Lessons({ params }) {
                                  {
                                     lessonNumber < wholeLessons ?
                                        <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
-                                          onClick={nextLesson}   
+                                          onClick={() => saveProgress('nextLesson')}
                                        >Lesson {lessonNumber + 1}</button>
                                        :
                                        <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
-                                          onClick={nextLevel}
+                                          onClick={() => saveProgress('nextLevel')}
                                        >Start A2</button>  
                                  }
 
                                  <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
-                                    onClick={done}
+                                    onClick={() => saveProgress('save')}
                                  >Save</button>
                               </div>
 

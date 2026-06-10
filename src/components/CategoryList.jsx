@@ -1,4 +1,3 @@
-// src/components/CategoryList.jsx
 "use client";
 
 import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "@/components/ui/combobox"
@@ -45,6 +44,8 @@ export default function CategoryList() {
 
       loadCategoryData();
    }, [selectedCategory]);
+
+   console.log(words)
 
 
 return (

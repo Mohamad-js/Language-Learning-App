@@ -8,6 +8,8 @@ import { BiErrorCircle } from "react-icons/bi";
 import { IoIosOptions } from "react-icons/io";
 import { RiRepeat2Fill } from "react-icons/ri";
 import Link from 'next/link';
+import { resetAllProgress } from '@/lib/db';
+
 
 
 function Menu(){
@@ -32,11 +34,16 @@ function Menu(){
       setMenu(!menu)
    }
 
-   const resetAction = () => {
-      setWarning(false)
-      localStorage.clear()
-      router.push('/')
-      location.reload()
+   const resetAction = async () => {
+      try {
+         await resetAllProgress()
+         setWarning(false)
+         // localStorage.clear()
+         // window.location.href = '/';
+
+      } catch (error){
+         console.error('Error Restarting:', error)
+      }
    }
 
    const showWarning = () => {

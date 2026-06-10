@@ -9,7 +9,7 @@ import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';
 import { useTheme } from '@/components/context/ThemeContext';
 import { toast, Slide } from 'react-toastify';
-
+import { getAllWords } from '@/lib/db';
 
 
 function A1() {
@@ -19,40 +19,9 @@ function A1() {
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
    const totalImages = 1;
-   const [switches, setSwitches] = useState(Array(86).fill(false));
-   const [nextLesson, setNextLesson] = useState(0)
-   const [progress, setProgress] = useState(0)
-   const [completed, setCompleted] = useState(false)
+   const [vocabs, setVocabs] = useState([])
 
 
-   useEffect(() => {
-      const current = JSON.parse(localStorage.getItem(`currentLesson-A1`)) || 0;
-      current < 86 ? setNextLesson(Number(current) + 1) : null
-      
-      if(!isLoading) {
-         const currentProgress = (Number(current) * 100) / 86
-         
-         progress == 100 && setTimeout(() => {
-            setCompleted(true)
-         }, 2000)
-         
-         setTimeout(() => {
-            setProgress(Number(currentProgress.toFixed(1)))
-         }, 1000)
-      }
-
-
-      const newSwitches = Array(86).fill(false);
-      for (let i = 1; i <= 86; i++) {
-         const knowns = JSON.parse(localStorage.getItem(`knownWords-${i}-A1`)) || [];
-         const unknowns = JSON.parse(localStorage.getItem(`unknownWords-${i}-A1`)) || [];
-
-         if (knowns.length > 0 || unknowns.length > 0) {
-            newSwitches[i - 1] = true;
-         }
-      }
-      setSwitches(newSwitches);
-   }, [progress, isLoading]);
 
    const router = useRouter()
    useEffect(() => {
@@ -79,28 +48,29 @@ function A1() {
       });
    };
 
-   // Find the index of the first non-done lesson to mark it as "new"
-   const firstNonDoneIndex = switches.findIndex((switchState) => !switchState);
-   const newLessonIndex = firstNonDoneIndex === -1 ? null : firstNonDoneIndex;
+   useEffect(() => {
+      const loadAllTheWords = async () => {
+         try {
+            const uniqueList = await getAllWords();
+            setVocabs(uniqueList)            
 
-   const switchPreview = () => {
-      localStorage.setItem(`preview`, JSON.stringify(true));
-   }
+         } catch (error) {
+            console.error("Failed to load vocabs:", error);
+         }
+      };
 
-   const goReview = (lessonRequested) => {
-      localStorage.setItem(`lessonRequested`, JSON.stringify(lessonRequested));
-      localStorage.setItem(`levelRequested`, JSON.stringify('A1'));
-      router.push('/review/words')
-   }
+      loadAllTheWords();
 
-   console.log(switches)
+   }, []);
+
+   
 
    return (
-      <div className={styles.container}>
+      <div className='absolute top-0 w-full min-h-dvh flex flex-col pt-20 p-5 gap-5'>
          {
             darkMode ?
             <Image
-               className={styles.background}
+               className='object-cover -z-1'
                src="/images/back/A1Dark.jpg"
                alt=""
                fill
@@ -108,7 +78,7 @@ function A1() {
             />
             :
             <Image
-               className={styles.background}
+               className='object-cover -z-1'
                src="/images/back/A1Back.jpg"
                alt=""
                fill
@@ -118,83 +88,52 @@ function A1() {
 
          <Back />
 
-         <div className={styles.top}
-            style={darkMode ? {color: 'white'} : {}}
-         >
-            <div className={styles.mainTitle}>A1 Vocabulary</div>
-            <div className={styles.subtitle}>Read and Practice the Words</div>
+         <div className='flex flex-col gap-1'>
+            <div className='text-3xl'>A1 Vocabulary</div>
+            <div className='text-md'>Read and Practice the Words</div>
          </div>
 
-         <div className={styles.bottom}>
-            <div className={styles.lessonsTitle}>Lessons:</div>
+         <div className='w-full h-[85vh] overflow-y-auto scrollbar-none flex flex-col gap-3 bg-white/30 rounded-2xl p-3 pb-100'>
+         {
+            vocabs.map((lesson, index) => {
 
-            <div className={styles.learningHolder}>
-            {switches.map((switchState, index) => {
-               const lessonNumber = index + 1;
-               const isDone = switchState;
-               const isNew = index === newLessonIndex;
-               const isSelectable = (index === 0 && !isDone) || (index > 0 && switches[index - 1] && !isDone);
 
-               return isSelectable ? (
-                  <div
-                     className={styles.lessonsHolder}
-                     key={lessonNumber}
-                     style={darkMode ? {backgroundColor: '#ad0093'} : {}}
-                  >
-                     <div className={styles.dataHolder}>
-                        <div className={styles.lesson}
-                           style={darkMode ? {color: '#ff7ee3'} : {}}
-                        >Lesson {lessonNumber}: {}</div>
-                        {isNew ? (
-                           <div className={styles.newLesson}
-                              style={darkMode ? {color: 'white'} : {}}
-                           >New Lesson</div>
-                        ) : (
-                           <div className={styles.lessonWaiting}>Locked</div>
-                        )}
+               return (
+                  <div key={index} className={`w-full flex justify-between items-center gap-2 rounded-2xl ${lesson.status === 'done' ? 'bg-green-100' : lesson.status === 'ready' ? 'bg-white' : lesson.status === 'waiting' ? 'bg-red-100' : ''}`}>
+                     <div className="flex flex-col gap-1 p-4">
+                        <div className="font-bold text-gray-400">Lesson {lesson.lesson}:</div>
+                        <div className="text-lg">{lesson.category}</div>
                      </div>
+                     {
+                        lesson.status === 'ready' ?
+                           <Link href={`/a1/${lesson.lesson}`} className='h-full'>
+                              <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
+                                 START
+                              </button>
+                           </Link>
+                        :
 
-                     <div className={styles.btns}>
-                        <button className={styles.lessonBtn}>
-                           <Link href={`/a1/${lessonNumber}`} onClick={switchPreview}> PREVIEW </Link>
-                        </button>
+                        lesson.status === 'done' ?
+                           <Link href={'/review'} className='h-full'>
+                              <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
+                                 REVIEW
+                              </button>
+                           </Link>
+                        :
 
-                        <button className={styles.lessonBtn}>
-                           <Link href={`/a1/${lessonNumber}`}>START</Link>
-                        </button>
-                     </div>
+                        lesson.status === 'waiting' ?
+                           <div className="text-red-500 p-5">LOCKED</div>
 
+                        : 
+                        null
+                     }
                   </div>
-               ) : (
-                  <div className={`${styles.lessonsHolder} ${styles.disabled}`}
-                     key={lessonNumber}
-                     style={darkMode ? {backgroundColor: '#040071'} : {}}
-                  >
-                     <div className={styles.lesson}
-                        style={darkMode ? {color: 'white'} : {}}
-                     >Lesson {lessonNumber}</div>
-                     {isDone ? (
-                        <div className={styles.lessonDone}>
-                           <button className={styles.lessonBtn}>
-                              <div onClick={() => goReview(lessonNumber)}>Review</div>
-                           </button>
-                           <TiTick className={styles.tick}/>
-                        </div>
-                     ) : isNew ? (
-                        <div className={styles.newLesson}
-                           style={darkMode ? {color: 'white'} : {}}
-                        >New Lesson</div>
-                     ) : (
-                        <div className={styles.lessonWaiting}
-                           style={darkMode ? {color: '#8f8fff'} : {}}
-                        >Locked</div>
-                     )}
-                  </div>
-               );
-            })}
-            </div>
+               )
+            })
+         }
+         </div>
 
-            {
+            {/* {
                nextLesson !== 1 &&
                <div className={styles.progressInfoHolder}
                   style={darkMode ? {backgroundColor: '#00000068'} : {}}
@@ -215,9 +154,7 @@ function A1() {
                   </div>
                   
                </div>
-            }
-
-         </div>
+            } */}
          
          { isLoading && <Loader /> }
 
