@@ -1,7 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
-// import Menu from "@/components/menu/menu";
 import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from "@/components/context/ThemeContext";
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
@@ -22,20 +21,18 @@ export const viewport = {
    userScalable: false,
 };
 
-export default function RootLayout({ children }) {
+export default function ChildLayout({ children }) {
   return (
-      <html lang="en">
-         <body>
-            <ServiceWorkerRegistrar />
-            <ThemeProvider>
-               <ToastProvider>
-                  <Ham />
-                  {children}
-               </ToastProvider>
-            </ThemeProvider>
-            <SpeedInsights />
-            <Analytics />
-         </body>
-      </html>
+   <div>
+      <ServiceWorkerRegistrar />
+      <ThemeProvider>
+         <ToastProvider>
+            <Ham />
+            {children}
+         </ToastProvider>
+      </ThemeProvider>
+      <SpeedInsights />
+      <Analytics />
+   </div>
   );
 }

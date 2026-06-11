@@ -17,12 +17,13 @@ import { TbComponentsOff } from "react-icons/tb";
 import ThemeToggle from '../themeSwitch/themeToggle';
 import { useTheme } from "../context/ThemeContext";
 import { resetAllProgress } from '@/lib/db';
-
+import { useLoading } from '../LoadingProvider';
 
 
 
 function Ham(){
    const { lightTheme } = useTheme();
+   const { startLoading } = useLoading();
    const darkMode = !lightTheme;
    const [page, setPage] = useState('learn')
 
@@ -90,6 +91,7 @@ function Ham(){
       };
 
       if (routes[msg]) {
+         startLoading()
          router.push(routes[msg]);
          closeMenu();
       }

@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Loader from '@/components/loading/loading';
 import { RiProhibited2Line } from "react-icons/ri";
 import WarningMessage from '@/components/warningMessage/warningMessage';
 import Back from '@/components/backButton/back';
@@ -188,9 +187,7 @@ function B1() {
             }
          </div>
 
-         {isLoading && (
-            <Loader />
-         )}
+
 
          {/* {
             allowStart < 1240 && 

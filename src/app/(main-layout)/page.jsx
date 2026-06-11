@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef, useCallback } from "react";
-import Loader from "@/components/loading/loading";
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { idioms } from "@/data/idioms";
@@ -13,7 +12,7 @@ import Aurora from "@/components/aurora/aurora";
 import Tour from "@/components/tour/tour";
 import rawA1Vocabs from "../../../database/rawA1.json"
 import VocabularyManager from "@/components/VocabularyManager";
-
+import { useLoading } from "@/components/LoadingProvider";
 
 
 
@@ -29,7 +28,8 @@ function urlBase64ToUint8Array(base64String) {
 
 const Home = () => {
    const { lightTheme } = useTheme();
-   const darkMode = !lightTheme;
+   const { stopLoading, startLoading } = useLoading();
+   
    
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
@@ -42,6 +42,7 @@ const Home = () => {
    const [isClient, setIsClient] = useState(false);
 
    useEffect(() => {
+      startLoading()
       setIsClient(true);
       const hasSeenTour = localStorage.getItem('joyride-tour-completed');
       if (!hasSeenTour) {
@@ -175,6 +176,10 @@ const Home = () => {
       return () => mediaQuery.removeEventListener("change", handler);
    }, []);
 
+   const handleIllustrationLoad = () => {
+      stopLoading()
+   }
+
    return (
       <div className='relative w-full h-screen p-5 pb-30 flex flex-col gap-3 super-compact:gap-1 compact:p-3 compact:pb-30 narrow:p-3 narrow:pb-30'>
 
@@ -305,6 +310,7 @@ const Home = () => {
                      src='/images/illustrations/studying.png'
                      alt='Studying Illustration'
                      fill
+                     onLoad={handleIllustrationLoad}
                   />
                </div>
             </div>

@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Back from '@/components/backButton/back';
 import Image from 'next/image';
-import Loader from '@/components/loading/loading';
 
 
 
@@ -77,9 +76,7 @@ function Review(){
             </div>
          </div>
 
-         {isLoading && (
-            <Loader />
-         )}
+
       </div>
    )
 }

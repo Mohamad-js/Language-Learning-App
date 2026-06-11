@@ -7,7 +7,6 @@ import Back from '@/components/backButton/back';
 import { useEffect } from 'react';
 import ProgressBar from '@/components/WhiteProgressBar/ProgressBar';
 import Image from 'next/image';
-import Loader from '@/components/loading/loading';
 
 
 
@@ -378,9 +377,6 @@ function Statistics(){
             </div>
          </div>
 
-         {isLoading && (
-            <Loader />
-         )}
       </div>
    )
 }

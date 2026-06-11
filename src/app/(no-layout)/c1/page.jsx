@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';
 
 
@@ -180,10 +179,6 @@ function C1() {
                </div>
             }
          </div>
-
-         {isLoading && (
-            <Loader />
-         )}
 
          {/* {
             allowStart < 1240 && 

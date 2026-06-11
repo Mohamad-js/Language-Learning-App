@@ -6,7 +6,6 @@ import styles from './slug.module.css';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';
-import Loader from '@/components/loading/loading';
 import { c2WordList } from '@/data/c2WordList';
 
 
@@ -410,10 +409,6 @@ export default function Lessons({ params }) {
             <div className={styles.actionsHolder}>
                <button className={styles.actions} onClick={cancelPreview}>Start this Lesson</button>
             </div>
-
-            {isLoading && (
-               <Loader />
-            )}
          
          </div>
       )
@@ -716,9 +711,6 @@ export default function Lessons({ params }) {
          </> 
       }
 
-      {isLoading && (
-         <Loader />
-      )}
       </div>
    );
 }

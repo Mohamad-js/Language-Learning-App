@@ -4,18 +4,21 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import styles from './words.module.css'
 import Image from 'next/image';
-import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';
 import { useTheme } from '@/components/context/ThemeContext';
+import { useLoading  } from '@/components/LoadingProvider';
 
 
 function Words(){
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
 
-   const [isLoading, setIsLoading] = useState(true);
-   const [loadedImages, setLoadedImages] = useState(0);
-   const totalImages = 1
+   const { stopLoading } = useLoading();
+
+   const handleImageLoad = () => {
+      stopLoading();
+   };
+
 
    const router = useRouter()
    useEffect(() => {
@@ -31,42 +34,22 @@ function Words(){
       }
    }, [router])
 
-   const handleImageLoad = () => {
-      setLoadedImages((prev) => {
-      const newCount = prev + 1;
-      if (newCount >= totalImages) {
-        setIsLoading(false);
-      }
-      return newCount;
-    });
-   };
 
-   useEffect(() => {
-      if (loadedImages >= totalImages) {
-         setIsLoading(false);
-      }
-   }, [loadedImages]);
+
 
 
    return(
       <>
          <div className='absolute top-0 left-0 w-full min-h-dvh flex flex-col pt-15'>
-            {
-               darkMode ?
-               <Image className='-z-1'
-                  src='/images/back/wordsDark.jpg'
-                  fill
-                  alt='background'
-                  onLoad={handleImageLoad}
-               />
-               :
-               <Image className='-z-1'
-                  src='/images/back/background.jpg'
-                  fill
-                  alt='background'
-                  onLoad={handleImageLoad}
-               />
-            }
+
+         <Image className='-z-1'
+            src={darkMode
+               ? '/images/back/wordsDark.jpg'
+               : '/images/back/background.jpg'}
+            fill
+            alt="background"
+            onLoad={handleImageLoad}
+         />
 
             <Back goTo ={'/'} />
 
@@ -107,7 +90,6 @@ function Words(){
 
             </div>
 
-            { isLoading && <Loader /> }
          </div>
       </>
    )

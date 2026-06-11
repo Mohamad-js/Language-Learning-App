@@ -6,27 +6,24 @@ import styles from './slug.module.css';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6"
 import { BsArrowRepeat } from "react-icons/bs";
 import Confetti from "@/components/confetti/confetti";
-import Back from '@/components/backButton/back';
-import Loader from '@/components/loading/loading';
 import { useTheme } from "@/components/context/ThemeContext";
 import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
 import Audio from '@/components/audio/audio';
 import { toast, Slide } from 'react-toastify';
 import { getWordsByLesson, updateInteractionStatus} from '@/lib/db';
-
+import { useLoading } from '@/components/LoadingProvider';
 
 
 export default function Lessons({ params }) {
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
+   const { stopLoading } = useLoading();
 
    const [specificLessonWords, setSpecificLessonWords] = useState(null)
    const [isLoading, setIsLoading] = useState(true);
    const [isLoading2, setIsLoading2] = useState(true);
-   const [loadedImages, setLoadedImages] = useState(0);
    const [loadedImages2, setLoadedImages2] = useState(0);
-   const totalImages = 1;
    const totalImages2 = 1;
 
    const [currentWordIndex, setCurrentWordIndex] = useState(0)
@@ -77,15 +74,12 @@ export default function Lessons({ params }) {
       setLessonNumber(Number(slug))
 
       const loadLesson = async () => {
-         setIsLoading(true);
          try {
             const data = await getWordsByLesson(slug);
             setSpecificLessonWords(data);
 
          } catch (error) {
             console.error("Failed to fetch words:", error);
-         } finally {
-            setIsLoading(false);
          }
       };
 
@@ -416,6 +410,7 @@ export default function Lessons({ params }) {
          }
       }
    };
+   
 
    if (!specificLessonWords || specificLessonWords.length === 0) {
       return <div className='w-screen min-h-dvh flex items-center justify-center'>No flashcards available</div>;
@@ -426,24 +421,9 @@ export default function Lessons({ params }) {
       visibleCards.push(specificLessonWords[(currentCardIndex + i) % specificLessonWords.length]);
    }
 
-   const handleImageLoad = () => {
-      setLoadedImages((prev) => {
-         const newCount = prev + 1;
-         if (newCount >= totalImages) {
-            setIsLoading(false);
-         }
-         return newCount;
-      });
-   };
 
    const handleImageLoad2 = () => {
-      setLoadedImages2((prev) => {
-         const newCount = prev + 1;
-         if (newCount >= totalImages2) {
-            setIsLoading2(false);
-         }
-         return newCount;
-      });
+      setIsLoading2(false);
    };
 
    const startOver = () => {
@@ -453,58 +433,6 @@ export default function Lessons({ params }) {
 
       setKnownWords([]);
       setUnknownWords([]);
-   }
-
-   if(preview){
-      const cancelPreview = () => {
-         localStorage.setItem(`preview`, JSON.stringify(false));
-         setPreview(false)
-      }
-
-      const handleImageLoad = () => {
-         setLoadedImages((prev) => {
-            const newCount = prev + 1;
-            if (newCount >= totalImages) {
-               setIsLoading(false);
-            }
-            return newCount;
-         });
-      };
-
-      return (
-         <div className={styles.previewContainer}>
-
-            <Image className={styles.imgPreview}
-               src= '/images/back/previewA1.jpg'
-               alt= 'background image'
-               fill
-               onLoad={handleImageLoad}
-            />
-
-            <Back preview = {true}/>
-
-            <h2 className={styles.preTitle}> The Words in This Lesson</h2>
-
-            <div className={styles.vocabCards}>
-            {
-               specificLessonWords?.map((item, index) => (
-                  <div className={styles.eachCard} key={index}>
-                     <div className={styles.vocab}>{item.word}</div>
-                  </div>
-               ))
-            }
-            </div>
-
-            <div className={styles.actionsHolder}>
-               <button className={styles.actions} onClick={cancelPreview}>Start this Lesson</button>
-            </div>
-
-            {isLoading && (
-               <Loader />
-            )}
-         
-         </div>
-      )
    }
 
    const copyDef = (def) => {
@@ -595,6 +523,14 @@ export default function Lessons({ params }) {
       }, 200);
    };
 
+   const handleMainPageLoad = () => {
+      stopLoading();
+   };
+
+   const handleLessonImageLoad = () => {
+      setIsLoading(false)
+   };
+
    return (
       <div className='min-w-screen min-h-dvh'>
 
@@ -604,14 +540,14 @@ export default function Lessons({ params }) {
                src= '/images/back/A1SlugDark.jpg'
                alt= 'background image'
                fill
-               onLoad={handleImageLoad}
+               onLoad={handleMainPageLoad}
             />
             :
             <Image className='z-0'
                src= '/images/back/A1Slug.jpg'
                alt= 'background image'
                fill
-               onLoad={handleImageLoad}
+               onLoad={handleMainPageLoad}
             />
 
          }
@@ -784,15 +720,22 @@ export default function Lessons({ params }) {
                   src='/images/back/DarkLearningA1.jpg'
                   fill
                   alt='background'
-                  onLoad={handleImageLoad}
+                  onLoad={handleLessonImageLoad}
                />
                :
                <Image className='object-cover z-0'
                   src='/images/back/A1LearnSection.jpg'
                   fill
                   alt='background'
-                  onLoad={handleImageLoad}   
+                  onLoad={handleLessonImageLoad}   
                />
+            }
+
+            {
+               isLoading && 
+                  <div className="fixed z-2 top-0 left-0 w-full min-h-dvh flex justify-center items-center bg-white">
+                     <Wait />
+                  </div>
             }
 
 
@@ -804,13 +747,21 @@ export default function Lessons({ params }) {
                <>
                   <div className='w-full h-dvh flex flex-col justify-start items-start gap-3'>
                      <div className='relative w-full h-80 overflow-hidden rounded-2xl'>
-                        
+
                         <Image className='object-cover'
                            src={`/images/a1/${ws.word.word}.png`}
                            fill
                            alt='Word Pic'
                            onLoad={handleImageLoad2}
                         />
+
+                        {
+                           isLoading2 &&
+                              <div className="absolute top-0 left-0 w-full h-full bg-white flex items-center justify-center">
+                                 <Wait />
+                              </div>
+                        }
+                        
                         <div className='absolute w-full bottom-0 h-20 bg-linear-to-t from-black to-transparent'></div>
                         <p className='absolute left-3 bottom-2 text-white text-4xl'>{ws.word.word}</p>
 
@@ -887,7 +838,7 @@ export default function Lessons({ params }) {
                            <div className='absolute top-0 w-full h-dvh bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'>
 
                               <div className="text-white text-bold text-4xl">Great!</div>
-                              <div className="text-white text-bold text-lg mb-5">Great! You finished lesson {lessonNumber}</div>
+                              <div className="text-white text-bold text-lg mb-5">You finished lesson {lessonNumber}</div>
 
                               <div className="w-full flex gap-2 justify-center">
 
@@ -981,13 +932,8 @@ export default function Lessons({ params }) {
          </> 
       }
 
-         {isLoading && (
-            <Loader />
-         )}
 
-         {isLoading2 && stage ==='learning' && (
-            <Wait />         
-         )}
+
 
       </div>
    );

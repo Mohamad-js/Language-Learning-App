@@ -5,16 +5,19 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Loader from '@/components/loading/loading';
 import Back from '@/components/backButton/back';
 import { useTheme } from '@/components/context/ThemeContext';
 import { toast, Slide } from 'react-toastify';
 import { getAllWords } from '@/lib/db';
+import { useLoading, startLoading } from '@/components/LoadingProvider';
+
 
 
 function A1() {
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
+   const { stopLoading } = useLoading();
+   const { startLoading } = useLoading();
 
    const [isLoading, setIsLoading] = useState(true);
    const [loadedImages, setLoadedImages] = useState(0);
@@ -24,6 +27,7 @@ function A1() {
 
 
    const router = useRouter()
+
    useEffect(() => {
       const handleDefaultBack = (event) => {
          event.preventDefault()
@@ -33,20 +37,20 @@ function A1() {
       window.addEventListener('popstate', handleDefaultBack)
       
       return () => {
-         window.addEventListener('popstate', handleDefaultBack)
+         window.removeEventListener('popstate', handleDefaultBack)
       }
    }, [router])
 
    const handleImageLoad = () => {
-      setLoadedImages((prev) => {
-         const newCount = prev + 1;
-
-         if (newCount >= totalImages) {
-            setIsLoading(false);
-         }
-         return newCount;
-      });
+      setLoadedImages((prev) => prev + 1);
    };
+
+   useEffect(() => {
+      if (loadedImages >= totalImages) {
+         setIsLoading(false);
+         stopLoading();
+      }
+   }, [loadedImages, totalImages, stopLoading]);
 
    useEffect(() => {
       const loadAllTheWords = async () => {
@@ -106,7 +110,7 @@ function A1() {
                      </div>
                      {
                         lesson.status === 'ready' ?
-                           <Link href={`/a1/${lesson.lesson}`} className='h-full'>
+                           <Link href={`/a1/${lesson.lesson}`} onClick={() => startLoading()} className='h-full'>
                               <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
                                  START
                               </button>
@@ -156,7 +160,6 @@ function A1() {
                </div>
             } */}
          
-         { isLoading && <Loader /> }
 
       </div>
    );

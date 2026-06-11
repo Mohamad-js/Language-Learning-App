@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";
 import Confetti from "@/components/confetti/confetti";
 import Back from '@/components/backButton/back';
-import Loader from '@/components/loading/loading';
 import { a2WordList } from '@/data/a2WordList';
 
 
@@ -415,9 +414,7 @@ export default function Lessons({ params }) {
                <button className={styles.actions} onClick={cancelPreview}>Start this Lesson</button>
             </div>
 
-            {isLoading && (
-               <Loader />
-            )}
+
          
          </div>
       )
@@ -721,9 +718,6 @@ export default function Lessons({ params }) {
          </> 
       }
 
-      {isLoading && (
-         <Loader />
-      )}
 
       </div>
    );
