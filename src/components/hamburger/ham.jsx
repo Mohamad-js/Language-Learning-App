@@ -41,7 +41,7 @@ function Ham(){
 
    const router = useRouter()
 
-   const resetWarning = () => {
+   const toggleMenu = () => {
       setMenu(prev => !prev)
    }
 
@@ -101,9 +101,9 @@ function Ham(){
    return(
       <div className='absolute top-0 left-0 overflow-hidden w-full min-h-dvh'>
          
-         <div className='fixed top-0 right-0 z-11 px-3 py-3'
-            onClick={resetWarning}>
-            <label>
+         <div className='fixed top-0 right-0 px-3 py-3 z-2'
+            onClick={toggleMenu}>
+            <label className='z-2'>
                <div
                   className="w-9 h-10 cursor-pointer flex flex-col items-center justify-center"
                   >
@@ -116,13 +116,13 @@ function Ham(){
                      aria-hidden="true"
                   />
                   <div
-                     className="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:rotate-[-45deg]"
+                     className="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:-rotate-45"
                   ></div>
                   <div
                      className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-center peer-checked:hidden"
                   ></div>
                   <div
-                     className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"
+                     className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left translate-y-[-0.45rem] peer-checked:rotate-45"
                   ></div>
                </div>
             </label>
@@ -131,12 +131,12 @@ function Ham(){
 
          {
             menu &&
-            <div className="absolute top-0 left-0 w-full min-h-dvh bg-black/50 z-10" onClick={() => setMenu(false)}></div>
+            <div className="absolute top-0 left-0 w-full min-h-dvh bg-black/50 z-1" onClick={() => setMenu(false)}></div>
 
          }
 
 
-         <div className={`w-full fixed bg-white z-10 transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-50' : 'left-full'}`}>
+         <div className={`w-full fixed z-1 bg-white transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-50' : 'left-full'}`}>
             
             <div className='w-full min-h-dvh pt-15 p-3 flex flex-col'>
                {/* <ThemeToggle /> */}

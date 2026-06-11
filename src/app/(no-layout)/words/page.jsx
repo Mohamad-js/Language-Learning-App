@@ -51,7 +51,7 @@ function Words(){
             onLoad={handleImageLoad}
          />
 
-            <Back goTo ={'/'} />
+            <Back />
 
             <div className='w-full flex-1 flex flex-col gap-5 p-5'>
                <div className='w-full text-center'>Choose Your CEFR Level</div>

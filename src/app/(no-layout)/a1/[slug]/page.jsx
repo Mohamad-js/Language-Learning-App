@@ -18,7 +18,7 @@ import { useLoading } from '@/components/LoadingProvider';
 export default function Lessons({ params }) {
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
-   const { stopLoading } = useLoading();
+   const { stopLoading, startLoading } = useLoading();
 
    const [specificLessonWords, setSpecificLessonWords] = useState(null)
    const [isLoading, setIsLoading] = useState(true);
@@ -152,6 +152,8 @@ export default function Lessons({ params }) {
 
       try {
          await updateInteractionStatus(knownWords, unknownWords);
+
+         startLoading()
 
          toast.success(
             <div className={styles.toastHolder}>

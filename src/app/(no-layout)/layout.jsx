@@ -1,7 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
-import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from "@/components/context/ThemeContext";
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
 import ToastProvider from "@/components/ToastProvider/toastProvider";
@@ -27,7 +26,6 @@ export default function ChildLayout({ children }) {
       <ServiceWorkerRegistrar />
       <ThemeProvider>
          <ToastProvider>
-            <Ham />
             {children}
          </ToastProvider>
       </ThemeProvider>
