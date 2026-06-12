@@ -1,5 +1,4 @@
 'use client'
-import styles from './back.module.css'
 import { IoIosArrowBack } from 'react-icons/io';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
