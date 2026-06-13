@@ -6,14 +6,14 @@ import { useLoading } from '../LoadingProvider';
 
 
 
-function Back(){
+function Back({to}){
 
    const router = useRouter()
    const { startLoading } = useLoading()
 
    const handleBack = () => {
       startLoading()
-      router.back()
+      router.replace(to)
    }
 
    return(

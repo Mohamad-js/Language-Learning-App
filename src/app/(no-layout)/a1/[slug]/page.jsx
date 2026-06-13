@@ -3,7 +3,7 @@ import { use, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './slug.module.css';
-import { FaRegBookmark, FaBookmark } from "react-icons/fa6"
+import { PiDotsThreeVertical } from "react-icons/pi";
 import { BsArrowRepeat } from "react-icons/bs";
 import Confetti from "@/components/confetti/confetti";
 import { useTheme } from "@/components/context/ThemeContext";
@@ -305,11 +305,6 @@ export default function Lessons({ params }) {
 
    const wholeLessons = 45
 
-   const startLearning = () => {
-
-   }
-
-   // logics for the assesment card
    const handleTouchStart = (e) => {
       if (isSwiped) return; // Prevent interaction during swipe animation
       setStartX(e.touches[0].clientX);
@@ -558,9 +553,7 @@ export default function Lessons({ params }) {
             <div className='w-full pl-3'
             >Lesson {lessonNumber}</div>
 
-            <div className='w-full'
-               style={darkMode ? {color: 'white'} : {}}
-            >A1</div>
+            <div className='w-full'>A1</div>
          </div>
 
          {stage === 'assessment' && (
@@ -763,15 +756,38 @@ export default function Lessons({ params }) {
                                  <Wait />
                               </div>
                         }
-                        
-                        <div className='absolute w-full bottom-0 h-20 bg-linear-to-t from-black to-transparent'></div>
-                        <p className='absolute left-3 bottom-2 text-white text-4xl'>{ws.word.word}</p>
 
-                        <div className='absolute right-3 bottom-4 text-white text-2xl flex justify-center items-center' onClick={() => saveHandle(ws)}>
-                           {  
-                              (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? <FaBookmark /> : <FaRegBookmark />  
-                           }
+
+                        {/* <div>
+
+                           <p onClick={() => saveHandle(ws)} className="">
+                              {  
+                                 (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? 'save' : 'unsave'  
+                              }
+                           </p>
+
+                           <p className=""></p>
+
+                           </div> */}
+                        
+                        <div className="absolute bottom-0 w-full flex items-center justify-between p-4">
+                           <div className='absolute left-0 bottom-0 w-full h-20 z-0 bg-linear-to-t from-black to-transparent'></div>
+
+                           <div className="flex items-end gap-3">
+                              <p className='text-white leading-5 text-4xl z-1'>
+                                 {ws.word.word}
+                              </p>
+
+                              <div className='text-white text-center leading-2 z-1'>
+                                 {ws.word.role}
+                              </div>
+                           </div>
+
+                           <div className='absolute right-0 bottom-3 text-white z-1'>
+                              <PiDotsThreeVertical size={35} />
+                           </div>
                         </div>
+
                      </div>
                      <div className='w-full flex flex-col items-start z-1'>
                         <div className='w-full gap-5 flex items-center justify-center'>
@@ -815,9 +831,6 @@ export default function Lessons({ params }) {
                            </div>
                         </div>
                      </div>
-
-                     <div className='w-full bg-white/50 p-2 z-1 text-center rounded-2xl'
-                     >{ws.word.role}</div>
 
                      <div className='w-full flex items-center bg-white/50 p-4 z-1 rounded-2xl'
                         onClick={() => copyDef(ws.word.definition)}   

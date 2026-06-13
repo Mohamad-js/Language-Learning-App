@@ -16,12 +16,7 @@ import { useLoading, startLoading } from '@/components/LoadingProvider';
 function A1() {
    const { lightTheme } = useTheme();
    const darkMode = !lightTheme;
-   const { stopLoading } = useLoading();
-   const { startLoading } = useLoading();
-
-   const [isLoading, setIsLoading] = useState(true);
-   const [loadedImages, setLoadedImages] = useState(0);
-   const totalImages = 1;
+   const { stopLoading, startLoading } = useLoading();
    const [vocabs, setVocabs] = useState([])
 
 
@@ -42,15 +37,8 @@ function A1() {
    }, [router])
 
    const handleImageLoad = () => {
-      setLoadedImages((prev) => prev + 1);
-   };
-
-   useEffect(() => {
-      if (loadedImages >= totalImages) {
-         setIsLoading(false);
-         stopLoading();
-      }
-   }, [loadedImages, totalImages, stopLoading]);
+      stopLoading()
+   }
 
    useEffect(() => {
       const loadAllTheWords = async () => {
@@ -73,24 +61,24 @@ function A1() {
       <div className='absolute top-0 w-full min-h-dvh flex flex-col pt-20 p-5 gap-5'>
          {
             darkMode ?
-            <Image
-               className='object-cover -z-1'
-               src="/images/back/A1Dark.jpg"
-               alt=""
-               fill
-               onLoad={handleImageLoad}
-            />
+               <Image
+                  className='object-cover -z-1'
+                  src="/images/back/A1Dark.jpg"
+                  alt=""
+                  fill
+                  onLoad={handleImageLoad}
+               />
             :
-            <Image
-               className='object-cover -z-1'
-               src="/images/back/A1Back.jpg"
-               alt=""
-               fill
-               onLoad={handleImageLoad}
-            />
+               <Image
+                  className='object-cover -z-1'
+                  src="/images/back/A1Back.jpg"
+                  alt=""
+                  fill
+                  onLoad={handleImageLoad}
+               />
          }
 
-         <Back />
+         <Back to='/' />
 
          <div className='flex flex-col gap-1'>
             <div className='text-3xl'>A1 Vocabulary</div>

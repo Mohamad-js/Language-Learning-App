@@ -6,14 +6,11 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Back from '@/components/backButton/back';
-
+import { useLoading } from '@/components/LoadingProvider';
 
 
 function Grammar(){
-   const [isLoading, setIsLoading] = useState(true);
-   const [loadedImages, setLoadedImages] = useState(0);
-   const totalImages = 1;
-   const [switches, setSwitches] = useState(Array(117).fill(false));
+   const { stopLoading } = useLoading()
 
 
    const router = useRouter()
@@ -31,13 +28,7 @@ function Grammar(){
    }, [router])
 
    const handleImageLoad = () => {
-      setLoadedImages((prev) => {
-      const newCount = prev + 1;
-      if (newCount >= totalImages) {
-         setIsLoading(false);
-      }
-      return newCount;
-      });
+      stopLoading()
    };
 
 
@@ -51,7 +42,7 @@ function Grammar(){
             onLoad={handleImageLoad}
          />
 
-         <Back />
+         <Back to='/' />
 
          <div className={styles.top}>
             <div className={styles.mainTitle}>Grammar</div>

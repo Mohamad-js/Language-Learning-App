@@ -131,12 +131,12 @@ function Ham(){
 
          {
             menu &&
-            <div className="absolute top-0 left-0 w-full min-h-dvh bg-black/50 z-1" onClick={() => setMenu(false)}></div>
+            <div className="absolute top-0 left-0 w-full min-h-dvh bg-black/50 z-4 backdrop-blur-sm" onClick={() => setMenu(false)}></div>
 
          }
 
 
-         <div className={`w-full fixed z-1 bg-white transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-50' : 'left-full'}`}>
+         <div className={`w-full fixed z-4 bg-white transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-50' : 'left-full'}`}>
             
             <div className='w-full min-h-dvh pt-15 p-3 flex flex-col'>
                {/* <ThemeToggle /> */}
