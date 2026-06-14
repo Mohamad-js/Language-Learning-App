@@ -13,7 +13,8 @@ import Tour from "@/components/tour/tour";
 import rawA1Vocabs from "../../../database/rawA1.json"
 import VocabularyManager from "@/components/VocabularyManager";
 import { useLoading } from "@/components/LoadingProvider";
-
+import { motion } from "framer-motion";
+import { fadeUp } from "@/lib/animations/entrance";
 
 
 
@@ -29,7 +30,7 @@ function urlBase64ToUint8Array(base64String) {
 const Home = () => {
    const { lightTheme } = useTheme();
    const { stopLoading, startLoading } = useLoading();
-   
+   const [isReady, setIsReady] = useState(false)
    
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
@@ -178,6 +179,7 @@ const Home = () => {
 
    const handleIllustrationLoad = () => {
       stopLoading()
+      setIsReady(true)
    }
 
    return (
@@ -209,7 +211,8 @@ const Home = () => {
             <div className='' id="tour_start">Home Page</div>
 
             
-            <div className='p-5 super-compact:p-3 bg-white/40 backdrop-blur-sm rounded-2xl'
+            <motion.div {...fadeUp({isReady, delay: 0.5})} 
+               className='p-5 super-compact:p-3 bg-white/40 backdrop-blur-sm rounded-2xl'
                onClick={toggleIdiomCard}
                id="tour_idiom"
             >
@@ -217,7 +220,7 @@ const Home = () => {
                <div className="super-compact:text-sm">
                   {dailyIdiom?.example}
                </div>
-            </div>
+            </motion.div>
             
 
 
@@ -240,7 +243,9 @@ const Home = () => {
                </div>
             }
 
-            <div className='w-full flex flex-col justify-between flex-1 gap-3 bg-white/40 backdrop-blur-sm p-5 super-compact:p-3 rounded-2xl'>
+            <motion.div {...fadeUp({isReady, delay: 0.65})}
+               className='w-full flex flex-col justify-between flex-1 gap-3 bg-white/40 backdrop-blur-sm p-5 super-compact:p-3 rounded-2xl'
+            >
                <div className="flex flex-col gap-2">
                   {
                      !isCompact &&
@@ -248,59 +253,71 @@ const Home = () => {
                   }
 
                   <div className='flex justify-between flex-wrap gap-y-2'>
-                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_words'>
+                     <motion.div {...fadeUp({isReady, delay: 0.75})}
+                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_words'
+                     >
                         <Link href='/words'>
                            <div className='flex flex-col h-full justify-between'>
                               <div className='text-xl super-compact:text-sm font-bold text-black/70'>Vocabulary</div>
                               <div className='text-black/70 super-compact:text-sm'>6330 Words</div>
                            </div>
                         </Link>
-                     </div>
+                     </motion.div>
 
-                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_grammar'>
+                     <motion.div {...fadeUp({isReady, delay: 0.85})} 
+                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_grammar'
+                     >
                         <Link href='/grammar'>
                            <div className='flex flex-col h-full justify-between'>
                               <div className='text-xl super-compact:text-sm font-bold text-black/70'>Grammar</div>
                               <div className='text-black/70 super-compact:text-sm'>164 Lessons</div>
                            </div>
                         </Link>
-                     </div>
+                     </motion.div>
 
-                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_prep'>
+                     <motion.div {...fadeUp({isReady, delay: 0.95})}
+                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_prep'
+                     >
                         <Link href='/expressions'>
                            <div className='flex flex-col h-full justify-between'>
                               <div className='text-xl super-compact:text-sm font-bold text-black/70'>Prepositions</div>
                               <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
                            </div>
                         </Link>
-                     </div>
+                     </motion.div>
 
-                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_colloc'>
+                     <motion.div {...fadeUp({isReady, delay: 1.05})}
+                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_colloc'
+                     >
                         <Link href='/collocations'>
                            <div className='flex flex-col h-full justify-between'>
                               <div className='text-xl super-compact:text-sm font-bold text-black/70'>Collocations</div>
                               <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
                            </div>
                         </Link>
-                     </div>
+                     </motion.div>
 
-                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_syn'>
+                     <motion.div {...fadeUp({isReady, delay: 1.15})}
+                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_syn'
+                     >
                         <Link href='/synonyms'>
                            <div className='flex flex-col h-full justify-between'>
                               <div className='text-xl super-compact:text-sm font-bold text-black/70'>Synonyms</div>
                               <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
                            </div>
                         </Link>
-                     </div>
+                     </motion.div>
 
-                     <div className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_family'>
+                     <motion.div {...fadeUp({isReady, delay: 1.25})}
+                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_family'
+                     >
                         <Link href='/family'>
                            <div className='flex flex-col h-full justify-between'>
                               <div className='text-xl super-compact:text-sm font-bold text-black/70'>Word Family</div>
                               <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
                            </div>
                         </Link>
-                     </div>
+                     </motion.div>
                   </div>
                </div>
 
@@ -313,7 +330,7 @@ const Home = () => {
                      onLoad={handleIllustrationLoad}
                   />
                </div>
-            </div>
+            </motion.div>
 
             
 
