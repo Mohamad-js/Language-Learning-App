@@ -10,7 +10,8 @@ import { useTheme } from '@/components/context/ThemeContext';
 import { toast, Slide } from 'react-toastify';
 import { getAllWords } from '@/lib/db';
 import { useLoading, startLoading } from '@/components/LoadingProvider';
-
+import { motion } from 'framer-motion';
+import { cards } from '@/lib/animations/entrance';
 
 
 function A1() {
@@ -78,14 +79,19 @@ function A1() {
                />
          }
 
-         <Back to='/' />
+         <Back to='/words' />
 
-         <div className='flex flex-col gap-1'>
+         <motion.div
+            {...cards({delay: 0.25, x: -60})}
+            className='flex flex-col gap-1'
+         >
             <div className='text-3xl'>A1 Vocabulary</div>
             <div className='text-md'>Read and Practice the Words</div>
-         </div>
+         </motion.div>
 
-         <div className='w-full h-[85vh] overflow-y-auto scrollbar-none flex flex-col gap-3 bg-white/30 rounded-2xl p-3 pb-100'>
+         <motion.div 
+            {...cards({delay: 0.35, y: 60})}
+            className='w-full h-[85vh] overflow-y-auto scrollbar-none flex flex-col gap-3 bg-white/30 rounded-2xl p-3 pb-100'>
          {
             vocabs.map((lesson, index) => {
 
@@ -123,7 +129,7 @@ function A1() {
                )
             })
          }
-         </div>
+         </motion.div>
 
             {/* {
                nextLesson !== 1 &&

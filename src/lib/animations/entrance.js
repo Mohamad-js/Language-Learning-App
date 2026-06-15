@@ -1,12 +1,14 @@
-export const cards = ({isReady = true, delay = 0}) => ({
+export const cards = ({delay = 0, x = 0, y = 0}) => ({
    initial: {
-      y: 30,
+      x: x,
+      y: y,
       opacity: 0,
    },
 
    animate: {
-      y: isReady? 0 : 20,
-      opacity: isReady ? 1 : 0,
+      y: 0,
+      x: 0,
+      opacity: 1,
       
       transition: {
          type: 'spring',

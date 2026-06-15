@@ -13,6 +13,7 @@ import Audio from '@/components/audio/audio';
 import { toast, Slide } from 'react-toastify';
 import { getWordsByLesson, updateInteractionStatus} from '@/lib/db';
 import { useLoading } from '@/components/LoadingProvider';
+import { Popover } from 'radix-ui';
 
 
 export default function Lessons({ params }) {
@@ -23,8 +24,6 @@ export default function Lessons({ params }) {
    const [specificLessonWords, setSpecificLessonWords] = useState(null)
    const [isLoading, setIsLoading] = useState(true);
    const [isLoading2, setIsLoading2] = useState(true);
-   const [loadedImages2, setLoadedImages2] = useState(0);
-   const totalImages2 = 1;
 
    const [currentWordIndex, setCurrentWordIndex] = useState(0)
    const [learningWordIndex, setLearningWordIndex] = useState(0)
@@ -200,7 +199,6 @@ export default function Lessons({ params }) {
    }
 
    useEffect(() => {
-      setLoadedImages2(0);
       setIsLoading2(true);
    }, [learningWordIndex]);
 
@@ -709,6 +707,7 @@ export default function Lessons({ params }) {
          <div className={`absolute w-full h-full top-0 p-5 pt-12 overflow-hidden flex items-center justify-start flex-col ${fade && styles.fadeIn}`}
             style={darkMode ? {color: 'white'} : {}}
          >
+
             {
                darkMode ?
                <Image className='object-cover z-0'
@@ -909,8 +908,7 @@ export default function Lessons({ params }) {
                                  </button>
                               
                            }
-                        </div>
-                     
+                        </div>                     
                   </div>
                </>
                );

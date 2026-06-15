@@ -7,6 +7,10 @@ import Image from 'next/image';
 import Back from '@/components/backButton/back';
 import { useTheme } from '@/components/context/ThemeContext';
 import { useLoading  } from '@/components/LoadingProvider';
+import { motion } from 'framer-motion';
+import { cards } from '@/lib/animations/entrance';
+
+
 
 
 function Words(){
@@ -57,35 +61,56 @@ function Words(){
                <div className='w-full text-center'>Choose Your CEFR Level</div>
 
                <Link href='/a1' className='flex-1 flex flex-col'>
-                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                  <motion.div
+                     {...cards({delay: 0.25, x: 60})}
+                     className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'
+                  >
                      A1
-                  </div>
+                  </motion.div>
                </Link>
                
                <Link href='/a2' className='flex-1 flex flex-col'>
-                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                  <motion.div 
+                     {...cards({delay: 0.35, x: 60})}
+                     className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'
+                  >
                      A2
-                  </div>
+                  </motion.div>
                </Link>
+
                <Link href='/b1' className='flex-1 flex flex-col'>
-                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                  <motion.div 
+                     {...cards({delay: 0.45, x: 60})}
+                     className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'
+                  >
                      B1
-                  </div>
+                  </motion.div>
                </Link>
+
                <Link href='/b2' className='flex-1 flex flex-col'>
-                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                  <motion.div
+                     {...cards({delay: 0.55, x: 60})}
+                     className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'
+                  >
                      B2
-                  </div>
+                  </motion.div>
                </Link>
+
                <Link href='/c1' className='flex-1 flex flex-col'>
-                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                     <motion.div {...cards({delay: 0.65, x: 60})}
+                     className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'
+                  >
                      C1
-                  </div>
+                  </motion.div>
                </Link>
+
                <Link href='/c2' className='flex-1 flex flex-col'>
-                  <div className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'>
+                  <motion.div
+                     {...cards({delay: 0.75, x: 60})}
+                     className='flex-1 border border-white rounded-2xl flex items-center justify-center text-4xl font-bold text-black/40 bg-white/30 active:bg-white'
+                  >
                      C2
-                  </div>
+                  </motion.div>
                </Link>
 
             </div>

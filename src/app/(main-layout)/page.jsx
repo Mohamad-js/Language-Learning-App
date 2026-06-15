@@ -191,7 +191,7 @@ const Home = () => {
             <div className='' id="tour_start">Home Page</div>
 
             
-            <motion.div {...cards({isReady, delay: 0.15})} 
+            <motion.div {...cards({delay: 0.15, y: 30})} 
                className='p-5 bg-white drop-shadow-xl rounded-2xl mb-5'
                onClick={toggleIdiomCard}
                id="tour_idiom"
@@ -233,7 +233,7 @@ const Home = () => {
                   }
 
                   <div className='flex justify-between flex-wrap gap-2'>
-                     <motion.div {...cards({isReady, delay: 0.35})}
+                     <motion.div {...cards({delay: 0.35, y: 30})}
                         className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
                      >
                         <Link href='/words'>
@@ -259,7 +259,7 @@ const Home = () => {
                         </Link>
                      </motion.div>
 
-                     <motion.div {...cards({isReady, delay: 0.45})} 
+                     <motion.div {...cards({delay: 0.45, y: 30})} 
                         className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
                      >
                         <Link href='/grammar'>
@@ -284,7 +284,7 @@ const Home = () => {
                         </div>
                      </motion.div>
 
-                     <motion.div {...cards({isReady, delay: 0.55})}
+                     <motion.div {...cards({delay: 0.55, y: 30})}
                         className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
                      >
                         <Link href='/expressions'>
@@ -309,7 +309,7 @@ const Home = () => {
                         </Link>
                      </motion.div>
 
-                     <motion.div {...cards({isReady, delay: 0.65})}
+                     <motion.div {...cards({delay: 0.65, y: 30})}
                         className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
                      >
                         <Link href='/family'>
