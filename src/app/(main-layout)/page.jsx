@@ -246,7 +246,7 @@ const Home = () => {
                            <div className="relative w-full h-28">
                               <Image
                                  className='object-cover object-bottom'
-                                 src='/images/illustrations/Word_Families.jpg'
+                                 src='/images/illustrations/Vocabs.jpg'
                                  alt='Studying Illustration'
                                  fill
                                  onLoad={handleIllustrationLoad}
@@ -270,7 +270,7 @@ const Home = () => {
                         <div className="relative w-full h-28">
                            <Image
                               className='object-cover object-bottom'
-                              src='/images/illustrations/Word_Families.jpg'
+                              src='/images/illustrations/Grammar.jpg'
                               alt='Studying Illustration'
                               fill
                               onLoad={handleIllustrationLoad}
@@ -294,7 +294,7 @@ const Home = () => {
                            <div className="relative w-full h-28">
                               <Image
                                  className='object-cover object-bottom'
-                                 src='/images/illustrations/Word_Families.jpg'
+                                 src='/images/illustrations/Patterns.jpg'
                                  alt='Studying Illustration'
                                  fill
                                  onLoad={handleIllustrationLoad}
@@ -302,7 +302,7 @@ const Home = () => {
                            </div>
 
                            <div className='flex flex-1 flex-col justify-between bg-white/50 p-3'>
-                              <div className='text-xl font-bold text-black/70'>Prepositions</div>
+                              <div className='text-xl font-bold text-black/70'>Patterns</div>
                               <div className="text-sm text-black/70">Coming soon</div>
 
                               <div className='w-full flex justify-end text-black/70'>
