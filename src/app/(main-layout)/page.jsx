@@ -183,14 +183,7 @@ const Home = () => {
    }
 
    return (
-      <div className='fixed w-full h-screen p-5 pb-30 flex flex-col gap-3'>
-
-         <Image
-            className='-z-1'
-            src='/images/illustrations/home.jpg'
-            alt="Homw Page Background"
-            fill
-         />
+      <div className='fixed w-full h-screen bg-gray-100 p-5 pb-30 flex flex-col gap-3'>
 
          <VocabularyManager initialData={rawA1Vocabs} />
 
@@ -213,7 +206,7 @@ const Home = () => {
 
             {
                showIdiom && 
-               <div className='absolute top-0 left-0 w-full h-full bg-black/50 z-1 flex justify-center items-center p-5'
+               <div className='fixed top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-1 flex justify-center items-center p-5'
                   onClick={toggleIdiomCard}
                >
                   <div className='relative w-full p-5 pr-3 bg-white rounded-2xl flex flex-col gap-3'
@@ -241,8 +234,9 @@ const Home = () => {
 
                   <div className='flex justify-between flex-wrap gap-2'>
                      <motion.div {...cards({isReady, delay: 0.35})}
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_words'
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
                      >
+                        <Link href='/words'>
                            <div className="relative w-full h-28">
                               <Image
                                  className='object-cover object-bottom'
@@ -253,7 +247,7 @@ const Home = () => {
                               />
                            </div>
 
-                           <div className='flex flex-1 flex-col justify-between bg-white/50 p-3' >
+                           <div className='flex flex-1 flex-col justify-between bg-white p-3' >
                               <div className='text-xl font-bold text-black/70'>Vocabulary</div>
                               
                               <div className="text-sm text-black/70">6330 Key Words by the CEFR Levels</div>
@@ -262,22 +256,25 @@ const Home = () => {
                                  <FaArrowRight size={20} />
                               </div>
                            </div>
+                        </Link>
                      </motion.div>
 
                      <motion.div {...cards({isReady, delay: 0.45})} 
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_grammar'
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
                      >
-                        <div className="relative w-full h-28">
-                           <Image
-                              className='object-cover object-bottom'
-                              src='/images/illustrations/Grammar.jpg'
-                              alt='Studying Illustration'
-                              fill
-                              onLoad={handleIllustrationLoad}
-                           />
-                        </div>
+                        <Link href='/grammar'>
+                           <div className="relative w-full h-28">
+                              <Image
+                                 className='object-cover object-bottom'
+                                 src='/images/illustrations/Grammar.jpg'
+                                 alt='Studying Illustration'
+                                 fill
+                                 onLoad={handleIllustrationLoad}
+                              />
+                           </div>
+                        </Link>
 
-                        <div className='flex flex-1 flex-col justify-between bg-white/50 p-3'>
+                        <div className='flex flex-1 flex-col justify-between bg-white p-3'>
                            <div className='text-xl font-bold text-black/70'>Grammar</div>
                               <div className="text-sm text-black/70">164 Most Common English Grammar</div>
 
@@ -288,20 +285,20 @@ const Home = () => {
                      </motion.div>
 
                      <motion.div {...cards({isReady, delay: 0.55})}
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_prep'
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
                      >
                         <Link href='/expressions'>
                            <div className="relative w-full h-28">
                               <Image
                                  className='object-cover object-bottom'
-                                 src='/images/illustrations/Patterns.jpg'
+                                 src='/images/illustrations/Pattern.jpg'
                                  alt='Studying Illustration'
                                  fill
                                  onLoad={handleIllustrationLoad}
                               />
                            </div>
 
-                           <div className='flex flex-1 flex-col justify-between bg-white/50 p-3'>
+                           <div className='flex flex-1 flex-col justify-between bg-white p-3'>
                               <div className='text-xl font-bold text-black/70'>Patterns</div>
                               <div className="text-sm text-black/70">Coming soon</div>
 
@@ -312,8 +309,8 @@ const Home = () => {
                         </Link>
                      </motion.div>
 
-                     <motion.div {...cards({isReady, delay: 0.85})}
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_family'
+                     <motion.div {...cards({isReady, delay: 0.65})}
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
                      >
                         <Link href='/family'>
                            <div className="relative w-full h-28">
@@ -326,7 +323,7 @@ const Home = () => {
                               />
                            </div>
 
-                           <div className='flex flex-1 flex-col justify-between bg-white/50 p-3'>
+                           <div className='flex flex-1 flex-col justify-between bg-white p-3'>
                               <div className='text-xl font-bold text-black/70'>Word Family</div>
                               <div className="text-sm text-black/70">Coming soon</div>
 
