@@ -32,13 +32,6 @@ function Ham(){
 
    const pathname = usePathname()
 
-   const whiteColor =
-   pathname == '/grammar/noun' ? styles.newStyle :
-   pathname == '/a2' ? styles.newStyle :
-   pathname == '/b2' ? styles.newStyle :
-   pathname == '/c2' ? styles.newStyle :
-   pathname == '/statistics' ? styles.newStyle : null
-
    const router = useRouter()
 
    const toggleMenu = () => {
@@ -70,6 +63,8 @@ function Ham(){
    }
 
    const navFromHam = (msg) => {
+
+      
       const routes = {
          home: '/',
          saved: '/saved',
@@ -90,11 +85,19 @@ function Ham(){
          source: '/source',
       };
 
-      if (routes[msg]) {
-         startLoading()
-         router.push(routes[msg]);
+      const target = routes[msg];
+   
+      if (!target) return;
+   
+      if (target === pathname) {
          closeMenu();
+         return;
       }
+      
+      startLoading()
+      router.push(target);
+      closeMenu();
+      
    }
 
 

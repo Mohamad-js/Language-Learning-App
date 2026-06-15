@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState, useRef, useCallback } from "react";
 import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
-import { idioms } from "@/data/idioms";
+import { FaArrowRight } from "react-icons/fa6";import { idioms } from "@/data/idioms";
 import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 import { useTheme } from "@/components/context/ThemeContext";
@@ -14,7 +14,7 @@ import rawA1Vocabs from "../../../database/rawA1.json"
 import VocabularyManager from "@/components/VocabularyManager";
 import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
-import { fadeUp } from "@/lib/animations/entrance";
+import { cards } from "@/lib/animations/entrance";
 
 
 
@@ -183,36 +183,23 @@ const Home = () => {
    }
 
    return (
-      <div className='relative w-full h-screen p-5 pb-30 flex flex-col gap-3 super-compact:gap-1 compact:p-3 compact:pb-30 narrow:p-3 narrow:pb-30'>
+      <div className='fixed w-full h-screen p-5 pb-30 flex flex-col gap-3'>
+
+         <Image
+            className='-z-1'
+            src='/images/illustrations/home.jpg'
+            alt="Homw Page Background"
+            fill
+         />
 
          <VocabularyManager initialData={rawA1Vocabs} />
-
-         {
-         lightTheme ? 
-            <Iridescence
-               color={[1, 1, 1]}
-               mouseReact={false}
-               amplitude={0.1}
-               speed={1.0}
-            />
-         :
-            <div className='absolute min-h-dvh w-full left-0 top-0 bg-black'>  
-               <Aurora
-                  colorStops={["#5d00ff", "#aa00ff", "#ff00e6"]}
-                  blend={10}
-                  amplitude={1}
-                  speed={1}
-               />
-
-            </div>
-         }
 
 
             <div className='' id="tour_start">Home Page</div>
 
             
-            <motion.div {...fadeUp({isReady, delay: 0.5})} 
-               className='p-5 super-compact:p-3 bg-white/40 backdrop-blur-sm rounded-2xl'
+            <motion.div {...cards({isReady, delay: 0.15})} 
+               className='p-5 bg-white drop-shadow-xl rounded-2xl mb-5'
                onClick={toggleIdiomCard}
                id="tour_idiom"
             >
@@ -243,8 +230,8 @@ const Home = () => {
                </div>
             }
 
-            <motion.div {...fadeUp({isReady, delay: 0.65})}
-               className='w-full flex flex-col justify-between flex-1 gap-3 bg-white/40 backdrop-blur-sm p-5 super-compact:p-3 rounded-2xl'
+            <div
+               className='w-full flex flex-col justify-between flex-1 gap-3'
             >
                <div className="flex flex-col gap-2">
                   {
@@ -252,85 +239,106 @@ const Home = () => {
                         <div className='text-sm text-center'>Start Your Language Journey</div>
                   }
 
-                  <div className='flex justify-between flex-wrap gap-y-2'>
-                     <motion.div {...fadeUp({isReady, delay: 0.75})}
-                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_words'
+                  <div className='flex justify-between flex-wrap gap-2'>
+                     <motion.div {...cards({isReady, delay: 0.35})}
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_words'
                      >
-                        <Link href='/words'>
-                           <div className='flex flex-col h-full justify-between'>
-                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Vocabulary</div>
-                              <div className='text-black/70 super-compact:text-sm'>6330 Words</div>
+                           <div className="relative w-full h-28">
+                              <Image
+                                 className='object-cover object-bottom'
+                                 src='/images/illustrations/Word_Families.jpg'
+                                 alt='Studying Illustration'
+                                 fill
+                                 onLoad={handleIllustrationLoad}
+                              />
                            </div>
-                        </Link>
+
+                           <div className='flex flex-1 flex-col justify-between bg-white/50 p-3' >
+                              <div className='text-xl font-bold text-black/70'>Vocabulary</div>
+                              
+                              <div className="text-sm text-black/70">6330 Key Words by the CEFR Levels</div>
+
+                              <div className='w-full flex justify-end text-black/70'>
+                                 <FaArrowRight size={20} />
+                              </div>
+                           </div>
                      </motion.div>
 
-                     <motion.div {...fadeUp({isReady, delay: 0.85})} 
-                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_grammar'
+                     <motion.div {...cards({isReady, delay: 0.45})} 
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_grammar'
                      >
-                        <Link href='/grammar'>
-                           <div className='flex flex-col h-full justify-between'>
-                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Grammar</div>
-                              <div className='text-black/70 super-compact:text-sm'>164 Lessons</div>
-                           </div>
-                        </Link>
+                        <div className="relative w-full h-28">
+                           <Image
+                              className='object-cover object-bottom'
+                              src='/images/illustrations/Word_Families.jpg'
+                              alt='Studying Illustration'
+                              fill
+                              onLoad={handleIllustrationLoad}
+                           />
+                        </div>
+
+                        <div className='flex flex-1 flex-col justify-between bg-white/50 p-3'>
+                           <div className='text-xl font-bold text-black/70'>Grammar</div>
+                              <div className="text-sm text-black/70">164 Most Common English Grammar</div>
+
+                              <div className='w-full flex justify-end text-black/70'>
+                                 <FaArrowRight size={20} />
+                              </div>
+                        </div>
                      </motion.div>
 
-                     <motion.div {...fadeUp({isReady, delay: 0.95})}
-                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_prep'
+                     <motion.div {...cards({isReady, delay: 0.55})}
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_prep'
                      >
                         <Link href='/expressions'>
-                           <div className='flex flex-col h-full justify-between'>
-                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Prepositions</div>
-                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
+                           <div className="relative w-full h-28">
+                              <Image
+                                 className='object-cover object-bottom'
+                                 src='/images/illustrations/Word_Families.jpg'
+                                 alt='Studying Illustration'
+                                 fill
+                                 onLoad={handleIllustrationLoad}
+                              />
+                           </div>
+
+                           <div className='flex flex-1 flex-col justify-between bg-white/50 p-3'>
+                              <div className='text-xl font-bold text-black/70'>Prepositions</div>
+                              <div className="text-sm text-black/70">Coming soon</div>
+
+                              <div className='w-full flex justify-end text-black/70'>
+                                 <FaArrowRight size={20} />
+                              </div>
                            </div>
                         </Link>
                      </motion.div>
 
-                     <motion.div {...fadeUp({isReady, delay: 1.05})}
-                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_colloc'
-                     >
-                        <Link href='/collocations'>
-                           <div className='flex flex-col h-full justify-between'>
-                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Collocations</div>
-                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
-                           </div>
-                        </Link>
-                     </motion.div>
-
-                     <motion.div {...fadeUp({isReady, delay: 1.15})}
-                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_syn'
-                     >
-                        <Link href='/synonyms'>
-                           <div className='flex flex-col h-full justify-between'>
-                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Synonyms</div>
-                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
-                           </div>
-                        </Link>
-                     </motion.div>
-
-                     <motion.div {...fadeUp({isReady, delay: 1.25})}
-                        className='border border-white active:bg-white w-[38vw] rounded-2xl p-3' id='tour_family'
+                     <motion.div {...cards({isReady, delay: 0.85})}
+                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-2xl' id='tour_family'
                      >
                         <Link href='/family'>
-                           <div className='flex flex-col h-full justify-between'>
-                              <div className='text-xl super-compact:text-sm font-bold text-black/70'>Word Family</div>
-                              <div className='text-black/70 super-compact:text-sm'>Coming Soon</div>
+                           <div className="relative w-full h-28">
+                              <Image
+                                 className='object-cover object-bottom'
+                                 src='/images/illustrations/Word_Families.jpg'
+                                 alt='Studying Illustration'
+                                 fill
+                                 onLoad={handleIllustrationLoad}
+                              />
+                           </div>
+
+                           <div className='flex flex-1 flex-col justify-between bg-white/50 p-3'>
+                              <div className='text-xl font-bold text-black/70'>Word Family</div>
+                              <div className="text-sm text-black/70">Coming soon</div>
+
+                              <div className='w-full flex justify-end text-black/70'>
+                                 <FaArrowRight size={20} />
+                              </div>
                            </div>
                         </Link>
                      </motion.div>
                   </div>
                </div>
-
-               <div className="relative w-full h-50 super-compact:h-38 compact:h-40">
-                  <Image
-                     className='object-cover object-bottom'
-                     src='/images/illustrations/studying.png'
-                     alt='Studying Illustration'
-                     fill
-                     onLoad={handleIllustrationLoad}
-                  />
-               </div>
-            </motion.div>
+            </div>
 
             
 

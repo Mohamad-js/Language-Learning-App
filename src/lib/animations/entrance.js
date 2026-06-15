@@ -1,4 +1,4 @@
-export const fadeUp = ({isReady = true, delay = 0}) => ({
+export const cards = ({isReady = true, delay = 0}) => ({
    initial: {
       y: 30,
       opacity: 0,
@@ -15,4 +15,8 @@ export const fadeUp = ({isReady = true, delay = 0}) => ({
       damping: 30,
       delay: delay,
    },
+
+   whileTap: {
+      scale: 0.97
+   }
 })

@@ -6,7 +6,7 @@ import { useLoading } from '../LoadingProvider';
 
 
 
-function Back({to}){
+function Back({to = '/'}){
 
    const router = useRouter()
    const { startLoading } = useLoading()
