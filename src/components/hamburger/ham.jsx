@@ -104,7 +104,7 @@ function Ham(){
    return(
       <div className='absolute top-0 left-0 overflow-hidden w-full min-h-dvh'>
          
-         <div className='fixed top-0 right-0 px-3 py-3 z-2'
+         <div className='fixed top-0 right-0 px-3 py-3 z-5'
             onClick={toggleMenu}>
             <label className='z-2'>
                <div

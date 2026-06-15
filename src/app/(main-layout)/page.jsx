@@ -15,6 +15,7 @@ import VocabularyManager from "@/components/VocabularyManager";
 import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
 import { cards } from "@/lib/animations/entrance";
+import AnimatedAuroraBackground from "@/components/Iridescence/iridescence";
 
 
 
@@ -182,8 +183,11 @@ const Home = () => {
       setIsReady(true)
    }
 
+
    return (
-      <div className='fixed w-full h-screen bg-gray-100 p-5 pb-30 flex flex-col gap-3'>
+      <div className='fixed w-full h-screen p-5 pb-30 flex flex-col gap-3'>
+
+         <AnimatedAuroraBackground />
 
          <VocabularyManager initialData={rawA1Vocabs} />
 
@@ -253,7 +257,7 @@ const Home = () => {
                               <div className="text-sm text-black/70">6330 Key Words by the CEFR Levels</div>
 
                               <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight size={20} />
+                                 <FaArrowRight className='text-black/40' size={20} />
                               </div>
                            </div>
                         </Link>
@@ -279,7 +283,7 @@ const Home = () => {
                               <div className="text-sm text-black/70">164 Most Common English Grammar</div>
 
                               <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight size={20} />
+                                 <FaArrowRight className='text-black/40' size={20} />
                               </div>
                         </div>
                      </motion.div>
@@ -303,7 +307,7 @@ const Home = () => {
                               <div className="text-sm text-black/70">Coming soon</div>
 
                               <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight size={20} />
+                                 <FaArrowRight className='text-black/40' size={20} />
                               </div>
                            </div>
                         </Link>
@@ -328,7 +332,7 @@ const Home = () => {
                               <div className="text-sm text-black/70">Coming soon</div>
 
                               <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight size={20} />
+                                 <FaArrowRight className='text-black/40' size={20} />
                               </div>
                            </div>
                         </Link>

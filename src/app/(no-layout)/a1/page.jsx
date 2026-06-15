@@ -59,30 +59,12 @@ function A1() {
    
 
    return (
-      <div className='absolute top-0 w-full min-h-dvh flex flex-col pt-20 p-5 gap-5'>
-         {
-            darkMode ?
-               <Image
-                  className='object-cover -z-1'
-                  src="/images/back/A1Dark.jpg"
-                  alt=""
-                  fill
-                  onLoad={handleImageLoad}
-               />
-            :
-               <Image
-                  className='object-cover -z-1'
-                  src="/images/back/A1Back.jpg"
-                  alt=""
-                  fill
-                  onLoad={handleImageLoad}
-               />
-         }
+      <div className='absolute top-0 w-full min-h-dvh flex flex-col pt-20 p-5 gap-5 bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]'>
 
          <Back to='/words' />
 
          <motion.div
-            {...cards({delay: 0.25, x: -60})}
+            {...cards({delay: 0.25, x: -60, press: false})}
             className='flex flex-col gap-1'
          >
             <div className='text-3xl'>A1 Vocabulary</div>
@@ -90,7 +72,7 @@ function A1() {
          </motion.div>
 
          <motion.div 
-            {...cards({delay: 0.35, y: 60})}
+            {...cards({delay: 0.35, y: 60, press: false})}
             className='w-full h-[85vh] overflow-y-auto scrollbar-none flex flex-col gap-3 bg-white/30 rounded-2xl p-3 pb-100'>
          {
             vocabs.map((lesson, index) => {

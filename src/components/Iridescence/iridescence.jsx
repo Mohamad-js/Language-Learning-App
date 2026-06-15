@@ -1,144 +1,256 @@
-import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
-import { useEffect, useRef } from "react";
+'use client';
 
-import './Iridescence.css';
+import { motion } from 'motion/react';
 
-const vertexShader = `
-   attribute vec2 uv;
-   attribute vec2 position;
+const bubbles = [
+  {
+    color: 'bg-violet-500/70',
+    size: 'w-[800px] h-[650px]',
+    position: 'top-[-120px] left-[-100px]',
+    duration: 40,
+  },
+  {
+    color: 'bg-pink-500/70',
+    size: 'w-[1050px] h-[800px]',
+    position: 'bottom-[-150px] right-[-120px]',
+    duration: 52,
+  },
+  {
+    color: 'bg-fuchsia-500/70',
+    size: 'w-[700px] h-[600px]',
+    position: 'top-[30%] left-[45%]',
+    duration: 31,
+  },
+];
 
-   varying vec2 vUv;
+const flyingWords = [
+  {
+    text: 'Treaty',
+    className: 'text-sm',
+    delay: 0,
+    startX: '-20vw',
+    endX: '120vw',
+    startY: '80vh',
+    endY: '10vh',
+    duration: 18,
+  },
+  {
+    text: 'Prospect',
+    className: 'text-lg',
+    delay: 2,
+    startX: '110vw',
+    endX: '-20vw',
+    startY: '20vh',
+    endY: '90vh',
+    duration: 22,
+  },
+  {
+    text: 'Knowledge',
+    className: 'text-md',
+    delay: 4,
+    startX: '15vw',
+    endX: '80vw',
+    startY: '110vh',
+    endY: '-20vh',
+    duration: 20,
+  },
+  {
+    text: 'Dream',
+    className: 'text-xl',
+    delay: 6,
+    startX: '80vw',
+    endX: '10vw',
+    startY: '-20vh',
+    endY: '110vh',
+    duration: 18,
+  },
+  {
+    text: 'Exile',
+    className: 'text-sm',
+    delay: 8,
+    startX: '-20vw',
+    endX: '120vw',
+    startY: '60vh',
+    endY: '20vh',
+    duration: 24,
+  },
+  {
+    text: 'Travel',
+    className: 'text-sm',
+    delay: 10,
+    startX: '120vw',
+    endX: '-20vw',
+    startY: '75vh',
+    endY: '25vh',
+    duration: 15,
+  },
+  {
+    text: 'Future',
+    className: 'text-md',
+    delay: 12,
+    startX: '-20vw',
+    endX: '100vw',
+    startY: '100vh',
+    endY: '-10vh',
+    duration: 21,
+  },
+  {
+    text: 'Speak',
+    className: 'text-xl',
+    delay: 14,
+    startX: '100vw',
+    endX: '-20vw',
+    startY: '-10vh',
+    endY: '100vh',
+    duration: 19,
+  },
+  {
+    text: 'Connect',
+    className: 'text-xl',
+    delay: 16,
+    startX: '20vw',
+    endX: '70vw',
+    startY: '110vh',
+    endY: '-20vh',
+    duration: 20,
+  },
+  {
+    text: 'Yank',
+    className: 'text-xl',
+    delay: 18,
+    startX: '70vw',
+    endX: '20vw',
+    startY: '-20vh',
+    endY: '110vh',
+    duration: 23,
+  },
+];
 
-   void main() {
-   vUv = uv;
-   gl_Position = vec4(position, 0, 1);
-   }
-   `;
+export default function AnimatedAuroraBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-   const fragmentShader = `
-   precision highp float;
-
-   uniform float uTime;
-   uniform vec3 uColor;
-   uniform vec3 uResolution;
-   uniform vec2 uMouse;
-   uniform float uAmplitude;
-   uniform float uSpeed;
-
-   varying vec2 vUv;
-
-   void main() {
-   float mr = min(uResolution.x, uResolution.y);
-   vec2 uv = (vUv.xy * 2.0 - 1.0) * uResolution.xy / mr;
-
-   uv += (uMouse - vec2(0.5)) * uAmplitude;
-
-   float d = -uTime * 0.5 * uSpeed;
-   float a = 0.0;
-   for (float i = 0.0; i < 8.0; ++i) {
-      a += cos(i - d - a * uv.x);
-      d += sin(uv.y * i + a);
-   }
-   d += uTime * 0.5 * uSpeed;
-   vec3 col = vec3(cos(uv * vec2(d, a)) * 0.6 + 0.4, cos(a + d) * 0.5 + 0.5);
-   col = cos(col * cos(vec3(d, a, 2.5)) * 0.5 + 0.5) * uColor;
-   gl_FragColor = vec4(col, 1.0);
-   }
-   `;
-
-   export default function Iridescence({
-      color = [1, 1, 1],
-      speed = 1.0,
-      amplitude = 0.1,
-      mouseReact = true,
-      ...rest
-   }) {
-   const ctnDom = useRef(null);
-   const mousePos = useRef({ x: 0.5, y: 0.5 });
-
-   useEffect(() => {
-      if (!ctnDom.current) return;
-      const ctn = ctnDom.current;
-      const renderer = new Renderer();
-      const gl = renderer.gl;
-      gl.clearColor(1, 1, 1, 1);
-
-      let program;
-
-      function resize() {
-         const scale = 1;
-         renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
-         if (program) {
-         program.uniforms.uResolution.value = new Color(
-            gl.canvas.width,
-            gl.canvas.height,
-            gl.canvas.width / gl.canvas.height
-         );
-         }
-      }
-      window.addEventListener("resize", resize, false);
-      resize();
-
-      const geometry = new Triangle(gl);
-      program = new Program(gl, {
-         vertex: vertexShader,
-         fragment: fragmentShader,
-         uniforms: {
-         uTime: { value: 0 },
-         uColor: { value: new Color(...color) },
-         uResolution: {
-            value: new Color(
-               gl.canvas.width,
-               gl.canvas.height,
-               gl.canvas.width / gl.canvas.height
-            ),
-         },
-         uMouse: { value: new Float32Array([mousePos.current.x, mousePos.current.y]) },
-         uAmplitude: { value: amplitude },
-         uSpeed: { value: speed },
-         },
-      });
-
-      const mesh = new Mesh(gl, { geometry, program });
-      let animateId;
-
-      function update(t) {
-         animateId = requestAnimationFrame(update);
-         program.uniforms.uTime.value = t * 0.001;
-         renderer.render({ scene: mesh });
-      }
-      animateId = requestAnimationFrame(update);
-      ctn.appendChild(gl.canvas);
-
-      function handleMouseMove(e) {
-         const rect = ctn.getBoundingClientRect();
-         const x = (e.clientX - rect.left) / rect.width;
-         const y = 1.0 - (e.clientY - rect.top) / rect.height;
-         mousePos.current = { x, y };
-         program.uniforms.uMouse.value[0] = x;
-         program.uniforms.uMouse.value[1] = y;
-      }
-      if (mouseReact) {
-         ctn.addEventListener("mousemove", handleMouseMove);
-      }
-
-      return () => {
-         cancelAnimationFrame(animateId);
-         window.removeEventListener("resize", resize);
-         if (mouseReact) {
-         ctn.removeEventListener("mousemove", handleMouseMove);
-         }
-         ctn.removeChild(gl.canvas);
-         gl.getExtension("WEBGL_lose_context")?.loseContext();
-      };
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [color, speed, amplitude, mouseReact]);
-
-   return (
-      <div
-         ref={ctnDom}
-         className="iridescence-container"
-         {...rest}
+      {/* Blob 1 */}
+      <motion.div
+        className={`
+          absolute
+          ${bubbles[0].position}
+          ${bubbles[0].size}
+          ${bubbles[0].color}
+          blur-[70px]
+        `}
+        style={{
+          borderRadius: '60% 40% 35% 65% / 45% 60% 40% 55%',
+        }}
+        animate={{
+          x: [0, 500, 250, -200, 0],
+          y: [0, 500, 200, -150, 0],
+          scale: [1, 1.2, 0.9, 1.1, 1],
+          rotate: [0, 40, -25, 15, 0],
+        }}
+        transition={{
+          duration: bubbles[0].duration,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
       />
-   );
+
+      {/* Blob 2 */}
+      <motion.div
+        className={`
+          absolute
+          ${bubbles[1].position}
+          ${bubbles[1].size}
+          ${bubbles[1].color}
+          blur-[70px]
+        `}
+        style={{
+          borderRadius: '35% 65% 60% 40% / 55% 35% 65% 45%',
+        }}
+        animate={{
+          x: [0, -600, -300, 150, 0],
+          y: [0, -600, -250, 150, 0],
+          scale: [1, 0.85, 1.15, 1, 1],
+          rotate: [0, -35, 25, -10, 0],
+        }}
+        transition={{
+          duration: bubbles[1].duration,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+
+      {/* Blob 3 */}
+      <motion.div
+        className={`
+          absolute
+          ${bubbles[2].position}
+          ${bubbles[2].size}
+          ${bubbles[2].color}
+          blur-[70px]
+        `}
+        style={{
+          borderRadius: '55% 45% 65% 35% / 40% 60% 40% 60%',
+        }}
+        animate={{
+          x: [0, 300, -500, 400, 0],
+          y: [0, -400, 250, 500, 0],
+          scale: [1, 1.25, 0.85, 1.1, 1],
+          rotate: [0, 50, -40, 20, 0],
+        }}
+        transition={{
+          duration: bubbles[2].duration,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+
+      {/* Flying words */}
+      {flyingWords.map((word) => (
+        <motion.div
+          key={word.text}
+          className={`
+            absolute
+            whitespace-nowrap
+            font-bold
+            ${word.className}
+            text-purple-700/25
+            select-none
+          `}
+          initial={{
+            x: word.startX,
+            y: word.startY,
+            opacity: 0,
+          }}
+          animate={{
+            x: word.endX,
+            y: word.endY,
+            opacity: [0, 0.8, 0.8, 0],
+          }}
+          transition={{
+            duration: word.duration,
+            repeat: Infinity,
+            repeatDelay: 2,
+            ease: 'linear',
+            delay: word.delay,
+          }}
+        >
+          {word.text}
+        </motion.div>
+      ))}
+
+      {/* Visible White Particle Layer */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.5]">
+      <div
+         className="absolute inset-0"
+         style={{
+            backgroundImage: `
+            radial-gradient(circle, rgba(255,255,255,0.95) 1.2px, transparent 1.2px)
+            `,
+            backgroundSize: '20px 20px',
+         }}
+      />
+      </div>
+    </div>
+  );
 }

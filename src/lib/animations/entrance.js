@@ -1,4 +1,4 @@
-export const cards = ({delay = 0, x = 0, y = 0}) => ({
+export const cards = ({delay = 0, x = 0, y = 0, press= true}) => ({
    initial: {
       x: x,
       y: y,
@@ -20,6 +20,6 @@ export const cards = ({delay = 0, x = 0, y = 0}) => ({
 
 
    whileTap: {
-      scale: 0.97
+      scale: press ? 0.97 : 1
    }
 })

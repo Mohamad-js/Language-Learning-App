@@ -102,7 +102,8 @@ export const getAllUniqueLessons = async () => {
    return [...new Set(lessons)].sort((a, b) => a - b);
 };
 
-export const updateInteractionStatus = async (knownWordsList, unknownWordsList) => {
+export const 
+ = async (knownWordsList, unknownWordsList) => {
    const db = await initDB();
    const tx = db.transaction('words', 'readwrite');
    const store = tx.objectStore('words'); // Changed to use explicit objectStore
