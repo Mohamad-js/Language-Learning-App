@@ -1,153 +1,201 @@
 import { openDB } from 'idb';
 
 export const initDB = async () => {
-   // Bumped version to 2 to force the browser to run the upgrade block
-   return openDB('VocabularyDB', 3, {
-      upgrade(db) {
-         if (!db.objectStoreNames.contains('words')) {
-            const store = db.createObjectStore('words', { keyPath: 'id', autoIncrement: true });
-            store.createIndex('category', 'category', { unique: false });
-            store.createIndex('lesson', 'lesson', { unique: false });
+   return openDB('VocabularyDB', 4, {
+      upgrade(db, oldVersion) {
+
+         // Remove old store if it exists
+         if (db.objectStoreNames.contains('words')) {
+            db.deleteObjectStore('words');
+         }
+
+         // Create new store
+         if (!db.objectStoreNames.contains('levels')) {
+            const store = db.createObjectStore('levels', {
+               keyPath: 'level',
+            });
+
+            store.createIndex('level', 'level', {
+               unique: true,
+            });
+
+            store.createIndex('status', 'status', {
+               unique: false,
+            });
          }
       },
    });
 };
 
-/**
- * @param {string} categoryName - e.g., "Subject Pronouns"
- */
-export const getWordsByCategory = async (categoryName) => {
+
+
+
+export const getWordsByLevelAndCategory = async (levelName, categoryName) => {
+
    const db = await initDB();
-   const results = await db.getAllFromIndex('words', 'category', categoryName);
-   return results; 
-};
 
-export const getAllUniqueCategories = async () => {
-   const db = await initDB();
-   const tx = db.transaction('words', 'readonly');
-   const store = tx.objectStore('words'); 
+   const level = await db.get("levels", levelName);
 
-   const uniqueCategories = new Set();
-   let cursor = await store.openCursor();
-
-   while (cursor) {
-      if (cursor.value.category) {
-         uniqueCategories.add(cursor.value.category); 
-      }
-      cursor = await cursor.continue();
+   if (!level) {
+      return [];
    }
 
-   return Array.from(uniqueCategories); 
+   const lesson = level.content.find(
+      item => item.category === categoryName
+   );
+
+   return lesson?.words || [];
 };
 
-export const getAllWords = async () => {
-   const db = await initDB();   
-   const allWords = await db.getAll('words');
-   
-   const groupedLessons = allWords.reduce((acc, word) => {
-      const lessonNum = word.lesson;
-      
-      const processedWord = {
-         ...word,
-         status: word.status || "waiting" 
-      };
 
-      if (!acc[lessonNum]) {
-         acc[lessonNum] = {
-            lesson: lessonNum,
-            category: word.category || "General",
-            status: "waiting", 
-            content: []
-         };
-      }
-      
-      acc[lessonNum].content.push(processedWord);
-      return acc;
-   }, {});
-   
-   const lessonsArray = Object.values(groupedLessons).sort((a, b) => a.lesson - b.lesson);
+
+
+export const getAllCategoriesByLevel = async (levelName) => {
+   const db = await initDB();
+
+   const level = await db.get("levels", levelName);
+
+   if (!level) {
+      return [];
+   }
+
+   return level.content.map(
+      lesson => lesson.category
+   );
+};
+
+
+
+
+
+export const getLessonsByLevel = async (levelName) => {
+   const db = await initDB();
+
+   const level = await db.get("levels", levelName);
+
+   if (!level) {
+      return [];
+   }
+
+   const lessons = [...level.content].sort(
+      (a, b) => a.lesson - b.lesson
+   );
 
    let foundFirstUnstudied = false;
 
-   const finalLessons = lessonsArray.map(lessonObj => {
-      const isFullyStudied = lessonObj.content.every(
-         w => w.status === 'known' || w.status === 'unknown'
+   const finalLessons = lessons.map((lesson) => {
+
+      const isFullyStudied = lesson.words.every(
+         (word) =>
+            word.status === "known" ||
+            word.status === "unknown"
       );
 
       if (isFullyStudied) {
-         lessonObj.status = 'done';
-      } else {
-         if (!foundFirstUnstudied) {
-            lessonObj.status = 'ready';
-            foundFirstUnstudied = true; 
-         } else {
-            lessonObj.status = 'waiting';
-         }
+         return {
+            ...lesson,
+            status: "done",
+         };
       }
 
-      return lessonObj;
+      if (!foundFirstUnstudied) {
+         foundFirstUnstudied = true;
+
+         return {
+            ...lesson,
+            status: "ready",
+         };
+      }
+
+      return {
+         ...lesson,
+         status: "waiting",
+      };
    });
 
    return finalLessons;
 };
 
-export const getAllUniqueLessons = async () => {
+
+
+
+
+
+export const updateInteractionStatus = async ({
+   level,
+   lesson,
+   knownWords,
+   unknownWords,
+}) => {
+
    const db = await initDB();
-   const allWords = await db.getAll('words'); 
-   
-   const lessons = allWords
-      .map(word => word.lesson)
-      .filter(lesson => lesson !== undefined && lesson !== null);
-   
-   return [...new Set(lessons)].sort((a, b) => a - b);
+
+   const levelData = await db.get("levels", level);
+
+   if (!levelData) {
+      throw new Error(`Level "${level}" not found`);
+   }
+
+   const lessonNumber = Number(lesson);
+
+   const lessonData = levelData.content.find(
+      item => Number(item.lesson) === lessonNumber
+   );
+
+   if (!lessonData) {
+      throw new Error(
+         `Lesson "${lessonNumber}" not found in level "${level}"`
+      );
+   }
+
+   const knownSet = new Set(
+      knownWords.map(item => item.word.word)
+   );
+
+   const unknownSet = new Set(
+      unknownWords.map(item => item.word.word)
+   );
+
+   lessonData.words.forEach(word => {
+
+      if (knownSet.has(word.word)) {
+         word.status = "known";
+      }
+
+      if (unknownSet.has(word.word)) {
+         word.status = "unknown";
+      }
+
+   });
+
+   lessonData.status = "done";
+
+   await db.put("levels", levelData);
+
+   return true;
 };
 
-export const 
- = async (knownWordsList, unknownWordsList) => {
+
+
+
+
+export const getLessonByNumber = async (levelName, lessonNumber) => {
+
    const db = await initDB();
-   const tx = db.transaction('words', 'readwrite');
-   const store = tx.objectStore('words'); // Changed to use explicit objectStore
-   
-   for (const item of knownWordsList) {
-      const wordToUpdate = item.word; 
-      wordToUpdate.status = 'known'; 
-      store.put(wordToUpdate); 
-   }
-   
-   for (const item of unknownWordsList) {
-      const wordToUpdate = item.word;
-      wordToUpdate.status = 'unknown';
-      store.put(wordToUpdate);
-   }
-   
-   await tx.done; 
-};
 
-/**
- * @param {number} lessonNumber
- */
-export const getWordsByLesson = async (lessonNumber) => {
-   const db = await initDB();
-   const num = Number(lessonNumber);   // ensure it's a number
+   const level = await db.get("levels", levelName);
 
-   console.log(`[DB] getWordsByLesson called with: ${lessonNumber} (as number: ${num})`);
-
-   try {
-      // Try index first (fast)
-      const results = await db.getAllFromIndex('words', 'lesson', num);
-      console.log(`[DB] Index returned ${results.length} words`);
-      if (results.length > 0) return results;
-   } catch (err) {
-      console.warn('[DB] Index query failed:', err);
+   if (!level) {
+      return null;
    }
 
-   // Fallback - always works
-   console.log('[DB] Using fallback filter...');
-   const allWords = await db.getAll('words');
-   const filtered = allWords.filter(word => Number(word.lesson) === num);
+   const num = Number(lessonNumber);
 
-   console.log(`[DB] Fallback found ${filtered.length} words for lesson ${num}`);
-   return filtered;
+   return (
+      level.content.find(
+         item => Number(item.lesson) === num
+      ) || null
+   );
 };
 
 
@@ -161,4 +209,17 @@ export const resetAllProgress = async () => {
    await store.clear();
    
    await tx.done;
+};
+
+
+
+export const getAllWordsReview = async () => {
+   const db = await initDB();
+
+   const words = await db.getAll('words');
+
+   return words.map(word => ({
+      ...word,
+      status: word.status || 'waiting'
+   }));
 };

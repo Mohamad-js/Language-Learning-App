@@ -8,16 +8,18 @@ import Image from 'next/image';
 import Back from '@/components/backButton/back';
 import { useTheme } from '@/components/context/ThemeContext';
 import { toast, Slide } from 'react-toastify';
-import { getAllWords } from '@/lib/db';
+import { getLessonsByLevel  } from '@/lib/db';
 import { useLoading, startLoading } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
 import { cards } from '@/lib/animations/entrance';
 
 
+
+
+
 function A1() {
    const { lightTheme } = useTheme();
-   const darkMode = !lightTheme;
-   const { stopLoading, startLoading } = useLoading();
+   const { startLoading } = useLoading();
    const [vocabs, setVocabs] = useState([])
 
 
@@ -37,14 +39,11 @@ function A1() {
       }
    }, [router])
 
-   const handleImageLoad = () => {
-      stopLoading()
-   }
 
    useEffect(() => {
       const loadAllTheWords = async () => {
          try {
-            const uniqueList = await getAllWords();
+            const uniqueList = await getLessonsByLevel('A1');
             setVocabs(uniqueList)            
 
          } catch (error) {

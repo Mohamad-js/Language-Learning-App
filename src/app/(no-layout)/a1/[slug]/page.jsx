@@ -11,7 +11,7 @@ import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
 import Audio from '@/components/audio/audio';
 import { toast, Slide } from 'react-toastify';
-import { getWordsByLesson, updateInteractionStatus} from '@/lib/db';
+import { getLessonByNumber, updateInteractionStatus} from '@/lib/db';
 import { useLoading } from '@/components/LoadingProvider';
 import { Popover } from 'radix-ui';
 
@@ -48,7 +48,7 @@ export default function Lessons({ params }) {
    const [showCongrats, setShowCongrats] = useState(false)
    const [anime, setAnime] = useState(false)
    const [btnPressed, setBtnPressed] = useState(null)
-   const [preview, setPreview] = useState(false)
+   const [category, setCategory] = useState(false)
    
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -74,8 +74,9 @@ export default function Lessons({ params }) {
 
       const loadLesson = async () => {
          try {
-            const data = await getWordsByLesson(slug);
-            setSpecificLessonWords(data);
+            const data = await getLessonByNumber('A1', slug);
+            setSpecificLessonWords(data.words);
+            setCategory(data.category)
 
          } catch (error) {
             console.error("Failed to fetch words:", error);
@@ -85,7 +86,6 @@ export default function Lessons({ params }) {
       loadLesson();
    }, [slug]);
 
-   console.log('SpecificLessonWords:', specificLessonWords)
    
    const router = useRouter()
 
@@ -150,7 +150,12 @@ export default function Lessons({ params }) {
    const saveProgress = async (msg) => {
 
       try {
-         await updateInteractionStatus(knownWords, unknownWords);
+         await updateInteractionStatus({
+            level: 'A1',
+            lesson: lessonNumber,
+            knownWords,
+            unknownWords
+         });
 
          startLoading()
 
@@ -527,37 +532,17 @@ export default function Lessons({ params }) {
    };
 
    return (
-      <div className='min-w-screen min-h-dvh'>
-
-         {
-            darkMode ?
-            <Image className='z-0'
-               src= '/images/back/A1SlugDark.jpg'
-               alt= 'background image'
-               fill
-               onLoad={handleMainPageLoad}
-            />
-            :
-            <Image className='z-0'
-               src= '/images/back/A1Slug.jpg'
-               alt= 'background image'
-               fill
-               onLoad={handleMainPageLoad}
-            />
-
-         }
+      <div className='min-w-screen min-h-dvh bg-gray-300'>
 
          <div className="absolute w-full flex items-center h-15 z-1">
-            <div className='w-full pl-3'
-            >Lesson {lessonNumber}</div>
-
-            <div className='w-full'>A1</div>
+            <div className='w-full pl-5'
+            >Lesson {lessonNumber}: {category}</div>
          </div>
 
          {stage === 'assessment' && (
 
          <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10  flex flex-col items-center justify-around touch-pan-y`}>
-            <div className='w-full z-1 text-white'>
+            <div className='w-full z-1 text-black'>
                <h2 className='text-center font-bold'>Knowledge Check</h2>
                <p className='text-center'>Swipe right if you know the word.</p>
                <p className='text-center'>Swipe left if you need to learn the word.</p>
@@ -652,8 +637,8 @@ export default function Lessons({ params }) {
 
             </div>
             <div className='h-10 w-full z-1'>
-               <div className='text-white'>{counter} %</div>
-               <div className='h-5 bg-white/10 rounded-2xl'>
+               <div className='text-gray-700'>{counter} %</div>
+               <div className='h-5 bg-black/10 rounded-2xl'>
                   <div className='bg-white h-full rounded-2xl transition-all'
                      style={{width: counter + '%'}}
                   ></div>
@@ -661,12 +646,12 @@ export default function Lessons({ params }) {
             </div>
 
             <div className="w-full flex items-center justify-end gap-2">
-               <button className='w-15 h-15 text-white bg-black/10 border border-white/40 rounded-[50%] active:bg-white/30 z-1 flex items-center justify-center' onClick={startOver}>
+               <button className='w-15 h-15 text-white bg-black/30 border border-white/40 rounded-[50%] active:bg-black z-1 flex items-center justify-center' onClick={startOver}>
                   <BsArrowRepeat size={30} />
                </button>
 
                <button
-                  className='w-15 h-15 bg-black/10 border border-white/40 text-white rounded-[50%] active:bg-white/30 z-1'
+                  className='w-15 h-15 bg-black/30 border border-white/40 text-white rounded-[50%] active:bg-black z-1'
                   onClick={skipAssessment}
                >
                   Skip

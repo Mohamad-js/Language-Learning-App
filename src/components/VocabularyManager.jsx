@@ -5,34 +5,56 @@ import { initDB } from "@/lib/db";
 
 export default function VocabularyManager({ initialData = [] }) {
    useEffect(() => {
+
       const handleSeeding = async () => {
-         // Safety check: Don't run if no data was passed
-         if (!initialData || initialData.length === 0) return;
-         
 
-         const db = await initDB();
-         const tx = db.transaction("words", "readwrite");
-         const store = tx.objectStore("words");
+         if (!initialData?.length) return;
 
-         // Verify if words already exist so we don't duplicate on every page refresh
-         const existingCount = await store.count();
-         
-         if (existingCount === 0) {
-            console.log(`IndexedDB is empty. Seeding ${initialData.length} raw words...`);
-            
-            for (const word of initialData) {
-               await store.put(word);
+         try {
+            const db = await initDB();
+
+            const tx = db.transaction("levels", "readwrite");
+            const store = tx.objectStore("levels");
+
+            let addedCount = 0;
+
+            for (const levelData of initialData) {
+
+               const existingLevel = await store.get(levelData.level);
+
+               if (!existingLevel) {
+                  await store.put(levelData);
+                  addedCount++;
+
+                  console.log(
+                     `Added level ${levelData.level} to IndexedDB`
+                  );
+               }
             }
-            
+
             await tx.done;
-            console.log("Database initialization complete!");
-         } else {
-            console.log(`Database already has ${existingCount} items. Skipping seed.`);
+
+            if (addedCount > 0) {
+               console.log(
+                  `Database updated. ${addedCount} new level(s) added.`
+               );
+            } else {
+               console.log(
+                  "All provided levels already exist. Nothing to seed."
+               );
+            }
+
+         } catch (error) {
+            console.error(
+               "Error while seeding IndexedDB:",
+               error
+            );
          }
       };
 
       handleSeeding();
+
    }, [initialData]);
 
-  return null; 
+   return null;
 }
