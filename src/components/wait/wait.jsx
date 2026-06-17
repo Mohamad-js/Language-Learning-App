@@ -1,10 +1,6 @@
-import styles from './wait.module.css'
-import { useTheme } from '../context/ThemeContext';
-
 
 
 function Wait(){
-   const { lightTheme } = useTheme();
 
 
 

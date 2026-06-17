@@ -139,12 +139,12 @@ function Ham(){
          }
 
 
-         <div className={`w-full fixed z-4 bg-white transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-50' : 'left-full'}`}>
+         <div className={`w-full fixed z-4 compact:bg-red-500 bg-white transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-[50vw]' : 'left-full'}`}>
             
             <div className='w-full min-h-dvh pt-15 p-3 flex flex-col'>
                {/* <ThemeToggle /> */}
 
-               <div className='w-50 flex-1 flex flex-col justify-between pr-5'>
+               <div className='w-[50vw] flex-1 flex flex-col justify-between pr-5'>
                   
                   <div className='w-full flex flex-col'>
                      
@@ -168,16 +168,6 @@ function Ham(){
                         <div>Prepositions</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('collocations')}>
-                        <HiMiniRectangleGroup />
-                        <div>Collocations</div>
-                     </div>
-
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('synonyms')}>
-                        <LuGroup />
-                        <div>Synonyms</div>
-                     </div>
-
                      <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('speaking')}>
                         <PiUserSoundFill />
                         <div>Speaking</div>
@@ -198,10 +188,10 @@ function Ham(){
                         <div>Reading</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={showWarning}>
+                     {/* <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={showWarning}>
                         <MdOutlineRestartAlt />
                         <div>Restart App</div>
-                     </div>
+                     </div> */}
 
                      <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('saved')}>
                         <IoSave />
@@ -211,11 +201,6 @@ function Ham(){
                      <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('statistics')}>
                         <MdInsertChartOutlined />
                         <div>Statistics</div>
-                     </div>
-
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('errors')}>
-                        <BiErrorCircle />
-                        <div>My Errors</div>
                      </div>
 
                      <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('quiz')}>

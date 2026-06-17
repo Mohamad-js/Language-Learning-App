@@ -201,14 +201,42 @@ export const getLessonByNumber = async (levelName, lessonNumber) => {
 
 
 export const resetAllProgress = async () => {
+
    const db = await initDB();
-   const tx = db.transaction('words', 'readwrite');
-   const store = tx.objectStore('words');
-   
-   // Instantly wipe all data in the store instead of looping
-   await store.clear();
-   
+
+   const tx = db.transaction("levels", "readwrite");
+   const store = tx.objectStore("levels");
+
+   const levels = await store.getAll();
+
+   for (const level of levels) {
+
+      level.status = "waiting";
+
+      for (const lesson of level.content) {
+
+         lesson.status = "waiting";
+
+         for (const word of lesson.words) {
+
+            word.status = "waiting";
+
+            if ("note" in word) {
+               word.note = "";
+            }
+
+            if ("notes" in word) {
+               word.notes = [];
+            }
+         }
+      }
+
+      await store.put(level);
+   }
+
    await tx.done;
+
+   return true;
 };
 
 

@@ -613,7 +613,7 @@ export default function Lessons({ params }) {
          {
             stage === 'shiftMsg' && (
                <div className='absolute w-full h-dvh top-0 flex items-center justify-center'>
-                  <div className={`relative opacity-0 transition-all duration-500 ease-out text-white text-xl ${appear ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>Time to Learn the New Words</div>
+                  <div className={`relative opacity-0 transition-all duration-500 ease-out text-black text-xl ${appear ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>Time to Learn the New Words</div>
                </div>
             )
          }
@@ -656,9 +656,9 @@ export default function Lessons({ params }) {
 
                return (
                <>
-                  <div className='w-full h-dvh flex flex-col justify-start items-start gap-3'>
+                  <div className='w-full h-dvh flex flex-col justify-start items-start gap-3 overflow-auto'>
 
-                     <div className='relative w-full min-h-80 overflow-hidden rounded-2xl'>
+                     <div className='relative w-full min-h-75 compact:min-h-65 super-compact:min-h-50 overflow-hidden rounded-2xl'>
 
                         <Image className='object-cover'
                            src={`/images/a1/${ws.word.word}.png`}
@@ -698,21 +698,18 @@ export default function Lessons({ params }) {
                      <div className="relative w-full h-full">
                         <AnimatePresence mode='wait'>
                            <motion.div
-                              className='relative w-full h-full flex flex-col gap-3'
+                              className='relative w-full h-full flex flex-col gap-3 compact:gap-1 super-compact:gap-1'
                               key={learningWordIndex}
                               initial={{
                                  opacity: 0,
-                                 // x: -50,
                                  scale: 0.95
                               }}
                               animate={{
                                  opacity: 1,
-                                 // x: 0,
                                  scale: 1
                               }}
                               exit={{
                                  opacity: 0,
-                                 // x: 50,
                                  scale: 0.95
                               }}
                               transition={{
@@ -723,7 +720,7 @@ export default function Lessons({ params }) {
                            >
                               <div className='w-full flex flex-col items-start z-1'>
                                  <div className='w-full gap-5 flex items-center justify-center'>
-                                    <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
+                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
                                        onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
                                     >
                                        <audio
@@ -743,7 +740,7 @@ export default function Lessons({ params }) {
                                     
                                     </div>
 
-                                    <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
+                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
                                        onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
                                     >
                                        <audio
@@ -764,11 +761,11 @@ export default function Lessons({ params }) {
                                  </div>
                               </div>
 
-                              <div className='w-full flex items-center bg-white/50 p-4 z-1 rounded-2xl'
+                              <div className='w-full flex items-center bg-white/50 p-4 super-compact:p-2 z-1 rounded-2xl'
                                  onClick={() => copyDef(ws.word.definition)}   
                               >{ws.word.definition}</div>
 
-                              <div className='w-full bg-white/50 rounded-2xl p-4 z-1'
+                              <div className='w-full bg-white/50 rounded-2xl p-4 super-compact:p-2 z-1'
                               >
                                  <ul className='w-full flex flex-col gap-5'>
                                     {
@@ -821,34 +818,34 @@ export default function Lessons({ params }) {
 
                            </div>
 
+                     }
+
+                     <div className='w-full h-15 flex items-center justify-center gap-3 left-0 z-1'>
+                        <button
+                           className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                           onClick={handleBackLearningWord}
+                        >
+                           Back
+                        </button>
+                        {
+                           learningWordIndex + 1 == learningWords.length ? 
+
+                              <button
+                                 className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                                 onClick={handleNextLearningWord}
+                              >
+                                 Done
+                              </button>
+                           :
+                              <button
+                                 className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                                 onClick={handleNextLearningWord}
+                              >
+                                 Next
+                              </button>
+                           
                         }
-
-                        <div className='absolute bottom-0 w-full flex items-center justify-center gap-3 left-0 p-5'>
-                           <button
-                              className='p-2 flex-1 bg-white rounded-xl active:scale-95'
-                              onClick={handleBackLearningWord}
-                           >
-                              Back
-                           </button>
-                           {
-                              learningWordIndex + 1 == learningWords.length ? 
-
-                                 <button
-                                    className='p-2 flex-1 bg-white rounded-xl active:scale-95'
-                                    onClick={handleNextLearningWord}
-                                 >
-                                    Done
-                                 </button>
-                              :
-                                 <button
-                                    className='p-2 flex-1 bg-white rounded-xl active:scale-95'
-                                    onClick={handleNextLearningWord}
-                                 >
-                                    Next
-                                 </button>
-                              
-                           }
-                        </div>                     
+                     </div>                     
                   </div>
                </>
                );
