@@ -11,7 +11,7 @@ import { toast, Slide } from 'react-toastify';
 import { getLessonsByLevel  } from '@/lib/db';
 import { useLoading, startLoading } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
-import { card, cardsContainer, appear } from '@/lib/animations/entrance';
+import { fadeUpChild, fadeUpParent, fadeRight } from '@/lib/animations/entrance';
 
 
 
@@ -63,7 +63,7 @@ function A1() {
          <Back to='/words' />
 
          <motion.div
-            {...appear}
+            {...fadeRight}
             className='flex flex-col gap-1'
          >
             <div className='text-3xl'>A1 Vocabulary</div>
@@ -72,7 +72,7 @@ function A1() {
 
          <motion.div
             key={vocabs.length}
-            variants={cardsContainer}
+            variants={fadeUpParent}
             initial='hidden'
             animate='visible'
 
@@ -81,7 +81,7 @@ function A1() {
             vocabs.map((lesson, index) => (
 
                <motion.div 
-                  variants={card}              
+                  variants= {fadeUpChild}              
 
                   key={index} 
                   className={`w-full flex justify-between items-center gap-2 rounded-2xl ${lesson.status === 'done' ? 'bg-green-100' : lesson.status === 'ready' ? 'bg-white' : lesson.status === 'waiting' ? 'bg-red-200' : ''}`}

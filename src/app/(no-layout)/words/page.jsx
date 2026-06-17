@@ -8,7 +8,7 @@ import Back from '@/components/backButton/back';
 import { useTheme } from '@/components/context/ThemeContext';
 import { useLoading  } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
-import { card, cardsContainer } from '@/lib/animations/entrance';
+import { fadeLeftChild, fadeLeftParent } from '@/lib/animations/entrance';
 
 
 
@@ -45,7 +45,7 @@ function Words(){
    return(
       <>
          <motion.div 
-            variants={cardsContainer}
+            variants={fadeLeftParent}
             initial='hidden'
             animate='visible'
 
@@ -59,7 +59,7 @@ function Words(){
 
                <Link href='/a1' className='flex-1 flex flex-col'>
                   <motion.div
-                     variants={card}
+                     variants={fadeLeftChild}
                      className='flex-1 rounded-2xl drop-shadow-md flex items-center justify-center text-4xl font-bold text-white bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]'
                   >
                      A1
@@ -68,7 +68,7 @@ function Words(){
                
                <Link href='/a2' className='flex-1 flex flex-col'>
                   <motion.div 
-                     variants={card}
+                     variants={fadeLeftChild}
                      className='flex-1 rounded-2xl flex items-center drop-shadow-md justify-center text-4xl font-bold text-white bg-linear-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]'
                   >
                      A2
@@ -77,7 +77,7 @@ function Words(){
 
                <Link href='/b1' className='flex-1 flex flex-col'>
                   <motion.div 
-                     variants={card}
+                     variants={fadeLeftChild}
                      className='flex-1 rounded-2xl flex items-center drop-shadow-md justify-center text-4xl font-bold text-white bg-linear-to-r from-[#db2777] via-[#ef4444] to-[#f97316]'
                   >
                      B1
@@ -86,7 +86,7 @@ function Words(){
 
                <Link href='/b2' className='flex-1 flex flex-col'>
                   <motion.div
-                     variants={card}
+                     variants={fadeLeftChild}
                      className='flex-1 rounded-2xl flex items-center drop-shadow-md justify-center text-4xl font-bold text-white bg-linear-to-tl from-[#831843] via-[#a21caf] to-[#e879f9]'
                   >
                      B2
@@ -95,7 +95,7 @@ function Words(){
 
                <Link href='/c1' className='flex-1 flex flex-col'>
                      <motion.div 
-                     variants={card}
+                     variants={fadeLeftChild}
                      className='flex-1 rounded-2xl flex items-center drop-shadow-md justify-center text-4xl font-bold text-white bg-linear-to-r from-[#4ade80] via-[#14b8a6] to-[#0891b2]'
                   >
                      C1
@@ -104,7 +104,7 @@ function Words(){
 
                <Link href='/c2' className='flex-1 flex flex-col'>
                   <motion.div
-                     variants={card}
+                     variants={fadeLeftChild}
                      className='flex-1 rounded-2xl flex items-center drop-shadow-md justify-center text-4xl font-bold text-white bg-linear-to-tl from-[#4b4c7a] via-[#eb92fb] to-[#c855bc]'
                   >
                      C2

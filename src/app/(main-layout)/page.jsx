@@ -14,7 +14,7 @@ import rawA1Vocabs from "../../../database/rawA1.json"
 import VocabularyManager from "@/components/VocabularyManager";
 import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
-import { appear, cardsContainer, card } from "@/lib/animations/entrance";
+import { fadeRight, expandParent, expandChild } from "@/lib/animations/entrance";
 import AnimatedAuroraBackground from "@/components/Iridescence/iridescence";
 
 
@@ -193,13 +193,13 @@ const Home = () => {
 
 
          <div id="tour_start"
-            className='bg-white w-fit rounded-xl text-sm p-2 z-1'
+            className='bg-white/50 w-fit rounded-xl drop-shadow-xl text-sm p-2 z-1'
          >
             Home Page
          </div>
 
             
-         <motion.div {...appear} 
+         <motion.div {...fadeRight} 
             className='p-5 bg-white drop-shadow-xl rounded-2xl mb-5'
             onClick={toggleIdiomCard}
             id="tour_idiom"
@@ -235,7 +235,7 @@ const Home = () => {
             className='w-full flex flex-col justify-between flex-1 gap-3'
          >
             <motion.div 
-               variants={cardsContainer}
+               variants={expandParent}
                initial='hidden'
                animate='visible'
 
@@ -243,11 +243,12 @@ const Home = () => {
             >
                {
                   !isCompact &&
-                     <div className='text-sm text-center'>Start Your Language Journey</div>
+                     <div className='p-2 bg-white/50 text-sm text-center z-1 rounded-xl drop-shadow-xl'>Start Your Language Journey</div>
                }
 
                <div className='flex justify-between flex-wrap gap-2'>
-                  <motion.div variants={card}
+
+                  <motion.div variants={expandChild}
                      className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
                   >
                      <Link href='/words'>
@@ -273,7 +274,7 @@ const Home = () => {
                      </Link>
                   </motion.div>
 
-                  <motion.div variants={card} 
+                  <motion.div variants={expandChild} 
                      className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
                   >
                      <Link href='/grammar'>
@@ -298,7 +299,7 @@ const Home = () => {
                      </div>
                   </motion.div>
 
-                  <motion.div variants={card}
+                  <motion.div variants={expandChild}
                      className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
                   >
                      <Link href='/expressions'>
@@ -323,7 +324,7 @@ const Home = () => {
                      </Link>
                   </motion.div>
 
-                  <motion.div variants={card}
+                  <motion.div variants={expandChild}
                      className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
                   >
                      <Link href='/family'>
@@ -347,6 +348,7 @@ const Home = () => {
                         </div>
                      </Link>
                   </motion.div>
+
                </div>
             </motion.div>
          </div>
