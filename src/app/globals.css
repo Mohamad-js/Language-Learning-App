@@ -2,6 +2,44 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 1. Freeze the layout and stop default fade animations */
+::view-transition-group(root) {
+  animation: none;
+  isolation: isolate;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* 2. Position the old layer below and the incoming layer above */
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+  animation: circle-reveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* 3. Smooth expanding circle originating from the top right corner */
+@keyframes circle-reveal {
+  from {
+    clip-path: circle(0% at calc(0% - 60px) 40px);
+  }
+  to {
+    clip-path: circle(150% at calc(0% - 60px) 40px);
+  }
+}
+
+
+
+
+
+
+
 @custom-variant super-compact (@media (max-width: 400px) and (max-height: 700px));
 
 @custom-variant compact (@media (max-width: 380px) and (max-height: 760px) and (min-height: 700px));

@@ -5,7 +5,6 @@ import Link from 'next/link';
 import styles from './words.module.css'
 import Image from 'next/image';
 import Back from '@/components/backButton/back';
-import { useTheme } from '@/components/context/ThemeContext';
 import { useLoading  } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
 import { fadeLeftChild, fadeLeftParent } from '@/lib/animations/entrance';
@@ -14,8 +13,7 @@ import { fadeLeftChild, fadeLeftParent } from '@/lib/animations/entrance';
 
 
 function Words(){
-   const { lightTheme } = useTheme();
-   const darkMode = !lightTheme;
+
 
    const { stopLoading } = useLoading();
 
@@ -49,7 +47,7 @@ function Words(){
             initial='hidden'
             animate='visible'
 
-            className='absolute top-0 left-0 w-full min-h-dvh flex flex-col pt-15 bg-gray-300'
+            className='absolute top-0 left-0 w-full min-h-dvh flex flex-col pt-15 bg-background'
          >
 
             <Back to={'/'} />
@@ -60,7 +58,7 @@ function Words(){
                <Link href='/a1' className='flex-1 flex flex-col'>
                   <motion.div
                      variants={fadeLeftChild}
-                     className='flex-1 rounded-2xl drop-shadow-md flex items-center justify-center text-4xl font-bold text-white bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]'
+                     className='flex-1 rounded-2xl drop-shadow-md flex items-center justify-center text-4xl font-bold bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]'
                   >
                      A1
                   </motion.div>

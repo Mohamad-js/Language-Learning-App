@@ -15,16 +15,13 @@ import { LuGroup } from "react-icons/lu";
 import { HiMiniRectangleGroup } from "react-icons/hi2";
 import { TbComponentsOff } from "react-icons/tb";
 import ThemeToggle from '../themeSwitch/themeToggle';
-import { useTheme } from "../context/ThemeContext";
 import { resetAllProgress } from '@/lib/db';
 import { useLoading } from '../LoadingProvider';
 
 
 
 function Ham(){
-   const { lightTheme } = useTheme();
    const { startLoading } = useLoading();
-   const darkMode = !lightTheme;
    const [page, setPage] = useState('learn')
 
    const [menu, setMenu] = useState(false)
@@ -54,13 +51,7 @@ function Ham(){
       }
    }
 
-   const showWarning = () => {
-      setWarning(true)
-   }
 
-   const cancelReset = () => {
-      setWarning(false)
-   }
 
    const navFromHam = (msg) => {
 
@@ -69,9 +60,6 @@ function Ham(){
          home: '/',
          saved: '/saved',
          statistics: '/statistics',
-         collocations: '/collocations',
-         errors: '/errors',
-         themes: '/themes',
          review: '/review',
          quiz: '/quiz',
          words: '/words',
@@ -83,6 +71,8 @@ function Ham(){
          listening: '/listening',
          reading: '/reading',
          source: '/source',
+         settings: '/settings',
+         wordFamily: '/word_family',
       };
 
       const target = routes[msg];
@@ -119,13 +109,13 @@ function Ham(){
                      aria-hidden="true"
                   />
                   <div
-                     className="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:-rotate-45"
+                     className="w-[50%] h-[2px] bg-foreground rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:-rotate-45"
                   ></div>
                   <div
-                     className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-center peer-checked:hidden"
+                     className="w-[50%] h-[2px] bg-foreground rounded-md transition-all duration-300 origin-center peer-checked:hidden"
                   ></div>
                   <div
-                     className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left translate-y-[-0.45rem] peer-checked:rotate-45"
+                     className="w-[50%] h-[2px] bg-foreground rounded-md transition-all duration-300 origin-left translate-y-[-0.45rem] peer-checked:rotate-45"
                   ></div>
                </div>
             </label>
@@ -134,12 +124,12 @@ function Ham(){
 
          {
             menu &&
-            <div className="absolute top-0 left-0 w-full min-h-dvh bg-black/50 z-4 backdrop-blur-sm" onClick={() => setMenu(false)}></div>
+            <div className="absolute top-0 left-0 w-full min-h-dvh bg-foreground/10 z-4 backdrop-blur-sm" onClick={() => setMenu(false)}></div>
 
          }
 
 
-         <div className={`w-full fixed z-4 compact:bg-red-500 bg-white transition-all duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-[50vw]' : 'left-full'}`}>
+         <div className={`w-full fixed z-4 transition-all bg-background duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-[50vw]' : 'left-full'}`}>
             
             <div className='w-full min-h-dvh pt-15 p-3 flex flex-col'>
                {/* <ThemeToggle /> */}
@@ -148,72 +138,77 @@ function Ham(){
                   
                   <div className='w-full flex flex-col'>
                      
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('home')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('home')}>
                         <GoHomeFill />
                         <div>Home</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('words')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('words')}>
                         <VscWholeWord />
                         <div>Vocabulary</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('grammar')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('grammar')}>
                         <MdOutlineSpellcheck />
                         <div>Grammar</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('prepositions')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('wordFamily')}>
+                        <MdOutlineSpellcheck />
+                        <div>Word Family</div>
+                     </div>
+
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('prepositions')}>
                         <TbComponentsOff />
                         <div>Prepositions</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('speaking')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('speaking')}>
                         <PiUserSoundFill />
                         <div>Speaking</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('writing')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('writing')}>
                         <IoReader />
                         <div>Writing</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('listening')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('listening')}>
                         <ImHeadphones />
                         <div>Listening</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('reading')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('reading')}>
                         <IoBook />
                         <div>Reading</div>
                      </div>
 
-                     {/* <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={showWarning}>
+                     {/* <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={showWarning}>
                         <MdOutlineRestartAlt />
                         <div>Restart App</div>
                      </div> */}
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('saved')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('saved')}>
                         <IoSave />
                         <div>Saved</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('statistics')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('statistics')}>
                         <MdInsertChartOutlined />
                         <div>Statistics</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('quiz')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('quiz')}>
                         <GoQuestion />
                         <div>Quiz</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('review')}>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('review')}>
                         <RiRepeat2Fill />
                         <div>Review</div>
                      </div>
 
-                     <div className='w-full flex items-start gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('source')}>
+                     <div className='w-full flex items-start gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('source')}>
                         <MdSource/>
                         <div>Source</div>
                      </div>
@@ -221,7 +216,7 @@ function Ham(){
                   </div>
                
 
-                  <div className='w-full flex items-center gap-3 p-2 active:bg-black/10 rounded-xl' onClick={() => navFromHam('settings')}>
+                  <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('settings')}>
                      <IoSettings />
                      <div>Settings</div>
                   </div>
@@ -232,21 +227,7 @@ function Ham(){
 
          </div>
          
-         {
-            warning &&
-            <div className={styles.warningHolder} onClick={cancelReset}>
-               <div className={styles.warning}>
-                  <div className={styles.titleHolder}>
-                     <div className={styles.title}>All progress in the app will be lost.</div>
-                     <div className={styles.title}>Are you sure to restart the app?</div>
-                  </div>
-                  <div className={styles.btnHolder}>
-                     <button className={styles.btn} onClick={cancelReset}>No</button>
-                     <button className={styles.btn} onClick={resetAction}>Yes</button>
-                  </div>
-               </div>
-            </div>
-         }
+
       </div>
    )
 }

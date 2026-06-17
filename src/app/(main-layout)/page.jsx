@@ -7,7 +7,6 @@ import { IoCloseOutline } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";import { idioms } from "@/data/idioms";
 import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
-import { useTheme } from "@/components/context/ThemeContext";
 import Aurora from "@/components/aurora/aurora";
 import Tour from "@/components/tour/tour";
 import rawA1Vocabs from "../../../database/rawA1.json"
@@ -29,7 +28,6 @@ function urlBase64ToUint8Array(base64String) {
 
 
 const Home = () => {
-   const { lightTheme } = useTheme();
    const { stopLoading, startLoading } = useLoading();
    const [isReady, setIsReady] = useState(false)
    
@@ -193,14 +191,14 @@ const Home = () => {
 
 
          <div id="tour_start"
-            className='bg-white/50 w-fit rounded-xl drop-shadow-xl text-sm p-2 z-1'
+            className='bg-background/50 w-fit rounded-xl drop-shadow-xl text-sm p-2 z-1'
          >
             Home Page
          </div>
 
             
          <motion.div {...fadeRight} 
-            className='p-5 bg-white drop-shadow-xl rounded-2xl mb-5'
+            className='p-5 bg-background drop-shadow-xl rounded-2xl mb-5'
             onClick={toggleIdiomCard}
             id="tour_idiom"
          >
@@ -214,10 +212,10 @@ const Home = () => {
 
          {
             showIdiom && 
-            <div className='fixed top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-1 flex justify-center items-center p-5'
+            <div className='fixed top-0 left-0 w-full h-full bg-background/50 backdrop-blur-sm z-2 flex justify-center items-center p-5'
                onClick={toggleIdiomCard}
             >
-               <div className='relative w-full p-5 pr-3 bg-white rounded-2xl flex flex-col gap-3'
+               <div className='relative w-full p-5 pr-3 bg-background rounded-2xl flex flex-col gap-3'
                   onClick={(e) => e.stopPropagation()}
                >
                   <div className='w-full flex justify-between'>
@@ -243,13 +241,13 @@ const Home = () => {
             >
                {
                   !isCompact &&
-                     <div className='p-2 bg-white/50 text-sm text-center z-1 rounded-xl drop-shadow-xl'>Start Your Language Journey</div>
+                     <div className='p-2 bg-background/50 text-sm text-center z-1 rounded-xl drop-shadow-xl'>Start Your Language Journey</div>
                }
 
                <div className='flex justify-between flex-wrap gap-2'>
 
                   <motion.div variants={expandChild}
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
                   >
                      <Link href='/words'>
                         <div className="relative w-full h-28">
@@ -262,20 +260,20 @@ const Home = () => {
                            />
                         </div>
 
-                        <div className='flex flex-1 flex-col justify-between bg-white p-3' >
-                           <div className='text-xl font-bold text-black/70'>Vocabulary</div>
+                        <div className='flex flex-1 flex-col justify-between bg-background p-3' >
+                           <div className='text-xl font-bold'>Vocabulary</div>
                            
-                           <div className="text-sm text-black/70">6330 Key Words by the CEFR Levels</div>
+                           <div className="text-sm">6330 Key Words by the CEFR Levels</div>
 
-                           <div className='w-full flex justify-end text-black/70'>
-                              <FaArrowRight className='text-black/40' size={20} />
+                           <div className='w-full flex justify-end'>
+                              <FaArrowRight className='text-foreground/40' size={20} />
                            </div>
                         </div>
                      </Link>
                   </motion.div>
 
                   <motion.div variants={expandChild} 
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
                   >
                      <Link href='/grammar'>
                         <div className="relative w-full h-28">
@@ -289,18 +287,18 @@ const Home = () => {
                         </div>
                      </Link>
 
-                     <div className='flex flex-1 flex-col justify-between bg-white p-3'>
-                        <div className='text-xl font-bold text-black/70'>Grammar</div>
-                           <div className="text-sm text-black/70">164 Most Common English Grammar</div>
+                     <div className='flex flex-1 flex-col justify-between bg-background p-3'>
+                        <div className='text-xl font-bold'>Grammar</div>
+                           <div className="text-sm">164 Most Common English Grammar</div>
 
-                           <div className='w-full flex justify-end text-black/70'>
-                              <FaArrowRight className='text-black/40' size={20} />
+                           <div className='w-full flex justify-end'>
+                              <FaArrowRight className='text-foreground/40' size={20} />
                            </div>
                      </div>
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
                   >
                      <Link href='/expressions'>
                         <div className="relative w-full h-28">
@@ -313,11 +311,11 @@ const Home = () => {
                            />
                         </div>
 
-                        <div className='flex flex-1 flex-col justify-between bg-white p-3'>
-                           <div className='text-xl font-bold text-black/70'>Patterns</div>
-                           <div className="text-sm text-black/70">Coming soon</div>
+                        <div className='flex flex-1 flex-col justify-between bg-background p-3'>
+                           <div className='text-xl font-bold'>Patterns</div>
+                           <div className="text-sm">Coming soon</div>
 
-                           <div className='w-full flex justify-end text-black/70'>
+                           <div className='w-full flex justify-end'>
                               <FaArrowRight className='text-black/40' size={20} />
                            </div>
                         </div>
@@ -325,7 +323,7 @@ const Home = () => {
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
                   >
                      <Link href='/family'>
                         <div className="relative w-full h-28">
@@ -338,12 +336,12 @@ const Home = () => {
                            />
                         </div>
 
-                        <div className='flex flex-1 flex-col justify-between bg-white p-3'>
-                           <div className='text-xl font-bold text-black/70'>Word Family</div>
-                           <div className="text-sm text-black/70">Coming soon</div>
+                        <div className='flex flex-1 flex-col justify-between bg-background p-3'>
+                           <div className='text-xl font-bold'>Word Family</div>
+                           <div className="text-sm">Coming soon</div>
 
-                           <div className='w-full flex justify-end text-black/70'>
-                              <FaArrowRight className='text-black/40' size={20} />
+                           <div className='w-full flex justify-end'>
+                              <FaArrowRight className='text-foreground/40' size={20} />
                            </div>
                         </div>
                      </Link>

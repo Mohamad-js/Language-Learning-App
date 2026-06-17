@@ -3,7 +3,7 @@ import { LoadingProvider } from '@/components/LoadingProvider';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import Ham from "@/components/hamburger/ham";
-import { ThemeProvider } from "@/components/context/ThemeContext";
+import { ThemeProvider } from '@/components/theme-provider';
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
 import ToastProvider from "@/components/ToastProvider/toastProvider";
 import { config } from 'dotenv';
@@ -25,7 +25,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html>
+    <html suppressHydrationWarning>
       <head>
          <link rel="manifest" href="/manifest.json" />
          <meta name="theme-color" content="#000000" />
