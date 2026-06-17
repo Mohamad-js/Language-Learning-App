@@ -6,7 +6,6 @@ import styles from './slug.module.css';
 import { PiDotsThreeVertical } from "react-icons/pi";
 import { BsArrowRepeat } from "react-icons/bs";
 import Confetti from "@/components/confetti/confetti";
-import { useTheme } from "@/components/context/ThemeContext";
 import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
 import Audio from '@/components/audio/audio';
@@ -19,8 +18,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 export default function Lessons({ params }) {
-   const { lightTheme } = useTheme();
-   const darkMode = !lightTheme;
    const { stopLoading, startLoading } = useLoading();
 
    const [specificLessonWords, setSpecificLessonWords] = useState(null)
@@ -621,25 +618,15 @@ export default function Lessons({ params }) {
    
          {stage === 'learning' && (
          <div className={`absolute w-full h-full top-0 p-5 pt-12 overflow-hidden flex items-center justify-start flex-col ${fade && styles.fadeIn}`}
-            style={darkMode ? {color: 'white'} : {}}
          >
 
-            {
-               darkMode ?
-               <Image className='object-cover z-0'
-                  src='/images/back/DarkLearningA1.jpg'
-                  fill
-                  alt='background'
-                  onLoad={handleLessonImageLoad}
-               />
-               :
-               <Image className='object-cover z-0'
-                  src='/images/back/A1LearnSection.jpg'
-                  fill
-                  alt='background'
-                  onLoad={handleLessonImageLoad}   
-               />
-            }
+            <Image className='object-cover z-0'
+               src='/images/back/A1LearnSection.jpg'
+               fill
+               alt='background'
+               onLoad={handleLessonImageLoad}   
+            />
+            
 
             {
                isLoading && 
