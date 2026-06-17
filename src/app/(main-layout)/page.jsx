@@ -14,7 +14,7 @@ import rawA1Vocabs from "../../../database/rawA1.json"
 import VocabularyManager from "@/components/VocabularyManager";
 import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
-import { cards } from "@/lib/animations/entrance";
+import { appear, cardsContainer, card } from "@/lib/animations/entrance";
 import AnimatedAuroraBackground from "@/components/Iridescence/iridescence";
 
 
@@ -192,154 +192,164 @@ const Home = () => {
          <VocabularyManager initialData={rawA1Vocabs} />
 
 
-            <div className='' id="tour_start">Home Page</div>
+         <div id="tour_start"
+            className='bg-white w-fit rounded-xl text-sm p-2 z-1'
+         >
+            Home Page
+         </div>
 
             
-            <motion.div {...cards({delay: 0.15, y: 30})} 
-               className='p-5 bg-white drop-shadow-xl rounded-2xl mb-5'
+         <motion.div {...appear} 
+            className='p-5 bg-white drop-shadow-xl rounded-2xl mb-5'
+            onClick={toggleIdiomCard}
+            id="tour_idiom"
+         >
+            <div className='text-sm'>Today&apos;s Idiom</div>
+            <div className="super-compact:text-sm">
+               {dailyIdiom?.example}
+            </div>
+         </motion.div>
+            
+
+
+         {
+            showIdiom && 
+            <div className='fixed top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-1 flex justify-center items-center p-5'
                onClick={toggleIdiomCard}
-               id="tour_idiom"
             >
-               <div className='text-sm'>Today&apos;s Idiom</div>
-               <div className="super-compact:text-sm">
-                  {dailyIdiom?.example}
-               </div>
-            </motion.div>
-            
-
-
-            {
-               showIdiom && 
-               <div className='fixed top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-1 flex justify-center items-center p-5'
-                  onClick={toggleIdiomCard}
+               <div className='relative w-full p-5 pr-3 bg-white rounded-2xl flex flex-col gap-3'
+                  onClick={(e) => e.stopPropagation()}
                >
-                  <div className='relative w-full p-5 pr-3 bg-white rounded-2xl flex flex-col gap-3'
-                     onClick={(e) => e.stopPropagation()}
-                  >
-                     <div className='w-full flex justify-between'>
-                        <div className="text-sm">Meaning</div>
-                        <IoCloseOutline size={30} className='' onClick={toggleIdiomCard} />
-                     </div>
-
-                     <div className='text-2xl'>{dailyIdiom?.idiom}</div>
-                     <div className='text-lg'>{dailyIdiom?.meaning}</div>
+                  <div className='w-full flex justify-between'>
+                     <div className="text-sm">Meaning</div>
+                     <IoCloseOutline size={30} className='' onClick={toggleIdiomCard} />
                   </div>
-               </div>
-            }
 
-            <div
-               className='w-full flex flex-col justify-between flex-1 gap-3'
-            >
-               <div className="flex flex-col gap-2">
-                  {
-                     !isCompact &&
-                        <div className='text-sm text-center'>Start Your Language Journey</div>
-                  }
-
-                  <div className='flex justify-between flex-wrap gap-2'>
-                     <motion.div {...cards({delay: 0.35, y: 30})}
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
-                     >
-                        <Link href='/words'>
-                           <div className="relative w-full h-28">
-                              <Image
-                                 className='object-cover object-bottom'
-                                 src='/images/illustrations/Vocabs.jpg'
-                                 alt='Studying Illustration'
-                                 fill
-                                 onLoad={handleIllustrationLoad}
-                              />
-                           </div>
-
-                           <div className='flex flex-1 flex-col justify-between bg-white p-3' >
-                              <div className='text-xl font-bold text-black/70'>Vocabulary</div>
-                              
-                              <div className="text-sm text-black/70">6330 Key Words by the CEFR Levels</div>
-
-                              <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight className='text-black/40' size={20} />
-                              </div>
-                           </div>
-                        </Link>
-                     </motion.div>
-
-                     <motion.div {...cards({delay: 0.45, y: 30})} 
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
-                     >
-                        <Link href='/grammar'>
-                           <div className="relative w-full h-28">
-                              <Image
-                                 className='object-cover object-bottom'
-                                 src='/images/illustrations/Grammar.jpg'
-                                 alt='Studying Illustration'
-                                 fill
-                                 onLoad={handleIllustrationLoad}
-                              />
-                           </div>
-                        </Link>
-
-                        <div className='flex flex-1 flex-col justify-between bg-white p-3'>
-                           <div className='text-xl font-bold text-black/70'>Grammar</div>
-                              <div className="text-sm text-black/70">164 Most Common English Grammar</div>
-
-                              <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight className='text-black/40' size={20} />
-                              </div>
-                        </div>
-                     </motion.div>
-
-                     <motion.div {...cards({delay: 0.55, y: 30})}
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
-                     >
-                        <Link href='/expressions'>
-                           <div className="relative w-full h-28">
-                              <Image
-                                 className='object-cover object-bottom'
-                                 src='/images/illustrations/Pattern.jpg'
-                                 alt='Studying Illustration'
-                                 fill
-                                 onLoad={handleIllustrationLoad}
-                              />
-                           </div>
-
-                           <div className='flex flex-1 flex-col justify-between bg-white p-3'>
-                              <div className='text-xl font-bold text-black/70'>Patterns</div>
-                              <div className="text-sm text-black/70">Coming soon</div>
-
-                              <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight className='text-black/40' size={20} />
-                              </div>
-                           </div>
-                        </Link>
-                     </motion.div>
-
-                     <motion.div {...cards({delay: 0.65, y: 30})}
-                        className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
-                     >
-                        <Link href='/family'>
-                           <div className="relative w-full h-28">
-                              <Image
-                                 className='object-cover object-bottom'
-                                 src='/images/illustrations/Word_Families.jpg'
-                                 alt='Studying Illustration'
-                                 fill
-                                 onLoad={handleIllustrationLoad}
-                              />
-                           </div>
-
-                           <div className='flex flex-1 flex-col justify-between bg-white p-3'>
-                              <div className='text-xl font-bold text-black/70'>Word Family</div>
-                              <div className="text-sm text-black/70">Coming soon</div>
-
-                              <div className='w-full flex justify-end text-black/70'>
-                                 <FaArrowRight className='text-black/40' size={20} />
-                              </div>
-                           </div>
-                        </Link>
-                     </motion.div>
-                  </div>
+                  <div className='text-2xl'>{dailyIdiom?.idiom}</div>
+                  <div className='text-lg'>{dailyIdiom?.meaning}</div>
                </div>
             </div>
+         }
+
+         <div
+            className='w-full flex flex-col justify-between flex-1 gap-3'
+         >
+            <motion.div 
+               variants={cardsContainer}
+               initial='hidden'
+               animate='visible'
+
+               className="flex flex-col gap-2"
+            >
+               {
+                  !isCompact &&
+                     <div className='text-sm text-center'>Start Your Language Journey</div>
+               }
+
+               <div className='flex justify-between flex-wrap gap-2'>
+                  <motion.div variants={card}
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
+                  >
+                     <Link href='/words'>
+                        <div className="relative w-full h-28">
+                           <Image
+                              className='object-cover object-bottom'
+                              src='/images/illustrations/Vocabs.jpg'
+                              alt='Studying Illustration'
+                              fill
+                              onLoad={handleIllustrationLoad}
+                           />
+                        </div>
+
+                        <div className='flex flex-1 flex-col justify-between bg-white p-3' >
+                           <div className='text-xl font-bold text-black/70'>Vocabulary</div>
+                           
+                           <div className="text-sm text-black/70">6330 Key Words by the CEFR Levels</div>
+
+                           <div className='w-full flex justify-end text-black/70'>
+                              <FaArrowRight className='text-black/40' size={20} />
+                           </div>
+                        </div>
+                     </Link>
+                  </motion.div>
+
+                  <motion.div variants={card} 
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
+                  >
+                     <Link href='/grammar'>
+                        <div className="relative w-full h-28">
+                           <Image
+                              className='object-cover object-bottom'
+                              src='/images/illustrations/Grammar.jpg'
+                              alt='Studying Illustration'
+                              fill
+                              onLoad={handleIllustrationLoad}
+                           />
+                        </div>
+                     </Link>
+
+                     <div className='flex flex-1 flex-col justify-between bg-white p-3'>
+                        <div className='text-xl font-bold text-black/70'>Grammar</div>
+                           <div className="text-sm text-black/70">164 Most Common English Grammar</div>
+
+                           <div className='w-full flex justify-end text-black/70'>
+                              <FaArrowRight className='text-black/40' size={20} />
+                           </div>
+                     </div>
+                  </motion.div>
+
+                  <motion.div variants={card}
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
+                  >
+                     <Link href='/expressions'>
+                        <div className="relative w-full h-28">
+                           <Image
+                              className='object-cover object-bottom'
+                              src='/images/illustrations/Pattern.jpg'
+                              alt='Studying Illustration'
+                              fill
+                              onLoad={handleIllustrationLoad}
+                           />
+                        </div>
+
+                        <div className='flex flex-1 flex-col justify-between bg-white p-3'>
+                           <div className='text-xl font-bold text-black/70'>Patterns</div>
+                           <div className="text-sm text-black/70">Coming soon</div>
+
+                           <div className='w-full flex justify-end text-black/70'>
+                              <FaArrowRight className='text-black/40' size={20} />
+                           </div>
+                        </div>
+                     </Link>
+                  </motion.div>
+
+                  <motion.div variants={card}
+                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-white rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
+                  >
+                     <Link href='/family'>
+                        <div className="relative w-full h-28">
+                           <Image
+                              className='object-cover object-bottom'
+                              src='/images/illustrations/Word_Families.jpg'
+                              alt='Studying Illustration'
+                              fill
+                              onLoad={handleIllustrationLoad}
+                           />
+                        </div>
+
+                        <div className='flex flex-1 flex-col justify-between bg-white p-3'>
+                           <div className='text-xl font-bold text-black/70'>Word Family</div>
+                           <div className="text-sm text-black/70">Coming soon</div>
+
+                           <div className='w-full flex justify-end text-black/70'>
+                              <FaArrowRight className='text-black/40' size={20} />
+                           </div>
+                        </div>
+                     </Link>
+                  </motion.div>
+               </div>
+            </motion.div>
+         </div>
 
             
 

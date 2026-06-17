@@ -11,7 +11,7 @@ import { toast, Slide } from 'react-toastify';
 import { getLessonsByLevel  } from '@/lib/db';
 import { useLoading, startLoading } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
-import { cards } from '@/lib/animations/entrance';
+import { card, cardsContainer, appear } from '@/lib/animations/entrance';
 
 
 
@@ -63,52 +63,62 @@ function A1() {
          <Back to='/words' />
 
          <motion.div
-            {...cards({delay: 0.25, x: -60, press: false})}
+            {...appear}
             className='flex flex-col gap-1'
          >
             <div className='text-3xl'>A1 Vocabulary</div>
             <div className='text-md'>Read and Practice the Words</div>
          </motion.div>
 
-         <motion.div 
-            {...cards({delay: 0.35, y: 60, press: false})}
+         <motion.div
+            key={vocabs.length}
+            variants={cardsContainer}
+            initial='hidden'
+            animate='visible'
+
             className='w-full h-[85vh] overflow-y-auto scrollbar-none flex flex-col gap-3 bg-white/30 rounded-2xl p-3 pb-100'>
          {
-            vocabs.map((lesson, index) => {
+            vocabs.map((lesson, index) => (
 
+               <motion.div 
+                  variants={card}              
 
-               return (
-                  <div key={index} className={`w-full flex justify-between items-center gap-2 rounded-2xl ${lesson.status === 'done' ? 'bg-green-100' : lesson.status === 'ready' ? 'bg-white' : lesson.status === 'waiting' ? 'bg-red-200' : ''}`}>
-                     <div className="flex flex-col gap-1 p-4">
-                        <div className="font-bold text-gray-400">Lesson {lesson.lesson}:</div>
-                        <div className="text-lg">{lesson.category}</div>
-                     </div>
-                     {
-                        lesson.status === 'ready' ?
-                           <Link href={`/a1/${lesson.lesson}`} onClick={() => startLoading()} className='h-full'>
-                              <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
-                                 START
-                              </button>
-                           </Link>
-                        :
-
-                        lesson.status === 'done' ?
-                           <Link href={'/review'} className='h-full'>
-                              <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
-                                 REVIEW
-                              </button>
-                           </Link>
-                        :
-
-                        lesson.status === 'waiting' ?
-                           <div className="text-red-500 p-5">LOCKED</div>
-
-                        : 
-                        null
-                     }
+                  key={index} 
+                  className={`w-full flex justify-between items-center gap-2 rounded-2xl ${lesson.status === 'done' ? 'bg-green-100' : lesson.status === 'ready' ? 'bg-white' : lesson.status === 'waiting' ? 'bg-red-200' : ''}`}
+               >
+                  <div 
+                     
+                     className="flex flex-col gap-1 p-4"
+                  >
+                     <div className="font-bold text-gray-400">Lesson {lesson.lesson}:</div>
+                     <div className="text-lg">{lesson.category}</div>
                   </div>
-               )
-            })
+                  {
+                     lesson.status === 'ready' ?
+                        <Link href={`/a1/${lesson.lesson}`} onClick={() => startLoading()} className='h-full'>
+                           <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
+                              START
+                           </button>
+                        </Link>
+                     :
+
+                     lesson.status === 'done' ?
+                        <Link href={'/review'} className='h-full'>
+                           <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
+                              REVIEW
+                           </button>
+                        </Link>
+                     :
+
+                     lesson.status === 'waiting' ?
+                        <div className="text-red-500 p-5">LOCKED</div>
+
+                     : 
+                     null
+                  }
+               </motion.div>
+               
+            ))
          }
          </motion.div>
 

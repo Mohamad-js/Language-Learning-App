@@ -1,25 +1,45 @@
-export const cards = ({delay = 0, x = 0, y = 0, press= true}) => ({
+
+
+export const cardsContainer = {
+   hidden: {},
+
+   visible: {
+      transition: {
+         staggerChildren: 0.07,
+      },
+   },
+};
+
+export const card = {
+   hidden: {
+      opacity: 0,
+      y: 200,
+   },
+   visible: {
+      opacity: 1,
+      y: 0,
+
+      transition: {
+         type: "spring",
+         stiffness: 500,
+         damping: 100,
+      },
+   },
+};
+
+
+export const appear = {
    initial: {
-      x: x,
-      y: y,
       opacity: 0,
    },
 
    animate: {
-      y: 0,
-      x: 0,
       opacity: 1,
       
       transition: {
-         type: 'spring',
-         stiffness: 185,
-         damping: 30,
-         delay: delay,
+         delay: 0.5,
+         duration: 0.5
       },
    },
 
-
-   whileTap: {
-      scale: press ? 0.97 : 1
-   }
-})
+}

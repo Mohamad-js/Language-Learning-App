@@ -13,7 +13,9 @@ import Audio from '@/components/audio/audio';
 import { toast, Slide } from 'react-toastify';
 import { getLessonByNumber, updateInteractionStatus} from '@/lib/db';
 import { useLoading } from '@/components/LoadingProvider';
-import { Popover } from 'radix-ui';
+
+
+
 
 
 export default function Lessons({ params }) {
