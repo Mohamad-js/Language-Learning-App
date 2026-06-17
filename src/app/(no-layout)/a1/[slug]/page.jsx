@@ -13,7 +13,7 @@ import Audio from '@/components/audio/audio';
 import { toast, Slide } from 'react-toastify';
 import { getLessonByNumber, updateInteractionStatus} from '@/lib/db';
 import { useLoading } from '@/components/LoadingProvider';
-
+import { motion, AnimatePresence } from 'framer-motion';
 
 
 
@@ -236,77 +236,6 @@ export default function Lessons({ params }) {
       setFinalWindow(false)
    }
 
-   const saveHandle = (ws) => {
-      const savedVocab = ws.word.word
-      const savedVocabRole = ws.word.role
-
-      const foundWord = specificLessonWords?.filter((item, index) => {
-         if(item.word === savedVocab && item.role === savedVocabRole) {
-            specificLessonWords[index].saved = !specificLessonWords[index].saved
-            return item
-         }
-      })
-      
-      if(savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)){
-         setSavedA1Vocabs(savedA1Vocabs.filter((item) => {
-            return !(item.word === ws.word.word && item.role === ws.word.role)
-         }))
-
-         toast.error(
-            <div className={styles.toastHolder}>
-               <div className={styles.toastTitle2}>
-                  The Word Deleted
-               </div>
-               <div className={styles.info}>
-                  The word you had saved is now removed
-               </div>
-            </div>
-            ,
-            {
-               position: "top-right",
-               autoClose: 3000,
-               hideProgressBar: false,
-               closeOnClick: true,
-               pauseOnHover: true,
-               draggable: true,
-               progress: undefined,
-               theme: "light",
-               transition: Slide,
-               closeButton: false,
-            }
-         )
-
-      } else {
-         setSavedA1Vocabs((prev) => [
-            ...prev,
-            foundWord[0]
-         ])
-
-         toast.success(
-            <div className={styles.toastHolder}>
-               <div className={styles.toastTitle}>
-                  Saved Successfully
-               </div>
-               <div className={styles.info}>
-                  The word was added to the Saved page
-               </div>
-            </div>
-            ,
-            {
-               position: "top-right",
-               autoClose: 3000,
-               hideProgressBar: false,
-               closeOnClick: true,
-               pauseOnHover: true,
-               draggable: true,
-               progress: undefined,
-               theme: "light",
-               transition: Slide,
-               closeButton: false,
-            }
-         )
-      }
-   }
 
    const wholeLessons = 45
 
@@ -723,11 +652,13 @@ export default function Lessons({ params }) {
             {(() => {
                const learningWords = [...unknownWords];
                const ws = learningWords[learningWordIndex];
-               console.log('ws:', ws)
+               
+
                return (
                <>
                   <div className='w-full h-dvh flex flex-col justify-start items-start gap-3'>
-                     <div className='relative w-full h-80 overflow-hidden rounded-2xl'>
+
+                     <div className='relative w-full min-h-80 overflow-hidden rounded-2xl'>
 
                         <Image className='object-cover'
                            src={`/images/a1/${ws.word.word}.png`}
@@ -743,18 +674,6 @@ export default function Lessons({ params }) {
                               </div>
                         }
 
-
-                        {/* <div>
-
-                           <p onClick={() => saveHandle(ws)} className="">
-                              {  
-                                 (savedA1Vocabs.some(item => item.word == ws.word.word) && savedA1Vocabs.some(item => item.role == ws.word.role)) ? 'save' : 'unsave'  
-                              }
-                           </p>
-
-                           <p className=""></p>
-
-                           </div> */}
                         
                         <div className="absolute bottom-0 w-full flex items-center justify-between p-4">
                            <div className='absolute left-0 bottom-0 w-full h-20 z-0 bg-linear-to-t from-black to-transparent'></div>
@@ -775,65 +694,99 @@ export default function Lessons({ params }) {
                         </div>
 
                      </div>
-                     <div className='w-full flex flex-col items-start z-1'>
-                        <div className='w-full gap-5 flex items-center justify-center'>
-                           <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
-                              onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
+
+                     <div className="relative w-full h-full">
+                        <AnimatePresence mode='wait'>
+                           <motion.div
+                              className='relative w-full h-full flex flex-col gap-3'
+                              key={learningWordIndex}
+                              initial={{
+                                 opacity: 0,
+                                 // x: -50,
+                                 scale: 0.95
+                              }}
+                              animate={{
+                                 opacity: 1,
+                                 // x: 0,
+                                 scale: 1
+                              }}
+                              exit={{
+                                 opacity: 0,
+                                 // x: 50,
+                                 scale: 0.95
+                              }}
+                              transition={{
+                                 type: "spring",
+                                 stiffness: 500,
+                                 damping: 50,
+                              }}
                            >
-                              <audio
-                                 ref={audioRefAmE}
-                                 src={`/sounds/A1/${ws.word.word}-AmE.mp3`}
-                                 onEnded={() => setIsPlayingAmE(false)}
-                              />
+                              <div className='w-full flex flex-col items-start z-1'>
+                                 <div className='w-full gap-5 flex items-center justify-center'>
+                                    <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
+                                       onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
+                                    >
+                                       <audio
+                                          ref={audioRefAmE}
+                                          src={`/sounds/A1/${ws.word.word}-AmE.mp3`}
+                                          onEnded={() => setIsPlayingAmE(false)}
+                                       />
 
-                              {ws.word.AmE}
+                                       {ws.word.AmE}
 
-                              {
-                                 isPlayingAmE ?
-                                 <Audio />
-                                 :
-                                 <RxSpeakerLoud style={{color: '#b8b8b8', fontSize: '20px'}}/>
-                              }
-                           
-                           </div>
+                                       {
+                                          isPlayingAmE ?
+                                          <Audio />
+                                          :
+                                          <RxSpeakerLoud style={{color: '#b8b8b8', fontSize: '20px'}}/>
+                                       }
+                                    
+                                    </div>
 
-                           <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
-                              onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
-                           >
-                              <audio
-                                 ref={audioRefBrE}
-                                 src={`/sounds/A1/${ws.word.word}-BrE.mp3`}
-                                 onEnded={() => setIsPlayingBrE(false)}
-                              />
+                                    <div className={`w-full p-4 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
+                                       onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
+                                    >
+                                       <audio
+                                          ref={audioRefBrE}
+                                          src={`/sounds/A1/${ws.word.word}-BrE.mp3`}
+                                          onEnded={() => setIsPlayingBrE(false)}
+                                       />
 
-                              {ws.word.BrE}
+                                       {ws.word.BrE}
 
-                              {
-                                 isPlayingBrE ?
-                                 <Audio />
-                                 :
-                                 <RxSpeakerLoud style={{color: '#b8b8b8', fontSize: '20px'}}/>
-                              }
-                           </div>
-                        </div>
-                     </div>
-
-                     <div className='w-full flex items-center bg-white/50 p-4 z-1 rounded-2xl'
-                        onClick={() => copyDef(ws.word.definition)}   
-                     >{ws.word.definition}</div>
-
-                     <div className='w-full bg-white/50 rounded-2xl p-4 z-1'
-                     >
-                        <ul className='w-full flex flex-col gap-5'>
-                           {
-                              ws.word.examples.map((example, i) => (
-                                 <div key={i} className="flex flex-col">
-                                    <li className='font-bold'>{example.collocation}</li>
-                                    <h3>{example.example}</h3>
+                                       {
+                                          isPlayingBrE ?
+                                          <Audio />
+                                          :
+                                          <RxSpeakerLoud style={{color: '#b8b8b8', fontSize: '20px'}}/>
+                                       }
+                                    </div>
                                  </div>
-                           ))}
-                        </ul>
+                              </div>
+
+                              <div className='w-full flex items-center bg-white/50 p-4 z-1 rounded-2xl'
+                                 onClick={() => copyDef(ws.word.definition)}   
+                              >{ws.word.definition}</div>
+
+                              <div className='w-full bg-white/50 rounded-2xl p-4 z-1'
+                              >
+                                 <ul className='w-full flex flex-col gap-5'>
+                                    {
+                                       ws.word.examples.map((example, i) => (
+                                          <div key={i} className="flex flex-col">
+                                             <li className='font-bold'>{example.collocation}</li>
+                                             <h3>{example.example}</h3>
+                                          </div>
+                                    ))}
+                                 </ul>
+                              </div>
+
+                           </motion.div>
+                        </AnimatePresence>
                      </div>
+
+
+
                      {
                         finalWindow &&
                            <div className='absolute top-0 w-full h-dvh bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'>
