@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation/navigation";
 import { config } from 'dotenv';
 config();
 
@@ -8,7 +7,6 @@ export default function ChildLayout({ children }) {
 
       <div>
          {children}
-         <Navigation />
       </div>
    );
 }

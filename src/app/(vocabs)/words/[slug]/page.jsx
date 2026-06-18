@@ -13,13 +13,16 @@ import { toast, Slide } from 'react-toastify';
 import { getLessonByNumber, updateInteractionStatus} from '@/lib/db';
 import { useLoading } from '@/components/LoadingProvider';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { useNavigation } from '@/app/context/NavigationProvider';
 
 
 
 export default function Lessons({ params }) {
+   const { active } = useNavigation()
    const { stopLoading, startLoading } = useLoading();
 
+   
+   const [currentLevel, setCurrentLevel] = useState(null)
    const [specificLessonWords, setSpecificLessonWords] = useState(null)
    const [isLoading, setIsLoading] = useState(true);
    const [isLoading2, setIsLoading2] = useState(true);
@@ -63,19 +66,32 @@ export default function Lessons({ params }) {
    const [isPlayingBrE, setIsPlayingBrE] = useState(false);
    const [isPlayingAmE, setIsPlayingAmE] = useState(false);
 
-
+   
+   
    const { slug } = use(params)
    
-
+   
    useEffect(() => {
       if (!slug) return
       setLessonNumber(Number(slug))
 
+      const requestedLevel = 
+      active === 0 ? 'A1' : 
+      active === 1 ? 'A2' :
+      active === 2 ? 'B1' :
+      active === 3 ? 'B2' :
+      active === 4 ? 'C1' :
+      active === 5 ? 'C2' : 'A2'
+
+      console.log('ACTIVE FROM SLUG:', active);
+      console.log('REQO FROM SLUG:', requestedLevel);
+      
       const loadLesson = async () => {
          try {
-            const data = await getLessonByNumber('A1', slug);
+            const data = await getLessonByNumber(requestedLevel, slug);
             setSpecificLessonWords(data.words);
             setCategory(data.category)
+            console.log('LEVEL FROM SLUG:', data.category);
 
          } catch (error) {
             console.error("Failed to fetch words:", error);
@@ -460,7 +476,7 @@ export default function Lessons({ params }) {
    };
 
    return (
-      <div className='min-w-screen min-h-dvh bg-gray-300'>
+      <div className='min-w-screen min-h-dvh bg-background'>
 
          <div className="absolute w-full flex items-center h-15 z-1">
             <div className='w-full pl-5'
@@ -470,7 +486,7 @@ export default function Lessons({ params }) {
          {stage === 'assessment' && (
 
          <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10  flex flex-col items-center justify-around touch-pan-y`}>
-            <div className='w-full z-1 text-black'>
+            <div className='w-full z-1 text-foreground'>
                <h2 className='text-center font-bold'>Knowledge Check</h2>
                <p className='text-center'>Swipe right if you know the word.</p>
                <p className='text-center'>Swipe left if you need to learn the word.</p>
@@ -484,7 +500,7 @@ export default function Lessons({ params }) {
 
                      ref={index === 0 ? cardRef : null}
 
-                     className={`absolute rounded-4xl w-[80vw] h-full bg-white flex items-center justify-center p-10 ${
+                     className={`absolute rounded-4xl w-[80vw] h-full bg-gray-300 flex items-center justify-center p-10 ${
                      index === 0 && isSwiping ? 'transition-none' : 'transition-all'
                      } 
                      
@@ -500,8 +516,7 @@ export default function Lessons({ params }) {
                                  ? 'green'
                                  : swipeDirection === 'left'
                                  ? 'red'
-                                 : 'white'
-                                 : 'white',
+                                 : '' : ''
                            }
                         : {}
                      }
@@ -510,7 +525,7 @@ export default function Lessons({ params }) {
                      onTouchMove={index === 0 ? handleTouchMove : undefined}
                      onTouchEnd={index === 0 ? handleTouchEnd : undefined}
                   >
-                     <div className='text-center h-full flex items-center justify-evenly flex-col'>
+                     <div className='text-center h-full flex items-center justify-evenly flex-col text-black'>
                         <h2 className='text-4xl'
                         style={
                         index === 0
@@ -521,13 +536,13 @@ export default function Lessons({ params }) {
                                  ? 'white'
                                  : swipeDirection === 'left'
                                  ? 'white'
-                                 : 'black'
-                                 : 'black',
+                                 : ''
+                                 : '',
                            }
                         : {}}
                         >{card.word}</h2>
 
-                        <h3
+                        <h3 className='text-black'
                         style={
                         index === 0
                         ? {
@@ -537,13 +552,13 @@ export default function Lessons({ params }) {
                                  ? 'white'
                                  : swipeDirection === 'left'
                                  ? 'white'
-                                 : 'black'
-                                 : 'black',
+                                 : ''
+                                 : '',
                            }
                         : {}}
                         >{card.role}</h3>
 
-                        <p
+                        <p className='text-black'
                         style={
                         index === 0
                         ? {
@@ -553,8 +568,8 @@ export default function Lessons({ params }) {
                                  ? 'white'
                                  : swipeDirection === 'left'
                                  ? 'white'
-                                 : 'rgb(156, 156, 156)'
-                                 : 'rgb(156, 156, 156)',
+                                 : ''
+                                 : '',
                            }
                         : {}}
                         >{card.definition}</p>
@@ -565,21 +580,21 @@ export default function Lessons({ params }) {
 
             </div>
             <div className='h-10 w-full z-1'>
-               <div className='text-gray-700'>{counter} %</div>
-               <div className='h-5 bg-black/10 rounded-2xl'>
-                  <div className='bg-white h-full rounded-2xl transition-all'
+               <div className='text-foreground/60'>{counter} %</div>
+               <div className='h-5 bg-foreground/10 rounded-2xl'>
+                  <div className='bg-foreground/50 h-full rounded-2xl transition-all'
                      style={{width: counter + '%'}}
                   ></div>
                </div>
             </div>
 
             <div className="w-full flex items-center justify-end gap-2">
-               <button className='w-15 h-15 text-white bg-black/30 border border-white/40 rounded-[50%] active:bg-black z-1 flex items-center justify-center' onClick={startOver}>
+               <button className='w-15 h-15 text-foreground bg-foreground/20 border border-foreground/40 rounded-[50%] active:bg-foreground active:text-background z-1 flex items-center justify-center' onClick={startOver}>
                   <BsArrowRepeat size={30} />
                </button>
 
                <button
-                  className='w-15 h-15 bg-black/30 border border-white/40 text-white rounded-[50%] active:bg-black z-1'
+                  className='w-15 h-15 bg-foreground/20 border border-foreground/40 text-foreground rounded-[50%] active:bg-foreground active:text-background z-1'
                   onClick={skipAssessment}
                >
                   Skip
@@ -610,7 +625,7 @@ export default function Lessons({ params }) {
          {
             stage === 'shiftMsg' && (
                <div className='absolute w-full h-dvh top-0 flex items-center justify-center'>
-                  <div className={`relative opacity-0 transition-all duration-500 ease-out text-black text-xl ${appear ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>Time to Learn the New Words</div>
+                  <div className={`relative opacity-0 transition-all duration-500 ease-out text-foreground text-xl ${appear ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>Time to Learn the New Words</div>
                </div>
             )
          }
@@ -630,7 +645,7 @@ export default function Lessons({ params }) {
 
             {
                isLoading && 
-                  <div className="fixed z-2 top-0 left-0 w-full min-h-dvh flex justify-center items-center bg-white">
+                  <div className="fixed z-2 top-0 left-0 w-full min-h-dvh flex justify-center items-center ">
                      <Wait />
                   </div>
             }
@@ -656,7 +671,7 @@ export default function Lessons({ params }) {
 
                         {
                            isLoading2 &&
-                              <div className="absolute top-0 left-0 w-full h-full bg-white flex items-center justify-center">
+                              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                                  <Wait />
                               </div>
                         }
@@ -707,7 +722,7 @@ export default function Lessons({ params }) {
                            >
                               <div className='w-full flex flex-col items-start z-1'>
                                  <div className='w-full gap-5 flex items-center justify-center'>
-                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
+                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-background/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
                                        onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
                                     >
                                        <audio
@@ -727,7 +742,7 @@ export default function Lessons({ params }) {
                                     
                                     </div>
 
-                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-white/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
+                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-background/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
                                        onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
                                     >
                                        <audio

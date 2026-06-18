@@ -6,8 +6,9 @@ import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from '@/components/theme-provider';
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
 import ToastProvider from "@/components/ToastProvider/toastProvider";
-import { config } from 'dotenv';
-config();
+import { NavigationProvider } from './context/NavigationProvider';
+
+
 
 export const metadata = {
    title: "iGhazal App",
@@ -38,7 +39,9 @@ export default function RootLayout({ children }) {
                <ServiceWorkerRegistrar />
                <LoadingProvider>
                   <Ham />
-                  {children}
+                  <NavigationProvider>
+                     {children}
+                  </NavigationProvider>
                </LoadingProvider>
                <SpeedInsights />
                <Analytics />

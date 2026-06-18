@@ -70,8 +70,8 @@ function Settings(){
                className="w-full flex justify-between items-center active:bg-black/3 rounded-lg z-1 p-2"
             >
                <div className="flex flex-col">
-                  <button className="w-full text-bold text-start text-md">Idiom Box</button>
-                  <div className="text-xs">Display the idiom box in home screen</div>
+                  <button className="w-full text-bold text-start text-md">Vocabs Old Version</button>
+                  <div className="text-xs">Activate the old version for vocabs</div>
                </div>
 
                <Switch darkTheme={darkTheme} setDarkTheme={setDarkTheme} />

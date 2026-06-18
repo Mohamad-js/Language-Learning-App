@@ -7,7 +7,7 @@ function Audio(){
 
    return(
       <div className={styles.holder}>
-         <div className={styles.loader} style={darkMode ? {color: '#ffffff'} : {}}></div>
+         <div className={styles.loader}></div>
       </div>
    )
 }
