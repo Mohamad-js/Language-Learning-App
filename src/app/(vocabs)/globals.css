@@ -34,8 +34,3 @@ a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, 
   -webkit-tap-highlight-color: transparent;
   outline: none;
 }
-
-.toast-style {
-   color: red;
-   background-color: blue;
-}

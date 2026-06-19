@@ -5,9 +5,10 @@ import { Analytics } from "@vercel/analytics/react"
 import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from '@/components/theme-provider';
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
-import ToastProvider from "@/components/ToastProvider/toastProvider";
 import { NavigationProvider } from './context/NavigationProvider';
 import { SettingsProvider } from './context/SettingsProvider';
+import { Toaster } from 'sonner';
+
 
 
 
@@ -26,6 +27,8 @@ export const viewport = {
 
 
 export default function RootLayout({ children }) {
+   
+
   return (
     <html suppressHydrationWarning>
       <head>
@@ -41,14 +44,13 @@ export default function RootLayout({ children }) {
 
          <SettingsProvider>
             <ThemeProvider>
-               <ToastProvider>
-                  <LoadingProvider>
-                     <Ham />
-                     <NavigationProvider>
-                        {children}
-                     </NavigationProvider>
-                  </LoadingProvider>
-               </ToastProvider>
+               <LoadingProvider>
+                  <Ham />
+                  <NavigationProvider>
+                     {children}
+                     <Toaster position='top' theme='system' richColors />
+                  </NavigationProvider>
+               </LoadingProvider>
             </ThemeProvider>
          </SettingsProvider>
       </body>

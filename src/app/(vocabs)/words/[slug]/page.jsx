@@ -9,7 +9,7 @@ import Confetti from "@/components/confetti/confetti";
 import { RxSpeakerLoud } from "react-icons/rx";
 import Wait from '@/components/wait/wait';
 import Audio from '@/components/audio/audio';
-import { toast, Slide } from 'react-toastify';
+import { toast } from 'sonner';
 import { getLessonByNumber, updateInteractionStatus} from '@/lib/db';
 import { useLoading } from '@/components/LoadingProvider';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -80,10 +80,7 @@ export default function Lessons({ params }) {
       active === 2 ? 'B1' :
       active === 3 ? 'B2' :
       active === 4 ? 'C1' :
-      active === 5 ? 'C2' : 'A2'
-
-      console.log('ACTIVE FROM SLUG:', active);
-      console.log('REQO FROM SLUG:', requestedLevel);
+      active === 5 ? 'C2' : ''
       
       const loadLesson = async () => {
          try {
@@ -163,39 +160,30 @@ export default function Lessons({ params }) {
 
    const saveProgress = async (msg) => {
 
+      const requestedLevel = 
+         active === 0 ? 'A1' : 
+         active === 1 ? 'A2' :
+         active === 2 ? 'B1' :
+         active === 3 ? 'B2' :
+         active === 4 ? 'C1' :
+         active === 5 ? 'C2' : ''
+
       try {
-         await updateInteractionStatus({
-            level: 'A1',
-            lesson: lessonNumber,
-            knownWords,
-            unknownWords
-         });
+         await toast.promise(
+            updateInteractionStatus({
+               level: requestedLevel,
+               lesson: lessonNumber,
+               knownWords,
+               unknownWords
+            }),
+            {
+               loading: 'Saving progress...',
+               success: 'Progress saved!',
+               error: (error) => error.message
+            }
+         ) 
 
          startLoading()
-
-         toast.success(
-            <div className='w-full'>
-               <div className=''>
-                  Progress Saved
-               </div>
-               <div className=''>
-                  The words you studied are saved successfully
-               </div>
-            </div>
-            ,
-            {
-               position: "top-right",
-               autoClose: true,
-               hideProgressBar: false,
-               closeOnClick: true,
-               pauseOnHover: true,
-               draggable: true,
-               progress: undefined,
-               theme: "light",
-               transition: Slide,
-               closeButton: false,
-            }
-         )
 
          if (msg === 'save'){
             router.push('/words')

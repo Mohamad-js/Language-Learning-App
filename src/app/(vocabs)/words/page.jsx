@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Back from '@/components/backButton/back';
-import { toast, Slide } from 'react-toastify';
 import { getLessonsByLevel  } from '@/lib/db';
 import { useLoading, startLoading } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
