@@ -67,7 +67,7 @@ function Settings(){
 
             <div
                onClick={() => setDarkTheme(!darkTheme)}
-               className="w-full flex justify-between items-center active:bg-black/3 rounded-lg z-1 p-2"
+               className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 p-2"
             >
                <div className="flex flex-col">
                   <button className="w-full text-bold text-start text-md">Vocabs Old Version</button>
@@ -82,12 +82,12 @@ function Settings(){
          <div className="w-full flex flex-col pt-5 gap-1">
             <button className="font-bold text-start text-gray-500 text-xs border-0 border-b-2 border-gray-300">RESET</button>
 
-            <button className="w-full text-bold text-start text-md p-2 active:bg-black/3 rounded-lg z-1">Reset App</button>
+            <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset App</button>
 
             <div
-               className="w-full flex justify-between items-center active:bg-black/3 rounded-lg z-1 pr-2"
+               className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 pr-2"
             >
-               <button className="w-full text-bold text-start text-md p-2 active:bg-black/3 rounded-lg z-1">Reset Progress</button>
+               <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset Progress</button>
 
 
                <DropdownMenu>
@@ -117,13 +117,13 @@ function Settings(){
                </DropdownMenu>
             </div>
 
-            <button className="w-full text-bold text-start text-md p-2 active:bg-black/3 rounded-lg z-1">Reset Settings</button>
+            <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset Settings</button>
          </div>
 
          {
             warning &&
-            <div className='absolute top-0 left-0 w-full min-h-dvh bg-black/50 flex items-center justify-center p-10' onClick={cancelReset}>
-               <div className='w-full h-40 p-6 text-center bg-white rounded-2xl flex flex-col justify-between items-center'>
+            <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>
+               <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>
                   <div className='w-full flex flex-col justify-center items-center'>
                      <div className='text-lg'>All progress will be lost.</div>
                      <div className='text-sm'>Are you sure to reset {part} level?</div>

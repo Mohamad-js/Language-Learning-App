@@ -24,7 +24,6 @@ export default function Lessons({ params }) {
    
    const [currentLevel, setCurrentLevel] = useState(null)
    const [specificLessonWords, setSpecificLessonWords] = useState(null)
-   const [isLoading, setIsLoading] = useState(true);
    const [isLoading2, setIsLoading2] = useState(true);
 
    const [currentWordIndex, setCurrentWordIndex] = useState(0)
@@ -175,18 +174,18 @@ export default function Lessons({ params }) {
          startLoading()
 
          toast.success(
-            <div className={styles.toastHolder}>
-               <div className={styles.toastTitle}>
+            <div className='w-full'>
+               <div className=''>
                   Progress Saved
                </div>
-               <div className={styles.info}>
+               <div className=''>
                   The words you studied are saved successfully
                </div>
             </div>
             ,
             {
                position: "top-right",
-               autoClose: 3000,
+               autoClose: false,
                hideProgressBar: false,
                closeOnClick: true,
                pauseOnHover: true,
@@ -199,11 +198,9 @@ export default function Lessons({ params }) {
          )
 
          if (msg === 'save'){
-            router.push('/a1')
+            router.push('/words')
          } else if(msg === 'nextLesson'){
-            router.push(`/a1/${lessonNumber + 1}`)
-         } else if(msg === 'nextLevel'){
-            router.push('/a2')
+            router.push(`/words/${lessonNumber + 1}`)
          }
 
       } catch (error){
@@ -467,19 +464,11 @@ export default function Lessons({ params }) {
       }, 200);
    };
 
-   const handleMainPageLoad = () => {
-      stopLoading();
-   };
-
-   const handleLessonImageLoad = () => {
-      setIsLoading(false)
-   };
-
    return (
       <div className='min-w-screen min-h-dvh bg-background'>
 
-         <div className="absolute w-full flex items-center h-15 z-1">
-            <div className='w-full pl-5'
+         <div className="absolute top-5 left-5 flex items-center px-4 py-2 rounded-lg z-1 bg-background text-xs">
+            <div className=''
             >Lesson {lessonNumber}: {category}</div>
          </div>
 
@@ -604,15 +593,13 @@ export default function Lessons({ params }) {
 
             {
                excellent && (
-                  <div className='absolute w-full h-dvh p-25 top-0 bg-black/10 backdrop-blur-lg flex items-center justify-center flex-col z-3 gap-3'>
+                  <div className='absolute w-full h-dvh p-25 top-0 bg-background/10 backdrop-blur-lg flex items-center justify-center flex-col z-3 gap-3'>
                      <div className={`relative text-xl transition-all duration-400 text-black ${show ? 'top-0 opacity-100' : 'top-10 opacity-0'}`}>All done. Brilliant :)</div>
                      <div className='w-full flex flex-col gap-3'>
-                        <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={() => saveProgress('save')}>Save</button>
+                        <button className='flex-1 py-2 bg-background/60 rounded-2xl active:bg-background' onClick={() => saveProgress('save')}>Save</button>
                         {
-                           lessonNumber < wholeLessons ?
-                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={() => saveProgress('nextLesson')}>Next Lesson</button>
-                           :
-                           <button className='flex-1 py-2 bg-white/60 rounded-2xl active:bg-white' onClick={() => saveProgress('nextLevel')}>Start A2</button>
+                           lessonNumber < wholeLessons &&
+                           <button className='flex-1 py-2 bg-background/60 rounded-2xl active:bg-background' onClick={() => saveProgress('nextLesson')}>Next Lesson</button>
                         }
                      </div>
                   </div>
@@ -632,23 +619,8 @@ export default function Lessons({ params }) {
 
    
          {stage === 'learning' && (
-         <div className={`absolute w-full h-full top-0 p-5 pt-12 overflow-hidden flex items-center justify-start flex-col ${fade && styles.fadeIn}`}
+         <div className={`absolute w-full h-full top-0 p-5 pt-15 overflow-hidden flex items-center justify-start flex-col bg-linear-to-tr from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]`}
          >
-
-            <Image className='object-cover z-0'
-               src='/images/back/A1LearnSection.jpg'
-               fill
-               alt='background'
-               onLoad={handleLessonImageLoad}   
-            />
-            
-
-            {
-               isLoading && 
-                  <div className="fixed z-2 top-0 left-0 w-full min-h-dvh flex justify-center items-center ">
-                     <Wait />
-                  </div>
-            }
 
 
             {(() => {
@@ -722,7 +694,7 @@ export default function Lessons({ params }) {
                            >
                               <div className='w-full flex flex-col items-start z-1'>
                                  <div className='w-full gap-5 flex items-center justify-center'>
-                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-background/50 active:bg-white ${isPlayingAmE ? 'bg-white' : ''}`}
+                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-background/50 active:bg-background ${isPlayingAmE ? 'bg-background' : ''}`}
                                        onClick={isPlayingAmE ? pauseAudioAmE : playAudioAmE}
                                     >
                                        <audio
@@ -742,7 +714,7 @@ export default function Lessons({ params }) {
                                     
                                     </div>
 
-                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-background/50 active:bg-white ${isPlayingBrE ? 'bg-white' : {}}`}
+                                    <div className={`w-full p-4 super-compact:p-2 rounded-2xl flex justify-between items-center bg-background/50 active:bg-background ${isPlayingBrE ? 'bg-background' : {}}`}
                                        onClick={isPlayingBrE ? pauseAudioBrE : playAudioBrE}
                                     >
                                        <audio
@@ -763,11 +735,11 @@ export default function Lessons({ params }) {
                                  </div>
                               </div>
 
-                              <div className='w-full flex items-center bg-white/50 p-4 super-compact:p-2 z-1 rounded-2xl'
+                              <div className='w-full flex items-center bg-background/50 p-4 super-compact:p-2 z-1 rounded-2xl'
                                  onClick={() => copyDef(ws.word.definition)}   
                               >{ws.word.definition}</div>
 
-                              <div className='w-full bg-white/50 rounded-2xl p-4 super-compact:p-2 z-1'
+                              <div className='w-full bg-background/50 rounded-2xl p-4 super-compact:p-2 z-1'
                               >
                                  <ul className='w-full flex flex-col gap-5'>
                                     {
@@ -788,32 +760,28 @@ export default function Lessons({ params }) {
 
                      {
                         finalWindow &&
-                           <div className='absolute top-0 w-full h-dvh bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'>
+                           <div className='absolute top-0 w-full h-dvh bg-background/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'>
 
-                              <div className="text-white text-bold text-4xl">Great!</div>
-                              <div className="text-white text-bold text-lg mb-5">You finished lesson {lessonNumber}</div>
+                              <div className="text-bold text-4xl">Great!</div>
+                              <div className="text-bold text-lg mb-5">You finished lesson {lessonNumber}</div>
 
                               <div className="w-full flex gap-2 justify-center">
 
                                  <button
-                                    className='py-2 w-25 bg-white rounded-xl active:scale-95'
+                                    className='py-2 w-25 bg-background rounded-xl active:scale-95'
                                     onClick={restartLearning}
                                  >
                                     Review
                                  </button>
 
                                  {
-                                    lessonNumber < wholeLessons ?
-                                       <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
+                                    lessonNumber < wholeLessons &&
+                                       <button className='py-2 w-25 bg-background rounded-xl active:scale-95'
                                           onClick={() => saveProgress('nextLesson')}
                                        >Lesson {lessonNumber + 1}</button>
-                                       :
-                                       <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
-                                          onClick={() => saveProgress('nextLevel')}
-                                       >Start A2</button>  
                                  }
 
-                                 <button className='py-2 w-25 bg-white rounded-xl active:scale-95'
+                                 <button className='py-2 w-25 bg-background rounded-xl active:scale-95'
                                     onClick={() => saveProgress('save')}
                                  >Save</button>
                               </div>
@@ -824,7 +792,7 @@ export default function Lessons({ params }) {
 
                      <div className='w-full h-15 flex items-center justify-center gap-3 left-0 z-1'>
                         <button
-                           className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                           className='p-2 flex-1 bg-background rounded-xl active:scale-95'
                            onClick={handleBackLearningWord}
                         >
                            Back
@@ -833,14 +801,14 @@ export default function Lessons({ params }) {
                            learningWordIndex + 1 == learningWords.length ? 
 
                               <button
-                                 className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                                 className='p-2 flex-1 bg-background rounded-xl active:scale-95'
                                  onClick={handleNextLearningWord}
                               >
                                  Done
                               </button>
                            :
                               <button
-                                 className='p-2 flex-1 bg-white rounded-xl active:scale-95'
+                                 className='p-2 flex-1 bg-background rounded-xl active:scale-95'
                                  onClick={handleNextLearningWord}
                               >
                                  Next
