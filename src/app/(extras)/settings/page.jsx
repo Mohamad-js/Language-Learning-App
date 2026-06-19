@@ -13,11 +13,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useSettings } from "@/app/context/SettingsProvider";
 
 
 
 function Settings(){
-   const [darkTheme, setDarkTheme] = useState(false);
+   const { setSettings, settings } = useSettings()
    const [warning, setWarning] = useState(false)
    const [part, setPart] = useState('')
 
@@ -45,7 +46,29 @@ function Settings(){
       }
 
 
+      const changeSettings = (msg) => {
 
+         if(msg === 'idiomBox') {
+            setSettings(prev => ({
+               ...prev,
+               showIdiom: !prev.showIdiom
+            }))
+         }
+
+         if(msg === 'discoveryMode') {
+            setSettings(prev => ({
+               ...prev,
+               discoveryMode: !prev.discoveryMode
+            }))
+         }
+
+         if(msg === 'quizMode') {
+            setSettings(prev => ({
+               ...prev,
+               quizMode: !prev.quizMode
+            }))
+         }
+      }
 
    return(
       <div className='w-full min-h-dvh flex flex-col p-5'>
@@ -58,7 +81,7 @@ function Settings(){
                className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 p-2"
             >
                <div className="flex flex-col">
-                  <button className="w-full text-bold text-start text-md">Switch Mode</button>
+                  <button className="w-full text-bold text-start text-md">App Theme</button>
                   <div className="text-xs">Switch between dark and light modes</div>
                </div>
 
@@ -66,15 +89,84 @@ function Settings(){
             </div>
 
             <div
-               onClick={() => setDarkTheme(!darkTheme)}
+               onClick={() => changeSettings('idiomBox')}
                className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 p-2"
             >
                <div className="flex flex-col">
-                  <button className="w-full text-bold text-start text-md">Vocabs Old Version</button>
-                  <div className="text-xs">Activate the old version for vocabs</div>
+                  <button className="w-full text-bold text-start text-md">Idiom Box</button>
+                  <div className="text-xs">Display the idiom box in home screen</div>
                </div>
 
-               <Switch darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+               <label 
+                  onClick={(e) => e.stopPropagation()}
+                  className="relative inline-block text-[17px] w-13 h-[1.5em]">
+                  <input
+                  type="checkbox"
+                  className="sr-only peer"
+                  checked={settings.showIdiom}
+                  onChange={() => changeSettings('idiomBox')}
+               />
+
+                  <span
+                     className="absolute inset-0 cursor-pointer rounded-full bg-gray-300 transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] peer-checked:bg-green-400 peer-focus:shadow-[0_0_1px_#0974f1] before:content-[''] before:absolute before:inset-0 before:flex before:h-[1.5em] before:w-[1.5em] before:items-center before:justify-center before:rounded-[50px] before:bg-white before:transition-all before:duration-400 before:ease-[cubic-bezier(0.175,0.885,0.32,1.275)] peer-checked:before:translate-x-[1.52em]"
+                  />
+               </label>
+            </div>
+
+
+         </div>
+
+         <div className="w-full flex flex-col pt-5 gap-1">
+            <button className="font-bold text-start text-gray-500 text-xs border-0 border-b-2 border-gray-300">LEARNING</button>
+
+            <div
+               onClick={() => changeSettings('discoveryMode')}
+               className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 p-2"
+            >
+               <div className="flex flex-col">
+                  <button className="w-full text-bold text-start text-md">Discovery Mode</button>
+                  <div className="text-xs">Activate learning through discovering</div>
+               </div>
+
+               <label 
+                  onClick={(e) => e.stopPropagation()}
+                  className="relative inline-block text-[17px] w-13 h-[1.5em]">
+                  <input
+                  type="checkbox"
+                  className="sr-only peer"
+                  checked={settings.discoveryMode}
+                  onChange={() => changeSettings('discoveryMode')}
+               />
+
+                  <span
+                     className="absolute inset-0 cursor-pointer rounded-full bg-gray-300 transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] peer-checked:bg-green-400 peer-focus:shadow-[0_0_1px_#0974f1] before:content-[''] before:absolute before:inset-0 before:flex before:h-[1.5em] before:w-[1.5em] before:items-center before:justify-center before:rounded-[50px] before:bg-white before:transition-all before:duration-400 before:ease-[cubic-bezier(0.175,0.885,0.32,1.275)] peer-checked:before:translate-x-[1.52em]"
+                  />
+               </label>
+            </div>
+
+            <div
+               onClick={() => changeSettings('quizMode')}
+               className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 p-2"
+            >
+               <div className="flex flex-col">
+                  <button className="w-full text-bold text-start text-md">Quiz Mode</button>
+                  <div className="text-xs">Activate learning through questions</div>
+               </div>
+
+               <label 
+                  onClick={(e) => e.stopPropagation()}
+                  className="relative inline-block text-[17px] w-13 h-[1.5em]">
+                  <input
+                  type="checkbox"
+                  className="sr-only peer"
+                  checked={settings.quizMode}
+                  onChange={() => changeSettings('quizMode')}
+               />
+
+                  <span
+                     className="absolute inset-0 cursor-pointer rounded-full bg-gray-300 transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] peer-checked:bg-green-400 peer-focus:shadow-[0_0_1px_#0974f1] before:content-[''] before:absolute before:inset-0 before:flex before:h-[1.5em] before:w-[1.5em] before:items-center before:justify-center before:rounded-[50px] before:bg-white before:transition-all before:duration-400 before:ease-[cubic-bezier(0.175,0.885,0.32,1.275)] peer-checked:before:translate-x-[1.52em]"
+                  />
+               </label>
             </div>
 
          </div>
@@ -82,12 +174,15 @@ function Settings(){
          <div className="w-full flex flex-col pt-5 gap-1">
             <button className="font-bold text-start text-gray-500 text-xs border-0 border-b-2 border-gray-300">RESET</button>
 
-            <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset App</button>
+            <button onClick={() => showWarning('the app')}
+               className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1"
+            
+            >Reset the App</button>
 
             <div
                className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 pr-2"
             >
-               <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset Progress</button>
+               <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset the Progress</button>
 
 
                <DropdownMenu>
@@ -97,27 +192,27 @@ function Settings(){
                   <DropdownMenuContent>
                   <DropdownMenuGroup>
                      <DropdownMenuLabel>Vocabulary</DropdownMenuLabel>
-                     <DropdownMenuItem onClick={() => showWarning('A1')}>A1</DropdownMenuItem>
-                     <DropdownMenuItem disabled onClick={() => showWarning('A2')}>A2</DropdownMenuItem>
-                     <DropdownMenuItem disabled onClick={() => showWarning('B1')}>B1</DropdownMenuItem>
-                     <DropdownMenuItem disabled onClick={() => showWarning('B2')}>B2</DropdownMenuItem>
-                     <DropdownMenuItem disabled onClick={() => showWarning('C1')}>C1</DropdownMenuItem>
-                     <DropdownMenuItem disabled onClick={() => showWarning('C2')}>C2</DropdownMenuItem>
+                     <DropdownMenuItem>A1</DropdownMenuItem>
+                     <DropdownMenuItem>A2</DropdownMenuItem>
+                     <DropdownMenuItem>B1</DropdownMenuItem>
+                     <DropdownMenuItem>B2</DropdownMenuItem>
+                     <DropdownMenuItem>C1</DropdownMenuItem>
+                     <DropdownMenuItem>C2</DropdownMenuItem>
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem disabled>Grammar</DropdownMenuItem>
-                  <DropdownMenuItem disabled>Prepositions</DropdownMenuItem>
-                  <DropdownMenuItem disabled>Word Family</DropdownMenuItem>
-                  <DropdownMenuItem disabled>Speaking</DropdownMenuItem>
-                  <DropdownMenuItem disabled>Writing</DropdownMenuItem>
-                  <DropdownMenuItem disabled>Reading</DropdownMenuItem>
-                  <DropdownMenuItem disabled>Writing</DropdownMenuItem>
-                  <DropdownMenuItem disabled>Quiz</DropdownMenuItem>
+                  <DropdownMenuItem>Grammar</DropdownMenuItem>
+                  <DropdownMenuItem>Prepositions</DropdownMenuItem>
+                  <DropdownMenuItem>Word Family</DropdownMenuItem>
+                  <DropdownMenuItem>Speaking</DropdownMenuItem>
+                  <DropdownMenuItem>Writing</DropdownMenuItem>
+                  <DropdownMenuItem>Reading</DropdownMenuItem>
+                  <DropdownMenuItem>Writing</DropdownMenuItem>
+                  <DropdownMenuItem>Quiz</DropdownMenuItem>
                   </DropdownMenuContent>
                </DropdownMenu>
             </div>
 
-            <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset Settings</button>
+            <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset the Settings</button>
          </div>
 
          {
@@ -126,7 +221,7 @@ function Settings(){
                <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>
                   <div className='w-full flex flex-col justify-center items-center'>
                      <div className='text-lg'>All progress will be lost.</div>
-                     <div className='text-sm'>Are you sure to reset {part} level?</div>
+                     <div className='text-sm'>Are you sure to reset {part}?</div>
                   </div>
                   <div className='w-full flex justify-center gap-5'>
                      <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>

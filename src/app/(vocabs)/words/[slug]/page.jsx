@@ -185,7 +185,7 @@ export default function Lessons({ params }) {
             ,
             {
                position: "top-right",
-               autoClose: false,
+               autoClose: true,
                hideProgressBar: false,
                closeOnClick: true,
                pauseOnHover: true,

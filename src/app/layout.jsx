@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
 import ToastProvider from "@/components/ToastProvider/toastProvider";
 import { NavigationProvider } from './context/NavigationProvider';
+import { SettingsProvider } from './context/SettingsProvider';
 
 
 
@@ -34,19 +35,22 @@ export default function RootLayout({ children }) {
          <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </head>
       <body>
-         <ThemeProvider>
-            <ToastProvider>
-               <ServiceWorkerRegistrar />
-               <LoadingProvider>
-                  <Ham />
-                  <NavigationProvider>
-                     {children}
-                  </NavigationProvider>
-               </LoadingProvider>
-               <SpeedInsights />
-               <Analytics />
-            </ToastProvider>
-         </ThemeProvider>
+         <SpeedInsights />
+         <Analytics />
+         <ServiceWorkerRegistrar />
+
+         <SettingsProvider>
+            <ThemeProvider>
+               <ToastProvider>
+                  <LoadingProvider>
+                     <Ham />
+                     <NavigationProvider>
+                        {children}
+                     </NavigationProvider>
+                  </LoadingProvider>
+               </ToastProvider>
+            </ThemeProvider>
+         </SettingsProvider>
       </body>
     </html>
   );
