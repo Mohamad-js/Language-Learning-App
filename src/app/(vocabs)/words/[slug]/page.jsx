@@ -13,13 +13,18 @@ import { toast } from 'sonner';
 import { getLessonByNumber, updateInteractionStatus} from '@/lib/db';
 import { useLoading } from '@/components/LoadingProvider';
 import { motion, AnimatePresence } from 'framer-motion';
+import { fadeIn, lessonCompleteAnimation, expand } from '@/lib/animations/entrance';
 import { useNavigation } from '@/app/context/NavigationProvider';
+import { useAnimate } from 'framer-motion';
+import { useClickSound } from '@/components/sound';
 
 
 
 export default function Lessons({ params }) {
    const { active } = useNavigation()
-   const { stopLoading, startLoading } = useLoading();
+   const clickSound = useClickSound()
+   const { startLoading } = useLoading();
+   const [scope, animate] = useAnimate()
 
    
    const [currentLevel, setCurrentLevel] = useState(null)
@@ -158,6 +163,8 @@ export default function Lessons({ params }) {
    //    btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
    // }
 
+   const successAudioRef = useRef(null);
+
    const saveProgress = async (msg) => {
 
       const requestedLevel = 
@@ -178,12 +185,21 @@ export default function Lessons({ params }) {
             }),
             {
                loading: 'Saving progress...',
-               success: 'Progress saved!',
+
+               success: () => {
+                  successAudioRef.current?.play();
+                  return 'Progress saved!';
+               },
+
                error: (error) => error.message
             }
-         ) 
+         )
+
+         successAudioRef.current.currentTime = 0;
+         successAudioRef.current.play();
 
          startLoading()
+
 
          if (msg === 'save'){
             router.push('/words')
@@ -206,6 +222,15 @@ export default function Lessons({ params }) {
    useEffect(() => {
       setIsLoading2(true);
    }, [learningWordIndex]);
+
+
+   useEffect(() => {
+      if (!finalWindow) return;
+
+      lessonCompleteAnimation(animate);
+
+   }, [finalWindow, animate]);
+
 
    
    const learningWords = [...unknownWords];
@@ -454,6 +479,12 @@ export default function Lessons({ params }) {
 
    return (
       <div className='min-w-screen min-h-dvh bg-background'>
+
+         <audio
+            ref={successAudioRef}
+            src="/sounds/toast.mp3"
+            preload="auto"
+            />
 
          <div className="absolute top-5 left-5 flex items-center px-4 py-2 rounded-lg z-1 bg-background text-xs">
             <div className=''
@@ -748,33 +779,49 @@ export default function Lessons({ params }) {
 
                      {
                         finalWindow &&
-                           <div className='absolute top-0 w-full h-dvh bg-background/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'>
+                           <motion.div 
+                              {...fadeIn}
+                              className='absolute top-0 w-full h-dvh bg-background/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'
+                           >
+                              <div
+                                 ref={scope}
+                                 className="text-bold text-2xl mb-5 flex gap-3"
+                              >
+                                 <div className="text-2xl sentence left">LESSON</div>
+                                 <div
+                                    className="text-2xl sentence number"
+                                 >{lessonNumber}</div>
 
-                              <div className="text-bold text-4xl">Great!</div>
-                              <div className="text-bold text-lg mb-5">You finished lesson {lessonNumber}</div>
+                                 <div className="text-2xl sentence right">FINISHED</div>
+                              </div>
 
                               <div className="w-full flex gap-2 justify-center">
 
-                                 <button
+                                 <motion.button
+                                    {...expand({delay: 1.5})}
                                     className='py-2 w-25 bg-background rounded-xl active:scale-95'
                                     onClick={restartLearning}
                                  >
                                     Review
-                                 </button>
+                                 </motion.button>
 
                                  {
                                     lessonNumber < wholeLessons &&
-                                       <button className='py-2 w-25 bg-background rounded-xl active:scale-95'
+                                       <motion.button
+                                          {...expand({delay: 1.6})}
+                                          className='py-2 w-25 bg-background rounded-xl active:scale-95'
                                           onClick={() => saveProgress('nextLesson')}
-                                       >Lesson {lessonNumber + 1}</button>
+                                       >Lesson {lessonNumber + 1}</motion.button>
                                  }
 
-                                 <button className='py-2 w-25 bg-background rounded-xl active:scale-95'
+                                 <motion.button
+                                    {...expand({delay: 1.7})}
+                                    className='py-2 w-25 bg-background rounded-xl active:scale-95'
                                     onClick={() => saveProgress('save')}
-                                 >Save</button>
+                                 >Save</motion.button>
                               </div>
 
-                           </div>
+                           </motion.div>
 
                      }
 
@@ -787,13 +834,22 @@ export default function Lessons({ params }) {
                         </button>
                         {
                            learningWordIndex + 1 == learningWords.length ? 
-
-                              <button
-                                 className='p-2 flex-1 bg-background rounded-xl active:scale-95'
-                                 onClick={handleNextLearningWord}
-                              >
-                                 Done
-                              </button>
+                              <>
+                                 <button
+                                    className='p-2 flex-1 bg-background rounded-xl active:scale-95'
+                                    onClick={() => {
+                                       clickSound.play()
+                                       handleNextLearningWord()
+                                    }}
+                                 >
+                                    Done
+                                 </button>
+                                 <audio
+                                    ref={clickSound.audioRef}
+                                    src='/sounds/Done.mp3'
+                                    preload='auto'
+                                 />
+                              </>
                            :
                               <button
                                  className='p-2 flex-1 bg-background rounded-xl active:scale-95'

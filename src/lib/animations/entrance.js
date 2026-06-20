@@ -89,6 +89,8 @@ export const fadeLeftChild = {
 };
 
 
+
+
 export const fadeRight = {
    initial: {
       opacity: 0,
@@ -102,8 +104,147 @@ export const fadeRight = {
       transition: {
          type: "spring",
          stiffness: 500,
-         damping: 100,
+         damping: 60,
       },
    },
 
 }
+
+
+export const fadeIn = {
+   initial: {
+      opacity: 0,
+   },
+
+   animate: {
+      opacity: 1,
+      
+      transition: {
+         duration: 0.25,
+      },
+   },
+
+}
+
+
+
+
+export async function lessonCompleteAnimation(animate) {
+   // Slide sentence in
+   await animate(
+      '.sentence',
+      {
+         opacity: [0, 1],
+         x: [200, 0],
+      },
+      {
+            type: 'spring',
+            stiffness: 400,
+            damping: 30,
+            delay: 0.5
+      }
+   );
+
+   // Grow number and move words
+   await Promise.all([
+      animate(
+         '.number',
+         {
+            scale: 3,
+         },
+         {
+            type: 'spring',
+            stiffness: 400,
+            damping: 30,
+         }
+      ),
+
+      animate(
+         '.left',
+         {
+            x: -20,
+         },
+         {
+            type: 'spring',
+            stiffness: 300,
+            damping: 20,
+         }
+      ),
+
+      animate(
+         '.right',
+         {
+            x: 20,
+         },
+         {
+            type: 'spring',
+            stiffness: 300,
+            damping: 20,
+         }
+      ),
+   ]);
+
+   // Wait 1 second
+   await new Promise(resolve =>
+      setTimeout(resolve, 500)
+   );
+
+   // Return everything
+   await Promise.all([
+      animate(
+         '.number',
+         {
+            scale: 1,
+         },
+         {
+            type: 'spring',
+            stiffness: 400,
+            damping: 10,
+         }
+      ),
+
+      animate(
+         '.left',
+         {
+            x: 0,
+         },
+         {
+            type: 'spring',
+            stiffness: 300,
+            damping: 20,
+         }
+      ),
+
+      animate(
+         '.right',
+         {
+            x: 0,
+         },
+         {
+            type: 'spring',
+            stiffness: 300,
+            damping: 20,
+         }
+      ),
+   ]);
+}
+
+
+export const expand = ({delay = 0}) => ({
+   initial: {
+      opacity: 0,
+      scale: 0
+   },
+
+   animate: {
+      opacity: 1,
+      scale: 1,
+
+      transition: {
+         type: 'spring',
+         stiffness: 600,
+         damping: 100,
+         delay: delay
+      }
+   }
+})
