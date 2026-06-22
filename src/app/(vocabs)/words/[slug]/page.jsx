@@ -17,6 +17,7 @@ import { fadeIn, lessonCompleteAnimation, expand } from '@/lib/animations/entran
 import { useNavigation } from '@/app/context/NavigationProvider';
 import { useAnimate } from 'framer-motion';
 import { useClickSound } from '@/components/sound';
+import SemanticOrbit from '@/components/SemanticOrbit';
 
 
 
@@ -27,7 +28,6 @@ export default function Lessons({ params }) {
    const [scope, animate] = useAnimate()
 
    
-   const [currentLevel, setCurrentLevel] = useState(null)
    const [specificLessonWords, setSpecificLessonWords] = useState(null)
    const [isLoading2, setIsLoading2] = useState(true);
 
@@ -38,21 +38,14 @@ export default function Lessons({ params }) {
    const [unknownWords, setUnknownWords] = useState([]);
    const [finalWindow, setFinalWindow] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
-   const [savedA1Vocabs, setSavedA1Vocabs] = useState([])
-   const [showPrompt, setShowPrompt] = useState(false)
-   const [confirm, setConfirm] = useState(null)
    const [close, setClose] = useState(false)
    const [appear, setAppear] = useState(false)
    const [fade, setFade] = useState(false)
    const [show, setShow] = useState(false)
    const [excellent, setExcellent] = useState(false)
-   const [totalA1Progress, setTotalA1Progress] = useState(null)
-   const [lessonsA1, setLessonsA1] = useState(null)
    const [totalWordsCount, setTotalWordsCount] = useState(null)
-   const [a1WordsCount, setA1WordsCount] = useState(null)
    const [showConfetti, setShowConfetti] = useState(false)
    const [showCongrats, setShowCongrats] = useState(false)
-   const [anime, setAnime] = useState(false)
    const [btnPressed, setBtnPressed] = useState(null)
    const [category, setCategory] = useState(false)
    
@@ -833,23 +826,30 @@ export default function Lessons({ params }) {
                            Back
                         </button>
                         {
-                           learningWordIndex + 1 == learningWords.length ? 
-                              <>
-                                 <button
-                                    className='p-2 flex-1 bg-background rounded-xl active:scale-95'
-                                    onClick={() => {
-                                       clickSound.play()
-                                       handleNextLearningWord()
-                                    }}
-                                 >
-                                    Done
-                                 </button>
-                                 <audio
-                                    ref={clickSound.audioRef}
-                                    src='/sounds/Done.mp3'
-                                    preload='auto'
-                                 />
-                              </>
+                           learningWordIndex + 1 == learningWords.length ?
+
+                              <button
+                                 onClick={() => setStage('practice')}
+                                 className="p-2 flex-1 bg-background rounded-xl active:scale-95"
+                              >Practice</button>
+
+
+                              // <>
+                              //    <button
+                              //       className='p-2 flex-1 bg-background rounded-xl active:scale-95'
+                              //       onClick={() => {
+                              //          clickSound.play()
+                              //          handleNextLearningWord()
+                              //       }}
+                              //    >
+                              //       Done
+                              //    </button>
+                              //    <audio
+                              //       ref={clickSound.audioRef}
+                              //       src='/sounds/Done.mp3'
+                              //       preload='auto'
+                              //    />
+                              // </>
                            :
                               <button
                                  className='p-2 flex-1 bg-background rounded-xl active:scale-95'
@@ -867,6 +867,32 @@ export default function Lessons({ params }) {
             })()}
          </div>
          )}
+
+      {
+         stage === 'practice' && (() => {
+            const ROOT_WORD = "Take";
+
+            const VOCAB_DATA = [
+               { id: 1, text: "a break", isCorrect: true },
+               { id: 2, text: "a mistake", isCorrect: false },
+               { id: 3, text: "a photo", isCorrect: true },
+               { id: 4, text: "your time", isCorrect: true },
+               { id: 5, text: "homework", isCorrect: false },
+               { id: 6, text: "care of", isCorrect: true },
+               { id: 7, text: "back", isCorrect: true },
+            ];
+
+
+            return (
+               <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
+                  <SemanticOrbit
+                     ROOT_WORD = {ROOT_WORD}
+                     VOCAB_DATA = {VOCAB_DATA}
+                  />
+               </div>
+            );
+         })()
+      }
 
       {
          showCongrats &&

@@ -200,6 +200,7 @@ export const getLessonByNumber = async (levelName, lessonNumber) => {
 
 
 
+
 export const resetAllProgress = async () => {
 
    const db = await initDB();
@@ -235,6 +236,44 @@ export const resetAllProgress = async () => {
    }
 
    await tx.done;
+
+   return true;
+};
+
+
+
+export const resetLevelProgress = async (levelName) => {
+
+   const db = await initDB();
+
+   const level = await db.get("levels", levelName);
+
+   if (!level) {
+      throw new Error(`Level "${levelName}" not found`);
+   }
+
+   level.status = "waiting";
+
+   for (const lesson of level.content) {
+
+      lesson.status = "waiting";
+
+      for (const word of lesson.words) {
+
+         word.status = "waiting";
+
+         // Future notes support
+         if ("note" in word) {
+            word.note = "";
+         }
+
+         if ("notes" in word) {
+            word.notes = [];
+         }
+      }
+   }
+
+   await db.put("levels", level);
 
    return true;
 };

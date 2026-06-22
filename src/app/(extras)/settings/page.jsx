@@ -2,7 +2,7 @@
 import Switch from "@/components/switch/switch";
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
-import { resetAllProgress } from "@/lib/db";
+import { resetAllProgress, resetLevelProgress } from "@/lib/db";
 import ThemeToggle from "@/components/themeSwitch/themeToggle";
 import {
   DropdownMenu,
@@ -33,42 +33,52 @@ function Settings(){
       setWarning(false)
    }
 
-      const resetAction = async () => {
-         try {
-            await resetAllProgress()
-            setWarning(false)
-            localStorage.clear()
-            window.location.href = '/';
-   
-         } catch (error){
-            console.error('Error Restarting:', error)
-         }
+   const resetApp = async () => {
+      try {
+         await resetAllProgress()
+         setWarning(false)
+         localStorage.clear()
+         window.location.href = '/';
+
+      } catch (error){
+         console.error('Error Restarting:', error)
+      }
+   }
+
+   const resetAction = async () => {
+      try {
+         await resetLevelProgress(part)
+         setWarning(false)
+         
+      } catch (error){
+         console.error('Error Restarting:', error)
+      }
+   }
+
+
+   const changeSettings = (msg) => {
+
+      if(msg === 'idiomBox') {
+         setSettings(prev => ({
+            ...prev,
+            showIdiom: !prev.showIdiom
+         }))
       }
 
-
-      const changeSettings = (msg) => {
-
-         if(msg === 'idiomBox') {
-            setSettings(prev => ({
-               ...prev,
-               showIdiom: !prev.showIdiom
-            }))
-         }
-
-         if(msg === 'discoveryMode') {
-            setSettings(prev => ({
-               ...prev,
-               discoveryMode: !prev.discoveryMode
-            }))
-         }
-
-         if(msg === 'quizMode') {
-            setSettings(prev => ({
-               ...prev,
-               quizMode: !prev.quizMode
-            }))
-         }
+      if(msg === 'discoveryMode') {
+         setSettings(prev => ({
+            ...prev,
+            discoveryMode: !prev.discoveryMode
+         }))
       }
+
+      if(msg === 'quizMode') {
+         setSettings(prev => ({
+            ...prev,
+            quizMode: !prev.quizMode
+         }))
+      }
+   }
 
    return(
       <div className='w-full min-h-dvh flex flex-col p-5'>
@@ -192,7 +202,7 @@ function Settings(){
                   <DropdownMenuContent>
                   <DropdownMenuGroup>
                      <DropdownMenuLabel>Vocabulary</DropdownMenuLabel>
-                     <DropdownMenuItem>A1</DropdownMenuItem>
+                     <DropdownMenuItem onClick={() => showWarning('A1')}>A1</DropdownMenuItem>
                      <DropdownMenuItem>A2</DropdownMenuItem>
                      <DropdownMenuItem>B1</DropdownMenuItem>
                      <DropdownMenuItem>B2</DropdownMenuItem>
@@ -225,7 +235,32 @@ function Settings(){
                   </div>
                   <div className='w-full flex justify-center gap-5'>
                      <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>
-                     <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetAction}>Yes</button>
+                     {
+                        <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetAction}>Yes</button>
+                     }
+                  </div>
+               </div>
+            </div>
+         }
+
+         {
+            warning &&
+            <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>
+               <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>
+                  <div className='w-full flex flex-col justify-center items-center'>
+                     <div className='text-lg'>All progress will be lost.</div>
+                     <div className='text-sm'>Are you sure to reset {part}?</div>
+                  </div>
+                  
+                  <div className='w-full flex justify-center gap-5'>
+                     <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>
+                     {
+                        part === 'the app' ?
+
+                        <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetApp}>Yes</button>
+                     :
+                        <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetAction}>Yes</button>
+                     }
                   </div>
                </div>
             </div>
