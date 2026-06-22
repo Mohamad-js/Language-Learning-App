@@ -29,6 +29,7 @@
                         "example": "I live in a big house."
                      }
                   ],
+
                   "notes": {
                      "title": "",
                      "text": ""
@@ -189,6 +190,19 @@
                      "title": "",
                      "text": ""
                   }
+               }
+            ],
+            "practice": [
+               {
+                  "rootWord": "I",
+                  "options": [
+                     { "id": "t1", "text": "a break", "isCorrect": true },
+                     { "id": "t2", "text": "a mistake", "isCorrect": false },
+                     { "id": "t3", "text": "a photo", "isCorrect": true },
+                     { "id": "t4", "text": "your time", "isCorrect": true },
+                     { "id": "t5", "text": "homework", "isCorrect": false },
+                     { "id": "t6", "text": "care", "isCorrect": true }
+                  ]
                }
             ]
          },

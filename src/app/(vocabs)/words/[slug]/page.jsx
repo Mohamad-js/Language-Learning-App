@@ -23,7 +23,7 @@ import SemanticOrbit from '@/components/SemanticOrbit';
 
 export default function Lessons({ params }) {
    const { active } = useNavigation()
-   const clickSound = useClickSound()
+   const { audioRef, play } = useClickSound()
    const { startLoading } = useLoading();
    const [scope, animate] = useAnimate()
 
@@ -66,7 +66,14 @@ export default function Lessons({ params }) {
    
    
    const { slug } = use(params)
-   
+
+
+   useEffect(() => {
+      if (finalWindow) {
+         play();
+      }
+   }, [finalWindow, play]);
+      
    
    useEffect(() => {
       if (!slug) return
@@ -156,7 +163,6 @@ export default function Lessons({ params }) {
    //    btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
    // }
 
-   const successAudioRef = useRef(null);
 
    const saveProgress = async (msg) => {
 
@@ -180,7 +186,6 @@ export default function Lessons({ params }) {
                loading: 'Saving progress...',
 
                success: () => {
-                  successAudioRef.current?.play();
                   return 'Progress saved!';
                },
 
@@ -188,8 +193,6 @@ export default function Lessons({ params }) {
             }
          )
 
-         successAudioRef.current.currentTime = 0;
-         successAudioRef.current.play();
 
          startLoading()
 
@@ -217,14 +220,6 @@ export default function Lessons({ params }) {
    }, [learningWordIndex]);
 
 
-   useEffect(() => {
-      if (!finalWindow) return;
-
-      lessonCompleteAnimation(animate);
-
-   }, [finalWindow, animate]);
-
-
    
    const learningWords = [...unknownWords];
 
@@ -250,6 +245,7 @@ export default function Lessons({ params }) {
    const restartLearning = () => {
       setLearningWordIndex(0)
       setFinalWindow(false)
+      setStage('learning')
    }
 
 
@@ -474,10 +470,10 @@ export default function Lessons({ params }) {
       <div className='min-w-screen min-h-dvh bg-background'>
 
          <audio
-            ref={successAudioRef}
-            src="/sounds/toast.mp3"
+            ref={audioRef}
+            src="/sounds/Done.mp3"
             preload="auto"
-            />
+         />
 
          <div className="absolute top-5 left-5 flex items-center px-4 py-2 rounded-lg z-1 bg-background text-xs">
             <div className=''
@@ -770,58 +766,11 @@ export default function Lessons({ params }) {
 
 
 
-                     {
-                        finalWindow &&
-                           <motion.div 
-                              {...fadeIn}
-                              className='absolute top-0 w-full h-dvh bg-background/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-2'
-                           >
-                              <div
-                                 ref={scope}
-                                 className="text-bold text-2xl mb-5 flex gap-3"
-                              >
-                                 <div className="text-2xl sentence left">LESSON</div>
-                                 <div
-                                    className="text-2xl sentence number"
-                                 >{lessonNumber}</div>
-
-                                 <div className="text-2xl sentence right">FINISHED</div>
-                              </div>
-
-                              <div className="w-full flex gap-2 justify-center">
-
-                                 <motion.button
-                                    {...expand({delay: 1.5})}
-                                    className='py-2 w-25 bg-background rounded-xl active:scale-95'
-                                    onClick={restartLearning}
-                                 >
-                                    Review
-                                 </motion.button>
-
-                                 {
-                                    lessonNumber < wholeLessons &&
-                                       <motion.button
-                                          {...expand({delay: 1.6})}
-                                          className='py-2 w-25 bg-background rounded-xl active:scale-95'
-                                          onClick={() => saveProgress('nextLesson')}
-                                       >Lesson {lessonNumber + 1}</motion.button>
-                                 }
-
-                                 <motion.button
-                                    {...expand({delay: 1.7})}
-                                    className='py-2 w-25 bg-background rounded-xl active:scale-95'
-                                    onClick={() => saveProgress('save')}
-                                 >Save</motion.button>
-                              </div>
-
-                           </motion.div>
-
-                     }
 
                      <div className='w-full h-15 flex items-center justify-center gap-3 left-0 z-1'>
                         <button
                            className='p-2 flex-1 bg-background rounded-xl active:scale-95'
-                           onClick={handleBackLearningWord}
+                           onClick = {handleBackLearningWord}
                         >
                            Back
                         </button>
@@ -838,9 +787,9 @@ export default function Lessons({ params }) {
                               //    <button
                               //       className='p-2 flex-1 bg-background rounded-xl active:scale-95'
                               //       onClick={() => {
-                              //          clickSound.play()
-                              //          handleNextLearningWord()
-                              //       }}
+                                 //          clickSound.play()
+                                 //          handleNextLearningWord()
+                                 //       }}
                               //    >
                               //       Done
                               //    </button>
@@ -863,31 +812,111 @@ export default function Lessons({ params }) {
                   </div>
                </>
                );
-
+               
             })()}
          </div>
          )}
 
       {
-         stage === 'practice' && (() => {
-            const ROOT_WORD = "Take";
+         finalWindow &&
+            <motion.div 
+               {...fadeIn}
+               onAnimationComplete={() => {
+                  lessonCompleteAnimation(animate);
+               }}
+               className='absolute top-0 w-full h-dvh bg-background/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-3'
+            >
+               <div
+                  ref={scope}
+                  className="text-bold text-2xl mb-5 flex gap-3"
+               >
+                  <div className="text-2xl sentence left opacity-0">LESSON</div>
+                  <div
+                     className="text-2xl sentence number opacity-0"
+                  >{lessonNumber}</div>
 
-            const VOCAB_DATA = [
-               { id: 1, text: "a break", isCorrect: true },
-               { id: 2, text: "a mistake", isCorrect: false },
-               { id: 3, text: "a photo", isCorrect: true },
-               { id: 4, text: "your time", isCorrect: true },
-               { id: 5, text: "homework", isCorrect: false },
-               { id: 6, text: "care of", isCorrect: true },
-               { id: 7, text: "back", isCorrect: true },
+                  <div className="text-2xl sentence right opacity-0">FINISHED</div>
+               </div>
+
+               <div className="w-full flex gap-2 justify-center">
+
+                  <motion.button
+                     {...expand({delay: 1.5})}
+                     className='py-2 w-25 bg-background rounded-xl active:scale-95'
+                     onClick={restartLearning}
+                  >
+                     Review
+                  </motion.button>
+
+                  {
+                     lessonNumber < wholeLessons &&
+                        <motion.button
+                           {...expand({delay: 1.6})}
+                           className='py-2 w-25 bg-background rounded-xl active:scale-95'
+                           onClick={() => saveProgress('nextLesson')}
+                        >Lesson {lessonNumber + 1}</motion.button>
+                  }
+
+                  <motion.button
+                     {...expand({delay: 1.7})}
+                     className='py-2 w-25 bg-background rounded-xl active:scale-95'
+                     onClick={() => saveProgress('save')}
+                  >Save</motion.button>
+
+               </div>
+
+                     
+
+            </motion.div>
+
+      }
+
+      {
+         stage === 'practice' && (() => {
+
+            const lessonData = [
+               {
+                  rootWord: "Take",
+                  options: [
+                     { id: "t1", text: "a break", isCorrect: true },
+                     { id: "t2", text: "a mistake", isCorrect: true },
+                     { id: "t3", text: "a photo", isCorrect: true },
+                     { id: "t4", text: "your time", isCorrect: true },
+                     { id: "t5", text: "homework", isCorrect: true },
+                     { id: "t6", text: "care", isCorrect: true },
+                  ]
+               },
+               // {
+               //    rootWord: "Make",
+               //    options: [
+               //       { id: "m1", text: "a mistake", isCorrect: true },
+               //       { id: "m2", text: "a break", isCorrect: false },
+               //       { id: "m3", text: "an effort", isCorrect: true },
+               //       { id: "m4", text: "your bed", isCorrect: true },
+               //       { id: "m5", text: "a shower", isCorrect: false },
+               //       { id: "m6", text: "money", isCorrect: true },
+               //    ]
+               // },
+               // {
+               //    rootWord: "Do",
+               //    options: [
+               //       { id: "d1", text: "your best", isCorrect: true },
+               //       { id: "d2", text: "a coffee", isCorrect: false },
+               //       { id: "d3", text: "a favor", isCorrect: true },
+               //       { id: "d4", text: "the laundry", isCorrect: true },
+               //       { id: "d5", text: "a photo", isCorrect: false },
+               //       { id: "d6", text: "business", isCorrect: true },
+               //    ]
+               // }
+               // ... add as many as you want!
             ];
 
 
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
                   <SemanticOrbit
-                     ROOT_WORD = {ROOT_WORD}
-                     VOCAB_DATA = {VOCAB_DATA}
+                     lessonData = {lessonData}
+                     onLessonFinished = {setFinalWindow}
                   />
                </div>
             );

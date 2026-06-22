@@ -2,24 +2,36 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// If you are using Next.js App Router for navigation later:
-// import { useRouter } from "next/navigation";
 
+export default function SemanticOrbit({ lessonData, onLessonFinished }) {
+  // 1. The Master Index tracking which Word we are currently on
+  const [currentStep, setCurrentStep] = useState(0);
+  const [lessonCompleted, setLessonCompleted] = useState(false);
 
-export default function SemanticOrbit({ROOT_WORD, VOCAB_DATA}) {
-  // router = useRouter(); // For when you wire up the buttons
-  
-  const [words, setWords] = useState(VOCAB_DATA);
+  // Grab the specific data for the active step
+  const currentRound = lessonData[currentStep];
+  const ROOT_WORD = currentRound.rootWord;
+
+  // Active board state
+  const [words, setWords] = useState(currentRound.options);
   const [matchedWords, setMatchedWords] = useState([]);
-  const [shake, setShake] = useState(false);
   
+  // Feedback states
+  const [shake, setShake] = useState(false);
+  const [isCorrectDrop, setIsCorrectDrop] = useState(false); // ✨ NEW: Flash green on successful release
+
   const containerRef = useRef(null);
   const centerRef = useRef(null);
   const [centerRect, setCenterRect] = useState(null);
 
-  // Derived state to check if game is finished
-  const totalCorrectNeeded = VOCAB_DATA.filter(w => w.isCorrect).length;
-  const isComplete = matchedWords.length === totalCorrectNeeded;
+  // --- FIXED: INSTANT STATE RESET ON STEP CHANGE ---
+  const [prevStep, setPrevStep] = useState(0);
+  if (currentStep !== prevStep) {
+    setPrevStep(currentStep);
+    setWords(lessonData[currentStep].options);
+    setMatchedWords([]);
+    setIsCorrectDrop(false); // Reset feedback on next step
+  }
 
   useEffect(() => {
     const updateRect = () => {
@@ -28,22 +40,16 @@ export default function SemanticOrbit({ROOT_WORD, VOCAB_DATA}) {
     updateRect();
     window.addEventListener("resize", updateRect);
     return () => window.removeEventListener("resize", updateRect);
-  }, []);
+  }, [currentStep]);
 
-
-  // Sound Helper
   const playSound = (type) => {
     try {
-      const audio = new Audio(`/sounds/${type}.mp3`);
-      audio.play();
-    } catch (err) {
-      console.log("Audio muted or blocked by browser policy");
-    }
+      new Audio(`/sounds/${type}.mp3`).play();
+    } catch (err) {}
   };
 
   const handleDragEnd = (event, info, word) => {
     if (!centerRect) return;
-
     const dropX = info.point.x;
     const dropY = info.point.y;
     const isInsideCenter =
@@ -53,6 +59,11 @@ export default function SemanticOrbit({ROOT_WORD, VOCAB_DATA}) {
     if (isInsideCenter) {
       if (word.isCorrect) {
         playSound("true");
+        
+        // ✨ Trigger green flash state, then clear it after 500ms
+        setIsCorrectDrop(true);
+        setTimeout(() => setIsCorrectDrop(false), 500);
+
         setWords((prev) => prev.filter((w) => w.id !== word.id));
         setMatchedWords((prev) => [...prev, word]);
       } else {
@@ -62,22 +73,59 @@ export default function SemanticOrbit({ROOT_WORD, VOCAB_DATA}) {
       }
     }
   };
+  
+  const totalCorrectNeeded = currentRound.options.filter(w => w.isCorrect).length;
+  const isRoundComplete = matchedWords.length === totalCorrectNeeded;
+  const isFinalWordOfLesson = currentStep === lessonData.length - 1;
+
+  useEffect(() => {
+    if (!isRoundComplete) return;
+
+    playSound("progress");
+
+    if (!isFinalWordOfLesson) {
+      const timer = setTimeout(() => {
+        setCurrentStep(prev => prev + 1);
+      }, 1200);
+      return () => clearTimeout(timer);
+    }
+
+    const timer = setTimeout(() => {
+      onLessonFinished?.(true);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, [isRoundComplete, isFinalWordOfLesson, currentStep, onLessonFinished]);
+
+
+  // Handles target nodes colors dynamically based on drop states
+  const getCenterBgClass = () => {
+    if (shake) return "bg-red-500";
+    if (isCorrectDrop) return "bg-green-500 dark:bg-green-600"; // ✨ Turns green here on release
+    return "bg-blue-600 dark:bg-blue-500";
+  };
 
   return (
-    <div 
-      ref={containerRef} 
-      className="relative w-full max-w-4xl h-[600px] mx-auto bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-inner overflow-hidden border border-slate-200 dark:border-slate-800 flex items-center justify-center"
-    >
-      {/* Target Node */}
+    <div ref={containerRef} className="relative w-full max-w-4xl h-[600px] mx-auto bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-inner overflow-hidden border border-slate-200 dark:border-slate-800 flex items-center justify-center">
+      
+      {/* Target Node (Root Word) */}
       <motion.div
         ref={centerRef}
-        animate={shake ? { x: [-10, 10, -10, 10, 0] } : { x: 0 }}
-        transition={{ duration: 0.4 }}
-        className={`relative z-10 flex flex-col items-center justify-center w-25 h-25 rounded-full shadow-2xl transition-colors duration-300 ${
-          shake ? "bg-red-500" : "bg-blue-600 dark:bg-blue-500"
-        }`}
+        // ✨ Adds a slight pulse scale effect alongside the color change when correct
+        animate={{
+          x: shake ? [-10, 10, -10, 10, 0] : 0,
+          scale: isCorrectDrop ? [1, 1.08, 1] : 1
+        }}
+        transition={{ 
+          x: { duration: 0.4 },
+          scale: { duration: 0.4, ease: "easeInOut" }
+        }}
+        className={`relative z-10 flex flex-col items-center justify-center w-40 h-40 rounded-full shadow-2xl transition-colors duration-200 ${getCenterBgClass()}`}
       >
-        <span className="text-2xl font-bold text-white mb-2">{ROOT_WORD}</span>
+        <span className="text-2xl font-bold text-white mb-1">{ROOT_WORD}</span>
+        <span className="text-xs font-semibold text-blue-200 tracking-widest uppercase mb-1">
+          Word {currentStep + 1} of {lessonData.length}
+        </span>
         <span className="text-sm font-medium text-blue-100">
           {matchedWords.length} / {totalCorrectNeeded}
         </span>
@@ -87,14 +135,14 @@ export default function SemanticOrbit({ROOT_WORD, VOCAB_DATA}) {
       <AnimatePresence>
         {words.map((word, index) => {
           const angle = (index / words.length) * Math.PI * 2;
-          const radiusX = 110;
+          const radiusX = 90;
           const radiusY = 220;
           const startX = Math.cos(angle) * radiusX;
           const startY = Math.sin(angle) * radiusY;
 
           return (
             <motion.div
-              key={word.id}
+              key={`${currentStep}-${word.id}`}
               className="absolute top-1/2 left-1/2 w-0 h-0 flex items-center justify-center z-20"
               initial={{ opacity: 0, scale: 0, x: startX, y: startY }}
               animate={{ opacity: 1, scale: 1, x: startX, y: startY }}
@@ -122,7 +170,7 @@ export default function SemanticOrbit({ROOT_WORD, VOCAB_DATA}) {
 
       {/* SUCCESS COMPLETION OVERLAY */}
       <AnimatePresence>
-        {isComplete && (
+        {isRoundComplete && !isFinalWordOfLesson && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -132,38 +180,30 @@ export default function SemanticOrbit({ROOT_WORD, VOCAB_DATA}) {
             <motion.div
               initial={{ scale: 0.8, y: 20 }}
               animate={{ scale: 1, y: 0 }}
-              transition={{ type: "spring", damping: 15, stiffness: 300, delay: 0.2 }}
               className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl flex flex-col items-center"
             >
-              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center text-3xl mb-4 shadow-inner">
-                🎉
+              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center text-3xl mb-4">
+                {isFinalWordOfLesson ? "🏆" : "🎉"}
               </div>
               
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
-                Exercise Complete!
+                {isFinalWordOfLesson ? "Lesson Complete!" : "Perfect Match!"}
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
-                You mastered all the collocations for <span className="font-semibold text-blue-500">"{ROOT_WORD}"</span>.
+                {isFinalWordOfLesson 
+                  ? "You have successfully completed all collocations for this lesson."
+                  : `You found all the correct pairs for "${ROOT_WORD}". Ready for the next one?`
+                }
               </p>
 
-              <div className="flex gap-3 w-full">
-                <button 
-                  onClick={() => console.log("Trigger Back")} 
-                  className="flex-1 py-2.5 px-4 rounded-xl border border-slate-300 dark:border-slate-600 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition text-sm"
-                >
-                  Review Lesson
-                </button>
-                <button 
-                  onClick={() => console.log("Trigger Next")} 
-                  className="flex-1 py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-500/30 transition text-sm"
-                >
-                  Next Exercise
-                </button>
-              </div>
+               <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Loading next word...
+               </p>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </div>
   );
 }
