@@ -44,7 +44,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
   useEffect(() => {
     if (!isRoundComplete) return;
 
-    playSound("progress");
+    playSound("step");
 
     if (!isFinalStep) {
       const timer = setTimeout(() => {
@@ -93,7 +93,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
 
           // Check if dropped item character matches target character value (case-insensitive fallback check)
           if (letter.toLowerCase() === currentRound.Target[i].toLowerCase()) {
-            playSound("true");
+            playSound("toast");
             
             // Persist the slot index value with its authentic assigned uppercase/lowercase form
             setFilledBlanks((prev) => ({ ...prev, [i]: currentRound.Target[i] }));
