@@ -7,6 +7,7 @@
             "lesson": 1,
             "category": "Subject Pronouns",
             "status": "Waiting",
+
             "words": [
                {
                   "status": "Waiting",
@@ -192,17 +193,126 @@
                   }
                }
             ],
+
             "practice": [
                {
                   "rootWord": "I",
                   "options": [
-                     { "id": "t1", "text": "a break", "isCorrect": true },
-                     { "id": "t2", "text": "a mistake", "isCorrect": false },
-                     { "id": "t3", "text": "a photo", "isCorrect": true },
-                     { "id": "t4", "text": "your time", "isCorrect": true },
-                     { "id": "t5", "text": "homework", "isCorrect": false },
-                     { "id": "t6", "text": "care", "isCorrect": true }
+                     { "id": "1", "text": "من", "isCorrect": true },
+                     { "id": "2", "text": "تو", "isCorrect": false },
+                     { "id": "3", "text": "شما", "isCorrect": false },
+                     { "id": "4", "text": "او (مونث)", "isCorrect": false },
+                     { "id": "5", "text": "او (مذکر)", "isCorrect": false },
+                     { "id": "6", "text": "ما", "isCorrect": false },
+                     { "id": "7", "text": "آنها", "isCorrect": false },
+                     { "id": "8", "text": "این", "isCorrect": false }
                   ]
+               },
+               {
+                  "rootWord": "You",
+                  "options": [
+                     { "id": "9", "text": "تو", "isCorrect": true },
+                     { "id": "10", "text": "شما", "isCorrect": true },
+                     { "id": "11", "text": "او (مونث)", "isCorrect": false },
+                     { "id": "12", "text": "او (مذکر)", "isCorrect": false },
+                     { "id": "13", "text": "ما", "isCorrect": false },
+                     { "id": "14", "text": "آنها", "isCorrect": false },
+                     { "id": "15", "text": "من", "isCorrect": false },
+                     { "id": "16", "text": "این", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "We",
+                  "options": [
+                     { "id": "17", "text": "شما", "isCorrect": false },
+                     { "id": "18", "text": "او (مونث)", "isCorrect": false },
+                     { "id": "19", "text": "او (مذکر)", "isCorrect": false },
+                     { "id": "20", "text": "ما", "isCorrect": true },
+                     { "id": "21", "text": "آنها", "isCorrect": false },
+                     { "id": "22", "text": "من", "isCorrect": false },
+                     { "id": "23", "text": "تو", "isCorrect": false },
+                     { "id": "24", "text": "این", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "They",
+                  "options": [
+                     { "id": "25", "text": "او (مونث)", "isCorrect": false },
+                     { "id": "26", "text": "او (مذکر)", "isCorrect": false },
+                     { "id": "27", "text": "ما", "isCorrect": false },
+                     { "id": "28", "text": "آنها", "isCorrect": true },
+                     { "id": "29", "text": "شما", "isCorrect": false },
+                     { "id": "30", "text": "من", "isCorrect": false },
+                     { "id": "31", "text": "تو", "isCorrect": false },
+                     { "id": "32", "text": "این", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "He",
+                  "options": [
+                     { "id": "33", "text": "او (مذکر)", "isCorrect": true },
+                     { "id": "34", "text": "ما", "isCorrect": false },
+                     { "id": "35", "text": "آنها", "isCorrect": false },
+                     { "id": "36", "text": "من", "isCorrect": false },
+                     { "id": "37", "text": "تو", "isCorrect": false },
+                     { "id": "38", "text": "شما", "isCorrect": false },
+                     { "id": "39", "text": "این", "isCorrect": false },
+                     { "id": "40", "text": "او (مذکر)", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "She",
+                  "options": [
+                     { "id": "41", "text": "ما", "isCorrect": false },
+                     { "id": "42", "text": "آنها", "isCorrect": false },
+                     { "id": "43", "text": "من", "isCorrect": false },
+                     { "id": "44", "text": "تو", "isCorrect": false },
+                     { "id": "45", "text": "شما", "isCorrect": false },
+                     { "id": "46", "text": "این", "isCorrect": false },
+                     { "id": "47", "text": "او (مذکر)", "isCorrect": false },
+                     { "id": "48", "text": "او (مونث)", "isCorrect": true }
+                  ]
+               },
+               {
+                  "rootWord": "It",
+                  "options": [
+                     { "id": "49", "text": "من", "isCorrect": false },
+                     { "id": "50", "text": "تو", "isCorrect": false },
+                     { "id": "51", "text": "شما", "isCorrect": false },
+                     { "id": "52", "text": "او (مونث)", "isCorrect": false },
+                     { "id": "53", "text": "او (مذکر)", "isCorrect": false },
+                     { "id": "54", "text": "ما", "isCorrect": false },
+                     { "id": "55", "text": "آنها", "isCorrect": false },
+                     { "id": "56", "text": "این", "isCorrect": true }
+                  ]
+               }
+            ],
+
+            "dictation": [
+               {
+                  "Target": ["Y", "o", "u"],
+                  "blanksPatten": [1, 0, 1],
+                  "optionLetters": ["w", "o", "u"]
+               },
+               {
+                  "Target": ["T", "h", "e", "y"],
+                  "blanksPatten": [1, 0, 1, 0],
+                  "optionLetters": ["h", "e", "i", "y"]
+               },
+               {
+                  "Target": ["W", "e"],
+                  "blanksPatten": [1, 0],
+                  "optionLetters": ["e", "i"]
+               },
+               {
+                  "Target": ["H", "e"],
+                  "blanksPatten": [1, 0],
+                  "optionLetters": ["e", "i"]
+               },
+               {
+                  "Target": ["S", "h", "e"],
+                  "blanksPatten": [1, 1, 0],
+                  "optionLetters": ["e", "i"]
                }
             ]
          },
@@ -473,6 +583,212 @@
                      "text": ""
                   }
                }
+            ],
+
+            "practice": [
+               {
+                  "rootWord": "One",
+                  "options": [
+                     { "id": "1", "text": "1", "isCorrect": true },
+                     { "id": "2", "text": "2", "isCorrect": false },
+                     { "id": "3", "text": "3", "isCorrect": false },
+                     { "id": "4", "text": "4", "isCorrect": false },
+                     { "id": "5", "text": "5", "isCorrect": false },
+                     { "id": "6", "text": "6", "isCorrect": false },
+                     { "id": "7", "text": "7", "isCorrect": false },
+                     { "id": "8", "text": "8", "isCorrect": false },
+                     { "id": "9", "text": "9", "isCorrect": false },
+                     { "id": "10", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Two",
+                  "options": [
+                     { "id": "11", "text": "1", "isCorrect": false },
+                     { "id": "12", "text": "2", "isCorrect": true },
+                     { "id": "13", "text": "3", "isCorrect": false },
+                     { "id": "14", "text": "4", "isCorrect": false },
+                     { "id": "15", "text": "5", "isCorrect": false },
+                     { "id": "16", "text": "6", "isCorrect": false },
+                     { "id": "17", "text": "7", "isCorrect": false },
+                     { "id": "18", "text": "8", "isCorrect": false },
+                     { "id": "19", "text": "9", "isCorrect": false },
+                     { "id": "20", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Seven",
+                  "options": [
+                     { "id": "21", "text": "1", "isCorrect": false },
+                     { "id": "22", "text": "2", "isCorrect": false },
+                     { "id": "23", "text": "3", "isCorrect": false },
+                     { "id": "24", "text": "4", "isCorrect": false },
+                     { "id": "25", "text": "5", "isCorrect": false },
+                     { "id": "26", "text": "6", "isCorrect": false },
+                     { "id": "27", "text": "7", "isCorrect": true },
+                     { "id": "28", "text": "8", "isCorrect": false },
+                     { "id": "29", "text": "9", "isCorrect": false },
+                     { "id": "30", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Five",
+                  "options": [
+                     { "id": "31", "text": "1", "isCorrect": false },
+                     { "id": "32", "text": "2", "isCorrect": false },
+                     { "id": "33", "text": "3", "isCorrect": false },
+                     { "id": "34", "text": "4", "isCorrect": false },
+                     { "id": "35", "text": "5", "isCorrect": true },
+                     { "id": "36", "text": "6", "isCorrect": false },
+                     { "id": "37", "text": "7", "isCorrect": false },
+                     { "id": "38", "text": "8", "isCorrect": false },
+                     { "id": "39", "text": "9", "isCorrect": false },
+                     { "id": "40", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Three",
+                  "options": [
+                     { "id": "41", "text": "1", "isCorrect": false },
+                     { "id": "42", "text": "2", "isCorrect": false },
+                     { "id": "43", "text": "3", "isCorrect": true },
+                     { "id": "44", "text": "4", "isCorrect": false },
+                     { "id": "45", "text": "5", "isCorrect": false },
+                     { "id": "46", "text": "6", "isCorrect": false },
+                     { "id": "47", "text": "7", "isCorrect": false },
+                     { "id": "48", "text": "8", "isCorrect": false },
+                     { "id": "49", "text": "9", "isCorrect": false },
+                     { "id": "50", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Nine",
+                  "options": [
+                     { "id": "51", "text": "1", "isCorrect": false },
+                     { "id": "52", "text": "2", "isCorrect": false },
+                     { "id": "53", "text": "3", "isCorrect": false },
+                     { "id": "54", "text": "4", "isCorrect": false },
+                     { "id": "55", "text": "5", "isCorrect": false },
+                     { "id": "56", "text": "6", "isCorrect": false },
+                     { "id": "57", "text": "7", "isCorrect": false },
+                     { "id": "58", "text": "8", "isCorrect": false },
+                     { "id": "59", "text": "9", "isCorrect": true },
+                     { "id": "60", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Four",
+                  "options": [
+                     { "id": "61", "text": "1", "isCorrect": false },
+                     { "id": "62", "text": "2", "isCorrect": false },
+                     { "id": "63", "text": "3", "isCorrect": false },
+                     { "id": "64", "text": "4", "isCorrect": true },
+                     { "id": "65", "text": "5", "isCorrect": false },
+                     { "id": "66", "text": "6", "isCorrect": false },
+                     { "id": "67", "text": "7", "isCorrect": false },
+                     { "id": "68", "text": "8", "isCorrect": false },
+                     { "id": "69", "text": "9", "isCorrect": false },
+                     { "id": "70", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Six",
+                  "options": [
+                     { "id": "71", "text": "1", "isCorrect": false },
+                     { "id": "72", "text": "2", "isCorrect": false },
+                     { "id": "73", "text": "3", "isCorrect": false },
+                     { "id": "74", "text": "4", "isCorrect": false },
+                     { "id": "75", "text": "5", "isCorrect": false },
+                     { "id": "76", "text": "6", "isCorrect": true },
+                     { "id": "77", "text": "7", "isCorrect": false },
+                     { "id": "78", "text": "8", "isCorrect": false },
+                     { "id": "79", "text": "9", "isCorrect": false },
+                     { "id": "80", "text": "10", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Ten",
+                  "options": [
+                     { "id": "81", "text": "1", "isCorrect": false },
+                     { "id": "82", "text": "2", "isCorrect": false },
+                     { "id": "83", "text": "3", "isCorrect": false },
+                     { "id": "84", "text": "4", "isCorrect": false },
+                     { "id": "85", "text": "5", "isCorrect": false },
+                     { "id": "86", "text": "6", "isCorrect": false },
+                     { "id": "87", "text": "7", "isCorrect": false },
+                     { "id": "88", "text": "8", "isCorrect": false },
+                     { "id": "89", "text": "9", "isCorrect": false },
+                     { "id": "90", "text": "10", "isCorrect": true }
+                  ]
+               },
+               {
+                  "rootWord": "Eight",
+                  "options": [
+                     { "id": "91", "text": "1", "isCorrect": false },
+                     { "id": "92", "text": "2", "isCorrect": false },
+                     { "id": "93", "text": "3", "isCorrect": false },
+                     { "id": "94", "text": "4", "isCorrect": false },
+                     { "id": "95", "text": "5", "isCorrect": false },
+                     { "id": "96", "text": "6", "isCorrect": false },
+                     { "id": "97", "text": "7", "isCorrect": false },
+                     { "id": "98", "text": "8", "isCorrect": true },
+                     { "id": "99", "text": "9", "isCorrect": false },
+                     { "id": "100", "text": "10", "isCorrect": false }
+                  ]
+               }
+            ],
+
+            "dictation": [
+               {
+                  "Target": ["T", "h", "r", "e", "e"],
+                  "blanksPatten": [1, 1, 1, 0, 1],
+                  "optionLetters": ["a", "e", "i", "o", "u"]
+               },
+               {
+                  "Target": ["F", "o", "u", "r"],
+                  "blanksPatten": [1, 0, 1, 1],
+                  "optionLetters": ["a", "e", "i", "o", "u"]
+               },
+               {
+                  "Target": ["S", "e", "v", "e", "n"],
+                  "blanksPatten": [1, 1, 0, 0, 1],
+                  "optionLetters": ["w", "e", "i", "v", "u"]
+               },
+               {
+                  "Target": ["O", "n", "e"],
+                  "blanksPatten": [0, 1, 1],
+                  "optionLetters": ["w", "v", "i", "o", "u"]
+               },
+               {
+                  "Target": ["S", "i", "x"],
+                  "blanksPatten": [1, 0, 1],
+                  "optionLetters": ["a", "e", "i", "o", "u"]
+               },
+               {
+                  "Target": ["E", "i", "g", "h", "t"],
+                  "blanksPatten": [1, 0, 0, 1, 1],
+                  "optionLetters": ["g", "e", "i", "y", "u"]
+               },
+               {
+                  "Target": ["N", "i", "n", "e"],
+                  "blanksPatten": [1, 0, 1, 1],
+                  "optionLetters": ["a", "e", "i", "o", "u"]
+               },
+               {
+                  "Target": ["T", "e", "n"],
+                  "blanksPatten": [1, 0, 1],
+                  "optionLetters": ["a", "e", "i"]
+               },
+               {
+                  "Target": ["T", "w", "o"],
+                  "blanksPatten": [1, 0, 0],
+                  "optionLetters": ["u", "w", "o", "o"]
+               },
+               {
+                  "Target": ["F", "i", "v", "e"],
+                  "blanksPatten": [1, 0, 0, 1],
+                  "optionLetters": ["a", "w", "i", "v", "e"]
+               }
             ]
          },
 
@@ -741,6 +1057,212 @@
                      "text": ""
                   }
                }
+            ],
+
+            "practice": [
+               {
+                  "rootWord": "Twenty",
+                  "options": [
+                     { "id": "1", "text": "11", "isCorrect": false },
+                     { "id": "2", "text": "12", "isCorrect": false },
+                     { "id": "3", "text": "13", "isCorrect": false },
+                     { "id": "4", "text": "14", "isCorrect": false },
+                     { "id": "5", "text": "15", "isCorrect": false },
+                     { "id": "6", "text": "16", "isCorrect": false },
+                     { "id": "7", "text": "17", "isCorrect": false },
+                     { "id": "8", "text": "18", "isCorrect": false },
+                     { "id": "9", "text": "19", "isCorrect": false },
+                     { "id": "10", "text": "20", "isCorrect": true }
+                  ]
+               },
+               {
+                  "rootWord": "Twelve",
+                  "options": [
+                     { "id": "11", "text": "11", "isCorrect": false },
+                     { "id": "12", "text": "12", "isCorrect": true },
+                     { "id": "13", "text": "13", "isCorrect": false },
+                     { "id": "14", "text": "14", "isCorrect": false },
+                     { "id": "15", "text": "15", "isCorrect": false },
+                     { "id": "16", "text": "16", "isCorrect": false },
+                     { "id": "17", "text": "17", "isCorrect": false },
+                     { "id": "18", "text": "18", "isCorrect": false },
+                     { "id": "19", "text": "19", "isCorrect": false },
+                     { "id": "20", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Fifteen",
+                  "options": [
+                     { "id": "21", "text": "11", "isCorrect": false },
+                     { "id": "22", "text": "12", "isCorrect": false },
+                     { "id": "23", "text": "13", "isCorrect": false },
+                     { "id": "24", "text": "14", "isCorrect": false },
+                     { "id": "25", "text": "15", "isCorrect": true },
+                     { "id": "26", "text": "16", "isCorrect": false },
+                     { "id": "27", "text": "17", "isCorrect": false },
+                     { "id": "28", "text": "18", "isCorrect": false },
+                     { "id": "29", "text": "19", "isCorrect": false },
+                     { "id": "30", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Fourteen",
+                  "options": [
+                     { "id": "31", "text": "11", "isCorrect": false },
+                     { "id": "32", "text": "12", "isCorrect": false },
+                     { "id": "33", "text": "13", "isCorrect": false },
+                     { "id": "34", "text": "14", "isCorrect": true },
+                     { "id": "35", "text": "15", "isCorrect": false },
+                     { "id": "36", "text": "16", "isCorrect": false },
+                     { "id": "37", "text": "17", "isCorrect": false },
+                     { "id": "38", "text": "18", "isCorrect": false },
+                     { "id": "39", "text": "19", "isCorrect": false },
+                     { "id": "40", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Thirteen",
+                  "options": [
+                     { "id": "41", "text": "11", "isCorrect": false },
+                     { "id": "42", "text": "12", "isCorrect": false },
+                     { "id": "43", "text": "13", "isCorrect": true },
+                     { "id": "44", "text": "14", "isCorrect": false },
+                     { "id": "45", "text": "15", "isCorrect": false },
+                     { "id": "46", "text": "16", "isCorrect": false },
+                     { "id": "47", "text": "17", "isCorrect": false },
+                     { "id": "48", "text": "18", "isCorrect": false },
+                     { "id": "49", "text": "19", "isCorrect": false },
+                     { "id": "50", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Nineteen",
+                  "options": [
+                     { "id": "51", "text": "11", "isCorrect": false },
+                     { "id": "52", "text": "12", "isCorrect": false },
+                     { "id": "53", "text": "13", "isCorrect": false },
+                     { "id": "54", "text": "14", "isCorrect": false },
+                     { "id": "55", "text": "15", "isCorrect": false },
+                     { "id": "56", "text": "16", "isCorrect": false },
+                     { "id": "57", "text": "17", "isCorrect": false },
+                     { "id": "58", "text": "18", "isCorrect": false },
+                     { "id": "59", "text": "19", "isCorrect": true },
+                     { "id": "60", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Eleven",
+                  "options": [
+                     { "id": "61", "text": "11", "isCorrect": true },
+                     { "id": "62", "text": "12", "isCorrect": false },
+                     { "id": "63", "text": "13", "isCorrect": false },
+                     { "id": "64", "text": "14", "isCorrect": false },
+                     { "id": "65", "text": "15", "isCorrect": false },
+                     { "id": "66", "text": "16", "isCorrect": false },
+                     { "id": "67", "text": "17", "isCorrect": false },
+                     { "id": "68", "text": "18", "isCorrect": false },
+                     { "id": "69", "text": "19", "isCorrect": false },
+                     { "id": "70", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Sixteen",
+                  "options": [
+                     { "id": "71", "text": "11", "isCorrect": false },
+                     { "id": "72", "text": "12", "isCorrect": false },
+                     { "id": "73", "text": "13", "isCorrect": false },
+                     { "id": "74", "text": "14", "isCorrect": false },
+                     { "id": "75", "text": "15", "isCorrect": false },
+                     { "id": "76", "text": "16", "isCorrect": true },
+                     { "id": "77", "text": "17", "isCorrect": false },
+                     { "id": "78", "text": "18", "isCorrect": false },
+                     { "id": "79", "text": "19", "isCorrect": false },
+                     { "id": "80", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Seventeen",
+                  "options": [
+                     { "id": "81", "text": "11", "isCorrect": false },
+                     { "id": "82", "text": "12", "isCorrect": false },
+                     { "id": "83", "text": "13", "isCorrect": false },
+                     { "id": "84", "text": "14", "isCorrect": false },
+                     { "id": "85", "text": "15", "isCorrect": false },
+                     { "id": "86", "text": "16", "isCorrect": false },
+                     { "id": "87", "text": "17", "isCorrect": true },
+                     { "id": "88", "text": "18", "isCorrect": false },
+                     { "id": "89", "text": "19", "isCorrect": false },
+                     { "id": "90", "text": "20", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Eighteen",
+                  "options": [
+                     { "id": "91", "text": "11", "isCorrect": false },
+                     { "id": "92", "text": "12", "isCorrect": false },
+                     { "id": "93", "text": "13", "isCorrect": false },
+                     { "id": "94", "text": "14", "isCorrect": false },
+                     { "id": "95", "text": "15", "isCorrect": false },
+                     { "id": "96", "text": "16", "isCorrect": false },
+                     { "id": "97", "text": "17", "isCorrect": false },
+                     { "id": "98", "text": "18", "isCorrect": true },
+                     { "id": "99", "text": "19", "isCorrect": false },
+                     { "id": "100", "text": "20", "isCorrect": false }
+                  ]
+               }
+            ],
+
+            "dictation": [
+               {
+                  "Target": ["T", "w", "e", "l", "v", "e"],
+                  "blanksPatten": [1, 0, 0, 1, 1, 1],
+                  "optionLetters": ["o", "e", "v", "w", "u"]
+               },
+               {
+                  "Target": ["T", "w", "e", "n", "t", "y"],
+                  "blanksPatten": [1, 0, 0, 1, 1, 0],
+                  "optionLetters": ["a", "e", "y", "i", "w", "u"]
+               },
+               {
+                  "Target": ["F", "o", "u", "r", "t", "e", "e", "n"],
+                  "blanksPatten": [1, 0, 0, 1, 1, 1, 0, 1],
+                  "optionLetters": ["a", "e", "i", "o", "u"]
+               },
+               {
+                  "Target": ["F", "i", "f", "t", "e", "e", "n"],
+                  "blanksPatten": [1, 0, 1, 1, 1, 0, 0, 1],
+                  "optionLetters": ["a", "e", "e", "i", "y"]
+               },
+               {
+                  "Target": ["E", "i", "g", "h", "t", "e", "e", "n"],
+                  "blanksPatten": [1, 1, 0, 0, 1, 1, 0, 1],
+                  "optionLetters": ["h", "e", "e", "i", "g"]
+               },
+               {
+                  "Target": ["N", "i", "n", "e", "t", "e", "e", "n"],
+                  "blanksPatten": [1, 0, 1, 0, 1, 1, 1, 1],
+                  "optionLetters": ["a", "e", "i", "o", "y"]
+               },
+               {
+                  "Target": ["E", "l", "e", "v", "e", "n"],
+                  "blanksPatten": [0, 1, 0, 1, 0, 1],
+                  "optionLetters": ["e", "i", "e", "i", "e"]
+               },
+               {
+                  "Target": ["T", "h", "i", "r", "t", "e", "e", "n"],
+                  "blanksPatten": [1, 1, 0, 1, 1, 1, 1],
+                  "optionLetters": ["e", "i", "y"]
+               },
+               {
+                  "Target": ["S", "e", "v", "e", "n", "t", "e", "e", "n"],
+                  "blanksPatten": [1, 0, 1, 0, 1, 1, 0, 0, 1],
+                  "optionLetters": ["e", "i", "e", "i", "e"]
+               },
+               {
+                  "Target": ["S", "i", "x", "t", "e", "e", "n"],
+                  "blanksPatten": [1, 0, 1, 1, 1, 1, 1],
+                  "optionLetters": ["e", "i", "y"]
+               }
             ]
          },
 
@@ -781,7 +1303,7 @@
                   "role": "Adj",
                   "BrE": "/bluː/",
                   "AmE": "/bluː/",
-                  "definition": "The color of the sky in a clear day",
+                  "definition": "The color of the sky or the sea",
                   "examples": [
                      {
                         "collocation": "Blue sky",
@@ -807,7 +1329,7 @@
                   "role": "Adj",
                   "BrE": "/ɡriːn/",
                   "AmE": "/ɡriːn/",
-                  "definition": "Having the color of grass or leaves",
+                  "definition": "The color of grass or leaves",
                   "examples": [
                      {
                         "collocation": "Green grass",
@@ -833,7 +1355,7 @@
                   "role": "Adj",
                   "BrE": "/ˈjeləʊ/",
                   "AmE": "/ˈjeloʊ/",
-                  "definition": "Having the color of lemons or bananas",
+                  "definition": "The color of lemons or bananas",
                   "examples": [
                      {
                         "collocation": "Yellow banana",
@@ -859,7 +1381,7 @@
                   "role": "Adj",
                   "BrE": "/blæk/",
                   "AmE": "/blæk/",
-                  "definition": "Having the darkest color, like night or coal",
+                  "definition": "The color of night or coal",
                   "examples": [
                      {
                         "collocation": "Black cat",
@@ -885,7 +1407,7 @@
                   "role": "Adj",
                   "BrE": "/waɪt/",
                   "AmE": "/waɪt/",
-                  "definition": "Having the color of milk or snow",
+                  "definition": "The color of milk or snow",
                   "examples": [
                      {
                         "collocation": "White milk",
@@ -911,7 +1433,7 @@
                   "role": "Adj",
                   "BrE": "/braʊn/",
                   "AmE": "/braʊn/",
-                  "definition": "Having the color of chocolate or wood",
+                  "definition": "The color of chocolate or wood",
                   "examples": [
                      {
                         "collocation": "Brown bear",
@@ -937,7 +1459,7 @@
                   "role": "Adj",
                   "BrE": "/pɪŋk/",
                   "AmE": "/pɪŋk/",
-                  "definition": "Having a pale red color, like a rose flower",
+                  "definition": "Pale red, like a rose flower",
                   "examples": [
                      {
                         "collocation": "Pink dress",
@@ -963,7 +1485,7 @@
                   "role": "Adj",
                   "BrE": "/ˈpɜːpl/",
                   "AmE": "/ˈpɜːrpl/",
-                  "definition": "Having a color that is a mix of red and blue",
+                  "definition": "The mixture of red and blue",
                   "examples": [
                      {
                         "collocation": "Purple grapes",
@@ -989,7 +1511,7 @@
                   "role": "Adj",
                   "BrE": "/ˈɒrɪndʒ/",
                   "AmE": "/ˈɔːrɪndʒ/",
-                  "definition": "Having a color that is a mix of red and yellow",
+                  "definition": "The color between red and yellow",
                   "examples": [
                      {
                         "collocation": "Orange juice",
@@ -1008,6 +1530,158 @@
                      "title": "",
                      "text": ""
                   }
+               }
+            ],
+            "practice": [
+               {
+                  "rootWord": "قرمز",
+                  "options": [
+                     { "id": "1", "text": "Blue", "isCorrect": false },
+                     { "id": "2", "text": "Red", "isCorrect": true },
+                     { "id": "3", "text": "Green", "isCorrect": false },
+                     { "id": "4", "text": "Yellow", "isCorrect": false },
+                     { "id": "5", "text": "Black", "isCorrect": false },
+                     { "id": "6", "text": "Write", "isCorrect": false },
+                     { "id": "7", "text": "Brown", "isCorrect": false },
+                     { "id": "8", "text": "Pink", "isCorrect": false },
+                     { "id": "9", "text": "Purple", "isCorrect": false },
+                     { "id": "10", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "بنفش",
+                  "options": [
+                     { "id": "11", "text": "Blue", "isCorrect": false },
+                     { "id": "12", "text": "Red", "isCorrect": false },
+                     { "id": "13", "text": "Green", "isCorrect": false },
+                     { "id": "14", "text": "Yellow", "isCorrect": false },
+                     { "id": "15", "text": "Black", "isCorrect": false },
+                     { "id": "16", "text": "Write", "isCorrect": false },
+                     { "id": "17", "text": "Brown", "isCorrect": false },
+                     { "id": "18", "text": "Pink", "isCorrect": false },
+                     { "id": "19", "text": "Purple", "isCorrect": true },
+                     { "id": "20", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "آبی",
+                  "options": [
+                     { "id": "21", "text": "Blue", "isCorrect": true },
+                     { "id": "22", "text": "Red", "isCorrect": false },
+                     { "id": "23", "text": "Green", "isCorrect": false },
+                     { "id": "24", "text": "Yellow", "isCorrect": false },
+                     { "id": "25", "text": "Black", "isCorrect": false },
+                     { "id": "26", "text": "Write", "isCorrect": false },
+                     { "id": "27", "text": "Brown", "isCorrect": false },
+                     { "id": "28", "text": "Pink", "isCorrect": false },
+                     { "id": "29", "text": "Purple", "isCorrect": false },
+                     { "id": "30", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "نارنجی",
+                  "options": [
+                     { "id": "31", "text": "Blue", "isCorrect": false },
+                     { "id": "32", "text": "Red", "isCorrect": false },
+                     { "id": "33", "text": "Green", "isCorrect": false },
+                     { "id": "34", "text": "Yellow", "isCorrect": false },
+                     { "id": "35", "text": "Black", "isCorrect": false },
+                     { "id": "36", "text": "Write", "isCorrect": false },
+                     { "id": "37", "text": "Brown", "isCorrect": false },
+                     { "id": "38", "text": "Pink", "isCorrect": false },
+                     { "id": "39", "text": "Purple", "isCorrect": false },
+                     { "id": "40", "text": "Orange", "isCorrect": true }
+                  ]
+               },
+               {
+                  "rootWord": "سبز",
+                  "options": [
+                     { "id": "41", "text": "Blue", "isCorrect": false },
+                     { "id": "42", "text": "Red", "isCorrect": false },
+                     { "id": "43", "text": "Green", "isCorrect": true },
+                     { "id": "44", "text": "Yellow", "isCorrect": false },
+                     { "id": "45", "text": "Black", "isCorrect": false },
+                     { "id": "46", "text": "Write", "isCorrect": false },
+                     { "id": "47", "text": "Brown", "isCorrect": false },
+                     { "id": "48", "text": "Pink", "isCorrect": false },
+                     { "id": "49", "text": "Purple", "isCorrect": false },
+                     { "id": "50", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "صورتی",
+                  "options": [
+                     { "id": "51", "text": "Blue", "isCorrect": false },
+                     { "id": "52", "text": "Red", "isCorrect": false },
+                     { "id": "53", "text": "Green", "isCorrect": false },
+                     { "id": "54", "text": "Yellow", "isCorrect": false },
+                     { "id": "55", "text": "Black", "isCorrect": false },
+                     { "id": "56", "text": "Write", "isCorrect": false },
+                     { "id": "57", "text": "Brown", "isCorrect": false },
+                     { "id": "58", "text": "Pink", "isCorrect": true },
+                     { "id": "59", "text": "Purple", "isCorrect": false },
+                     { "id": "60", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "زرد",
+                  "options": [
+                     { "id": "61", "text": "Blue", "isCorrect": false },
+                     { "id": "62", "text": "Red", "isCorrect": false },
+                     { "id": "63", "text": "Green", "isCorrect": false },
+                     { "id": "64", "text": "Yellow", "isCorrect": true },
+                     { "id": "65", "text": "Black", "isCorrect": false },
+                     { "id": "66", "text": "Write", "isCorrect": false },
+                     { "id": "67", "text": "Brown", "isCorrect": false },
+                     { "id": "68", "text": "Pink", "isCorrect": false },
+                     { "id": "69", "text": "Purple", "isCorrect": false },
+                     { "id": "70", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "قهوه ای",
+                  "options": [
+                     { "id": "71", "text": "Blue", "isCorrect": false },
+                     { "id": "72", "text": "Red", "isCorrect": false },
+                     { "id": "73", "text": "Green", "isCorrect": false },
+                     { "id": "74", "text": "Yellow", "isCorrect": false },
+                     { "id": "75", "text": "Black", "isCorrect": false },
+                     { "id": "76", "text": "Write", "isCorrect": false },
+                     { "id": "77", "text": "Brown", "isCorrect": true },
+                     { "id": "78", "text": "Pink", "isCorrect": false },
+                     { "id": "79", "text": "Purple", "isCorrect": false },
+                     { "id": "80", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "سفید",
+                  "options": [
+                     { "id": "81", "text": "Blue", "isCorrect": false },
+                     { "id": "82", "text": "Red", "isCorrect": false },
+                     { "id": "83", "text": "Green", "isCorrect": false },
+                     { "id": "84", "text": "Yellow", "isCorrect": false },
+                     { "id": "85", "text": "Black", "isCorrect": false },
+                     { "id": "86", "text": "Write", "isCorrect": true },
+                     { "id": "87", "text": "Brown", "isCorrect": false },
+                     { "id": "88", "text": "Pink", "isCorrect": false },
+                     { "id": "89", "text": "Purple", "isCorrect": false },
+                     { "id": "90", "text": "Orange", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "مشکی",
+                  "options": [
+                     { "id": "91", "text": "Blue", "isCorrect": false },
+                     { "id": "92", "text": "Red", "isCorrect": false },
+                     { "id": "93", "text": "Green", "isCorrect": false },
+                     { "id": "94", "text": "Yellow", "isCorrect": false },
+                     { "id": "95", "text": "Black", "isCorrect": true },
+                     { "id": "96", "text": "Write", "isCorrect": false },
+                     { "id": "97", "text": "Brown", "isCorrect": false },
+                     { "id": "98", "text": "Pink", "isCorrect": false },
+                     { "id": "99", "text": "Purple", "isCorrect": false },
+                     { "id": "100", "text": "Orange", "isCorrect": false }
+                  ]
                }
             ]
          },

@@ -3,10 +3,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function SemanticOrbit({ lessonData, onLessonFinished }) {
+export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
+
+   console.log('lessonData from Comp', lessonData);
+
+
   // 1. The Master Index tracking which Word we are currently on
   const [currentStep, setCurrentStep] = useState(0);
-  const [lessonCompleted, setLessonCompleted] = useState(false);
 
   // Grab the specific data for the active step
   const currentRound = lessonData[currentStep];
@@ -91,11 +94,11 @@ export default function SemanticOrbit({ lessonData, onLessonFinished }) {
     }
 
     const timer = setTimeout(() => {
-      onLessonFinished?.(true);
+      onStepOneFinished?.('practice2');
     }, 1200);
 
     return () => clearTimeout(timer);
-  }, [isRoundComplete, isFinalWordOfLesson, currentStep, onLessonFinished]);
+  }, [isRoundComplete, isFinalWordOfLesson, currentStep, onStepOneFinished]);
 
 
   // Handles target nodes colors dynamically based on drop states

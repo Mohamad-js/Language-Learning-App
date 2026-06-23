@@ -18,6 +18,7 @@ import { useNavigation } from '@/app/context/NavigationProvider';
 import { useAnimate } from 'framer-motion';
 import { useClickSound } from '@/components/sound';
 import SemanticOrbit from '@/components/SemanticOrbit';
+import DictationExercise from '@/components/DictationExercise';
 
 
 
@@ -47,7 +48,9 @@ export default function Lessons({ params }) {
    const [showConfetti, setShowConfetti] = useState(false)
    const [showCongrats, setShowCongrats] = useState(false)
    const [btnPressed, setBtnPressed] = useState(null)
-   const [category, setCategory] = useState(false)
+   const [category, setCategory] = useState(null)
+   const [practice, setPractice] = useState(null)
+   const [practice2, setPractice2] = useState(null)
    
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -62,17 +65,21 @@ export default function Lessons({ params }) {
    const audioRefBrE = useRef(null);
    const [isPlayingBrE, setIsPlayingBrE] = useState(false);
    const [isPlayingAmE, setIsPlayingAmE] = useState(false);
-
+   const [hasPlayedFinishSound, setHasPlayedFinishSound] = useState(false);
    
    
    const { slug } = use(params)
 
 
    useEffect(() => {
-      if (finalWindow) {
+      if (finalWindow && !hasPlayedFinishSound) {
          play();
+         setHasPlayedFinishSound(true); // Lock the latch so it can't play again
+      } else if (!finalWindow) {
+         // Reset the latch automatically if they restart or close the window
+         setHasPlayedFinishSound(false);
       }
-   }, [finalWindow, play]);
+   }, [finalWindow, play, hasPlayedFinishSound]);
       
    
    useEffect(() => {
@@ -92,8 +99,9 @@ export default function Lessons({ params }) {
             const data = await getLessonByNumber(requestedLevel, slug);
             setSpecificLessonWords(data.words);
             setCategory(data.category)
-            console.log('LEVEL FROM SLUG:', data.category);
-
+            setPractice(data.practice)
+            setPractice2(data.dictation)
+            
          } catch (error) {
             console.error("Failed to fetch words:", error);
          }
@@ -101,7 +109,7 @@ export default function Lessons({ params }) {
 
       loadLesson();
    }, [slug]);
-
+   
    
    const router = useRouter()
 
@@ -782,23 +790,6 @@ export default function Lessons({ params }) {
                                  className="p-2 flex-1 bg-background rounded-xl active:scale-95"
                               >Practice</button>
 
-
-                              // <>
-                              //    <button
-                              //       className='p-2 flex-1 bg-background rounded-xl active:scale-95'
-                              //       onClick={() => {
-                                 //          clickSound.play()
-                                 //          handleNextLearningWord()
-                                 //       }}
-                              //    >
-                              //       Done
-                              //    </button>
-                              //    <audio
-                              //       ref={clickSound.audioRef}
-                              //       src='/sounds/Done.mp3'
-                              //       preload='auto'
-                              //    />
-                              // </>
                            :
                               <button
                                  className='p-2 flex-1 bg-background rounded-xl active:scale-95'
@@ -872,55 +863,35 @@ export default function Lessons({ params }) {
       }
 
       {
-         stage === 'practice' && (() => {
-
-            const lessonData = [
-               {
-                  rootWord: "Take",
-                  options: [
-                     { id: "t1", text: "a break", isCorrect: true },
-                     { id: "t2", text: "a mistake", isCorrect: true },
-                     { id: "t3", text: "a photo", isCorrect: true },
-                     { id: "t4", text: "your time", isCorrect: true },
-                     { id: "t5", text: "homework", isCorrect: true },
-                     { id: "t6", text: "care", isCorrect: true },
-                  ]
-               },
-               // {
-               //    rootWord: "Make",
-               //    options: [
-               //       { id: "m1", text: "a mistake", isCorrect: true },
-               //       { id: "m2", text: "a break", isCorrect: false },
-               //       { id: "m3", text: "an effort", isCorrect: true },
-               //       { id: "m4", text: "your bed", isCorrect: true },
-               //       { id: "m5", text: "a shower", isCorrect: false },
-               //       { id: "m6", text: "money", isCorrect: true },
-               //    ]
-               // },
-               // {
-               //    rootWord: "Do",
-               //    options: [
-               //       { id: "d1", text: "your best", isCorrect: true },
-               //       { id: "d2", text: "a coffee", isCorrect: false },
-               //       { id: "d3", text: "a favor", isCorrect: true },
-               //       { id: "d4", text: "the laundry", isCorrect: true },
-               //       { id: "d5", text: "a photo", isCorrect: false },
-               //       { id: "d6", text: "business", isCorrect: true },
-               //    ]
-               // }
-               // ... add as many as you want!
-            ];
-
+         stage === 'practice' && practice ? (() => {
 
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
                   <SemanticOrbit
-                     lessonData = {lessonData}
-                     onLessonFinished = {setFinalWindow}
+                     lessonData = {practice}
+                     onStepOneFinished = {setStage}
                   />
                </div>
             );
          })()
+
+         : null
+      }
+
+      {
+         stage === 'practice2' && practice2 ? (() => {
+
+            return (
+               <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
+                  <DictationExercise
+                     dictationData = {practice2}
+                     onStepTwoFinished = {setFinalWindow}
+                  />
+               </div>
+            );
+         })()
+
+         : null
       }
 
       {
