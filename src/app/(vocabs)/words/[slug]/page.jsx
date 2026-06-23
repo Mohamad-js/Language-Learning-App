@@ -70,6 +70,8 @@ export default function Lessons({ params }) {
    
    const { slug } = use(params)
 
+   const [debugInfo,setDebugInfo] = useState(null)
+
 
    useEffect(() => {
       if (finalWindow && !hasPlayedFinishSound) {
