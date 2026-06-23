@@ -111,17 +111,17 @@ export default function Lessons({ params }) {
          try {
             setDebugInfo(`Fetching: Level=${requestedLevel}, Slug=${slug}`);
             const data = await getLessonByNumber(requestedLevel, slug);
+            setSpecificLessonWords(data.words);
+            setCategory(data.category);
+            setPractice(data.practice);
+            setPractice2(data.dictation);
+            setDebugInfo("Data successfully loaded into state!");
 
             if (!data) {
                setDebugInfo(`DB returned nothing for Level=${requestedLevel}, Slug=${slug}`);
                return;
             }
 
-            setSpecificLessonWords(data.words);
-            setCategory(data.category);
-            setPractice(data.practice);
-            setPractice2(data.dictation);
-            setDebugInfo("Data successfully loaded into state!");
 
          } catch (error) {
             setDebugInfo(`DB Error: ${error.message}`);
