@@ -863,7 +863,7 @@ export default function Lessons({ params }) {
       }
 
       {
-         stage === 'practice' && practice ? (() => {
+         stage === 'practice' &&  (() => {
 
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
@@ -875,11 +875,10 @@ export default function Lessons({ params }) {
             );
          })()
 
-         : null
       }
 
       {
-         stage === 'practice2' && practice2 ? (() => {
+         stage === 'practice2' && (() => {
 
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
@@ -890,8 +889,6 @@ export default function Lessons({ params }) {
                </div>
             );
          })()
-
-         : null
       }
 
       {
@@ -928,16 +925,3 @@ export default function Lessons({ params }) {
       </div>
    );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
