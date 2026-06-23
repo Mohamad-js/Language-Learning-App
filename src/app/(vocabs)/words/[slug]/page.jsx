@@ -867,10 +867,15 @@ export default function Lessons({ params }) {
 
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
-                  <SemanticOrbit
-                     lessonData = {practice}
-                     onStepOneFinished = {setStage}
-                  />
+                  {
+                     practice ?
+                        <SemanticOrbit
+                           lessonData = {practice}
+                           onStepOneFinished = {setStage}
+                        />
+                     :
+                     'NOT LOADED'
+                  }
                </div>
             );
          })()
@@ -882,10 +887,15 @@ export default function Lessons({ params }) {
 
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
-                  <DictationExercise
-                     dictationData = {practice2}
-                     onStepTwoFinished = {setFinalWindow}
-                  />
+                  {
+                     practice2 ?
+                        <DictationExercise
+                           dictationData = {practice2}
+                           onStepTwoFinished = {setFinalWindow}
+                        />
+                     :
+                     'NOT LOADED'
+                  }
                </div>
             );
          })()
