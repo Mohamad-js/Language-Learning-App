@@ -94,15 +94,37 @@ export default function Lessons({ params }) {
       active === 4 ? 'C1' :
       active === 5 ? 'C2' : ''
       
+      // const loadLesson = async () => {
+      //    try {
+      //       const data = await getLessonByNumber(requestedLevel, slug);
+      //       setSpecificLessonWords(data.words);
+      //       setCategory(data.category)
+      //       setPractice(data.practice)
+      //       setPractice2(data.dictation)
+            
+      //    } catch (error) {
+      //       console.error("Failed to fetch words:", error);
+      //    }
+      // };
+
       const loadLesson = async () => {
          try {
+            setDebugInfo(`Fetching: Level=${requestedLevel}, Slug=${slug}`);
             const data = await getLessonByNumber(requestedLevel, slug);
+
+            if (!data) {
+               setDebugInfo(`DB returned nothing for Level=${requestedLevel}, Slug=${slug}`);
+               return;
+            }
+
             setSpecificLessonWords(data.words);
-            setCategory(data.category)
-            setPractice(data.practice)
-            setPractice2(data.dictation)
-            
+            setCategory(data.category);
+            setPractice(data.practice);
+            setPractice2(data.dictation);
+            setDebugInfo("Data successfully loaded into state!");
+
          } catch (error) {
+            setDebugInfo(`DB Error: ${error.message}`);
             console.error("Failed to fetch words:", error);
          }
       };
@@ -863,23 +885,23 @@ export default function Lessons({ params }) {
       }
 
       {
-         stage === 'practice' &&  (() => {
-
+         stage === 'practice' && (() => {
             return (
-               <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
-                  {
-                     practice ?
-                        <SemanticOrbit
-                           lessonData = {practice}
-                           onStepOneFinished = {setStage}
-                        />
-                     :
-                     'NOT LOADED'
-                  }
+               <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex flex-col items-center justify-center p-5 text-center">
+                  {practice ? (
+                     <SemanticOrbit
+                        lessonData={practice}
+                        onStepOneFinished={setStage}
+                     />
+                  ) : (
+                     <div className="text-foreground text-sm">
+                        <p className="font-bold text-red-500 mb-2">PRACTICE NOT LOADED</p>
+                        <p className="bg-foreground/10 p-3 rounded-lg border border-foreground/20">{debugInfo}</p>
+                     </div>
+                  )}
                </div>
             );
          })()
-
       }
 
       {
