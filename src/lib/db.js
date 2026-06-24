@@ -1,7 +1,7 @@
 import { openDB } from 'idb';
 
 export const initDB = async () => {
-   return openDB('VocabularyDB', 4, {
+   return openDB('VocabularyDB', 5, {
       upgrade(db, oldVersion) {
 
          // Remove old store if it exists
