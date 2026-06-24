@@ -3,6 +3,7 @@ import Switch from "@/components/switch/switch";
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
 import { resetAllProgress, resetLevelProgress } from "@/lib/db";
+import { toast } from "sonner";
 import ThemeToggle from "@/components/themeSwitch/themeToggle";
 import {
   DropdownMenu,
@@ -36,6 +37,7 @@ function Settings(){
    const resetApp = async () => {
       try {
          await resetAllProgress()
+         toast.info('The App Restarted')
          setWarning(false)
          localStorage.clear()
          window.location.href = '/';
@@ -49,6 +51,7 @@ function Settings(){
       try {
          await resetLevelProgress(part)
          setWarning(false)
+         toast.info(`The ${part} Section Restarted`)
          
       } catch (error){
          console.error('Error Restarting:', error)

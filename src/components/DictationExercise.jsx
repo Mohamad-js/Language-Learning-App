@@ -16,6 +16,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
   // 1. Current step trackers
   const [currentStep, setCurrentStep] = useState(0);
   const currentRound = dictationData[currentStep];
+  const currentWord = currentRound.Target.join("");
 
   // 2. Multi-slot state tracking
   const [filledBlanks, setFilledBlanks] = useState({}); // Stores correct drops: { slotIndex: "Letter" }
@@ -44,7 +45,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
   useEffect(() => {
     if (!isRoundComplete) return;
 
-    playSound("step");
+    playPronunciation(currentWord);
 
     if (!isFinalStep) {
       const timer = setTimeout(() => {
@@ -64,6 +65,12 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
   const playSound = (type) => {
     try {
       new Audio(`/sounds/${type}.mp3`).play();
+    } catch (err) {}
+  };
+
+  const playPronunciation = (type) => {
+    try {
+      new Audio(`/sounds/a1/${type}-AmE.mp3`).play();
     } catch (err) {}
   };
 
@@ -93,8 +100,9 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
 
           // Check if dropped item character matches target character value (case-insensitive fallback check)
           if (letter.toLowerCase() === currentRound.Target[i].toLowerCase()) {
-            playSound("toast");
             
+            playSound("toast")
+
             // Persist the slot index value with its authentic assigned uppercase/lowercase form
             setFilledBlanks((prev) => ({ ...prev, [i]: currentRound.Target[i] }));
             setUsedOptionIndices((prev) => [...prev, optionIndex]);
@@ -113,15 +121,36 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-4xl h-[500px] mx-auto bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-inner overflow-hidden border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-between p-8"
+      className="relative w-full min-h-dvh mx-auto bg-background rounded-2xl shadow-inner overflow-hidden flex flex-col items-center justify-center gap-30 p-8"
     >
       {/* Header Level Count Display */}
-      <div className="text-xs font-bold text-slate-400 dark:text-slate-500 tracking-widest uppercase mt-2">
-        Dictation — Word {currentStep + 1} of {dictationData.length}
-      </div>
+         <div className="absolute w-full flex flex-col top-17 left-0 text-start pl-5 gap-3">
+            <div className="">Drag the correct letter to complete the word.</div>
 
-      {/* Target Word Word Row Assembly */}
-      <div className="flex gap-3 justify-center items-center my-auto flex-wrap">
+            <div className="text-lg font-bold text-slate-400 dark:text-slate-500 tracking-widest uppercase">
+               Word {currentStep + 1} of {dictationData.length}
+            </div>
+         </div>
+
+      <AnimatePresence>
+         {isRoundComplete && (
+            <motion.div
+               key={`hero-word-${currentStep}`}
+               initial={{ opacity: 0, scale: 0.4, y: 25 }}
+               animate={{ opacity: 1, scale: 1, y: 0 }}
+               exit={{ opacity: 0, scale: 0.8 }}
+               transition={{ type: "spring", stiffness: 280, damping: 16 }}
+               className="absolute top-[26%] z-40 flex flex-col items-center pointer-events-none"
+            >
+            <div className="px-10 py-4 bg-emerald-500 dark:bg-emerald-600 text-white font-extrabold text-5xl tracking-wide rounded-2xl shadow-2xl border-4 border-white dark:border-slate-800">
+               {currentRound.Target.join("")}
+            </div>
+            </motion.div>
+         )}
+      </AnimatePresence>
+
+      {/* Target Word Row Assembly */}
+      <div className="flex gap-3 justify-center items-center flex-wrap">
         {currentRound.Target.map((char, index) => {
           const isPreFilled = currentRound.blanksPatten[index] === 1;
           const isCorrectlyDropped = filledBlanks[index] !== undefined;
@@ -129,23 +158,35 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
 
           // Determine circle styling variations dynamically based on structural rules
           let circleClasses = "border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-800 text-slate-800 dark:text-slate-100";
-          if (isPreFilled) {
+          
+          if (isRoundComplete) {
+            // 🌟 UPGRADE: When word finishes, turn ALL letters (even the pre-filled gray ones) solid green
+            circleClasses = "border-green-500 bg-green-500 text-white dark:border-green-600 dark:bg-green-600 font-bold shadow-md";
+          } else if (isPreFilled) {
             circleClasses = "border-slate-200 bg-slate-200/50 dark:border-slate-800 dark:bg-slate-800/40 text-slate-400 dark:text-slate-600 border-dashed";
           } else if (isCorrectlyDropped) {
             circleClasses = "border-green-500 bg-green-500 text-white dark:border-green-600 dark:bg-green-600 font-bold";
           } else if (isShaking) {
             circleClasses = "border-red-500 bg-red-500 text-white dark:border-red-600 dark:bg-red-600";
           } else {
-            // Empty waiting target slot state classes
             circleClasses = "border-2 border-dashed border-blue-400 bg-blue-50/50 dark:border-blue-500/40 dark:bg-blue-950/20 animate-pulse";
           }
 
           return (
             <motion.div
-              key={`${currentStep}-slot-${index}`}
-              ref={(el) => (slotRefs.current[index] = el)}
-              animate={isShaking ? { x: [-6, 6, -6, 6, 0] } : { x: 0 }}
-              transition={{ duration: 0.4 }}
+               key={`${currentStep}-slot-${index}`}
+                  ref={(el) => (slotRefs.current[index] = el)}
+                  animate={
+                     isShaking 
+                        ? { x: [-6, 6, -6, 6, 0], opacity: 1 } 
+                        : isRoundComplete 
+                        ? { opacity: 0.2, scale: 0.85 } // 🌟 Sinks into the background
+                        : { x: 0, opacity: 1, scale: 1 }
+                  }
+                  transition={{ duration: 0.3 }}
+                  className={`w-14 h-14 rounded-full border-2 flex items-center justify-center text-xl font-semibold select-none shadow-sm transition-colors duration-200 ${circleClasses}`}
+
+
               className={`w-14 h-14 rounded-full border-2 flex items-center justify-center text-xl font-semibold select-none shadow-sm transition-colors duration-200 ${circleClasses}`}
             >
               {isPreFilled && char}
@@ -156,9 +197,10 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
         })}
       </div>
 
+
       {/* Bottom Available Input Option Row Layout */}
-      <div className="w-full max-w-xl bg-white dark:bg-slate-800/60 rounded-xl p-4 border border-slate-200/60 dark:border-slate-800 min-h-[96px] flex gap-4 justify-center items-center shadow-sm mb-4">
-        <AnimatePresence>
+      <div className="w-full bg-white rounded-xl p-4 flex gap-1 justify-center items-center shadow-sm mb-4">
+        <AnimatePresence mode="popLayout">
           {currentRound.optionLetters.map((letter, optionIndex) => {
             const isUsed = usedOptionIndices.includes(optionIndex);
 
@@ -167,9 +209,21 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
             return (
               <motion.div
                 key={`${currentStep}-option-${optionIndex}`}
-                initial={{ opacity: 0, scale: 0.6 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0, transition: { duration: 0.2 } }}
+                layout // 🌟 UPGRADE: Smoothly snaps remaining letters together when one is dragged and used
+                initial={{ opacity: 0, x: 50, scale: 0.8 }} // Start off-screen right
+                animate={{ opacity: 1, x: 0, scale: 1 }}    // Slide to center
+                exit={{ 
+                  opacity: 0, 
+                  x: -50,                                   // Exit off-screen left
+                  scale: 0.5, 
+                  transition: { duration: 0.2 } 
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  delay: optionIndex * 0.05 // 🌟 UPGRADE: Slight stagger makes them ripple in one by one
+                }}
                 className="relative"
               >
                 <motion.div

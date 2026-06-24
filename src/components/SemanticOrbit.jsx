@@ -9,8 +9,6 @@ import { TiTick } from "react-icons/ti";
 
 export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
 
-   console.log('lessonData from Comp', lessonData);
-
 
    // 1. The Master Index tracking which Word we are currently on
    const [currentStep, setCurrentStep] = useState(0);
@@ -18,10 +16,6 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
    // Grab the specific data for the active step
    const currentRound = lessonData[currentStep];
    const ROOT_WORD = currentRound.rootWord;
-
-   const currentAnswer = currentRound.options.filter((item) => {
-      return item.isCorrect === true
-   }).map(item => item.text)
 
 
    // Active board state
@@ -60,6 +54,12 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
       } catch (err) {}
    };
 
+   const playPronunciation = (type) => {
+      try {
+         new Audio(`/sounds/a1/${type}-AmE.mp3`).play();
+      } catch (err) {}
+   };
+
    const handleDragEnd = (event, info, word) => {
       if (!centerRect) return;
       const dropX = info.point.x;
@@ -69,9 +69,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
          dropY >= centerRect.top && dropY <= centerRect.bottom;
 
       if (isInsideCenter) {
-         if (word.isCorrect) {
-            playSound("toast");
-            
+         if (word.isCorrect) {            
             // ✨ Trigger green flash state, then clear it after 500ms
             setIsCorrectDrop(true);
             setTimeout(() => setIsCorrectDrop(false), 500);
@@ -93,7 +91,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
    useEffect(() => {
       if (!isRoundComplete) return;
 
-      playSound("step");
+      playPronunciation(ROOT_WORD);
 
       if (!isFinalWordOfLesson) {
          const timer = setTimeout(() => {
@@ -112,13 +110,15 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
 
    // Handles target nodes colors dynamically based on drop states
    const getCenterBgClass = () => {
-      if (shake) return "bg-red-500";
-      if (isCorrectDrop) return "bg-green-500 dark:bg-green-600";
-      return "bg-blue-600 dark:bg-blue-500";
+      if (shake) return "bg-red-500 opacity-[0.5] border border-red-500";
+      if (isCorrectDrop) return "bg-green-500 opacity-[0.5] border border-green-500";
+      return "bg-black/0 border border-white";
    };
 
    return (
-      <div ref={containerRef} className="absolute top-0 left-0 w-screen max-w-4xl h-dvh mx-auto rounded-2xl shadow-inner overflow-hidden flex items-center justify-center">
+      <div ref={containerRef} className="absolute top-0 left-0 w-full bg-background h-dvh mx-auto shadow-inner overflow-hidden flex items-center justify-center">
+
+         <div className="absolute w-full top-17 left-0 text-start pl-5">Drag the correct word to the image.</div>
          
          {/* Target Node (Root Word) */}
          <motion.div
@@ -132,53 +132,62 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
             x: { duration: 0.4 },
             scale: { duration: 0.4, ease: "easeInOut" }
          }}
-         className={`relative z-10 flex flex-col items-center justify-center w-40 h-40 rounded-full shadow-2xl transition-colors duration-200 ${getCenterBgClass()}`}
+            className={`relative z-10 overflow-hidden flex items-center justify-center w-60 h-60 rounded-full shadow-2xl transition-colors duration-200`}
          >
-         <span className="text-2xl font-bold mb-1">{ROOT_WORD}</span>
-         <span className="text-xs font-semibold tracking-widest uppercase mb-1">
-            Word {currentStep + 1} of {lessonData.length}
-         </span>
-         <span className="text-sm font-medium">
+            <div className="w-full h-full">
+               <Image className='object-cover object-center'
+                  src={`/images/a1/${ROOT_WORD}.png`}
+                  fill
+                  alt='Word Pic'
+               />
+            </div>
+
+            <div className={`absolute w-full h-full ${getCenterBgClass()}`}></div>
+
+         {/* <span className="text-sm font-medium">
             {matchedWords.length} / {totalCorrectNeeded}
-         </span>
+         </span> */}
          </motion.div>
 
          {/* Orbiting Words */}
-         <AnimatePresence>
-         {words.map((word, index) => {
-            const angle = (index / words.length) * Math.PI * 2;
-            const radiusX = 90;
-            const radiusY = 220;
-            const startX = Math.cos(angle) * radiusX;
-            const startY = Math.sin(angle) * radiusY;
-
-            return (
-               <motion.div
-                  key={`${currentStep}-${word.id}`}
-                  className="absolute top-1/2 left-1/2 w-0 h-0 flex items-center justify-center z-20"
-                  initial={{ opacity: 0, scale: 0, x: startX, y: startY }}
-                  animate={{ opacity: 1, scale: 1, x: startX, y: startY }}
-                  transition={{ type: "spring", stiffness: 120, damping: 18 }}
-                  exit={{ x: 0, y: 0, opacity: 0, scale: 0, transition: { duration: 0.3 } }}
-               >
-               <motion.div
-                  drag
-                  dragConstraints={containerRef}
-                  dragElastic={0.2}
-                  dragSnapToOrigin={true}
-                  whileHover={{ scale: 1.1, cursor: "grab" }}
-                  whileDrag={{ scale: 1.2, cursor: "grabbing", zIndex: 50 }}
-                  onDragEnd={(e, info) => handleDragEnd(e, info, word)}
-                  animate={{ rotate: [-2, 2, -2] }}
-                  transition={{ rotate: { repeat: Infinity, duration: 3 + index % 2, ease: "easeInOut" } }}
-                  className="px-6 py-3 bg-foreground text-background font-semibold rounded-full shadow-lg select-none touch-none whitespace-nowrap"
-               >
-                  {word.text}
-               </motion.div>
-               </motion.div>
-            );
-         })}
-         </AnimatePresence>
+         <div className="absolute bottom-12 left-0 w-full px-6 flex flex-wrap justify-center items-center gap-4 z-20 pointer-events-none">
+            <AnimatePresence mode="popLayout">
+               {words.map((word, index) => (
+                  <motion.div
+                     key={`${currentStep}-${word.id}`}
+                     layout // 🌟 CRITICAL: Makes remaining words smoothly slide over to fill the empty space when one is deleted!
+                     initial={{ opacity: 0, scale: 0.5, y: 30 }}
+                     animate={{ opacity: 1, scale: 1, y: 0 }}
+                     exit={{ opacity: 0, scale: 0 }}
+                     transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 25,
+                        layout: { duration: 0.3 } // Speed of the flex "gap closing"
+                     }}
+                     className="pointer-events-auto"
+                  >
+                     <motion.div
+                        drag
+                        dragConstraints={containerRef}
+                        dragElastic={0.2}
+                        dragSnapToOrigin={true}
+                        whileHover={{ scale: 1.1, cursor: "grab" }}
+                        whileDrag={{ scale: 1.2, cursor: "grabbing", zIndex: 50 }}
+                        onDragEnd={(e, info) => handleDragEnd(e, info, word)}
+                        // Re-applied your nice subtle floating rotation
+                        animate={{ rotate: [-2, 2, -2] }}
+                        transition={{ 
+                           rotate: { repeat: Infinity, duration: 3 + (index % 2), ease: "easeInOut" } 
+                        }}
+                        className="px-5 py-3 bg-foreground text-background font-semibold rounded-full shadow-lg select-none touch-none whitespace-nowrap border border-border/10"
+                     >
+                        {word.text}
+                     </motion.div>
+                  </motion.div>
+               ))}
+            </AnimatePresence>
+         </div>
 
          {/* SUCCESS COMPLETION OVERLAY */}
          <AnimatePresence>
@@ -205,14 +214,6 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
                      <p className="text-3xl">
                         {ROOT_WORD}
                      </p>
-
-                     =
-                     
-                     {
-                        currentAnswer?.map((item, index) => (
-                           <div key={index} className="text-3xl">{item}</div>
-                        ))
-                     }
                   </div>
 
                </motion.div>

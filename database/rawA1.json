@@ -198,92 +198,85 @@
                {
                   "rootWord": "I",
                   "options": [
-                     { "id": "1", "text": "من", "isCorrect": true },
-                     { "id": "2", "text": "تو", "isCorrect": false },
-                     { "id": "3", "text": "شما", "isCorrect": false },
-                     { "id": "4", "text": "او (مونث)", "isCorrect": false },
-                     { "id": "5", "text": "او (مذکر)", "isCorrect": false },
-                     { "id": "6", "text": "ما", "isCorrect": false },
-                     { "id": "7", "text": "آنها", "isCorrect": false },
-                     { "id": "8", "text": "این", "isCorrect": false }
+                     { "id": "1", "text": "I", "isCorrect": true },
+                     { "id": "2", "text": "You", "isCorrect": false },
+                     { "id": "3", "text": "She", "isCorrect": false },
+                     { "id": "4", "text": "He", "isCorrect": false },
+                     { "id": "5", "text": "We", "isCorrect": false },
+                     { "id": "6", "text": "They", "isCorrect": false },
+                     { "id": "7", "text": "It", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "You",
                   "options": [
-                     { "id": "9", "text": "تو", "isCorrect": true },
-                     { "id": "10", "text": "شما", "isCorrect": true },
-                     { "id": "11", "text": "او (مونث)", "isCorrect": false },
-                     { "id": "12", "text": "او (مذکر)", "isCorrect": false },
-                     { "id": "13", "text": "ما", "isCorrect": false },
-                     { "id": "14", "text": "آنها", "isCorrect": false },
-                     { "id": "15", "text": "من", "isCorrect": false },
-                     { "id": "16", "text": "این", "isCorrect": false }
+                     { "id": "8", "text": "You", "isCorrect": true },
+                     { "id": "9", "text": "She", "isCorrect": false },
+                     { "id": "10", "text": "He", "isCorrect": false },
+                     { "id": "11", "text": "We", "isCorrect": false },
+                     { "id": "12", "text": "They", "isCorrect": false },
+                     { "id": "13", "text": "I", "isCorrect": false },
+                     { "id": "14", "text": "It", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "We",
                   "options": [
-                     { "id": "17", "text": "شما", "isCorrect": false },
-                     { "id": "18", "text": "او (مونث)", "isCorrect": false },
-                     { "id": "19", "text": "او (مذکر)", "isCorrect": false },
-                     { "id": "20", "text": "ما", "isCorrect": true },
-                     { "id": "21", "text": "آنها", "isCorrect": false },
-                     { "id": "22", "text": "من", "isCorrect": false },
-                     { "id": "23", "text": "تو", "isCorrect": false },
-                     { "id": "24", "text": "این", "isCorrect": false }
+                     { "id": "15", "text": "She", "isCorrect": false },
+                     { "id": "16", "text": "He", "isCorrect": false },
+                     { "id": "17", "text": "We", "isCorrect": true },
+                     { "id": "18", "text": "They", "isCorrect": false },
+                     { "id": "19", "text": "I", "isCorrect": false },
+                     { "id": "20", "text": "You", "isCorrect": false },
+                     { "id": "21", "text": "It", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "They",
                   "options": [
-                     { "id": "25", "text": "او (مونث)", "isCorrect": false },
-                     { "id": "26", "text": "او (مذکر)", "isCorrect": false },
-                     { "id": "27", "text": "ما", "isCorrect": false },
-                     { "id": "28", "text": "آنها", "isCorrect": true },
-                     { "id": "29", "text": "شما", "isCorrect": false },
-                     { "id": "30", "text": "من", "isCorrect": false },
-                     { "id": "31", "text": "تو", "isCorrect": false },
-                     { "id": "32", "text": "این", "isCorrect": false }
+                     { "id": "21", "text": "She", "isCorrect": false },
+                     { "id": "22", "text": "He", "isCorrect": false },
+                     { "id": "23", "text": "We", "isCorrect": false },
+                     { "id": "24", "text": "They", "isCorrect": true },
+                     { "id": "25", "text": "I", "isCorrect": false },
+                     { "id": "26", "text": "You", "isCorrect": false },
+                     { "id": "27", "text": "It", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "He",
                   "options": [
-                     { "id": "33", "text": "او (مذکر)", "isCorrect": true },
-                     { "id": "34", "text": "ما", "isCorrect": false },
-                     { "id": "35", "text": "آنها", "isCorrect": false },
-                     { "id": "36", "text": "من", "isCorrect": false },
-                     { "id": "37", "text": "تو", "isCorrect": false },
-                     { "id": "38", "text": "شما", "isCorrect": false },
-                     { "id": "39", "text": "این", "isCorrect": false },
-                     { "id": "40", "text": "او (مذکر)", "isCorrect": false }
+                     { "id": "28", "text": "He", "isCorrect": true },
+                     { "id": "29", "text": "We", "isCorrect": false },
+                     { "id": "30", "text": "They", "isCorrect": false },
+                     { "id": "31", "text": "I", "isCorrect": false },
+                     { "id": "32", "text": "You", "isCorrect": false },
+                     { "id": "33", "text": "It", "isCorrect": false },
+                     { "id": "34", "text": "She", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "She",
                   "options": [
-                     { "id": "41", "text": "ما", "isCorrect": false },
-                     { "id": "42", "text": "آنها", "isCorrect": false },
-                     { "id": "43", "text": "من", "isCorrect": false },
-                     { "id": "44", "text": "تو", "isCorrect": false },
-                     { "id": "45", "text": "شما", "isCorrect": false },
-                     { "id": "46", "text": "این", "isCorrect": false },
-                     { "id": "47", "text": "او (مذکر)", "isCorrect": false },
-                     { "id": "48", "text": "او (مونث)", "isCorrect": true }
+                     { "id": "35", "text": "We", "isCorrect": false },
+                     { "id": "36", "text": "They", "isCorrect": false },
+                     { "id": "37", "text": "I", "isCorrect": false },
+                     { "id": "38", "text": "You", "isCorrect": false },
+                     { "id": "39", "text": "It", "isCorrect": false },
+                     { "id": "40", "text": "He", "isCorrect": false },
+                     { "id": "41", "text": "She", "isCorrect": true }
                   ]
                },
                {
                   "rootWord": "It",
                   "options": [
-                     { "id": "49", "text": "من", "isCorrect": false },
-                     { "id": "50", "text": "تو", "isCorrect": false },
-                     { "id": "51", "text": "شما", "isCorrect": false },
-                     { "id": "52", "text": "او (مونث)", "isCorrect": false },
-                     { "id": "53", "text": "او (مذکر)", "isCorrect": false },
-                     { "id": "54", "text": "ما", "isCorrect": false },
-                     { "id": "55", "text": "آنها", "isCorrect": false },
-                     { "id": "56", "text": "این", "isCorrect": true }
+                     { "id": "42", "text": "I", "isCorrect": false },
+                     { "id": "43", "text": "You", "isCorrect": false },
+                     { "id": "44", "text": "She", "isCorrect": false },
+                     { "id": "45", "text": "He", "isCorrect": false },
+                     { "id": "46", "text": "We", "isCorrect": false },
+                     { "id": "47", "text": "They", "isCorrect": false },
+                     { "id": "48", "text": "It", "isCorrect": true }
                   ]
                }
             ],
@@ -302,6 +295,11 @@
                {
                   "Target": ["W", "e"],
                   "blanksPatten": [1, 0],
+                  "optionLetters": ["e", "i"]
+               },
+               {
+                  "Target": ["I", "t"],
+                  "blanksPatten": [0, 1],
                   "optionLetters": ["e", "i"]
                },
                {
@@ -589,151 +587,151 @@
                {
                   "rootWord": "One",
                   "options": [
-                     { "id": "1", "text": "1", "isCorrect": true },
-                     { "id": "2", "text": "2", "isCorrect": false },
-                     { "id": "3", "text": "3", "isCorrect": false },
-                     { "id": "4", "text": "4", "isCorrect": false },
-                     { "id": "5", "text": "5", "isCorrect": false },
-                     { "id": "6", "text": "6", "isCorrect": false },
-                     { "id": "7", "text": "7", "isCorrect": false },
-                     { "id": "8", "text": "8", "isCorrect": false },
-                     { "id": "9", "text": "9", "isCorrect": false },
-                     { "id": "10", "text": "10", "isCorrect": false }
+                     { "id": "1", "text": "One", "isCorrect": true },
+                     { "id": "2", "text": "Two", "isCorrect": false },
+                     { "id": "3", "text": "Three", "isCorrect": false },
+                     { "id": "4", "text": "Four", "isCorrect": false },
+                     { "id": "5", "text": "Five", "isCorrect": false },
+                     { "id": "6", "text": "Six", "isCorrect": false },
+                     { "id": "7", "text": "Seven", "isCorrect": false },
+                     { "id": "8", "text": "Eight", "isCorrect": false },
+                     { "id": "9", "text": "Nine", "isCorrect": false },
+                     { "id": "10", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Two",
                   "options": [
-                     { "id": "11", "text": "1", "isCorrect": false },
-                     { "id": "12", "text": "2", "isCorrect": true },
-                     { "id": "13", "text": "3", "isCorrect": false },
-                     { "id": "14", "text": "4", "isCorrect": false },
-                     { "id": "15", "text": "5", "isCorrect": false },
-                     { "id": "16", "text": "6", "isCorrect": false },
-                     { "id": "17", "text": "7", "isCorrect": false },
-                     { "id": "18", "text": "8", "isCorrect": false },
-                     { "id": "19", "text": "9", "isCorrect": false },
-                     { "id": "20", "text": "10", "isCorrect": false }
+                     { "id": "11", "text": "One", "isCorrect": false },
+                     { "id": "12", "text": "Two", "isCorrect": true },
+                     { "id": "13", "text": "Three", "isCorrect": false },
+                     { "id": "14", "text": "Four", "isCorrect": false },
+                     { "id": "15", "text": "Five", "isCorrect": false },
+                     { "id": "16", "text": "Six", "isCorrect": false },
+                     { "id": "17", "text": "Seven", "isCorrect": false },
+                     { "id": "18", "text": "Eight", "isCorrect": false },
+                     { "id": "19", "text": "Nine", "isCorrect": false },
+                     { "id": "20", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Seven",
                   "options": [
-                     { "id": "21", "text": "1", "isCorrect": false },
-                     { "id": "22", "text": "2", "isCorrect": false },
-                     { "id": "23", "text": "3", "isCorrect": false },
-                     { "id": "24", "text": "4", "isCorrect": false },
-                     { "id": "25", "text": "5", "isCorrect": false },
-                     { "id": "26", "text": "6", "isCorrect": false },
-                     { "id": "27", "text": "7", "isCorrect": true },
-                     { "id": "28", "text": "8", "isCorrect": false },
-                     { "id": "29", "text": "9", "isCorrect": false },
-                     { "id": "30", "text": "10", "isCorrect": false }
+                     { "id": "21", "text": "One", "isCorrect": false },
+                     { "id": "22", "text": "Two", "isCorrect": false },
+                     { "id": "23", "text": "Three", "isCorrect": false },
+                     { "id": "24", "text": "Four", "isCorrect": false },
+                     { "id": "25", "text": "Five", "isCorrect": false },
+                     { "id": "26", "text": "Six", "isCorrect": false },
+                     { "id": "27", "text": "Seven", "isCorrect": true },
+                     { "id": "28", "text": "Eight", "isCorrect": false },
+                     { "id": "29", "text": "Nine", "isCorrect": false },
+                     { "id": "30", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Five",
                   "options": [
-                     { "id": "31", "text": "1", "isCorrect": false },
-                     { "id": "32", "text": "2", "isCorrect": false },
-                     { "id": "33", "text": "3", "isCorrect": false },
-                     { "id": "34", "text": "4", "isCorrect": false },
-                     { "id": "35", "text": "5", "isCorrect": true },
-                     { "id": "36", "text": "6", "isCorrect": false },
-                     { "id": "37", "text": "7", "isCorrect": false },
-                     { "id": "38", "text": "8", "isCorrect": false },
-                     { "id": "39", "text": "9", "isCorrect": false },
-                     { "id": "40", "text": "10", "isCorrect": false }
+                     { "id": "31", "text": "One", "isCorrect": false },
+                     { "id": "32", "text": "Two", "isCorrect": false },
+                     { "id": "33", "text": "Three", "isCorrect": false },
+                     { "id": "34", "text": "Four", "isCorrect": false },
+                     { "id": "35", "text": "Five", "isCorrect": true },
+                     { "id": "36", "text": "Six", "isCorrect": false },
+                     { "id": "37", "text": "Seven", "isCorrect": false },
+                     { "id": "38", "text": "Eight", "isCorrect": false },
+                     { "id": "39", "text": "Nine", "isCorrect": false },
+                     { "id": "40", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Three",
                   "options": [
-                     { "id": "41", "text": "1", "isCorrect": false },
-                     { "id": "42", "text": "2", "isCorrect": false },
-                     { "id": "43", "text": "3", "isCorrect": true },
-                     { "id": "44", "text": "4", "isCorrect": false },
-                     { "id": "45", "text": "5", "isCorrect": false },
-                     { "id": "46", "text": "6", "isCorrect": false },
-                     { "id": "47", "text": "7", "isCorrect": false },
-                     { "id": "48", "text": "8", "isCorrect": false },
-                     { "id": "49", "text": "9", "isCorrect": false },
-                     { "id": "50", "text": "10", "isCorrect": false }
+                     { "id": "41", "text": "One", "isCorrect": false },
+                     { "id": "42", "text": "Two", "isCorrect": false },
+                     { "id": "43", "text": "Three", "isCorrect": true },
+                     { "id": "44", "text": "Four", "isCorrect": false },
+                     { "id": "45", "text": "Five", "isCorrect": false },
+                     { "id": "46", "text": "Six", "isCorrect": false },
+                     { "id": "47", "text": "Seven", "isCorrect": false },
+                     { "id": "48", "text": "Eight", "isCorrect": false },
+                     { "id": "49", "text": "Nine", "isCorrect": false },
+                     { "id": "50", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Nine",
                   "options": [
-                     { "id": "51", "text": "1", "isCorrect": false },
-                     { "id": "52", "text": "2", "isCorrect": false },
-                     { "id": "53", "text": "3", "isCorrect": false },
-                     { "id": "54", "text": "4", "isCorrect": false },
-                     { "id": "55", "text": "5", "isCorrect": false },
-                     { "id": "56", "text": "6", "isCorrect": false },
-                     { "id": "57", "text": "7", "isCorrect": false },
-                     { "id": "58", "text": "8", "isCorrect": false },
-                     { "id": "59", "text": "9", "isCorrect": true },
-                     { "id": "60", "text": "10", "isCorrect": false }
+                     { "id": "51", "text": "One", "isCorrect": false },
+                     { "id": "52", "text": "Two", "isCorrect": false },
+                     { "id": "53", "text": "Three", "isCorrect": false },
+                     { "id": "54", "text": "Four", "isCorrect": false },
+                     { "id": "55", "text": "Five", "isCorrect": false },
+                     { "id": "56", "text": "Six", "isCorrect": false },
+                     { "id": "57", "text": "Seven", "isCorrect": false },
+                     { "id": "58", "text": "Eight", "isCorrect": false },
+                     { "id": "59", "text": "Nine", "isCorrect": true },
+                     { "id": "60", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Four",
                   "options": [
-                     { "id": "61", "text": "1", "isCorrect": false },
-                     { "id": "62", "text": "2", "isCorrect": false },
-                     { "id": "63", "text": "3", "isCorrect": false },
-                     { "id": "64", "text": "4", "isCorrect": true },
-                     { "id": "65", "text": "5", "isCorrect": false },
-                     { "id": "66", "text": "6", "isCorrect": false },
-                     { "id": "67", "text": "7", "isCorrect": false },
-                     { "id": "68", "text": "8", "isCorrect": false },
-                     { "id": "69", "text": "9", "isCorrect": false },
-                     { "id": "70", "text": "10", "isCorrect": false }
+                     { "id": "61", "text": "One", "isCorrect": false },
+                     { "id": "62", "text": "Two", "isCorrect": false },
+                     { "id": "63", "text": "Three", "isCorrect": false },
+                     { "id": "64", "text": "Four", "isCorrect": true },
+                     { "id": "65", "text": "Five", "isCorrect": false },
+                     { "id": "66", "text": "Six", "isCorrect": false },
+                     { "id": "67", "text": "Seven", "isCorrect": false },
+                     { "id": "68", "text": "Eight", "isCorrect": false },
+                     { "id": "69", "text": "Nine", "isCorrect": false },
+                     { "id": "70", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Six",
                   "options": [
-                     { "id": "71", "text": "1", "isCorrect": false },
-                     { "id": "72", "text": "2", "isCorrect": false },
-                     { "id": "73", "text": "3", "isCorrect": false },
-                     { "id": "74", "text": "4", "isCorrect": false },
-                     { "id": "75", "text": "5", "isCorrect": false },
-                     { "id": "76", "text": "6", "isCorrect": true },
-                     { "id": "77", "text": "7", "isCorrect": false },
-                     { "id": "78", "text": "8", "isCorrect": false },
-                     { "id": "79", "text": "9", "isCorrect": false },
-                     { "id": "80", "text": "10", "isCorrect": false }
+                     { "id": "71", "text": "One", "isCorrect": false },
+                     { "id": "72", "text": "Two", "isCorrect": false },
+                     { "id": "73", "text": "Three", "isCorrect": false },
+                     { "id": "74", "text": "Four", "isCorrect": false },
+                     { "id": "75", "text": "Five", "isCorrect": false },
+                     { "id": "76", "text": "Six", "isCorrect": true },
+                     { "id": "77", "text": "Seven", "isCorrect": false },
+                     { "id": "78", "text": "Eight", "isCorrect": false },
+                     { "id": "79", "text": "Nine", "isCorrect": false },
+                     { "id": "80", "text": "Ten", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Ten",
                   "options": [
-                     { "id": "81", "text": "1", "isCorrect": false },
-                     { "id": "82", "text": "2", "isCorrect": false },
-                     { "id": "83", "text": "3", "isCorrect": false },
-                     { "id": "84", "text": "4", "isCorrect": false },
-                     { "id": "85", "text": "5", "isCorrect": false },
-                     { "id": "86", "text": "6", "isCorrect": false },
-                     { "id": "87", "text": "7", "isCorrect": false },
-                     { "id": "88", "text": "8", "isCorrect": false },
-                     { "id": "89", "text": "9", "isCorrect": false },
-                     { "id": "90", "text": "10", "isCorrect": true }
+                     { "id": "81", "text": "One", "isCorrect": false },
+                     { "id": "82", "text": "Two", "isCorrect": false },
+                     { "id": "83", "text": "Three", "isCorrect": false },
+                     { "id": "84", "text": "Four", "isCorrect": false },
+                     { "id": "85", "text": "Five", "isCorrect": false },
+                     { "id": "86", "text": "Six", "isCorrect": false },
+                     { "id": "87", "text": "Seven", "isCorrect": false },
+                     { "id": "88", "text": "Eight", "isCorrect": false },
+                     { "id": "89", "text": "Nine", "isCorrect": false },
+                     { "id": "90", "text": "Ten", "isCorrect": true }
                   ]
                },
                {
                   "rootWord": "Eight",
                   "options": [
-                     { "id": "91", "text": "1", "isCorrect": false },
-                     { "id": "92", "text": "2", "isCorrect": false },
-                     { "id": "93", "text": "3", "isCorrect": false },
-                     { "id": "94", "text": "4", "isCorrect": false },
-                     { "id": "95", "text": "5", "isCorrect": false },
-                     { "id": "96", "text": "6", "isCorrect": false },
-                     { "id": "97", "text": "7", "isCorrect": false },
-                     { "id": "98", "text": "8", "isCorrect": true },
-                     { "id": "99", "text": "9", "isCorrect": false },
-                     { "id": "100", "text": "10", "isCorrect": false }
+                     { "id": "91", "text": "One", "isCorrect": false },
+                     { "id": "92", "text": "Two", "isCorrect": false },
+                     { "id": "93", "text": "Three", "isCorrect": false },
+                     { "id": "94", "text": "Four", "isCorrect": false },
+                     { "id": "95", "text": "Five", "isCorrect": false },
+                     { "id": "96", "text": "Six", "isCorrect": false },
+                     { "id": "97", "text": "Seven", "isCorrect": false },
+                     { "id": "98", "text": "Eight", "isCorrect": true },
+                     { "id": "99", "text": "Nine", "isCorrect": false },
+                     { "id": "100", "text": "Ten", "isCorrect": false }
                   ]
                }
             ],
@@ -1063,151 +1061,151 @@
                {
                   "rootWord": "Twenty",
                   "options": [
-                     { "id": "1", "text": "11", "isCorrect": false },
-                     { "id": "2", "text": "12", "isCorrect": false },
-                     { "id": "3", "text": "13", "isCorrect": false },
-                     { "id": "4", "text": "14", "isCorrect": false },
-                     { "id": "5", "text": "15", "isCorrect": false },
-                     { "id": "6", "text": "16", "isCorrect": false },
-                     { "id": "7", "text": "17", "isCorrect": false },
-                     { "id": "8", "text": "18", "isCorrect": false },
-                     { "id": "9", "text": "19", "isCorrect": false },
-                     { "id": "10", "text": "20", "isCorrect": true }
+                     { "id": "1", "text": "Eleven", "isCorrect": false },
+                     { "id": "2", "text": "Twelve", "isCorrect": false },
+                     { "id": "3", "text": "Thirteen", "isCorrect": false },
+                     { "id": "4", "text": "Fourteen", "isCorrect": false },
+                     { "id": "5", "text": "Fifteen", "isCorrect": false },
+                     { "id": "6", "text": "Sixteen", "isCorrect": false },
+                     { "id": "7", "text": "Seventeen", "isCorrect": false },
+                     { "id": "8", "text": "Eighteen", "isCorrect": false },
+                     { "id": "9", "text": "Nineteen", "isCorrect": false },
+                     { "id": "10", "text": "Twenty", "isCorrect": true }
                   ]
                },
                {
                   "rootWord": "Twelve",
                   "options": [
-                     { "id": "11", "text": "11", "isCorrect": false },
-                     { "id": "12", "text": "12", "isCorrect": true },
-                     { "id": "13", "text": "13", "isCorrect": false },
-                     { "id": "14", "text": "14", "isCorrect": false },
-                     { "id": "15", "text": "15", "isCorrect": false },
-                     { "id": "16", "text": "16", "isCorrect": false },
-                     { "id": "17", "text": "17", "isCorrect": false },
-                     { "id": "18", "text": "18", "isCorrect": false },
-                     { "id": "19", "text": "19", "isCorrect": false },
-                     { "id": "20", "text": "20", "isCorrect": false }
+                     { "id": "11", "text": "Eleven", "isCorrect": false },
+                     { "id": "12", "text": "Twelve", "isCorrect": true },
+                     { "id": "13", "text": "Thirteen", "isCorrect": false },
+                     { "id": "14", "text": "Fourteen", "isCorrect": false },
+                     { "id": "15", "text": "Fifteen", "isCorrect": false },
+                     { "id": "16", "text": "Sixteen", "isCorrect": false },
+                     { "id": "17", "text": "Seventeen", "isCorrect": false },
+                     { "id": "18", "text": "Eighteen", "isCorrect": false },
+                     { "id": "19", "text": "Nineteen", "isCorrect": false },
+                     { "id": "20", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Fifteen",
                   "options": [
-                     { "id": "21", "text": "11", "isCorrect": false },
-                     { "id": "22", "text": "12", "isCorrect": false },
-                     { "id": "23", "text": "13", "isCorrect": false },
-                     { "id": "24", "text": "14", "isCorrect": false },
-                     { "id": "25", "text": "15", "isCorrect": true },
-                     { "id": "26", "text": "16", "isCorrect": false },
-                     { "id": "27", "text": "17", "isCorrect": false },
-                     { "id": "28", "text": "18", "isCorrect": false },
-                     { "id": "29", "text": "19", "isCorrect": false },
-                     { "id": "30", "text": "20", "isCorrect": false }
+                     { "id": "21", "text": "Eleven", "isCorrect": false },
+                     { "id": "22", "text": "Twelve", "isCorrect": false },
+                     { "id": "23", "text": "Thirteen", "isCorrect": false },
+                     { "id": "24", "text": "Fourteen", "isCorrect": false },
+                     { "id": "25", "text": "Fifteen", "isCorrect": true },
+                     { "id": "26", "text": "Sixteen", "isCorrect": false },
+                     { "id": "27", "text": "Seventeen", "isCorrect": false },
+                     { "id": "28", "text": "Eighteen", "isCorrect": false },
+                     { "id": "29", "text": "Nineteen", "isCorrect": false },
+                     { "id": "30", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Fourteen",
                   "options": [
-                     { "id": "31", "text": "11", "isCorrect": false },
-                     { "id": "32", "text": "12", "isCorrect": false },
-                     { "id": "33", "text": "13", "isCorrect": false },
-                     { "id": "34", "text": "14", "isCorrect": true },
-                     { "id": "35", "text": "15", "isCorrect": false },
-                     { "id": "36", "text": "16", "isCorrect": false },
-                     { "id": "37", "text": "17", "isCorrect": false },
-                     { "id": "38", "text": "18", "isCorrect": false },
-                     { "id": "39", "text": "19", "isCorrect": false },
-                     { "id": "40", "text": "20", "isCorrect": false }
+                     { "id": "31", "text": "Eleven", "isCorrect": false },
+                     { "id": "32", "text": "Twelve", "isCorrect": false },
+                     { "id": "33", "text": "Thirteen", "isCorrect": false },
+                     { "id": "34", "text": "Fourteen", "isCorrect": true },
+                     { "id": "35", "text": "Fifteen", "isCorrect": false },
+                     { "id": "36", "text": "Sixteen", "isCorrect": false },
+                     { "id": "37", "text": "Seventeen", "isCorrect": false },
+                     { "id": "38", "text": "Eighteen", "isCorrect": false },
+                     { "id": "39", "text": "Nineteen", "isCorrect": false },
+                     { "id": "40", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Thirteen",
                   "options": [
-                     { "id": "41", "text": "11", "isCorrect": false },
-                     { "id": "42", "text": "12", "isCorrect": false },
-                     { "id": "43", "text": "13", "isCorrect": true },
-                     { "id": "44", "text": "14", "isCorrect": false },
-                     { "id": "45", "text": "15", "isCorrect": false },
-                     { "id": "46", "text": "16", "isCorrect": false },
-                     { "id": "47", "text": "17", "isCorrect": false },
-                     { "id": "48", "text": "18", "isCorrect": false },
-                     { "id": "49", "text": "19", "isCorrect": false },
-                     { "id": "50", "text": "20", "isCorrect": false }
+                     { "id": "41", "text": "Eleven", "isCorrect": false },
+                     { "id": "42", "text": "Twelve", "isCorrect": false },
+                     { "id": "43", "text": "Thirteen", "isCorrect": true },
+                     { "id": "44", "text": "Fourteen", "isCorrect": false },
+                     { "id": "45", "text": "Fifteen", "isCorrect": false },
+                     { "id": "46", "text": "Sixteen", "isCorrect": false },
+                     { "id": "47", "text": "Seventeen", "isCorrect": false },
+                     { "id": "48", "text": "Eighteen", "isCorrect": false },
+                     { "id": "49", "text": "Nineteen", "isCorrect": false },
+                     { "id": "50", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Nineteen",
                   "options": [
-                     { "id": "51", "text": "11", "isCorrect": false },
-                     { "id": "52", "text": "12", "isCorrect": false },
-                     { "id": "53", "text": "13", "isCorrect": false },
-                     { "id": "54", "text": "14", "isCorrect": false },
-                     { "id": "55", "text": "15", "isCorrect": false },
-                     { "id": "56", "text": "16", "isCorrect": false },
-                     { "id": "57", "text": "17", "isCorrect": false },
-                     { "id": "58", "text": "18", "isCorrect": false },
-                     { "id": "59", "text": "19", "isCorrect": true },
-                     { "id": "60", "text": "20", "isCorrect": false }
+                     { "id": "51", "text": "Eleven", "isCorrect": false },
+                     { "id": "52", "text": "Twelve", "isCorrect": false },
+                     { "id": "53", "text": "Thirteen", "isCorrect": false },
+                     { "id": "54", "text": "Fourteen", "isCorrect": false },
+                     { "id": "55", "text": "Fifteen", "isCorrect": false },
+                     { "id": "56", "text": "Sixteen", "isCorrect": false },
+                     { "id": "57", "text": "Seventeen", "isCorrect": false },
+                     { "id": "58", "text": "Eighteen", "isCorrect": false },
+                     { "id": "59", "text": "Nineteen", "isCorrect": true },
+                     { "id": "60", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Eleven",
                   "options": [
-                     { "id": "61", "text": "11", "isCorrect": true },
-                     { "id": "62", "text": "12", "isCorrect": false },
-                     { "id": "63", "text": "13", "isCorrect": false },
-                     { "id": "64", "text": "14", "isCorrect": false },
-                     { "id": "65", "text": "15", "isCorrect": false },
-                     { "id": "66", "text": "16", "isCorrect": false },
-                     { "id": "67", "text": "17", "isCorrect": false },
-                     { "id": "68", "text": "18", "isCorrect": false },
-                     { "id": "69", "text": "19", "isCorrect": false },
-                     { "id": "70", "text": "20", "isCorrect": false }
+                     { "id": "61", "text": "Eleven", "isCorrect": true },
+                     { "id": "62", "text": "Twelve", "isCorrect": false },
+                     { "id": "63", "text": "Thirteen", "isCorrect": false },
+                     { "id": "64", "text": "Fourteen", "isCorrect": false },
+                     { "id": "65", "text": "Fifteen", "isCorrect": false },
+                     { "id": "66", "text": "Sixteen", "isCorrect": false },
+                     { "id": "67", "text": "Seventeen", "isCorrect": false },
+                     { "id": "68", "text": "Eighteen", "isCorrect": false },
+                     { "id": "69", "text": "Nineteen", "isCorrect": false },
+                     { "id": "70", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Sixteen",
                   "options": [
-                     { "id": "71", "text": "11", "isCorrect": false },
-                     { "id": "72", "text": "12", "isCorrect": false },
-                     { "id": "73", "text": "13", "isCorrect": false },
-                     { "id": "74", "text": "14", "isCorrect": false },
-                     { "id": "75", "text": "15", "isCorrect": false },
-                     { "id": "76", "text": "16", "isCorrect": true },
-                     { "id": "77", "text": "17", "isCorrect": false },
-                     { "id": "78", "text": "18", "isCorrect": false },
-                     { "id": "79", "text": "19", "isCorrect": false },
-                     { "id": "80", "text": "20", "isCorrect": false }
+                     { "id": "71", "text": "Eleven", "isCorrect": false },
+                     { "id": "72", "text": "Twelve", "isCorrect": false },
+                     { "id": "73", "text": "Thirteen", "isCorrect": false },
+                     { "id": "74", "text": "Fourteen", "isCorrect": false },
+                     { "id": "75", "text": "Fifteen", "isCorrect": false },
+                     { "id": "76", "text": "Sixteen", "isCorrect": true },
+                     { "id": "77", "text": "Seventeen", "isCorrect": false },
+                     { "id": "78", "text": "Eighteen", "isCorrect": false },
+                     { "id": "79", "text": "Nineteen", "isCorrect": false },
+                     { "id": "80", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Seventeen",
                   "options": [
-                     { "id": "81", "text": "11", "isCorrect": false },
-                     { "id": "82", "text": "12", "isCorrect": false },
-                     { "id": "83", "text": "13", "isCorrect": false },
-                     { "id": "84", "text": "14", "isCorrect": false },
-                     { "id": "85", "text": "15", "isCorrect": false },
-                     { "id": "86", "text": "16", "isCorrect": false },
-                     { "id": "87", "text": "17", "isCorrect": true },
-                     { "id": "88", "text": "18", "isCorrect": false },
-                     { "id": "89", "text": "19", "isCorrect": false },
-                     { "id": "90", "text": "20", "isCorrect": false }
+                     { "id": "81", "text": "Eleven", "isCorrect": false },
+                     { "id": "82", "text": "Twelve", "isCorrect": false },
+                     { "id": "83", "text": "Thirteen", "isCorrect": false },
+                     { "id": "84", "text": "Fourteen", "isCorrect": false },
+                     { "id": "85", "text": "Fifteen", "isCorrect": false },
+                     { "id": "86", "text": "Sixteen", "isCorrect": false },
+                     { "id": "87", "text": "Seventeen", "isCorrect": true },
+                     { "id": "88", "text": "Eighteen", "isCorrect": false },
+                     { "id": "89", "text": "Nineteen", "isCorrect": false },
+                     { "id": "90", "text": "Twenty", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Eighteen",
                   "options": [
-                     { "id": "91", "text": "11", "isCorrect": false },
-                     { "id": "92", "text": "12", "isCorrect": false },
-                     { "id": "93", "text": "13", "isCorrect": false },
-                     { "id": "94", "text": "14", "isCorrect": false },
-                     { "id": "95", "text": "15", "isCorrect": false },
-                     { "id": "96", "text": "16", "isCorrect": false },
-                     { "id": "97", "text": "17", "isCorrect": false },
-                     { "id": "98", "text": "18", "isCorrect": true },
-                     { "id": "99", "text": "19", "isCorrect": false },
-                     { "id": "100", "text": "20", "isCorrect": false }
+                     { "id": "91", "text": "Eleven", "isCorrect": false },
+                     { "id": "92", "text": "Twelve", "isCorrect": false },
+                     { "id": "93", "text": "Thirteen", "isCorrect": false },
+                     { "id": "94", "text": "Fourteen", "isCorrect": false },
+                     { "id": "95", "text": "Fifteen", "isCorrect": false },
+                     { "id": "96", "text": "Sixteen", "isCorrect": false },
+                     { "id": "97", "text": "Seventeen", "isCorrect": false },
+                     { "id": "98", "text": "Eighteen", "isCorrect": true },
+                     { "id": "99", "text": "Nineteen", "isCorrect": false },
+                     { "id": "100", "text": "Twenty", "isCorrect": false }
                   ]
                }
             ],
@@ -1231,7 +1229,7 @@
                {
                   "Target": ["F", "i", "f", "t", "e", "e", "n"],
                   "blanksPatten": [1, 0, 1, 1, 1, 0, 0, 1],
-                  "optionLetters": ["a", "e", "e", "i", "y"]
+                  "optionLetters": ["n", "e", "e", "i", "y"]
                },
                {
                   "Target": ["E", "i", "g", "h", "t", "e", "e", "n"],
@@ -1532,6 +1530,7 @@
                   }
                }
             ],
+
             "practice": [
                {
                   "rootWord": "قرمز",
@@ -1682,6 +1681,14 @@
                      { "id": "99", "text": "Purple", "isCorrect": false },
                      { "id": "100", "text": "Orange", "isCorrect": false }
                   ]
+               }
+            ],
+
+            "dictation": [
+               {
+                  "Target": ["Y", "e", "l", "l", "o", "w"],
+                  "blanksPatten": [1, 0, 1, 1, 0, 0],
+                  "optionLetters": ["o", "e", "v", "w", "i"]
                }
             ]
          },

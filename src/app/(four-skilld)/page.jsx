@@ -2,29 +2,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef, useCallback } from "react";
-import Iridescence from "@/components/Iridescence/iridescence";
 import { IoCloseOutline } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";import { idioms } from "@/data/idioms";
 import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
-import Aurora from "@/components/aurora/aurora";
 import Tour from "@/components/tour/tour";
 import rawA1Vocabs from "../../../database/rawA1.json"
 import VocabularyManager from "@/components/VocabularyManager";
 import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
 import { fadeRight, expandParent, expandChild } from "@/lib/animations/entrance";
-import AnimatedAuroraBackground from "@/components/Iridescence/iridescence";
+import MotionBackground from "@/components/MotionBackground";
 
 
-
-
-function urlBase64ToUint8Array(base64String) {
-   const padding = '='.repeat((4 - base64String.length % 4) % 4);
-   const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
-   const rawData = atob(base64);
-   return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0)));
-}
 
 
 const Home = () => {
@@ -185,7 +175,7 @@ const Home = () => {
    return (
       <div className='fixed w-full h-screen p-5 pb-30 flex flex-col gap-3'>
 
-         <AnimatedAuroraBackground />
+         <MotionBackground />
 
          <VocabularyManager initialData={rawA1Vocabs} />
 

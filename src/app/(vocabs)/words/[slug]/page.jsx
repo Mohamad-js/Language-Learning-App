@@ -19,6 +19,7 @@ import { useAnimate } from 'framer-motion';
 import { useClickSound } from '@/components/sound';
 import SemanticOrbit from '@/components/SemanticOrbit';
 import DictationExercise from '@/components/DictationExercise';
+import AnimatedAuroraBackground from '@/components/Iridescence/iridescence';
 
 
 
@@ -507,14 +508,17 @@ export default function Lessons({ params }) {
             preload="auto"
          />
 
-         <div className="absolute top-5 left-5 flex items-center px-4 py-2 rounded-lg z-1 bg-background text-xs">
-            <div className=''
-            >Lesson {lessonNumber}: {category}</div>
+         <div className="absolute top-5 left-5 flex items-center gap-2 px-4 py-2 rounded-lg z-2 bg-background text-xs border">
+            <div className='text-gray-400 font-semibold'>Lesson {lessonNumber}: </div>
+            <div className="">{category}</div>
          </div>
 
          {stage === 'assessment' && (
 
-         <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10  flex flex-col items-center justify-around touch-pan-y`}>
+         <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10 flex flex-col items-center justify-around touch-pan-y bg-linear-to-tr from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E] z-1`}>
+
+            <div className='dark:block hidden fixed top-0 left-0 bg-black/40 w-full min-h-dvh z-1'></div>
+
             <div className='w-full z-1 text-foreground'>
                <h2 className='text-center font-bold'>Knowledge Check</h2>
                <p className='text-center'>Swipe right if you know the word.</p>
@@ -659,9 +663,9 @@ export default function Lessons({ params }) {
 
    
          {stage === 'learning' && (
-         <div className={`absolute w-full h-full top-0 p-5 pt-15 overflow-hidden flex items-center justify-start flex-col bg-linear-to-tr from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E]`}
+         <div className={`absolute w-full h-full top-0 p-5 pt-15 overflow-hidden flex items-center justify-start flex-col`}
          >
-
+            <AnimatedAuroraBackground />
 
             {(() => {
                const learningWords = [...unknownWords];
@@ -801,7 +805,7 @@ export default function Lessons({ params }) {
 
                      <div className='w-full h-15 flex items-center justify-center gap-3 left-0 z-1'>
                         <button
-                           className='p-2 flex-1 bg-background rounded-xl active:scale-95'
+                           className='p-2 flex-1 bg-background rounded-xl active:scale-95 shadow-xl active:shadow-none'
                            onClick = {handleBackLearningWord}
                         >
                            Back
@@ -811,12 +815,12 @@ export default function Lessons({ params }) {
 
                               <button
                                  onClick={() => setStage('practice')}
-                                 className="p-2 flex-1 bg-background rounded-xl active:scale-95"
+                                 className="p-2 flex-1 bg-background rounded-xl active:scale-95 shadow-xl active:shadow-none"
                               >Practice</button>
 
                            :
                               <button
-                                 className='p-2 flex-1 bg-background rounded-xl active:scale-95'
+                                 className='p-2 flex-1 bg-background rounded-xl active:scale-95 shadow-xl active:shadow-none'
                                  onClick={handleNextLearningWord}
                               >
                                  Next
