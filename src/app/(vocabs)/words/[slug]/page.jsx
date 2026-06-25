@@ -20,10 +20,13 @@ import { useClickSound } from '@/components/sound';
 import SemanticOrbit from '@/components/SemanticOrbit';
 import DictationExercise from '@/components/DictationExercise';
 import AnimatedAuroraBackground from '@/components/Iridescence/iridescence';
+import { useSettings } from '@/app/context/SettingsProvider';
+
 
 
 
 export default function Lessons({ params }) {
+   const { settings } = useSettings()
    const { active } = useNavigation()
    const { audioRef, play } = useClickSound()
    const { startLoading } = useLoading();
@@ -795,7 +798,6 @@ export default function Lessons({ params }) {
 
 
 
-
                      <div className='w-full h-15 flex items-center justify-center gap-3 left-0 z-1'>
                         <button
                            className='p-2 flex-1 bg-background rounded-xl active:scale-95 shadow-xl active:shadow-none'
@@ -803,13 +805,26 @@ export default function Lessons({ params }) {
                         >
                            Back
                         </button>
+
                         {
                            learningWordIndex + 1 == learningWords.length ?
 
-                              <button
-                                 onClick={() => setStage('practice')}
-                                 className="p-2 flex-1 bg-background rounded-xl active:scale-95 shadow-xl active:shadow-none"
-                              >Practice</button>
+                              settings.activatePractice ?
+
+                                 <button
+                                    onClick={() => setStage('practice')}
+                                    className="p-2 flex-1 bg-background rounded-xl active:scale-95 shadow-xl active:shadow-none"
+                                 >
+                                    Practice
+                                 </button>
+                              :
+                                 <button
+                                    onClick={() => setFinalWindow(true)}
+                                    className="p-2 flex-1 bg-background rounded-xl active:scale-95 shadow-xl active:shadow-none"
+                                 >
+                                    Done
+                                 </button>
+
 
                            :
                               <button
@@ -818,7 +833,6 @@ export default function Lessons({ params }) {
                               >
                                  Next
                               </button>
-                           
                         }
                      </div>                     
                   </div>

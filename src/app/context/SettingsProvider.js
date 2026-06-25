@@ -8,8 +8,8 @@ export function SettingsProvider({ children }) {
 
    const [settings, setSettings] = useState({
       discoveryMode: false,
-      quizMode: false,
-      showIdiom: true
+      activatePractice: false,
+      showIdiom: false
    });
 
    const value = { settings, setSettings };

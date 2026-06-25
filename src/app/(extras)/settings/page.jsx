@@ -6,13 +6,13 @@ import { resetAllProgress, resetLevelProgress } from "@/lib/db";
 import { toast } from "sonner";
 import ThemeToggle from "@/components/themeSwitch/themeToggle";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+   DropdownMenu,
+   DropdownMenuContent,
+   DropdownMenuGroup,
+   DropdownMenuItem,
+   DropdownMenuLabel,
+   DropdownMenuSeparator,
+   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useSettings } from "@/app/context/SettingsProvider";
 
@@ -41,7 +41,7 @@ function Settings(){
          setWarning(false)
          localStorage.clear()
          window.location.href = '/';
-
+         
       } catch (error){
          console.error('Error Restarting:', error)
       }
@@ -56,6 +56,18 @@ function Settings(){
       } catch (error){
          console.error('Error Restarting:', error)
       }
+   }
+   
+   const resetSettings = () => {
+      localStorage.clear()
+      
+      setSettings({
+         discoveryMode: false,
+         activatePractice: false,
+         showIdiom: false
+      })
+
+      toast.info(`All the settings are reset to default`)
    }
 
 
@@ -75,10 +87,10 @@ function Settings(){
          }))
       }
 
-      if(msg === 'quizMode') {
+      if(msg === 'activatePractice') {
          setSettings(prev => ({
             ...prev,
-            quizMode: !prev.quizMode
+            activatePractice: !prev.activatePractice
          }))
       }
    }
@@ -158,12 +170,12 @@ function Settings(){
             </div>
 
             <div
-               onClick={() => changeSettings('quizMode')}
+               onClick={() => changeSettings('activatePractice')}
                className="w-full flex justify-between items-center active:bg-foreground/3 rounded-lg z-1 p-2"
             >
                <div className="flex flex-col">
-                  <button className="w-full text-bold text-start text-md">Quiz Mode</button>
-                  <div className="text-xs">Activate learning through questions</div>
+                  <button className="w-full text-bold text-start text-md">Lesson Practice</button>
+                  <div className="text-xs">Practice after each lesson</div>
                </div>
 
                <label 
@@ -172,8 +184,8 @@ function Settings(){
                   <input
                   type="checkbox"
                   className="sr-only peer"
-                  checked={settings.quizMode}
-                  onChange={() => changeSettings('quizMode')}
+                  checked={settings.activatePractice}
+                  onChange={() => changeSettings('activatePractice')}
                />
 
                   <span
@@ -225,7 +237,10 @@ function Settings(){
                </DropdownMenu>
             </div>
 
-            <button className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1">Reset the Settings</button>
+            <button
+               onClick={() => showWarning('settings')}
+               className="w-full text-bold text-start text-md p-2 active:bg-foreground/3 rounded-lg z-1"
+            >Reset the Settings</button>
          </div>
 
          {
@@ -261,6 +276,10 @@ function Settings(){
                         part === 'the app' ?
 
                         <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetApp}>Yes</button>
+
+                     :  part === 'settings' ?
+
+                        <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetSettings}>Yes</button>
                      :
                         <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetAction}>Yes</button>
                      }
