@@ -52,6 +52,7 @@ export default function Lessons({ params }) {
    const [category, setCategory] = useState(null)
    const [practice, setPractice] = useState(null)
    const [practice2, setPractice2] = useState(null)
+   const [skipPractice, setSkipPractice] = useState(false)
    
    const [currentCardIndex, setCurrentCardIndex] = useState(0);
    const [counter, setCounter] = useState(0);
@@ -97,19 +98,6 @@ export default function Lessons({ params }) {
       active === 4 ? 'C1' :
       active === 5 ? 'C2' : ''
       
-      // const loadLesson = async () => {
-      //    try {
-      //       const data = await getLessonByNumber(requestedLevel, slug);
-      //       setSpecificLessonWords(data.words);
-      //       setCategory(data.category)
-      //       setPractice(data.practice)
-      //       setPractice2(data.dictation)
-            
-      //    } catch (error) {
-      //       console.error("Failed to fetch words:", error);
-      //    }
-      // };
-
       const loadLesson = async () => {
          try {
             setDebugInfo(`Fetching: Level=${requestedLevel}, Slug=${slug}`);
@@ -232,8 +220,12 @@ export default function Lessons({ params }) {
 
          if (msg === 'save'){
             router.push('/words')
+            
          } else if(msg === 'nextLesson'){
             router.push(`/words/${lessonNumber + 1}`)
+            
+         } else {
+            router.push('/words')
          }
 
       } catch (error){
@@ -279,6 +271,7 @@ export default function Lessons({ params }) {
       setLearningWordIndex(0)
       setFinalWindow(false)
       setStage('learning')
+      setSkipPractice(true)
    }
 
 
@@ -898,6 +891,8 @@ export default function Lessons({ params }) {
                      <SemanticOrbit
                         lessonData={practice}
                         onStepOneFinished={setStage}
+                        skipPractice={skipPractice}
+                        saveProgress={saveProgress}
                      />
                   ) : (
                      <div className="text-foreground text-sm">
@@ -920,6 +915,8 @@ export default function Lessons({ params }) {
                         <DictationExercise
                            dictationData = {practice2}
                            onStepTwoFinished = {setFinalWindow}
+                           skipPractice={skipPractice}
+                           saveProgress={saveProgress}
                         />
                      :
                      'NOT LOADED'

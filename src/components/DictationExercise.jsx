@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function DictationExercise({ dictationData, onStepTwoFinished }) {
+export default function DictationExercise({ dictationData, onStepTwoFinished, skipPractice, saveProgress }) {
   // 🛡️ Safety Guard Clause: Block execution if data is missing or empty
   if (!dictationData || dictationData.length === 0) {
     return (
@@ -124,13 +124,24 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
       ref={containerRef}
       className="relative w-full min-h-dvh mx-auto bg-background rounded-2xl shadow-inner overflow-hidden flex flex-col items-center justify-center gap-30 p-8"
     >
-      {/* Header Level Count Display */}
-         <div className="absolute w-full flex flex-col top-17 left-0 text-start pl-5 gap-3">
+
+         <div className="absolute w-full flex flex-col items-start top-17 left-0 text-start px-5 gap-1">
             <div className="">Drag the correct letter to complete the word.</div>
 
-            <div className="text-lg font-bold text-slate-400 dark:text-slate-500 tracking-widest uppercase">
-               Word {currentStep + 1} of {dictationData.length}
+            <div className="w-full flex justify-between items-center text-start gap-3">
+               {/* Header Level Count Display */}
+               <div className="text-lg font-bold text-slate-400 dark:text-slate-500 tracking-widest uppercase">
+                  Word {currentStep + 1} of {dictationData.length}
+               </div>
+
+               {
+                  skipPractice &&
+                     <button onClick={saveProgress}
+                        className="px-5 py-2 rounded-2xl border active:bg-foreground active:text-background"
+                     >Skip</button>
+               }
             </div>
+
          </div>
 
       <AnimatePresence>

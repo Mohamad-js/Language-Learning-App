@@ -1248,7 +1248,7 @@
                },
                {
                   "Target": ["T", "h", "i", "r", "t", "e", "e", "n"],
-                  "blanksPatten": [1, 1, 0, 1, 1, 0, 1],
+                  "blanksPatten": [1, 1, 0, 1, 1, 0, 1, 1],
                   "optionLetters": ["e", "i", "y"]
                },
                {

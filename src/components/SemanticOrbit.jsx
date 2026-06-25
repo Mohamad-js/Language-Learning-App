@@ -7,7 +7,7 @@ import { TiTick } from "react-icons/ti";
 
 
 
-export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
+export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPractice, saveProgress }) {
 
 
    // 1. The Master Index tracking which Word we are currently on
@@ -122,10 +122,22 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
       return "bg-black/0 border border-white";
    };
 
-   return (
-      <div ref={containerRef} className="absolute top-0 left-0 w-full bg-background h-dvh mx-auto shadow-inner overflow-hidden flex items-center justify-center">
+   console.log(`/images/a1/${ROOT_WORD}.png`)
 
-         <div className="absolute w-full top-17 left-0 text-start pl-5">Drag the correct word to the image.</div>
+   return (
+      <div ref={containerRef} className="absolute top-0 left-0 w-full bg-background h-dvh shadow-inner overflow-hidden flex items-center justify-center">
+
+         <div className="absolute w-full flex justify-between items-center top-17 left-0 text-start px-5 gap-3">
+            <div className="text-start">Drag the correct word to the image.</div>
+
+            {
+               skipPractice &&
+                  <button onClick={saveProgress}
+                     className="px-5 py-2 rounded-2xl border active:bg-foreground active:text-background"
+                  >Skip</button>
+            }
+         </div>
+
          
          {/* Target Node (Root Word) */}
          <motion.div
@@ -145,7 +157,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
                <Image className='object-cover object-center'
                   src={`/images/a1/${ROOT_WORD}.png`}
                   fill
-                  alt='Word Pic'
+                  alt={`${ROOT_WORD} Image`}
                />
             </div>
 
