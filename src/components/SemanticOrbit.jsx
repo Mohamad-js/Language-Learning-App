@@ -49,16 +49,22 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
    }, [currentStep]);
 
    const playSound = (type) => {
-      try {
-         new Audio(`/sounds/${type}.mp3`).play();
-      } catch (err) {}
+      const audio = new Audio(`/sounds/${encodeURIComponent(type)}.mp3`);
+      audio.play().catch((err) => {
+         console.warn(`Failed to play sound (${type}):`, err);
+      });
    };
 
    const playPronunciation = (type) => {
-      try {
-         new Audio(`/sounds/a1/${type}-AmE.mp3`).play();
-      } catch (err) {}
+      // URL encode 'type' in case ROOT_WORD has spaces or special characters
+      const safeType = encodeURIComponent(type);
+      const audio = new Audio(`/sounds/a1/${safeType}-AmE.mp3`);
+      
+      audio.play().catch((err) => {
+         console.warn(`Failed to play pronunciation for (${type}):`, err);
+      });
    };
+
 
    const handleDragEnd = (event, info, word) => {
       if (!centerRect) return;
