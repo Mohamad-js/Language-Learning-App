@@ -1,7 +1,5 @@
 import { openDB } from 'idb';
 
-import { openDB } from 'idb';
-
 export const initDB = async () => {
    // Keep your version stable at 5. Data synchronization is now handled dynamically above!
    return openDB('VocabularyDB', 5, {
