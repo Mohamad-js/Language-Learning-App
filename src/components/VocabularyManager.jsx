@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { initDB } from "@/lib/db";
 
 export default function VocabularyManager({ initialData = [] }) {
-   // A temporary physical log we can look at on the phone screen
    const [mobileLog, setMobileLog] = useState(""); 
 
    useEffect(() => {
@@ -12,7 +11,7 @@ export default function VocabularyManager({ initialData = [] }) {
          if (!initialData?.length) return;
 
          try {
-            setMobileLog("Opening DB...");
+            setMobileLog("Checking for vocabulary updates...");
             const db = await initDB();
             const tx = db.transaction("levels", "readwrite");
             const store = tx.objectStore("levels");
@@ -20,33 +19,87 @@ export default function VocabularyManager({ initialData = [] }) {
             let added = 0;
             let updated = 0;
 
-            // USING PROMISE.ALL: This forces all get() requests into the microtask queue 
-            // simultaneously, keeping the transaction pipe 100% saturated with work so mobile won't close it.
             await Promise.all(
                initialData.map(async (incomingLevel) => {
                   const existing = await store.get(incomingLevel.level);
 
-                  // 1. Doesn't exist at all -> Insert
+                  // Case 1: Brand new level added to source code
                   if (!existing) {
                      await store.put(incomingLevel);
                      added++;
                      return;
                   }
 
-                  // 2. Exists, but incoming data has a bumped version number
-                  // (e.g., incomingLevel.version = 2, existing.version = 1)
-                  const incomingVer = incomingLevel.version || 1;
-                  const existingVer = existing.version || 1;
+                  // Case 2: Level exists. We must deep-merge to catch tiny changes
+                  let levelChanged = false;
 
-                  if (incomingVer > existingVer) {
-                     // We use a spread operator so that if your user had local data 
-                     // saved inside that object (like .score = 100), we don't accidentally wipe it out.
+                  const mergedContent = incomingLevel.content.map((incomingLesson) => {
+                     const existingLesson = existing.content?.find(
+                        (l) => Number(l.lesson) === Number(incomingLesson.lesson)
+                     );
+
+                     // New lesson added to this level
+                     if (!existingLesson) {
+                        levelChanged = true;
+                        return incomingLesson;
+                     }
+
+                     // Merge words inside the lesson
+                     const mergedWords = incomingLesson.words.map((incomingWord) => {
+                        const existingWord = existingLesson.words?.find(
+                           (w) => w.word === incomingWord.word
+                        );
+
+                        // New word added to this lesson
+                        if (!existingWord) {
+                           levelChanged = true;
+                           return incomingWord;
+                        }
+
+                        // Check if word metadata changed (translations, definitions, etc.)
+                        // while ignoring user progress state keys
+                        const structuralChange = Object.keys(incomingWord).some((key) => {
+                           if (["status", "note", "notes"].includes(key)) return false;
+                           return JSON.stringify(incomingWord[key]) !== JSON.stringify(existingWord[key]);
+                        });
+
+                        if (structuralChange) {
+                           levelChanged = true;
+                        }
+
+                        // Return combined word: Fresh content + preserved user progress
+                        return {
+                           ...incomingWord, 
+                           status: existingWord.status || incomingWord.status || "waiting",
+                           note: existingWord.note || incomingWord.note || "",
+                           notes: existingWord.notes || incomingWord.notes || [],
+                        };
+                     });
+
+                     // Check if words were removed or lesson length changed
+                     if (existingLesson.words?.length !== incomingLesson.words?.length) {
+                        levelChanged = true;
+                     }
+
+                     return {
+                        ...incomingLesson,
+                        status: existingLesson.status || incomingLesson.status || "waiting",
+                        words: mergedWords,
+                     };
+                  });
+
+                  // Check if lessons were removed or rearranged
+                  if (existing.content?.length !== incomingLevel.content?.length) {
+                     levelChanged = true;
+                  }
+
+                  // If any small change was detected, commit it to this device's IndexedDB
+                  if (levelChanged) {
                      const updatedRecord = {
                         ...existing,
                         ...incomingLevel,
-                        version: incomingVer
+                        content: mergedContent,
                      };
-
                      await store.put(updatedRecord);
                      updated++;
                   }
@@ -54,7 +107,7 @@ export default function VocabularyManager({ initialData = [] }) {
             );
 
             await tx.done;
-            setMobileLog(`IDB Ready. Added: ${added} | Updated: ${updated}`);
+            setMobileLog(`Sync Complete! Added: ${added} | Updated: ${updated}`);
 
          } catch (error) {
             setMobileLog(`CRASH: ${error.message || error}`);
@@ -64,7 +117,6 @@ export default function VocabularyManager({ initialData = [] }) {
       handleSeeding();
    }, [initialData]);
 
-   // Remove this return block once you see it work on your phone once!
    if (mobileLog) {
       return (
          <div className="fixed bottom-0 left-0 right-0 bg-slate-900 text-emerald-400 p-2 text-xs font-mono z-[9999] text-center pointer-events-none">

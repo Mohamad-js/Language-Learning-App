@@ -1,31 +1,30 @@
 import { openDB } from 'idb';
 
-export const initDB = async () => {
-   return openDB('VocabularyDB', 5, {
-      upgrade(db, oldVersion) {
+import { openDB } from 'idb';
 
-         // Remove old store if it exists
+export const initDB = async () => {
+   // Keep your version stable at 5. Data synchronization is now handled dynamically above!
+   return openDB('VocabularyDB', 5, {
+      upgrade(db) {
+         // Clean up deprecated stores safely
          if (db.objectStoreNames.contains('words')) {
             db.deleteObjectStore('words');
          }
 
-         // Create new store
+         // Establish 'levels' store securely
          if (!db.objectStoreNames.contains('levels')) {
             const store = db.createObjectStore('levels', {
                keyPath: 'level',
             });
 
-            store.createIndex('level', 'level', {
-               unique: true,
-            });
-
-            store.createIndex('status', 'status', {
-               unique: false,
-            });
+            store.createIndex('level', 'level', { unique: true });
+            store.createIndex('status', 'status', { unique: false });
          }
       },
    });
 };
+
+// ... Keep your other CRUD functions (getWordsByLevelAndCategory, updateInteractionStatus, etc.) exactly as they are.
 
 
 
