@@ -1248,12 +1248,12 @@
                },
                {
                   "Target": ["T", "h", "i", "r", "t", "e", "e", "n"],
-                  "blanksPatten": [1, 1, 0, 1, 1, 1, 1],
+                  "blanksPatten": [1, 1, 0, 1, 1, 0, 1],
                   "optionLetters": ["e", "i", "y"]
                },
                {
                   "Target": ["S", "e", "v", "e", "n", "t", "e", "e", "n"],
-                  "blanksPatten": [1, 0, 1, 0, 1, 1, 0, 0, 1],
+                  "blanksPatten": [1, 0, 1, 0, 1, 1, 0, 1, 1],
                   "optionLetters": ["e", "i", "e", "i", "e"]
                },
                {
@@ -1533,7 +1533,7 @@
 
             "practice": [
                {
-                  "rootWord": "قرمز",
+                  "rootWord": "Red",
                   "options": [
                      { "id": "1", "text": "Blue", "isCorrect": false },
                      { "id": "2", "text": "Red", "isCorrect": true },
@@ -1548,7 +1548,7 @@
                   ]
                },
                {
-                  "rootWord": "بنفش",
+                  "rootWord": "Purple",
                   "options": [
                      { "id": "11", "text": "Blue", "isCorrect": false },
                      { "id": "12", "text": "Red", "isCorrect": false },
@@ -1563,7 +1563,7 @@
                   ]
                },
                {
-                  "rootWord": "آبی",
+                  "rootWord": "Blue",
                   "options": [
                      { "id": "21", "text": "Blue", "isCorrect": true },
                      { "id": "22", "text": "Red", "isCorrect": false },
@@ -1578,7 +1578,7 @@
                   ]
                },
                {
-                  "rootWord": "نارنجی",
+                  "rootWord": "Orange",
                   "options": [
                      { "id": "31", "text": "Blue", "isCorrect": false },
                      { "id": "32", "text": "Red", "isCorrect": false },
@@ -1593,7 +1593,7 @@
                   ]
                },
                {
-                  "rootWord": "سبز",
+                  "rootWord": "Green",
                   "options": [
                      { "id": "41", "text": "Blue", "isCorrect": false },
                      { "id": "42", "text": "Red", "isCorrect": false },
@@ -1608,7 +1608,7 @@
                   ]
                },
                {
-                  "rootWord": "صورتی",
+                  "rootWord": "Pink",
                   "options": [
                      { "id": "51", "text": "Blue", "isCorrect": false },
                      { "id": "52", "text": "Red", "isCorrect": false },
@@ -1623,7 +1623,7 @@
                   ]
                },
                {
-                  "rootWord": "زرد",
+                  "rootWord": "Yellow",
                   "options": [
                      { "id": "61", "text": "Blue", "isCorrect": false },
                      { "id": "62", "text": "Red", "isCorrect": false },
@@ -1638,7 +1638,7 @@
                   ]
                },
                {
-                  "rootWord": "قهوه ای",
+                  "rootWord": "Brown",
                   "options": [
                      { "id": "71", "text": "Blue", "isCorrect": false },
                      { "id": "72", "text": "Red", "isCorrect": false },
@@ -1653,7 +1653,7 @@
                   ]
                },
                {
-                  "rootWord": "سفید",
+                  "rootWord": "White",
                   "options": [
                      { "id": "81", "text": "Blue", "isCorrect": false },
                      { "id": "82", "text": "Red", "isCorrect": false },
@@ -1668,7 +1668,7 @@
                   ]
                },
                {
-                  "rootWord": "مشکی",
+                  "rootWord": "Black",
                   "options": [
                      { "id": "91", "text": "Blue", "isCorrect": false },
                      { "id": "92", "text": "Red", "isCorrect": false },

@@ -13,7 +13,7 @@ import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
 import { fadeRight, expandParent, expandChild } from "@/lib/animations/entrance";
 import MotionBackground from "@/components/MotionBackground";
-
+import { toast } from "sonner";
 
 
 
@@ -171,6 +171,10 @@ const Home = () => {
       setIsReady(true)
    }
 
+   const underDev = (page) => {
+      toast.warning(`The ${page} section is under development.`)
+   }
+
 
    return (
       <div className='fixed w-full h-screen p-5 pb-30 flex flex-col gap-3'>
@@ -192,7 +196,7 @@ const Home = () => {
             onClick={toggleIdiomCard}
             id="tour_idiom"
          >
-            <div className='text-sm'>Today&apos;s Idiom</div>
+            <div className='text-xs text-foreground/50 mb-1'>Today&apos;s Idiom</div>
             <div className="super-compact:text-sm">
                {dailyIdiom?.example}
             </div>
@@ -265,7 +269,7 @@ const Home = () => {
                   <motion.div variants={expandChild} 
                      className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
                   >
-                     <Link href='/grammar'>
+                     <div onClick={() => underDev('Grammar')}>
                         <div className="relative w-full h-28">
                            <Image
                               className='object-cover object-bottom'
@@ -275,7 +279,7 @@ const Home = () => {
                               onLoad={handleIllustrationLoad}
                            />
                         </div>
-                     </Link>
+                     </div>
 
                      <div className='flex flex-1 flex-col justify-between bg-background p-3'>
                         <div className='text-xl font-bold'>Grammar</div>
@@ -290,7 +294,7 @@ const Home = () => {
                   <motion.div variants={expandChild}
                      className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
                   >
-                     <Link href='/expressions'>
+                     <div onClick={() => underDev('Patterns')}>
                         <div className="relative w-full h-28">
                            <Image
                               className='object-cover object-bottom'
@@ -306,16 +310,16 @@ const Home = () => {
                            <div className="text-sm">Coming soon</div>
 
                            <div className='w-full flex justify-end'>
-                              <FaArrowRight className='text-black/40' size={20} />
+                              <FaArrowRight className='text-foreground/40' size={20} />
                            </div>
                         </div>
-                     </Link>
+                     </div>
                   </motion.div>
 
                   <motion.div variants={expandChild}
                      className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
                   >
-                     <Link href='/family'>
+                     <div onClick={() => underDev('Word Family')}>
                         <div className="relative w-full h-28">
                            <Image
                               className='object-cover object-bottom'
@@ -334,7 +338,7 @@ const Home = () => {
                               <FaArrowRight className='text-foreground/40' size={20} />
                            </div>
                         </div>
-                     </Link>
+                     </div>
                   </motion.div>
 
                </div>

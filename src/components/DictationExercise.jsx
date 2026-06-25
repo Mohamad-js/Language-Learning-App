@@ -70,7 +70,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
 
   const playPronunciation = (type) => {
     try {
-      new Audio(`/sounds/a1/${type}-AmE.mp3`).play();
+      new Audio(`/sounds/A1/${type}-AmE.mp3`).play();
     } catch (err) {}
   };
 
@@ -101,7 +101,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
           // Check if dropped item character matches target character value (case-insensitive fallback check)
           if (letter.toLowerCase() === currentRound.Target[i].toLowerCase()) {
             
-            playSound("toast")
+            playSound("confirm")
 
             // Persist the slot index value with its authentic assigned uppercase/lowercase form
             setFilledBlanks((prev) => ({ ...prev, [i]: currentRound.Target[i] }));
@@ -117,6 +117,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
       }
     }
   };
+
 
   return (
     <div
@@ -150,7 +151,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
       </AnimatePresence>
 
       {/* Target Word Row Assembly */}
-      <div className="flex gap-3 justify-center items-center flex-wrap">
+      <div className="w-full flex gap-1 justify-center items-center flex-wrap">
         {currentRound.Target.map((char, index) => {
           const isPreFilled = currentRound.blanksPatten[index] === 1;
           const isCorrectlyDropped = filledBlanks[index] !== undefined;
@@ -175,23 +176,20 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
           return (
             <motion.div
                key={`${currentStep}-slot-${index}`}
-                  ref={(el) => (slotRefs.current[index] = el)}
-                  animate={
-                     isShaking 
-                        ? { x: [-6, 6, -6, 6, 0], opacity: 1 } 
-                        : isRoundComplete 
-                        ? { opacity: 0.2, scale: 0.85 } // 🌟 Sinks into the background
-                        : { x: 0, opacity: 1, scale: 1 }
-                  }
-                  transition={{ duration: 0.3 }}
-                  className={`w-14 h-14 rounded-full border-2 flex items-center justify-center text-xl font-semibold select-none shadow-sm transition-colors duration-200 ${circleClasses}`}
-
-
-              className={`w-14 h-14 rounded-full border-2 flex items-center justify-center text-xl font-semibold select-none shadow-sm transition-colors duration-200 ${circleClasses}`}
-            >
-              {isPreFilled && char}
-              {!isPreFilled && isCorrectlyDropped && filledBlanks[index]}
-              {!isPreFilled && !isCorrectlyDropped && ""}
+               className={`${currentRound.Target.length < 7 ? 'w-13 h-13' : currentRound.Target.length < 9 && currentRound.Target.length > 6 ? 'w-10 h-10' : 'w-8 h-8'} rounded-full border-2 flex items-center justify-center text-xl font-semibold select-none shadow-sm transition-colors duration-200 ${circleClasses}`}
+               ref={(el) => (slotRefs.current[index] = el)}
+               animate={
+                  isShaking 
+                     ? { x: [-6, 6, -6, 6, 0], opacity: 1 } 
+                     : isRoundComplete 
+                     ? { opacity: 0.2, scale: 0.85 } // 🌟 Sinks into the background
+                     : { x: 0, opacity: 1, scale: 1 }
+               }
+               transition={{ duration: 0.3 }}
+               >
+                  {isPreFilled && char}
+                  {!isPreFilled && isCorrectlyDropped && filledBlanks[index]}
+                  {!isPreFilled && !isCorrectlyDropped && ""}
             </motion.div>
           );
         })}
@@ -234,7 +232,7 @@ export default function DictationExercise({ dictationData, onStepTwoFinished }) 
                   whileHover={{ scale: 1.1, cursor: "grab" }}
                   whileDrag={{ scale: 1.2, cursor: "grabbing", zIndex: 50 }}
                   onDragEnd={(e, info) => handleDragEnd(e, info, letter, optionIndex)}
-                  className="w-14 h-14 rounded-full bg-blue-600 dark:bg-blue-500 text-white font-bold text-xl flex items-center justify-center shadow-md select-none touch-none border border-blue-500 dark:border-blue-400"
+                  className="w-11 h-11 rounded-full bg-blue-600 dark:bg-blue-500 text-white font-bold text-xl flex items-center justify-center shadow-md select-none touch-none border border-blue-500 dark:border-blue-400"
                 >
                   {letter}
                 </motion.div>

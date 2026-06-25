@@ -117,13 +117,13 @@ export default function VocabularyManager({ initialData = [] }) {
       handleSeeding();
    }, [initialData]);
 
-   if (mobileLog) {
-      return (
-         <div className="fixed bottom-0 left-0 right-0 bg-slate-900 text-emerald-400 p-2 text-xs font-mono z-[9999] text-center pointer-events-none">
-            {mobileLog}
-         </div>
-      );
-   }
+   // if (mobileLog) {
+   //    return (
+   //       <div className="fixed bottom-0 left-0 right-0 bg-slate-900 text-emerald-400 p-2 text-xs font-mono z-1 text-center pointer-events-none">
+   //          {mobileLog}
+   //       </div>
+   //    );
+   // }
 
    return null;
 }

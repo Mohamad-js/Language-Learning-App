@@ -79,6 +79,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
             // ✨ Trigger green flash state, then clear it after 500ms
             setIsCorrectDrop(true);
             setTimeout(() => setIsCorrectDrop(false), 500);
+            playSound("confirm");
 
             setWords((prev) => prev.filter((w) => w.id !== word.id));
             setMatchedWords((prev) => [...prev, word]);
