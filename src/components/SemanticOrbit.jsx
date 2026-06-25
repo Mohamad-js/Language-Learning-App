@@ -58,7 +58,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished }) {
    const playPronunciation = (type) => {
       // URL encode 'type' in case ROOT_WORD has spaces or special characters
       const safeType = encodeURIComponent(type);
-      const audio = new Audio(`/sounds/a1/${safeType}-AmE.mp3`);
+      const audio = new Audio(`/sounds/A1/${safeType}-AmE.mp3`);
       
       audio.play().catch((err) => {
          console.warn(`Failed to play pronunciation for (${type}):`, err);
