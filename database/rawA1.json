@@ -1689,6 +1689,51 @@
                   "Target": ["Y", "e", "l", "l", "o", "w"],
                   "blanksPatten": [1, 0, 1, 1, 0, 0],
                   "optionLetters": ["o", "e", "v", "w", "i"]
+               },
+               {
+                  "Target": ["G", "r", "e", "e", "n"],
+                  "blanksPatten": [1, 1, 0, 0, 1],
+                  "optionLetters": ["e", "i", "e"]
+               },
+               {
+                  "Target": ["R", "e", "d"],
+                  "blanksPatten": [1, 0, 1],
+                  "optionLetters": ["e", "i", "e"]
+               },
+               {
+                  "Target": ["P", "u", "r", "p", "l", "e"],
+                  "blanksPatten": [1, 0, 1, 0, 1, 1],
+                  "optionLetters": ["e", "u", "i" , "b"]
+               },
+               {
+                  "Target": ["P", "i", "n", "k"],
+                  "blanksPatten": [1, 0, 1, 1],
+                  "optionLetters": ["e", "i"]
+               },
+               {
+                  "Target": ["B", "l", "a", "c", "k"],
+                  "blanksPatten": [1, 1, 1, 0, 0],
+                  "optionLetters": ["c", "a", "k", "e"]
+               },
+               {
+                  "Target": ["W", "h", "i", "t", "e"],
+                  "blanksPatten": [1, 0, 0, 1, 1],
+                  "optionLetters": ["i", "a", "e", "h", "y"]
+               },
+               {
+                  "Target": ["O", "r", "a", "n", "g", "e"],
+                  "blanksPatten": [0, 1, 0, 1, 0, 1],
+                  "optionLetters": ["a", "o", "e", "j", "g"]
+               },
+               {
+                  "Target": ["B", "l", "u", "e"],
+                  "blanksPatten": [1, 1, 0, 1],
+                  "optionLetters": ["u", "a", "w"]
+               },
+               {
+                  "Target": ["B", "r", "o", "w", "n"],
+                  "blanksPatten": [1, 1, 0, 0, 1],
+                  "optionLetters": ["a", "o", "w", "v", "u"]
                }
             ]
          },
@@ -1704,7 +1749,7 @@
                   "role": "Exc",
                   "BrE": "/həˈləʊ/",
                   "AmE": "/həˈloʊ/",
-                  "definition": "A word you say when you meet someone or start a phone call",
+                  "definition": "A word you say to start a conversation or a phone call",
                   "examples": [
                      {
                         "collocation": "Say hello",
@@ -1730,7 +1775,7 @@
                   "role": "Exc",
                   "BrE": "/haɪ/",
                   "AmE": "/haɪ/",
-                  "definition": "An informal word you say when you meet someone",
+                  "definition": "The informal form of 'hello'",
                   "examples": [
                      {
                         "collocation": "Hi there",
@@ -1782,7 +1827,7 @@
                   "role": "Exc",
                   "BrE": "/baɪ/",
                   "AmE": "/baɪ/",
-                  "definition": "A short and informal word you say when you leave someone",
+                  "definition": "The informal form of 'goodbye'",
                   "examples": [
                      {
                         "collocation": "Bye bye",
@@ -1808,7 +1853,7 @@
                   "role": "Exc",
                   "BrE": "/pliːz/",
                   "AmE": "/pliːz/",
-                  "definition": "A polite word you use when you ask for something",
+                  "definition": "A polite word you use to ask for something",
                   "examples": [
                      {
                         "collocation": "Yes please",
@@ -1860,7 +1905,7 @@
                   "role": "Exc",
                   "BrE": "/θæŋks/",
                   "AmE": "/θæŋks/",
-                  "definition": "An informal word you use to show you are grateful",
+                  "definition": "The informal form of 'thank you'",
                   "examples": [
                      {
                         "collocation": "Thanks a lot",
@@ -1889,7 +1934,7 @@
                   "definition": "A word you say when you feel bad about a mistake or problem",
                   "examples": [
                      {
-                        "collocation": "I am sorry",
+                        "collocation": "To be sorry",
                         "example": "I am sorry for the mistake."
                      },
                      {
@@ -1923,7 +1968,7 @@
                         "example": "Is this your book? Oh yes, it is mine."
                      },
                      {
-                        "collocation": "Yes of course",
+                        "collocation": "Yes, of course",
                         "example": "Can I use your pen? Yes of course."
                      }
                   ],
@@ -1957,6 +2002,142 @@
                      "title": "",
                      "text": ""
                   }
+               }
+            ],
+
+            "practice": [
+               {
+                  "rootWord": "Goodbye",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": true },
+                     { "id": "2", "text": "Hi", "isCorrect": false },
+                     { "id": "3", "text": "Bye", "isCorrect": true },
+                     { "id": "4", "text": "Hello", "isCorrect": false },
+                     { "id": "5", "text": "Please", "isCorrect": false },
+                     { "id": "6", "text": "Sorry", "isCorrect": false },
+                     { "id": "7", "text": "Thanks", "isCorrect": false },
+                     { "id": "8", "text": "Yes", "isCorrect": false },
+                     { "id": "9", "text": "No", "isCorrect": false },
+                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Hi",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": false },
+                     { "id": "2", "text": "Hi", "isCorrect": true },
+                     { "id": "3", "text": "Bye", "isCorrect": false },
+                     { "id": "4", "text": "Hello", "isCorrect": true },
+                     { "id": "5", "text": "Please", "isCorrect": false },
+                     { "id": "6", "text": "Sorry", "isCorrect": false },
+                     { "id": "7", "text": "Thanks", "isCorrect": false },
+                     { "id": "8", "text": "Yes", "isCorrect": false },
+                     { "id": "9", "text": "No", "isCorrect": false },
+                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Thanks",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": false },
+                     { "id": "2", "text": "Hi", "isCorrect": false },
+                     { "id": "3", "text": "Bye", "isCorrect": false },
+                     { "id": "4", "text": "Hello", "isCorrect": false },
+                     { "id": "5", "text": "Please", "isCorrect": false },
+                     { "id": "6", "text": "Sorry", "isCorrect": false },
+                     { "id": "7", "text": "Thanks", "isCorrect": true },
+                     { "id": "8", "text": "Yes", "isCorrect": false },
+                     { "id": "9", "text": "No", "isCorrect": false },
+                     { "id": "10", "text": "Thank you", "isCorrect": true }
+                  ]
+               },
+               {
+                  "rootWord": "Please",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": false },
+                     { "id": "2", "text": "Hi", "isCorrect": false },
+                     { "id": "3", "text": "Bye", "isCorrect": false },
+                     { "id": "4", "text": "Hello", "isCorrect": false },
+                     { "id": "5", "text": "Please", "isCorrect": true },
+                     { "id": "6", "text": "Sorry", "isCorrect": false },
+                     { "id": "7", "text": "Thanks", "isCorrect": false },
+                     { "id": "8", "text": "Yes", "isCorrect": false },
+                     { "id": "9", "text": "No", "isCorrect": false },
+                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Sorry",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": false },
+                     { "id": "2", "text": "Hi", "isCorrect": false },
+                     { "id": "3", "text": "Bye", "isCorrect": false },
+                     { "id": "4", "text": "Hello", "isCorrect": false },
+                     { "id": "5", "text": "Please", "isCorrect": false },
+                     { "id": "6", "text": "Sorry", "isCorrect": true },
+                     { "id": "7", "text": "Thanks", "isCorrect": false },
+                     { "id": "8", "text": "Yes", "isCorrect": false },
+                     { "id": "9", "text": "No", "isCorrect": false },
+                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Yes",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": false },
+                     { "id": "2", "text": "Hi", "isCorrect": false },
+                     { "id": "3", "text": "Bye", "isCorrect": false },
+                     { "id": "4", "text": "Hello", "isCorrect": false },
+                     { "id": "5", "text": "Please", "isCorrect": false },
+                     { "id": "6", "text": "Sorry", "isCorrect": false },
+                     { "id": "7", "text": "Thanks", "isCorrect": false },
+                     { "id": "8", "text": "Yes", "isCorrect": true },
+                     { "id": "9", "text": "No", "isCorrect": false },
+                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "No",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": false },
+                     { "id": "2", "text": "Hi", "isCorrect": false },
+                     { "id": "3", "text": "Bye", "isCorrect": false },
+                     { "id": "4", "text": "Hello", "isCorrect": false },
+                     { "id": "5", "text": "Please", "isCorrect": false },
+                     { "id": "6", "text": "Sorry", "isCorrect": false },
+                     { "id": "7", "text": "Thanks", "isCorrect": false },
+                     { "id": "8", "text": "Yes", "isCorrect": false },
+                     { "id": "9", "text": "No", "isCorrect": true },
+                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                  ]
+               }
+            ],
+
+            "dictation": [
+               {
+                  "Target": ["H", "e", "l", "l", "o"],
+                  "blanksPatten": [1, 0, 1, 0, 0],
+                  "optionLetters": ["o", "e", "l", "w", "i"]
+               },
+               {
+                  "Target": ["G", "o", "o", "d", "b", "y", "e"],
+                  "blanksPatten": [1, 1, 1, 1, 1, 0, 0],
+                  "optionLetters": ["e", "i", "a", "y", "e"]
+               },
+               {
+                  "Target": ["P", "l", "e", "a", "s", "e"],
+                  "blanksPatten": [1, 1, 0, 0, 1, 1],
+                  "optionLetters": ["e", "i", "e", "a", "i"]
+               },
+               {
+                  "Target": ["S", "o", "r", "r", "y"],
+                  "blanksPatten": [1, 0, 1, 1, 0],
+                  "optionLetters": ["a", "o", "u", "i", "y"]
+               },
+               {
+                  "Target": ["T", "h", "a", "n", "k", "s"],
+                  "blanksPatten": [1, 0, 1, 1, 0, 1],
+                  "optionLetters": ["h", "a", "k", "c"]
                }
             ]
          },
@@ -2031,12 +2212,12 @@
                         "example": "He is an only child."
                      },
                      {
-                        "collocation": "Young child",
-                        "example": "A young child needs a lot of sleep."
+                        "collocation": "Younger child",
+                        "example": "How old is your younger child?"
                      },
                      {
-                        "collocation": "Happy child",
-                        "example": "She is a happy child."
+                        "collocation": "Older child",
+                        "example": "My older child is 26 years old."
                      }
                   ],
                   "notes": {
@@ -2102,7 +2283,7 @@
                   "role": "N",
                   "BrE": "/ˈbeɪbi/",
                   "AmE": "/ˈbeɪbi/",
-                  "definition": "A very young child who cannot walk or talk yet",
+                  "definition": "A very young kid who cannot walk or talk yet",
                   "examples": [
                      {
                         "collocation": "Baby boy",
@@ -2180,7 +2361,7 @@
                   "role": "N",
                   "BrE": "/ˈædʌlt/",
                   "AmE": "/əˈdʌlt/",
-                  "definition": "A fully grown person",
+                  "definition": "A person above the age of 25",
                   "examples": [
                      {
                         "collocation": "An adult",
@@ -2206,7 +2387,7 @@
                   "role": "N",
                   "BrE": "/frend/",
                   "AmE": "/frend/",
-                  "definition": "A person you know well and like",
+                  "definition": "A person that you like him and you spend time together",
                   "examples": [
                      {
                         "collocation": "Best friend",
@@ -2226,6 +2407,212 @@
                      "text": ""
                   }
                }
+            ],
+
+            "practice": [
+               {
+                  "rootWord": "Woman",
+                  "options": [
+                     { "id": "1", "text": "Man", "isCorrect": false },
+                     { "id": "2", "text": "Woman", "isCorrect": true },
+                     { "id": "3", "text": "Child", "isCorrect": false },
+                     { "id": "4", "text": "Boy", "isCorrect": false },
+                     { "id": "5", "text": "Girl", "isCorrect": false },
+                     { "id": "6", "text": "Baby", "isCorrect": false },
+                     { "id": "7", "text": "Person", "isCorrect": false },
+                     { "id": "8", "text": "People", "isCorrect": false },
+                     { "id": "9", "text": "Adult", "isCorrect": false },
+                     { "id": "10", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Adult",
+                  "options": [
+                     { "id": "11", "text": "Man", "isCorrect": false },
+                     { "id": "12", "text": "Woman", "isCorrect": false },
+                     { "id": "13", "text": "Child", "isCorrect": false },
+                     { "id": "14", "text": "Boy", "isCorrect": false },
+                     { "id": "15", "text": "Girl", "isCorrect": false },
+                     { "id": "16", "text": "Baby", "isCorrect": false },
+                     { "id": "17", "text": "Person", "isCorrect": false },
+                     { "id": "18", "text": "People", "isCorrect": false },
+                     { "id": "19", "text": "Adult", "isCorrect": true },
+                     { "id": "20", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Man",
+                  "options": [
+                     { "id": "21", "text": "Man", "isCorrect": true },
+                     { "id": "22", "text": "Woman", "isCorrect": false },
+                     { "id": "23", "text": "Child", "isCorrect": false },
+                     { "id": "24", "text": "Boy", "isCorrect": false },
+                     { "id": "25", "text": "Girl", "isCorrect": false },
+                     { "id": "26", "text": "Baby", "isCorrect": false },
+                     { "id": "27", "text": "Person", "isCorrect": false },
+                     { "id": "28", "text": "People", "isCorrect": false },
+                     { "id": "29", "text": "Adult", "isCorrect": false },
+                     { "id": "30", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Friend",
+                  "options": [
+                     { "id": "31", "text": "Man", "isCorrect": false },
+                     { "id": "32", "text": "Woman", "isCorrect": false },
+                     { "id": "33", "text": "Child", "isCorrect": false },
+                     { "id": "34", "text": "Boy", "isCorrect": false },
+                     { "id": "35", "text": "Girl", "isCorrect": false },
+                     { "id": "36", "text": "Baby", "isCorrect": false },
+                     { "id": "37", "text": "Person", "isCorrect": false },
+                     { "id": "38", "text": "People", "isCorrect": false },
+                     { "id": "39", "text": "Adult", "isCorrect": false },
+                     { "id": "40", "text": "Friend", "isCorrect": true }
+                  ]
+               },
+               {
+                  "rootWord": "Child",
+                  "options": [
+                     { "id": "41", "text": "Man", "isCorrect": false },
+                     { "id": "42", "text": "Woman", "isCorrect": false },
+                     { "id": "43", "text": "Child", "isCorrect": true },
+                     { "id": "44", "text": "Boy", "isCorrect": false },
+                     { "id": "45", "text": "Girl", "isCorrect": false },
+                     { "id": "46", "text": "Baby", "isCorrect": false },
+                     { "id": "47", "text": "Person", "isCorrect": false },
+                     { "id": "48", "text": "People", "isCorrect": false },
+                     { "id": "49", "text": "Adult", "isCorrect": false },
+                     { "id": "50", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "People",
+                  "options": [
+                     { "id": "51", "text": "Man", "isCorrect": false },
+                     { "id": "52", "text": "Woman", "isCorrect": false },
+                     { "id": "53", "text": "Child", "isCorrect": false },
+                     { "id": "54", "text": "Boy", "isCorrect": false },
+                     { "id": "55", "text": "Girl", "isCorrect": false },
+                     { "id": "56", "text": "Baby", "isCorrect": false },
+                     { "id": "57", "text": "Person", "isCorrect": false },
+                     { "id": "58", "text": "People", "isCorrect": true },
+                     { "id": "59", "text": "Adult", "isCorrect": false },
+                     { "id": "60", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Boy",
+                  "options": [
+                     { "id": "61", "text": "Man", "isCorrect": false },
+                     { "id": "62", "text": "Woman", "isCorrect": false },
+                     { "id": "63", "text": "Child", "isCorrect": false },
+                     { "id": "64", "text": "Boy", "isCorrect": true },
+                     { "id": "65", "text": "Girl", "isCorrect": false },
+                     { "id": "66", "text": "Baby", "isCorrect": false },
+                     { "id": "67", "text": "Person", "isCorrect": false },
+                     { "id": "68", "text": "People", "isCorrect": false },
+                     { "id": "69", "text": "Adult", "isCorrect": false },
+                     { "id": "70", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Person",
+                  "options": [
+                     { "id": "71", "text": "Man", "isCorrect": false },
+                     { "id": "72", "text": "Woman", "isCorrect": false },
+                     { "id": "73", "text": "Child", "isCorrect": false },
+                     { "id": "74", "text": "Boy", "isCorrect": false },
+                     { "id": "75", "text": "Girl", "isCorrect": false },
+                     { "id": "76", "text": "Baby", "isCorrect": false },
+                     { "id": "77", "text": "Person", "isCorrect": true },
+                     { "id": "78", "text": "People", "isCorrect": false },
+                     { "id": "79", "text": "Adult", "isCorrect": false },
+                     { "id": "80", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Baby",
+                  "options": [
+                     { "id": "81", "text": "Man", "isCorrect": false },
+                     { "id": "82", "text": "Woman", "isCorrect": false },
+                     { "id": "83", "text": "Child", "isCorrect": false },
+                     { "id": "84", "text": "Boy", "isCorrect": false },
+                     { "id": "85", "text": "Girl", "isCorrect": false },
+                     { "id": "86", "text": "Baby", "isCorrect": true },
+                     { "id": "87", "text": "Person", "isCorrect": false },
+                     { "id": "88", "text": "People", "isCorrect": false },
+                     { "id": "89", "text": "Adult", "isCorrect": false },
+                     { "id": "90", "text": "Friend", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Girl",
+                  "options": [
+                     { "id": "91", "text": "Man", "isCorrect": false },
+                     { "id": "92", "text": "Woman", "isCorrect": false },
+                     { "id": "93", "text": "Child", "isCorrect": false },
+                     { "id": "94", "text": "Boy", "isCorrect": false },
+                     { "id": "95", "text": "Girl", "isCorrect": true },
+                     { "id": "96", "text": "Baby", "isCorrect": false },
+                     { "id": "97", "text": "Person", "isCorrect": false },
+                     { "id": "98", "text": "People", "isCorrect": false },
+                     { "id": "99", "text": "Adult", "isCorrect": false },
+                     { "id": "100", "text": "Friend", "isCorrect": false }
+                  ]
+               }
+            ],
+
+            "dictation": [
+               {
+                  "Target": ["M", "a", "n"],
+                  "blanksPatten": [1, 0, 1],
+                  "optionLetters": ["a", "i", "o"]
+               },
+               {
+                  "Target": ["C", "h", "i", "l", "d"],
+                  "blanksPatten": [0, 1, 0, 1, 1],
+                  "optionLetters": ["c", "k", "i", "a", "u"]
+               },
+               {
+                  "Target": ["G", "i", "r", "l"],
+                  "blanksPatten": [1, 0, 1, 0],
+                  "optionLetters": ["e", "i", "u"]
+               },
+               {
+                  "Target": ["P", "e", "r", "s", "o", "n"],
+                  "blanksPatten": [1, 0, 1, 1, 0, 1],
+                  "optionLetters": ["e", "a", "o", "u", "e"]
+               },
+               {
+                  "Target": ["A", "d", "u", "l", "t"],
+                  "blanksPatten": [1, 1, 0, 1, 1],
+                  "optionLetters": ["a", "e", "u"]
+               },
+               {
+                  "Target": ["F", "r", "i", "e", "n", "d"],
+                  "blanksPatten": [1, 1, 0, 0, 1, 1],
+                  "optionLetters": ["i", "u", "i", "e"]
+               },
+               {
+                  "Target": ["P", "e", "o", "p", "l", "e"],
+                  "blanksPatten": [1, 0, 0, 1, 1, 1],
+                  "optionLetters": ["e", "i", "e", "a", "o"]
+               },
+               {
+                  "Target": ["B", "a", "b", "y"],
+                  "blanksPatten": [1, 0, 1, 0],
+                  "optionLetters": ["a", "e", "i", "y"]
+               },
+               {
+                  "Target": ["B", "o", "y"],
+                  "blanksPatten": [1, 0, 1],
+                  "optionLetters": ["a", "e", "o"]
+               },
+               {
+                  "Target": ["W", "o", "m", "a", "n"],
+                  "blanksPatten": [1, 0, 1, 0, 1],
+                  "optionLetters": ["a", "i", "o", "e"]
+               }
             ]
          },
 
@@ -2240,7 +2627,7 @@
                   "role": "N",
                   "BrE": "/ˈfæməli/",
                   "AmE": "/ˈfæməli/",
-                  "definition": "A group of people who are related to each other, such as a mother, father, and their children",
+                  "definition": "Your family is your father, mother, brother and sister together.",
                   "examples": [
                      {
                         "collocation": "Big family",
@@ -2318,7 +2705,7 @@
                   "role": "N",
                   "BrE": "/ˈpeərənt/",
                   "AmE": "/ˈperənt/",
-                  "definition": "A person's father and mother",
+                  "definition": "Your father and mother together",
                   "examples": [
                      {
                         "collocation": "Love parents",
@@ -2344,7 +2731,7 @@
                   "role": "N",
                   "BrE": "/ˈbrʌðə/",
                   "AmE": "/ˈbrʌðər/",
-                  "definition": "A boy or man who has the same parents as another person",
+                  "definition": "A boy or man who has the same parents as you.",
                   "examples": [
                      {
                         "collocation": "Older brother",
@@ -2370,7 +2757,7 @@
                   "role": "N",
                   "BrE": "/ˈsɪstə/",
                   "AmE": "/ˈsɪstər/",
-                  "definition": "A girl or woman who has the same parents as another person",
+                  "definition": "A girl or woman who has the same parents as you",
                   "examples": [
                      {
                         "collocation": "Younger sister",
@@ -2396,7 +2783,7 @@
                   "role": "N",
                   "BrE": "/sʌn/",
                   "AmE": "/sʌn/",
-                  "definition": "A person's male child",
+                  "definition": "Your male child",
                   "examples": [
                      {
                         "collocation": "Only son",
@@ -2422,7 +2809,7 @@
                   "role": "N",
                   "BrE": "/ˈdɔːtə/",
                   "AmE": "/ˈdɔːtər/",
-                  "definition": "A person's female child",
+                  "definition": "Your female child",
                   "examples": [
                      {
                         "collocation": "Little daughter",
@@ -2448,7 +2835,7 @@
                   "role": "N",
                   "BrE": "/ˈhʌzbənd/",
                   "AmE": "/ˈhʌzbənd/",
-                  "definition": "The man that a woman or man is married to",
+                  "definition": "The man that marries a woman",
                   "examples": [
                      {
                         "collocation": "Good husband",
@@ -2474,7 +2861,7 @@
                   "role": "N",
                   "BrE": "/waɪf/",
                   "AmE": "/waɪf/",
-                  "definition": "The woman that a woman or man is married to",
+                  "definition": "The woman that marries a man",
                   "examples": [
                      {
                         "collocation": "Loving wife",
