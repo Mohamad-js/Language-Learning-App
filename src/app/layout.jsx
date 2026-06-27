@@ -1,4 +1,5 @@
 import './globals.css';
+import { Comfortaa, Exo } from "next/font/google";
 import { LoadingProvider } from '@/components/LoadingProvider';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
@@ -26,6 +27,21 @@ export const viewport = {
 };
 
 
+const comfortaa = Comfortaa({
+   subsets: ["latin"],
+   weight: ["300", "400", "500", "600", "700"],
+   variable: "--font-comfortaa",
+   display: "swap",
+});
+
+const exo = Exo({
+   subsets: ["latin"],
+   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+   variable: "--font-sans",
+   display: "swap",
+});
+
+
 export default function RootLayout({ children }) {
    
 
@@ -37,7 +53,7 @@ export default function RootLayout({ children }) {
          <meta name="mobile-web-app-capable" content="yes" />
          <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </head>
-      <body>
+      <body className={`${exo.variable} ${comfortaa.variable} font-sans`}>
          <SpeedInsights />
          <Analytics />
          <ServiceWorkerRegistrar />

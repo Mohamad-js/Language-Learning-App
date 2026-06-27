@@ -1,9 +1,14 @@
 "use client";
-import Image from "next/image";
+import { VscWholeWord } from "react-icons/vsc";
+import { MdOutlineSpellcheck } from "react-icons/md";
+import { PiTreeStructureLight } from "react-icons/pi";
+import { VscDebugDisconnect } from "react-icons/vsc";import { GiGearStickPattern } from "react-icons/gi";
+import { LuGroup } from "react-icons/lu";
+import { GoArrowRight } from "react-icons/go";
+import { idioms } from "@/data/idioms";
 import Link from "next/link";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { FaArrowRight } from "react-icons/fa6";import { idioms } from "@/data/idioms";
 import { useUpdateDialog } from "@/components/hooks/useUpdateDialogue";
 import UpdateMsg from "@/components/updateMsg/updateMsg";
 import Tour from "@/components/tour/tour";
@@ -11,15 +16,12 @@ import rawA1Vocabs from "../../../database/rawA1.json"
 import VocabularyManager from "@/components/VocabularyManager";
 import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
-import { fadeRight, expandParent, expandChild } from "@/lib/animations/entrance";
-import MotionBackground from "@/components/MotionBackground";
+import { slideUp, fadeIn, fadeRight, expandParent, expandChild } from "@/lib/animations/entrance";
 import { toast } from "sonner";
 
 
 
 const Home = () => {
-   const { stopLoading, startLoading } = useLoading();
-   const [isReady, setIsReady] = useState(false)
    
    const [showIdiom, setShowIdiom] = useState(false);
    const [dailyIdiom, setDailyIdiom] = useState(null);
@@ -32,7 +34,6 @@ const Home = () => {
    const [isClient, setIsClient] = useState(false);
 
    useEffect(() => {
-      startLoading()
       setIsClient(true);
       const hasSeenTour = localStorage.getItem('joyride-tour-completed');
       if (!hasSeenTour) {
@@ -166,50 +167,46 @@ const Home = () => {
       return () => mediaQuery.removeEventListener("change", handler);
    }, []);
 
-   const handleIllustrationLoad = () => {
-      stopLoading()
-      setIsReady(true)
-   }
-
    const underDev = (page) => {
       toast.warning(`The ${page} section is under development.`)
    }
 
 
    return (
-      <div className='fixed w-full h-screen p-5 pb-30 flex flex-col gap-3'>
+      <div className='fixed w-full h-screen flex flex-col gap-3'>
 
-         <MotionBackground />
 
          <VocabularyManager initialData={rawA1Vocabs} />
 
-
-         <div id="tour_start"
-            className='bg-background/50 w-fit rounded-xl drop-shadow-xl text-sm p-2 z-1'
-         >
-            Home Page
+         <div className="absolute top-0 w-full h-50 bg-linear-to-r from-violet-200 to-pink-200 p-7 dark:bg-linear-to-r dark:from-violet-900 dark:to-rose-800">
+            <motion.div {...fadeRight} 
+               className='h-full flex flex-col justify-center gap-2'
+               onClick={toggleIdiomCard}
+               id="tour_idiom"
+            >  
+               <div className="flex items-center gap-3">
+                  <div className='text-sm font-semibold'>Today&apos;s Idiom</div>
+                  <GoArrowRight />
+               </div>
+               
+               <div className="text-2xl font-comfortaa font-light">
+                  {dailyIdiom?.idiom}
+               </div>
+            </motion.div>
          </div>
-
-            
-         <motion.div {...fadeRight} 
-            className='p-5 bg-background drop-shadow-xl rounded-2xl mb-5'
-            onClick={toggleIdiomCard}
-            id="tour_idiom"
-         >
-            <div className='text-xs text-foreground/50 mb-1'>Today&apos;s Idiom</div>
-            <div className="super-compact:text-sm">
-               {dailyIdiom?.example}
-            </div>
-         </motion.div>
             
 
 
          {
             showIdiom && 
-            <div className='fixed top-0 left-0 w-full h-full bg-background/50 backdrop-blur-sm z-2 flex justify-center items-center p-5'
+            <motion.div
+               {...fadeIn}
+               className='fixed top-0 left-0 w-full h-full bg-foreground/10 backdrop-blur-sm z-2 flex justify-center items-center p-10'
                onClick={toggleIdiomCard}
             >
-               <div className='relative w-full p-5 pr-3 bg-background rounded-2xl flex flex-col gap-3'
+               <motion.div
+                  {...slideUp}
+                  className='relative w-full bg-background rounded-2xl flex flex-col gap-3 drop-shadow-xl p-7'
                   onClick={(e) => e.stopPropagation()}
                >
                   <div className='w-full flex justify-between'>
@@ -218,13 +215,14 @@ const Home = () => {
                   </div>
 
                   <div className='text-2xl'>{dailyIdiom?.idiom}</div>
-                  <div className='text-lg'>{dailyIdiom?.meaning}</div>
-               </div>
-            </div>
+                  <div className='text-lg mb-7'>{dailyIdiom?.meaning}</div>
+                  <div className='text-md'>{dailyIdiom?.example}</div>
+               </motion.div>
+            </motion.div>
          }
 
          <div
-            className='w-full flex flex-col justify-between flex-1 gap-3'
+            className='relative bg-gray-100 dark:bg-background w-full top-40 flex flex-col justify-between flex-1 gap-3 rounded-4xl p-7'
          >
             <motion.div 
                variants={expandParent}
@@ -235,108 +233,73 @@ const Home = () => {
             >
                {
                   !isCompact &&
-                     <div className='p-2 bg-background/50 text-sm text-center z-1 rounded-xl drop-shadow-xl'>Start Your Language Journey</div>
+                     <div className='p-2 text-sm text-center z-1'>Start Your Language Journey</div>
                }
 
                <div className='flex justify-between flex-wrap gap-2'>
 
                   <motion.div variants={expandChild}
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_words'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
                      <Link href='/words'>
-                        <div className="relative w-full h-28">
-                           <Image
-                              className='object-cover object-bottom'
-                              src='/images/illustrations/Vocabs.jpg'
-                              alt='Studying Illustration'
-                              fill
-                              onLoad={handleIllustrationLoad}
-                           />
-                        </div>
-
-                        <div className='flex flex-1 flex-col justify-between bg-background p-3' >
-                           <div className='text-xl font-bold'>Vocabulary</div>
-                           
-                           <div className="text-sm">6330 Key Words by the CEFR Levels</div>
-
-                           <div className='w-full flex justify-end'>
-                              <FaArrowRight className='text-foreground/40' size={20} />
-                           </div>
+                        <div className='flex flex-col justify-center items-center gap-3' >
+                           <VscWholeWord size={40} className="text-foreground/40" />
+                           <div className="">Vocabulary</div>
                         </div>
                      </Link>
                   </motion.div>
 
-                  <motion.div variants={expandChild} 
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_grammar'
-                  >
-                     <div onClick={() => underDev('Grammar')}>
-                        <div className="relative w-full h-28">
-                           <Image
-                              className='object-cover object-bottom'
-                              src='/images/illustrations/Grammar.jpg'
-                              alt='Studying Illustration'
-                              fill
-                              onLoad={handleIllustrationLoad}
-                           />
-                        </div>
-                     </div>
-
-                     <div className='flex flex-1 flex-col justify-between bg-background p-3'>
-                        <div className='text-xl font-bold'>Grammar</div>
-                           <div className="text-sm">164 Most Common English Grammar</div>
-
-                           <div className='w-full flex justify-end'>
-                              <FaArrowRight className='text-foreground/40' size={20} />
-                           </div>
-                     </div>
-                  </motion.div>
-
                   <motion.div variants={expandChild}
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_prep'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
-                     <div onClick={() => underDev('Patterns')}>
-                        <div className="relative w-full h-28">
-                           <Image
-                              className='object-cover object-bottom'
-                              src='/images/illustrations/Pattern.jpg'
-                              alt='Studying Illustration'
-                              fill
-                              onLoad={handleIllustrationLoad}
-                           />
-                        </div>
-
-                        <div className='flex flex-1 flex-col justify-between bg-background p-3'>
-                           <div className='text-xl font-bold'>Patterns</div>
-                           <div className="text-sm">Coming soon</div>
-
-                           <div className='w-full flex justify-end'>
-                              <FaArrowRight className='text-foreground/40' size={20} />
-                           </div>
+                     <div onClick={()=> underDev('Grammar')}>
+                        <div className='flex flex-col justify-center items-center gap-3' >
+                           <MdOutlineSpellcheck size={40} className="text-foreground/40" />
+                           <div className="">Grammar</div>
                         </div>
                      </div>
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-[32vw] flex flex-col justify-between flex-1 border border-background rounded-2xl overflow-hidden drop-shadow-lg' id='tour_family'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
-                     <div onClick={() => underDev('Word Family')}>
-                        <div className="relative w-full h-28">
-                           <Image
-                              className='object-cover object-bottom'
-                              src='/images/illustrations/Word_Families.jpg'
-                              alt='Studying Illustration'
-                              fill
-                              onLoad={handleIllustrationLoad}
-                           />
+                     <div onClick={()=> underDev('Stems')}>
+                        <div className='flex flex-col justify-center items-center gap-3' >
+                           <PiTreeStructureLight size={40} className="text-foreground/40" />
+                           <div className="">Stems</div>
                         </div>
+                     </div>
+                  </motion.div>
 
-                        <div className='flex flex-1 flex-col justify-between bg-background p-3'>
-                           <div className='text-xl font-bold'>Word Family</div>
-                           <div className="text-sm">Coming soon</div>
+                  <motion.div variants={expandChild}
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                  >
+                     <div onClick={()=> underDev('Patterns')}>
+                        <div className='flex flex-col justify-center items-center gap-3' >
+                           <GiGearStickPattern size={40} className="text-foreground/40" />
+                           <div className="">Patterns</div>
+                        </div>
+                     </div>
+                  </motion.div>
 
-                           <div className='w-full flex justify-end'>
-                              <FaArrowRight className='text-foreground/40' size={20} />
-                           </div>
+                  <motion.div variants={expandChild}
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                  >
+                     <div onClick={()=> underDev('Synonyms')}>
+                        <div className='flex flex-col justify-center items-center gap-3' >
+                           <LuGroup size={40} className="text-foreground/40" />
+                           <div className="">Synonyms</div>
+                        </div>
+                     </div>
+                  </motion.div>
+
+                  <motion.div variants={expandChild}
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                  >
+                     <div onClick={()=> underDev('Phrasals')}>
+                        <div className='flex flex-col justify-center items-center gap-3' >
+                           <VscDebugDisconnect size={40} className="text-foreground/40" />
+                           <div className="">Phrasals</div>
                         </div>
                      </div>
                   </motion.div>

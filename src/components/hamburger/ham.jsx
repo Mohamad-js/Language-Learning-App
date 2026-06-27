@@ -1,19 +1,16 @@
 'use client'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { CiSaveDown1 } from "react-icons/ci";
-import { MdOutlineRestartAlt, MdSource, MdInsertChartOutlined, MdOutlineSpellcheck } from "react-icons/md";
-import { BiErrorCircle } from "react-icons/bi";
+import { GiGearStickPattern } from "react-icons/gi";
+import { MdSource, MdInsertChartOutlined, MdOutlineSpellcheck } from "react-icons/md";
 import { RiRepeat2Fill } from "react-icons/ri";
-import { GoHomeFill, GoQuestion } from "react-icons/go";
-import { PiUserSoundFill  } from "react-icons/pi";
+import { GoHomeFill } from "react-icons/go";
+import { VscDebugDisconnect } from "react-icons/vsc";
+import { PiUserSoundFill, PiTreeStructureLight } from "react-icons/pi";
 import { IoBook, IoReader, IoSettings, IoSave  } from "react-icons/io5";
 import { ImHeadphones } from "react-icons/im";
 import { VscWholeWord } from "react-icons/vsc";
 import { LuGroup } from "react-icons/lu";
-import { HiMiniRectangleGroup } from "react-icons/hi2";
-import { TbComponentsOff } from "react-icons/tb";
-import ThemeToggle from '../themeSwitch/themeToggle';
 import { resetAllProgress } from '@/lib/db';
 import { useLoading } from '../LoadingProvider';
 import { toast } from 'sonner';
@@ -61,10 +58,9 @@ function Ham(){
          saved: '/saved',
          statistics: '/statistics',
          review: '/review',
-         quiz: '/quiz',
          words: '/words',
          grammar: '/grammar',
-         prepositions: '/prepositions',
+         stems: '/stems',
          synonyms: '/synonyms',
          speaking: '/speaking',
          writing: '/writing',
@@ -72,7 +68,8 @@ function Ham(){
          reading: '/reading',
          source: '/source',
          settings: '/settings',
-         wordFamily: '/word_family',
+         patterns: '/patterns',
+         phrasals: '/phrasals'
       };
 
       const target = routes[msg];
@@ -158,14 +155,24 @@ function Ham(){
                         <div>Grammar</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Word Family')}>
-                        <MdOutlineSpellcheck />
-                        <div>Word Family</div>
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Stems')}>
+                        <PiTreeStructureLight />
+                        <div>Stems</div>
                      </div>
 
                      <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Patterns')}>
-                        <TbComponentsOff />
+                        <GiGearStickPattern />
                         <div>Patterns</div>
+                     </div>
+
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Synonyms')}>
+                        <LuGroup />
+                        <div>Synonyms</div>
+                     </div>
+
+                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Synonyms')}>
+                        <VscDebugDisconnect />
+                        <div>Phrasals</div>
                      </div>
 
                      <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Speaking')}>
@@ -188,11 +195,6 @@ function Ham(){
                         <div>Reading</div>
                      </div>
 
-                     {/* <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={showWarning}>
-                        <MdOutlineRestartAlt />
-                        <div>Restart App</div>
-                     </div> */}
-
                      <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Saved')}>
                         <IoSave />
                         <div>Saved</div>
@@ -203,10 +205,6 @@ function Ham(){
                         <div>Statistics</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Quiz')}>
-                        <GoQuestion />
-                        <div>Quiz</div>
-                     </div>
 
                      <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Review')}>
                         <RiRepeat2Fill />

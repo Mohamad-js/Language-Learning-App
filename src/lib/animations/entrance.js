@@ -127,6 +127,27 @@ export const fadeIn = {
 }
 
 
+export const slideUp = {
+   initial: {
+      opacity: 0,
+      y: 100
+   },
+
+   animate: {
+      opacity: 1,
+      y: 0,
+      
+      transition: {
+         delay: 0.25,
+         type: "spring",
+         stiffness: 500,
+         damping: 60,
+      },
+   },
+
+}
+
+
 
 
 export async function lessonCompleteAnimation(animate) {

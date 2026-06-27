@@ -72,7 +72,7 @@ function Words() {
 
          <Back to='/' />
 
-         <div className='dark:block hidden fixed top-0 left-0 bg-black/40 w-full min-h-dvh z-1'></div>
+         
 
          <motion.div
             {...fadeRight}
