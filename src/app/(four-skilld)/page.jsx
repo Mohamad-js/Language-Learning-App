@@ -178,7 +178,7 @@ const Home = () => {
 
          <VocabularyManager initialData={rawA1Vocabs} />
 
-         <div className="absolute top-0 w-full h-50 bg-linear-to-r from-violet-200 to-pink-200 p-7 dark:bg-linear-to-r dark:from-violet-900 dark:to-rose-800">
+         <div className="absolute top-0 w-full h-65 bg-linear-to-r from-violet-200 to-pink-200 p-7 dark:bg-linear-to-r dark:from-violet-900 dark:to-rose-800">
             <motion.div {...fadeRight} 
                className='h-full flex flex-col justify-center gap-2'
                onClick={toggleIdiomCard}
@@ -222,7 +222,7 @@ const Home = () => {
          }
 
          <div
-            className='relative bg-gray-100 dark:bg-background w-full top-40 flex flex-col justify-between flex-1 gap-3 rounded-4xl p-7'
+            className='relative bg-gray-100 dark:bg-background w-full top-50 flex flex-col justify-between flex-1 gap-3 rounded-[50px] p-7'
          >
             <motion.div 
                variants={expandParent}
@@ -239,7 +239,7 @@ const Home = () => {
                <div className='flex justify-between flex-wrap gap-2'>
 
                   <motion.div variants={expandChild}
-                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
                      <Link href='/words'>
                         <div className='flex flex-col justify-center items-center gap-3' >
@@ -250,7 +250,7 @@ const Home = () => {
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
                      <div onClick={()=> underDev('Grammar')}>
                         <div className='flex flex-col justify-center items-center gap-3' >
@@ -261,7 +261,7 @@ const Home = () => {
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
                      <div onClick={()=> underDev('Stems')}>
                         <div className='flex flex-col justify-center items-center gap-3' >
@@ -272,7 +272,7 @@ const Home = () => {
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
                      <div onClick={()=> underDev('Patterns')}>
                         <div className='flex flex-col justify-center items-center gap-3' >
@@ -283,7 +283,7 @@ const Home = () => {
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
                      <div onClick={()=> underDev('Synonyms')}>
                         <div className='flex flex-col justify-center items-center gap-3' >
@@ -294,7 +294,7 @@ const Home = () => {
                   </motion.div>
 
                   <motion.div variants={expandChild}
-                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-2xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
                      <div onClick={()=> underDev('Phrasals')}>
                         <div className='flex flex-col justify-center items-center gap-3' >
