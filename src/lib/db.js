@@ -22,7 +22,6 @@ export const initDB = async () => {
    });
 };
 
-// ... Keep your other CRUD functions (getWordsByLevelAndCategory, updateInteractionStatus, etc.) exactly as they are.
 
 
 
@@ -161,7 +160,9 @@ export const updateInteractionStatus = async ({
    const lessonNumber = Number(lesson);
 
    const lessonData = levelData.content.find(
-      item => Number(item.lesson) === lessonNumber
+      item =>
+         item.type === "studying" &&
+         Number(item.lesson) === lessonNumber
    );
 
    if (!lessonData) {
@@ -182,9 +183,7 @@ export const updateInteractionStatus = async ({
 
       if (knownSet.has(word.word)) {
          word.status = "known";
-      }
-
-      if (unknownSet.has(word.word)) {
+      } else if (unknownSet.has(word.word)) {
          word.status = "unknown";
       }
 
@@ -196,6 +195,44 @@ export const updateInteractionStatus = async ({
 
    return true;
 };
+
+
+
+
+
+
+export const updateReviewStatus = async ({
+   level,
+   review,
+}) => {
+
+   const db = await initDB();
+
+   const levelData = await db.get("levels", level);
+
+   if (!levelData) {
+      throw new Error(`Level "${level}" not found`);
+   }
+
+   const reviewData = levelData.content.find(
+      item =>
+         item.type === "review" &&
+         Number(item.review) === Number(review)
+   );
+
+   if (!reviewData) {
+      throw new Error(
+         `Review "${review}" not found in level "${level}"`
+      );
+   }
+
+   reviewData.status = "done";
+
+   await db.put("levels", levelData);
+
+   return true;
+};
+
 
 
 
@@ -264,6 +301,8 @@ export const resetAllProgress = async () => {
 
 
 
+
+
 export const resetLevelProgress = async (levelName) => {
 
    const db = await initDB();
@@ -276,22 +315,32 @@ export const resetLevelProgress = async (levelName) => {
 
    level.status = "waiting";
 
-   for (const lesson of level.content) {
+   for (const item of level.content) {
 
-      lesson.status = "waiting";
+      item.status = "waiting";
 
-      for (const word of lesson.words) {
+      if (item.type === "studying") {
 
-         word.status = "waiting";
+         for (const word of item.words) {
 
-         // Future notes support
-         if ("note" in word) {
-            word.note = "";
+            word.status = "waiting";
+
+            // Future notes support
+            if ("note" in word) {
+               word.note = "";
+            }
+
+            if ("notes" in word) {
+               word.notes = [];
+            }
          }
 
-         if ("notes" in word) {
-            word.notes = [];
-         }
+      } else if (item.type === "review") {
+
+         // Reserved for future review-specific progress.
+         // Example:
+         // item.score = 0;
+         // item.completedExercises = [];
       }
    }
 
@@ -299,6 +348,9 @@ export const resetLevelProgress = async (levelName) => {
 
    return true;
 };
+
+
+
 
 
 

@@ -96,7 +96,7 @@ function Ham(){
    return(
       <div className='absolute top-0 left-0 overflow-hidden w-full min-h-dvh'>
          
-         <div className='fixed top-0 right-0 px-3 py-3 z-5'
+         <div className='fixed top-0 right-0 px-3 py-3 z-50'
             onClick={toggleMenu}>
             <label className='z-2'>
                <div
@@ -126,12 +126,12 @@ function Ham(){
 
          {
             menu &&
-            <div className="absolute top-0 left-0 w-full min-h-dvh bg-foreground/10 z-4 backdrop-blur-sm" onClick={() => setMenu(false)}></div>
+            <div className="absolute top-0 left-0 w-full min-h-dvh bg-foreground/10 z-40 backdrop-blur-sm" onClick={() => setMenu(false)}></div>
 
          }
 
 
-         <div className={`w-full fixed z-4 transition-all bg-background duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-[50vw]' : 'left-full'}`}>
+         <div className={`w-full fixed z-40 transition-all bg-background duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-[50vw]' : 'left-full'}`}>
             
             <div className='w-full min-h-dvh pt-15 p-3 flex flex-col'>
                {/* <ThemeToggle /> */}

@@ -2156,6 +2156,7 @@
             "review": 1,
             "status": "Waiting",
             "lessons": "1 - 5",
+            "nextLesson": 6,
 
             "content": {
 
@@ -2231,6 +2232,14 @@
                         { "id": "26", "text": "Sorry", "isCorrect": true },
                         { "id": "27", "text": "Surry", "isCorrect": false }
                      ]
+                  }
+               ],
+
+               "dictation": [
+                  {
+                     "Target": ["Y", "e", "l", "l", "o", "w"],
+                     "blanksPatten": [1, 0, 1, 1, 0, 0],
+                     "optionLetters": ["o", "e", "v", "w", "i"]
                   }
                ]
             }
@@ -3787,6 +3796,91 @@
                   }
                }
             ]
+         },
+
+         {
+            "type": "review",
+            "review": 1,
+            "status": "Waiting",
+            "lessons": "6 - 10",
+
+            "content": {
+
+               "spelling": [
+                  {
+                     "rootWord": "Twelve",
+                     "options": [
+                        { "id": "1", "text": "Tewelve", "isCorrect": false },
+                        { "id": "2", "text": "Twelve", "isCorrect": true },
+                        { "id": "3", "text": "Tewlve", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Fifteen",
+                     "options": [
+                        { "id": "4", "text": "Fiveteen", "isCorrect": false },
+                        { "id": "5", "text": "Fivteen", "isCorrect": false },
+                        { "id": "6", "text": "Fifteen", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Eighteen",
+                     "options": [
+                        { "id": "7", "text": "Eightteen", "isCorrect": false },
+                        { "id": "8", "text": "Eighteen", "isCorrect": true },
+                        { "id": "9", "text": "Eghiteen", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Fourteen",
+                     "options": [
+                        { "id": "10", "text": "Forteen", "isCorrect": false },
+                        { "id": "11", "text": "Fuorteen", "isCorrect": false },
+                        { "id": "12", "text": "Fourteen", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Brown",
+                     "options": [
+                        { "id": "13", "text": "Brown", "isCorrect": true },
+                        { "id": "14", "text": "Brawn", "isCorrect": false },
+                        { "id": "15", "text": "Bruwn", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "White",
+                     "options": [
+                        { "id": "16", "text": "Wite", "isCorrect": false },
+                        { "id": "17", "text": "Wihte", "isCorrect": false },
+                        { "id": "18", "text": "White", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Purple",
+                     "options": [
+                        { "id": "19", "text": "Purple", "isCorrect": true },
+                        { "id": "20", "text": "Perple", "isCorrect": false },
+                        { "id": "21", "text": "Purpel", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Please",
+                     "options": [
+                        { "id": "22", "text": "Pleese", "isCorrect": false },
+                        { "id": "23", "text": "Plaese", "isCorrect": false },
+                        { "id": "24", "text": "Please", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Sorry",
+                     "options": [
+                        { "id": "25", "text": "Sarry", "isCorrect": false },
+                        { "id": "26", "text": "Sorry", "isCorrect": true },
+                        { "id": "27", "text": "Surry", "isCorrect": false }
+                     ]
+                  }
+               ]
+            }
          },
 
          {

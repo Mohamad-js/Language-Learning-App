@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function DictationExercise({ dictationData, onStepTwoFinished, skipPractice, saveProgress }) {
+export default function DictationExercise({ dictationData, onStepTwoFinished, skipPractice = false, saveProgress }) {
   // 🛡️ Safety Guard Clause: Block execution if data is missing or empty
   if (!dictationData || dictationData.length === 0) {
     return (

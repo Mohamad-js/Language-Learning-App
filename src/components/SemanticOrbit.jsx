@@ -7,8 +7,7 @@ import { TiTick } from "react-icons/ti";
 
 
 
-export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPractice, saveProgress }) {
-
+export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPractice = false, saveProgress }) {
 
    // 1. The Master Index tracking which Word we are currently on
    const [currentStep, setCurrentStep] = useState(0);
