@@ -129,8 +129,8 @@ return (
                <ComboboxContent >
                   <ComboboxEmpty>No items found.</ComboboxEmpty>
                   <ComboboxList>
-                     {(item) => (
-                        <ComboboxItem key={item} value={item}>
+                     {(item, index) => (
+                        <ComboboxItem key={index} value={item}>
                         {item}
                         </ComboboxItem>
                      )}

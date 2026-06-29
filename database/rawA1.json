@@ -4,6 +4,7 @@
       "status": "Waiting",
       "content": [
          {
+            "type": "studying",
             "lesson": 1,
             "category": "Subject Pronouns",
             "status": "Waiting",
@@ -316,9 +317,11 @@
          },
 
          {
+            "type": "studying",
             "lesson": 2,
             "category": "Numbers 1-10",
             "status": "Waiting",
+
             "words": [
 
                {
@@ -791,9 +794,11 @@
          },
 
          {
+            "type": "studying",
             "lesson": 3,
             "category": "Numbers 11-20",
             "status": "Waiting",
+
             "words": [
                {
                   "status": "Waiting",
@@ -1265,9 +1270,11 @@
          },
 
          {
+            "type": "studying",
             "lesson": 4,
             "category": "Colors",
             "status": "Waiting",
+
             "words": [
                {
                   "status": "Waiting",
@@ -1739,9 +1746,11 @@
          },
 
          {
+            "type": "studying",
             "lesson": 5,
             "category": "Greetings",
             "status": "Waiting",
+
             "words": [
                {
                   "status": "Waiting",
@@ -2143,9 +2152,96 @@
          },
 
          {
+            "type": "review",
+            "review": 1,
+            "status": "Waiting",
+            "lessons": "1 - 5",
+
+            "content": {
+
+               "spelling": [
+                  {
+                     "rootWord": "Twelve",
+                     "options": [
+                        { "id": "1", "text": "Tewelve", "isCorrect": false },
+                        { "id": "2", "text": "Twelve", "isCorrect": true },
+                        { "id": "3", "text": "Tewlve", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Fifteen",
+                     "options": [
+                        { "id": "4", "text": "Fiveteen", "isCorrect": false },
+                        { "id": "5", "text": "Fivteen", "isCorrect": false },
+                        { "id": "6", "text": "Fifteen", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Eighteen",
+                     "options": [
+                        { "id": "7", "text": "Eightteen", "isCorrect": false },
+                        { "id": "8", "text": "Eighteen", "isCorrect": true },
+                        { "id": "9", "text": "Eghiteen", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Fourteen",
+                     "options": [
+                        { "id": "10", "text": "Forteen", "isCorrect": false },
+                        { "id": "11", "text": "Fuorteen", "isCorrect": false },
+                        { "id": "12", "text": "Fourteen", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Brown",
+                     "options": [
+                        { "id": "13", "text": "Brown", "isCorrect": true },
+                        { "id": "14", "text": "Brawn", "isCorrect": false },
+                        { "id": "15", "text": "Bruwn", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "White",
+                     "options": [
+                        { "id": "16", "text": "Wite", "isCorrect": false },
+                        { "id": "17", "text": "Wihte", "isCorrect": false },
+                        { "id": "18", "text": "White", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Purple",
+                     "options": [
+                        { "id": "19", "text": "Purple", "isCorrect": true },
+                        { "id": "20", "text": "Perple", "isCorrect": false },
+                        { "id": "21", "text": "Purpel", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Please",
+                     "options": [
+                        { "id": "22", "text": "Pleese", "isCorrect": false },
+                        { "id": "23", "text": "Plaese", "isCorrect": false },
+                        { "id": "24", "text": "Please", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Sorry",
+                     "options": [
+                        { "id": "25", "text": "Sarry", "isCorrect": false },
+                        { "id": "26", "text": "Sorry", "isCorrect": true },
+                        { "id": "27", "text": "Surry", "isCorrect": false }
+                     ]
+                  }
+               ]
+            }
+         },
+
+         {
+            "type": "studying",
             "lesson": 6,
             "category": "Life Stages",
             "status": "Waiting",
+
             "words": [
                {
                   "status": "Waiting",
@@ -2617,9 +2713,11 @@
          },
 
          {
+            "type": "studying",
             "lesson": 7,
             "category": "Family",
             "status": "Waiting",
+            
             "words": [      
                {
                   "status": "Waiting",
@@ -2885,6 +2983,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 8 ,
             "category": "The Human Body",
             "status": "Waiting",
@@ -3153,6 +3252,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 9,
             "category": "Clothes 1",
             "status": "Waiting",
@@ -3421,6 +3521,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 10,
             "category": "Clothes 2",
             "status": "Waiting",
@@ -3689,6 +3790,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 11,
             "category": "House",
             "status": "Waiting",
@@ -3957,6 +4059,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 12,
             "category": "Furniture",
             "status": "Waiting",
@@ -4225,6 +4328,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 13,
             "category": "Fruits",
             "status": "Waiting",
@@ -4493,6 +4597,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 14,
             "category": "Vegetables",
             "status": "Waiting",
@@ -4761,6 +4866,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 15,
             "category": "Meat & Dairy",
             "status": "Waiting",
@@ -5029,6 +5135,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 16,
             "category": "Drinks",
             "status": "Waiting",
@@ -5297,6 +5404,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 17,
             "category": "Pets",
             "status": "Waiting",
@@ -5565,6 +5673,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 18,
             "category": "School",
             "status": "Waiting",
@@ -5833,6 +5942,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 19,
             "category": "Technology",
             "status": "Waiting",
@@ -6101,6 +6211,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 20,
             "category": "Sports",
             "status": "Waiting",
@@ -6369,6 +6480,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 21,
             "category": "Town",
             "status": "Waiting",
@@ -6637,6 +6749,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 22,
             "category": "Transportation",
             "status": "Waiting",
@@ -6905,6 +7018,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 23,
             "category": "Travel",
             "status": "Waiting",
@@ -7173,6 +7287,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 24,
             "category": "Nature 1",
             "status": "Waiting",
@@ -7441,6 +7556,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 25,
             "category": "Farming",
             "status": "Waiting",
@@ -7709,6 +7825,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 26,
             "category": "Wild Animals",
             "status": "Waiting",
@@ -7977,6 +8094,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 27,
             "category": "Arts",
             "status": "Waiting",
@@ -8245,6 +8363,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 28,
             "category": "Nature 2",
             "status": "Waiting",
@@ -8513,6 +8632,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 29,
             "category": "Basic Verbs",
             "status": "Waiting",
@@ -8781,6 +8901,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 30,
             "category": "Daily Routines",
             "status": "Waiting",
@@ -9049,6 +9170,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 31,
             "category": "Communication",
             "status": "Waiting",
@@ -9317,6 +9439,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 32,
             "category": "Motion",
             "status": "Waiting",
@@ -9585,6 +9708,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 33,
             "category": "Mind",
             "status": "Waiting",
@@ -9853,6 +9977,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 34,
             "category": "Transactions",
             "status": "Waiting",
@@ -10121,6 +10246,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 35,
             "category": "Size",
             "status": "Waiting",
@@ -10389,6 +10515,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 36,
             "category": "Emotions",
             "status": "Waiting",
@@ -10657,6 +10784,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 37,
             "category": "Quality",
             "status": "Waiting",
@@ -10925,6 +11053,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 38,
             "category": "Directions",
             "status": "Waiting",
@@ -11193,6 +11322,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 39,
             "category": "Positions",
             "status": "Waiting",
@@ -11461,6 +11591,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 40,
             "category": "Question Words",
             "status": "Waiting",
@@ -11729,6 +11860,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 41,
             "category": "Week",
             "status": "Waiting",
@@ -11997,6 +12129,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 42,
             "category": "Time Periods",
             "status": "Waiting",
@@ -12265,6 +12398,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 43,
             "category": "Possessive Adjectives",
             "status": "Waiting",
@@ -12453,6 +12587,7 @@
                },
                {
                   "category": "Connectors 1",
+                  "type": "studying",
                   "lesson": 44,
                   "status": "Waiting",
                   "word": "And",
@@ -12483,6 +12618,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 44,
             "category": "Connectors 1",
             "status": "Waiting",
@@ -12725,6 +12861,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 45,
             "category": "Connectors 2",
             "status": "Waiting",
@@ -12999,6 +13136,7 @@
       "status": "Waiting",
       "content": [
          {
+            "type": "studying",
             "lesson": 1,
             "category": "New",
             "status": "Waiting",
@@ -13189,6 +13327,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 2,
             "category": "Numbers 1-10",
             "status": "Waiting",
@@ -13458,6 +13597,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 3,
             "category": "Numbers 11-20",
             "status": "Waiting",
@@ -13726,6 +13866,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 4,
             "category": "Colors",
             "status": "Waiting",
@@ -13994,6 +14135,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 5,
             "category": "Greetings",
             "status": "Waiting",
@@ -14262,6 +14404,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 6,
             "category": "Life Stages",
             "status": "Waiting",
@@ -14530,6 +14673,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 7,
             "category": "Family",
             "status": "Waiting",
@@ -14798,6 +14942,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 8 ,
             "category": "The Human Body",
             "status": "Waiting",
@@ -15066,6 +15211,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 9,
             "category": "Clothes 1",
             "status": "Waiting",
@@ -15334,6 +15480,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 10,
             "category": "Clothes 2",
             "status": "Waiting",
@@ -15602,6 +15749,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 11,
             "category": "House",
             "status": "Waiting",
@@ -15870,6 +16018,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 12,
             "category": "Furniture",
             "status": "Waiting",
@@ -16138,6 +16287,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 13,
             "category": "Fruits",
             "status": "Waiting",
@@ -16406,6 +16556,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 14,
             "category": "Vegetables",
             "status": "Waiting",
@@ -16674,6 +16825,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 15,
             "category": "Meat & Dairy",
             "status": "Waiting",
@@ -16942,6 +17094,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 16,
             "category": "Drinks",
             "status": "Waiting",
@@ -17210,6 +17363,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 17,
             "category": "Pets",
             "status": "Waiting",
@@ -17478,6 +17632,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 18,
             "category": "School",
             "status": "Waiting",
@@ -17746,6 +17901,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 19,
             "category": "Technology",
             "status": "Waiting",
@@ -18014,6 +18170,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 20,
             "category": "Sports",
             "status": "Waiting",
@@ -18282,6 +18439,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 21,
             "category": "Town",
             "status": "Waiting",
@@ -18550,6 +18708,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 22,
             "category": "Transportation",
             "status": "Waiting",
@@ -18818,6 +18977,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 23,
             "category": "Travel",
             "status": "Waiting",
@@ -19086,6 +19246,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 24,
             "category": "Nature 1",
             "status": "Waiting",
@@ -19354,6 +19515,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 25,
             "category": "Farming",
             "status": "Waiting",
@@ -19622,6 +19784,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 26,
             "category": "Wild Animals",
             "status": "Waiting",
@@ -19890,6 +20053,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 27,
             "category": "Arts",
             "status": "Waiting",
@@ -20158,6 +20322,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 28,
             "category": "Nature 2",
             "status": "Waiting",
@@ -20426,6 +20591,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 29,
             "category": "Basic Verbs",
             "status": "Waiting",
@@ -20694,6 +20860,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 30,
             "category": "Daily Routines",
             "status": "Waiting",
@@ -20962,6 +21129,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 31,
             "category": "Communication",
             "status": "Waiting",
@@ -21230,6 +21398,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 32,
             "category": "Motion",
             "status": "Waiting",
@@ -21498,6 +21667,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 33,
             "category": "Mind",
             "status": "Waiting",
@@ -21766,6 +21936,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 34,
             "category": "Transactions",
             "status": "Waiting",
@@ -22034,6 +22205,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 35,
             "category": "Size",
             "status": "Waiting",
@@ -22302,6 +22474,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 36,
             "category": "Emotions",
             "status": "Waiting",
@@ -22570,6 +22743,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 37,
             "category": "Quality",
             "status": "Waiting",
@@ -22838,6 +23012,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 38,
             "category": "Directions",
             "status": "Waiting",
@@ -23106,6 +23281,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 39,
             "category": "Positions",
             "status": "Waiting",
@@ -23374,6 +23550,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 40,
             "category": "Question Words",
             "status": "Waiting",
@@ -23642,6 +23819,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 41,
             "category": "Week",
             "status": "Waiting",
@@ -23910,6 +24088,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 42,
             "category": "Time Periods",
             "status": "Waiting",
@@ -24178,6 +24357,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 43,
             "category": "Possessive Adjectives",
             "status": "Waiting",
@@ -24366,6 +24546,7 @@
                },
                {
                   "category": "Connectors 1",
+                  "type": "studying",
                   "lesson": 44,
                   "status": "Waiting",
                   "word": "And",
@@ -24396,6 +24577,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 44,
             "category": "Connectors 1",
             "status": "Waiting",
@@ -24638,6 +24820,7 @@
          },
 
          {
+            "type": "studying",
             "lesson": 45,
             "category": "Connectors 2",
             "status": "Waiting",

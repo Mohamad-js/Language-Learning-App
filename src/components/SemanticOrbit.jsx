@@ -122,7 +122,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPract
       return "bg-black/0 border border-white";
    };
 
-   console.log(`/images/a1/${ROOT_WORD}.png`)
+   console.log(`/images/a1/${ROOT_WORD}.jpg`)
 
    return (
       <div ref={containerRef} className="absolute top-0 left-0 w-full bg-background h-dvh shadow-inner overflow-hidden flex items-center justify-center">
@@ -155,7 +155,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPract
          >
             <div className="w-full h-full">
                <Image className='object-cover object-center'
-                  src={`/images/a1/${ROOT_WORD}.png`}
+                  src={`/images/a1/${ROOT_WORD}.jpg`}
                   fill
                   alt={`${ROOT_WORD} Image`}
                />

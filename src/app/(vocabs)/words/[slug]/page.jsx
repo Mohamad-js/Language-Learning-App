@@ -675,7 +675,7 @@ export default function Lessons({ params }) {
                      <div className='relative w-full min-h-75 compact:min-h-65 super-compact:min-h-50 overflow-hidden rounded-2xl'>
 
                         <Image className='object-cover'
-                           src={`/images/a1/${ws.word.word}.png`}
+                           src={`/images/a1/${ws.word.word}.jpg`}
                            fill
                            alt='Word Pic'
                            onLoad={handleImageLoad2}
@@ -683,7 +683,7 @@ export default function Lessons({ params }) {
 
                         {
                            isLoading2 &&
-                              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-background">
                                  <Wait />
                               </div>
                         }

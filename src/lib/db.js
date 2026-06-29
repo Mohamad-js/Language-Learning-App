@@ -74,43 +74,68 @@ export const getLessonsByLevel = async (levelName) => {
       return [];
    }
 
-   const lessons = [...level.content].sort(
-      (a, b) => a.lesson - b.lesson
-   );
+   // 1. Create a safe sort key
+   // If it's a review (e.g., lessons: "1-5"), grab the "5" and add 0.5 so it sorts as 5.5
+   const getSortKey = (item) => {
+      if (item.type === 'review' && item.lessons) {
+         const maxLesson = parseInt(item.lessons.split('-')[1], 10);
+         return maxLesson + 0.5;
+      }
+      return item.lesson;
+   };
 
-   let foundFirstUnstudied = false;
+   // Sort the mixed array of lessons and reviews
+   const lessons = [...level.content].sort((a, b) => getSortKey(a) - getSortKey(b));
 
-   const finalLessons = lessons.map((lesson) => {
+   // 2. Safely evaluate the 'done' status
+   const finalLessons = lessons.map((item) => {
+      let isFullyStudied = false;
 
-      const isFullyStudied = lesson.words.every(
-         (word) =>
-            word.status === "known" ||
-            word.status === "unknown"
-      );
-
-      if (isFullyStudied) {
-         return {
-            ...lesson,
-            status: "done",
-         };
+      if (item.type === 'review') {
+         // Reviews don't have a 'words' array. Check their explicit DB status instead.
+         isFullyStudied = item.status?.toLowerCase() === 'done';
+      } else if (item.words) {
+         // Standard lessons check the 'words' array
+         isFullyStudied = item.words.every(
+            (word) => word.status === "known" || word.status === "unknown"
+         );
       }
 
-      if (!foundFirstUnstudied) {
-         foundFirstUnstudied = true;
-
-         return {
-            ...lesson,
-            status: "ready",
-         };
-      }
-
+      // Return the item. If it's fully studied, mark it 'done'. 
+      // Otherwise, pass its current status or default to 'waiting'.
+      // (Your Words.js UI will upgrade the correct 'waiting' item to 'ready').
       return {
-         ...lesson,
-         status: "waiting",
+         ...item,
+         status: isFullyStudied ? "done" : (item.status?.toLowerCase() || "waiting"),
       };
    });
 
    return finalLessons;
+};
+
+
+
+
+
+
+export const getReviewByNumber = async (levelName, reviewNumber) => {
+   const db = await initDB();
+
+   const level = await db.get("levels", levelName);
+
+   if (!level || !level.content) {
+      return null;
+   }
+
+   // Convert the parameter to a number in case it comes in as a string from the URL
+   const targetReviewNum = parseInt(reviewNumber, 10);
+
+   // Find the exact item that is both a review and matches the target number
+   const reviewData = level.content.find(
+      (item) => item.type === "review" && item.review === targetReviewNum
+   );
+
+   return reviewData || null;
 };
 
 
