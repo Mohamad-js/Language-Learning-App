@@ -10,7 +10,7 @@ import { fadeIn, expand, lessonCompleteAnimation } from "@/lib/animations/entran
 import { useAnimate } from "framer-motion";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-
+import { useClickSound } from "@/components/sound";
 
 
 
@@ -26,6 +26,7 @@ function Review(){
    const { active } = useNavigation();
    const [scope, animate] = useAnimate()
    const router = useRouter()
+   const { audioRef, play } = useClickSound()
    
 
 
@@ -105,6 +106,15 @@ function Review(){
    }
 
 
+   useEffect(() => {
+
+      if(finalWindow){
+         play()
+      }
+
+   }, [play, finalWindow])
+
+
 
    const restartLearning = () => {
       setFinalWindow(false)
@@ -116,6 +126,13 @@ function Review(){
 
    return(
       <div className='w-full min-h-dvh bg-background flex items-center justify-center'>
+
+         <audio
+            ref={audioRef}
+            src="/sounds/Done.mp3"
+            preload="auto"
+         />
+
          {
             stage === 'spelling' ? 
             

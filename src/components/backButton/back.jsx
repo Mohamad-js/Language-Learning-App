@@ -17,9 +17,9 @@ function Back({to = '/'}){
    }
 
    return(
-      <div className='rounded-xl fixed top-0 left-0 p-4 active:bg-background/10 z-2' 
+      <div className='absolute top-0 p-4 mt-2 rounded-xl left-0 active:bg-background/10 z-2' 
       onClick={handleBack}>
-         <IoIosArrowBack style={40} className='' />
+         <IoIosArrowBack size={23} className='' />
       </div>
    )
 }

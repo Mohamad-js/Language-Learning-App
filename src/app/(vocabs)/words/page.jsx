@@ -1,7 +1,7 @@
 'use client';
 import { useNavigation } from '@/app/context/NavigationProvider';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
 import { getLessonsByLevel } from '@/lib/db';
@@ -9,6 +9,7 @@ import { useLoading } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
 import { fadeUpChild, fadeUpParent, fadeRight } from '@/lib/animations/entrance';
 import Navigation from '@/components/Navigation/navigation';
+import Image from 'next/image';
 
 function Words() {
    const { active } = useNavigation();
@@ -16,6 +17,7 @@ function Words() {
    const [vocabs, setVocabs] = useState([]);
    const [currentLevel, setCurrentLevel] = useState('A1');
    const router = useRouter();
+   const scrollRef = useRef(null);
 
    
 
@@ -76,34 +78,44 @@ function Words() {
       return { ...item, displayStatus };
    });
 
+   const readyIndex = processedVocabs.findIndex(
+      item => item.displayStatus === "ready"
+   );
+
+   const handleAnimationComplete = () => {
+      if (!scrollRef.current || readyIndex === -1) return;
+
+      const card = scrollRef.current.children[readyIndex];
+
+      card?.scrollIntoView({
+         behavior: "smooth",
+         inline: "center",
+         block: "nearest",
+      });
+   };
+
    return (
-      <div className={`fixed top-0 w-full min-h-dvh flex flex-col pt-20 p-5 gap-5 ${active === 0 ? 'bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]' : active === 1 ? 'bg-linear-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]' : active === 2 ? 'bg-linear-to-r from-[#db2777] via-[#ef4444] to-[#f97316]' : active === 3 ? 'bg-linear-to-tl from-[#831843] via-[#a21caf] to-[#e879f9]' : active === 4 ? 'bg-linear-to-r from-[#4ade80] via-[#14b8a6] to-[#0891b2]' : active === 5 ? 'bg-linear-to-tl from-[#4b4c7a] via-[#eb92fb] to-[#c855bc]' : 'bg-white'}`}>
+      <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center ${active === 0 ? 'bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]' : active === 1 ? 'bg-linear-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]' : active === 2 ? 'bg-linear-to-r from-[#db2777] via-[#ef4444] to-[#f97316]' : active === 3 ? 'bg-linear-to-tl from-[#831843] via-[#a21caf] to-[#e879f9]' : active === 4 ? 'bg-linear-to-r from-[#4ade80] via-[#14b8a6] to-[#0891b2]' : active === 5 ? 'bg-linear-to-tl from-[#4b4c7a] via-[#eb92fb] to-[#c855bc]' : 'bg-white'}`}>
 
          <Back to='/' />
 
          <motion.div
-            {...fadeRight}
-            className='flex flex-col gap-1 z-1'
-         >
-            <div className='text-3xl text-foreground'>{currentLevel} Vocabulary</div>
-            <div className='text-md text-foreground'>Read and Practice the Words</div>
-         </motion.div>
-
-         <motion.div
+            ref={scrollRef}
             key={vocabs.length}
             variants={fadeUpParent}
             initial='hidden'
             animate='visible'
-            className='w-full h-[85vh] overflow-y-auto scrollbar-none flex flex-col gap-3 bg-white/30 rounded-2xl p-3 pb-100 z-1'>
+            onAnimationComplete={handleAnimationComplete}
+            className='w-full h-[85vh] flex flex-nowrap justify-start gap-3 overflow-auto snap-x snap-mandatory scrollbar-none bg-white/30 p-3 z-1'>
          {
             processedVocabs.map((item, index) => (
 
                <motion.div 
                   variants={fadeUpChild}              
                   key={index} 
-                  className={`w-full flex justify-between items-center gap-2 rounded-2xl ${item.displayStatus === 'done' ? 'bg-green-100' : item.displayStatus === 'ready' ? 'bg-white' : 'bg-red-200'}`}
+                  className={`w-[90vw] shrink-0 snap-always snap-center h-full flex flex-col justify-center items-center gap-2 rounded-[80px] overflow-hidden ${item.displayStatus === 'done' ? 'bg-green-100' : item.displayStatus === 'ready' ? 'bg-white' : 'bg-red-200'}`}
                >
-                  <div className="flex flex-col gap-1 p-4">
+                  <div className="w-full h-full flex gap-1">
                      {/* Conditionally render based on whether it's a lesson or a review */}
                      {item.type === 'review' ? (
                         <>
@@ -111,14 +123,31 @@ function Words() {
                            <div className="text-lg text-black">Lessons {item.lessons}</div>
                         </>
                      ) : (
-                        <>
-                           <div className="font-bold text-gray-400">Lesson {item.lesson}:</div>
-                           <div className="text-lg text-black">{item.category}</div>
-                        </>
+                        <div className='relative w-full h-full'>
+                           <div className="relative w-full h-full">
+                              <Image
+                                 className='object-cover'
+                                 src='/images/subPro.png'
+                                 alt='lesson image'
+                                 fill
+                              />
+                           </div>
+
+                           <div className='absolute left-0 bottom-0 w-full h-40 bg-linear-to-t from-background to-transparent'></div>
+
+                           <div className="absolute top-0 left-0 w-full h-full border-10 border-white rounded-[80px]"></div>
+
+                           <div className="absolute w-full bottom-0 left-0 p-3">
+
+                              <div className="font-bold">Lesson {item.lesson}:</div>
+                              <div className="text-lg">{item.category}</div>
+                           </div>
+
+                        </div>
                      )}
                   </div>
                   
-                  {
+                  {/* {
                      item.displayStatus === 'ready' ? (
                         <Link 
                            href={item.type === 'review' ? `/review/${item.review}` : `/words/${item.lesson}`} 
@@ -143,7 +172,7 @@ function Words() {
                      ) : (
                         <div className="text-red-500 p-5">LOCKED</div>
                      )
-                  }
+                  } */}
                </motion.div>
                
             ))

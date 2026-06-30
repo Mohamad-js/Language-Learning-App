@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TiTick } from "react-icons/ti";
+import Wait from "./wait/wait";
 
 
 
@@ -11,6 +12,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPract
 
    // 1. The Master Index tracking which Word we are currently on
    const [currentStep, setCurrentStep] = useState(0);
+   const [isLoaded, setIsLoaded] = useState(true);
 
    // Grab the specific data for the active step
    const currentRound = lessonData[currentStep];
@@ -121,7 +123,9 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPract
       return "bg-black/0 border border-white";
    };
 
-   console.log(`/images/a1/${ROOT_WORD}.jpg`)
+   const imageLoaded = () => {
+      setIsLoaded(false)
+   }
 
    return (
       <div ref={containerRef} className="absolute top-0 left-0 w-full bg-background h-dvh shadow-inner overflow-hidden flex items-center justify-center">
@@ -150,14 +154,22 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPract
             x: { duration: 0.4 },
             scale: { duration: 0.4, ease: "easeInOut" }
          }}
-            className={`relative z-10 overflow-hidden flex items-center justify-center w-60 h-60 rounded-full shadow-2xl transition-colors duration-200`}
+            className={`relative border z-10 overflow-hidden flex items-center justify-center w-60 h-60 rounded-full shadow-2xl transition-colors duration-200`}
          >
             <div className="w-full h-full">
                <Image className='object-cover object-center'
                   src={`/images/a1/${ROOT_WORD}.jpg`}
                   fill
                   alt={`${ROOT_WORD} Image`}
+                  onLoad={imageLoaded}
                />
+
+               {
+                  isLoaded &&
+                     <div className="absolute w-full h-full bg-background">
+                        <Wait />
+                     </div>
+               }
             </div>
 
             <div className={`absolute w-full h-full ${getCenterBgClass()}`}></div>
