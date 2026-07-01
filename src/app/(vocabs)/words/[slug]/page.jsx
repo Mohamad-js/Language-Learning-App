@@ -27,20 +27,18 @@ import { useSettings } from '@/app/context/SettingsProvider';
 
 export default function Lessons({ params }) {
    const { settings } = useSettings()
-   const { active } = useNavigation()
+   const { active, practiceOnly, setPracticeOnly } = useNavigation()
    const { audioRef, play } = useClickSound()
    const { startLoading } = useLoading();
    const [scope, animate] = useAnimate()
 
    
-   const [specificLessonWords, setSpecificLessonWords] = useState(null)
+   const [specificLessonWords, setSpecificLessonWords] = useState([])
    const [isLoading2, setIsLoading2] = useState(true);
 
    const [currentWordIndex, setCurrentWordIndex] = useState(0)
    const [learningWordIndex, setLearningWordIndex] = useState(0)
    const [stage, setStage] = useState('assessment')
-   const [knownWords, setKnownWords] = useState([]);
-   const [unknownWords, setUnknownWords] = useState([]);
    const [finalWindow, setFinalWindow] = useState(false)
    const [lessonNumber, setLessonNumber] = useState(null)
    const [close, setClose] = useState(false)
@@ -74,7 +72,7 @@ export default function Lessons({ params }) {
    
    
    const { slug } = use(params)
-
+   const router = useRouter()
    const [debugInfo,setDebugInfo] = useState(null)
 
 
@@ -82,6 +80,7 @@ export default function Lessons({ params }) {
       if (finalWindow && !hasPlayedFinishSound) {
          play();
          setHasPlayedFinishSound(true); // Lock the latch so it can't play again
+
       } else if (!finalWindow) {
          // Reset the latch automatically if they restart or close the window
          setHasPlayedFinishSound(false);
@@ -125,9 +124,23 @@ export default function Lessons({ params }) {
 
       loadLesson();
    }, [slug]);
+
+   useEffect(() => {
+      const handleDefaultBack = (event) => {
+         event.preventDefault();
+         setPracticeOnly(false)
+         router.push('/words');
+      };
+
+      window.addEventListener('popstate', handleDefaultBack);
+      
+      return () => {
+         window.removeEventListener('popstate', handleDefaultBack);
+      };
+   }, [router]);
    
    
-   const router = useRouter()
+   
 
    const done = () => {
       try {
@@ -203,8 +216,7 @@ export default function Lessons({ params }) {
             updateInteractionStatus({
                level: requestedLevel,
                lesson: lessonNumber,
-               knownWords,
-               unknownWords
+               words: specificLessonWords
             }),
             {
                loading: 'Saving progress...',
@@ -219,6 +231,7 @@ export default function Lessons({ params }) {
 
 
          startLoading()
+         setPracticeOnly(false)
 
 
          if (msg === 'save'){
@@ -248,9 +261,20 @@ export default function Lessons({ params }) {
    }, [learningWordIndex]);
 
 
-   
-   const learningWords = [...unknownWords];
 
+   useEffect(() => {
+      if(practiceOnly && finalWindow){
+         router.push('/words')
+         setPracticeOnly(false)
+         setFinalWindow(false)
+      }
+   }, [finalWindow]);
+
+
+   
+   const learningWords = specificLessonWords.filter(
+      word => word.status === "unknown"
+   );
 
    const handleNextLearningWord = () => {
       if (learningWordIndex + 1 < learningWords.length && (!isPlayingBrE && !isPlayingAmE)) {
@@ -328,15 +352,16 @@ export default function Lessons({ params }) {
       }, 400); // Match CSS transition duration
    };
 
+
    const handleAnswer = (status) => {
-      const currentWord = specificLessonWords[currentWordIndex];
 
-      if (status === 'known') {
-         setKnownWords([...knownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
-
-      } else if (status === 'unknown') {
-         setUnknownWords([...unknownWords, { word: currentWord, type: status, lesson: lessonNumber, level: 'A1' }]);
-      }
+      setSpecificLessonWords(prev =>
+         prev.map((word, index) =>
+            index === currentWordIndex
+               ? { ...word, status }
+               : word
+         )
+      );
 
       if (currentWordIndex + 1 < specificLessonWords.length) {
          const progressPercentage = 100 / specificLessonWords.length
@@ -346,7 +371,17 @@ export default function Lessons({ params }) {
       } else {
          setCounter(100)
 
-         const willHaveUnknownWords = status === 'unknown' ? true : unknownWords.length > 0;
+         const updatedWords = specificLessonWords.map((word, index) =>
+            index === currentWordIndex
+               ? { ...word, status }
+               : word
+         );
+
+         const willHaveUnknownWords = updatedWords.some(
+            word => word.status === "unknown"
+         );
+
+         console.log('specificLessonWords:', specificLessonWords)
 
          if (willHaveUnknownWords) {
             setClose(true);
@@ -403,8 +438,12 @@ export default function Lessons({ params }) {
       setCurrentCardIndex(0);
       setCounter(0);
 
-      setKnownWords([]);
-      setUnknownWords([]);
+      setSpecificLessonWords(prev =>
+         prev.map(word => ({
+            ...word,
+            status: "waiting"
+         }))
+      );
    }
 
    const copyDef = (def) => {
@@ -479,14 +518,13 @@ export default function Lessons({ params }) {
 
    // Skip Assessment (Learn All)
    const skipAssessment = () => {
-      const allWords = specificLessonWords.map(word => ({
-         word,
-         type: 'unknown',
-         lesson: lessonNumber,
-         level: 'A1'
-      }));
+      setSpecificLessonWords(prev =>
+         prev.map(word => ({
+            ...word,
+            status: "unknown"
+         }))
+      );
 
-      setUnknownWords(allWords);
       setCounter(100);
 
       setTimeout(() => {
@@ -509,7 +547,7 @@ export default function Lessons({ params }) {
             <div className="">{category}</div>
          </div>
 
-         {stage === 'assessment' && (
+         {stage === 'assessment' && !practiceOnly && (
 
          <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10 flex flex-col items-center justify-around touch-pan-y z-1 ${active === 0 ? 'bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]' : active === 1 ? 'bg-linear-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]' : active === 2 ? 'bg-linear-to-r from-[#db2777] via-[#ef4444] to-[#f97316]' : active === 3 ? 'bg-linear-to-tl from-[#831843] via-[#a21caf] to-[#e879f9]' : active === 4 ? 'bg-linear-to-r from-[#4ade80] via-[#14b8a6] to-[#0891b2]' : active === 5 ? 'bg-linear-to-tl from-[#4b4c7a] via-[#eb92fb] to-[#c855bc]' : 'bg-white'}`}>
 
@@ -662,7 +700,10 @@ export default function Lessons({ params }) {
             <AnimatedAuroraBackground />
 
             {(() => {
-               const learningWords = [...unknownWords];
+               const learningWords = specificLessonWords.filter(
+                  word => word.status === "unknown"
+               );
+               
                const ws = learningWords[learningWordIndex];
                
 
@@ -673,7 +714,7 @@ export default function Lessons({ params }) {
                      <div className='relative w-full min-h-75 compact:min-h-65 super-compact:min-h-50 overflow-hidden rounded-2xl'>
 
                         <Image className='object-cover'
-                           src={`/images/a1/${ws.word.word}.jpg`}
+                           src={`/images/a1/${ws?.word}.jpg`}
                            fill
                            alt='Word Pic'
                            onLoad={handleImageLoad2}
@@ -692,11 +733,11 @@ export default function Lessons({ params }) {
 
                            <div className="flex items-end gap-3">
                               <p className='text-white leading-5 text-4xl z-1'>
-                                 {ws.word.word}
+                                 {ws?.word}
                               </p>
 
                               <div className='text-white text-center leading-2 z-1'>
-                                 {ws.word.role}
+                                 {ws?.role}
                               </div>
                            </div>
 
@@ -737,11 +778,11 @@ export default function Lessons({ params }) {
                                     >
                                        <audio
                                           ref={audioRefAmE}
-                                          src={`/sounds/A1/${ws.word.word}-AmE.mp3`}
+                                          src={`/sounds/A1/${ws?.word}-AmE.mp3`}
                                           onEnded={() => setIsPlayingAmE(false)}
                                        />
 
-                                       {ws.word.AmE}
+                                       {ws?.AmE}
 
                                        {
                                           isPlayingAmE ?
@@ -757,11 +798,11 @@ export default function Lessons({ params }) {
                                     >
                                        <audio
                                           ref={audioRefBrE}
-                                          src={`/sounds/A1/${ws.word.word}-BrE.mp3`}
+                                          src={`/sounds/A1/${ws?.word}-BrE.mp3`}
                                           onEnded={() => setIsPlayingBrE(false)}
                                        />
 
-                                       {ws.word.BrE}
+                                       {ws?.BrE}
 
                                        {
                                           isPlayingBrE ?
@@ -774,14 +815,14 @@ export default function Lessons({ params }) {
                               </div>
 
                               <div className='w-full flex items-center bg-background/50 p-4 super-compact:p-2 z-1 rounded-2xl'
-                                 onClick={() => copyDef(ws.word.definition)}   
-                              >{ws.word.definition}</div>
+                                 onClick={() => copyDef(ws?.definition)}   
+                              >{ws?.definition}</div>
 
                               <div className='w-full bg-background/50 rounded-2xl p-4 super-compact:p-2 z-1'
                               >
                                  <ul className='w-full flex flex-col gap-5'>
                                     {
-                                       ws.word.examples.map((example, i) => (
+                                       ws?.examples.map((example, i) => (
                                           <div key={i} className="flex flex-col">
                                              <li className='font-bold'>{example.collocation}</li>
                                              <h3>{example.example}</h3>
@@ -842,7 +883,7 @@ export default function Lessons({ params }) {
          )}
 
       {
-         finalWindow &&
+         (finalWindow && !practiceOnly) &&
             <motion.div 
                {...fadeIn}
                onAnimationComplete={() => {
@@ -896,7 +937,7 @@ export default function Lessons({ params }) {
       }
 
       {
-         stage === 'practice' && (() => {
+         (stage === 'practice' || practiceOnly) && (() => {
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex flex-col items-center justify-center p-5 text-center">
                   {practice ? (

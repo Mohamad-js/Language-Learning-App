@@ -1547,7 +1547,7 @@
                      { "id": "3", "text": "Green", "isCorrect": false },
                      { "id": "4", "text": "Yellow", "isCorrect": false },
                      { "id": "5", "text": "Black", "isCorrect": false },
-                     { "id": "6", "text": "Write", "isCorrect": false },
+                     { "id": "6", "text": "White", "isCorrect": false },
                      { "id": "7", "text": "Brown", "isCorrect": false },
                      { "id": "8", "text": "Pink", "isCorrect": false },
                      { "id": "9", "text": "Purple", "isCorrect": false },
@@ -1562,7 +1562,7 @@
                      { "id": "13", "text": "Green", "isCorrect": false },
                      { "id": "14", "text": "Yellow", "isCorrect": false },
                      { "id": "15", "text": "Black", "isCorrect": false },
-                     { "id": "16", "text": "Write", "isCorrect": false },
+                     { "id": "16", "text": "White", "isCorrect": false },
                      { "id": "17", "text": "Brown", "isCorrect": false },
                      { "id": "18", "text": "Pink", "isCorrect": false },
                      { "id": "19", "text": "Purple", "isCorrect": true },
@@ -1577,7 +1577,7 @@
                      { "id": "23", "text": "Green", "isCorrect": false },
                      { "id": "24", "text": "Yellow", "isCorrect": false },
                      { "id": "25", "text": "Black", "isCorrect": false },
-                     { "id": "26", "text": "Write", "isCorrect": false },
+                     { "id": "26", "text": "White", "isCorrect": false },
                      { "id": "27", "text": "Brown", "isCorrect": false },
                      { "id": "28", "text": "Pink", "isCorrect": false },
                      { "id": "29", "text": "Purple", "isCorrect": false },
@@ -1592,7 +1592,7 @@
                      { "id": "33", "text": "Green", "isCorrect": false },
                      { "id": "34", "text": "Yellow", "isCorrect": false },
                      { "id": "35", "text": "Black", "isCorrect": false },
-                     { "id": "36", "text": "Write", "isCorrect": false },
+                     { "id": "36", "text": "White", "isCorrect": false },
                      { "id": "37", "text": "Brown", "isCorrect": false },
                      { "id": "38", "text": "Pink", "isCorrect": false },
                      { "id": "39", "text": "Purple", "isCorrect": false },
@@ -1607,7 +1607,7 @@
                      { "id": "43", "text": "Green", "isCorrect": true },
                      { "id": "44", "text": "Yellow", "isCorrect": false },
                      { "id": "45", "text": "Black", "isCorrect": false },
-                     { "id": "46", "text": "Write", "isCorrect": false },
+                     { "id": "46", "text": "White", "isCorrect": false },
                      { "id": "47", "text": "Brown", "isCorrect": false },
                      { "id": "48", "text": "Pink", "isCorrect": false },
                      { "id": "49", "text": "Purple", "isCorrect": false },
@@ -1622,7 +1622,7 @@
                      { "id": "53", "text": "Green", "isCorrect": false },
                      { "id": "54", "text": "Yellow", "isCorrect": false },
                      { "id": "55", "text": "Black", "isCorrect": false },
-                     { "id": "56", "text": "Write", "isCorrect": false },
+                     { "id": "56", "text": "White", "isCorrect": false },
                      { "id": "57", "text": "Brown", "isCorrect": false },
                      { "id": "58", "text": "Pink", "isCorrect": true },
                      { "id": "59", "text": "Purple", "isCorrect": false },
@@ -1637,7 +1637,7 @@
                      { "id": "63", "text": "Green", "isCorrect": false },
                      { "id": "64", "text": "Yellow", "isCorrect": true },
                      { "id": "65", "text": "Black", "isCorrect": false },
-                     { "id": "66", "text": "Write", "isCorrect": false },
+                     { "id": "66", "text": "White", "isCorrect": false },
                      { "id": "67", "text": "Brown", "isCorrect": false },
                      { "id": "68", "text": "Pink", "isCorrect": false },
                      { "id": "69", "text": "Purple", "isCorrect": false },
@@ -1652,7 +1652,7 @@
                      { "id": "73", "text": "Green", "isCorrect": false },
                      { "id": "74", "text": "Yellow", "isCorrect": false },
                      { "id": "75", "text": "Black", "isCorrect": false },
-                     { "id": "76", "text": "Write", "isCorrect": false },
+                     { "id": "76", "text": "White", "isCorrect": false },
                      { "id": "77", "text": "Brown", "isCorrect": true },
                      { "id": "78", "text": "Pink", "isCorrect": false },
                      { "id": "79", "text": "Purple", "isCorrect": false },
@@ -1667,7 +1667,7 @@
                      { "id": "83", "text": "Green", "isCorrect": false },
                      { "id": "84", "text": "Yellow", "isCorrect": false },
                      { "id": "85", "text": "Black", "isCorrect": false },
-                     { "id": "86", "text": "Write", "isCorrect": true },
+                     { "id": "86", "text": "White", "isCorrect": true },
                      { "id": "87", "text": "Brown", "isCorrect": false },
                      { "id": "88", "text": "Pink", "isCorrect": false },
                      { "id": "89", "text": "Purple", "isCorrect": false },
@@ -1682,7 +1682,7 @@
                      { "id": "93", "text": "Green", "isCorrect": false },
                      { "id": "94", "text": "Yellow", "isCorrect": false },
                      { "id": "95", "text": "Black", "isCorrect": true },
-                     { "id": "96", "text": "Write", "isCorrect": false },
+                     { "id": "96", "text": "White", "isCorrect": false },
                      { "id": "97", "text": "Brown", "isCorrect": false },
                      { "id": "98", "text": "Pink", "isCorrect": false },
                      { "id": "99", "text": "Purple", "isCorrect": false },
@@ -1710,7 +1710,7 @@
                {
                   "Target": ["P", "u", "r", "p", "l", "e"],
                   "blanksPatten": [1, 0, 1, 0, 1, 1],
-                  "optionLetters": ["e", "u", "i" , "b"]
+                  "optionLetters": ["e", "u", "p" , "b"]
                },
                {
                   "Target": ["P", "i", "n", "k"],
@@ -2994,7 +2994,7 @@
          {
             "type": "studying",
             "lesson": 8 ,
-            "category": "The Human Body",
+            "category": "Human Body",
             "status": "Waiting",
             "words": [
                {
@@ -3263,7 +3263,7 @@
          {
             "type": "studying",
             "lesson": 9,
-            "category": "Clothes 1",
+            "category": "Clothes",
             "status": "Waiting",
             "words": [
                {
@@ -3532,7 +3532,7 @@
          {
             "type": "studying",
             "lesson": 10,
-            "category": "Clothes 2",
+            "category": "Accessories",
             "status": "Waiting",
             "words": [
                {

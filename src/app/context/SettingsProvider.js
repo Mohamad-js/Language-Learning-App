@@ -8,7 +8,7 @@ export function SettingsProvider({ children }) {
 
    const [settings, setSettings] = useState({
       discoveryMode: false,
-      activatePractice: false,
+      activatePractice: true,
       showIdiom: false
    });
 

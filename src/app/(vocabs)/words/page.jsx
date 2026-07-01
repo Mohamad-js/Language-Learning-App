@@ -1,19 +1,19 @@
 'use client';
+import { HiViewfinderCircle } from "react-icons/hi2";
+import { BsArrowRepeat } from "react-icons/bs";
 import { useNavigation } from '@/app/context/NavigationProvider';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
 import { getLessonsByLevel } from '@/lib/db';
-import { useLoading } from '@/components/LoadingProvider';
 import { motion } from 'framer-motion';
 import { fadeUpChild, fadeUpParent, fadeRight } from '@/lib/animations/entrance';
 import Navigation from '@/components/Navigation/navigation';
 import Image from 'next/image';
 
 function Words() {
-   const { active } = useNavigation();
-   const { startLoading } = useLoading();
+   const { active, practiceOnly, setPracticeOnly, setNextIsReview } = useNavigation();
    const [vocabs, setVocabs] = useState([]);
    const [currentLevel, setCurrentLevel] = useState('A1');
    const router = useRouter();
@@ -38,7 +38,8 @@ function Words() {
       const loadAllTheWords = async () => {
          try {
             const uniqueList = await getLessonsByLevel(currentLevel);
-            setVocabs(uniqueList);            
+            setVocabs(uniqueList);
+
          } catch (error) {
             console.error("Failed to load vocabs:", error);
          }
@@ -46,6 +47,7 @@ function Words() {
 
       loadAllTheWords();
    }, [currentLevel]);
+
 
    useEffect(() => {
       active === 0 && setCurrentLevel('A1');
@@ -94,8 +96,16 @@ function Words() {
       });
    };
 
+   const prepare = (lessonNumber) => {
+      practiceOnly && setPracticeOnly(false)
+
+      if(lessonNumber % 5 === 0){
+
+      }
+   }
+
    return (
-      <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center bg-gray-100`}>
+      <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center bg-gray-100 dark:bg-background`}>
 
          <Back to='/' />
 
@@ -127,26 +137,51 @@ function Words() {
                            <div className="relative w-full h-full">
                               <Image
                                  className='object-cover'
-                                 src='/images/subPro.png'
+                                 src={`/images/${item.category}.jpg`}
                                  alt='lesson image'
                                  fill
                               />
                            </div>
 
-                           <div className='absolute left-0 bottom-0 w-full h-80 bg-linear-to-t from-background to-transparent'></div>
+                           <div className='absolute left-0 bottom-0 w-full h-100 bg-linear-to-t from-background to-transparent'></div>
 
-                           {/* <div className={`absolute top-0 left-0 w-full h-full rounded-[100px] border-10 border-white [corner-shape:superellipse(2)] `}></div> */}
+                           <div className="absolute w-full bottom-0 left-0 flex flex-col justify-center items-start p-7 gap-5">
+                              <div className="w-full">
+                                 <div className="w-full flex justify-between gap-3 items-center">
+                                    <div className="text-4xl font-yanone">{item.category}</div>
+                                    
+                                    {
+                                       item.displayStatus === 'ready' ?
+                                          <div className="w-15 h-15 bg-foreground/10 rounded-full flex justify-center items-center border border-foreground/20 active:border-foreground">
+                                             <HiViewfinderCircle size={30} />
+                                          </div>
+                                       :
+                                       item.displayStatus === 'done' ?
+                                          <Link href={`/words/${item.lesson}`}>
+                                             <div
+                                                onClick={() => prepare(item.lesson)}
+                                                className="w-15 h-15 bg-foreground/10 rounded-full flex justify-center items-center border border-foreground/20 active:border-foreground">
+                                                <BsArrowRepeat size={30} />
+                                             </div>
+                                          </Link>
+                                       : null
+                                    }
 
-                           <div className="absolute w-full bottom-0 left-0 flex flex-col justify-center items-center p-7 gap-5">
-                              <div className="w-full flex items-end justify-start gap-3">
-                                 <div className="text-4xl font-yanone">{item.category}</div>
+                                 </div>
+
+                                 <div className="w-full flex gap-2">
+                                    <div className="">{item.words.length}</div>
+                                    words
+                                 </div>
+
                               </div>
+
 
                               {
                                  item.displayStatus === 'ready' ? (
                                     <Link 
                                        href={item.type === 'review' ? `/review/${item.review}` : `/words/${item.lesson}`} 
-                                       onClick={() => startLoading()} 
+                                       onClick={() => prepare(item.lesson)} 
                                        className='h-full w-full'
                                     >
                                        <button className='w-full h-15 bg-foreground text-background font-bold rounded-[50px] active:scale-95'>
@@ -160,8 +195,10 @@ function Words() {
                                        href={item.type === 'review' ? `/review/${item.review}` : `/words/${item.lesson}`} 
                                        className='h-full w-full'
                                     >
-                                       <button className='w-full h-15 border border-foreground font-bold rounded-[50px] active:bg-foreground active:text-background'>
-                                          REVIEW
+                                       <button
+                                          onClick={() => setPracticeOnly(true)}
+                                          className='w-full h-15 border border-foreground font-bold rounded-[50px] active:bg-foreground active:text-background'>
+                                          PRACTICE
                                        </button>
                                     </Link>
                                  ) : (

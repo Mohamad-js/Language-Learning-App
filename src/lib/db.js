@@ -145,8 +145,7 @@ export const getReviewByNumber = async (levelName, reviewNumber) => {
 export const updateInteractionStatus = async ({
    level,
    lesson,
-   knownWords,
-   unknownWords,
+   words
 }) => {
 
    const db = await initDB();
@@ -157,39 +156,41 @@ export const updateInteractionStatus = async ({
       throw new Error(`Level "${level}" not found`);
    }
 
-   const lessonNumber = Number(lesson);
-
-   const lessonData = levelData.content.find(
-      item =>
-         item.type === "studying" &&
-         Number(item.lesson) === lessonNumber
+   const lessonIndex = levelData.content.findIndex(
+      l => l.lesson === lesson
    );
 
-   if (!lessonData) {
-      throw new Error(
-         `Lesson "${lessonNumber}" not found in level "${level}"`
-      );
+   if (lessonIndex === -1) {
+      throw new Error(`Lesson ${lesson} not found`);
    }
 
-   const knownSet = new Set(
-      knownWords.map(item => item.word.word)
-   );
+   const lessonData = levelData.content[lessonIndex];
 
-   const unknownSet = new Set(
-      unknownWords.map(item => item.word.word)
-   );
+   // Save every word's latest status
+   lessonData.words = words;
 
-   lessonData.words.forEach(word => {
-
-      if (knownSet.has(word.word)) {
-         word.status = "known";
-      } else if (unknownSet.has(word.word)) {
-         word.status = "unknown";
-      }
-
-   });
-
+   // Lesson is completed
    lessonData.status = "done";
+
+   // Unlock next lesson or review
+   if (lessonIndex + 1 < levelData.content.length) {
+      const nextItem = levelData.content[lessonIndex + 1];
+
+      if (nextItem.status === "locked") {
+         nextItem.status = "ready";
+      }
+   }
+
+   // Update overall level status
+   const completedLessons = levelData.content.filter(
+      item => item.status === "done"
+   ).length;
+
+   if (completedLessons === levelData.content.length) {
+      levelData.status = "done";
+   } else if (levelData.status === "waiting") {
+      levelData.status = "ready";
+   }
 
    await db.put("levels", levelData);
 
@@ -273,21 +274,33 @@ export const resetAllProgress = async () => {
 
       level.status = "waiting";
 
-      for (const lesson of level.content) {
+      for (const item of level.content) {
 
-         lesson.status = "waiting";
+         item.status = "waiting";
 
-         for (const word of lesson.words) {
+         if (item.type === "studying") {
 
-            word.status = "waiting";
+            for (const word of item.words) {
 
-            if ("note" in word) {
-               word.note = "";
+               word.status = "waiting";
+
+               // Future notes support
+               if ("note" in word) {
+                  word.note = "";
+               }
+
+               if ("notes" in word) {
+                  word.notes = [];
+               }
             }
 
-            if ("notes" in word) {
-               word.notes = [];
-            }
+         } else if (item.type === "review") {
+
+            // Future review progress reset
+            // if ("score" in item) item.score = 0;
+            // if ("attempts" in item) item.attempts = 0;
+            // if ("completedAt" in item) item.completedAt = null;
+
          }
       }
 

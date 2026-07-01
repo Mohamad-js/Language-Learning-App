@@ -63,7 +63,7 @@ function Settings(){
       
       setSettings({
          discoveryMode: false,
-         activatePractice: false,
+         activatePractice: true,
          showIdiom: false
       })
 
