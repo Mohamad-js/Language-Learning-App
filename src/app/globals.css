@@ -73,6 +73,7 @@ a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, 
 
 @theme inline {
    --font-sans: var(--font-sans);
+   --font-yanone: var(--font-yanone);
    --font-comfortaa: var(--font-comfortaa);
    --font-heading: var(--font-sans);
    --font-sans: var(--font-sans);

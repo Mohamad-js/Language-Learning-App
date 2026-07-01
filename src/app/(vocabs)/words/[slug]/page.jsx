@@ -511,9 +511,7 @@ export default function Lessons({ params }) {
 
          {stage === 'assessment' && (
 
-         <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10 flex flex-col items-center justify-around touch-pan-y bg-linear-to-tr from-[#4BC0C8] via-[#C779D0] to-[#FEAC5E] z-1`}>
-
-            <div className='dark:block hidden fixed top-0 left-0 bg-black/40 w-full min-h-dvh z-1'></div>
+         <div className={`${close && 'opacity-0 transition-all transition-0.5'} w-full h-dvh p-10 flex flex-col items-center justify-around touch-pan-y z-1 ${active === 0 ? 'bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]' : active === 1 ? 'bg-linear-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]' : active === 2 ? 'bg-linear-to-r from-[#db2777] via-[#ef4444] to-[#f97316]' : active === 3 ? 'bg-linear-to-tl from-[#831843] via-[#a21caf] to-[#e879f9]' : active === 4 ? 'bg-linear-to-r from-[#4ade80] via-[#14b8a6] to-[#0891b2]' : active === 5 ? 'bg-linear-to-tl from-[#4b4c7a] via-[#eb92fb] to-[#c855bc]' : 'bg-white'}`}>
 
             <div className='w-full z-1 text-foreground'>
                <h2 className='text-center font-bold'>Knowledge Check</h2>
@@ -850,7 +848,7 @@ export default function Lessons({ params }) {
                onAnimationComplete={() => {
                   lessonCompleteAnimation(animate);
                }}
-               className='absolute top-0 w-full h-dvh bg-background/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-3'
+               className='absolute top-0 w-full h-dvh bg-foreground/10 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-3'
             >
                <div
                   ref={scope}

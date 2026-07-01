@@ -1,5 +1,5 @@
 import './globals.css';
-import { Comfortaa, Exo } from "next/font/google";
+import { Comfortaa, Exo, Yanone_Kaffeesatz } from "next/font/google";
 import { LoadingProvider } from '@/components/LoadingProvider';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
@@ -41,6 +41,13 @@ const exo = Exo({
    display: "swap",
 });
 
+const yanone = Yanone_Kaffeesatz({
+   subsets: ["latin"],
+   weight: "variable",
+   variable: "--font-yanone",
+   display: "swap",
+});
+
 
 export default function RootLayout({ children }) {
    
@@ -53,7 +60,7 @@ export default function RootLayout({ children }) {
          <meta name="mobile-web-app-capable" content="yes" />
          <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </head>
-      <body className={`${exo.variable} ${comfortaa.variable} font-sans`}>
+      <body className={`${exo.variable} ${yanone.variable} ${comfortaa.variable} font-sans`}>
          <SpeedInsights />
          <Analytics />
          <ServiceWorkerRegistrar />

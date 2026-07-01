@@ -95,7 +95,7 @@ function Words() {
    };
 
    return (
-      <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center ${active === 0 ? 'bg-linear-to-tr from-[#5d50c6] via-[#f85e9f] to-[#f18fac]' : active === 1 ? 'bg-linear-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]' : active === 2 ? 'bg-linear-to-r from-[#db2777] via-[#ef4444] to-[#f97316]' : active === 3 ? 'bg-linear-to-tl from-[#831843] via-[#a21caf] to-[#e879f9]' : active === 4 ? 'bg-linear-to-r from-[#4ade80] via-[#14b8a6] to-[#0891b2]' : active === 5 ? 'bg-linear-to-tl from-[#4b4c7a] via-[#eb92fb] to-[#c855bc]' : 'bg-white'}`}>
+      <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center bg-gray-100`}>
 
          <Back to='/' />
 
@@ -106,14 +106,14 @@ function Words() {
             initial='hidden'
             animate='visible'
             onAnimationComplete={handleAnimationComplete}
-            className='w-full h-[85vh] flex flex-nowrap justify-start gap-3 overflow-auto snap-x snap-mandatory scrollbar-none bg-white/30 p-3 z-1'>
+            className='w-full h-[80vh] flex flex-nowrap justify-start gap-3 overflow-auto snap-x snap-mandatory scrollbar-none p-3 z-1'>
          {
             processedVocabs.map((item, index) => (
 
                <motion.div 
                   variants={fadeUpChild}              
                   key={index} 
-                  className={`w-[90vw] shrink-0 snap-always snap-center h-full flex flex-col justify-center items-center gap-2 rounded-[80px] overflow-hidden ${item.displayStatus === 'done' ? 'bg-green-100' : item.displayStatus === 'ready' ? 'bg-white' : 'bg-red-200'}`}
+                  className={`w-[90vw] shrink-0 snap-always snap-center h-full flex flex-col justify-center items-center gap-2 rounded-[100px] [corner-shape:superellipse(2)] overflow-hidden drop-shadow-lg`}
                >
                   <div className="w-full h-full flex gap-1">
                      {/* Conditionally render based on whether it's a lesson or a review */}
@@ -133,46 +133,47 @@ function Words() {
                               />
                            </div>
 
-                           <div className='absolute left-0 bottom-0 w-full h-40 bg-linear-to-t from-background to-transparent'></div>
+                           <div className='absolute left-0 bottom-0 w-full h-80 bg-linear-to-t from-background to-transparent'></div>
 
-                           <div className="absolute top-0 left-0 w-full h-full border-10 border-white rounded-[80px]"></div>
+                           {/* <div className={`absolute top-0 left-0 w-full h-full rounded-[100px] border-10 border-white [corner-shape:superellipse(2)] `}></div> */}
 
-                           <div className="absolute w-full bottom-0 left-0 p-3">
+                           <div className="absolute w-full bottom-0 left-0 flex flex-col justify-center items-center p-7 gap-5">
+                              <div className="w-full flex items-end justify-start gap-3">
+                                 <div className="text-4xl font-yanone">{item.category}</div>
+                              </div>
 
-                              <div className="font-bold">Lesson {item.lesson}:</div>
-                              <div className="text-lg">{item.category}</div>
+                              {
+                                 item.displayStatus === 'ready' ? (
+                                    <Link 
+                                       href={item.type === 'review' ? `/review/${item.review}` : `/words/${item.lesson}`} 
+                                       onClick={() => startLoading()} 
+                                       className='h-full w-full'
+                                    >
+                                       <button className='w-full h-15 bg-foreground text-background font-bold rounded-[50px] active:scale-95'>
+                                          START
+                                       </button>
+                                    </Link>
+                                 ) :
+                                 
+                                 item.displayStatus === 'done' ? (
+                                    <Link 
+                                       href={item.type === 'review' ? `/review/${item.review}` : `/words/${item.lesson}`} 
+                                       className='h-full w-full'
+                                    >
+                                       <button className='w-full h-15 border border-foreground font-bold rounded-[50px] active:bg-foreground active:text-background'>
+                                          REVIEW
+                                       </button>
+                                    </Link>
+                                 ) : (
+                                    <div className="text-red-500 p-5">LOCKED</div>
+                                 )
+                              }
                            </div>
 
                         </div>
                      )}
                   </div>
                   
-                  {/* {
-                     item.displayStatus === 'ready' ? (
-                        <Link 
-                           href={item.type === 'review' ? `/review/${item.review}` : `/words/${item.lesson}`} 
-                           onClick={() => startLoading()} 
-                           className='h-full'
-                        >
-                           <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
-                              START
-                           </button>
-                        </Link>
-                     ) :
-                     
-                     item.displayStatus === 'done' ? (
-                        <Link 
-                           href={item.type === 'review' ? `/review/${item.review}` : `/words/${item.lesson}`} 
-                           className='h-full'
-                        >
-                           <button className='w-30 h-full bg-black/5 rounded-2xl text-black active:bg-black active:text-white'>
-                              REVIEW
-                           </button>
-                        </Link>
-                     ) : (
-                        <div className="text-red-500 p-5">LOCKED</div>
-                     )
-                  } */}
                </motion.div>
                
             ))
