@@ -27,13 +27,14 @@ import { useSettings } from '@/app/context/SettingsProvider';
 
 export default function Lessons({ params }) {
    const { settings } = useSettings()
-   const { active, practiceOnly, setPracticeOnly } = useNavigation()
+   const { active, practiceOnly, setPracticeOnly, setNextIsReview, nextIsReview} = useNavigation()
    const { audioRef, play } = useClickSound()
    const { startLoading } = useLoading();
    const [scope, animate] = useAnimate()
 
    
    const [specificLessonWords, setSpecificLessonWords] = useState([])
+   const [reviewNumber, setReviewNumber] = useState(0)
    const [isLoading2, setIsLoading2] = useState(true);
 
    const [currentWordIndex, setCurrentWordIndex] = useState(0)
@@ -73,7 +74,7 @@ export default function Lessons({ params }) {
    
    const { slug } = use(params)
    const router = useRouter()
-   const [debugInfo,setDebugInfo] = useState(null)
+   const [debugInfo, setDebugInfo] = useState(null)
 
 
    useEffect(() => {
@@ -138,6 +139,17 @@ export default function Lessons({ params }) {
          window.removeEventListener('popstate', handleDefaultBack);
       };
    }, [router]);
+
+   useEffect(() => {
+      if(lessonNumber % 5 === 0){
+         setNextIsReview(true)
+         setReviewNumber(lessonNumber / 5)
+
+      } else {
+         setNextIsReview(false)
+      }
+
+   }, [lessonNumber])
    
    
    
@@ -240,6 +252,9 @@ export default function Lessons({ params }) {
          } else if(msg === 'nextLesson'){
             router.push(`/words/${lessonNumber + 1}`)
             
+         } else if (msg === 'nextReview') {
+            router.push(`/review/${reviewNumber}`)
+
          } else {
             router.push('/words')
          }
@@ -910,27 +925,42 @@ export default function Lessons({ params }) {
                      className='py-2 w-25 bg-background rounded-xl active:scale-95'
                      onClick={restartLearning}
                   >
-                     Review
+                     Redo
                   </motion.button>
 
                   {
-                     lessonNumber < wholeLessons &&
+                     (lessonNumber < wholeLessons && !nextIsReview) ?
                         <motion.button
                            {...expand({delay: 1.6})}
                            className='py-2 w-25 bg-background rounded-xl active:scale-95'
                            onClick={() => saveProgress('nextLesson')}
-                        >Lesson {lessonNumber + 1}</motion.button>
+                        >
+                           Lesson {lessonNumber + 1}
+                        </motion.button>
+
+                     :
+
+                     nextIsReview ?
+                        <motion.button
+                           {...expand({delay: 1.6})}
+                           className='py-2 w-25 bg-background rounded-xl active:scale-95'
+                           onClick={() => saveProgress('nextReview')}
+                        >
+                           Review {reviewNumber}
+                        </motion.button>
+                     
+                     : null
                   }
 
                   <motion.button
                      {...expand({delay: 1.7})}
                      className='py-2 w-25 bg-background rounded-xl active:scale-95'
                      onClick={() => saveProgress('save')}
-                  >Save</motion.button>
+                  >
+                     Save
+                  </motion.button>
 
                </div>
-
-                     
 
             </motion.div>
 

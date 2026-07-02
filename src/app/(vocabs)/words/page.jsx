@@ -1,5 +1,7 @@
 'use client';
 import { HiViewfinderCircle } from "react-icons/hi2";
+import { IoLockClosedOutline } from "react-icons/io5";
+import { IoCloseOutline } from "react-icons/io5";
 import { BsArrowRepeat } from "react-icons/bs";
 import { useNavigation } from '@/app/context/NavigationProvider';
 import Link from 'next/link';
@@ -8,14 +10,20 @@ import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
 import { getLessonsByLevel } from '@/lib/db';
 import { motion } from 'framer-motion';
-import { fadeUpChild, fadeUpParent, fadeRight } from '@/lib/animations/entrance';
+import { fadeUpChild, fadeUpParent } from '@/lib/animations/entrance';
 import Navigation from '@/components/Navigation/navigation';
 import Image from 'next/image';
+
+
+
+
 
 function Words() {
    const { active, practiceOnly, setPracticeOnly, setNextIsReview } = useNavigation();
    const [vocabs, setVocabs] = useState([]);
    const [currentLevel, setCurrentLevel] = useState('A1');
+   const [preview, setPreview] = useState(false);
+   const [previewContent, setPreviewContent] = useState([]);
    const router = useRouter();
    const scrollRef = useRef(null);
 
@@ -96,13 +104,16 @@ function Words() {
       });
    };
 
-   const prepare = (lessonNumber) => {
+   const prepare = () => {
       practiceOnly && setPracticeOnly(false)
-
-      if(lessonNumber % 5 === 0){
-
-      }
    }
+
+   const showPreview = (item) => {
+      setPreview(true)
+      setPreviewContent(item)
+   }
+
+   vocabs && console.log('vocabs', vocabs)
 
    return (
       <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center bg-gray-100 dark:bg-background`}>
@@ -143,24 +154,41 @@ function Words() {
                               />
                            </div>
 
-                           <div className='absolute left-0 bottom-0 w-full h-100 bg-linear-to-t from-background to-transparent'></div>
+                           <div className='absolute left-0 bottom-0 w-full h-70 bg-linear-to-t from-background to-transparent'></div>
+                           <div className='absolute left-0 bottom-0 w-full h-60 bg-linear-to-t from-background to-transparent'></div>
+                           <div className='absolute left-0 bottom-0 w-full h-50 bg-linear-to-t from-background to-transparent'></div>
+                           <div className='absolute left-0 bottom-0 w-full h-40 bg-linear-to-t from-background to-transparent'></div>
+                           <div className='absolute left-0 bottom-0 w-full h-30 bg-linear-to-t from-background to-transparent'></div>
 
-                           <div className="absolute w-full bottom-0 left-0 flex flex-col justify-center items-start p-7 gap-5">
-                              <div className="w-full">
-                                 <div className="w-full flex justify-between gap-3 items-center">
-                                    <div className="text-4xl font-yanone">{item.category}</div>
+                           <div className="absolute w-full bottom-0 left-0 flex flex-col justify-center items-start p-5 gap-6">
+                              <div className="w-full flex flex-col">
+                                 <div className="w-full flex justify-between items-center">
+                                    <div className="flex flex-col">
+                                       <div className="text-4xl font-yanone">{item.category}</div>
+
+                                       <div className="w-full flex gap-2">
+                                          <div className="">{item.words.length}</div>
+                                          words
+                                       </div>
+                                    </div>
                                     
                                     {
                                        item.displayStatus === 'ready' ?
-                                          <div className="w-15 h-15 bg-foreground/10 rounded-full flex justify-center items-center border border-foreground/20 active:border-foreground">
-                                             <HiViewfinderCircle size={30} />
+                                          <div
+                                             onClick={() => showPreview(item)}
+                                             className="w-15 h-15 bg-foreground/10 rounded-full flex justify-center items-center border border-foreground/20 active:border-foreground"
+                                          >
+                                             <HiViewfinderCircle size={30}/>
                                           </div>
+
                                        :
+
                                        item.displayStatus === 'done' ?
                                           <Link href={`/words/${item.lesson}`}>
                                              <div
                                                 onClick={() => prepare(item.lesson)}
-                                                className="w-15 h-15 bg-foreground/10 rounded-full flex justify-center items-center border border-foreground/20 active:border-foreground">
+                                                className="w-15 h-15 bg-foreground/10 rounded-full flex justify-center items-center border border-foreground/20 active:border-foreground"
+                                             >
                                                 <BsArrowRepeat size={30} />
                                              </div>
                                           </Link>
@@ -169,10 +197,6 @@ function Words() {
 
                                  </div>
 
-                                 <div className="w-full flex gap-2">
-                                    <div className="">{item.words.length}</div>
-                                    words
-                                 </div>
 
                               </div>
 
@@ -184,7 +208,8 @@ function Words() {
                                        onClick={() => prepare(item.lesson)} 
                                        className='h-full w-full'
                                     >
-                                       <button className='w-full h-15 bg-foreground text-background font-bold rounded-[50px] active:scale-95'>
+                                       <button className='w-full h-15 bg-foreground text-background font-bold rounded-[50px] active:scale-95'
+                                       >
                                           START
                                        </button>
                                     </Link>
@@ -196,13 +221,16 @@ function Words() {
                                        className='h-full w-full'
                                     >
                                        <button
-                                          onClick={() => setPracticeOnly(true)}
-                                          className='w-full h-15 border border-foreground font-bold rounded-[50px] active:bg-foreground active:text-background'>
+                                             onClick={() => setPracticeOnly(true)}
+                                             className='w-full h-15 border border-foreground font-bold rounded-[50px] active:bg-foreground active:text-background'
+                                          >
                                           PRACTICE
                                        </button>
                                     </Link>
                                  ) : (
-                                    <div className="text-red-500 p-5">LOCKED</div>
+                                    <div className='w-full flex justify-center'>
+                                       <IoLockClosedOutline size={40} className="text-red-500" />
+                                    </div>
                                  )
                               }
                            </div>
@@ -218,6 +246,66 @@ function Words() {
          </motion.div>
 
          <Navigation />
+
+         {
+            preview &&
+               <div
+                  onClick={() => setPreview(false)} 
+                  className="absolute top-0 left-0 w-foreground/20 w-full h-dvh flex justify-center items-center backdrop-blur-sm z-1"
+               >
+                  <div
+                     onClick={(e) => e.stopPropagation()}
+                     className="w-[80vw] bg-background p-7 rounded-3xl flex flex-col justify-between gap-5"
+                  >
+                     <div className="w-full flex items-center justify-between">
+                        <div className="text-md">Words in This Lesson</div>
+
+                        <IoCloseOutline
+                           size={30}
+                           onClick={() => setPreview(false)}
+                        />
+                     </div>
+
+                     <div className="w-full flex flex-wrap justify-evenly gap-2 border border-white/20 p-5 rounded-2xl">
+                        {
+                           previewContent?.words?.map((item, index) => (
+                              <div
+                                 key={index}
+                                 className="text-foreground py-2 border border-white/40 min-w-20 flex-1 flex justify-center items-center rounded-2xl"
+                              >
+                                 {item.word}
+                              </div>
+                           ))
+                        }
+                     </div>
+
+                     <div className="w-full flex gap-3">                        
+                        <Link
+                           className='w-full ' 
+                           href={`/words/${previewContent.lesson}`}>
+                           <button
+                              onClick={() => prepare(previewContent.lesson)}
+                              className="bg-foreground/10 rounded-2xl w-full py-3"
+                           >
+                              SKIP
+                           </button>
+                        </Link>
+                        
+                        <Link
+                           className='w-full'
+                           href={`/words/${previewContent.lesson}`}>
+                           <button
+                              onClick={() => prepare(previewContent.lesson)}
+                              className="w-full bg-foreground text-background rounded-2xl py-3"
+                           >
+                              START
+                           </button>
+                        </Link>
+                     </div>
+
+                  </div>
+               </div>
+         }
 
       </div>
    );
