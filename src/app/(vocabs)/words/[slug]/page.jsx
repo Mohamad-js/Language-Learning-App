@@ -116,7 +116,6 @@ export default function Lessons({ params }) {
                return;
             }
 
-
          } catch (error) {
             setDebugInfo(`DB Error: ${error.message}`);
             console.error("Failed to fetch words:", error);

@@ -8,8 +8,9 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
-import { getLessonsByLevel } from '@/lib/db';
+import { getLessonsByLevel, updateInteractionStatus } from '@/lib/db';
 import { motion } from 'framer-motion';
+import { toast } from "sonner";
 import { fadeUpChild, fadeUpParent } from '@/lib/animations/entrance';
 import Navigation from '@/components/Navigation/navigation';
 import Image from 'next/image';
@@ -23,6 +24,7 @@ function Words() {
    const [vocabs, setVocabs] = useState([]);
    const [currentLevel, setCurrentLevel] = useState('A1');
    const [preview, setPreview] = useState(false);
+   const [loadAgain, setLoadAgain] = useState(false);
    const [previewContent, setPreviewContent] = useState([]);
    const router = useRouter();
    const scrollRef = useRef(null);
@@ -54,7 +56,7 @@ function Words() {
       };
 
       loadAllTheWords();
-   }, [currentLevel]);
+   }, [currentLevel, loadAgain]);
 
 
    useEffect(() => {
@@ -113,7 +115,25 @@ function Words() {
       setPreviewContent(item)
    }
 
-   vocabs && console.log('vocabs', vocabs)
+   const skipLesson = async (previewContent) => {
+
+      const changeToKnown = previewContent.words.map((item) => ({
+         ...item,
+         status: 'known'
+      }))
+
+      await updateInteractionStatus({
+         level: currentLevel,
+         lesson: previewContent.lesson,
+         words: changeToKnown
+      })
+
+      setLoadAgain(!loadAgain)
+      setPreview(false)
+      toast.info(`You skipped the lesson ${previewContent.lesson}`)
+   }
+
+
 
    return (
       <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center bg-gray-100 dark:bg-background`}>
@@ -153,6 +173,13 @@ function Words() {
                                  fill
                               />
                            </div>
+                           
+                           {
+                              item.displayStatus === 'waiting' &&
+                                 <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-3xl scale-900 bg-background/10 backdrop-blur-xs text-foreground">
+                                    {item.lesson}
+                                 </div>
+                           }
 
                            <div className='absolute left-0 bottom-0 w-full h-70 bg-linear-to-t from-background to-transparent'></div>
                            <div className='absolute left-0 bottom-0 w-full h-60 bg-linear-to-t from-background to-transparent'></div>
@@ -266,12 +293,12 @@ function Words() {
                         />
                      </div>
 
-                     <div className="w-full flex flex-wrap justify-evenly gap-2 border border-white/20 p-5 rounded-2xl">
+                     <div className="w-full flex flex-wrap justify-evenly gap-2 border border-foreground/20 p-5 rounded-2xl">
                         {
                            previewContent?.words?.map((item, index) => (
                               <div
                                  key={index}
-                                 className="text-foreground py-2 border border-white/40 min-w-20 flex-1 flex justify-center items-center rounded-2xl"
+                                 className="text-foreground py-2 min-w-20 flex-1 flex justify-center items-center rounded-2xl"
                               >
                                  {item.word}
                               </div>
@@ -280,16 +307,14 @@ function Words() {
                      </div>
 
                      <div className="w-full flex gap-3">                        
-                        <Link
-                           className='w-full ' 
-                           href={`/words/${previewContent.lesson}`}>
-                           <button
-                              onClick={() => prepare(previewContent.lesson)}
-                              className="bg-foreground/10 rounded-2xl w-full py-3"
-                           >
-                              SKIP
-                           </button>
-                        </Link>
+
+                        <button
+                           onClick={() => skipLesson(previewContent)}
+                           className="bg-foreground/10 rounded-2xl w-full py-3"
+                        >
+                           SKIP
+                        </button>
+                        
                         
                         <Link
                            className='w-full'
