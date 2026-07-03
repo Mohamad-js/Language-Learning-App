@@ -1780,23 +1780,23 @@
                },
                {
                   "status": "Waiting",
-                  "word": "Hi",
+                  "word": "What's up",
                   "role": "Exc",
-                  "BrE": "/haɪ/",
-                  "AmE": "/haɪ/",
-                  "definition": "The informal form of 'hello'",
+                  "BrE": "/ˌwɒts ˈʌp/",
+                  "AmE": "/ˌwʌts ˈʌp/",
+                  "definition": "A friendly way to ask: How are you?",
                   "examples": [
                      {
-                        "collocation": "Hi there",
-                        "example": "Hi there, nice to meet you."
+                        "collocation": "What's up?",
+                        "example": "Hey, what's up? -> Not much."
                      },
                      {
-                        "collocation": "Say hi",
-                        "example": "I always say hi to my friends at school."
+                        "collocation": "What's up lately?",
+                        "example": "Yo, what's up with you lately? -> Same old, same old."
                      },
                      {
-                        "collocation": "Hi everyone",
-                        "example": "Hi everyone, let's play a game together."
+                        "collocation": "What's up with",
+                        "example": "Hiya, what's up with you? -> Just chllin'."
                      }
                   ],
                   "notes": {
@@ -1813,16 +1813,16 @@
                   "definition": "A word you say when you leave someone",
                   "examples": [
                      {
+                        "collocation": "Goodbye for now",
+                        "example": "Goodbye for now, see you tomorrow."
+                     },
+                     {
                         "collocation": "Say goodbye",
-                        "example": "We say goodbye to our grandparents at the station."
+                        "example": "Say goodbye to your daddy."
                      },
                      {
                         "collocation": "Wave goodbye",
                         "example": "The children wave goodbye to their mother."
-                     },
-                     {
-                        "collocation": "Goodbye for now",
-                        "example": "Goodbye for now, see you tomorrow."
                      }
                   ],
                   "notes": {
@@ -1832,23 +1832,23 @@
                },
                {
                   "status": "Waiting",
-                  "word": "Bye",
+                  "word": "Good morning",
                   "role": "Exc",
-                  "BrE": "/baɪ/",
-                  "AmE": "/baɪ/",
-                  "definition": "The informal form of 'goodbye'",
+                  "BrE": "/ˌɡʊd ˈmɔːnɪŋ/",
+                  "AmE": "/ˌɡʊd ˈmɔːrnɪŋ/",
+                  "definition": "A polite way to say hello in the morning.",
                   "examples": [
                      {
-                        "collocation": "Bye bye",
-                        "example": "The little baby says bye bye."
+                        "collocation": "Morning!",
+                        "example": "Morning, it's a beautiful day."
                      },
                      {
-                        "collocation": "Say bye",
-                        "example": "I say bye to my dad before I go to school."
+                        "collocation": "Good morning!",
+                        "example": "Good morning, everyone! Let's start the meeting."
                      },
                      {
-                        "collocation": "Bye for now",
-                        "example": "Bye for now, have a nice day."
+                        "collocation": "Hey, morning!",
+                        "example": "Hey, morning! Sleepyhead."
                      }
                   ],
                   "notes": {
@@ -1858,75 +1858,23 @@
                },
                {
                   "status": "Waiting",
-                  "word": "Please",
+                  "word": "Good afternoon",
                   "role": "Exc",
-                  "BrE": "/pliːz/",
-                  "AmE": "/pliːz/",
-                  "definition": "A polite word you use to ask for something",
+                  "BrE": "/ˌɡʊd ˌɑːftəˈnuːn/",
+                  "AmE": "/ˌɡʊd ˌæftərˈnuːn/",
+                  "definition": "A polite way to say hello in the afternoon.",
                   "examples": [
                      {
-                        "collocation": "Yes please",
-                        "example": "Do you want an apple? Yes please."
+                        "collocation": "Good afternoon!",
+                        "example": "Good afternoon everyone! Welcome to our class."
                      },
                      {
-                        "collocation": "Please help",
-                        "example": "Please help me with my homework."
+                        "collocation": "Hey, afternoon!",
+                        "example": "Hey, afternoon! How's it going?"
                      },
                      {
-                        "collocation": "Please sit",
-                        "example": "Please sit down on the chair."
-                     }
-                  ],
-                  "notes": {
-                     "title": "",
-                     "text": ""
-                  }
-               },
-               {
-                  "status": "Waiting",
-                  "word": "Thank you",
-                  "role": "Exc",
-                  "BrE": "/ˈθæŋk juː/",
-                  "AmE": "/ˈθæŋk juː/",
-                  "definition": "Polite words you use to show you are grateful for something",
-                  "examples": [
-                     {
-                        "collocation": "Thank you very much",
-                        "example": "Thank you very much for the beautiful flower."
-                     },
-                     {
-                        "collocation": "Say thank you",
-                        "example": "Children always say thank you to their parents."
-                     },
-                     {
-                        "collocation": "Thank you for",
-                        "example": "Thank you for the nice lunch."
-                     }
-                  ],
-                  "notes": {
-                     "title": "",
-                     "text": ""
-                  }
-               },
-               {
-                  "status": "Waiting",
-                  "word": "Thanks",
-                  "role": "Exc",
-                  "BrE": "/θæŋks/",
-                  "AmE": "/θæŋks/",
-                  "definition": "The informal form of 'thank you'",
-                  "examples": [
-                     {
-                        "collocation": "Thanks a lot",
-                        "example": "Thanks a lot for your help."
-                     },
-                     {
-                        "collocation": "Many thanks",
-                        "example": "Many thanks for the delicious cake."
-                     },
-                     {
-                        "collocation": "No thanks",
-                        "example": "Do you want some tea? No thanks."
+                        "collocation": "Good afternoon to",
+                        "example": "Good afternoon to anybody who can hear me."
                      }
                   ],
                   "notes": {
@@ -1937,22 +1885,22 @@
                {
                   "status": "Waiting",
                   "word": "Sorry",
-                  "role": "Adj",
+                  "role": "Exc",
                   "BrE": "/ˈsɒri/",
                   "AmE": "/ˈsɑːri/",
-                  "definition": "A word you say when you feel bad about a mistake or problem",
+                  "definition": "A word you say to get someone's attention.",
                   "examples": [
                      {
-                        "collocation": "To be sorry",
-                        "example": "I am sorry for the mistake."
+                        "collocation": "Sorry, may I ...?",
+                        "example": "Sorry, may I use your pen?"
                      },
                      {
-                        "collocation": "Feel sorry",
-                        "example": "I feel sorry for the sick dog."
+                        "collocation": "Sorry, can I ...?",
+                        "example": "Sorry, can I ask you a question?"
                      },
                      {
-                        "collocation": "Say sorry",
-                        "example": "You must say sorry to your sister."
+                        "collocation": "Sorry, do you ...?",
+                        "example": "Sorry, do you have a minute?"
                      }
                   ],
                   "notes": {
@@ -1962,49 +1910,23 @@
                },
                {
                   "status": "Waiting",
-                  "word": "Yes",
+                  "word": "Good night",
                   "role": "Exc",
-                  "BrE": "/jes/",
-                  "AmE": "/jes/",
-                  "definition": "A word you use to agree, say okay, or answer a question positively",
+                  "BrE": "/ˌɡʊd ˈnaɪt/",
+                  "AmE": "/ˌɡʊd ˈnaɪt/",
+                  "definition": "A word to say goodbye to someone before you go to bed.",
                   "examples": [
                      {
-                        "collocation": "Yes please",
-                        "example": "Do you want some juice? Yes please."
+                        "collocation": "Good night!",
+                        "example": "Good night! sleep tight."
                      },
                      {
-                        "collocation": "Oh yes",
-                        "example": "Is this your book? Oh yes, it is mine."
+                        "collocation": "Good night! sweetie",
+                        "example": "Good night, sweetie! Sleep well."
                      },
                      {
-                        "collocation": "Yes, of course",
-                        "example": "Can I use your pen? Yes of course."
-                     }
-                  ],
-                  "notes": {
-                     "title": "",
-                     "text": ""
-                  }
-               },
-               {
-                  "status": "Waiting",
-                  "word": "No",
-                  "role": "Exc",
-                  "BrE": "/nəʊ/",
-                  "AmE": "/noʊ/",
-                  "definition": "A word you use to disagree, say stop, or answer a question negatively",
-                  "examples": [
-                     {
-                        "collocation": "No thanks",
-                        "example": "Do you want a burger? No thanks."
-                     },
-                     {
-                        "collocation": "Oh no",
-                        "example": "Oh no, my watch is broken."
-                     },
-                     {
-                        "collocation": "No problem",
-                        "example": "Thank you for the help! No problem."
+                        "collocation": "Night night!",
+                        "example": "Night night! Sweet dreams."
                      }
                   ],
                   "notes": {
@@ -2016,108 +1938,87 @@
 
             "practice": [
                {
-                  "rootWord": "Goodbye",
+                  "rootWord": "Hello",
                   "options": [
-                     { "id": "1", "text": "Goodbye", "isCorrect": true },
-                     { "id": "2", "text": "Hi", "isCorrect": false },
-                     { "id": "3", "text": "Bye", "isCorrect": true },
-                     { "id": "4", "text": "Hello", "isCorrect": false },
-                     { "id": "5", "text": "Please", "isCorrect": false },
-                     { "id": "6", "text": "Sorry", "isCorrect": false },
-                     { "id": "7", "text": "Thanks", "isCorrect": false },
-                     { "id": "8", "text": "Yes", "isCorrect": false },
-                     { "id": "9", "text": "No", "isCorrect": false },
-                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                     { "id": "1", "text": "Goodbye", "isCorrect": false },
+                     { "id": "2", "text": "What's up?", "isCorrect": false },
+                     { "id": "3", "text": "Hello", "isCorrect": true },
+                     { "id": "4", "text": "Good afternoon", "isCorrect": false },
+                     { "id": "5", "text": "Good morning", "isCorrect": false },
+                     { "id": "6", "text": "Good night", "isCorrect": false },
+                     { "id": "7", "text": "Sorry", "isCorrect": false }
                   ]
                },
                {
-                  "rootWord": "Hi",
+                  "rootWord": "Good morning",
                   "options": [
                      { "id": "1", "text": "Goodbye", "isCorrect": false },
-                     { "id": "2", "text": "Hi", "isCorrect": true },
-                     { "id": "3", "text": "Bye", "isCorrect": false },
-                     { "id": "4", "text": "Hello", "isCorrect": true },
-                     { "id": "5", "text": "Please", "isCorrect": false },
-                     { "id": "6", "text": "Sorry", "isCorrect": false },
-                     { "id": "7", "text": "Thanks", "isCorrect": false },
-                     { "id": "8", "text": "Yes", "isCorrect": false },
-                     { "id": "9", "text": "No", "isCorrect": false },
-                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                     { "id": "2", "text": "What's up?", "isCorrect": false },
+                     { "id": "3", "text": "Hello", "isCorrect": false },
+                     { "id": "4", "text": "Good afternoon", "isCorrect": false },
+                     { "id": "5", "text": "Good morning", "isCorrect": true },
+                     { "id": "6", "text": "Good night", "isCorrect": false },
+                     { "id": "7", "text": "Sorry", "isCorrect": false }
                   ]
                },
                {
-                  "rootWord": "Thanks",
+                  "rootWord": "Good night",
                   "options": [
                      { "id": "1", "text": "Goodbye", "isCorrect": false },
-                     { "id": "2", "text": "Hi", "isCorrect": false },
-                     { "id": "3", "text": "Bye", "isCorrect": false },
-                     { "id": "4", "text": "Hello", "isCorrect": false },
-                     { "id": "5", "text": "Please", "isCorrect": false },
-                     { "id": "6", "text": "Sorry", "isCorrect": false },
-                     { "id": "7", "text": "Thanks", "isCorrect": true },
-                     { "id": "8", "text": "Yes", "isCorrect": false },
-                     { "id": "9", "text": "No", "isCorrect": false },
-                     { "id": "10", "text": "Thank you", "isCorrect": true }
-                  ]
-               },
-               {
-                  "rootWord": "Please",
-                  "options": [
-                     { "id": "1", "text": "Goodbye", "isCorrect": false },
-                     { "id": "2", "text": "Hi", "isCorrect": false },
-                     { "id": "3", "text": "Bye", "isCorrect": false },
-                     { "id": "4", "text": "Hello", "isCorrect": false },
-                     { "id": "5", "text": "Please", "isCorrect": true },
-                     { "id": "6", "text": "Sorry", "isCorrect": false },
-                     { "id": "7", "text": "Thanks", "isCorrect": false },
-                     { "id": "8", "text": "Yes", "isCorrect": false },
-                     { "id": "9", "text": "No", "isCorrect": false },
-                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                     { "id": "2", "text": "What's up?", "isCorrect": false },
+                     { "id": "3", "text": "Hello", "isCorrect": false },
+                     { "id": "4", "text": "Good afternoon", "isCorrect": false },
+                     { "id": "5", "text": "Good morning", "isCorrect": false },
+                     { "id": "6", "text": "Good night", "isCorrect": true },
+                     { "id": "7", "text": "Sorry", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "Sorry",
                   "options": [
                      { "id": "1", "text": "Goodbye", "isCorrect": false },
-                     { "id": "2", "text": "Hi", "isCorrect": false },
-                     { "id": "3", "text": "Bye", "isCorrect": false },
-                     { "id": "4", "text": "Hello", "isCorrect": false },
-                     { "id": "5", "text": "Please", "isCorrect": false },
-                     { "id": "6", "text": "Sorry", "isCorrect": true },
-                     { "id": "7", "text": "Thanks", "isCorrect": false },
-                     { "id": "8", "text": "Yes", "isCorrect": false },
-                     { "id": "9", "text": "No", "isCorrect": false },
-                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                     { "id": "2", "text": "What's up?", "isCorrect": false },
+                     { "id": "3", "text": "Hello", "isCorrect": false },
+                     { "id": "4", "text": "Good afternoon", "isCorrect": false },
+                     { "id": "5", "text": "Good morning", "isCorrect": false },
+                     { "id": "6", "text": "Good night", "isCorrect": false },
+                     { "id": "7", "text": "Sorry", "isCorrect": true }
                   ]
                },
                {
-                  "rootWord": "Yes",
+                  "rootWord": "Good afternoon",
                   "options": [
                      { "id": "1", "text": "Goodbye", "isCorrect": false },
-                     { "id": "2", "text": "Hi", "isCorrect": false },
-                     { "id": "3", "text": "Bye", "isCorrect": false },
-                     { "id": "4", "text": "Hello", "isCorrect": false },
-                     { "id": "5", "text": "Please", "isCorrect": false },
-                     { "id": "6", "text": "Sorry", "isCorrect": false },
-                     { "id": "7", "text": "Thanks", "isCorrect": false },
-                     { "id": "8", "text": "Yes", "isCorrect": true },
-                     { "id": "9", "text": "No", "isCorrect": false },
-                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                     { "id": "2", "text": "What's up?", "isCorrect": false },
+                     { "id": "3", "text": "Hello", "isCorrect": false },
+                     { "id": "4", "text": "Good afternoon", "isCorrect": true },
+                     { "id": "5", "text": "Good morning", "isCorrect": false },
+                     { "id": "6", "text": "Good night", "isCorrect": false },
+                     { "id": "7", "text": "Sorry", "isCorrect": false }
                   ]
                },
                {
-                  "rootWord": "No",
+                  "rootWord": "What's up",
                   "options": [
                      { "id": "1", "text": "Goodbye", "isCorrect": false },
-                     { "id": "2", "text": "Hi", "isCorrect": false },
-                     { "id": "3", "text": "Bye", "isCorrect": false },
-                     { "id": "4", "text": "Hello", "isCorrect": false },
-                     { "id": "5", "text": "Please", "isCorrect": false },
-                     { "id": "6", "text": "Sorry", "isCorrect": false },
-                     { "id": "7", "text": "Thanks", "isCorrect": false },
-                     { "id": "8", "text": "Yes", "isCorrect": false },
-                     { "id": "9", "text": "No", "isCorrect": true },
-                     { "id": "10", "text": "Thank you", "isCorrect": false }
+                     { "id": "2", "text": "What's up?", "isCorrect": true },
+                     { "id": "3", "text": "Hello", "isCorrect": false },
+                     { "id": "4", "text": "Good afternoon", "isCorrect": false },
+                     { "id": "5", "text": "Good morning", "isCorrect": false },
+                     { "id": "6", "text": "Good night", "isCorrect": false },
+                     { "id": "7", "text": "Sorry", "isCorrect": false }
+                  ]
+               },
+               {
+                  "rootWord": "Goodbye",
+                  "options": [
+                     { "id": "1", "text": "Goodbye", "isCorrect": true },
+                     { "id": "2", "text": "What's up?", "isCorrect": false },
+                     { "id": "3", "text": "Hello", "isCorrect": false },
+                     { "id": "4", "text": "Good afternoon", "isCorrect": false },
+                     { "id": "5", "text": "Good morning", "isCorrect": false },
+                     { "id": "6", "text": "Good night", "isCorrect": false },
+                     { "id": "7", "text": "Sorry", "isCorrect": false }
                   ]
                }
             ],
@@ -2134,19 +2035,9 @@
                   "optionLetters": ["e", "i", "a", "y", "e"]
                },
                {
-                  "Target": ["P", "l", "e", "a", "s", "e"],
-                  "blanksPatten": [1, 1, 0, 0, 1, 1],
-                  "optionLetters": ["e", "i", "e", "a", "i"]
-               },
-               {
                   "Target": ["S", "o", "r", "r", "y"],
                   "blanksPatten": [1, 0, 1, 1, 0],
                   "optionLetters": ["a", "o", "u", "i", "y"]
-               },
-               {
-                  "Target": ["T", "h", "a", "n", "k", "s"],
-                  "blanksPatten": [1, 0, 1, 1, 0, 1],
-                  "optionLetters": ["h", "a", "k", "c"]
                }
             ]
          },

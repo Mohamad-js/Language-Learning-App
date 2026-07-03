@@ -5,7 +5,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { BsArrowRepeat } from "react-icons/bs";
 import { useNavigation } from '@/app/context/NavigationProvider';
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
 import { getLessonsByLevel, updateInteractionStatus } from '@/lib/db';
@@ -94,17 +94,20 @@ function Words() {
       item => item.displayStatus === "ready"
    );
 
-   const handleAnimationComplete = () => {
+   useLayoutEffect(() => {
       if (!scrollRef.current || readyIndex === -1) return;
 
-      const card = scrollRef.current.children[readyIndex];
+      const frame = requestAnimationFrame(() => {
+         const holder = scrollRef.current;
+         const card = holder?.children[readyIndex];
 
-      card?.scrollIntoView({
-         behavior: "smooth",
-         inline: "center",
-         block: "nearest",
+         if (!holder || !card) return;
+
+         holder.scrollLeft = card.offsetLeft - ((holder.clientWidth - card.clientWidth) / 2);
       });
-   };
+
+      return () => cancelAnimationFrame(frame);
+   }, [readyIndex, processedVocabs.length]);
 
    const prepare = () => {
       practiceOnly && setPracticeOnly(false)
@@ -146,7 +149,6 @@ function Words() {
             variants={fadeUpParent}
             initial='hidden'
             animate='visible'
-            onAnimationComplete={handleAnimationComplete}
             className='w-full h-[80vh] flex flex-nowrap justify-start gap-3 overflow-auto snap-x snap-mandatory scrollbar-none p-3 z-1'>
          {
             processedVocabs.map((item, index) => (

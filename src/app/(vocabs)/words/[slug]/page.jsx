@@ -76,6 +76,8 @@ export default function Lessons({ params }) {
    const router = useRouter()
    const [debugInfo, setDebugInfo] = useState(null)
 
+   const normalizeWord = (word) => word?.trim().toLowerCase();
+
 
    useEffect(() => {
       if (finalWindow && !hasPlayedFinishSound) {
@@ -289,6 +291,18 @@ export default function Lessons({ params }) {
    const learningWords = specificLessonWords.filter(
       word => word.status === "unknown"
    );
+
+   const unknownWordNames = new Set(
+      learningWords.map(word => normalizeWord(word.word))
+   );
+
+   const practiceWords = practiceOnly
+      ? practice
+      : practice?.filter(item => unknownWordNames.has(normalizeWord(item.rootWord)));
+
+   const dictationWords = practiceOnly
+      ? practice2
+      : practice2?.filter(item => unknownWordNames.has(normalizeWord(item.Target?.join(''))));
 
    const handleNextLearningWord = () => {
       if (learningWordIndex + 1 < learningWords.length && (!isPlayingBrE && !isPlayingAmE)) {
@@ -969,9 +983,9 @@ export default function Lessons({ params }) {
          (stage === 'practice' || practiceOnly) && (() => {
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex flex-col items-center justify-center p-5 text-center">
-                  {practice ? (
+                  {practiceWords ? (
                      <SemanticOrbit
-                        lessonData={practice}
+                        lessonData={practiceWords}
                         onStepOneFinished={setStage}
                         skipPractice={skipPractice}
                         saveProgress={saveProgress}
@@ -993,9 +1007,9 @@ export default function Lessons({ params }) {
             return (
                <div className="fixed top-0 left-0 z-1 w-full min-h-dvh bg-background flex items-center justify-center">
                   {
-                     practice2 ?
+                     dictationWords ?
                         <DictationExercise
-                           dictationData = {practice2}
+                           dictationData = {dictationWords}
                            onStepTwoFinished = {setFinalWindow}
                            skipPractice={skipPractice}
                            saveProgress={saveProgress}
