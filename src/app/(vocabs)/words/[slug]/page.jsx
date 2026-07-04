@@ -80,6 +80,8 @@ export default function Lessons({ params }) {
 
 
    useEffect(() => {
+      if (practiceOnly) return
+
       if (finalWindow && !hasPlayedFinishSound) {
          play();
          setHasPlayedFinishSound(true); // Lock the latch so it can't play again

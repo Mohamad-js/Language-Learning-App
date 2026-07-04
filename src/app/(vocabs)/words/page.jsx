@@ -5,7 +5,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { BsArrowRepeat } from "react-icons/bs";
 import { useNavigation } from '@/app/context/NavigationProvider';
 import Link from 'next/link';
-import { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
 import { getLessonsByLevel, updateInteractionStatus } from '@/lib/db';
@@ -94,19 +94,22 @@ function Words() {
       item => item.displayStatus === "ready"
    );
 
-   useLayoutEffect(() => {
+   useEffect(() => {
       if (!scrollRef.current || readyIndex === -1) return;
 
-      const frame = requestAnimationFrame(() => {
+      const timer = setTimeout(() => {
          const holder = scrollRef.current;
          const card = holder?.children[readyIndex];
 
          if (!holder || !card) return;
 
-         holder.scrollLeft = card.offsetLeft - ((holder.clientWidth - card.clientWidth) / 2);
-      });
+         holder.scrollTo({
+            left: card.offsetLeft - ((holder.clientWidth - card.clientWidth) / 2),
+            behavior: "smooth",
+         });
+      }, 800);
 
-      return () => cancelAnimationFrame(frame);
+      return () => clearTimeout(timer);
    }, [readyIndex, processedVocabs.length]);
 
    const prepare = () => {
@@ -161,10 +164,27 @@ function Words() {
                   <div className="w-full h-full flex gap-1">
                      {/* Conditionally render based on whether it's a lesson or a review */}
                      {item.type === 'review' ? (
-                        <>
-                           <div className="font-bold text-gray-400">Review {item.review}:</div>
-                           <div className="text-lg text-black">Lessons {item.lessons}</div>
-                        </>
+                        <div className="w-full">
+                           <div className="relative w-full h-full">
+                              <Image
+                                 className='object-cover'
+                                 src={`/images/a1/Covers/${item.image}.jpg`}
+                                 alt='review image'
+                                 fill
+                              />
+                           </div>
+
+
+                           <div className="absolute w-full h-40 p-5 top-0 left-0 flex justify-center items-center flex-col gap-3">
+                              <div className="text-sm bg-background/50 backdrop-blur-xs px-4 py-2 rounded-xl drop-shadow-lg">Complete All to Unlock the Chest</div>
+
+                              <div className="w-full flex gap-3">
+                                 <button className='flex-1 p-2 bg-background rounded-lg drop-shadow-lg active:scale-95'>QUIZ 1</button>
+                                 <button className='flex-1 px-3 bg-background rounded-lg drop-shadow-lg active:scale-95'>QUIZ 2</button>
+                                 <button className='flex-1 p-2 bg-background rounded-lg drop-shadow-lg active:scale-95'>QUIZ 3</button>
+                              </div>
+                           </div>
+                        </div>
                      ) : (
                         <div className='relative w-full h-full'>
                            <div className="relative w-full h-full">
@@ -178,7 +198,7 @@ function Words() {
                            
                            {
                               item.displayStatus === 'waiting' &&
-                                 <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-3xl scale-900 bg-background/10 backdrop-blur-xs text-foreground">
+                                 <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-3xl scale-900 bg-background/20 backdrop-blur-sm text-foreground">
                                     {item.lesson}
                                  </div>
                            }
@@ -256,11 +276,15 @@ function Words() {
                                           PRACTICE
                                        </button>
                                     </Link>
-                                 ) : (
+                                 ) :
+                                 
+                                 item.displayStatus === 'waiting' ? (
                                     <div className='w-full flex justify-center'>
                                        <IoLockClosedOutline size={40} className="text-red-500" />
                                     </div>
                                  )
+
+                                 : 'ERROR IN displayStatus'
                               }
                            </div>
 
