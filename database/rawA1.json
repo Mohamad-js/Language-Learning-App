@@ -2048,7 +2048,6 @@
             "status": "Waiting",
             "lessons": "1 - 5",
             "nextLesson": 6,
-            "image": "pre1",
 
             "content": {
 
@@ -3696,7 +3695,6 @@
             "status": "Waiting",
             "lessons": "6 - 10",
             "nextLesson": 11,
-            "image": "pre2",
 
             "content": {
 
@@ -5128,7 +5126,6 @@
             "status": "Waiting",
             "lessons": "11 - 15",
             "nextLesson": 16,
-            "image": "pre3",
 
             "content": {
             }
@@ -6485,7 +6482,6 @@
             "status": "Waiting",
             "lessons": "16 - 20",
             "nextLesson": 21,
-            "image": "pre4",
 
             "content": {
             }
@@ -7842,7 +7838,6 @@
             "status": "Waiting",
             "lessons": "21 - 25",
             "nextLesson": 26,
-            "image": "pre5",
 
             "content": {
             }
@@ -9199,7 +9194,6 @@
             "status": "Waiting",
             "lessons": "26 - 30",
             "nextLesson": 31,
-            "image": "pre6",
 
             "content": {
             }
@@ -10556,7 +10550,6 @@
             "status": "Waiting",
             "lessons": "31 - 35",
             "nextLesson": 36,
-            "image": "pre7",
 
             "content": {
             }
@@ -11913,7 +11906,6 @@
             "status": "Waiting",
             "lessons": "36 - 40",
             "nextLesson": 41,
-            "image": "pre8",
 
             "content": {
             }
@@ -13194,20 +13186,19 @@
             "review": 9,
             "status": "Waiting",
             "lessons": "41 - 45",
-            "nextLesson": "Final Test",
-            "image": "pre9",
+            "nextLesson": "chest",
 
             "content": {
             }
          },
 
          {
-            "type": "review",
+            "type": "chest",
             "review": 10,
             "status": "Waiting",
             "lessons": "1 - 45",
             "nextLesson": "end",
-            "image": "pre10",
+            "image": "pre1",
 
             "content": {
             }

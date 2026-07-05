@@ -166,6 +166,36 @@ function Words() {
                      {item.type === 'review' ? (
                         <div className="w-full">
                            <div className="relative w-full h-full">
+                              {/* <Image
+                                 className='object-cover'
+                                 src={`/images/a1/Covers/${item.image}.jpg`}
+                                 alt='review image'
+                                 fill
+                              /> */}
+                              <Image
+                                 className='object-cover dark:hidden'
+                                 src={`/images/a1/Reviews/reviewWhite.jpg`}
+                                 alt='review image'
+                                 fill
+                              />
+                              <Image
+                                 className='object-cover hidden dark:block'
+                                 src={`/images/a1/Reviews/reviewBlack.jpg`}
+                                 alt='review image'
+                                 fill
+                              />
+                           </div>
+
+
+                           <div className="absolute w-full p-5 bottom-0 left-0 flex justify-center items-center flex-col gap-3">
+                              <button className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg active:scale-95'>Review {item.lessons}</button>
+                           </div>
+                        </div>
+                     ) :
+                     
+                     item.type === 'chest' ? (
+                        <div className="w-full">
+                           <div className="relative w-full h-full">
                               <Image
                                  className='object-cover'
                                  src={`/images/a1/Covers/${item.image}.jpg`}
@@ -175,14 +205,8 @@ function Words() {
                            </div>
 
 
-                           <div className="absolute w-full h-40 p-5 top-0 left-0 flex justify-center items-center flex-col gap-3">
-                              <div className="text-sm bg-background/50 backdrop-blur-xs px-4 py-2 rounded-xl drop-shadow-lg">Complete All to Unlock the Chest</div>
-
-                              <div className="w-full flex gap-3">
-                                 <button className='flex-1 p-2 bg-background rounded-lg drop-shadow-lg active:scale-95'>QUIZ 1</button>
-                                 <button className='flex-1 px-3 bg-background rounded-lg drop-shadow-lg active:scale-95'>QUIZ 2</button>
-                                 <button className='flex-1 p-2 bg-background rounded-lg drop-shadow-lg active:scale-95'>QUIZ 3</button>
-                              </div>
+                           <div className="absolute w-full p-5 bottom-0 left-0 flex justify-center items-center flex-col gap-3">
+                              <button className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg active:scale-95'>Review {item.lessons}</button>
                            </div>
                         </div>
                      ) : (
