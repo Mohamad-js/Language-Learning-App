@@ -307,7 +307,9 @@ const Home = () => {
                   </motion.div>
 
                </div>
-               <NotificationButton />
+
+               {/* <NotificationButton /> */}
+
             </motion.div>
 
 

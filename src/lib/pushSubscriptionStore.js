@@ -1,9 +1,7 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import path from 'node:path';
+import { createSupabaseServerClient } from '@/lib/supabaseServer';
 
-const storePath =
-  process.env.PUSH_SUBSCRIPTIONS_FILE ||
-  path.join(process.cwd(), 'database', 'push-subscriptions.json');
+const tableName =
+  process.env.SUPABASE_PUSH_SUBSCRIPTIONS_TABLE || 'push_subscriptions';
 
 function validateSubscription(subscription) {
   if (!subscription || typeof subscription !== 'object') {
@@ -32,68 +30,77 @@ function validateSubscription(subscription) {
   };
 }
 
-async function readSubscriptions() {
-  try {
-    const raw = await readFile(storePath, 'utf8');
-    const subscriptions = JSON.parse(raw);
-    return Array.isArray(subscriptions) ? subscriptions : [];
-  } catch (error) {
-    if (error.code === 'ENOENT') return [];
-    throw error;
-  }
+function tablePath(searchParams) {
+  return `/${tableName}${searchParams ? `?${searchParams}` : ''}`;
 }
 
-async function writeSubscriptions(subscriptions) {
-  await mkdir(path.dirname(storePath), { recursive: true });
-  await writeFile(storePath, `${JSON.stringify(subscriptions, null, 2)}\n`);
+async function getSubscriptionCount(client) {
+  const params = new URLSearchParams({ select: 'endpoint' });
+  const { headers } = await client.request(tablePath(params), {
+    headers: {
+      Prefer: 'count=exact',
+      Range: '0-0',
+    },
+  });
+  const contentRange = headers.get('content-range');
+  const count = contentRange?.split('/')?.[1];
+
+  return Number.isFinite(Number(count)) ? Number(count) : 0;
 }
 
 export async function upsertSubscription(subscription, metadata = {}) {
   const normalized = validateSubscription(subscription);
-  const subscriptions = await readSubscriptions();
+  const client = createSupabaseServerClient();
   const now = new Date().toISOString();
-  const existingIndex = subscriptions.findIndex(
-    (item) => item.endpoint === normalized.endpoint
-  );
+  const params = new URLSearchParams({ on_conflict: 'endpoint' });
 
-  const savedSubscription = {
-    ...normalized,
-    userAgent: metadata.userAgent || null,
-    createdAt:
-      existingIndex >= 0 ? subscriptions[existingIndex].createdAt || now : now,
-    updatedAt: now,
-  };
-
-  if (existingIndex >= 0) {
-    subscriptions[existingIndex] = savedSubscription;
-  } else {
-    subscriptions.push(savedSubscription);
-  }
-
-  await writeSubscriptions(subscriptions);
+  const { data } = await client.request(tablePath(params), {
+    method: 'POST',
+    headers: {
+      Prefer: 'resolution=merge-duplicates,return=representation',
+    },
+    body: JSON.stringify({
+      endpoint: normalized.endpoint,
+      subscription: normalized,
+      user_agent: metadata.userAgent || null,
+      updated_at: now,
+    }),
+  });
 
   return {
-    subscription: savedSubscription,
-    count: subscriptions.length,
+    subscription: data?.[0]?.subscription || normalized,
+    count: await getSubscriptionCount(client),
   };
 }
 
 export async function getAllSubscriptions() {
-  return readSubscriptions();
+  const client = createSupabaseServerClient();
+  const params = new URLSearchParams({ select: 'subscription' });
+  const { data } = await client.request(tablePath(params));
+
+  return Array.isArray(data)
+    ? data.map((item) => item.subscription).filter(Boolean)
+    : [];
 }
 
 export async function deleteSubscription(endpoint) {
   if (!endpoint) return { removed: false, count: 0 };
 
-  const subscriptions = await readSubscriptions();
-  const filtered = subscriptions.filter((item) => item.endpoint !== endpoint);
+  const client = createSupabaseServerClient();
+  const params = new URLSearchParams({
+    endpoint: `eq.${endpoint}`,
+    select: 'endpoint',
+  });
 
-  if (filtered.length !== subscriptions.length) {
-    await writeSubscriptions(filtered);
-  }
+  const { data } = await client.request(tablePath(params), {
+    method: 'DELETE',
+    headers: {
+      Prefer: 'return=representation',
+    },
+  });
 
   return {
-    removed: filtered.length !== subscriptions.length,
-    count: filtered.length,
+    removed: Array.isArray(data) && data.length > 0,
+    count: await getSubscriptionCount(client),
   };
 }
