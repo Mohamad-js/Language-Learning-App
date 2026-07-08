@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { GiGearStickPattern } from "react-icons/gi";
-import { MdSource, MdInsertChartOutlined, MdOutlineSpellcheck } from "react-icons/md";
+import { MdSource, MdInsertChartOutlined, MdOutlineSpellcheck, MdDeveloperMode } from "react-icons/md";
 import { RiRepeat2Fill } from "react-icons/ri";
 import { GoHomeFill } from "react-icons/go";
 import { VscDebugDisconnect } from "react-icons/vsc";
@@ -69,7 +69,8 @@ function Ham(){
          source: '/source',
          settings: '/settings',
          patterns: '/patterns',
-         phrasals: '/phrasals'
+         phrasals: '/phrasals',
+         developerTools: '/dev'
       };
 
       const target = routes[msg];
@@ -205,7 +206,6 @@ function Ham(){
                         <div>Statistics</div>
                      </div>
 
-
                      <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => underDev('Review')}>
                         <RiRepeat2Fill />
                         <div>Review</div>
@@ -214,6 +214,11 @@ function Ham(){
                      <div className='w-full flex items-start gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('source')}>
                         <MdSource/>
                         <div>Source</div>
+                     </div>
+
+                     <div className='w-full flex items-start gap-3 p-2 active:bg-foreground/10 rounded-xl' onClick={() => navFromHam('developerTools')}>
+                        <MdDeveloperMode />
+                        <div>Developer Tools</div>
                      </div>
 
                   </div>
