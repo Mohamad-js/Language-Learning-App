@@ -2,6 +2,8 @@
 import { HiViewfinderCircle } from "react-icons/hi2";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
+import { CiUnlock } from "react-icons/ci";
+import { GoArrowRight } from "react-icons/go";
 import { BsArrowRepeat } from "react-icons/bs";
 import { useNavigation } from '@/app/context/NavigationProvider';
 import Link from 'next/link';
@@ -166,12 +168,7 @@ function Words() {
                      {item.type === 'review' ? (
                         <div className="w-full">
                            <div className="relative w-full h-full">
-                              {/* <Image
-                                 className='object-cover'
-                                 src={`/images/a1/Covers/${item.image}.jpg`}
-                                 alt='review image'
-                                 fill
-                              /> */}
+
                               <Image
                                  className='object-cover dark:hidden'
                                  src={`/images/a1/Reviews/reviewWhite.jpg`}
@@ -186,9 +183,24 @@ function Words() {
                               />
                            </div>
 
+                           {
+                              item.displayStatus === 'waiting' &&
+                                 <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-5xl bg-background/20 flex-col gap-3 backdrop-blur-sm text-foreground z-1">
+                                    <div className='flex justify-center'>
+                                       <IoLockClosedOutline size={40} className="text-red-500" />
+                                    </div>
+                                    {item.type} {item.review}
+                                 </div>
+                                 
+                           }
 
-                           <div className="absolute w-full p-5 bottom-0 left-0 flex justify-center items-center flex-col gap-3">
-                              <button className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg active:scale-95'>Review {item.lessons}</button>
+                           <div className='absolute left-0 bottom-0 w-full h-40 bg-linear-to-t from-background to-transparent'></div>
+
+                           <div className="absolute w-full p-5 bottom-0 left-0 flex justify-end items-center gap-3">
+                              <div className='px-4 py-2 flex gap-2 rounded-xl items-center active:bg-foreground/10'>
+                                 Review lessons {item.lessons}
+                                 <GoArrowRight size={25} />
+                              </div>
                            </div>
                         </div>
                      ) :
@@ -204,10 +216,23 @@ function Words() {
                               />
                            </div>
 
-
-                           <div className="absolute w-full p-5 bottom-0 left-0 flex justify-center items-center flex-col gap-3">
-                              <button className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg active:scale-95'>Review {item.lessons}</button>
-                           </div>
+                           {
+                              item.displayStatus === 'waiting' ? 
+                                 <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-center items-center flex-col gap-5 bg-background/70">
+                                    <div className="text-5xl">{item.content.title}</div>
+                                    <button className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg active:scale-95'>{item.content.msg}</button>
+                                 </div>
+                              :
+                              item.displayStatus === 'done' ?
+                                 <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-center items-center flex-col gap-5 bg-background/0">
+                                    <button className="px-5 py-3 bg-foreground text-background text-2xl rounded-2xl flex gap-1 items-start">
+                                       <CiUnlock size={30} />
+                                       OPEN
+                                    </button>
+                                 </div>
+                              
+                                 : 'ERROR IN STEPPING'
+                           }
                         </div>
                      ) : (
                         <div className='relative w-full h-full'>

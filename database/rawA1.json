@@ -2047,7 +2047,7 @@
             "review": 1,
             "status": "Waiting",
             "lessons": "1 - 5",
-            "nextLesson": 6,
+            "nextLesson": "chest",
 
             "content": {
 
@@ -2134,6 +2134,22 @@
                   }
                ]
             }
+         },
+
+         {
+            "type": "chest",
+            "number": 2,
+            "content": {
+               "title": "Surprise Chest",
+               "msg": "Complete the Lessons to Unlock",
+               "gifts": [
+                  "A1 Stems Unlocked"
+               ]
+            },
+
+            "status": "Waiting",
+            "nextLesson": 6,
+            "image": "pre1"
          },
 
          {
@@ -3694,7 +3710,7 @@
             "review": 2,
             "status": "Waiting",
             "lessons": "6 - 10",
-            "nextLesson": 11,
+            "nextLesson": "chest",
 
             "content": {
 
@@ -3773,6 +3789,22 @@
                   }
                ]
             }
+         },
+
+         {
+            "type": "chest",
+            "number": 2,
+            "content": {
+               "title": "Surprise Chest",
+               "msg": "Complete the Lessons to Unlock",
+               "gifts": [
+                  "A1 Stems Unlocked"
+               ]
+            },
+
+            "status": "Waiting",
+            "nextLesson":11,
+            "image": "pre2"
          },
 
          {
@@ -13187,18 +13219,6 @@
             "status": "Waiting",
             "lessons": "41 - 45",
             "nextLesson": "chest",
-
-            "content": {
-            }
-         },
-
-         {
-            "type": "chest",
-            "review": 10,
-            "status": "Waiting",
-            "lessons": "1 - 45",
-            "nextLesson": "end",
-            "image": "pre1",
 
             "content": {
             }

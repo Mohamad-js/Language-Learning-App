@@ -18,6 +18,8 @@ import { useLoading } from "@/components/LoadingProvider";
 import { motion } from "framer-motion";
 import { slideUp, fadeIn, fadeRight, expandParent, expandChild } from "@/lib/animations/entrance";
 import { toast } from "sonner";
+import NotificationButton from "@/components/NotifBtn/NotificationButton";
+
 
 
 
@@ -305,8 +307,12 @@ const Home = () => {
                   </motion.div>
 
                </div>
+               <NotificationButton />
             </motion.div>
+
+
          </div>
+
 
             
 

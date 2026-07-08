@@ -1,7 +1,6 @@
-// app/components/NotificationButton.js
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function NotificationButton() {
   const [permission, setPermission] = useState('default');
@@ -9,68 +8,115 @@ export default function NotificationButton() {
   const [subscription, setSubscription] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [status, setStatus] = useState('');
+
+  const waitForServiceWorker = async () => {
+    if (!('serviceWorker' in navigator)) {
+      throw new Error('Service workers are not supported in this browser.');
+    }
+
+    if (!navigator.serviceWorker.controller) {
+      try {
+        await navigator.serviceWorker.register('/sw.js');
+      } catch (err) {
+        throw new Error(`Service worker registration failed: ${err.message}`);
+      }
+    }
+
+    return Promise.race([
+      navigator.serviceWorker.ready,
+      new Promise((_, reject) => {
+        setTimeout(
+          () => reject(new Error('Service worker was not ready after 10 seconds.')),
+          10000
+        );
+      }),
+    ]);
+  };
 
   useEffect(() => {
-    console.log('Initial notification permission:', Notification.permission);
-    if ('Notification' in window) {
-      setPermission(Notification.permission);
+    if (!('Notification' in window)) {
+      setError('Notifications are not supported in this browser.');
+      return;
     }
 
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.ready
-        .then((reg) => {
-          console.log('Service worker ready:', reg);
-          return reg.pushManager.getSubscription();
-        })
-        .then((sub) => {
-          if (sub) {
-            console.log('Existing subscription found:', sub);
-            setSubscribed(true);
-            setSubscription(sub);
-          }
-        })
-        .catch((err) => console.error('Could not check subscription:', err));
+    if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+      setError('Push notifications are not supported in this browser.');
+      return;
     }
+
+    setPermission(Notification.permission);
+
+    waitForServiceWorker()
+      .then((reg) => reg.pushManager.getSubscription())
+      .then(async (sub) => {
+        if (sub) {
+          setSubscribed(true);
+          setSubscription(sub);
+          await saveSubscription(sub);
+        }
+      })
+      .catch((err) => {
+        console.error('Could not check subscription:', err);
+        setError(err.message);
+      });
   }, []);
 
   useEffect(() => {
     if (permission === 'granted' && !subscribed && !loading) {
-      console.log('Auto-subscribing to push notifications...');
       subscribeToPush();
     }
   }, [permission, subscribed, loading]);
 
   const urlBase64ToUint8Array = (base64String) => {
-    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
     const base64 = (base64String + padding)
       .replace(/-/g, '+')
       .replace(/_/g, '/');
     const rawData = atob(base64);
     const outputArray = new Uint8Array(rawData.length);
+
     for (let i = 0; i < rawData.length; ++i) {
       outputArray[i] = rawData.charCodeAt(i);
     }
+
     return outputArray;
+  };
+
+  const saveSubscription = async (sub) => {
+    const res = await fetch('/api/save-subscription', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(sub.toJSON ? sub.toJSON() : sub),
+    });
+
+    const result = await res.json().catch(() => ({
+      success: false,
+      error: `Server returned ${res.status} while saving subscription.`,
+    }));
+
+    if (!result.success) {
+      throw new Error(result.error || 'Failed to save subscription.');
+    }
+
+    return result;
   };
 
   const requestPermission = async () => {
     setError(null);
-    if ('Notification' in window) {
-      console.log('Requesting notification permission...');
-      try {
-        const perm = await Notification.requestPermission();
-        console.log('Permission result:', perm);
-        setPermission(perm);
-        if (perm !== 'granted') {
-          setError('Notification permission denied by user.');
-          console.log('🚫 Notification permission denied by user.');
-        }
-      } catch (err) {
-        console.error('Error requesting permission:', err);
-        setError('Error requesting permission: ' + err.message);
+    setStatus('Waiting for notification permission...');
+
+    try {
+      const perm = await Notification.requestPermission();
+      setPermission(perm);
+
+      if (perm !== 'granted') {
+        setStatus('');
+        setError('Notification permission was not granted.');
       }
-    } else {
-      setError('Notifications not supported in this browser.');
+    } catch (err) {
+      setStatus('');
+      setError(`Error requesting permission: ${err.message}`);
     }
   };
 
@@ -79,41 +125,31 @@ export default function NotificationButton() {
 
     setLoading(true);
     setError(null);
+    setStatus('Waiting for service worker...');
 
     try {
-      console.log('Waiting for service worker to be ready...');
-      const registration = await navigator.serviceWorker.ready;
-      console.log('Service worker ready:', registration);
-
+      const registration = await waitForServiceWorker();
       const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
-      if (!vapidKey) throw new Error('Missing VAPID public key.');
-      console.log('VAPID key:', vapidKey);
 
-      console.log('Subscribing to push...');
+      if (!vapidKey) {
+        throw new Error('Missing VAPID public key.');
+      }
+
+      setStatus('Creating push subscription...');
       const sub = await registration.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array(vapidKey),
       });
-      console.log('Push subscription created:', sub);
 
-      console.log('Saving subscription to backend...');
-      const res = await fetch('/api/save-subscription', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(sub),
-      });
-
-      const result = await res.json();
-      if (result.success) {
-        setSubscribed(true);
-        setSubscription(sub);
-        console.log('✅ Successfully subscribed to push notifications');
-      } else {
-        throw new Error(result.error || 'Failed to save subscription.');
-      }
+      setStatus('Saving subscription...');
+      await saveSubscription(sub);
+      setSubscribed(true);
+      setSubscription(sub);
+      setStatus('');
     } catch (err) {
-      console.error('❌ Subscription failed:', err);
-      setError('Subscription failed: ' + err.message);
+      console.error('Subscription failed:', err);
+      setError(`Subscription failed: ${err.message}`);
+      setStatus('');
     } finally {
       setLoading(false);
     }
@@ -126,25 +162,25 @@ export default function NotificationButton() {
     }
 
     try {
-      console.log('Sending test notification...');
       const res = await fetch('/api/send-notification', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          subscription,
+          subscription: subscription.toJSON ? subscription.toJSON() : subscription,
           title: 'Test Notification',
-          body: 'Your push setup is working! 🎉',
+          body: 'Your push setup is working!',
+          url: '/',
         }),
       });
 
       const result = await res.json();
       if (result.success) {
-        alert('Test notification sent! Check your device.');
+        alert('Test notification sent. Check your device.');
       } else {
-        alert('Failed: ' + result.error);
+        alert(`Failed: ${result.error}`);
       }
     } catch (err) {
-      alert('Error: ' + err.message);
+      alert(`Error: ${err.message}`);
     }
   };
 
@@ -161,6 +197,20 @@ export default function NotificationButton() {
           }}
         >
           {error}
+        </div>
+      )}
+
+      {status && (
+        <div
+          style={{
+            color: '#155724',
+            padding: '8px',
+            backgroundColor: '#d4edda',
+            borderRadius: '4px',
+            marginBottom: '10px',
+          }}
+        >
+          {status}
         </div>
       )}
 

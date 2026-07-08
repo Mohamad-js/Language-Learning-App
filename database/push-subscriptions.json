@@ -1,0 +1,13 @@
+[
+  {
+    "endpoint": "https://wns2-pn1p.notify.windows.com/w/?token=BQYAAAAZ%2fRkJixqI9IZVKt%2b7KUrWVOxloGlxHESBZg%2bznrfQjyJJhDBdnNq%2fJLO5y1B4uU5pUcxthK2coidNJSx0tBom3785g8LvXFPmTFqVFSipHrd5BnPoblbx2AbrnJRdwaX4IR0H0UgoNaWolzDqlky2dZYPW8SWWIfOqljIpwC4ZDXMujpSw67tUgSReE40GHsAJTLzWABzOnLtyhwBx99CP2vYBHFbwUl3AJk5q2ksyRKp6Rwqc7v1TXG7ciDSfGNbFDgRkKsctgeGi4QWsnPAOwD%2fEWI4rEjTiG2jG6ySa4qUqXRlVreQXl3kl7i%2fX3wp4nbfUk06sGCisMLtXURY",
+    "expirationTime": null,
+    "keys": {
+      "p256dh": "BN1xECBREVfuw-WW6kLChtRAA-EGesCYaUCFz5AmGxWR00NPtpghh99rEARU0_ShJUNzepeJupqh7qA4bfWrKlI",
+      "auth": "dPHt-6_-l1WBzFWr93QcNQ"
+    },
+    "userAgent": "Mozilla/5.0 (Linux; Android 13; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Mobile Safari/537.36 Edg/150.0.0.0",
+    "createdAt": "2026-07-08T14:01:17.172Z",
+    "updatedAt": "2026-07-08T14:01:17.172Z"
+  }
+]

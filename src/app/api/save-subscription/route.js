@@ -1,25 +1,28 @@
-let savedSubscription = null; // Temporary in-memory storage
+import {
+  deleteSubscription,
+  getAllSubscriptions,
+  upsertSubscription,
+} from '@/lib/pushSubscriptionStore';
+
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function POST(req) {
   try {
     const subscription = await req.json();
-    if (!subscription || !subscription.endpoint) {
-      return new Response(JSON.stringify({ error: 'Invalid subscription' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
+    const { count } = await upsertSubscription(subscription, {
+      userAgent: req.headers.get('user-agent'),
+    });
 
-    savedSubscription = subscription;
-    console.log('✅ Subscription saved:', subscription.endpoint);
+    console.log('Push subscription saved:', subscription.endpoint);
 
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ success: true, count }), {
       status: 201,
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('❌ Error saving subscription:', error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    console.error('Error saving subscription:', error);
+    return new Response(JSON.stringify({ success: false, error: error.message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -27,14 +30,27 @@ export async function POST(req) {
 }
 
 export async function GET() {
-  if (!savedSubscription) {
-    return new Response(JSON.stringify({ error: 'No subscription saved' }), {
-      status: 404,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-  return new Response(JSON.stringify(savedSubscription), {
+  const subscriptions = await getAllSubscriptions();
+
+  return new Response(JSON.stringify({ count: subscriptions.length }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' },
   });
+}
+
+export async function DELETE(req) {
+  try {
+    const { endpoint } = await req.json();
+    const result = await deleteSubscription(endpoint);
+
+    return new Response(JSON.stringify({ success: true, ...result }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ success: false, error: error.message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 }
