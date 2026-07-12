@@ -2061,67 +2061,123 @@
                      ]
                   },
                   {
+                     "rootWord": "Good night",
+                     "options": [
+                        { "id": "1", "text": "Good night", "isCorrect": true },
+                        { "id": "2", "text": "Good morning", "isCorrect": false },
+                        { "id": "3", "text": "Good afternoon", "isCorrect": false }
+                     ]
+                  },
+                  {
                      "rootWord": "Fifteen",
                      "options": [
-                        { "id": "4", "text": "Fiveteen", "isCorrect": false },
-                        { "id": "5", "text": "Fivteen", "isCorrect": false },
-                        { "id": "6", "text": "Fifteen", "isCorrect": true }
+                        { "id": "1", "text": "Sixteen", "isCorrect": false },
+                        { "id": "2", "text": "Fourteen", "isCorrect": false },
+                        { "id": "3", "text": "Fifteen", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Hello",
+                     "options": [
+                        { "id": "1", "text": "Hello", "isCorrect": true },
+                        { "id": "2", "text": "Helo", "isCorrect": false },
+                        { "id": "3", "text": "Helow", "isCorrect": false }
                      ]
                   },
                   {
                      "rootWord": "Eighteen",
                      "options": [
-                        { "id": "7", "text": "Eightteen", "isCorrect": false },
-                        { "id": "8", "text": "Eighteen", "isCorrect": true },
-                        { "id": "9", "text": "Eghiteen", "isCorrect": false }
+                        { "id": "1", "text": "Seventeen", "isCorrect": false },
+                        { "id": "2", "text": "Eighteen", "isCorrect": true },
+                        { "id": "3", "text": "Nineteen", "isCorrect": false }
                      ]
                   },
                   {
                      "rootWord": "Fourteen",
                      "options": [
-                        { "id": "10", "text": "Forteen", "isCorrect": false },
-                        { "id": "11", "text": "Fuorteen", "isCorrect": false },
-                        { "id": "12", "text": "Fourteen", "isCorrect": true }
+                        { "id": "1", "text": "Thirteen", "isCorrect": false },
+                        { "id": "2", "text": "Twelve", "isCorrect": false },
+                        { "id": "3", "text": "Fourteen", "isCorrect": true }
                      ]
                   },
                   {
                      "rootWord": "Brown",
                      "options": [
-                        { "id": "13", "text": "Brown", "isCorrect": true },
-                        { "id": "14", "text": "Brawn", "isCorrect": false },
-                        { "id": "15", "text": "Bruwn", "isCorrect": false }
+                        { "id": "1", "text": "Brown", "isCorrect": true },
+                        { "id": "2", "text": "Red", "isCorrect": false },
+                        { "id": "3", "text": "Purple", "isCorrect": false }
                      ]
                   },
                   {
                      "rootWord": "White",
                      "options": [
-                        { "id": "16", "text": "Wite", "isCorrect": false },
-                        { "id": "17", "text": "Wihte", "isCorrect": false },
-                        { "id": "18", "text": "White", "isCorrect": true }
+                        { "id": "1", "text": "Black", "isCorrect": false },
+                        { "id": "2", "text": "Blue", "isCorrect": false },
+                        { "id": "3", "text": "White", "isCorrect": true }
+                     ]
+                  },
+                  {
+                     "rootWord": "Twenty",
+                     "options": [
+                        { "id": "1", "text": "Twelve", "isCorrect": false },
+                        { "id": "2", "text": "Thirteen", "isCorrect": false },
+                        { "id": "3", "text": "Twenty", "isCorrect": true }
                      ]
                   },
                   {
                      "rootWord": "Purple",
                      "options": [
-                        { "id": "19", "text": "Purple", "isCorrect": true },
-                        { "id": "20", "text": "Perple", "isCorrect": false },
-                        { "id": "21", "text": "Purpel", "isCorrect": false }
+                        { "id": "1", "text": "Purple", "isCorrect": true },
+                        { "id": "2", "text": "Perple", "isCorrect": false },
+                        { "id": "3", "text": "Purpel", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Five",
+                     "options": [
+                        { "id": "1", "text": "Five", "isCorrect": true },
+                        { "id": "2", "text": "Three", "isCorrect": false },
+                        { "id": "3", "text": "Six", "isCorrect": false }
                      ]
                   },
                   {
                      "rootWord": "Please",
                      "options": [
-                        { "id": "22", "text": "Pleese", "isCorrect": false },
-                        { "id": "23", "text": "Plaese", "isCorrect": false },
-                        { "id": "24", "text": "Please", "isCorrect": true }
+                        { "id": "1", "text": "Pleese", "isCorrect": false },
+                        { "id": "2", "text": "Plaese", "isCorrect": false },
+                        { "id": "3", "text": "Please", "isCorrect": true }
                      ]
                   },
                   {
                      "rootWord": "Sorry",
                      "options": [
-                        { "id": "25", "text": "Sarry", "isCorrect": false },
-                        { "id": "26", "text": "Sorry", "isCorrect": true },
-                        { "id": "27", "text": "Surry", "isCorrect": false }
+                        { "id": "1", "text": "Sarry", "isCorrect": false },
+                        { "id": "2", "text": "Sorry", "isCorrect": true },
+                        { "id": "3", "text": "Surry", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Four",
+                     "options": [
+                        { "id": "1", "text": "Five", "isCorrect": false },
+                        { "id": "2", "text": "Four", "isCorrect": true },
+                        { "id": "3", "text": "Six", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Orange",
+                     "options": [
+                        { "id": "1", "text": "Yellow", "isCorrect": false },
+                        { "id": "2", "text": "Orange", "isCorrect": true },
+                        { "id": "3", "text": "Red", "isCorrect": false }
+                     ]
+                  },
+                  {
+                     "rootWord": "Eight",
+                     "options": [
+                        { "id": "1", "text": "Seven", "isCorrect": false },
+                        { "id": "2", "text": "Eight", "isCorrect": true },
+                        { "id": "3", "text": "Nine", "isCorrect": false }
                      ]
                   }
                ],
@@ -2129,8 +2185,53 @@
                "dictation": [
                   {
                      "Target": ["Y", "e", "l", "l", "o", "w"],
-                     "blanksPatten": [1, 0, 1, 1, 0, 0],
-                     "optionLetters": ["o", "e", "v", "w", "i"]
+                     "blanksPatten": [0, 0, 0, 0, 0, 0],
+                     "optionLetters": ["e", "l", "w", "o", "l", "y"]
+                  },
+                  {
+                     "Target": ["T", "h", "i", "r", "t", "e", "e", "n"],
+                     "blanksPatten": [0, 0, 0, 0, 0, 0, 0, 0],
+                     "optionLetters": ["e", "e","i", "h", "t", "r", "n", "t"]
+                  },
+                  {
+                     "Target": ["G", "r", "e", "e", "n"],
+                     "blanksPatten": [0, 0, 0, 0, 0],
+                     "optionLetters": ["e", "r", "e", "g", "n"]
+                  },
+                  {
+                     "Target": ["F", "i", "f", "t", "e", "e", "n"],
+                     "blanksPatten": [0, 0, 0, 0, 0, 0, 0],
+                     "optionLetters": ["f", "f", "e", "e", "t", "n", "i"]
+                  },
+                  {
+                     "Target": ["P", "u", "r", "p", "l", "e"],
+                     "blanksPatten": [0, 0, 0, 0, 0, 0],
+                     "optionLetters": ["p", "p", "e", "u", "r", "l"]
+                  },
+                  {
+                     "Target": ["T", "w", "e", "l", "v", "e"],
+                     "blanksPatten": [0, 0, 0, 0, 0, 0],
+                     "optionLetters": ["v", "e", "e", "l", "w", "t"]
+                  },
+                  {
+                     "Target": ["P", "i", "n", "k"],
+                     "blanksPatten": [0, 0, 0, 0],
+                     "optionLetters": ["i", "p", "n", "k"]
+                  },
+                  {
+                     "Target": ["T", "w", "e", "n", "t", "y"],
+                     "blanksPatten": [0, 0, 0, 0, 0, 0],
+                     "optionLetters": ["t", "t", "w", "e", "y", "n"]
+                  },
+                  {
+                     "Target": ["S", "e", "v", "e", "n"],
+                     "blanksPatten": [0, 0, 0, 0, 0],
+                     "optionLetters": ["e", "e", "s", "v", "n"]
+                  },
+                  {
+                     "Target": ["E", "i", "g", "h", "t", "e", "e", "n"],
+                     "blanksPatten": [0, 0, 0, 0, 0, 0, 0, 0],
+                     "optionLetters": ["e", "e", "e", "t", "h", "n", "g", "i"]
                   }
                ]
             }
@@ -4886,7 +4987,7 @@
          {
             "type": "studying",
             "lesson": 15,
-            "category": "Meat & Dairy",
+            "category": "Dairy",
             "status": "Waiting",
             "words": [
                {
@@ -5973,7 +6074,7 @@
          {
             "type": "studying",
             "lesson": 19,
-            "category": "Technology",
+            "category": "Devices",
             "status": "Waiting",
             "words": [
                {
@@ -6522,7 +6623,7 @@
          {
             "type": "studying",
             "lesson": 21,
-            "category": "Town",
+            "category": "City",
             "status": "Waiting",
             "words": [
                {

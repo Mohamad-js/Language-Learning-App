@@ -164,20 +164,20 @@ function Words() {
                   className={`w-[90vw] shrink-0 snap-always snap-center h-full flex flex-col justify-center items-center gap-2 rounded-[100px] [corner-shape:superellipse(2)] overflow-hidden drop-shadow-lg`}
                >
                   <div className="w-full h-full flex gap-1">
-                     {/* Conditionally render based on whether it's a lesson or a review */}
-                     {item.type === 'review' ? (
+                     {
+                     item.type === 'review' ? (
                         <div className="w-full">
                            <div className="relative w-full h-full">
 
                               <Image
                                  className='object-cover dark:hidden'
-                                 src={`/images/a1/Reviews/reviewWhite.jpg`}
+                                 src={`/images/a1/Covers/Review/reviewWhite.jpg`}
                                  alt='review image'
                                  fill
                               />
                               <Image
                                  className='object-cover hidden dark:block'
-                                 src={`/images/a1/Reviews/reviewBlack.jpg`}
+                                 src={`/images/a1/Covers/Review/reviewBlack.jpg`}
                                  alt='review image'
                                  fill
                               />
@@ -195,13 +195,18 @@ function Words() {
                            }
 
                            <div className='absolute left-0 bottom-0 w-full h-40 bg-linear-to-t from-background to-transparent'></div>
-
-                           <div className="absolute w-full p-5 bottom-0 left-0 flex justify-end items-center gap-3">
-                              <div className='px-4 py-2 flex gap-2 rounded-xl items-center active:bg-foreground/10'>
-                                 Review lessons {item.lessons}
-                                 <GoArrowRight size={25} />
+                           
+                           <Link href={`/review/${item.review}`}>
+                              <div
+                                 // onClick={}
+                                 className="absolute w-full p-5 bottom-0 left-0 flex justify-end items-center gap-3"
+                              >
+                                 <div className='px-4 py-2 flex gap-2 rounded-xl items-center active:bg-foreground/10'>
+                                    Review lessons {item.lessons}
+                                    <GoArrowRight size={25} />
+                                 </div>
                               </div>
-                           </div>
+                           </Link>
                         </div>
                      ) :
                      
@@ -210,7 +215,7 @@ function Words() {
                            <div className="relative w-full h-full">
                               <Image
                                  className='object-cover'
-                                 src={`/images/a1/Covers/${item.image}.jpg`}
+                                 src={`/images/a1/Covers/Chests/${item.image}.jpg`}
                                  alt='review image'
                                  fill
                               />
@@ -239,7 +244,7 @@ function Words() {
                            <div className="relative w-full h-full">
                               <Image
                                  className='object-cover'
-                                 src={`/images/${item.category}.jpg`}
+                                 src={`/images/a1/Covers/Lessons/${item.category}.jpg`}
                                  alt='lesson image'
                                  fill
                               />

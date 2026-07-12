@@ -158,7 +158,7 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPract
          >
             <div className="w-full h-full">
                <Image className='object-cover object-center'
-                  src={`/images/a1/${ROOT_WORD}.jpg`}
+                  src={`/images/a1/Vocabs/${ROOT_WORD}.jpg`}
                   fill
                   alt={`${ROOT_WORD} Image`}
                   onLoad={imageLoaded}
@@ -231,17 +231,13 @@ export default function SemanticOrbit({ lessonData, onStepOneFinished, skipPract
                <motion.div
                   initial={{ scale: 0.8, y: 20 }}
                   animate={{ scale: 1, y: 0 }}
-                  className="bg-green-800 rounded-2xl w-full shadow-2xl flex flex-col items-center justify-between gap-6 p-3 pb-6"
+                  className="bg-green-800 rounded-2xl w-full shadow-2xl flex items-center justify-between gap-6 p-3 pb-6"
                >
 
-                  <div className="w-full flex justify-center items-end">
-                     <TiTick className="text-green-200" size={50} />
-
-                     <div className="text-white text-2xl font-bold">CORRECT</div>
-                  </div>
+                  <TiTick className="text-green-200" size={100} />
 
                   <div className="w-full flex justify-center items-center gap-3 text-white">
-                     <p className="text-3xl">
+                     <p className="text-5xl">
                         {ROOT_WORD}
                      </p>
                   </div>

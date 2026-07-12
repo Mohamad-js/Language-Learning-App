@@ -2,7 +2,7 @@
 import { getReviewByNumber, updateReviewStatus } from "@/lib/db";
 import { useEffect, useState } from "react";
 import SemanticOrbit from "@/components/SemanticOrbit";
-import DictationExercise from "@/components/DictationExercise";
+import ReviewExercise from "@/components/ReviewDictation";
 import { useParams } from "next/navigation";
 import { useNavigation } from "@/app/context/NavigationProvider";
 import { motion } from "framer-motion";
@@ -149,7 +149,7 @@ function Review(){
 
                dictation ?
 
-                  <DictationExercise
+                  <ReviewExercise
                      dictationData = {dictation}
                      onStepTwoFinished = {setFinalWindow}
                   />
@@ -168,11 +168,11 @@ function Review(){
                   onAnimationComplete={() => {
                      lessonCompleteAnimation(animate);
                   }}
-                  className='absolute top-0 w-full h-dvh bg-background/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-40'
+                  className='absolute top-0 w-full h-dvh bg-foreground/40 backdrop-blur-lg flex flex-col items-center justify-center left-0 p-5 gap-1 z-40'
                >
                   <div
                      ref={scope}
-                     className="text-bold text-2xl mb-5 flex gap-3"
+                     className="text-bold text-background text-2xl mb-5 flex gap-3"
                   >
                      <div className="text-2xl sentence left opacity-0">REVIEW</div>
                      <div
