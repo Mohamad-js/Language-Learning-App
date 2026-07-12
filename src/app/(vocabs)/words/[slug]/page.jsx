@@ -251,6 +251,7 @@ export default function Lessons({ params }) {
 
          if (msg === 'save'){
             router.push('/words')
+            sessionStorage.setItem("playUnlock", "true");
             
          } else if(msg === 'nextLesson'){
             router.push(`/words/${lessonNumber + 1}`)

@@ -31,7 +31,11 @@ function Words() {
    const router = useRouter();
    const scrollRef = useRef(null);
 
-   
+   const playSound = (type) => {
+      try {
+         new Audio(`/sounds/${type}.mp3`).play();
+      } catch (err) {}
+   };
 
    useEffect(() => {
       const handleDefaultBack = (event) => {
@@ -59,7 +63,6 @@ function Words() {
 
       loadAllTheWords();
    }, [currentLevel, loadAgain]);
-
 
    useEffect(() => {
       active === 0 && setCurrentLevel('A1');
@@ -96,6 +99,23 @@ function Words() {
       item => item.displayStatus === "ready"
    );
 
+
+   const previousStatuses = useRef([]);
+
+   useEffect(() => {
+      processedVocabs.forEach((item, index) => {
+         const previous = previousStatuses.current[index];
+
+         if (previous === "waiting" && item.displayStatus === "ready") {
+            playSound("lesson_unlock");
+         }
+      });
+
+      previousStatuses.current = processedVocabs.map(
+         item => item.displayStatus
+      );
+   }, [processedVocabs]);
+
    useEffect(() => {
       if (!scrollRef.current || readyIndex === -1) return;
 
@@ -109,6 +129,17 @@ function Words() {
             left: card.offsetLeft - ((holder.clientWidth - card.clientWidth) / 2),
             behavior: "smooth",
          });
+
+         setTimeout(() => {
+            const shouldPlayUnlock =
+               sessionStorage.getItem("playUnlock") === "true";
+
+            if (shouldPlayUnlock) {
+               playSound("lesson_unlock");
+               sessionStorage.removeItem("playUnlock");
+            }
+         }, 900);
+
       }, 800);
 
       return () => clearTimeout(timer);
@@ -159,7 +190,31 @@ function Words() {
             processedVocabs.map((item, index) => (
 
                <motion.div 
-                  variants={fadeUpChild}              
+                  initial={
+                     item.displayStatus === "ready"
+                           ? {
+                              opacity: 0,
+                              scale: 0.92,
+                              y: 30,
+                              filter: "blur(10px)"
+                           }
+                           : false
+                  }
+                  animate={
+                     item.displayStatus === "ready"
+                           ? {
+                              opacity: 1,
+                              scale: 1,
+                              y: 0,
+                              filter: "blur(0px)"
+                           }
+                           : {}
+                  }
+                  transition={{
+                     duration: 0.35,
+                     ease: "easeOut",
+                     delay: 1.75
+                  }}              
                   key={index} 
                   className={`w-[90vw] shrink-0 snap-always snap-center h-full flex flex-col justify-center items-center gap-2 rounded-[100px] [corner-shape:superellipse(2)] overflow-hidden drop-shadow-lg`}
                >
@@ -311,10 +366,25 @@ function Words() {
                                        onClick={() => prepare(item.lesson)} 
                                        className='h-full w-full'
                                     >
-                                       <button className='w-full h-15 bg-foreground text-background font-bold rounded-[50px] active:scale-95'
+                                       <motion.button 
+                                          initial={{ 
+                                             scale: 0,
+                                             y: 100
+                                          }}
+                                          animate={{ 
+                                             scale: 1,
+                                             y: 0
+                                          }}
+                                          transition={{
+                                             delay: 2,
+                                             type: "spring",
+                                             stiffness: 350,
+                                             damping: 40
+                                          }}
+                                          className='w-full h-15 bg-foreground text-background font-bold rounded-[50px] active:scale-95'
                                        >
                                           START
-                                       </button>
+                                       </motion.button>
                                     </Link>
                                  ) :
                                  

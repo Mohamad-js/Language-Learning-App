@@ -62,11 +62,11 @@ export default function DictationExercise({ dictationData, onStepTwoFinished, sk
     return () => clearTimeout(timer);
   }, [isRoundComplete, isFinalStep, currentStep, onStepTwoFinished]);
 
-  const playSound = (type) => {
-    try {
-      new Audio(`/sounds/${type}.mp3`).play();
-    } catch (err) {}
-  };
+   const playSound = (type) => {
+      try {
+         new Audio(`/sounds/${type}.mp3`).play();
+      } catch (err) {}
+   };
 
   const playPronunciation = (type) => {
     try {
