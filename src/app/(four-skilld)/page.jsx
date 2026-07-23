@@ -107,7 +107,7 @@ const Home = () => {
       // Compute the index using modulo to cycle through the 360 idioms
       const index = Math.abs(daysSinceStart) % 360;
       setDailyIdiom(idioms[index]);
-      console.log('Idiom updated at:', nowIRST.toISOString(), 'Idiom:', idioms[index]);
+      // console.log('Idiom updated at:', nowIRST.toISOString(), 'Idiom:', idioms[index]);
    };
 
    const getTimeToNextMidnightIRST = () => {
@@ -142,7 +142,8 @@ const Home = () => {
             clearTimeout(timeoutRef.current);
          }
          const timeToNext = getTimeToNextMidnightIRST();
-         console.log('Time to next update (ms):', timeToNext, 'Scheduled for:', new Date(Date.now() + timeToNext).toISOString());
+         // console.log('Time to next update (ms):', timeToNext, 'Scheduled for:', new Date(Date.now() + timeToNext).toISOString());
+         
          timeoutRef.current = setTimeout(() => {
             updateIdiom();
             setupNextUpdate(); // Schedule the next update
@@ -240,21 +241,21 @@ const Home = () => {
 
                <div className='flex justify-between flex-wrap gap-2'>
 
-                  <motion.div variants={expandChild}
-                     className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
-                  >
-                     <Link href='/words'>
+                  <Link href='/words' className="flex-1">
+                     <motion.div variants={expandChild}
+                        className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
+                     >
                         <div className='flex flex-col justify-center items-center gap-3' >
                            <VscWholeWord size={40} className="text-foreground/40" />
                            <div className="">Vocabulary</div>
                         </div>
-                     </Link>
-                  </motion.div>
+                     </motion.div>
+                  </Link>
 
-                  <motion.div variants={expandChild}
+                  <motion.div variants={expandChild} onClick={()=> underDev('Grammar')}
                      className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
-                     <div onClick={()=> underDev('Grammar')}>
+                     <div>
                         <div className='flex flex-col justify-center items-center gap-3' >
                            <MdOutlineSpellcheck size={40} className="text-foreground/40" />
                            <div className="">Grammar</div>
@@ -262,10 +263,10 @@ const Home = () => {
                      </div>
                   </motion.div>
 
-                  <motion.div variants={expandChild}
+                  <motion.div variants={expandChild} onClick={()=> underDev('Stems')}
                      className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
-                     <div onClick={()=> underDev('Stems')}>
+                     <div>
                         <div className='flex flex-col justify-center items-center gap-3' >
                            <PiTreeStructureLight size={40} className="text-foreground/40" />
                            <div className="">Stems</div>
@@ -273,10 +274,10 @@ const Home = () => {
                      </div>
                   </motion.div>
 
-                  <motion.div variants={expandChild}
+                  <motion.div variants={expandChild} onClick={()=> underDev('Patterns')}
                      className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
-                     <div onClick={()=> underDev('Patterns')}>
+                     <div>
                         <div className='flex flex-col justify-center items-center gap-3' >
                            <GiGearStickPattern size={40} className="text-foreground/40" />
                            <div className="">Patterns</div>
@@ -284,10 +285,10 @@ const Home = () => {
                      </div>
                   </motion.div>
 
-                  <motion.div variants={expandChild}
+                  <motion.div variants={expandChild} onClick={()=> underDev('Synonyms')}
                      className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
-                     <div onClick={()=> underDev('Synonyms')}>
+                     <div>
                         <div className='flex flex-col justify-center items-center gap-3' >
                            <LuGroup size={40} className="text-foreground/40" />
                            <div className="">Synonyms</div>
@@ -295,10 +296,10 @@ const Home = () => {
                      </div>
                   </motion.div>
 
-                  <motion.div variants={expandChild}
+                  <motion.div variants={expandChild} onClick={()=> underDev('Phrasals')}
                      className='min-w-30 min-h-30 flex flex-col justify-center items-center bg-white dark:bg-foreground/3 border border-foreground/0 active:border-foreground/50 rounded-4xl overflow-hidden drop-shadow-lg flex-1' id='tour_words'
                   >
-                     <div onClick={()=> underDev('Phrasals')}>
+                     <div>
                         <div className='flex flex-col justify-center items-center gap-3' >
                            <VscDebugDisconnect size={40} className="text-foreground/40" />
                            <div className="">Phrasals</div>

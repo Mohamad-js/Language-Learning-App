@@ -11,7 +11,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Back from '@/components/backButton/back';
 import { getLessonsByLevel, updateInteractionStatus } from '@/lib/db';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from "sonner";
 import { fadeUpChild, fadeUpParent } from '@/lib/animations/entrance';
 import Navigation from '@/components/Navigation/navigation';
@@ -221,7 +221,25 @@ function Words() {
                   <div className="w-full h-full flex gap-1">
                      {
                      item.type === 'review' ? (
-                        <div className="w-full">
+                        <motion.div
+                           initial={{
+                              opacity: 0,
+                              scale: 1.08,
+                              filter: "brightness(1.6)",
+                           }}
+                           animate={{
+                              opacity: 1,
+                              scale: 1,
+                              filter: "brightness(1)",
+                           }}
+                           transition={{
+                              delay: 1.8,
+                              duration: 0.6,
+                              ease: "easeOut",
+                           }}
+
+                           className="w-full"
+                        >
                            <div className="relative w-full h-full">
 
                               <Image
@@ -246,7 +264,7 @@ function Words() {
                                     </div>
                                     {item.type} {item.review}
                                  </div>
-                                 
+                              
                            }
 
                            <div className='absolute left-0 bottom-0 w-full h-40 bg-linear-to-t from-background to-transparent'></div>
@@ -262,7 +280,7 @@ function Words() {
                                  </div>
                               </div>
                            </Link>
-                        </div>
+                        </motion.div>
                      ) :
                      
                      item.type === 'chest' ? (
@@ -276,6 +294,27 @@ function Words() {
                               />
                            </div>
 
+                           <motion.div
+                              initial={{
+                                 x: "-120%",
+                                 opacity: 0,
+                              }}
+                              animate={{
+                                 x: "120%",
+                                 opacity: [0, 0.8, 0],
+                              }}
+                              transition={{
+                                 delay: 2,
+                                 duration: 0.8,
+                                 ease: "easeInOut",
+                              }}
+                              className="absolute inset-0 pointer-events-none"
+                           >
+                              <div
+                                 className="w-40 h-full bg-linear-to-r from-transparent via-white/70 to-transparent rotate-12"
+                              />
+                           </motion.div>
+
                            {
                               item.displayStatus === 'waiting' ? 
                                  <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-center items-center flex-col gap-5 bg-background/70">
@@ -283,10 +322,11 @@ function Words() {
                                     <button className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg active:scale-95'>{item.content.msg}</button>
                                  </div>
                               :
-                              item.displayStatus === 'done' ?
+
+                              item.displayStatus === 'ready' ?
                                  <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-center items-center flex-col gap-5 bg-background/0">
-                                    <button className="px-5 py-3 bg-foreground text-background text-2xl rounded-2xl flex gap-1 items-start">
-                                       <CiUnlock size={30} />
+                                    <button className="p-6 bg-foreground text-background text-2xl rounded-4xl flex flex-col gap-3 items-center">
+                                       <CiUnlock size={40} />
                                        OPEN
                                     </button>
                                  </div>

@@ -19,6 +19,22 @@ export default function VocabularyManager({ initialData = [] }) {
             let added = 0;
             let updated = 0;
 
+            const getContentKey = (item) => {
+               switch (item.type) {
+                  case "studying":
+                     return `lesson-${item.lesson}`;
+
+                  case "review":
+                     return `review-${item.review}`;
+
+                  case "chest":
+                     return `chest-${item.number}`;
+
+                  default:
+                     return "";
+               }
+            };
+
             await Promise.all(
                initialData.map(async (incomingLevel) => {
                   const existing = await store.get(incomingLevel.level);
@@ -34,49 +50,59 @@ export default function VocabularyManager({ initialData = [] }) {
                   let levelChanged = false;
 
                   const mergedContent = incomingLevel.content.map((incomingLesson) => {
+
                      const existingLesson = existing.content?.find(
-                        (l) => Number(l.lesson) === Number(incomingLesson.lesson)
+                        (l) => getContentKey(l) === getContentKey(incomingLesson)
                      );
 
-                     // New lesson added to this level
+                     // New lesson/review/chest added
                      if (!existingLesson) {
                         levelChanged = true;
                         return incomingLesson;
                      }
 
-                     // Merge words inside the lesson
+                     // Reviews and chests
+                     if (incomingLesson.type !== "studying") {
+                        return {
+                           ...incomingLesson,
+                           status: existingLesson.status || incomingLesson.status || "waiting",
+                        };
+                     }
+
+                     // ---------- Studying lessons ----------
+
                      const mergedWords = incomingLesson.words.map((incomingWord) => {
+
                         const existingWord = existingLesson.words?.find(
                            (w) => w.word === incomingWord.word
                         );
 
-                        // New word added to this lesson
                         if (!existingWord) {
                            levelChanged = true;
                            return incomingWord;
                         }
 
-                        // Check if word metadata changed (translations, definitions, etc.)
-                        // while ignoring user progress state keys
                         const structuralChange = Object.keys(incomingWord).some((key) => {
                            if (["status", "note", "notes"].includes(key)) return false;
-                           return JSON.stringify(incomingWord[key]) !== JSON.stringify(existingWord[key]);
+
+                           return (
+                              JSON.stringify(incomingWord[key]) !==
+                              JSON.stringify(existingWord[key])
+                           );
                         });
 
                         if (structuralChange) {
                            levelChanged = true;
                         }
 
-                        // Return combined word: Fresh content + preserved user progress
                         return {
-                           ...incomingWord, 
+                           ...incomingWord,
                            status: existingWord.status || incomingWord.status || "waiting",
                            note: existingWord.note || incomingWord.note || "",
                            notes: existingWord.notes || incomingWord.notes || [],
                         };
                      });
 
-                     // Check if words were removed or lesson length changed
                      if (existingLesson.words?.length !== incomingLesson.words?.length) {
                         levelChanged = true;
                      }

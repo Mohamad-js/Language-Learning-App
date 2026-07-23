@@ -53,31 +53,31 @@ export default function ReviewExercise({ dictationData, onStepTwoFinished, skipP
       return () => clearTimeout(timer);
    }, [currentStep]);
 
-useEffect(() => {
-  if (!isRoundComplete) return;
+   useEffect(() => {
+      if (!isRoundComplete) return;
 
-  // Reinforce the pronunciation after success
-  playPronunciation(currentWord);
+      // Reinforce the pronunciation after success
+      playPronunciation(currentWord);
 
-  // Estimate audio duration
-  const AUDIO_DELAY = 1800;
+      // Estimate audio duration
+      const AUDIO_DELAY = 1800;
 
-  if (!isFinalStep) {
-    const timer = setTimeout(() => {
-      setCurrentStep((prev) => prev + 1);
-    }, AUDIO_DELAY);
+      if (!isFinalStep) {
+         const timer = setTimeout(() => {
+            setCurrentStep((prev) => prev + 1);
+         }, AUDIO_DELAY);
 
-    return () => clearTimeout(timer);
-  }
+         return () => clearTimeout(timer);
+      }
 
-  // Final word
-  const timer = setTimeout(() => {
-    onStepTwoFinished?.(true);
-  }, AUDIO_DELAY);
+      // Final word
+      const timer = setTimeout(() => {
+         onStepTwoFinished?.(true);
+      }, AUDIO_DELAY);
 
-  return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
 
-}, [isRoundComplete, isFinalStep, currentWord, onStepTwoFinished]);
+   }, [isRoundComplete, isFinalStep, currentWord, onStepTwoFinished]);
 
   const playSound = (type) => {
     try {

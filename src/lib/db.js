@@ -68,6 +68,7 @@ export const getLessonsByLevel = async (levelName) => {
    const db = await initDB();
 
    const level = await db.get("levels", levelName);
+   console.table("Loaded:", structuredClone(level.content));
 
    if (!level) {
       return [];
@@ -75,12 +76,25 @@ export const getLessonsByLevel = async (levelName) => {
 
    // 1. Create a safe sort key
    // If it's a review (e.g., lessons: "1-5"), grab the "5" and add 0.5 so it sorts as 5.5
+   // Create a sort key for every content type
    const getSortKey = (item) => {
-      if (item.type === 'review' && item.lessons) {
-         const maxLesson = parseInt(item.lessons.split('-')[1], 10);
-         return maxLesson + 0.5;
+      switch (item.type) {
+
+         case "studying":
+            return item.lesson;
+
+         case "review": {
+            const endLesson = Number(item.lessons.split("-")[1].trim());
+            return endLesson + 0.5;
+         }
+
+         case "chest":
+            // Appears after the review and before the next lesson
+            return item.nextLesson - 0.25;
+
+         default:
+            return Number.MAX_SAFE_INTEGER;
       }
-      return item.lesson;
    };
 
    // Sort the mixed array of lessons and reviews
@@ -208,13 +222,13 @@ export const updateReviewStatus = async ({
 }) => {
 
    const db = await initDB();
-
+   
    const levelData = await db.get("levels", level);
-
+   
    if (!levelData) {
       throw new Error(`Level "${level}" not found`);
    }
-
+   
    const reviewData = levelData.content.find(
       item =>
          item.type === "review" &&
@@ -226,9 +240,10 @@ export const updateReviewStatus = async ({
          `Review "${review}" not found in level "${level}"`
       );
    }
-
+   
    reviewData.status = "done";
-
+   console.log("Saving review:", structuredClone(levelData.content));
+   
    await db.put("levels", levelData);
 
    return true;

@@ -745,7 +745,7 @@ export default function Lessons({ params }) {
                      <div className='relative w-full min-h-75 compact:min-h-65 super-compact:min-h-50 overflow-hidden rounded-2xl'>
 
                         <Image className='object-cover'
-                           src={`/images/a1/${ws?.word}.jpg`}
+                           src={`/images/a1/Vocabs/${ws?.word}.jpg`}
                            fill
                            alt='Word Pic'
                            onLoad={handleImageLoad2}
