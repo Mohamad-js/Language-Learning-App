@@ -68,7 +68,6 @@ export const getLessonsByLevel = async (levelName) => {
    const db = await initDB();
 
    const level = await db.get("levels", levelName);
-   console.table("Loaded:", structuredClone(level.content));
 
    if (!level) {
       return [];

@@ -16,6 +16,7 @@ import { toast } from "sonner";
 import { fadeUpChild, fadeUpParent } from '@/lib/animations/entrance';
 import Navigation from '@/components/Navigation/navigation';
 import Image from 'next/image';
+import { ChestParticles } from "@/components/particles";
 
 
 
@@ -107,7 +108,16 @@ function Words() {
          const previous = previousStatuses.current[index];
 
          if (previous === "waiting" && item.displayStatus === "ready") {
-            playSound("lesson_unlock");
+            console.log("Unlocked:", item.type, item);
+
+            if (item.type === "chest") {
+               console.log("Playing chest sound");
+               playSound("chest_unlock");
+
+            } else {
+               console.log("Playing lesson sound");
+               playSound("lesson_unlock");
+            }
          }
       });
 
@@ -144,6 +154,20 @@ function Words() {
 
       return () => clearTimeout(timer);
    }, [readyIndex, processedVocabs.length]);
+
+   useEffect(() => {
+
+      if (sessionStorage.getItem("playChestUnlock")) {
+
+         const timer = setTimeout(() => {
+            playSound("chest_unlock");
+            sessionStorage.removeItem("playChestUnlock");
+         }, 500); // Match your chest reveal animation
+
+         return () => clearTimeout(timer);
+      }
+
+   }, [playSound]);
 
    const prepare = () => {
       practiceOnly && setPracticeOnly(false)
@@ -313,6 +337,7 @@ function Words() {
                               <div
                                  className="w-40 h-full bg-linear-to-r from-transparent via-white/70 to-transparent rotate-12"
                               />
+
                            </motion.div>
 
                            {
@@ -325,9 +350,11 @@ function Words() {
 
                               item.displayStatus === 'ready' ?
                                  <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-center items-center flex-col gap-5 bg-background/0">
-                                    <button className="p-6 bg-foreground text-background text-2xl rounded-4xl flex flex-col gap-3 items-center">
+
+                                    <ChestParticles />
+
+                                    <button className="p-6 bg-background text-foreground text-2xl rounded-4xl flex flex-col gap-3 items-center">
                                        <CiUnlock size={40} />
-                                       OPEN
                                     </button>
                                  </div>
                               

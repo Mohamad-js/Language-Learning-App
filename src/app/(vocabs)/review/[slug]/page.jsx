@@ -89,6 +89,7 @@ function Review(){
 
 
          // startLoading()
+         sessionStorage.setItem("playChestUnlock", "true");
 
          if (msg === 'save'){
             router.push('/words')
