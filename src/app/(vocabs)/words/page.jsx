@@ -325,8 +325,13 @@ function Words() {
                            <div className="relative w-full h-full">
                               <Image
                                  className='object-cover'
-                                 src={`/images/a1/Covers/Chests/${item.image}.jpg`}
-                                 alt='review image'
+                                 src={
+                                    item.displayStatus === 'waiting' || item.displayStatus === 'ready' ?
+                                    `/images/a1/Covers/Chests/${item.image}.jpg`
+                                    :
+                                    `/images/a1/Covers/Chests/${item.image}.png`
+                                 }
+                                 alt='chest image'
                                  fill
                               />
                            </div>
@@ -366,7 +371,7 @@ function Words() {
                               :
                               
                               item.displayStatus === 'ready' ?
-                              <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-end items-center flex-col gap-5 bg-background/0">
+                                 <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-end items-center flex-col gap-5 bg-background/0">
 
                                     <ChestParticles />
 
@@ -382,14 +387,7 @@ function Words() {
 
                                           <Confetti />
                                           <div className='w-full h-full flex items-center
-                                           justify-center'>
-
-                                             <Image
-                                                className='relative -z-1'
-                                                src="/images/a1/Covers/Chests/img1.jpg"
-                                                alt="open prize img"
-                                                fill
-                                             />
+                                             justify-center'>
                                              
                                              <div className='w-6/7 bg-background/20 border backdrop-blur-xs rounded-2xl flex flex-col gap-5 justify-between items-center p-5'>
                                                 <div className='text-3xl'>You unlocked:</div>
@@ -421,8 +419,29 @@ function Words() {
                                     }
 
                                  </div>
+                           
+                              :
+
+                              item.displayStatus === 'done' ?
+
+                                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+
+                                    <div className="absolute w-full flex flex-col items-center gap-3">
+                                       {
+                                          item?.content?.gifts.map((item, index) => (
+                                             <div
+                                                key={index}
+                                                className="w-fit bg-background/50 rounded-xl py-2 px-5 text-center border border-white"
+                                             >
+                                                {item}
+                                             </div>
+                                          ))
+                                       }
+                                    </div>
+
+                                 </div>
                               
-                                 : 'ERROR IN STEPPING'
+                              : 'ERROR IN STEPPING'
                            }
                         </div>
                      ) : (
