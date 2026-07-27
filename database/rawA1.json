@@ -2076,17 +2076,22 @@
          {
             "type": "chest",
             "number": 1,
+            "lesson": "chest 1",
+            "status": "Waiting",
+            "nextLesson": 6,
+            "image": "pre1",
+
             "content": {
                "title": "Prize Chest",
                "msg": "Complete the Lessons to Unlock",
                "gifts": [
-                  "A1 Stems Unlocked"
+                  "Stems: Lessons 1 - 3",
+                  "Patterns: Lessons 1 - 4",
+                  "Synonyms: Lessons 1 - 2",
+                  "Phrasals: Lessons 1 - 2"
                ]
-            },
+            }
 
-            "status": "Waiting",
-            "nextLesson": 6,
-            "image": "pre1"
          },
 
          {

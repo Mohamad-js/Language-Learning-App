@@ -46,86 +46,54 @@ export default function VocabularyManager({ initialData = [] }) {
                      return;
                   }
 
-                  // Case 2: Level exists. We must deep-merge to catch tiny changes
-                  let levelChanged = false;
-
                   const mergedContent = incomingLevel.content.map((incomingLesson) => {
-
                      const existingLesson = existing.content?.find(
-                        (l) => getContentKey(l) === getContentKey(incomingLesson)
+                        l => getContentKey(l) === getContentKey(incomingLesson)
                      );
 
-                     // New lesson/review/chest added
                      if (!existingLesson) {
-                        levelChanged = true;
                         return incomingLesson;
                      }
 
-                     // Reviews and chests
                      if (incomingLesson.type !== "studying") {
                         return {
                            ...incomingLesson,
-                           status: existingLesson.status || incomingLesson.status || "waiting",
+                           status: existingLesson.status,
                         };
                      }
 
-                     // ---------- Studying lessons ----------
-
                      const mergedWords = incomingLesson.words.map((incomingWord) => {
-
                         const existingWord = existingLesson.words?.find(
-                           (w) => w.word === incomingWord.word
+                           w => w.word === incomingWord.word
                         );
 
                         if (!existingWord) {
-                           levelChanged = true;
                            return incomingWord;
-                        }
-
-                        const structuralChange = Object.keys(incomingWord).some((key) => {
-                           if (["status", "note", "notes"].includes(key)) return false;
-
-                           return (
-                              JSON.stringify(incomingWord[key]) !==
-                              JSON.stringify(existingWord[key])
-                           );
-                        });
-
-                        if (structuralChange) {
-                           levelChanged = true;
                         }
 
                         return {
                            ...incomingWord,
-                           status: existingWord.status || incomingWord.status || "waiting",
-                           note: existingWord.note || incomingWord.note || "",
-                           notes: existingWord.notes || incomingWord.notes || [],
+                           status: existingWord.status,
+                           note: existingWord.note,
+                           notes: existingWord.notes,
                         };
                      });
 
-                     if (existingLesson.words?.length !== incomingLesson.words?.length) {
-                        levelChanged = true;
-                     }
-
                      return {
                         ...incomingLesson,
-                        status: existingLesson.status || incomingLesson.status || "waiting",
+                        status: existingLesson.status,
                         words: mergedWords,
                      };
                   });
 
-                  // Check if lessons were removed or rearranged
-                  if (existing.content?.length !== incomingLevel.content?.length) {
-                     levelChanged = true;
-                  }
+                  const updatedRecord = {
+                     ...existing,
+                     ...incomingLevel,
+                     content: mergedContent,
+                  };
 
-                  // If any small change was detected, commit it to this device's IndexedDB
-                  if (levelChanged) {
-                     const updatedRecord = {
-                        ...existing,
-                        ...incomingLevel,
-                        content: mergedContent,
-                     };
+                  // Only save if the final object is actually different
+                  if (JSON.stringify(updatedRecord) !== JSON.stringify(existing)) {
                      await store.put(updatedRecord);
                      updated++;
                   }

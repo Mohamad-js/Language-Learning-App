@@ -2,7 +2,7 @@ import { openDB } from 'idb';
 
 export const initDB = async () => {
    // Keep your version stable at 5. Data synchronization is now handled dynamically above!
-   return openDB('VocabularyDB', 5, {
+   return openDB('VocabularyDB', 6, {
       upgrade(db) {
          // Clean up deprecated stores safely
          if (db.objectStoreNames.contains('words')) {
@@ -155,11 +155,7 @@ export const getReviewByNumber = async (levelName, reviewNumber) => {
 
 
 
-export const updateInteractionStatus = async ({
-   level,
-   lesson,
-   words
-}) => {
+export const updateInteractionStatus = async ({ level, lesson, words = null }) => {
 
    const db = await initDB();
 
@@ -180,19 +176,11 @@ export const updateInteractionStatus = async ({
    const lessonData = levelData.content[lessonIndex];
 
    // Save every word's latest status
-   lessonData.words = words;
+   if (words) lessonData.words = words;
 
    // Lesson is completed
    lessonData.status = "done";
 
-   // Unlock next lesson or review
-   if (lessonIndex + 1 < levelData.content.length) {
-      const nextItem = levelData.content[lessonIndex + 1];
-
-      if (nextItem.status === "locked") {
-         nextItem.status = "ready";
-      }
-   }
 
    // Update overall level status
    const completedLessons = levelData.content.filter(

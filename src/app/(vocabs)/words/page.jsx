@@ -17,6 +17,7 @@ import { fadeUpChild, fadeUpParent } from '@/lib/animations/entrance';
 import Navigation from '@/components/Navigation/navigation';
 import Image from 'next/image';
 import { ChestParticles } from "@/components/particles";
+import Confetti from "@/components/confetti/confetti";
 
 
 
@@ -28,6 +29,7 @@ function Words() {
    const [currentLevel, setCurrentLevel] = useState('A1');
    const [preview, setPreview] = useState(false);
    const [loadAgain, setLoadAgain] = useState(false);
+   const [prizeToggle, setPrizeToggle] = useState(false);
    const [previewContent, setPreviewContent] = useState([]);
    const router = useRouter();
    const scrollRef = useRef(null);
@@ -191,11 +193,22 @@ function Words() {
          words: changeToKnown
       })
 
-      setLoadAgain(!loadAgain)
+      setLoadAgain(prev => !prev);
+
       setPreview(false)
       toast.info(`You skipped the lesson ${previewContent.lesson}`)
    }
 
+   
+   const closePrize = async(item) => {
+      await updateInteractionStatus({
+         level: currentLevel,
+         lesson: item.lesson,
+      });
+   
+      setLoadAgain(prev => !prev);
+      setPrizeToggle(false)
+   }
 
 
    return (
@@ -342,20 +355,71 @@ function Words() {
 
                            {
                               item.displayStatus === 'waiting' ? 
-                                 <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-center items-center flex-col gap-5 bg-background/70">
-                                    <div className="text-5xl">{item.content.title}</div>
-                                    <button className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg active:scale-95'>{item.content.msg}</button>
-                                 </div>
-                              :
-
-                              item.displayStatus === 'ready' ?
-                                 <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-center items-center flex-col gap-5 bg-background/0">
+                                 <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-start items-center flex-col gap-5 bg-background/40">
 
                                     <ChestParticles />
 
-                                    <button className="p-6 bg-background text-foreground text-2xl rounded-4xl flex flex-col gap-3 items-center">
+                                    <div className="text-5xl">{item.content.title}</div>
+                                    
+                                    <div className='px-4 py-2 bg-foreground text-background rounded-lg drop-shadow-lg'>{item.content.msg}</div>
+                                 </div>
+                              :
+                              
+                              item.displayStatus === 'ready' ?
+                              <div className="absolute w-full h-full p-5 top-0 left-0 flex justify-end items-center flex-col gap-5 bg-background/0">
+
+                                    <ChestParticles />
+
+                                    <button
+                                       onClick={() => setPrizeToggle(true)}
+                                       className="relative p-6 bg-background/30 border backdrop-blur-xs text-foreground text-2xl rounded-4xl">
                                        <CiUnlock size={40} />
                                     </button>
+
+                                    {
+                                       prizeToggle &&
+                                       <div className='absolute top-0 left-0 z-1 w-full h-full'>
+
+                                          <Confetti />
+                                          <div className='w-full h-full flex items-center
+                                           justify-center'>
+
+                                             <Image
+                                                className='relative -z-1'
+                                                src="/images/a1/Covers/Chests/img1.jpg"
+                                                alt="open prize img"
+                                                fill
+                                             />
+                                             
+                                             <div className='w-6/7 bg-background/20 border backdrop-blur-xs rounded-2xl flex flex-col gap-5 justify-between items-center p-5'>
+                                                <div className='text-3xl'>You unlocked:</div>
+
+                                                <div className="flex flex-col gap-1">
+                                                   {
+                                                      item?.content?.gifts.map((item, index) => (
+                                                         <div
+                                                            key={index}
+                                                            className="bg-background/30 rounded-xl py-2 px-4 text-center"
+                                                         >
+                                                            {item}
+                                                         </div>
+                                                      ))
+                                                   }
+                                                </div>
+
+                                                <button 
+                                                   className='primary-btn'
+                                                   onClick={() => closePrize(item)}
+                                                >
+                                                   Continue
+                                                </button>
+                                             </div>
+
+                                             
+                                          </div>
+                                       </div> 
+                                    }
+
                                  </div>
                               
                                  : 'ERROR IN STEPPING'
