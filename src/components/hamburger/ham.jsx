@@ -140,7 +140,7 @@ function Ham(){
 
          <div className={`fixed w-2/3 min-h-dvh flex flex-col z-40 transition-all bg-background duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)] ${menu ? 'left-0' : '-left-full'}`}>
             <div className='w-full pl-5 flex items-center'>
-               <div className='w-30 h-15 flex items-center'>
+               <div className='w-30 h-25 flex items-center'>
                    <Image
                        className='object-cover object-center'
                        src='/images/logos/Logo-Dark.png'
