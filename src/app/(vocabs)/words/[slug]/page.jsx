@@ -31,8 +31,8 @@ export default function Lessons({ params }) {
    const { audioRef, play } = useClickSound()
    const { startLoading } = useLoading();
    const [scope, animate] = useAnimate()
+wwsws
 
-   
    const [specificLessonWords, setSpecificLessonWords] = useState([])
    const [reviewNumber, setReviewNumber] = useState(0)
    const [isLoading2, setIsLoading2] = useState(true);

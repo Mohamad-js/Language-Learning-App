@@ -9,10 +9,10 @@ const Confetti = () => {
     const animationEnd = Date.now() + duration
     const defaults = {
       startVelocity: 30,
-      particleCount: 400,
-      spread: 120,
+      particleCount: 200,
+      spread: 150,
       decay: 0.8,
-      gravity: 0.5,
+      gravity: 1.2,
       ticks: 1500,
       scalar: 1.2,
       shapes: ['circle', 'square'],

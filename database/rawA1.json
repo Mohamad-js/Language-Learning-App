@@ -2053,22 +2053,21 @@
 
                "spelling": [
                   {
-                     "rootWord": "Twelve",
+                     "rootWord": "Five",
                      "options": [
-                        { "id": "1", "text": "Tewelve", "isCorrect": false },
-                        { "id": "2", "text": "Twelve", "isCorrect": true },
-                        { "id": "3", "text": "Tewlve", "isCorrect": false }
+                        { "id": "1", "text": "Three", "isCorrect": false },
+                        { "id": "2", "text": "Six", "isCorrect": false },
+                        { "id": "3", "text": "Five", "isCorrect": true }
                      ]
                   }
                ],
 
                "dictation": [
                   {
-                     "Target": ["Y", "e", "l", "l", "o", "w"],
-                     "blanksPatten": [0, 0, 0, 0, 0, 0],
-                     "optionLetters": ["e", "l", "w", "o", "l", "y"]
+                     "Target": ["S", "e", "v", "e", "n"],
+                     "blanksPatten": [1, 1, 1, 1, 0],
+                     "optionLetters": ["e", "n", "v", "s", "e"]
                   }
-
                ]
             }
          },
@@ -2529,7 +2528,7 @@
                },
                {
                   "Target": ["G", "i", "r", "l"],
-                  "blanksPatten": [1, 0, 1, 0],
+                  "blanksPatten": [1, 0, 1, 1],
                   "optionLetters": ["e", "i", "u"]
                },
                {
