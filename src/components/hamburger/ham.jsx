@@ -142,7 +142,14 @@ function Ham(){
             <div className='w-full pl-5 flex items-center'>
                <div className='w-30 h-25 flex items-center'>
                    <Image
-                       className='object-cover object-center'
+                       className='object-cover object-center dark:hidden'
+                       src='/images/logos/Logo-Light.png'
+                       alt='Logo'
+                       width={160}
+                       height={100}
+                   />
+                   <Image
+                       className='object-cover object-center hidden dark:block'
                        src='/images/logos/Logo-Dark.png'
                        alt='Logo'
                        width={160}
