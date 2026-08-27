@@ -27,6 +27,7 @@ function Ham(){
    const [menu, setMenu] = useState(false)
 
    const pathname = usePathname()
+   console.log('pathname:', pathname)
 
    const router = useRouter()
 
@@ -77,6 +78,7 @@ function Ham(){
          settings: '/settings',
          patterns: '/patterns',
          phrasal: '/phrasal',
+         about: '/about',
          developerTools: '/dev'
       };
 
@@ -98,6 +100,11 @@ function Ham(){
 
    const underDev = (page) => {
       toast.warning(`The ${page} section is under development.`)
+   }
+
+
+   const activeTab = (path) => {
+      return pathname === path ? 'border' : ''
    }
 
 
@@ -171,42 +178,42 @@ function Ham(){
                   <div className='w-full flex flex-col justify-between pr-5'>
                      <div className='w-full flex flex-col'>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={()=> navFromHam('words')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/words')}`} onClick={()=> navFromHam('words')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <VscWholeWord />
                            </div>
                            <div>Vocabulary</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Grammar')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/grammar')}`} onClick={() => underDev('Grammar')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <MdOutlineSpellcheck />
                            </div>
                            <div>Grammar</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Stems')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/stems')}`} onClick={() => underDev('Stems')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <PiTreeStructureLight />
                            </div>
                            <div>Stems</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Patterns')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/patterns')}`} onClick={() => underDev('Patterns')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <GiGearStickPattern />
                            </div>
                            <div>Patterns</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Synonyms')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/synonyms')}`} onClick={() => underDev('Synonyms')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <LuGroup />
                            </div>
                            <div>Synonyms</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Phrasal')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/phrasal')}`} onClick={() => underDev('Phrasal')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <VscDebugDisconnect />
                            </div>
@@ -230,28 +237,29 @@ function Ham(){
 
                   <div className='w-full flex-1 flex flex-col justify-between pr-5'>
                      <div className='w-full flex flex-col'>
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Speaking')}>
+
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/speaking')}`} onClick={() => underDev('Speaking')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <PiUserSoundFill />
                            </div>
                            <div>Speaking</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Writing')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/writing')}`} onClick={() => underDev('Writing')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <IoReader />
                            </div>
                            <div>Writing</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Listening')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/listening')}`} onClick={() => underDev('Listening')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <ImHeadphones />
                            </div>
                            <div>Listening</div>
                         </div>
 
-                        <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Reading')}>
+                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/reading')}`} onClick={() => underDev('Reading')}>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <IoBook />
                            </div>
@@ -269,7 +277,7 @@ function Ham(){
 
                   <div className='w-full  flex flex-col'>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => navFromHam('home')}>
+                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/')}`} onClick={() => navFromHam('home')}>
                         <div className="rounded-lg p-2 bg-foreground/10">
                            <GoHomeFill />
                         </div>
@@ -286,7 +294,7 @@ function Ham(){
                         <MdKeyboardArrowRight size={20} />
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 pr-0 active:bg-foreground/5 rounded-xl' onClick={toggleSubMenu2}>
+                     <div className={`w-full flex items-center gap-3 p-2 pr-0 active:bg-foreground/5 rounded-xl1`} onClick={toggleSubMenu2}>
                         <div className='w-full flex items-center gap-3'>
                            <div className="rounded-lg p-2 bg-foreground/10">
                               <FaLayerGroup />
@@ -296,42 +304,42 @@ function Ham(){
                         <MdKeyboardArrowRight size={20} />
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Saved')}>
+                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/saved')}`} onClick={() => underDev('Saved')}>
                         <div className="rounded-lg p-2 bg-foreground/10">
                            <IoSave />
                         </div>
                         <div>Saved</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Statistics')}>
+                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/statistics')}`} onClick={() => underDev('Statistics')}>
                         <div className="rounded-lg p-2 bg-foreground/10">
                            <MdInsertChartOutlined />
                         </div>
                         <div>Statistics</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => underDev('Review')}>
+                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/review')}`} onClick={() => underDev('Review')}>
                         <div className="rounded-lg p-2 bg-foreground/10">
                            <RiRepeat2Fill />
                         </div>
                         <div>Review</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => navFromHam('source')}>
+                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/source')}`} onClick={() => navFromHam('source')}>
                         <div className="rounded-lg p-2 bg-foreground/10">
                            <MdSource/>
                         </div>
                         <div>Source</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => navFromHam('source')}>
+                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/about')}`} onClick={() => navFromHam('about')}>
                         <div className="rounded-lg p-2 bg-foreground/10">
                            <MdSource/>
                         </div>
                         <div>About Us</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => navFromHam('developerTools')}>
+                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab ('/dev')}`} onClick={() => navFromHam('developerTools')}>
                         <div className="rounded-lg p-2 bg-foreground/10">
                            <MdDeveloperMode />
                         </div>
@@ -341,7 +349,7 @@ function Ham(){
                   </div>
 
 
-                  <div className='w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl' onClick={() => navFromHam('settings')}>
+                  <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/settings')}`} onClick={() => navFromHam('settings')}>
                      <div className='rounded-lg p-2 bg-foreground/10'>
                         <IoSettings />
                      </div>
