@@ -151,67 +151,6 @@ export default function Lessons({ params }) {
       }
 
    }, [lessonNumber])
-   
-   
-   
-
-   const done = () => {
-      try {
-         save()
-
-         // if(totalWordsCount % 100 === 0){
-         //    animation()
-         //    setBtnPressed('done')
-         // } else {
-         //    router.push('/a1')
-         // }
-
-      } catch (e) {
-         console.error('Error saving to localStorage:', e);
-      }
-   }
-
-   const nextLesson = () => {
-      try {
-         save()
-
-         if(totalWordsCount % 100 === 0){
-            animation()
-            setBtnPressed('nextLesson')
-         } else {
-            router.push(`/a1/${lessonNumber + 1}`)
-         }
-
-      } catch (e) {
-         console.error('Error saving to localStorage:', e);
-      }
-   }
-
-   const nextLevel = () => {
-      try {
-         save()
-
-         if(totalWordsCount % 100 === 0){
-            animation()
-            setBtnPressed('nextLevel')
-         } else {
-            router.push('/a2')
-         }
-
-      } catch (e) {
-         console.error('Error saving to localStorage:', e);
-      }
-   }
-
-   // const closeCongrats = () => {
-   //    setShowCongrats(false)
-   //    setAnime(false)
-   //    save()
-
-   //    btnPressed === 'done' ? router.push('/a1') :
-   //    btnPressed === 'nextLesson' ? router.push(`/a1/${lessonNumber + 1}`) :
-   //    btnPressed === 'nextLevel' ? router.push('/a2') : console.log('PROBLEM')
-   // }
 
 
    const saveProgress = async (msg) => {

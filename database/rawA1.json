@@ -16,7 +16,7 @@
                   "role": "Pro",
                   "BrE": "/aɪ/",
                   "AmE": "/aɪ/",
-                  "definition": "The word you use to talk about yourself",
+                  "definition": "من",
                   "examples": [
                      {
                         "collocation": "I am",
@@ -43,7 +43,7 @@
                   "role": "Pro",
                   "BrE": "/juː/",
                   "AmE": "/juː/",
-                  "definition": "The person or people the speaker is talking to",
+                  "definition": "تو / شما",
                   "examples": [
                      {
                         "collocation": "You are",
@@ -69,7 +69,7 @@
                   "role": "Pro",
                   "BrE": "/hiː/",
                   "AmE": "/hiː/",
-                  "definition": "A boy or man that you talk about",
+                  "definition": "او (مذکر)",
                   "examples": [
                      {
                         "collocation": "He is",
@@ -95,7 +95,7 @@
                   "role": "Pro",
                   "BrE": "/ʃiː/",
                   "AmE": "/ʃiː/",
-                  "definition": "A girl or woman that you talk about",
+                  "definition": "او (مونث)",
                   "examples": [
                      {
                         "collocation": "She is",
@@ -121,7 +121,7 @@
                   "role": "Pro",
                   "BrE": "/ɪt/",
                   "AmE": "/ɪt/",
-                  "definition": "A thing, an animal, or a situation",
+                  "definition": "این / آن",
                   "examples": [
                      {
                         "collocation": "It is",
@@ -147,7 +147,7 @@
                   "role": "Pro",
                   "BrE": "/wiː/",
                   "AmE": "/wiː/",
-                  "definition": "The speaker and one or more other people together",
+                  "definition": "ما",
                   "examples": [
                      {
                         "collocation": "We are",
@@ -173,7 +173,7 @@
                   "role": "Pro",
                   "BrE": "/ðeɪ/",
                   "AmE": "/ðeɪ/",
-                  "definition": "Two or more people, animals, or things",
+                  "definition": "آنها",
                   "examples": [
                      {
                         "collocation": "They are",
@@ -211,73 +211,73 @@
                {
                   "rootWord": "You",
                   "options": [
-                     { "id": "8", "text": "You", "isCorrect": true },
-                     { "id": "9", "text": "She", "isCorrect": false },
-                     { "id": "10", "text": "He", "isCorrect": false },
-                     { "id": "11", "text": "We", "isCorrect": false },
-                     { "id": "12", "text": "They", "isCorrect": false },
-                     { "id": "13", "text": "I", "isCorrect": false },
-                     { "id": "14", "text": "It", "isCorrect": false }
+                     { "id": "1", "text": "You", "isCorrect": true },
+                     { "id": "2", "text": "She", "isCorrect": false },
+                     { "id": "3", "text": "He", "isCorrect": false },
+                     { "id": "4", "text": "We", "isCorrect": false },
+                     { "id": "5", "text": "They", "isCorrect": false },
+                     { "id": "6", "text": "I", "isCorrect": false },
+                     { "id": "7", "text": "It", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "We",
                   "options": [
-                     { "id": "15", "text": "She", "isCorrect": false },
-                     { "id": "16", "text": "He", "isCorrect": false },
-                     { "id": "17", "text": "We", "isCorrect": true },
-                     { "id": "18", "text": "They", "isCorrect": false },
-                     { "id": "19", "text": "I", "isCorrect": false },
-                     { "id": "20", "text": "You", "isCorrect": false },
-                     { "id": "21", "text": "It", "isCorrect": false }
+                     { "id": "1", "text": "She", "isCorrect": false },
+                     { "id": "2", "text": "He", "isCorrect": false },
+                     { "id": "3", "text": "We", "isCorrect": true },
+                     { "id": "4", "text": "They", "isCorrect": false },
+                     { "id": "5", "text": "I", "isCorrect": false },
+                     { "id": "6", "text": "You", "isCorrect": false },
+                     { "id": "7", "text": "It", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "They",
                   "options": [
-                     { "id": "21", "text": "She", "isCorrect": false },
-                     { "id": "22", "text": "He", "isCorrect": false },
-                     { "id": "23", "text": "We", "isCorrect": false },
-                     { "id": "24", "text": "They", "isCorrect": true },
-                     { "id": "25", "text": "I", "isCorrect": false },
-                     { "id": "26", "text": "You", "isCorrect": false },
-                     { "id": "27", "text": "It", "isCorrect": false }
+                     { "id": "1", "text": "She", "isCorrect": false },
+                     { "id": "2", "text": "He", "isCorrect": false },
+                     { "id": "3", "text": "We", "isCorrect": false },
+                     { "id": "4", "text": "They", "isCorrect": true },
+                     { "id": "5", "text": "I", "isCorrect": false },
+                     { "id": "6", "text": "You", "isCorrect": false },
+                     { "id": "7", "text": "It", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "He",
                   "options": [
-                     { "id": "28", "text": "He", "isCorrect": true },
-                     { "id": "29", "text": "We", "isCorrect": false },
-                     { "id": "30", "text": "They", "isCorrect": false },
-                     { "id": "31", "text": "I", "isCorrect": false },
-                     { "id": "32", "text": "You", "isCorrect": false },
-                     { "id": "33", "text": "It", "isCorrect": false },
-                     { "id": "34", "text": "She", "isCorrect": false }
+                     { "id": "1", "text": "He", "isCorrect": true },
+                     { "id": "2", "text": "We", "isCorrect": false },
+                     { "id": "3", "text": "They", "isCorrect": false },
+                     { "id": "4", "text": "I", "isCorrect": false },
+                     { "id": "5", "text": "You", "isCorrect": false },
+                     { "id": "6", "text": "It", "isCorrect": false },
+                     { "id": "7", "text": "She", "isCorrect": false }
                   ]
                },
                {
                   "rootWord": "She",
                   "options": [
-                     { "id": "35", "text": "We", "isCorrect": false },
-                     { "id": "36", "text": "They", "isCorrect": false },
-                     { "id": "37", "text": "I", "isCorrect": false },
-                     { "id": "38", "text": "You", "isCorrect": false },
-                     { "id": "39", "text": "It", "isCorrect": false },
-                     { "id": "40", "text": "He", "isCorrect": false },
-                     { "id": "41", "text": "She", "isCorrect": true }
+                     { "id": "1", "text": "We", "isCorrect": false },
+                     { "id": "2", "text": "They", "isCorrect": false },
+                     { "id": "3", "text": "I", "isCorrect": false },
+                     { "id": "4", "text": "You", "isCorrect": false },
+                     { "id": "5", "text": "It", "isCorrect": false },
+                     { "id": "6", "text": "He", "isCorrect": false },
+                     { "id": "7", "text": "She", "isCorrect": true }
                   ]
                },
                {
                   "rootWord": "It",
                   "options": [
-                     { "id": "42", "text": "I", "isCorrect": false },
-                     { "id": "43", "text": "You", "isCorrect": false },
-                     { "id": "44", "text": "She", "isCorrect": false },
-                     { "id": "45", "text": "He", "isCorrect": false },
-                     { "id": "46", "text": "We", "isCorrect": false },
-                     { "id": "47", "text": "They", "isCorrect": false },
-                     { "id": "48", "text": "It", "isCorrect": true }
+                     { "id": "1", "text": "I", "isCorrect": false },
+                     { "id": "2", "text": "You", "isCorrect": false },
+                     { "id": "3", "text": "She", "isCorrect": false },
+                     { "id": "4", "text": "He", "isCorrect": false },
+                     { "id": "5", "text": "We", "isCorrect": false },
+                     { "id": "6", "text": "They", "isCorrect": false },
+                     { "id": "7", "text": "It", "isCorrect": true }
                   ]
                }
             ],
@@ -312,6 +312,94 @@
                   "Target": ["S", "h", "e"],
                   "blanksPatten": [1, 1, 0],
                   "optionLetters": ["e", "i"]
+               }
+            ]
+         },
+
+         {
+            "type": "studying",
+            "lesson": 2,
+            "category": "To Be Verbs",
+            "status": "Waiting",
+
+            "words": [
+               {
+                  "status": "Waiting",
+                  "word": "Am",
+                  "role": "Verb",
+                  "BrE": "/æm/",
+                  "AmE": "/æm/",
+                  "definition": "هستم",
+                  "examples": [
+                     {
+                        "collocation": "I am + Name",
+                        "example": "I am Reza."
+                     },
+                     {
+                        "collocation": "I am + Nationality",
+                        "example": "I am Iranian."
+                     },
+                     {
+                        "collocation": "I am + Age",
+                        "example": "I am 24."
+                     }
+                  ],
+                  "notes": {
+                     "title": "",
+                     "text": ""
+                  }
+               },
+               {
+                  "status": "Waiting",
+                  "word": "Is",
+                  "role": "Verb",
+                  "BrE": "/ɪz/",
+                  "AmE": "/ɪz/",
+                  "definition": "است / هست",
+                  "examples": [
+                     {
+                        "collocation": "She is + Name",
+                        "example": "She is Mina."
+                     },
+                     {
+                        "collocation": "She is + Nationality",
+                        "example": "She is Iranian."
+                     },
+                     {
+                        "collocation": "She is + Age",
+                        "example": "She is 24."
+                     }
+                  ],
+                  "notes": {
+                     "title": "",
+                     "text": ""
+                  }
+               },
+               {
+                  "status": "Waiting",
+                  "word": "Are",
+                  "role": "Verb",
+                  "BrE": "/ɑː/",
+                  "AmE": "/ɑːr/",
+                  "definition": "هستید / هستند / هستی / هستیم",
+                  "examples": [
+                     {
+                        "collocation": "You are + Name",
+                        "example": "You are Reza."
+                     },
+                     {
+                        "collocation": "We are + Nationality",
+                        "example": "We are Iranian."
+                     },
+                     {
+                        "collocation": "They are + Age",
+                        "example": "They are 24."
+                     }
+                  ],
+                  "notes": {
+                     "title": "",
+                     "text": ""
+                  }
                }
             ]
          },
@@ -406,7 +494,7 @@
                   "status": "Waiting",
                   "word": "Four",
                   "role": "Number",
-                  "BrE": "/fɔː(r)/",
+                  "BrE": "/fɔː/",
                   "AmE": "/fɔːr/",
                   "definition": "The number 4",
                   "examples": [
@@ -4374,7 +4462,7 @@
                   "status": "Waiting",
                   "word": "Pear",
                   "role": "N",
-                  "BrE": "/peə(r)/",
+                  "BrE": "/peə/",
                   "AmE": "/per/",
                   "definition": "A fruit that is narrow at the top and wide at the bottom",
                   "examples": [
@@ -5218,7 +5306,7 @@
                   "status": "Waiting",
                   "word": "Beer",
                   "role": "N",
-                  "BrE": "/bɪə(r)/",
+                  "BrE": "/bɪə/",
                   "AmE": "/bɪr/",
                   "definition": "A drink made from grain that often has alcohol",
                   "examples": [
@@ -5270,7 +5358,7 @@
                   "status": "Waiting",
                   "word": "Water",
                   "role": "N",
-                  "BrE": "/ˈwɔːtə(r)/",
+                  "BrE": "/ˈwɔːtə/",
                   "AmE": "/ˈwɔːtər/",
                   "definition": "A clear liquid that all people need to drink",
                   "examples": [
@@ -5565,7 +5653,7 @@
                   "status": "Waiting",
                   "word": "Hamster",
                   "role": "N",
-                  "BrE": "/ˈhæmstə(r)/",
+                  "BrE": "/ˈhæmstə/",
                   "AmE": "/ˈhæmstər/",
                   "definition": "A small furry animal similar to a mouse often kept as a pet",
                   "examples": [
@@ -5704,7 +5792,7 @@
                   "status": "Waiting",
                   "word": "Teacher",
                   "role": "N",
-                  "BrE": "/ˈtiːtʃə(r)/",
+                  "BrE": "/ˈtiːtʃə/",
                   "AmE": "/ˈtiːtʃər/",
                   "definition": "A person whose job is to teach students",
                   "examples": [
@@ -5834,7 +5922,7 @@
                   "status": "Waiting",
                   "word": "Paper",
                   "role": "N",
-                  "BrE": "/ˈpeɪpə(r)/",
+                  "BrE": "/ˈpeɪpə/",
                   "AmE": "/ˈpeɪpər/",
                   "definition": "Thin, flat material used for writing or printing on",
                   "examples": [
@@ -5860,7 +5948,7 @@
                   "status": "Waiting",
                   "word": "Ruler",
                   "role": "N",
-                  "BrE": "/ˈruːlə(r)/",
+                  "BrE": "/ˈruːlə/",
                   "AmE": "/ˈruːlər/",
                   "definition": "A long, flat tool used for measuring or drawing straight lines",
                   "examples": [
@@ -5886,7 +5974,7 @@
                   "status": "Waiting",
                   "word": "Rubber",
                   "role": "N",
-                  "BrE": "/ˈrʌbə(r)/",
+                  "BrE": "/ˈrʌbə/",
                   "AmE": "/ˈrʌbər/",
                   "definition": "A small object used to remove pencil marks from paper",
                   "examples": [
@@ -6600,7 +6688,7 @@
                   "status": "Waiting",
                   "word": "Store",
                   "role": "N",
-                  "BrE": "/stɔː(r)/",
+                  "BrE": "/stɔː/",
                   "AmE": "/stɔːr/",
                   "definition": "A large place where you go to buy things",
                   "examples": [
@@ -6739,7 +6827,7 @@
                   "status": "Waiting",
                   "word": "Car",
                   "role": "N",
-                  "BrE": "/kɑː(r)/",
+                  "BrE": "/kɑː/",
                   "AmE": "/kɑːr/",
                   "definition": "A machine with four wheels that people drive on the road",
                   "examples": [
@@ -7329,7 +7417,7 @@
                   "status": "Waiting",
                   "word": "Star",
                   "role": "N",
-                  "BrE": "/stɑː(r)/",
+                  "BrE": "/stɑː/",
                   "AmE": "/stɑːr/",
                   "definition": "A small bright light in the night sky",
                   "examples": [
@@ -7485,7 +7573,7 @@
                   "status": "Waiting",
                   "word": "Water",
                   "role": "N",
-                  "BrE": "/ˈwɔːtə(r)/",
+                  "BrE": "/ˈwɔːtə/",
                   "AmE": "/ˈwɔːtər/",
                   "definition": "A clear liquid that fills rivers and lakes",
                   "examples": [
@@ -7511,7 +7599,7 @@
                   "status": "Waiting",
                   "word": "Fire",
                   "role": "N",
-                  "BrE": "/ˈfaɪə(r)/",
+                  "BrE": "/ˈfaɪə/",
                   "AmE": "/ˈfaɪər/",
                   "definition": "Bright light and heat that warms you",
                   "examples": [
@@ -7826,7 +7914,7 @@
                   "status": "Waiting",
                   "word": "Tiger",
                   "role": "N",
-                  "BrE": "/ˈtaɪɡə(r)/",
+                  "BrE": "/ˈtaɪɡə/",
                   "AmE": "/ˈtaɪɡər/",
                   "definition": "A large wild cat with orange and black stripes",
                   "examples": [
@@ -7956,7 +8044,7 @@
                   "status": "Waiting",
                   "word": "Bear",
                   "role": "N",
-                  "BrE": "/beə(r)/",
+                  "BrE": "/beə/",
                   "AmE": "/ber/",
                   "definition": "A large strong animal with thick fur",
                   "examples": [
@@ -8147,7 +8235,7 @@
                   "status": "Waiting",
                   "word": "Guitar",
                   "role": "N",
-                  "BrE": "/ɡɪˈtɑː(r)/",
+                  "BrE": "/ɡɪˈtɑː/",
                   "AmE": "/ɡɪˈtɑːr/",
                   "definition": "A musical instrument with six strings that you play with your fingers",
                   "examples": [
@@ -8390,7 +8478,7 @@
                   "status": "Waiting",
                   "word": "Flower",
                   "role": "N",
-                  "BrE": "/ˈflaʊə(r)/",
+                  "BrE": "/ˈflaʊə/",
                   "AmE": "/ˈflaʊər/",
                   "definition": "The colorful part of a plant",
                   "examples": [
@@ -8520,7 +8608,7 @@
                   "status": "Waiting",
                   "word": "River",
                   "role": "N",
-                  "BrE": "/ˈrɪvə(r)/",
+                  "BrE": "/ˈrɪvə/",
                   "AmE": "/ˈrɪvər/",
                   "definition": "A long line of water that flows to the sea",
                   "examples": [
@@ -9312,7 +9400,7 @@
                   "status": "Waiting",
                   "word": "Answer",
                   "role": "V",
-                  "BrE": "/ˈɑːnsə(r)/",
+                  "BrE": "/ˈɑːnsə/",
                   "AmE": "/ˈænsər/",
                   "definition": "To say or write something back to a question",
                   "examples": [
@@ -9798,7 +9886,7 @@
                   "status": "Waiting",
                   "word": "Remember",
                   "role": "V",
-                  "BrE": "/rɪˈmembə(r)/",
+                  "BrE": "/rɪˈmembə/",
                   "AmE": "/rɪˈmembər/",
                   "definition": "To keep information in your mind or bring it back from the past",
                   "examples": [
@@ -10642,7 +10730,7 @@
                   "status": "Waiting",
                   "word": "Eager",
                   "role": "Adj",
-                  "BrE": "/ˈiːɡə(r)/",
+                  "BrE": "/ˈiːɡə/",
                   "AmE": "/ˈiːɡər/",
                   "definition": "Wanting to do something very much",
                   "examples": [
@@ -11423,7 +11511,7 @@
                   "status": "Waiting",
                   "word": "Under",
                   "role": "Preposition",
-                  "BrE": "/ˈʌndə(r)/",
+                  "BrE": "/ˈʌndə/",
                   "AmE": "/ˈʌndər/",
                   "definition": "In a position below something",
                   "examples": [
@@ -11553,7 +11641,7 @@
                   "status": "Waiting",
                   "word": "Over",
                   "role": "Preposition",
-                  "BrE": "/ˈəʊvə(r)/",
+                  "BrE": "/ˈəʊvə/",
                   "AmE": "/ˈoʊvər/",
                   "definition": "Across or above something",
                   "examples": [
@@ -11666,7 +11754,7 @@
                   "status": "Waiting",
                   "word": "Where",
                   "role": "Adv",
-                  "BrE": "/weə(r)/",
+                  "BrE": "/weə/",
                   "AmE": "/wer/",
                   "definition": "Used to ask about a place",
                   "examples": [
@@ -12128,7 +12216,7 @@
                   "status": "Waiting",
                   "word": "Weekender",
                   "role": "N",
-                  "BrE": "/ˈwiːkendə(r)/",
+                  "BrE": "/ˈwiːkendə/",
                   "AmE": "/ˈwiːkendər/",
                   "definition": "A person who spends the weekend away from home",
                   "examples": [
@@ -12189,7 +12277,7 @@
                   "status": "Waiting",
                   "word": "Summer",
                   "role": "N",
-                  "BrE": "/ˈsʌmə(r)/",
+                  "BrE": "/ˈsʌmə/",
                   "AmE": "/ˈsʌmər/",
                   "definition": "The warmest season of the year",
                   "examples": [
@@ -12241,7 +12329,7 @@
                   "status": "Waiting",
                   "word": "Winter",
                   "role": "N",
-                  "BrE": "/ˈwɪntə(r)/",
+                  "BrE": "/ˈwɪntə/",
                   "AmE": "/ˈwɪntər/",
                   "definition": "The coldest season of the year",
                   "examples": [
@@ -12397,7 +12485,7 @@
                   "status": "Waiting",
                   "word": "Year",
                   "role": "N",
-                  "BrE": "/jɪə(r)/",
+                  "BrE": "/jɪə/",
                   "AmE": "/jɪr/",
                   "definition": "A period of twelve months",
                   "examples": [
@@ -12458,7 +12546,7 @@
                   "status": "Waiting",
                   "word": "Your",
                   "role": "Adj",
-                  "BrE": "/jɔː(r)/",
+                  "BrE": "/jɔː/",
                   "AmE": "/jɔːr/",
                   "definition": "Belonging to you",
                   "examples": [
@@ -12510,7 +12598,7 @@
                   "status": "Waiting",
                   "word": "Her",
                   "role": "Adj",
-                  "BrE": "/hɜː(r)/",
+                  "BrE": "/hɜː/",
                   "AmE": "/hɜːr/",
                   "definition": "Belonging to her",
                   "examples": [
@@ -12562,7 +12650,7 @@
                   "status": "Waiting",
                   "word": "Our",
                   "role": "Adj",
-                  "BrE": "/ˈaʊə(r)/",
+                  "BrE": "/ˈaʊə/",
                   "AmE": "/ˈaʊər/",
                   "definition": "Belonging to us",
                   "examples": [
@@ -12588,7 +12676,7 @@
                   "status": "Waiting",
                   "word": "Their",
                   "role": "Adj",
-                  "BrE": "/ðeə(r)/",
+                  "BrE": "/ðeə/",
                   "AmE": "/ðer/",
                   "definition": "Belonging to them",
                   "examples": [
@@ -12678,7 +12766,7 @@
                   "status": "Waiting",
                   "word": "Or",
                   "role": "Conjunction",
-                  "BrE": "/ɔː(r)/",
+                  "BrE": "/ɔː/",
                   "AmE": "/ɔːr/",
                   "definition": "Used to show a choice between things",
                   "examples": [
@@ -12834,7 +12922,7 @@
                   "status": "Waiting",
                   "word": "However",
                   "role": "Adv",
-                  "BrE": "/haʊˈevə(r)/",
+                  "BrE": "/haʊˈevə/",
                   "AmE": "/haʊˈevər/",
                   "definition": "Used to say something that is different from what was said before",
                   "examples": [
@@ -12895,7 +12983,7 @@
                   "status": "Waiting",
                   "word": "Before",
                   "role": "Adverb/Preposition",
-                  "BrE": "/bɪˈfɔː(r)/",
+                  "BrE": "/bɪˈfɔː/",
                   "AmE": "/bɪˈfɔːr/",
                   "definition": "At an earlier time",
                   "examples": [
@@ -12921,7 +13009,7 @@
                   "status": "Waiting",
                   "word": "After",
                   "role": "Adverb/Preposition",
-                  "BrE": "/ˈɑːftə(r)/",
+                  "BrE": "/ˈɑːftə/",
                   "AmE": "/ˈæftər/",
                   "definition": "At a later time",
                   "examples": [
@@ -13077,7 +13165,7 @@
                   "status": "Waiting",
                   "word": "Ever",
                   "role": "Adv",
-                  "BrE": "/ˈevə(r)/",
+                  "BrE": "/ˈevə/",
                   "AmE": "/ˈevər/",
                   "definition": "At any time",
                   "examples": [

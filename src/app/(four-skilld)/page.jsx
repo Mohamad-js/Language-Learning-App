@@ -319,23 +319,24 @@ const Home = () => {
 
             
 
-         {/* {
-            showDialog &&
-            <UpdateMsg
-               updates = {updates}
-               onClose = {closeDialog}
-               titles = {titles}
-               version = {version}
-            />
-         } */}
+         {/*{*/}
+         {/*   showDialog &&*/}
+         {/*   <UpdateMsg*/}
+         {/*      updates = {updates}*/}
+         {/*      onClose = {closeDialog}*/}
+         {/*      titles = {titles}*/}
+         {/*      version = {version}*/}
+         {/*   />*/}
+         {/*}*/}
 
-         {/* {isClient && tourOpen && (
-            <Tour
-               steps={steps}
-               run={tourOpen}
-               onTourComplete={handleTourComplete}
-            />
-         )} */}
+         {/*{*/}
+         {/*   isClient && tourOpen && (*/}
+         {/*   <Tour*/}
+         {/*      steps={steps}*/}
+         {/*      run={tourOpen}*/}
+         {/*      onTourComplete={handleTourComplete}*/}
+         {/*   />*/}
+         {/*)}*/}
          
       </div>
    );

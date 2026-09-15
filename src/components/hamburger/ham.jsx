@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { GiGearStickPattern } from "react-icons/gi";
 import { MdSource, MdInsertChartOutlined, MdOutlineSpellcheck, MdDeveloperMode, MdOutlineArrowBackIosNew, MdKeyboardArrowRight, MdCategory } from "react-icons/md";
+import { BsQuestionCircleFill } from "react-icons/bs";
+import { TbDeviceMobileQuestion } from "react-icons/tb";
 import { FaLayerGroup } from "react-icons/fa";
 import { RiRepeat2Fill } from "react-icons/ri";
 import { GoHomeFill } from "react-icons/go";
@@ -19,7 +21,6 @@ import Image from "next/image";
 
 
 function Ham(){
-    
 
    const { startLoading } = useLoading();
    const [subMenu1, setSubMenu1] = useState(false)
@@ -27,7 +28,6 @@ function Ham(){
    const [menu, setMenu] = useState(false)
 
    const pathname = usePathname()
-   console.log('pathname:', pathname)
 
    const router = useRouter()
 
@@ -79,7 +79,7 @@ function Ham(){
          patterns: '/patterns',
          phrasal: '/phrasal',
          about: '/about',
-         developerTools: '/dev'
+         quiz: '/quiz'
       };
 
       const target = routes[msg];
@@ -105,6 +105,10 @@ function Ham(){
 
    const activeTab = (path) => {
       return pathname === path ? 'border' : ''
+   }
+
+   const activeSubTabs = (path) => {
+      return path.includes(pathname) ? 'border' : ''
    }
 
 
@@ -175,46 +179,46 @@ function Ham(){
                      <MdOutlineArrowBackIosNew className='text-foreground/30' size={22} />
                   </div>
 
-                  <div className='w-full flex flex-col justify-between pr-5'>
+                  <div className='w-full flex flex-col justify-between'>
                      <div className='w-full flex flex-col'>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/words')}`} onClick={()=> navFromHam('words')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/words')}`} onClick={()=> navFromHam('words')}>
+                           <div className="ham-icons">
                               <VscWholeWord />
                            </div>
                            <div>Vocabulary</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/grammar')}`} onClick={() => underDev('Grammar')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/grammar')}`} onClick={() => underDev('Grammar')}>
+                           <div className="ham-icons">
                               <MdOutlineSpellcheck />
                            </div>
                            <div>Grammar</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/stems')}`} onClick={() => underDev('Stems')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/stems')}`} onClick={() => underDev('Stems')}>
+                           <div className="ham-icons">
                               <PiTreeStructureLight />
                            </div>
                            <div>Stems</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/patterns')}`} onClick={() => underDev('Patterns')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/patterns')}`} onClick={() => underDev('Patterns')}>
+                           <div className="ham-icons">
                               <GiGearStickPattern />
                            </div>
                            <div>Patterns</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/synonyms')}`} onClick={() => underDev('Synonyms')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/synonyms')}`} onClick={() => underDev('Synonyms')}>
+                           <div className="ham-icons">
                               <LuGroup />
                            </div>
                            <div>Synonyms</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/phrasal')}`} onClick={() => underDev('Phrasal')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/phrasal')}`} onClick={() => underDev('Phrasal')}>
+                           <div className="ham-icons">
                               <VscDebugDisconnect />
                            </div>
                            <div>Phrasal</div>
@@ -235,32 +239,32 @@ function Ham(){
                      <MdOutlineArrowBackIosNew className='text-foreground/30' size={22} />
                   </div>
 
-                  <div className='w-full flex-1 flex flex-col justify-between pr-5'>
+                  <div className='w-full flex-1 flex flex-col justify-between'>
                      <div className='w-full flex flex-col'>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/speaking')}`} onClick={() => underDev('Speaking')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/speaking')}`} onClick={() => underDev('Speaking')}>
+                           <div className="ham-icons">
                               <PiUserSoundFill />
                            </div>
                            <div>Speaking</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/writing')}`} onClick={() => underDev('Writing')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/writing')}`} onClick={() => underDev('Writing')}>
+                           <div className="ham-icons">
                               <IoReader />
                            </div>
                            <div>Writing</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/listening')}`} onClick={() => underDev('Listening')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/listening')}`} onClick={() => underDev('Listening')}>
+                           <div className="ham-icons">
                               <ImHeadphones />
                            </div>
                            <div>Listening</div>
                         </div>
 
-                        <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/reading')}`} onClick={() => underDev('Reading')}>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                        <div className={`ham-styles ${activeTab('/reading')}`} onClick={() => underDev('Reading')}>
+                           <div className="ham-icons">
                               <IoBook />
                            </div>
                            <div>Reading</div>
@@ -277,16 +281,16 @@ function Ham(){
 
                   <div className='w-full  flex flex-col'>
 
-                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/')}`} onClick={() => navFromHam('home')}>
-                        <div className="rounded-lg p-2 bg-foreground/10">
+                     <div className={`ham-styles ${activeTab('/')}`} onClick={() => navFromHam('home')}>
+                        <div className="ham-icons">
                            <GoHomeFill />
                         </div>
                         <div>Home</div>
                      </div>
 
-                     <div className='w-full flex items-center gap-3 p-2 pr-0 active:bg-foreground/5 rounded-xl' onClick={toggleSubMenu1}>
+                     <div className={`w-full flex items-center gap-3 p-2 pr-0 active:bg-foreground/5 rounded-xl ${activeSubTabs(['/words', '/grammar', '/stems', '/patterns', '/synonyms', '/phrasal'])}`} onClick={toggleSubMenu1}>
                         <div className='w-full flex items-center gap-3'>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                           <div className="ham-icons">
                               <MdCategory />
                            </div>
                            <div>Sub-Skills</div>
@@ -294,9 +298,9 @@ function Ham(){
                         <MdKeyboardArrowRight size={20} />
                      </div>
 
-                     <div className={`w-full flex items-center gap-3 p-2 pr-0 active:bg-foreground/5 rounded-xl1`} onClick={toggleSubMenu2}>
+                     <div className={`w-full flex items-center gap-3 p-2 pr-0 active:bg-foreground/5 rounded-xl1 ${activeSubTabs(['/speaking', '/writing', '/reading', '/listening'])}`} onClick={toggleSubMenu2}>
                         <div className='w-full flex items-center gap-3'>
-                           <div className="rounded-lg p-2 bg-foreground/10">
+                           <div className="ham-icons">
                               <FaLayerGroup />
                            </div>
                            <div>Main Skills</div>
@@ -304,53 +308,53 @@ function Ham(){
                         <MdKeyboardArrowRight size={20} />
                      </div>
 
-                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/saved')}`} onClick={() => underDev('Saved')}>
-                        <div className="rounded-lg p-2 bg-foreground/10">
+                     <div className={`ham-styles ${activeTab('/saved')}`} onClick={() => underDev('Saved')}>
+                        <div className="ham-icons">
                            <IoSave />
                         </div>
                         <div>Saved</div>
                      </div>
 
-                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/statistics')}`} onClick={() => underDev('Statistics')}>
-                        <div className="rounded-lg p-2 bg-foreground/10">
+                     <div className={`ham-styles ${activeTab('/statistics')}`} onClick={() => underDev('Statistics')}>
+                        <div className="ham-icons">
                            <MdInsertChartOutlined />
                         </div>
                         <div>Statistics</div>
                      </div>
 
-                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/review')}`} onClick={() => underDev('Review')}>
-                        <div className="rounded-lg p-2 bg-foreground/10">
+                     <div className={`ham-styles ${activeTab('/review')}`} onClick={() => underDev('Review')}>
+                        <div className="ham-icons">
                            <RiRepeat2Fill />
                         </div>
                         <div>Review</div>
                      </div>
 
-                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/source')}`} onClick={() => navFromHam('source')}>
-                        <div className="rounded-lg p-2 bg-foreground/10">
+                     <div className={`ham-styles ${activeTab('/source')}`} onClick={() => navFromHam('source')}>
+                        <div className="ham-icons">
                            <MdSource/>
                         </div>
                         <div>Source</div>
                      </div>
 
-                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/about')}`} onClick={() => navFromHam('about')}>
-                        <div className="rounded-lg p-2 bg-foreground/10">
-                           <MdSource/>
+                     <div className={`ham-styles ${activeTab('/about')}`} onClick={() => navFromHam('about')}>
+                        <div className="ham-icons">
+                           <BsQuestionCircleFill />
                         </div>
                         <div>About Us</div>
                      </div>
 
-                     <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab ('/dev')}`} onClick={() => navFromHam('developerTools')}>
-                        <div className="rounded-lg p-2 bg-foreground/10">
-                           <MdDeveloperMode />
+                     <div className={`ham-styles ${activeTab ('/dev')}`} onClick={() => navFromHam('quiz')}>
+                        <div className="ham-icons">
+                           <TbDeviceMobileQuestion />
                         </div>
-                        <div>Developer Tools</div>
+                        <div>Quiz</div>
                      </div>
 
                   </div>
 
 
-                  <div className={`w-full flex items-center gap-3 p-2 active:bg-foreground/5 rounded-xl ${activeTab('/settings')}`} onClick={() => navFromHam('settings')}>
-                     <div className='rounded-lg p-2 bg-foreground/10'>
+                  <div className={`ham-styles ${activeTab('/settings')}`} onClick={() => navFromHam('settings')}>
+                     <div className='ham-icons'>
                         <IoSettings />
                      </div>
                      <div>Settings</div>

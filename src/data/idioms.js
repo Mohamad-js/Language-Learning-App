@@ -1378,7 +1378,7 @@ export const idioms = [
       "id": 230,
       "idiom": "Turn over a new leaf",
       "meaning": "To start fresh and improve",
-   эмоция: "I’m turning over a new leaf and doing my homework every night."
+      "example": "I’m turning over a new leaf and doing my homework every night."
    },
    {
       "id": 231,
@@ -2014,7 +2014,7 @@ export const idioms = [
       "id": 336,
       "idiom": "Cut the rug",
       "meaning": "To dance well",
-      itens: "She cut the rug at the school dance and everyone cheered."
+      "example": "She cut the rug at the school dance and everyone cheered."
    },
    {
       "id": 337,

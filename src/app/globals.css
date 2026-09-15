@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "tailwindcss/theme";
-@import "tailwindcss/theme" layer(theme);
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -70,7 +69,7 @@ a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, 
       outline: none;
 }
 
-@theme inline {
+@theme {
     --font-sans: var(--font-sans);
     --font-yanone: var(--font-yanone);
     --font-comfortaa: var(--font-comfortaa);
@@ -175,10 +174,28 @@ a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, 
 
 
 /* Default Styles */
+
+/*primary button styles*/
 @utility primary-btn {
    @apply 
       px-4 py-2
       rounded-2xl
       bg-foreground
       text-background
+}
+
+@utility ham-styles {
+    @apply
+    w-full
+    flex items-center
+    gap-3 p-2
+    rounded-xl
+    active:bg-foreground/5
+}
+
+@utility ham-icons {
+    @apply
+    rounded-lg
+    p-2
+    bg-foreground/10
 }

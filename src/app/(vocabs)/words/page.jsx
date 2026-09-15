@@ -64,7 +64,7 @@ function Words() {
          }
       };
 
-      loadAllTheWords();
+      void loadAllTheWords();
    }, [currentLevel, loadAgain]);
 
    useEffect(() => {
@@ -212,7 +212,7 @@ function Words() {
 
 
    return (
-      <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center bg-gray-100 dark:bg-background`}>
+      <div className={`fixed top-0 overflow-hidden w-full min-h-dvh flex flex-col justify-center items-center bg-background`}>
 
          <Back to='/' />
 

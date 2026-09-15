@@ -13,7 +13,7 @@ function Navigation(){
 
 
    return(
-      <div className='fixed bottom-0 left-0 w-full grid grid-cols-6 bg-background/40 backdrop-blur-xs h-15 border-t border-gray-50 z-1 px-5'>
+      <div className='fixed bottom-0 left-0 w-full grid grid-cols-6 backdrop-blur-xs h-15 border-t border-foreground bg-background z-1 px-5'>
          {tabs.map((level, index) => (
             <button
                onClick={() => setActive(index)}
@@ -38,7 +38,7 @@ function Navigation(){
                {
                   active === index && (
                      <motion.div 
-                        className="absolute -top-5 size-12 rounded-2xl bg-background shadow-lg"
+                        className="absolute -top-5 size-12 rounded-2xl bg-background border border-foreground"
                         layoutId="bubble"
                         transition={{
                            type: 'spring',
