@@ -1,15 +1,34 @@
 'use client'
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Image from 'next/image';
 import Back from '@/components/backButton/back'
+import { getAllQuizzes } from "@/lib/db";
 
 
 export default function Quiz() {
+    const [quiz, setQuiz] = useState(null)
+
+    useEffect(()=>{
+        const request = async() => {
+            try {
+                const response = await getAllQuizzes()
+
+                setQuiz(response)
+
+            } catch(error) {
+                console.error(error)
+            }
+        }
+
+        void request()
+    }, [])
+
+    console.log('quiz', quiz)
 
     return (
-        <div className='fixed w-full min-h-dvh bg-background flex flex-col'>
-            
-            <div className='fixed w-full min-h-dvh'>
+        <div className='fixed w-full h-dvh bg-background flex flex-col'>
+
+            <div className='absolute top-0 w-full min-h-dvh'>
                 <Image
                     className='object-cover object-right dark:hidden'
                     src='/images/quiz/quiz-light.jpg'
@@ -26,13 +45,24 @@ export default function Quiz() {
 
             <Back />
 
-            <div className='w-full h-15'>s</div>
+            <div className='w-full h-15'></div>
 
-            <div className='w-full p-5 flex-1 relative'>
+            <div className='w-full min-h-0 overflow-auto p-5 flex-1 relative flex flex-col gap-3'>
                 <div className='w-full h-10 text-xl font-bold text-foreground'>Quiz Time</div>
-                <div className='w-full h-10 bg-green-500'></div>
+
+                <div className='w-full min-h-0 overflow-auto flex flex-col gap-3'>
+                    {
+                        quiz?.map((item, index) => (
+                            <div key={index} className='w-full p-3 bg-background/60 border rounded-2xl'>
+                                <div className='text-xs text-gray-500'>Quiz {item.quizNumber}</div>
+                                <div className='text-xl'>{item.quizTitle}</div>
+                                <div className='text-sm'>{item.featuring}</div>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
-            
+
         </div>
     )
 }

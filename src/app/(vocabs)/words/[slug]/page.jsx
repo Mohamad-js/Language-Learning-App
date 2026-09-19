@@ -106,7 +106,6 @@ export default function Lessons({ params }) {
       
       const loadLesson = async () => {
          try {
-            setDebugInfo(`Fetching: Level=${requestedLevel}, Slug=${slug}`);
             const data = await getLessonByNumber(requestedLevel, slug);
             setSpecificLessonWords(data.words);
             setCategory(data.category);
@@ -205,12 +204,6 @@ export default function Lessons({ params }) {
       }
    }
 
-   const animation = () => {
-      setShowCongrats(true)
-      setTimeout(() => setShowConfetti(true), 500)
-      setTimeout(() => setAnime(true), 500)
-      setTimeout(() => setShowConfetti(false), 3000)
-   }
 
    useEffect(() => {
       setIsLoading2(true);

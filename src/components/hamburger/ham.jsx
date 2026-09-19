@@ -343,7 +343,7 @@ function Ham(){
                         <div>About Us</div>
                      </div>
 
-                     <div className={`ham-styles ${activeTab ('/dev')}`} onClick={() => navFromHam('quiz')}>
+                     <div className={`ham-styles ${activeTab ('/quiz')}`} onClick={() => navFromHam('quiz')}>
                         <div className="ham-icons">
                            <TbDeviceMobileQuestion />
                         </div>
