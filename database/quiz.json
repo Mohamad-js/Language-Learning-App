@@ -7,7 +7,513 @@
             "featuring": "Subject Pronouns and To be",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
-            "quizData": []
+            "quizData":  {
+               "multi": [
+                  {
+                     "number": 1,
+                     "question": "I ___ a student.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 2,
+                     "question": "You ___ a good friend.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 3,
+                     "question": "He ___ a doctor.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 4,
+                     "question": "She ___ a teacher.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 5,
+                     "question": "It ___ a small dog.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 6,
+                     "question": "We ___ happy.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 7,
+                     "question": "They ___ from Spain.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 8,
+                     "question": "John ___ a driver.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 9,
+                     "question": "Maria ___ a nurse.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 10,
+                     "question": "London ___ a big city.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 11,
+                     "question": "I ___ hungry.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 12,
+                     "question": "You ___my friend.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 13,
+                     "question": "He ___ tall.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 14,
+                     "question": "She ___ short.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 15,
+                     "question": "It ___ cold today.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 16,
+                     "question": "We ___ Students.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 17,
+                     "question": "They ___ happy.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 18,
+                     "question": "Anna ___ a baker.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 19,
+                     "question": "Paris ___ a city in France.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 20,
+                     "question": "I ___ tired.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 21,
+                     "question": "You ___ kind.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 22,
+                     "question": "He ___ young.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 23,
+                     "question": "She ___ old.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 24,
+                     "question": "It ___ a red car.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 25,
+                     "question": "We ___ from Canada.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 26,
+                     "question": "They ___ students.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 27,
+                     "question": "Peter ___ a cook.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 28,
+                     "question": "Lisa ___ a singer.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 29,
+                     "question": "Tokyo ___ a big city.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 30,
+                     "question": "I ___ ready.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 31,
+                     "question": "You ___ busy today.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 32,
+                     "question": "He ___ sick.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 33,
+                     "question": "She ___ sad.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 34,
+                     "question": "It ___ a new book.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 35,
+                     "question": "we ___ full.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 36,
+                     "question": "They ___ thirsty.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 37,
+                     "question": "Mark ___ a singer.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 38,
+                     "question": "Sara ___ a woman.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 39,
+                     "question": "Rome ___ an old city.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 40,
+                     "question": "I ___ from Japan.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 41,
+                     "question": "You ___ late.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 42,
+                     "question": "He ___ early.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 43,
+                     "question": "She ___ from Italy.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 44,
+                     "question": "It ___ a big house.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 45,
+                     "question": "We ___ ready now.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 46,
+                     "question": "They ___ tired.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 47,
+                     "question": "David ___ a butcher.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 48,
+                     "question": "Emma ___ a nurse.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 49,
+                     "question": "Egypt ___ a hot country.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 50,
+                     "question": "I ___ a good cook.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 51,
+                     "question": "You ___ funny.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 52,
+                     "question": "He ___ a farmer",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 53,
+                     "question": "She ___ a driver.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 54,
+                     "question": "It ___ a black cat.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 55,
+                     "question": "we ___ good friends.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 56,
+                     "question": "They ___ from Brazil.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 57,
+                     "question": "John ___ fat.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 58,
+                     "question": "Maria ___ thin.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 59,
+                     "question": "Spain ___ a nice country.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 60,
+                     "question": "I ___ a pilot.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 61,
+                     "question": "You ___  my sister.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 62,
+                     "question": "He ___ my brother.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 63,
+                     "question": "She ___ your mother.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 64,
+                     "question": "It ___ a small bird.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 65,
+                     "question": "We ___ at home.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 66,
+                     "question": "They ___ in the office.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 67,
+                     "question": "Tom ___ a barber.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 68,
+                     "question": "Anna ___ my cousin.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 69,
+                     "question": "Canada ___ a big country.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 70,
+                     "question": "I ___ happy today.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 71,
+                     "question": "The house ___ clean.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 72,
+                     "question": "The table ___ is dirty.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 73,
+                     "question": "It ___ The White House.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 74,
+                     "question": "We ___ kind.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 75,
+                     "question": "They ___ funny.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 76,
+                     "question": "Peter ___ my uncle.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 77,
+                     "question": "Lisa ___ a baker.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 78,
+                     "question": "Italy ___ a beautiful country.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 79,
+                     "question": "She ___ from China.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 80,
+                     "question": "You ___ nice.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 81,
+                     "question": "He ___ rich.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 82,
+                     "question": "My dad ___ poor.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 83,
+                     "question": "It ___ a big fish.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 84,
+                     "question": "They ___ busy today.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 85,
+                     "question": "Mark ___ young.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 86,
+                     "question": "Sara ___ old.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 87,
+                     "question": "It ___ a blue car.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 88,
+                     "question": "She ___ a cook.",
+                     "options": ["am", "is", "are"]
+                  },
+                  {
+                     "number": 89,
+                     "question": "Fatima is a pilot. ___ is brave.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 90,
+                     "question": "Leo and Noah are chefs. ___ are creative",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 91,
+                     "question": "The elephant is big. ___ is gray too.",
+                     "options": ["It", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 92,
+                     "question": "Kenya is a country. ___ is in Africa.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 93,
+                     "question": "Carlos is a singer. ___ is famous.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 94,
+                     "question": "Omar and Priya are students. ___ are smart.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 95,
+                     "question": "The lion is strong. ___ is fast too.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 96,
+                     "question": "Olga is a doctor. ___ is kind.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 97,
+                     "question": "Nadia and Fatima are sisters. ___ are happy.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 98,
+                     "question": "The mountain is tall. ___ is beautiful.",
+                     "options": ["It", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 99,
+                     "question": "Greece is a country. ___ is warm in summer.",
+                     "options": ["It", "He", "She", "We", "They", "You"]
+                  },
+                  {
+                     "number": 100,
+                     "question": "Leo is a pilot. ___ is brave.",
+                     "options": ["I", "He", "She", "We", "They", "You"]
+                  }
+               ]
+            },
+            "quizKeys": {
+            
+            }
          },
          {
             "quizNumber":  2,

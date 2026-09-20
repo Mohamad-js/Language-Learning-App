@@ -2,7 +2,8 @@
 import { VscWholeWord } from "react-icons/vsc";
 import { MdOutlineSpellcheck } from "react-icons/md";
 import { PiTreeStructureLight } from "react-icons/pi";
-import { VscDebugDisconnect } from "react-icons/vsc";import { GiGearStickPattern } from "react-icons/gi";
+import { VscDebugDisconnect } from "react-icons/vsc";
+import { GiGearStickPattern } from "react-icons/gi";
 import { LuGroup } from "react-icons/lu";
 import { GoArrowRight } from "react-icons/go";
 import { idioms } from "@/data/idioms";
