@@ -2,10 +2,11 @@
 import {useState, useEffect} from "react";
 import Image from 'next/image';
 import Back from '@/components/backButton/back'
-import { getAllQuizzes } from "@/lib/db";
+import { getAllQuizzes, saveQuizResult } from "@/lib/db";
 import {GoArrowRight} from "react-icons/go";
 import { motion } from "framer-motion";
 import {slideUp, fadeIn, expandParent, expandChild} from "@/lib/animations/entrance";
+import { TbFaceIdError } from "react-icons/tb";
 import {IoCloseOutline} from "react-icons/io5";
 
 
@@ -16,6 +17,10 @@ export default function Quiz() {
     const [toggleContent, setToggleContent] = useState(false)
     const [targetQuiz, setTargetQuiz] = useState(null)
     const [answers, setAnswers] = useState({})
+    const [errorModal, setErrorModal] = useState(false)
+    const [unansweredItems, setUnansweredItems] = useState(null)
+
+
 
     useEffect(()=>{
         const request = async() => {
@@ -32,8 +37,6 @@ export default function Quiz() {
         void request()
     }, [])
 
-    console.log('answers', answers)
-    
     const showQuiz = (item) => {
         setToggleContent(true)
         setTargetQuiz(item)
@@ -49,6 +52,101 @@ export default function Quiz() {
             [questionIndex]: option
         }))
     }
+
+
+    const submitQuiz = async () => {
+        if (!targetQuiz) return
+
+        const questions = targetQuiz.quizData.multi
+
+        const allAnswered = questions.every(
+            (question) => answers[question.number] !== undefined
+        )
+
+        if (!allAnswered) {
+            const unansweredQuestions = targetQuiz?.quizData?.multi
+                ?.filter((question) => answers[question.number] === undefined)
+                .map((question) => question.number) || []
+
+            setErrorModal(true)
+
+            setUnansweredItems(unansweredQuestions)
+            console.log('unansweredItems', unansweredItems)
+            console.log('unansweredQuestions', unansweredQuestions)
+
+            return
+        }
+
+
+        const quizKeys = targetQuiz.quizKeys
+
+        let correct = 0
+        let wrong = 0
+
+        const failedQuestions = []
+
+        questions.forEach((question) => {
+            const questionNumber = question.number
+            const correctAnswer = quizKeys[questionNumber]
+            const givenAnswer = answers[questionNumber] ?? null
+
+            if (givenAnswer === correctAnswer) {
+                correct++
+            } else {
+                wrong++
+
+                failedQuestions.push({
+                    number: question.number,
+                    question: question.question,
+                    options: question.options,
+                    correct: correctAnswer,
+                    given: givenAnswer
+                })
+            }
+        })
+
+        const total = questions.length
+
+        const score = total > 0
+            ? Math.round((correct / total) * 100)
+            : 0
+
+        const now = new Date()
+
+        const localDate = new Date(
+            now.getTime() - now.getTimezoneOffset() * 60000
+        )
+            .toISOString()
+            .slice(0, 19)
+
+        const userAnswers = {
+            date: localDate,
+            topic: targetQuiz.featuring,
+            quizLabel: targetQuiz.quizLabel,
+            quizLevel: targetQuiz.quizLevel,
+            total: total,
+            correct: correct,
+            wrong: wrong,
+            score: score,
+            failedQuestions: failedQuestions
+        }
+
+        console.log("USER ANSWERS:", userAnswers)
+
+        try {
+            await saveQuizResult(userAnswers)
+
+            console.log("Quiz result saved successfully")
+        } catch (error) {
+            console.error("Failed to save quiz result:", error)
+        }
+    }
+
+    
+    const closeWarning = () => {
+        setErrorModal(false)
+    }
+
 
     return (
         <div className='fixed w-full h-dvh bg-background flex flex-col'>
@@ -133,20 +231,23 @@ export default function Quiz() {
                                     {
                                         targetQuiz.quizData.multi.map((quiz, index) => {
 
-                                            const questionNumber = index + 1
+                                            const questionNumber = quiz.number
                                             
                                             return (
                                                 <div key={questionNumber}
-                                                    className='w-full'>
-                                                    <div className=''>
-                                                        {quiz.question}
+                                                    className='w-full'
+                                                >
+                                                    <div className='flex gap-3'>
+                                                        <div className=''>{quiz.number}</div>
+                                                        <div className=''>{quiz.question}</div>
                                                     </div>
 
                                                     <div className=''>
                                                         {quiz.options.map((option, optionIndex) => (
                                                             <label
                                                                 key={optionIndex}
-                                                                className="flex items-center gap-3"
+                                                                className={`flex items-center gap-3 p-3
+                                                                ${answers[questionNumber] === option && "p-2 rounded-xl border border-gray-500"}`}
                                                             >
                                                                 <input
                                                                     type="radio"
@@ -164,12 +265,56 @@ export default function Quiz() {
                                             )
                                         })
                                     }
+                                    
+                                    <div className='primary-btn'
+                                         onClick={submitQuiz}
+                                    >
+                                        Done
+                                    </div>
+
                                 </div>
                             </div>
                         </motion.div>
                     </motion.div>
             }
 
+            {
+                errorModal &&
+                    <div
+                        onClick={closeWarning}
+                        className='absolute top-0 left-0 w-full min-h-dvh bg-background/10 backdrop-blur-xs flex justify-center items-center p-10 rounded-2xl shadow-lg'
+                    >
+                        <div
+                            onClick={(e) => e.stopPropagation()}
+                            className='w-full bg-background p-10 text-center border rounded-2xl flex flex-col justify-center items-center gap-5'
+                        >
+                            <div className='text-gray-500'>
+                                <TbFaceIdError size={50} />
+                            </div>
+
+                            <div className='text-lg'>Answer all the questions before you continue!</div>
+
+                            <div className='text-sm flex flex-col gap-3'>
+                                Unanswered questions:
+                                
+                                <div className='w-full flex flex-wrap gap-3'>
+                                    {
+                                        unansweredItems?.map((item, index) => (
+                                            <div key={index} className='text-gray-500'>{item}</div>
+                                        ))
+                                    }
+                                </div>
+
+                            </div>
+
+                            <div className='w-full secondary-btn'
+                                onClick={closeWarning}
+                            >
+                                OK
+                            </div>
+                        </div>
+                    </div>
+            }
         </div>
     )
 }

@@ -177,11 +177,23 @@ a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, 
 
 /*primary button styles*/
 @utility primary-btn {
-   @apply 
-      px-4 py-2
-      rounded-2xl
-      bg-foreground
-      text-background
+    @apply
+        text-center
+        px-4 py-2
+        rounded-2xl
+        bg-foreground
+        text-background
+}
+
+@utility secondary-btn {
+    @apply
+        text-center
+        px-4 py-2
+        rounded-2xl
+        bg-foreground/0
+        border border-foreground
+        text-foreground
+        active:bg-white/10
 }
 
 @utility ham-styles {

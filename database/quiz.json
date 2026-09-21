@@ -467,7 +467,7 @@
                   {
                      "number": 92,
                      "question": "Kenya is a country. ___ is in Africa.",
-                     "options": ["I", "He", "She", "We", "They", "You"]
+                     "options": ["It", "He", "She", "We", "They", "You"]
                   },
                   {
                      "number": 93,
@@ -481,8 +481,8 @@
                   },
                   {
                      "number": 95,
-                     "question": "The lion is strong. ___ is fast too.",
-                     "options": ["I", "He", "She", "We", "They", "You"]
+                     "question": "The tiger is strong. ___ is fast too.",
+                     "options": ["It", "He", "She", "We", "They", "You"]
                   },
                   {
                      "number": 96,
@@ -496,7 +496,7 @@
                   },
                   {
                      "number": 98,
-                     "question": "The mountain is tall. ___ is beautiful.",
+                     "question": "This mountain is tall. ___ is also beautiful.",
                      "options": ["It", "He", "She", "We", "They", "You"]
                   },
                   {
@@ -511,8 +511,136 @@
                   }
                ]
             },
-            "quizKeys": {
             
+            "quizKeys": {
+               "1": "am",
+               "2": "are",
+               "3": "is",
+               "4": "is",
+               "5": "is",
+               "6": "are",
+               "7": "are",
+               "8": "is",
+               "9": "is",
+               "10": "is",
+               "11": "am",
+               "12": "are",
+               "13": "is",
+               "14": "is",
+               "15": "is",
+               "16": "are",
+               "17": "are",
+               "18": "is",
+               "19": "is",
+               "20": "am",
+               "21": "are",
+               "22": "is",
+               "23": "is",
+               "24": "is",
+               "25": "are",
+               "26": "are",
+               "27": "is",
+               "28": "is",
+               "29": "is",
+               "30": "am",
+               "31": "are",
+               "32": "is",
+               "33": "is",
+               "34": "is",
+               "35": "are",
+               "36": "are",
+               "37": "is",
+               "38": "is",
+               "39": "is",
+               "40": "am",
+               "41": "are",
+               "42": "is",
+               "43": "is",
+               "44": "is",
+               "45": "are",
+               "46": "are",
+               "47": "is",
+               "48": "is",
+               "49": "is",
+               "50": "am",
+               "51": "are",
+               "52": "is",
+               "53": "is",
+               "54": "is",
+               "55": "are",
+               "56": "are",
+               "57": "is",
+               "58": "is",
+               "59": "is",
+               "60": "am",
+               "61": "are",
+               "62": "is",
+               "63": "is",
+               "64": "is",
+               "65": "are",
+               "66": "are",
+               "67": "is",
+               "68": "is",
+               "69": "is",
+               "70": "am",
+               "71": "is",
+               "72": "is",
+               "73": "is",
+               "74": "are",
+               "75": "are",
+               "76": "is",
+               "77": "is",
+               "78": "is",
+               "79": "is",
+               "80": "are",
+               "81": "is",
+               "82": "is",
+               "83": "is",
+               "84": "are",
+               "85": "is",
+               "86": "is",
+               "87": "is",
+               "88": "is",
+               "89": "She",
+               "90": "They",
+               "91": "It",
+               "92": "It",
+               "93": "He",
+               "94": "They",
+               "95": "It",
+               "96": "She",
+               "97": "They",
+               "98": "It",
+               "99": "It",
+               "100": "He"
+            },
+            
+            "userAnswers": {
+               "date": "2026-09-21T10:42:00",
+               "topic": "Subject Pronouns and To be",
+               "quizLabel": "A1",
+               "quizLevel": "Elementary",
+               "total": 100,
+               "correct": 87,
+               "wrong": 13,
+               "score": 87,
+               
+               "failedQuestions": [
+                  {
+                     "number": 1,
+                     "question": "I ___ a student.",
+                     "options": ["am", "is", "are"],
+                     "correct": "am",
+                     "given": "is"
+                  },
+                  {
+                     "number": 6,
+                     "question": "We ___ happy.",
+                     "options": ["am", "is", "are"],
+                     "correct": "are",
+                     "given": "is"
+                  }
+               ]
             }
          },
          {
