@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+    --spacing: 0.25rem;
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 

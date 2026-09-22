@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import {slideUp, fadeIn, expandParent, expandChild} from "@/lib/animations/entrance";
 import { TbFaceIdError } from "react-icons/tb";
 import {IoCloseOutline} from "react-icons/io5";
+import { toast } from 'sonner';
 
 
 
@@ -19,8 +20,9 @@ export default function Quiz() {
     const [answers, setAnswers] = useState({})
     const [errorModal, setErrorModal] = useState(false)
     const [unansweredItems, setUnansweredItems] = useState(null)
-
-
+    const [finalWindow, setFinalWindow] = useState(false)
+    const [finalResults, setFinalResults] = useState(null)
+    
 
     useEffect(()=>{
         const request = async() => {
@@ -38,8 +40,13 @@ export default function Quiz() {
     }, [])
 
     const showQuiz = (item) => {
-        setToggleContent(true)
-        setTargetQuiz(item)
+
+        if (item.quizData.multi){
+            setToggleContent(true)
+            setTargetQuiz(item)
+        } else {
+            toast.info('Coming Soon')
+        }
     }
     
     const closeQuiz = () => {
@@ -71,8 +78,6 @@ export default function Quiz() {
             setErrorModal(true)
 
             setUnansweredItems(unansweredQuestions)
-            console.log('unansweredItems', unansweredItems)
-            console.log('unansweredQuestions', unansweredQuestions)
 
             return
         }
@@ -108,7 +113,7 @@ export default function Quiz() {
         const total = questions.length
 
         const score = total > 0
-            ? Math.round((correct / total) * 100)
+            ? Math.round((correct * 20) / 100)
             : 0
 
         const now = new Date()
@@ -131,13 +136,15 @@ export default function Quiz() {
             failedQuestions: failedQuestions
         }
 
-        console.log("USER ANSWERS:", userAnswers)
 
         try {
             await saveQuizResult(userAnswers)
+            toast.success('Progress Saved')
+            setFinalWindow(true)
+            setFinalResults(userAnswers)
 
-            console.log("Quiz result saved successfully")
         } catch (error) {
+            toast.error('Error in Saving the Answers')
             console.error("Failed to save quiz result:", error)
         }
     }
@@ -147,6 +154,10 @@ export default function Quiz() {
         setErrorModal(false)
     }
 
+
+    function closeFinalWindow() {
+        setFinalWindow(false)
+    }
 
     return (
         <div className='fixed w-full h-dvh bg-background flex flex-col'>
@@ -227,7 +238,7 @@ export default function Quiz() {
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
                                 <div className='text-xl font-bold text-grey-500'>{targetQuiz.quizTitle}</div>
                                 
-                                <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-5'>
+                                <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                     {
                                         targetQuiz.quizData.multi.map((quiz, index) => {
 
@@ -235,10 +246,10 @@ export default function Quiz() {
                                             
                                             return (
                                                 <div key={questionNumber}
-                                                    className='w-full'
+                                                    className='w-full border-0 border-b pb-5'
                                                 >
-                                                    <div className='flex gap-3'>
-                                                        <div className=''>{quiz.number}</div>
+                                                    <div className='relative flex gap-3'>
+                                                        <div className='text-foreground/20'>{quiz.number}</div>
                                                         <div className=''>{quiz.question}</div>
                                                     </div>
 
@@ -312,6 +323,69 @@ export default function Quiz() {
                             >
                                 OK
                             </div>
+                        </div>
+                    </div>
+            }
+
+            {
+                finalWindow &&
+                    <div
+                        onClick={closeFinalWindow}
+                        className='absolute top-0 left-0 w-full min-h-dvh bg-background/10 backdrop-blur-xs flex justify-center items-center p-10 rounded-2xl shadow-lg'
+                    >
+                        <div className='w-full bg-background flex flex-col justify-center items-center'>
+                            <div className='text-xl'>RESULT</div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='tesxt-xs text-gray-500'>
+                                    Score
+                                </div>
+
+                                <div className='text-xl'>
+                                    {finalResults.score}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='tesxt-xs text-gray-500'>
+                                    Correct Answers
+                                </div>
+
+                                <div className='text-xl'>
+                                    {finalResults.correct}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='tesxt-xs text-gray-500'>
+                                    Wrong Answers
+                                </div>
+
+                                <div className='text-xl'>
+                                    {finalResults.wrong}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='tesxt-xs text-gray-500'>
+                                    Total
+                                </div>
+
+                                <div className='text-xl'>
+                                    {finalResults.total}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='tesxt-xs text-gray-500'>
+                                    Total
+                                </div>
+
+                                <div className='text-xl'>
+                                    {finalResults.date}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
             }
