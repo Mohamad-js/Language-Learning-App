@@ -22,7 +22,11 @@ export default function Quiz() {
     const [unansweredItems, setUnansweredItems] = useState(null)
     const [finalWindow, setFinalWindow] = useState(false)
     const [finalResults, setFinalResults] = useState(null)
+    const [grade, setGrade] = useState(null)
+    const [toggleMistake, setToggleMistake] = useState(false)
     
+
+
 
     useEffect(()=>{
         const request = async() => {
@@ -113,8 +117,28 @@ export default function Quiz() {
         const total = questions.length
 
         const score = total > 0
-            ? Math.round((correct * 20) / 100)
-            : 0
+            ? Math.round(((correct * 20) / total) * 100) / 100
+            : 0;
+
+        let grade;
+
+        if (score <= 10) {
+            grade = "F";
+        } else if (score <= 13) {
+            grade = "E";
+        } else if (score <= 15) {
+            grade = "D";
+        } else if (score <= 17) {
+            grade = "C";
+        } else if (score < 19.5) {
+            grade = "B";
+        } else if (score < 20) {
+            grade = "A";
+        } else {
+            grade = "A+";
+        }
+
+        setGrade(grade)
 
         const now = new Date()
 
@@ -136,6 +160,7 @@ export default function Quiz() {
             failedQuestions: failedQuestions
         }
 
+        console.log('failedQuestions', userAnswers.failedQuestions)
 
         try {
             await saveQuizResult(userAnswers)
@@ -148,15 +173,25 @@ export default function Quiz() {
             console.error("Failed to save quiz result:", error)
         }
     }
-
     
     const closeWarning = () => {
         setErrorModal(false)
     }
 
-
     function closeFinalWindow() {
         setFinalWindow(false)
+        setToggleContent(false)
+    }
+
+    function openMistake() {
+        setFinalWindow(false)
+        setToggleMistake(true)
+    }
+
+    const closeEverything = () => {
+        setFinalWindow(false)
+        setToggleMistake(false)
+        setToggleContent(false)
     }
 
     return (
@@ -177,7 +212,7 @@ export default function Quiz() {
                 />
             </div>
 
-            <Back />
+            { !toggleContent && <Back /> }
 
             <div className='w-full min-h-0 overflow-auto p-5 pt-15 flex-1 relative flex flex-col gap-3'>
                 <div className='w-full h-10 text-xl font-bold text-foreground'>Quiz Time</div>
@@ -211,6 +246,12 @@ export default function Quiz() {
                                     <div className='text-sm font-semibold'>Start</div>
                                     <GoArrowRight />
                                 </div>
+
+                                {
+                                    item.userAnswers &&
+                                        <div className='absolute inset-0 w-full min-h-full bg-background/70 backdrop-blur-xs rounded-2xl flex justify-center items-center font-bold text-xl'>DONE</div>
+
+                                }
                             </motion.div>
                         ))
                     }
@@ -221,7 +262,6 @@ export default function Quiz() {
                 toggleContent &&
                     <motion.div {...fadeIn}
                         className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs p-5 pt-15'
-                         onClick={closeQuiz}
                     >
 
                         <motion.div {...slideUp}
@@ -240,7 +280,7 @@ export default function Quiz() {
                                 
                                 <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                     {
-                                        targetQuiz.quizData.multi.map((quiz, index) => {
+                                        targetQuiz.quizData.multi.map((quiz) => {
 
                                             const questionNumber = quiz.number
                                             
@@ -331,63 +371,113 @@ export default function Quiz() {
                 finalWindow &&
                     <div
                         onClick={closeFinalWindow}
-                        className='absolute top-0 left-0 w-full min-h-dvh bg-background/10 backdrop-blur-xs flex justify-center items-center p-10 rounded-2xl shadow-lg'
+                        className='absolute top-0 left-0 w-full min-h-dvh bg-background/10 backdrop-blur-xs flex justify-center items-center p-10'
                     >
-                        <div className='w-full bg-background flex flex-col justify-center items-center'>
-                            <div className='text-xl'>RESULT</div>
+                        <div
+                            onClick={(e) => e.stopPropagation()}
+                            className='w-full bg-background flex flex-col justify-center items-center border rounded-2xl gap-5 shadow-lg p-7'
+                        >
+                            
+                            <div className='w-full text-4xl flex items-center justify-center'>RESULT</div>
 
-                            <div className='w-full flex justify-between'>
-                                <div className='tesxt-xs text-gray-500'>
-                                    Score
+                            <div className='w-full p-5 bg-foreground/5 border rounded-2xl'>
+                                <div className='w-full flex justify-between items-end'>
+                                    <div className='text-sm text-gray-500'>
+                                        Grade
+                                    </div>
+
+                                    <div className='text-2xl'>
+                                        {grade}
+                                    </div>
                                 </div>
 
-                                <div className='text-xl'>
-                                    {finalResults.score}
+                                <div className='w-full flex justify-between items-end'>
+                                    <div className='text-sm text-gray-500'>
+                                        Correct Answers
+                                    </div>
+
+                                    <div className='text-2xl text-green-500'>
+                                        {finalResults.correct}
+                                    </div>
                                 </div>
+
+                                <div className='w-full flex justify-between items-end'>
+                                    <div className='text-sm text-gray-500'>
+                                        Wrong Answers
+                                    </div>
+
+                                    <div className='text-2xl text-red-500'>
+                                        {finalResults.wrong}
+                                    </div>
+                                </div>
+
                             </div>
-
-                            <div className='w-full flex justify-between'>
-                                <div className='tesxt-xs text-gray-500'>
-                                    Correct Answers
-                                </div>
-
-                                <div className='text-xl'>
-                                    {finalResults.correct}
-                                </div>
+                            <div className='w-full flex justify-between gap-5'>
+                                <div className='secondary-btn' onClick={closeFinalWindow}>Ok</div>
+                                <div className='primary-btn' onClick={openMistake}>Check My Mistakes</div>
                             </div>
-
-                            <div className='w-full flex justify-between'>
-                                <div className='tesxt-xs text-gray-500'>
-                                    Wrong Answers
-                                </div>
-
-                                <div className='text-xl'>
-                                    {finalResults.wrong}
-                                </div>
-                            </div>
-
-                            <div className='w-full flex justify-between'>
-                                <div className='tesxt-xs text-gray-500'>
-                                    Total
-                                </div>
-
-                                <div className='text-xl'>
-                                    {finalResults.total}
-                                </div>
-                            </div>
-
-                            <div className='w-full flex justify-between'>
-                                <div className='tesxt-xs text-gray-500'>
-                                    Total
-                                </div>
-
-                                <div className='text-xl'>
-                                    {finalResults.date}
-                                </div>
-                            </div>
-
                         </div>
                     </div>
+            }
+
+            {
+                toggleMistake &&
+                    <motion.div {...fadeIn}
+                        className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs p-5 pt-15'
+                    >
+
+                        <motion.div {...slideUp}
+                            onClick={(e) => e.stopPropagation()}
+                            className='w-full h-full min-h-0 flex flex-col gap-10 p-5 bg-background rounded-xl border shadow-lg'
+                        >
+                            <div className='w-full flex justify-between'>
+                                <div className='w-full'>
+                                    <div className='text-xl font-bold text-grey-500'>Your Mistakes</div>
+
+                                    <div className='w-full flex gap-1'>
+                                        <div className='text-grey-500 text-xs'>Quiz {targetQuiz?.quizNumber}:</div>
+                                        <div className='text-black text-bold text-xs'>{targetQuiz.featuring}</div>
+                                    </div>
+                                </div>
+
+                                <IoCloseOutline size={25} onClick={closeEverything} />
+                            </div>
+
+                            <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
+
+
+                                <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
+                                    {
+                                        finalResults.failedQuestions.map((item, index) => (
+                                            <div key={index} className='w-full'>
+                                                <div className='relative flex gap-3'>
+                                                    <div className='text-foreground/20'>{item.number}</div>
+                                                    <div className=''>{item.question}</div>
+                                                </div>
+
+                                                <div className='w-full flex gap-5'>
+                                                    <div className='text-gray-500 text-sm'>Your answer:</div>
+                                                    <div className='text-red-500'>{item.given}</div>
+                                                </div>
+
+                                                <div className='w-full flex gap-5'>
+                                                    <div className='text-gray-500 text-sm'>Correct answer:</div>
+                                                    <div className='text-green-500'>{item.correct}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+
+                                    <div className='primary-btn'
+                                         onClick={closeEverything}
+                                    >
+                                        Ok
+                                    </div>
+
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
             }
         </div>
     )

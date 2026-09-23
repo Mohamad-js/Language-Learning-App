@@ -186,6 +186,7 @@ a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, 
         rounded-2xl
         bg-foreground
         text-background
+        active:bg-foreground/90
 }
 
 @utility secondary-btn {
@@ -196,7 +197,7 @@ a, button, [role="button"], :where(a, button, [role="button"]):focus, :where(a, 
         bg-foreground/0
         border border-foreground
         text-foreground
-        active:bg-white/10
+        active:bg-foreground/10
 }
 
 @utility ham-styles {
