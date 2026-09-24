@@ -323,7 +323,7 @@ export default function Quiz() {
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
                                 <div className='text-xl font-bold text-grey-500'>{targetQuiz.quizTitle}</div>
                                 
-                                <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
+                                <div className='relative w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                     {
                                         targetQuiz.quizData.multi.map((quiz) => {
 
@@ -361,14 +361,16 @@ export default function Quiz() {
                                             )
                                         })
                                     }
-                                    
-                                    <div className='primary-btn'
-                                         onClick={submitQuiz}
-                                    >
-                                        Done
-                                    </div>
+
+
 
                                 </div>
+                            </div>
+
+                            <div className='w-full bg-background px-5'
+                                 onClick={submitQuiz}
+                            >
+                                <div className='secondary-btn'>DONE</div>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -459,7 +461,10 @@ export default function Quiz() {
                             </div>
                             <div className='w-full flex justify-between gap-5'>
                                 <div className='secondary-btn' onClick={closeFinalWindow}>Ok</div>
-                                <div className='primary-btn' onClick={openMistake}>Check My Mistakes</div>
+                                {
+                                    finalResults.wrong > 0  &&
+                                        <div className='primary-btn' onClick={openMistake}>Check My Mistakes</div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -468,6 +473,7 @@ export default function Quiz() {
             {
                 toggleMistake &&
                 <motion.div {...fadeIn}
+                    onClick={closeEverything}
                     className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs p-5 pt-15'
                 >
 
@@ -493,7 +499,7 @@ export default function Quiz() {
 
                             <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                 {
-                                    recData?.failedQuestions.map((item, index) => (
+                                    finalResults?.failedQuestions?.map((item, index) => (
                                         <div key={index} className='w-full'>
                                             <div className='relative flex gap-3'>
                                                 <div className='text-foreground/20'>{item.number}</div>
@@ -513,12 +519,13 @@ export default function Quiz() {
                                     ))
                                 }
 
-                                <div className='primary-btn'
-                                     onClick={closeEverything}
-                                >
-                                    Ok
-                                </div>
 
+                            </div>
+
+                            <div className='absolute bottom-0 w-full bg-background px-5'
+                                 onClick={closeEverything}
+                            >
+                                <div className='secondary-btn'>DONE</div>
                             </div>
                         </div>
                     </motion.div>
