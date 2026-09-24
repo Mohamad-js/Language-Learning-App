@@ -613,34 +613,6 @@
                "98": "It",
                "99": "It",
                "100": "He"
-            },
-            
-            "userAnswers": {
-               "date": "2026-09-21T10:42:00",
-               "topic": "Subject Pronouns and To be",
-               "quizLabel": "A1",
-               "quizLevel": "Elementary",
-               "total": 100,
-               "correct": 87,
-               "wrong": 13,
-               "score": 87,
-               
-               "failedQuestions": [
-                  {
-                     "number": 1,
-                     "question": "I ___ a student.",
-                     "options": ["am", "is", "are"],
-                     "correct": "am",
-                     "given": "is"
-                  },
-                  {
-                     "number": 6,
-                     "question": "We ___ happy.",
-                     "options": ["am", "is", "are"],
-                     "correct": "are",
-                     "given": "is"
-                  }
-               ]
             }
          },
          {

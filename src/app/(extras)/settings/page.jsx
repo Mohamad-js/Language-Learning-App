@@ -2,7 +2,7 @@
 import Switch from "@/components/switch/switch";
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
-import { resetAllProgress, resetLevelProgress } from "@/lib/db";
+import { resetAllProgress, resetLevelProgress, resetAllQuizResults } from "@/lib/db";
 import { toast } from "sonner";
 import ThemeToggle from "@/components/themeSwitch/themeToggle";
 import {
@@ -57,7 +57,18 @@ function Settings(){
          console.error('Error Restarting:', error)
       }
    }
-   
+
+   const resetQuiz = async () => {
+      try {
+         await resetAllQuizResults()
+         setWarning(false)
+         toast.info(`Quizzes Restarted`)
+
+      } catch (error){
+         console.error('Error Restarting:', error)
+      }
+   }
+
    const resetSettings = () => {
       localStorage.clear()
       
@@ -232,7 +243,7 @@ function Settings(){
                   <DropdownMenuItem>Writing</DropdownMenuItem>
                   <DropdownMenuItem>Reading</DropdownMenuItem>
                   <DropdownMenuItem>Writing</DropdownMenuItem>
-                  <DropdownMenuItem>Quiz</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => showWarning('quiz')}>Quiz</DropdownMenuItem>
                   </DropdownMenuContent>
                </DropdownMenu>
             </div>
@@ -280,8 +291,16 @@ function Settings(){
                      :  part === 'settings' ?
 
                         <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetSettings}>Yes</button>
-                     :
+
+                     :   part === 'A1' ?
+
                         <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetAction}>Yes</button>
+
+                     :   part === 'quiz' ?
+
+                         <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetQuiz}>Yes</button>
+
+                     : null
                      }
                   </div>
                </div>

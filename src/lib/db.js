@@ -407,15 +407,26 @@ export const getAllQuizzes = async () => {
 
 
 
-export const saveQuizResult = async (userAnswers) => {
-   const db = await initDB();
+export const saveQuizResult = async (quizNumber, userAnswers) => {
+   const db = await initDB()
 
-   const key = crypto.randomUUID();
+   const transaction = db.transaction("quizzes", "readwrite")
+   const store = transaction.objectStore("quizzes")
 
-   await db.put("quizResults", userAnswers, key);
+   const quizzes = await store.getAll()
 
-   return key;
-};
+   for (const quiz of quizzes) {
+      if (quiz.quizNumber === quizNumber) {
+         quiz.userAnswers = userAnswers
+
+         await store.put(quiz)
+
+         break
+      }
+   }
+
+   await transaction.done
+}
 
 
 
@@ -424,3 +435,23 @@ export const getAllQuizResults = async () => {
 
    return db.getAll("quizResults");
 };
+
+
+export const resetAllQuizResults = async () => {
+   const db = await initDB()
+
+   const transaction = db.transaction("quizzes", "readwrite")
+   const store = transaction.objectStore("quizzes")
+
+   const quizzes = await store.getAll()
+
+   for (const quiz of quizzes) {
+      if (quiz.userAnswers) {
+         delete quiz.userAnswers
+
+         await store.put(quiz)
+      }
+   }
+
+   await transaction.done
+}

@@ -51,10 +51,8 @@ export default function CategoryList() {
          }
       };
 
-      loadCategories();
+      void loadCategories();
    }, [selectedLevel]);
-
-
 
 
 
@@ -86,7 +84,7 @@ useEffect(() => {
       }
    };
 
-   loadWords();
+   void loadWords();
 
 }, [selectedLevel, selectedCategory]);
 

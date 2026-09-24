@@ -1,13 +1,13 @@
 'use client'
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Image from 'next/image';
 import Back from '@/components/backButton/back'
 import { getAllQuizzes, saveQuizResult } from "@/lib/db";
-import {GoArrowRight} from "react-icons/go";
+import { GoArrowRight } from "react-icons/go";
 import { motion } from "framer-motion";
-import {slideUp, fadeIn, expandParent, expandChild} from "@/lib/animations/entrance";
+import {  slideUp, fadeIn, expandParent, expandChild } from "@/lib/animations/entrance";
 import { TbFaceIdError } from "react-icons/tb";
-import {IoCloseOutline} from "react-icons/io5";
+import { IoCloseOutline } from "react-icons/io5";
 import { toast } from 'sonner';
 
 
@@ -24,8 +24,8 @@ export default function Quiz() {
     const [finalResults, setFinalResults] = useState(null)
     const [grade, setGrade] = useState(null)
     const [toggleMistake, setToggleMistake] = useState(false)
-    
-
+    const [recToggle, setRecToggle] = useState(false)
+    const [recData, setRecData] = useState(null)
 
 
     useEffect(()=>{
@@ -34,6 +34,7 @@ export default function Quiz() {
                 const response = await getAllQuizzes()
 
                 setQuiz(response)
+                console.log('response', response) 
 
             } catch(error) {
                 console.error(error)
@@ -46,8 +47,12 @@ export default function Quiz() {
     const showQuiz = (item) => {
 
         if (item.quizData.multi){
-            setToggleContent(true)
-            setTargetQuiz(item)
+            if(!item.userAnswers){
+                setToggleContent(true)
+                setTargetQuiz(item)
+            } else {
+                openRec(item.userAnswers)
+            }
         } else {
             toast.info('Coming Soon')
         }
@@ -157,13 +162,37 @@ export default function Quiz() {
             correct: correct,
             wrong: wrong,
             score: score,
+            grade: grade,
             failedQuestions: failedQuestions
         }
 
         console.log('failedQuestions', userAnswers.failedQuestions)
 
         try {
-            await saveQuizResult(userAnswers)
+            await saveQuizResult(targetQuiz.quizNumber, userAnswers)
+
+            // Updating the quiz list immediately
+            setQuiz(prevQuiz =>
+                prevQuiz.map(item =>
+                    item.quizNumber === targetQuiz.quizNumber
+                        ? {
+                            ...item,
+                            userAnswers: userAnswers
+                        }
+                        : item
+                )
+            )
+
+            // Also update targetQuiz
+            setTargetQuiz(prev =>
+                prev
+                    ? {
+                        ...prev,
+                        userAnswers: userAnswers
+                    }
+                    : prev
+            )
+
             toast.success('Progress Saved')
             setFinalWindow(true)
             setFinalResults(userAnswers)
@@ -178,14 +207,15 @@ export default function Quiz() {
         setErrorModal(false)
     }
 
-    function closeFinalWindow() {
+    const closeFinalWindow = () => {
         setFinalWindow(false)
         setToggleContent(false)
     }
 
-    function openMistake() {
+    const openMistake = () => {
         setFinalWindow(false)
         setToggleMistake(true)
+        setRecToggle(false)
     }
 
     const closeEverything = () => {
@@ -193,6 +223,17 @@ export default function Quiz() {
         setToggleMistake(false)
         setToggleContent(false)
     }
+
+    const openRec = (userAnswers) => {
+        setRecToggle(true)
+        setRecData(userAnswers)
+    }
+
+    const closeRec = () => {
+        setRecToggle(false)
+    }
+
+
 
     return (
         <div className='fixed w-full h-dvh bg-background flex flex-col'>
@@ -249,7 +290,11 @@ export default function Quiz() {
 
                                 {
                                     item.userAnswers &&
-                                        <div className='absolute inset-0 w-full min-h-full bg-background/70 backdrop-blur-xs rounded-2xl flex justify-center items-center font-bold text-xl'>DONE</div>
+                                    <div className='absolute inset-0 w-full min-h-full bg-background/70 backdrop-blur-xs rounded-2xl flex justify-center items-center font-bold text-xl'>
+                                        <div className='w-20 h-20 flex justify-center items-center border rounded-4xl text-4xl font-bold'>
+                                            {item.userAnswers.grade}
+                                        </div>
+                                    </div>
 
                                 }
                             </motion.div>
@@ -422,62 +467,115 @@ export default function Quiz() {
 
             {
                 toggleMistake &&
-                    <motion.div {...fadeIn}
-                        className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs p-5 pt-15'
+                <motion.div {...fadeIn}
+                    className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs p-5 pt-15'
+                >
+
+                    <motion.div {...slideUp}
+                        onClick={(e) => e.stopPropagation()}
+                        className='w-full h-full min-h-0 flex flex-col gap-10 p-5 bg-background rounded-xl border shadow-lg'
+                    >
+                        <div className='w-full flex justify-between'>
+                            <div className='w-full'>
+                                <div className='text-xl font-bold text-grey-500'>Your Mistakes</div>
+
+                                <div className='w-full flex gap-1'>
+                                    <div className='text-grey-500 text-xs'>Quiz {targetQuiz?.quizNumber}:</div>
+                                    <div className='text-black text-bold text-xs'>{targetQuiz.featuring}</div>
+                                </div>
+                            </div>
+
+                            <IoCloseOutline size={25} onClick={closeEverything} />
+                        </div>
+
+                        <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
+
+
+                            <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
+                                {
+                                    finalResults.failedQuestions.map((item, index) => (
+                                        <div key={index} className='w-full'>
+                                            <div className='relative flex gap-3'>
+                                                <div className='text-foreground/20'>{item.number}</div>
+                                                <div className=''>{item.question}</div>
+                                            </div>
+
+                                            <div className='w-full flex gap-5'>
+                                                <div className='text-gray-500 text-sm'>Your answer:</div>
+                                                <div className='text-red-500'>{item.given}</div>
+                                            </div>
+
+                                            <div className='w-full flex gap-5'>
+                                                <div className='text-gray-500 text-sm'>Correct answer:</div>
+                                                <div className='text-green-500'>{item.correct}</div>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+
+                                <div className='primary-btn'
+                                     onClick={closeEverything}
+                                >
+                                    Ok
+                                </div>
+
+                            </div>
+                        </div>
+                    </motion.div>
+                </motion.div>
+            }
+
+            {
+                recToggle &&
+                <motion.div {...fadeIn}
+                    onClick={closeRec}
+                    className='absolute top-0 left-0 w-full min-h-dvh bg-background/10 backdrop-blur-xs flex justify-center items-center p-10'
+                >
+                    <motion.div {...slideUp}
+                        onClick={(e) => e.stopPropagation()}
+                        className='w-full bg-background flex flex-col justify-center items-center border rounded-2xl gap-5 shadow-lg p-7'
                     >
 
-                        <motion.div {...slideUp}
-                            onClick={(e) => e.stopPropagation()}
-                            className='w-full h-full min-h-0 flex flex-col gap-10 p-5 bg-background rounded-xl border shadow-lg'
-                        >
-                            <div className='w-full flex justify-between'>
-                                <div className='w-full'>
-                                    <div className='text-xl font-bold text-grey-500'>Your Mistakes</div>
+                        <div className='w-full text-4xl flex items-center justify-center'>RESULT</div>
 
-                                    <div className='w-full flex gap-1'>
-                                        <div className='text-grey-500 text-xs'>Quiz {targetQuiz?.quizNumber}:</div>
-                                        <div className='text-black text-bold text-xs'>{targetQuiz.featuring}</div>
-                                    </div>
+                        <div className='w-full p-5 bg-foreground/5 border rounded-2xl'>
+                            <div className='w-full flex justify-between items-end'>
+                                <div className='text-sm text-gray-500'>
+                                    Grade
                                 </div>
 
-                                <IoCloseOutline size={25} onClick={closeEverything} />
-                            </div>
-
-                            <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
-
-
-                                <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
-                                    {
-                                        finalResults.failedQuestions.map((item, index) => (
-                                            <div key={index} className='w-full'>
-                                                <div className='relative flex gap-3'>
-                                                    <div className='text-foreground/20'>{item.number}</div>
-                                                    <div className=''>{item.question}</div>
-                                                </div>
-
-                                                <div className='w-full flex gap-5'>
-                                                    <div className='text-gray-500 text-sm'>Your answer:</div>
-                                                    <div className='text-red-500'>{item.given}</div>
-                                                </div>
-
-                                                <div className='w-full flex gap-5'>
-                                                    <div className='text-gray-500 text-sm'>Correct answer:</div>
-                                                    <div className='text-green-500'>{item.correct}</div>
-                                                </div>
-                                            </div>
-                                        ))
-                                    }
-
-                                    <div className='primary-btn'
-                                         onClick={closeEverything}
-                                    >
-                                        Ok
-                                    </div>
-
+                                <div className='text-2xl'>
+                                    {recData.grade}
                                 </div>
                             </div>
-                        </motion.div>
+
+                            <div className='w-full flex justify-between items-end'>
+                                <div className='text-sm text-gray-500'>
+                                    Correct Answers
+                                </div>
+
+                                <div className='text-2xl text-green-500'>
+                                    {recData.correct}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between items-end'>
+                                <div className='text-sm text-gray-500'>
+                                    Wrong Answers
+                                </div>
+
+                                <div className='text-2xl text-red-500'>
+                                    {recData.wrong}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className='w-full flex justify-between gap-5'>
+                            <div className='secondary-btn w-full' onClick={closeRec}>Ok</div>
+                            <div className='primary-btn w-full' onClick={openMistake}>My Errors</div>
+                        </div>
                     </motion.div>
+                </motion.div>
             }
         </div>
     )
