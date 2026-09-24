@@ -45,13 +45,12 @@ export default function Quiz() {
     }, [])
 
     const showQuiz = (item) => {
-
-        if (item.quizData.multi){
-            if(!item.userAnswers){
+        if (item.quizData.multi) {
+            if (!item.userAnswers) {
                 setToggleContent(true)
                 setTargetQuiz(item)
             } else {
-                openRec(item.userAnswers)
+                openRec(item)
             }
         } else {
             toast.info('Coming Soon')
@@ -224,9 +223,10 @@ export default function Quiz() {
         setToggleContent(false)
     }
 
-    const openRec = (userAnswers) => {
+    const openRec = (item) => {
+        setTargetQuiz(item)
         setRecToggle(true)
-        setRecData(userAnswers)
+        setRecData(item.userAnswers)
     }
 
     const closeRec = () => {
@@ -493,7 +493,7 @@ export default function Quiz() {
 
                             <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                 {
-                                    finalResults.failedQuestions.map((item, index) => (
+                                    recData?.failedQuestions.map((item, index) => (
                                         <div key={index} className='w-full'>
                                             <div className='relative flex gap-3'>
                                                 <div className='text-foreground/20'>{item.number}</div>
