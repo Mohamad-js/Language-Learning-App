@@ -11,36 +11,45 @@ cleanupOutdatedCaches();
 precacheAndRoute(self.__WB_MANIFEST || []);
 
 registerRoute(
-  /^\/api\/.*/i,
-  new NetworkFirst({
-    cacheName: 'api-cache',
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 30,
-        maxAgeSeconds: 7 * 24 * 60 * 60,
-      }),
-    ],
-  })
+    /^\/api\/.*/i,
+    new NetworkFirst({
+        cacheName: 'api-cache',
+        plugins: [
+            new ExpirationPlugin({
+                maxEntries: 30,
+                maxAgeSeconds: 7 * 24 * 60 * 60,
+                purgeOnQuotaError: true,  // ← add this
+            }),
+        ],
+    })
 );
 
 registerRoute(
-  ({ request }) => request.destination === 'image',
-  new CacheFirst({
-    cacheName: 'image-cache',
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 60,
-        maxAgeSeconds: 30 * 24 * 60 * 60,
-      }),
-    ],
-  })
+    ({ request }) => request.destination === 'image',
+    new CacheFirst({
+        cacheName: 'image-cache',
+        plugins: [
+            new ExpirationPlugin({
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+                purgeOnQuotaError: true,  // ← add this
+            }),
+        ],
+    })
 );
 
 registerRoute(
-  ({ request }) => ['script', 'style', 'font'].includes(request.destination),
-  new StaleWhileRevalidate({
-    cacheName: 'static-resources',
-  })
+    ({ request }) => ['script', 'style', 'font'].includes(request.destination),
+    new StaleWhileRevalidate({
+        cacheName: 'static-resources',
+        plugins: [
+            new ExpirationPlugin({          // ← add expiration with purge to this one too
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+                purgeOnQuotaError: true,
+            }),
+        ],
+    })
 );
 
 self.addEventListener('push', (event) => {

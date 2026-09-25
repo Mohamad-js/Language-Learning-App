@@ -2,7 +2,7 @@ import { openDB } from 'idb';
 
 export const initDB = async () => {
    // Keep your version stable at 5. Data synchronization is now handled dynamically above!
-   return openDB('VocabularyDB', 8, {
+   return openDB('VocabularyDB', 12, {
       upgrade(db) {
          // Clean up deprecated stores safely
          if (db.objectStoreNames.contains('words')) {
@@ -20,11 +20,12 @@ export const initDB = async () => {
          }
 
          // Quizzes Store
-         if (!db.objectStoreNames.contains('quizzes')) {
-            db.createObjectStore('quizzes', {
-               keyPath: 'quizTitle',
-            });
+         if (db.objectStoreNames.contains('quizzes')) {
+            db.deleteObjectStore('quizzes');
          }
+         db.createObjectStore('quizzes', {
+            keyPath: 'quizNumber',
+         });
 
          // Quiz Results Store
          if (!db.objectStoreNames.contains('quizResults')) {
@@ -415,19 +416,20 @@ export const saveQuizResult = async (quizNumber, userAnswers) => {
 
    const quizzes = await store.getAll()
 
+   console.log('all quizzes in DB:', quizzes)           // ← add this
+   console.log('looking for quizNumber:', quizNumber)   // ← add this
+
    for (const quiz of quizzes) {
       if (quiz.quizNumber === quizNumber) {
          quiz.userAnswers = userAnswers
-
          await store.put(quiz)
-
+         console.log('saved successfully:', quiz)        // ← add this
          break
       }
    }
 
    await transaction.done
 }
-
 
 
 export const getAllQuizResults = async () => {

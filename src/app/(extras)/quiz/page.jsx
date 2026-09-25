@@ -24,7 +24,6 @@ export default function Quiz() {
     const [finalResults, setFinalResults] = useState(null)
     const [grade, setGrade] = useState(null)
     const [toggleMistake, setToggleMistake] = useState(false)
-    const [recToggle, setRecToggle] = useState(false)
     const [recData, setRecData] = useState(null)
 
 
@@ -47,10 +46,8 @@ export default function Quiz() {
     const showQuiz = (item) => {
         if (item.quizData.multi) {
             if (!item.userAnswers) {
-                setToggleContent(true)
                 setTargetQuiz(item)
-            } else {
-                openRec(item)
+                setToggleContent(true)
             }
         } else {
             toast.info('Coming Soon')
@@ -211,10 +208,11 @@ export default function Quiz() {
         setToggleContent(false)
     }
 
-    const openMistake = () => {
+    const openMistake = (item) => {
         setFinalWindow(false)
         setToggleMistake(true)
-        setRecToggle(false)
+        setTargetQuiz(item)
+        setFinalResults(item.userAnswers)
     }
 
     const closeEverything = () => {
@@ -222,17 +220,6 @@ export default function Quiz() {
         setToggleMistake(false)
         setToggleContent(false)
     }
-
-    const openRec = (item) => {
-        setTargetQuiz(item)
-        setRecToggle(true)
-        setRecData(item.userAnswers)
-    }
-
-    const closeRec = () => {
-        setRecToggle(false)
-    }
-
 
 
     return (
@@ -290,10 +277,27 @@ export default function Quiz() {
 
                                 {
                                     item.userAnswers &&
-                                    <div className='absolute inset-0 w-full min-h-full bg-background/70 backdrop-blur-xs rounded-2xl flex justify-center items-center font-bold text-xl'>
+                                    <div className='absolute inset-0 w-full min-h-full bg-background/70 backdrop-blur-xs rounded-2xl flex justify-center items-center gap-5 font-bold text-xl'>
                                         <div className='w-20 h-20 flex justify-center items-center border rounded-4xl text-4xl font-bold'>
                                             {item.userAnswers.grade}
                                         </div>
+                                        
+                                        <div className='w-fit text-sm flex flex-col gap-3'>
+                                            <div className='flex flex-col'>
+                                                <div className='flex justify-between items-baseline gap-5'>
+                                                    <div className='font-light text-foreground/50'>Correct:</div>
+                                                    <div className='font-light text-green-500'>{item.userAnswers.correct}</div>
+                                                </div>
+                                                
+                                                <div className='flex justify-between items-baseline gap-5'>
+                                                    <div className='font-light text-foreground/50'>Wrong:</div>
+                                                    <div className='font-light text-red-500'>{item.userAnswers.wrong}</div>
+                                                </div>
+                                            </div>
+
+                                            <button onClick={() => openMistake(item)} className='bg-foreground text-background font-light rounded-sm text-xs py-1 px-2'>Details</button>
+                                        </div>
+
                                     </div>
 
                                 }
@@ -367,10 +371,10 @@ export default function Quiz() {
                                 </div>
                             </div>
 
-                            <div className='w-full bg-background px-5'
+                            <div className='w-full bg-background pt-3'
                                  onClick={submitQuiz}
                             >
-                                <div className='secondary-btn'>DONE</div>
+                                <button className='secondary-btn w-full'>DONE</button>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -384,13 +388,13 @@ export default function Quiz() {
                     >
                         <div
                             onClick={(e) => e.stopPropagation()}
-                            className='w-full bg-background p-10 text-center border rounded-2xl flex flex-col justify-center items-center gap-5'
+                            className='w-full bg-background p-5 text-center border rounded-2xl flex flex-col justify-center items-center gap-5'
                         >
                             <div className='text-gray-500'>
                                 <TbFaceIdError size={50} />
                             </div>
 
-                            <div className='text-lg'>Answer all the questions before you continue!</div>
+                            <div className='text-lg'>Answer All Questions!</div>
 
                             <div className='text-sm flex flex-col gap-3'>
                                 Unanswered questions:
@@ -479,15 +483,15 @@ export default function Quiz() {
 
                     <motion.div {...slideUp}
                         onClick={(e) => e.stopPropagation()}
-                        className='w-full h-full min-h-0 flex flex-col gap-10 p-5 bg-background rounded-xl border shadow-lg'
+                        className='relative w-full h-full min-h-0 flex items-center flex-col p-5 bg-background rounded-xl border shadow-lg'
                     >
-                        <div className='w-full flex justify-between'>
+                        <div className='relative w-full flex justify-between pb-5'>
                             <div className='w-full'>
                                 <div className='text-xl font-bold text-grey-500'>Your Mistakes</div>
 
                                 <div className='w-full flex gap-1'>
                                     <div className='text-grey-500 text-xs'>Quiz {targetQuiz?.quizNumber}:</div>
-                                    <div className='text-black text-bold text-xs'>{targetQuiz.featuring}</div>
+                                    <div className='text-bold text-xs'>{targetQuiz.featuring}</div>
                                 </div>
                             </div>
 
@@ -497,7 +501,7 @@ export default function Quiz() {
                         <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
 
 
-                            <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
+                            <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10 pb-20'>
                                 {
                                     finalResults?.failedQuestions?.map((item, index) => (
                                         <div key={index} className='w-full'>
@@ -519,71 +523,19 @@ export default function Quiz() {
                                     ))
                                 }
 
-
                             </div>
 
-                            <div className='absolute bottom-0 w-full bg-background px-5'
-                                 onClick={closeEverything}
-                            >
-                                <div className='secondary-btn'>DONE</div>
-                            </div>
+                        </div>
+
+                        <div className='relative bg-background bottom-0 w-full pt-5 rounded-xl'
+                             onClick={closeEverything}
+                        >
+                            <button className='secondary-btn w-full'>DONE</button>
                         </div>
                     </motion.div>
                 </motion.div>
             }
 
-            {
-                recToggle &&
-                <motion.div {...fadeIn}
-                    onClick={closeRec}
-                    className='absolute top-0 left-0 w-full min-h-dvh bg-background/10 backdrop-blur-xs flex justify-center items-center p-10'
-                >
-                    <motion.div {...slideUp}
-                        onClick={(e) => e.stopPropagation()}
-                        className='w-full bg-background flex flex-col justify-center items-center border rounded-2xl gap-5 shadow-lg p-7'
-                    >
-
-                        <div className='w-full text-4xl flex items-center justify-center'>RESULT</div>
-
-                        <div className='w-full p-5 bg-foreground/5 border rounded-2xl'>
-                            <div className='w-full flex justify-between items-end'>
-                                <div className='text-sm text-gray-500'>
-                                    Grade
-                                </div>
-
-                                <div className='text-2xl'>
-                                    {recData.grade}
-                                </div>
-                            </div>
-
-                            <div className='w-full flex justify-between items-end'>
-                                <div className='text-sm text-gray-500'>
-                                    Correct Answers
-                                </div>
-
-                                <div className='text-2xl text-green-500'>
-                                    {recData.correct}
-                                </div>
-                            </div>
-
-                            <div className='w-full flex justify-between items-end'>
-                                <div className='text-sm text-gray-500'>
-                                    Wrong Answers
-                                </div>
-
-                                <div className='text-2xl text-red-500'>
-                                    {recData.wrong}
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className='w-full flex justify-between gap-5'>
-                            <div className='secondary-btn w-full' onClick={closeRec}>Ok</div>
-                            <div className='primary-btn w-full' onClick={openMistake}>My Errors</div>
-                        </div>
-                    </motion.div>
-                </motion.div>
-            }
         </div>
     )
 }
