@@ -329,7 +329,7 @@ export default function Quiz() {
                                 
                                 <div className='relative w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                     {
-                                        targetQuiz.quizData.multi.map((quiz) => {
+                                        targetQuiz?.quizData?.multi?.map((quiz) => {
 
                                             const questionNumber = quiz.number
                                             
@@ -467,7 +467,7 @@ export default function Quiz() {
                                 <div className='secondary-btn' onClick={closeFinalWindow}>Ok</div>
                                 {
                                     finalResults.wrong > 0  &&
-                                        <div className='primary-btn' onClick={openMistake}>Check My Mistakes</div>
+                                        <div className='primary-btn' onClick={() => openMistake(targetQuiz)}>Mistakes</div>
                                 }
                             </div>
                         </div>
