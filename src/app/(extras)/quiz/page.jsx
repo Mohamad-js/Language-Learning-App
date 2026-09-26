@@ -464,10 +464,10 @@ export default function Quiz() {
 
                             </div>
                             <div className='w-full flex justify-between gap-5'>
-                                <div className='secondary-btn' onClick={closeFinalWindow}>Ok</div>
+                                <div className='secondary-btn w-full' onClick={closeFinalWindow}>Ok</div>
                                 {
                                     finalResults.wrong > 0  &&
-                                        <div className='primary-btn' onClick={() => openMistake(targetQuiz)}>Mistakes</div>
+                                        <div className='primary-btn w-full' onClick={() => openMistake(targetQuiz)}>Mistakes</div>
                                 }
                             </div>
                         </div>
@@ -527,11 +527,11 @@ export default function Quiz() {
 
                         </div>
 
-                        <div className='relative bg-background bottom-0 w-full pt-5 rounded-xl'
-                             onClick={closeEverything}
-                        >
-                            <button className='secondary-btn w-full'>DONE</button>
-                        </div>
+                        {/*<div className='relative bg-background bottom-0 w-full pt-5 rounded-xl'*/}
+                        {/*     onClick={closeEverything}*/}
+                        {/*>*/}
+                        {/*    <button className='secondary-btn w-full'>DONE</button>*/}
+                        {/*</div>*/}
                     </motion.div>
                 </motion.div>
             }

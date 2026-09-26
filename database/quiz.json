@@ -868,7 +868,7 @@
                   },
                   {
                      "number": 28,
-                     "question": "She has small ___.",
+                     "question": "She has some small ___.",
                      "options": [
                         "foot",
                         "foots",
@@ -976,11 +976,11 @@
                   },
                   {
                      "number": 40,
-                     "question": "My mother has two ___.",
+                     "question": "I have ___.",
                      "options": [
-                        "knife",
-                        "knifes",
-                        "knives"
+                        "a blue jean",
+                        "blue jeans",
+                        "a blue jeans"
                      ]
                   },
                   {
@@ -1039,7 +1039,7 @@
                   },
                   {
                      "number": 47,
-                     "question": "I have two ___ in my family.",
+                     "question": "We are two ___ in my family.",
                      "options": [
                         "peoples",
                         "people",
@@ -1057,11 +1057,11 @@
                   },
                   {
                      "number": 49,
-                     "question": "He has many ___ of clothes.",
+                     "question": "I wear ___ for my eyes.",
                      "options": [
-                        "boxs",
-                        "boxen",
-                        "boxes"
+                        "a glass",
+                        "glasses",
+                        "a glasses"
                      ]
                   },
                   {
@@ -1095,23 +1095,23 @@
                      "number": 53,
                      "question": "This is the ___ house.",
                      "options": [
-                        "teachers'",
+                        "teachers's",
                         "teacher's",
                         "teachers"
                      ]
                   },
                   {
                      "number": 54,
-                     "question": "Those are the ___ bikes. (two boys)",
+                     "question": "Those are this ___ bikes.",
                      "options": [
-                        "boys'",
+                        "boys's",
                         "boy's",
-                        "boys"
+                        "boys'"
                      ]
                   },
                   {
                      "number": 55,
-                     "question": "This is ___ pen. (one girl)",
+                     "question": "This is that ___ pen.",
                      "options": [
                         "girls'",
                         "girls",
@@ -1124,21 +1124,21 @@
                      "options": [
                         "James",
                         "James's",
-                        "Jamess"
+                        "James'"
                      ]
                   },
                   {
                      "number": 57,
-                     "question": "The ___ room is upstairs. (one man)",
+                     "question": "Those ___ room is upstairs.",
                      "options": [
                         "man's",
-                        "mans",
+                        "mans'",
                         "men's"
                      ]
                   },
                   {
                      "number": 58,
-                     "question": "Those are the ___ shoes.",
+                     "question": "Those are these ___ shoes.",
                      "options": [
                         "womens'",
                         "woman's",
@@ -1147,7 +1147,7 @@
                   },
                   {
                      "number": 59,
-                     "question": "This is my ___ house.",
+                     "question": "This is my ___ house, Anna.",
                      "options": [
                         "sisters",
                         "sister's",
@@ -1156,7 +1156,7 @@
                   },
                   {
                      "number": 60,
-                     "question": "That is the ___ ball. (one dog)",
+                     "question": "That is a ___ ball.",
                      "options": [
                         "dog's",
                         "dogs",
@@ -1165,7 +1165,7 @@
                   },
                   {
                      "number": 61,
-                     "question": "Those are the ___ desks. (many students)",
+                     "question": "Those are my ___ desks.",
                      "options": [
                         "student's",
                         "students",
@@ -1176,23 +1176,23 @@
                      "number": 62,
                      "question": "This is ___ bag.",
                      "options": [
-                        "Alex",
+                        "Alex'",
                         "Alex's",
                         "Alexs"
                      ]
                   },
                   {
                      "number": 63,
-                     "question": "The ___ toy is red. (one child)",
+                     "question": "The ___ toy is red.",
                      "options": [
                         "child's",
-                        "childs",
-                        "children's"
+                        "childs'",
+                        "childrens'"
                      ]
                   },
                   {
                      "number": 64,
-                     "question": "Those are my ___ books. (two brothers)",
+                     "question": "Those are my younger ___ books, Alan.",
                      "options": [
                         "brother's",
                         "brothers",
@@ -1201,11 +1201,11 @@
                   },
                   {
                      "number": 65,
-                     "question": "This is the ___ office. (one boss)",
+                     "question": "This is the ___ office. He will like it.",
                      "options": [
                         "bosses'",
                         "boss's",
-                        "bosses"
+                        "boss'"
                      ]
                   },
                   {
@@ -1228,7 +1228,7 @@
                   },
                   {
                      "number": 68,
-                     "question": "Those are the ___ coats. (many men)",
+                     "question": "Those are the ___ coats, not women's.",
                      "options": [
                         "man's",
                         "men's",
@@ -1237,7 +1237,7 @@
                   },
                   {
                      "number": 69,
-                     "question": "This is ___ classroom. (one teacher)",
+                     "question": "This is ___ classroom. They rest here.",
                      "options": [
                         "teacher's",
                         "teachers",
@@ -1246,7 +1246,7 @@
                   },
                   {
                      "number": 70,
-                     "question": "That is the ___ tail. (one cat)",
+                     "question": "That is the ___ tail.",
                      "options": [
                         "cats",
                         "cats'",
@@ -1255,7 +1255,7 @@
                   },
                   {
                      "number": 71,
-                     "question": "Those are the ___ hats. (many girls)",
+                     "question": "Those are that ___ hats.",
                      "options": [
                         "girls",
                         "girls'",
@@ -1264,16 +1264,16 @@
                   },
                   {
                      "number": 72,
-                     "question": "This is ___ favorite toy. (one baby)",
+                     "question": "This is ___ favorite toy. They like it.",
                      "options": [
                         "baby's",
-                        "babys",
+                        "babys'",
                         "babies'"
                      ]
                   },
                   {
                      "number": 73,
-                     "question": "The ___ farm is big. (one farmer)",
+                     "question": "That ___ farm is big.",
                      "options": [
                         "farmers",
                         "farmers'",
@@ -1282,7 +1282,7 @@
                   },
                   {
                      "number": 74,
-                     "question": "Those are the ___ hands. (many people)",
+                     "question": "This is our ___ life.",
                      "options": [
                         "person's",
                         "people's",
@@ -1294,7 +1294,7 @@
                      "question": "That is ___ umbrella.",
                      "options": [
                         "Chris's",
-                        "Chriss",
+                        "Chris'",
                         "Chris"
                      ]
                   },
@@ -1524,6 +1524,109 @@
                      ]
                   }
                ]
+            },
+            
+            "quizKeys": {
+               "1": "goes",
+               "2": "plays",
+               "3": "cooks",
+               "4": "cries",
+               "5": "does",
+               "6": "speaks",
+               "7": "rains",
+               "8": "watches",
+               "9": "plays",
+               "10": "has",
+               "11": "brushes",
+               "12": "opens",
+               "13": "rides",
+               "14": "tidies",
+               "15": "listens",
+               "16": "starts",
+               "17": "has",
+               "18": "buys",
+               "19": "barks",
+               "20": "enjoys",
+               "21": "drives",
+               "22": "grows",
+               "23": "makes",
+               "24": "says",
+               "25": "works",
+               "26": "children",
+               "27": "men",
+               "28": "feet",
+               "29": "news",
+               "30": "sheep",
+               "31": "women",
+               "32": "fish",
+               "33": "Mathematics",
+               "34": "babies",
+               "35": "mice",
+               "36": "tomatoes",
+               "37": "teeth",
+               "38": "knives",
+               "39": "deer",
+               "40": "blue jeans",
+               "41": "Physics",
+               "42": "cities",
+               "43": "wives",
+               "44": "potatoes",
+               "45": "classes",
+               "46": "leaves",
+               "47": "people",
+               "48": "boxes",
+               "49": "glasses",
+               "50": "Athletics",
+               "51": "John's",
+               "52": "children's",
+               "53": "teacher's",
+               "54": "boy's",
+               "55": "girl's",
+               "56": "James's",
+               "57": "men's",
+               "58": "women's",
+               "59": "sister's",
+               "60": "dog's",
+               "61": "students'",
+               "62": "Alex's",
+               "63": "child's",
+               "64": "brother's",
+               "65": "boss's",
+               "66": "Charles's",
+               "67": "bird's",
+               "68": "men's",
+               "69": "teachers'",
+               "70": "cat's",
+               "71": "girl's",
+               "72": "babies'",
+               "73": "farmer's",
+               "74": "people's",
+               "75": "Chris's",
+               "76": "is",
+               "77": "has",
+               "78": "is",
+               "79": "is",
+               "80": "has",
+               "81": "is",
+               "82": "is",
+               "83": "is",
+               "84": "has",
+               "85": "is",
+               "86": "is",
+               "87": "has",
+               "88": "is",
+               "89": "has",
+               "90": "is",
+               "91": "is",
+               "92": "has",
+               "93": "is",
+               "94": "has",
+               "95": "is",
+               "96": "has",
+               "97": "is",
+               "98": "is",
+               "99": "has",
+               "100": "is"
             }
          },
          {

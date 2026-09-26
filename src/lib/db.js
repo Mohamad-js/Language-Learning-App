@@ -2,7 +2,7 @@ import { openDB } from 'idb';
 
 export const initDB = async () => {
    // Keep your version stable at 5. Data synchronization is now handled dynamically above!
-   return openDB('VocabularyDB', 13, {
+   return openDB('VocabularyDB', 15, {
       upgrade(db) {
          // Clean up deprecated stores safely
          if (db.objectStoreNames.contains('words')) {
@@ -19,13 +19,12 @@ export const initDB = async () => {
             store.createIndex('status', 'status', { unique: false });
          }
 
-         // Quizzes Store
-         if (db.objectStoreNames.contains('quizzes')) {
-            db.deleteObjectStore('quizzes');
+         // Quizzes Store — never delete, or user progress stored on these records is wiped
+         if (!db.objectStoreNames.contains('quizzes')) {
+            db.createObjectStore('quizzes', {
+               keyPath: 'quizNumber',
+            });
          }
-         db.createObjectStore('quizzes', {
-            keyPath: 'quizNumber',
-         });
 
          // Quiz Results Store
          if (!db.objectStoreNames.contains('quizResults')) {
