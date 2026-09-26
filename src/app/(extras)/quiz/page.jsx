@@ -239,7 +239,7 @@ export default function Quiz() {
                 />
             </div>
 
-            { !toggleContent && <Back /> }
+            { !toggleContent && !toggleMistake && <Back /> }
 
             <div className='w-full min-h-0 overflow-auto px-5 pt-15 pb-0 flex-1 relative flex flex-col gap-3'>
                 <div className='w-full h-10 text-xl font-bold text-foreground'>Quiz Time</div>
@@ -255,7 +255,7 @@ export default function Quiz() {
                         quiz?.map((item, index) => (
                             <motion.div
                                 variants={expandChild} key={index}
-                                className='w-full p-5 bg-background/60 border rounded-2xl backdrop-blur-xs flex flex-col gap-5'
+                                className='w-full p-5 bg-background/60 border rounded-2xl backdrop-blur-xs flex flex-col items-center gap-5'
                                  onClick={()=> showQuiz(item)}
                             >
                                 <div className='w-full flex justify-between'>
@@ -277,24 +277,14 @@ export default function Quiz() {
                                 {
                                     item.userAnswers &&
                                     <div className='absolute inset-0 w-full min-h-full bg-background/70 backdrop-blur-xs rounded-2xl flex justify-center items-center gap-5 font-bold text-xl'>
-                                        <div className='w-20 h-20 flex justify-center items-center border rounded-4xl text-4xl font-bold'>
-                                            {item.userAnswers.grade}
-                                        </div>
-                                        
-                                        <div className='w-fit text-sm flex flex-col gap-3'>
-                                            <div className='flex flex-col'>
-                                                <div className='flex justify-between items-baseline gap-5'>
-                                                    <div className='font-light text-foreground/50'>Correct:</div>
-                                                    <div className='font-light text-green-500'>{item.userAnswers.correct}</div>
-                                                </div>
-                                                
-                                                <div className='flex justify-between items-baseline gap-5'>
-                                                    <div className='font-light text-foreground/50'>Wrong:</div>
-                                                    <div className='font-light text-red-500'>{item.userAnswers.wrong}</div>
-                                                </div>
+                                        <div className='flex flex-col justify-center items-center gap-3'>
+                                            <div className='w-20 h-20 flex justify-center items-center border rounded-4xl text-4xl font-bold'>
+                                                {item.userAnswers.grade}
+
                                             </div>
 
-                                            <button onClick={() => openMistake(item)} className='bg-foreground text-background font-light rounded-sm text-xs py-1 px-2'>Report</button>
+                                            <button onClick={() => openMistake(item)} className='w-full bg-foreground text-background font-light rounded-xl text-xs py-1 px-2'>Report</button>
+
                                         </div>
 
                                     </div>
@@ -477,7 +467,7 @@ export default function Quiz() {
                 toggleMistake &&
                 <motion.div {...fadeIn}
                     onClick={closeEverything}
-                    className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs p-5 pt-15'
+                    className='absolute inset-0 top-0 w-full h-dvh bg-background/10 border flex flex-col items-center justify-center backdrop-blur-xs p-5 pt-15'
                 >
 
                     <motion.div {...slideUp}
