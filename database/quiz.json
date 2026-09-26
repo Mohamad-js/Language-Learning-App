@@ -7,7 +7,7 @@
             "featuring": "Subject Pronouns and To be",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
-            "quizData":  {
+            "quizData": {
                "multi": [
                   {
                      "number": 1,
@@ -181,7 +181,7 @@
                   },
                   {
                      "number": 35,
-                     "question": "we ___ full.",
+                     "question": "We ___ full.",
                      "options": ["am", "is", "are"]
                   },
                   {
@@ -281,7 +281,7 @@
                   },
                   {
                      "number": 55,
-                     "question": "we ___ good friends.",
+                     "question": "We ___ good friends.",
                      "options": ["am", "is", "are"]
                   },
                   {
@@ -366,12 +366,12 @@
                   },
                   {
                      "number": 72,
-                     "question": "The table ___ is dirty.",
+                     "question": "The table ___ dirty.",
                      "options": ["am", "is", "are"]
                   },
                   {
                      "number": 73,
-                     "question": "It ___ The White House.",
+                     "question": "It ___ the White House.",
                      "options": ["am", "is", "are"]
                   },
                   {
@@ -621,7 +621,910 @@
             "featuring": "Different Types of 'S'",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
-            "quizData": []
+            "quizData": {
+               "multi": [
+                  {
+                     "number": 1,
+                     "question": "She ___ to school every day.",
+                     "options": [
+                        "go",
+                        "going",
+                        "goes"
+                     ]
+                  },
+                  {
+                     "number": 2,
+                     "question": "He ___ football on Saturdays.",
+                     "options": [
+                        "playes",
+                        "plays",
+                        "play"
+                     ]
+                  },
+                  {
+                     "number": 3,
+                     "question": "My mother ___ dinner every evening.",
+                     "options": [
+                        "cooks",
+                        "cook",
+                        "cooking"
+                     ]
+                  },
+                  {
+                     "number": 4,
+                     "question": "The baby ___ a lot.",
+                     "options": [
+                        "cry",
+                        "cryes",
+                        "cries"
+                     ]
+                  },
+                  {
+                     "number": 5,
+                     "question": "Tom ___ his homework after school.",
+                     "options": [
+                        "dois",
+                        "does",
+                        "do"
+                     ]
+                  },
+                  {
+                     "number": 6,
+                     "question": "She ___ English very well.",
+                     "options": [
+                        "speaks",
+                        "speak",
+                        "speakes"
+                     ]
+                  },
+                  {
+                     "number": 7,
+                     "question": "It usually ___ in April.",
+                     "options": [
+                        "rain",
+                        "raines",
+                        "rains"
+                     ]
+                  },
+                  {
+                     "number": 8,
+                     "question": "He ___ TV in the evening.",
+                     "options": [
+                        "watchs",
+                        "watches",
+                        "watch"
+                     ]
+                  },
+                  {
+                     "number": 9,
+                     "question": "My sister ___ the piano.",
+                     "options": [
+                        "plays",
+                        "play",
+                        "playes"
+                     ]
+                  },
+                  {
+                     "number": 10,
+                     "question": "He ___ two languages.",
+                     "options": [
+                        "have",
+                        "haves",
+                        "has"
+                     ]
+                  },
+                  {
+                     "number": 11,
+                     "question": "She ___ her teeth twice a day.",
+                     "options": [
+                        "brushs",
+                        "brushes",
+                        "brush"
+                     ]
+                  },
+                  {
+                     "number": 12,
+                     "question": "The shop ___ at 9 a.m.",
+                     "options": [
+                        "opens",
+                        "open",
+                        "openes"
+                     ]
+                  },
+                  {
+                     "number": 13,
+                     "question": "He ___ his bike to work.",
+                     "options": [
+                        "ride",
+                        "rideies",
+                        "rides"
+                     ]
+                  },
+                  {
+                     "number": 14,
+                     "question": "My brother ___ his room every week.",
+                     "options": [
+                        "tidys",
+                        "tidies",
+                        "tidy"
+                     ]
+                  },
+                  {
+                     "number": 15,
+                     "question": "She ___ to music at night.",
+                     "options": [
+                        "listens",
+                        "listen",
+                        "listenes"
+                     ]
+                  },
+                  {
+                     "number": 16,
+                     "question": "It ___ at 8 o'clock.",
+                     "options": [
+                        "start",
+                        "startes",
+                        "starts"
+                     ]
+                  },
+                  {
+                     "number": 17,
+                     "question": "He ___ a shower every morning.",
+                     "options": [
+                        "haves",
+                        "has",
+                        "have"
+                     ]
+                  },
+                  {
+                     "number": 18,
+                     "question": "She ___ pizza on Fridays.",
+                     "options": [
+                        "buys",
+                        "buy",
+                        "buies"
+                     ]
+                  },
+                  {
+                     "number": 19,
+                     "question": "The dog ___ at strangers.",
+                     "options": [
+                        "bark",
+                        "barkes",
+                        "barks"
+                     ]
+                  },
+                  {
+                     "number": 20,
+                     "question": "He ___ his job.",
+                     "options": [
+                        "enjois",
+                        "enjoys",
+                        "enjoy"
+                     ]
+                  },
+                  {
+                     "number": 21,
+                     "question": "She ___ a red car.",
+                     "options": [
+                        "drives",
+                        "drive",
+                        "drivees"
+                     ]
+                  },
+                  {
+                     "number": 22,
+                     "question": "My father ___ vegetables in the garden.",
+                     "options": [
+                        "grow",
+                        "growes",
+                        "grows"
+                     ]
+                  },
+                  {
+                     "number": 23,
+                     "question": "He ___ a mistake sometimes.",
+                     "options": [
+                        "makees",
+                        "makes",
+                        "make"
+                     ]
+                  },
+                  {
+                     "number": 24,
+                     "question": "She ___ yes to every question.",
+                     "options": [
+                        "says",
+                        "say",
+                        "saies"
+                     ]
+                  },
+                  {
+                     "number": 25,
+                     "question": "It ___ six days a week.",
+                     "options": [
+                        "work",
+                        "workes",
+                        "works"
+                     ]
+                  },
+                  {
+                     "number": 26,
+                     "question": "I have two ___.",
+                     "options": [
+                        "childrens",
+                        "children",
+                        "childs"
+                     ]
+                  },
+                  {
+                     "number": 27,
+                     "question": "There are three ___ in the room.",
+                     "options": [
+                        "men",
+                        "man",
+                        "mans"
+                     ]
+                  },
+                  {
+                     "number": 28,
+                     "question": "She has small ___.",
+                     "options": [
+                        "foot",
+                        "foots",
+                        "feet"
+                     ]
+                  },
+                  {
+                     "number": 29,
+                     "question": "The ___ is on TV every night at 7.",
+                     "options": [
+                        "newses",
+                        "news",
+                        "new"
+                     ]
+                  },
+                  {
+                     "number": 30,
+                     "question": "I can see many ___ in the field.",
+                     "options": [
+                        "sheep",
+                        "sheeps",
+                        "sheepies"
+                     ]
+                  },
+                  {
+                     "number": 31,
+                     "question": "There are ten ___ in my class.",
+                     "options": [
+                        "womans",
+                        "womens",
+                        "women"
+                     ]
+                  },
+                  {
+                     "number": 32,
+                     "question": "He caught three ___.",
+                     "options": [
+                        "fishes",
+                        "fish",
+                        "fishs"
+                     ]
+                  },
+                  {
+                     "number": 33,
+                     "question": "___ is my favorite subject.",
+                     "options": [
+                        "Mathematics",
+                        "Mathematic",
+                        "Mathematices"
+                     ]
+                  },
+                  {
+                     "number": 34,
+                     "question": "I have two ___.",
+                     "options": [
+                        "babys",
+                        "babyes",
+                        "babies"
+                     ]
+                  },
+                  {
+                     "number": 35,
+                     "question": "There are many ___ in the forest.",
+                     "options": [
+                        "mouses",
+                        "mice",
+                        "mouse"
+                     ]
+                  },
+                  {
+                     "number": 36,
+                     "question": "He ate two ___.",
+                     "options": [
+                        "tomatoes",
+                        "tomatos",
+                        "tomato"
+                     ]
+                  },
+                  {
+                     "number": 37,
+                     "question": "She has white ___.",
+                     "options": [
+                        "tooths",
+                        "tooth",
+                        "teeth"
+                     ]
+                  },
+                  {
+                     "number": 38,
+                     "question": "There are five ___ on the table.",
+                     "options": [
+                        "knifs",
+                        "knives",
+                        "knifes"
+                     ]
+                  },
+                  {
+                     "number": 39,
+                     "question": "I saw two ___ near the river.",
+                     "options": [
+                        "deer",
+                        "deers",
+                        "deeries"
+                     ]
+                  },
+                  {
+                     "number": 40,
+                     "question": "My mother has two ___.",
+                     "options": [
+                        "knife",
+                        "knifes",
+                        "knives"
+                     ]
+                  },
+                  {
+                     "number": 41,
+                     "question": "___ is a difficult subject for me.",
+                     "options": [
+                        "Physices",
+                        "Physics",
+                        "Physic"
+                     ]
+                  },
+                  {
+                     "number": 42,
+                     "question": "There are many ___ in this city.",
+                     "options": [
+                        "cities",
+                        "citys",
+                        "cityes"
+                     ]
+                  },
+                  {
+                     "number": 43,
+                     "question": "He has two ___.",
+                     "options": [
+                        "wifes",
+                        "wifs",
+                        "wives"
+                     ]
+                  },
+                  {
+                     "number": 44,
+                     "question": "I bought three ___ at the market.",
+                     "options": [
+                        "potato",
+                        "potatoes",
+                        "potatos"
+                     ]
+                  },
+                  {
+                     "number": 45,
+                     "question": "There are twenty ___ in my school.",
+                     "options": [
+                        "classes",
+                        "classs",
+                        "class"
+                     ]
+                  },
+                  {
+                     "number": 46,
+                     "question": "She has three ___.",
+                     "options": [
+                        "leafs",
+                        "leafes",
+                        "leaves"
+                     ]
+                  },
+                  {
+                     "number": 47,
+                     "question": "I have two ___ in my family.",
+                     "options": [
+                        "peoples",
+                        "people",
+                        "persons"
+                     ]
+                  },
+                  {
+                     "number": 48,
+                     "question": "There are many ___ on the bus.",
+                     "options": [
+                        "boxes",
+                        "boxs",
+                        "box"
+                     ]
+                  },
+                  {
+                     "number": 49,
+                     "question": "He has many ___ of clothes.",
+                     "options": [
+                        "boxs",
+                        "boxen",
+                        "boxes"
+                     ]
+                  },
+                  {
+                     "number": 50,
+                     "question": "___ is my favorite sport.",
+                     "options": [
+                        "Athletices",
+                        "Athletics",
+                        "Athletic"
+                     ]
+                  },
+                  {
+                     "number": 51,
+                     "question": "This is ___ book.",
+                     "options": [
+                        "John's",
+                        "John",
+                        "Johns"
+                     ]
+                  },
+                  {
+                     "number": 52,
+                     "question": "The ___ toys are on the floor.",
+                     "options": [
+                        "childrens",
+                        "childs'",
+                        "children's"
+                     ]
+                  },
+                  {
+                     "number": 53,
+                     "question": "This is the ___ house.",
+                     "options": [
+                        "teachers'",
+                        "teacher's",
+                        "teachers"
+                     ]
+                  },
+                  {
+                     "number": 54,
+                     "question": "Those are the ___ bikes. (two boys)",
+                     "options": [
+                        "boys'",
+                        "boy's",
+                        "boys"
+                     ]
+                  },
+                  {
+                     "number": 55,
+                     "question": "This is ___ pen. (one girl)",
+                     "options": [
+                        "girls'",
+                        "girls",
+                        "girl's"
+                     ]
+                  },
+                  {
+                     "number": 56,
+                     "question": "That is ___ car.",
+                     "options": [
+                        "James",
+                        "James's",
+                        "Jamess"
+                     ]
+                  },
+                  {
+                     "number": 57,
+                     "question": "The ___ room is upstairs. (one man)",
+                     "options": [
+                        "man's",
+                        "mans",
+                        "men's"
+                     ]
+                  },
+                  {
+                     "number": 58,
+                     "question": "Those are the ___ shoes.",
+                     "options": [
+                        "womens'",
+                        "woman's",
+                        "women's"
+                     ]
+                  },
+                  {
+                     "number": 59,
+                     "question": "This is my ___ house.",
+                     "options": [
+                        "sisters",
+                        "sister's",
+                        "sisters'"
+                     ]
+                  },
+                  {
+                     "number": 60,
+                     "question": "That is the ___ ball. (one dog)",
+                     "options": [
+                        "dog's",
+                        "dogs",
+                        "dogs'"
+                     ]
+                  },
+                  {
+                     "number": 61,
+                     "question": "Those are the ___ desks. (many students)",
+                     "options": [
+                        "student's",
+                        "students",
+                        "students'"
+                     ]
+                  },
+                  {
+                     "number": 62,
+                     "question": "This is ___ bag.",
+                     "options": [
+                        "Alex",
+                        "Alex's",
+                        "Alexs"
+                     ]
+                  },
+                  {
+                     "number": 63,
+                     "question": "The ___ toy is red. (one child)",
+                     "options": [
+                        "child's",
+                        "childs",
+                        "children's"
+                     ]
+                  },
+                  {
+                     "number": 64,
+                     "question": "Those are my ___ books. (two brothers)",
+                     "options": [
+                        "brother's",
+                        "brothers",
+                        "brothers'"
+                     ]
+                  },
+                  {
+                     "number": 65,
+                     "question": "This is the ___ office. (one boss)",
+                     "options": [
+                        "bosses'",
+                        "boss's",
+                        "bosses"
+                     ]
+                  },
+                  {
+                     "number": 66,
+                     "question": "That is ___ hat.",
+                     "options": [
+                        "Charles's",
+                        "Charless",
+                        "Charles"
+                     ]
+                  },
+                  {
+                     "number": 67,
+                     "question": "This ___ nest is in the tree.",
+                     "options": [
+                        "birds",
+                        "birds'",
+                        "bird's"
+                     ]
+                  },
+                  {
+                     "number": 68,
+                     "question": "Those are the ___ coats. (many men)",
+                     "options": [
+                        "man's",
+                        "men's",
+                        "mens'"
+                     ]
+                  },
+                  {
+                     "number": 69,
+                     "question": "This is ___ classroom. (one teacher)",
+                     "options": [
+                        "teacher's",
+                        "teachers",
+                        "teachers'"
+                     ]
+                  },
+                  {
+                     "number": 70,
+                     "question": "That is the ___ tail. (one cat)",
+                     "options": [
+                        "cats",
+                        "cats'",
+                        "cat's"
+                     ]
+                  },
+                  {
+                     "number": 71,
+                     "question": "Those are the ___ hats. (many girls)",
+                     "options": [
+                        "girls",
+                        "girls'",
+                        "girl's"
+                     ]
+                  },
+                  {
+                     "number": 72,
+                     "question": "This is ___ favorite toy. (one baby)",
+                     "options": [
+                        "baby's",
+                        "babys",
+                        "babies'"
+                     ]
+                  },
+                  {
+                     "number": 73,
+                     "question": "The ___ farm is big. (one farmer)",
+                     "options": [
+                        "farmers",
+                        "farmers'",
+                        "farmer's"
+                     ]
+                  },
+                  {
+                     "number": 74,
+                     "question": "Those are the ___ hands. (many people)",
+                     "options": [
+                        "person's",
+                        "people's",
+                        "peoples'"
+                     ]
+                  },
+                  {
+                     "number": 75,
+                     "question": "That is ___ umbrella.",
+                     "options": [
+                        "Chris's",
+                        "Chriss",
+                        "Chris"
+                     ]
+                  },
+                  {
+                     "number": 76,
+                     "question": "She's reading a book. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 77,
+                     "question": "He's got a new car. → 's means:",
+                     "options": [
+                        "does",
+                        "has",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 78,
+                     "question": "It's raining today. → 's means:",
+                     "options": [
+                        "is",
+                        "has",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 79,
+                     "question": "My dad's a doctor. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 80,
+                     "question": "She's two brothers. → 's means:",
+                     "options": [
+                        "does",
+                        "has",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 81,
+                     "question": "The cat's sleeping on the sofa. → 's means:",
+                     "options": [
+                        "is",
+                        "has",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 82,
+                     "question": "He's tired today. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 83,
+                     "question": "There's a book on the table. → 's means:",
+                     "options": [
+                        "does",
+                        "is",
+                        "has"
+                     ]
+                  },
+                  {
+                     "number": 84,
+                     "question": "She's got long hair. → 's means:",
+                     "options": [
+                        "has",
+                        "is",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 85,
+                     "question": "My brother's at school now. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 86,
+                     "question": "It's a big house. → 's means:",
+                     "options": [
+                        "does",
+                        "is",
+                        "has"
+                     ]
+                  },
+                  {
+                     "number": 87,
+                     "question": "He's got three cats. → 's means:",
+                     "options": [
+                        "has",
+                        "is",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 88,
+                     "question": "She's happy today. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 89,
+                     "question": "The dog's got a red collar. → 's means:",
+                     "options": [
+                        "does",
+                        "has",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 90,
+                     "question": "My mom's in the kitchen. → 's means:",
+                     "options": [
+                        "is",
+                        "has",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 91,
+                     "question": "He's playing football now. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 92,
+                     "question": "She's got a new phone. → 's means:",
+                     "options": [
+                        "does",
+                        "has",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 93,
+                     "question": "It's my birthday today. → 's means:",
+                     "options": [
+                        "is",
+                        "has",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 94,
+                     "question": "My friend's got a big garden. → 's means:",
+                     "options": [
+                        "is",
+                        "does",
+                        "has"
+                     ]
+                  },
+                  {
+                     "number": 95,
+                     "question": "The teacher's in the classroom. → 's means:",
+                     "options": [
+                        "does",
+                        "is",
+                        "has"
+                     ]
+                  },
+                  {
+                     "number": 96,
+                     "question": "He's got a headache. → 's means:",
+                     "options": [
+                        "has",
+                        "is",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 97,
+                     "question": "She's a nurse. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  },
+                  {
+                     "number": 98,
+                     "question": "There's a cat on the roof. → 's means:",
+                     "options": [
+                        "does",
+                        "is",
+                        "has"
+                     ]
+                  },
+                  {
+                     "number": 99,
+                     "question": "My sister's got blue eyes. → 's means:",
+                     "options": [
+                        "has",
+                        "is",
+                        "does"
+                     ]
+                  },
+                  {
+                     "number": 100,
+                     "question": "It's cold today. → 's means:",
+                     "options": [
+                        "has",
+                        "does",
+                        "is"
+                     ]
+                  }
+               ]
+            }
          },
          {
             "quizNumber":  3,
