@@ -24,7 +24,6 @@ export default function Quiz() {
     const [finalResults, setFinalResults] = useState(null)
     const [grade, setGrade] = useState(null)
     const [toggleMistake, setToggleMistake] = useState(false)
-    const [recData, setRecData] = useState(null)
 
 
     useEffect(()=>{
@@ -242,7 +241,7 @@ export default function Quiz() {
 
             { !toggleContent && <Back /> }
 
-            <div className='w-full min-h-0 overflow-auto p-5 pt-15 flex-1 relative flex flex-col gap-3'>
+            <div className='w-full min-h-0 overflow-auto px-5 pt-15 pb-0 flex-1 relative flex flex-col gap-3'>
                 <div className='w-full h-10 text-xl font-bold text-foreground'>Quiz Time</div>
 
                 <motion.div
@@ -295,7 +294,7 @@ export default function Quiz() {
                                                 </div>
                                             </div>
 
-                                            <button onClick={() => openMistake(item)} className='bg-foreground text-background font-light rounded-sm text-xs py-1 px-2'>Details</button>
+                                            <button onClick={() => openMistake(item)} className='bg-foreground text-background font-light rounded-sm text-xs py-1 px-2'>Report</button>
                                         </div>
 
                                     </div>
@@ -335,7 +334,7 @@ export default function Quiz() {
                                             
                                             return (
                                                 <div key={questionNumber}
-                                                    className='w-full border-0 border-b pb-5'
+                                                    className='w-full border-0 border-b border-gray-500 pb-5'
                                                 >
                                                     <div className='relative flex gap-3'>
                                                         <div className='text-foreground/20'>{quiz.number}</div>
@@ -483,56 +482,117 @@ export default function Quiz() {
 
                     <motion.div {...slideUp}
                         onClick={(e) => e.stopPropagation()}
-                        className='relative w-full h-full min-h-0 flex items-center flex-col p-5 bg-background rounded-xl border shadow-lg'
+                        className='relative w-full min-h-0 flex items-center flex-col gap-3 p-5 bg-background rounded-xl border shadow-lg'
                     >
                         <div className='relative w-full flex justify-between pb-5'>
-                            <div className='w-full'>
-                                <div className='text-xl font-bold text-grey-500'>Your Mistakes</div>
-
-                                <div className='w-full flex gap-1'>
-                                    <div className='text-grey-500 text-xs'>Quiz {targetQuiz?.quizNumber}:</div>
-                                    <div className='text-bold text-xs'>{targetQuiz.featuring}</div>
-                                </div>
-                            </div>
-
+                            <div className='text-xl font-bold text-grey-500'>Report</div>
                             <IoCloseOutline size={25} onClick={closeEverything} />
                         </div>
 
-                        <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
+                        <div className='relative w-full min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Quiz</div>
+                                <div className='text-bold text-xs'>{targetQuiz?.quizNumber}</div>
+                            </div>
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Topic</div>
+                                <div className='text-bold text-xs'>{finalResults.topic}</div>
+                            </div>
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Date</div>
 
+                                <div className='text-bold text-xs'>
+                                    {new Date(finalResults.date).toLocaleDateString('en-GB', {
+                                        day: 'numeric',
+                                        month: 'long',
+                                        year: 'numeric'
+                                    }).replace(/(\d+) (\w+) (\d+)/, '$1 of $2, $3')}
+                                </div>
+                            </div>
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Level</div>
 
-                            <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10 pb-20'>
-                                {
-                                    finalResults?.failedQuestions?.map((item, index) => (
-                                        <div key={index} className='w-full'>
-                                            <div className='relative flex gap-3'>
-                                                <div className='text-foreground/20'>{item.number}</div>
-                                                <div className=''>{item.question}</div>
-                                            </div>
+                                <div className='text-bold text-xs'>
+                                    {finalResults.quizLevel}
+                                </div>
+                            </div>
 
-                                            <div className='w-full flex gap-5'>
-                                                <div className='text-gray-500 text-sm'>Your answer:</div>
-                                                <div className='text-red-500'>{item.given}</div>
-                                            </div>
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Total</div>
 
-                                            <div className='w-full flex gap-5'>
-                                                <div className='text-gray-500 text-sm'>Correct answer:</div>
-                                                <div className='text-green-500'>{item.correct}</div>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
+                                <div className='text-bold text-xs'>
+                                    {finalResults.total}
+                                </div>
+                            </div>
 
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Wrong</div>
+
+                                <div className='text-bold text-xs'>
+                                    {finalResults.wrong}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Correct</div>
+
+                                <div className='text-bold text-xs'>
+                                    {finalResults.correct}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Score</div>
+
+                                <div className='text-bold text-xs'>
+                                    {finalResults.score}
+                                </div>
+                            </div>
+
+                            <div className='w-full flex justify-between'>
+                                <div className='text-grey-500 text-xs'>Grade</div>
+
+                                <div className='text-bold text-xs'>
+                                    {finalResults.grade}
+                                </div>
                             </div>
 
                         </div>
 
-                        {/*<div className='relative bg-background bottom-0 w-full pt-5 rounded-xl'*/}
-                        {/*     onClick={closeEverything}*/}
-                        {/*>*/}
-                        {/*    <button className='secondary-btn w-full'>DONE</button>*/}
-                        {/*</div>*/}
+
+                        {
+                            finalResults.failedQuestions.length > 0 &&
+                            <div className='relative w-full flex-1 min-h-0 overflow-hidden  flex flex-col gap-3 items-center'>
+
+                                <div className='text-grey-500 text-sm font-bold'>Your Mistakes</div>
+
+                                <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10 pb-20'>
+                                    {
+                                        finalResults?.failedQuestions?.map((item, index) => (
+                                            <div key={index} className='w-full'>
+                                                <div className='relative flex gap-3'>
+                                                    <div className='text-foreground/20'>{item.number}</div>
+                                                    <div className=''>{item.question}</div>
+                                                </div>
+
+                                                <div className='w-full flex gap-5'>
+                                                    <div className='text-gray-500 text-sm'>Your answer:</div>
+                                                    <div className='text-red-500'>{item.given}</div>
+                                                </div>
+
+                                                <div className='w-full flex gap-5'>
+                                                    <div className='text-gray-500 text-sm'>Correct answer:</div>
+                                                    <div className='text-green-500'>{item.correct}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        }
+
                     </motion.div>
+
                 </motion.div>
             }
 
