@@ -255,10 +255,10 @@ export default function Quiz() {
                         quiz?.map((item, index) => (
                             <motion.div
                                 variants={expandChild} key={index}
-                                className='w-full p-5 bg-background/60 border rounded-2xl backdrop-blur-xs flex flex-col items-center gap-5'
+                                className='w-full p-5 bg-background/60 border rounded-2xl backdrop-blur-xs flex flex-col gap-5'
                                  onClick={()=> showQuiz(item)}
                             >
-                                <div className='w-full flex justify-between'>
+                                <div className='w-full flex justify-between '>
                                     <div className='text-xs text-gray-500'>Quiz {item.quizNumber}</div>
                                     
                                     <div className='text-xs text-gray-500'>{item.quizLevel}</div>
@@ -269,7 +269,7 @@ export default function Quiz() {
                                     <div className='text-sm'>{item.featuring}</div>
                                 </div>
 
-                                <div className="flex items-center justify-end gap-3">
+                                <div className=" flex items-center justify-end gap-3">
                                     <div className='text-sm font-semibold'>Start</div>
                                     <GoArrowRight />
                                 </div>
@@ -307,15 +307,18 @@ export default function Quiz() {
                             className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-background rounded-xl border shadow-lg'
                         >
                             <div className='w-full flex justify-between'>
-                                Quiz {targetQuiz?.quizNumber}
+                                <div className='flex gap-2 items-baseline'>
+                                    <div className='text-gray-500'>Quiz {targetQuiz?.quizNumber}:</div>
+                                    <div className='text-grey-500'>{targetQuiz.quizTitle}</div>
+                                </div>
+
                                 <IoCloseOutline size={25}
                                     onClick={closeQuiz}
                                 />
                             </div>
-                            
+
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
-                                <div className='text-xl font-bold text-grey-500'>{targetQuiz.quizTitle}</div>
-                                
+
                                 <div className='relative w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                     {
                                         targetQuiz?.quizData?.multi?.map((quiz) => {
@@ -467,27 +470,25 @@ export default function Quiz() {
                 toggleMistake &&
                 <motion.div {...fadeIn}
                     onClick={closeEverything}
-                    className='absolute inset-0 top-0 w-full h-dvh bg-background/10 border flex flex-col items-center justify-center backdrop-blur-xs p-5 pt-15'
+                    className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col gap-3 items-center justify-center backdrop-blur-xs p-5'
                 >
+                    <div className='w-full justify-start text-lg font-semibold text-grey-500'>Quiz {targetQuiz?.quizNumber} Report</div>
 
                     <motion.div {...slideUp}
                         onClick={(e) => e.stopPropagation()}
                         className='relative w-full min-h-0 flex items-center flex-col gap-3 p-5 bg-background rounded-xl border shadow-lg'
                     >
-                        <div className='relative w-full flex justify-between pb-5'>
-                            <div className='text-xl font-bold text-grey-500'>Report</div>
-                            <IoCloseOutline size={25} onClick={closeEverything} />
+                        <div className='w-full flex-col pb-5'>
+                            <div className='relative w-full flex justify-between'>
+                                <div className='text-sm'>{finalResults.topic}</div>
+                                
+                                <IoCloseOutline size={25} onClick={closeEverything} />
+                            </div>
+
                         </div>
 
                         <div className='relative w-full min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
-                            <div className='w-full flex justify-between'>
-                                <div className='text-grey-500 text-xs'>Quiz</div>
-                                <div className='text-bold text-xs'>{targetQuiz?.quizNumber}</div>
-                            </div>
-                            <div className='w-full flex justify-between'>
-                                <div className='text-grey-500 text-xs'>Topic</div>
-                                <div className='text-bold text-xs'>{finalResults.topic}</div>
-                            </div>
+
                             <div className='w-full flex justify-between'>
                                 <div className='text-grey-500 text-xs'>Date</div>
 
@@ -504,14 +505,6 @@ export default function Quiz() {
 
                                 <div className='text-bold text-xs'>
                                     {finalResults.quizLevel}
-                                </div>
-                            </div>
-
-                            <div className='w-full flex justify-between'>
-                                <div className='text-grey-500 text-xs'>Total</div>
-
-                                <div className='text-bold text-xs'>
-                                    {finalResults.total}
                                 </div>
                             </div>
 
@@ -539,14 +532,6 @@ export default function Quiz() {
                                 </div>
                             </div>
 
-                            <div className='w-full flex justify-between'>
-                                <div className='text-grey-500 text-xs'>Grade</div>
-
-                                <div className='text-bold text-xs'>
-                                    {finalResults.grade}
-                                </div>
-                            </div>
-
                         </div>
 
 
@@ -554,7 +539,7 @@ export default function Quiz() {
                             finalResults.failedQuestions.length > 0 &&
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden  flex flex-col gap-3 items-center'>
 
-                                <div className='text-grey-500 text-sm font-bold'>Your Mistakes</div>
+                                <div className='text-gray-500 text-sm font-bold'>Report</div>
 
                                 <div className='w-full min-h-0 overflow-y-auto flex flex-col gap-10 pb-20'>
                                     {
