@@ -43,7 +43,7 @@ export default function Quiz() {
     }, [])
 
     const showQuiz = (item) => {
-        if (item.quizData.multi) {
+        if (item.quizData.multi.questions.length > 0) {
             if (!item.userAnswers) {
                 setTargetQuiz(item)
                 setToggleContent(true)
@@ -68,14 +68,14 @@ export default function Quiz() {
     const submitQuiz = async () => {
         if (!targetQuiz) return
 
-        const questions = targetQuiz.quizData.multi
+        const questions = targetQuiz.quizData.multi.questions
 
         const allAnswered = questions.every(
             (question) => answers[question.number] !== undefined
         )
 
         if (!allAnswered) {
-            const unansweredQuestions = targetQuiz?.quizData?.multi
+            const unansweredQuestions = targetQuiz?.quizData?.multi?.questions
                 ?.filter((question) => answers[question.number] === undefined)
                 .map((question) => question.number) || []
 
@@ -87,7 +87,7 @@ export default function Quiz() {
         }
 
 
-        const quizKeys = targetQuiz.quizKeys
+        const quizKeys = targetQuiz.multi.keys
 
         let correct = 0
         let wrong = 0
@@ -321,7 +321,7 @@ export default function Quiz() {
 
                                 <div className='relative w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
                                     {
-                                        targetQuiz?.quizData?.multi?.map((quiz) => {
+                                        targetQuiz?.quizData?.multi.questions?.map((quiz) => {
 
                                             const questionNumber = quiz.number
                                             
