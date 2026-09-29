@@ -2,7 +2,7 @@ import { openDB } from 'idb';
 
 export const initDB = async () => {
    // Keep your version stable at 5. Data synchronization is now handled dynamically above!
-   return openDB('VocabularyDB', 17, {
+   return openDB('VocabularyDB', 18, {
       upgrade(db) {
          // Clean up deprecated stores safely
          if (db.objectStoreNames.contains('words')) {
@@ -431,11 +431,8 @@ export const saveQuizResult = async (quizNumber, userAnswers) => {
 }
 
 
-export const getAllQuizResults = async () => {
-   const db = await initDB();
 
-   return db.getAll("quizResults");
-};
+
 
 
 export const resetAllQuizResults = async () => {
@@ -455,4 +452,30 @@ export const resetAllQuizResults = async () => {
    }
 
    await transaction.done
+}
+
+
+
+
+export const resetQuizProgress = async (quizNumber) => {
+   const db = await initDB()
+
+   const tx = db.transaction("quizzes", "readwrite")
+   const store = tx.objectStore("quizzes")
+
+   const quiz = await store.get(quizNumber)
+
+   if (!quiz) {
+      await tx.done
+      throw new Error(`Quiz ${quizNumber} not found`)
+   }
+
+   if (quiz.userAnswers) {
+      delete quiz.userAnswers
+      await store.put(quiz)
+   }
+
+   await tx.done
+
+   return true
 }

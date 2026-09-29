@@ -2,9 +2,10 @@
    {
       "data": [
          {
+            "theme": 1,
             "quizNumber": 1,
             "quizTitle": "First Steps",
-            "featuring": "Subject Pronouns and To be",
+            "featuring": "Subject Pronouns / To be",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -618,9 +619,10 @@
             }
          },
          {
+            "theme": 2,
             "quizNumber":  2,
             "quizTitle": "What is this -s here?",
-            "featuring": "Different Types of 'S'",
+            "featuring": "Types of 'S'",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -1634,6 +1636,7 @@
             }
          },
          {
+            "theme": 3,
             "quizNumber":  3,
             "quizTitle": "How to say no!",
             "featuring": "Negative Forms",
@@ -2750,9 +2753,10 @@
             }
          },
          {
+            "theme": 4,
             "quizNumber":  4,
             "quizTitle": "Ask It!",
-            "featuring": "Yes / No Question Forms",
+            "featuring": "Yes / No Questions",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -3766,6 +3770,7 @@
             }
          },
          {
+            "theme": 5,
             "quizNumber":  5,
             "quizTitle": "Ask More!",
             "featuring": "Wh-Question Forms",
@@ -4782,6 +4787,7 @@
             }
          },
          {
+            "theme": 6,
             "quizNumber":  6,
             "quizTitle": "Fake Questions",
             "featuring": "Indirect Question",
@@ -5799,6 +5805,7 @@
             }
          },
          {
+            "theme": 1,
             "quizNumber":  7,
             "quizTitle": "Sentence Puzzle",
             "featuring": "Parts of Speech",
@@ -5813,6 +5820,7 @@
             }
          },
          {
+            "theme": 2,
             "quizNumber":  8,
             "quizTitle": "Let's Gossip!",
             "featuring": "Object Pronouns",
@@ -5827,9 +5835,10 @@
             }
          },
          {
+            "theme": 3,
             "quizNumber":  9,
             "quizTitle": "Whose cat is it?",
-            "featuring": "Possessive Adjectives & Pronouns",
+            "featuring": "Possessive Adj & Pro",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -5841,6 +5850,7 @@
             }
          },
          {
+            "theme": 4,
             "quizNumber":  10,
             "quizTitle": "Going Incognito!",
             "featuring": "Indefinite Pronouns",
@@ -5855,6 +5865,7 @@
             }
          },
    {
+            "theme": 5,
             "quizNumber":  11,
             "quizTitle": "Time to be Selfish!",
             "featuring": "Reflexive Pronouns",
@@ -5869,6 +5880,7 @@
             }
          },
    {
+            "theme": 6,
             "quizNumber":  12,
             "quizTitle": "Verbs need some help!",
             "featuring": "Modals",
@@ -5883,8 +5895,9 @@
             }
    },
    {
-      "quizNumber": 13,
-      "quizTitle": "How objects can fool you!",
+            "theme": 1,
+            "quizNumber": 13,
+            "quizTitle": "How objects can fool you!",
             "featuring": "Double-Object Verbs",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
@@ -5897,8 +5910,9 @@
             }
          },
    {
-      "quizNumber": 14,
-      "quizTitle": "Where is my cat?",
+            "theme": 2,
+            "quizNumber": 14,
+            "quizTitle": "Where is my cat?",
             "featuring": "Adverbs of Place",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
@@ -5911,9 +5925,10 @@
             }
    },
    {
-      "quizNumber": 15,
-      "quizTitle": "Timing is everything",
-      "featuring": "Adverbs of Time",
+            "theme": 3,
+            "quizNumber": 15,
+            "quizTitle": "Timing is everything",
+            "featuring": "Adverbs of Time",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -5925,9 +5940,10 @@
             }
          },
    {
-      "quizNumber": 16,
-      "quizTitle": "Now or Never!",
-      "featuring": "Adverbs of Frequency",
+            "theme": 4,
+            "quizNumber": 16,
+            "quizTitle": "Now or Never!",
+            "featuring": "Adverbs of Frequency",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -5939,9 +5955,10 @@
             }
    },
    {
-      "quizNumber": 17,
-      "quizTitle": "Just add -ly",
-      "featuring": "Adverbs of Manner",
+            "theme": 5,
+            "quizNumber": 17,
+            "quizTitle": "Just add -ly",
+            "featuring": "Adverbs of Manner",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -5953,9 +5970,10 @@
             }
          },
    {
-      "quizNumber": 18,
-      "quizTitle": "Simple But Useful",
-      "featuring": "Present Simple",
+            "theme": 6,
+            "quizNumber": 18,
+            "quizTitle": "Simple But Useful",
+            "featuring": "Present Simple",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -5967,6 +5985,7 @@
             }
          },
          {
+            "theme": 1,
             "quizNumber":  19,
             "quizTitle": "Live at the Moment",
             "featuring": "Present Continuous",
@@ -5981,6 +6000,7 @@
             }
          },
          {
+            "theme": 2,
             "quizNumber":  20,
             "quizTitle": "The Will-Power",
             "featuring": "Future Simple",
@@ -5995,6 +6015,7 @@
             }
          },
          {
+            "theme": 3,
             "quizNumber":  21,
             "quizTitle": "Dive in Future",
             "featuring": "All Future Types",
@@ -6008,7 +6029,8 @@
                }
             }
          },
-   {
+         {
+            "theme": 4,
             "quizNumber":  22,
             "quizTitle": "ُThe Story behind Connectors 1",
             "featuring": "Connectors: that / which",
@@ -6022,10 +6044,11 @@
                }
             }
          },
-   {
+         {
+            "theme": 5,
             "quizNumber":  23,
             "quizTitle": "ُThe Story behind Connectors 2",
-            "featuring": "Connectors: who / whom / whose",
+            "featuring": "Human Connectors",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -6037,6 +6060,7 @@
             }
          },
          {
+            "theme": 6,
             "quizNumber":  24,
             "quizTitle": "ُThe Story behind Connectors 3",
             "featuring": "Connectors: when / where",
@@ -6050,8 +6074,9 @@
                }
             }
          },
-   {
-      "quizNumber":  25,
+         {
+            "theme": 1,
+            "quizNumber":  25,
             "quizTitle": "ُThe Story behind Connectors 4",
             "featuring": "Connectors: what",
             "quizLabel": "A1",
@@ -6064,8 +6089,9 @@
                }
             }
          },
-   {
-      "quizNumber":  26,
+         {
+            "theme": 2,
+            "quizNumber":  26,
             "quizTitle": "Mastering the Connectors",
             "featuring": "Removing Connectors",
             "quizLabel": "A1",
@@ -6078,8 +6104,9 @@
                }
             }
          },
-   {
-      "quizNumber":  27,
+         {
+            "theme": 3,
+            "quizNumber":  27,
             "quizTitle": "Talking about Past",
             "featuring": "Past Simple",
             "quizLabel": "A1",
@@ -6092,6 +6119,6 @@
                }
             }
          }
-]
-}
+      ]
+   }
 ]

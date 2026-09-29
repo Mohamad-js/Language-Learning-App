@@ -5,6 +5,8 @@
     --spacing: 0.25rem;
 }
 
+@source inline("{bg,text,border}-{blue,orange,green,purple,yellow}-{100,300,500,700,900}");
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* 1. Freeze the layout and stop default fade animations */

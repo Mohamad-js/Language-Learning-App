@@ -2,11 +2,12 @@
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 import Back from '@/components/backButton/back'
-import { getAllQuizzes, saveQuizResult } from "@/lib/db";
+import { getAllQuizzes, saveQuizResult, resetQuizProgress  } from "@/lib/db";
 import { GoArrowRight } from "react-icons/go";
 import { motion } from "framer-motion";
 import {  slideUp, fadeIn, expandParent, expandChild } from "@/lib/animations/entrance";
 import { TbFaceIdError } from "react-icons/tb";
+import { IoIosArrowBack } from 'react-icons/io';
 import { IoCloseOutline } from "react-icons/io5";
 import { toast } from 'sonner';
 
@@ -41,6 +42,27 @@ export default function Quiz() {
 
         void request()
     }, [])
+
+
+    const retryQuiz = async (quizNumber) => {
+        try {
+            await resetQuizProgress(quizNumber)
+
+            setQuiz(prevQuiz =>
+                prevQuiz.map(item =>
+                    item.quizNumber === quizNumber
+                        ? { ...item, userAnswers: undefined }
+                        : item
+                )
+            )
+
+            toast.success('The Quiz Restarted.')
+        } catch (error) {
+            toast.error('Could not reset progress')
+            console.error(error)
+        }
+    }
+
 
     const showQuiz = (item) => {
         if (item.quizData.multi.questions.length > 0) {
@@ -87,7 +109,7 @@ export default function Quiz() {
         }
 
 
-        const quizKeys = targetQuiz.multi.keys
+        const quizKeys = targetQuiz.quizData.multi.keys
 
         let correct = 0
         let wrong = 0
@@ -227,7 +249,7 @@ export default function Quiz() {
             <div className='absolute top-0 w-full min-h-dvh'>
                 <Image
                     className='object-cover object-right dark:hidden'
-                    src='/images/quiz/quiz-light.jpg'
+                    src='/images/quiz/light.jpg'
                     alt='background image'
                     fill
                 />
@@ -241,7 +263,7 @@ export default function Quiz() {
 
             { !toggleContent && !toggleMistake && <Back /> }
 
-            <div className='w-full min-h-0 overflow-auto px-5 pt-15 pb-0 flex-1 relative flex flex-col gap-3'>
+            <div className='w-full min-h-0 overflow-auto px-5 pt-15 pb-0 flex-1 relative flex flex-col gap-5'>
                 <div className='w-full h-10 text-xl font-bold text-foreground'>Quiz Time</div>
 
                 <motion.div
@@ -249,13 +271,17 @@ export default function Quiz() {
                     initial='hidden'
                     animate='visible'
 
-                    className='w-full min-h-0 overflow-auto flex flex-col gap-5'
+                    className='w-full min-h-0 overflow-auto flex flex-col gap-10'
                 >
                     {
                         quiz?.map((item, index) => (
                             <motion.div
                                 variants={expandChild} key={index}
-                                className='w-full p-5 bg-background/60 border rounded-2xl backdrop-blur-xs flex flex-col gap-5'
+                                className={`relative w-full p-5 border rounded-2xl flex flex-col gap-5
+                                
+                                ${
+                                    item.theme === 1 ? 'bg-[#BDC7C3]' : item.theme === 2 ? 'bg-[#D9CDC1]' : item.theme === 3 ? 'bg-[#E4E1D0]' : item.theme === 4 ? 'bg-[#E3C2C1]' : item.theme === 5 ? 'bg-[#E7B4B0]' : item.theme === 6 ? 'bg-[#AEB0C7]' : 'bg-background'}
+                                `}
                                  onClick={()=> showQuiz(item)}
                             >
                                 <div className='w-full flex justify-between '>
@@ -269,27 +295,33 @@ export default function Quiz() {
                                     <div className='text-sm'>{item.featuring}</div>
                                 </div>
 
-                                <div className=" flex items-center justify-end gap-3">
-                                    <div className='text-sm font-semibold'>Start</div>
-                                    <GoArrowRight />
-                                </div>
-
                                 {
-                                    item.userAnswers &&
-                                    <div className='absolute inset-0 w-full min-h-full bg-background/70 backdrop-blur-xs rounded-2xl flex justify-center items-center gap-5 font-bold text-xl'>
-                                        <div className='flex flex-col justify-center items-center gap-3'>
-                                            <div className='w-20 h-20 flex justify-center items-center border rounded-4xl text-4xl font-bold'>
-                                                {item.userAnswers.grade}
+                                    item.userAnswers ?
 
-                                            </div>
-
-                                            <button onClick={() => openMistake(item)} className='w-full bg-foreground text-background font-light rounded-xl text-xs py-1 px-2'>Report</button>
-
+                                    <div className="flex items-center justify-end gap-3">
+                                        <div
+                                            onClick={() => retryQuiz(item.quizNumber)}
+                                            className='text-sm font-semibold secondary-btn'
+                                        >
+                                            Restart
                                         </div>
 
+                                        <div
+                                            onClick={() => openMistake(item)}
+                                            className='text-sm font-semibold primary-btn'
+                                        >
+                                            Report
+                                        </div>
                                     </div>
 
+                                    :
+
+                                    <div className=" flex items-center justify-end gap-3">
+                                        <div className='text-sm font-semibold'>Start</div>
+                                        <GoArrowRight />
+                                    </div>
                                 }
+
                             </motion.div>
                         ))
                     }
@@ -299,23 +331,23 @@ export default function Quiz() {
             {
                 toggleContent &&
                     <motion.div {...fadeIn}
-                        className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs p-5 pt-15'
+                        className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs pt-5 gap-2'
                     >
+                        <div className='w-full flex justify-start items-center gap-2 pl-5'>
+                            <div className='bg-background p-1 flex justify-center items-center rounded-full border shadow-lg'>
+                                <IoIosArrowBack size={20} onClick={closeQuiz} />
+                            </div>
+
+                            <div className='flex gap-2 items-baseline'>
+                                <div>Q {targetQuiz?.quizNumber}:</div>
+                                <div>{targetQuiz.featuring}</div>
+                            </div>
+                        </div>
 
                         <motion.div {...slideUp}
                             onClick={(e) => e.stopPropagation()}
-                            className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-background rounded-xl border shadow-lg'
+                            className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-background rounded-2xl border shadow-lg'
                         >
-                            <div className='w-full flex justify-between'>
-                                <div className='flex gap-2 items-baseline'>
-                                    <div className='text-gray-500'>Quiz {targetQuiz?.quizNumber}:</div>
-                                    <div className='text-grey-500'>{targetQuiz.quizTitle}</div>
-                                </div>
-
-                                <IoCloseOutline size={25}
-                                    onClick={closeQuiz}
-                                />
-                            </div>
 
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
 
@@ -327,21 +359,22 @@ export default function Quiz() {
                                             
                                             return (
                                                 <div key={questionNumber}
-                                                    className='w-full border-0 border-b border-gray-500 pb-5'
+                                                    className='w-full pb-5 flex flex-col gap-3'
                                                 >
                                                     <div className='relative flex gap-3'>
                                                         <div className='text-foreground/20'>{quiz.number}</div>
                                                         <div className=''>{quiz.question}</div>
                                                     </div>
 
-                                                    <div className=''>
+                                                    <div className='flex flex-col gap-2'>
                                                         {quiz.options.map((option, optionIndex) => (
                                                             <label
                                                                 key={optionIndex}
-                                                                className={`flex items-center gap-3 p-3
-                                                                ${answers[questionNumber] === option && "p-2 rounded-xl border border-gray-500"}`}
+                                                                className={`flex items-center gap-3 p-3 v border rounded-xl
+                                                                ${answers[questionNumber] === option && "p-2 bg-purple-200"}`}
                                                             >
                                                                 <input
+                                                                    className="grid size-5 appearance-none place-content-center rounded-full border border-gray-400 bg-transparent before:size-2.5 before:scale-0 before:rounded-full before:bg-purple-500 before:transition-transform checked:border-purple-500 checked:before:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500"
                                                                     type="radio"
                                                                     name={`question-${questionNumber}`}
                                                                     value={option}
@@ -349,7 +382,7 @@ export default function Quiz() {
                                                                     onChange={() => handleAnswer(questionNumber, option)}
                                                                 />
 
-                                                                <span>{option}</span>
+                                                                <span className='text-sm'>{option}</span>
                                                             </label>
                                                         ))}
                                                     </div>
