@@ -48,10 +48,10 @@ export default function Quiz() {
         try {
             await resetQuizProgress(quizNumber)
 
-            setQuiz(prevQuiz =>
+            setQuiz(prevQuiy =>
                 prevQuiz.map(item =>
-                    item.quizNumber === quizNumber
-                        ? { ...item, userAnswers: undefined }
+                    item.quizNumber === targetQuiz.quizNumber
+                        ? { ...item, userAnswers: userAnswers, draftAnswers: undefined }
                         : item
                 )
             )
@@ -259,21 +259,6 @@ export default function Quiz() {
     return (
         <div className='fixed w-full h-dvh bg-background flex flex-col'>
 
-            {/*<div className='absolute top-0 w-full min-h-dvh'>*/}
-            {/*    <Image*/}
-            {/*        className='object-cover object-right dark:hidden'*/}
-            {/*        src='/images/quiz/light.jpg'*/}
-            {/*        alt='background image'*/}
-            {/*        fill*/}
-            {/*    />*/}
-            {/*    <Image*/}
-            {/*        className='object-cover object-right hidden dark:block'*/}
-            {/*        src='/images/quiz/quiz-dark.jpg'*/}
-            {/*        alt='background image'*/}
-            {/*        fill*/}
-            {/*    />*/}
-            {/*</div>*/}
-
             { !toggleContent && !toggleMistake && <Back /> }
 
             <div className='w-full min-h-0 overflow-auto px-5 pt-15 pb-0 flex-1 relative flex flex-col gap-5'>
@@ -290,7 +275,7 @@ export default function Quiz() {
                         quiz?.map((item, index) => (
                             <motion.div
                                 variants={expandChild} key={index}
-                                className={`relative w-full p-5 border rounded-4xl flex flex-col gap-5
+                                className={`relative w-full min-h-50 p-5 border rounded-4xl flex flex-col gap-5 justify-between
                                 
                                 ${
                                     item.theme === 1 ? 'bg-[#F29191] dark:bg-[#800020]' 
@@ -319,33 +304,6 @@ export default function Quiz() {
                                     <div className='text-sm'>{item.featuring}</div>
                                 </div>
 
-                                {/*{*/}
-                                {/*    item.userAnswers ?*/}
-
-                                {/*    <div className="flex items-center justify-end gap-3">*/}
-                                {/*        <div*/}
-                                {/*            onClick={() => retryQuiz(item.quizNumber)}*/}
-                                {/*            className='text-sm font-semibold secondary-btn'*/}
-                                {/*        >*/}
-                                {/*            Restart*/}
-                                {/*        </div>*/}
-
-                                {/*        <div*/}
-                                {/*            onClick={() => openMistake(item)}*/}
-                                {/*            className='text-sm font-semibold primary-btn'*/}
-                                {/*        >*/}
-                                {/*            Report*/}
-                                {/*        </div>*/}
-                                {/*    </div>*/}
-
-                                {/*    :*/}
-
-                                {/*    <div className=" flex items-center justify-end gap-3">*/}
-                                {/*        <div className='text-sm font-semibold'>Start</div>*/}
-                                {/*        <GoArrowRight />*/}
-                                {/*    </div>*/}
-                                {/*}*/}
-
                                 {
                                     item.userAnswers ? (
                                         <div className="flex items-center justify-end gap-3">
@@ -372,14 +330,14 @@ export default function Quiz() {
 
                                                     return total > 0 && answered > 0 ? (
                                                         <div className='w-full flex flex-col gap-1'>
-                                                            <div className='w-full h-2 bg-black/10 dark:bg-white/10 rounded-full overflow-hidden'>
+                                                            <div className='w-full h-0.5 bg-foreground/10 rounded-full overflow-hidden'>
                                                                 <div
                                                                     className='h-full bg-foreground rounded-full transition-all'
                                                                     style={{ width: `${(answered / total) * 100}%` }}
                                                                 />
                                                             </div>
                                                             <div className='text-xs text-gray-700 dark:text-gray-300'>
-                                                                {answered}/{total} answered
+                                                                {answered} /{total} answered
                                                             </div>
                                                         </div>
                                                     ) : null
@@ -420,6 +378,27 @@ export default function Quiz() {
                             onClick={(e) => e.stopPropagation()}
                             className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-[#F5EFE1] rounded-2xl border shadow-lg'
                         >
+
+                            {/*{*/}
+                            {/*    (() => {*/}
+                            {/*        const total = targetQuiz.quizData.multi.questions.length*/}
+                            {/*        const answered = Object.keys(targetQuiz.draftAnswers || {}).length*/}
+
+                            {/*        return total > 0 && answered > 0 ? (*/}
+                            {/*            <div className='w-full flex flex-col gap-1'>*/}
+                            {/*                <div className='w-full h-0.5 bg-foreground/10 rounded-full overflow-hidden'>*/}
+                            {/*                    <div*/}
+                            {/*                        className='h-full bg-foreground rounded-full transition-all'*/}
+                            {/*                        style={{ width: `${(answered / total) * 100}%` }}*/}
+                            {/*                    />*/}
+                            {/*                </div>*/}
+                            {/*                <div className='text-xs text-gray-700 dark:text-gray-300'>*/}
+                            {/*                    {answered} /{total} answered*/}
+                            {/*                </div>*/}
+                            {/*            </div>*/}
+                            {/*        ) : null*/}
+                            {/*    })()*/}
+                            {/*}*/}
 
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
 

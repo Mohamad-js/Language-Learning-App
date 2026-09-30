@@ -431,23 +431,29 @@ export const saveQuizResult = async (quizNumber, userAnswers) => {
 
 export const resetAllQuizResults = async () => {
    const db = await initDB()
-
    const transaction = db.transaction("quizzes", "readwrite")
    const store = transaction.objectStore("quizzes")
-
    const quizzes = await store.getAll()
 
    for (const quiz of quizzes) {
+      let changed = false
+
       if (quiz.userAnswers) {
          delete quiz.userAnswers
+         changed = true
+      }
 
+      if (quiz.draftAnswers) {
+         delete quiz.draftAnswers
+         changed = true
+      }
+
+      if (changed) {
          await store.put(quiz)
       }
    }
-
    await transaction.done
 }
-
 
 
 
