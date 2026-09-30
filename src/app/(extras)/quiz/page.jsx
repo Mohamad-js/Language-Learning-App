@@ -246,20 +246,20 @@ export default function Quiz() {
     return (
         <div className='fixed w-full h-dvh bg-background flex flex-col'>
 
-            <div className='absolute top-0 w-full min-h-dvh'>
-                <Image
-                    className='object-cover object-right dark:hidden'
-                    src='/images/quiz/light.jpg'
-                    alt='background image'
-                    fill
-                />
-                <Image
-                    className='object-cover object-right hidden dark:block'
-                    src='/images/quiz/quiz-dark.jpg'
-                    alt='background image'
-                    fill
-                />
-            </div>
+            {/*<div className='absolute top-0 w-full min-h-dvh'>*/}
+            {/*    <Image*/}
+            {/*        className='object-cover object-right dark:hidden'*/}
+            {/*        src='/images/quiz/light.jpg'*/}
+            {/*        alt='background image'*/}
+            {/*        fill*/}
+            {/*    />*/}
+            {/*    <Image*/}
+            {/*        className='object-cover object-right hidden dark:block'*/}
+            {/*        src='/images/quiz/quiz-dark.jpg'*/}
+            {/*        alt='background image'*/}
+            {/*        fill*/}
+            {/*    />*/}
+            {/*</div>*/}
 
             { !toggleContent && !toggleMistake && <Back /> }
 
@@ -271,23 +271,34 @@ export default function Quiz() {
                     initial='hidden'
                     animate='visible'
 
-                    className='w-full min-h-0 overflow-auto flex flex-col gap-10'
+                    className='w-full min-h-0 overflow-auto flex flex-col gap-10 border rounded-t-4xl'
                 >
                     {
                         quiz?.map((item, index) => (
                             <motion.div
                                 variants={expandChild} key={index}
-                                className={`relative w-full p-5 border rounded-2xl flex flex-col gap-5
+                                className={`relative w-full p-5 border rounded-4xl flex flex-col gap-5
                                 
                                 ${
-                                    item.theme === 1 ? 'bg-[#BDC7C3]' : item.theme === 2 ? 'bg-[#D9CDC1]' : item.theme === 3 ? 'bg-[#E4E1D0]' : item.theme === 4 ? 'bg-[#E3C2C1]' : item.theme === 5 ? 'bg-[#E7B4B0]' : item.theme === 6 ? 'bg-[#AEB0C7]' : 'bg-background'}
+                                    item.theme === 1 ? 'bg-[#F29191] dark:bg-[#800020]' 
+                                    : 
+                                    item.theme === 2 ? 'bg-[#B1E5E6] dark:bg-[#010736]' 
+                                    : 
+                                    item.theme === 3 ? 'bg-[#EEEAD7] dark:bg-[#123F36]' 
+                                    :
+                                    item.theme === 4 ? 'bg-[#F4EB6C] dark:bg-[#F2842F]'
+                                    :
+                                    item.theme === 5 ? 'bg-[#91AC67] dark:bg-[#597928]'
+                                    :
+                                    item.theme === 6 ? 'bg-[#AEB0C7] dark:bg-[#8E1EA2]'
+                                    : 'bg-background'}
                                 `}
                                  onClick={()=> showQuiz(item)}
                             >
                                 <div className='w-full flex justify-between '>
-                                    <div className='text-xs text-gray-500'>Quiz {item.quizNumber}</div>
+                                    <div className='text-xs text-gray-700 dark:text-gray-300'>Quiz {item.quizNumber}</div>
                                     
-                                    <div className='text-xs text-gray-500'>{item.quizLevel}</div>
+                                    <div className='text-xs text-gray-700 dark:text-gray-300'>{item.quizLevel}</div>
                                 </div>
                                 
                                 <div className=''>
@@ -492,7 +503,7 @@ export default function Quiz() {
                                 <div className='secondary-btn w-full' onClick={closeFinalWindow}>Ok</div>
                                 {
                                     finalResults.wrong > 0  &&
-                                        <div className='primary-btn w-full' onClick={() => openMistake(targetQuiz)}>Mistakes</div>
+                                        <div className='primary-btn w-full' onClick={() => openMistake(targetQuiz)}>Report</div>
                                 }
                             </div>
                         </div>
