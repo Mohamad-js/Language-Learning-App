@@ -1,8 +1,8 @@
 import { openDB } from 'idb';
 
 export const initDB = async () => {
-   // Keep your version stable at 5. Data synchronization is now handled dynamically above!
-   return openDB('VocabularyDB', 18, {
+
+   return openDB('VocabularyDB', 19, {
       upgrade(db) {
          // Clean up deprecated stores safely
          if (db.objectStoreNames.contains('words')) {
@@ -410,24 +410,18 @@ export const getAllQuizzes = async () => {
 export const saveQuizResult = async (quizNumber, userAnswers) => {
    const db = await initDB()
 
-   const transaction = db.transaction("quizzes", "readwrite")
-   const store = transaction.objectStore("quizzes")
+   const tx = db.transaction("quizzes", "readwrite")
+   const store = tx.objectStore("quizzes")
 
-   const quizzes = await store.getAll()
+   const quiz = await store.get(quizNumber)
 
-   console.log('all quizzes in DB:', quizzes)           // ← add this
-   console.log('looking for quizNumber:', quizNumber)   // ← add this
-
-   for (const quiz of quizzes) {
-      if (quiz.quizNumber === quizNumber) {
-         quiz.userAnswers = userAnswers
-         await store.put(quiz)
-         console.log('saved successfully:', quiz)        // ← add this
-         break
-      }
+   if (quiz) {
+      quiz.userAnswers = userAnswers
+      delete quiz.draftAnswers
+      await store.put(quiz)
    }
 
-   await transaction.done
+   await tx.done
 }
 
 
@@ -457,6 +451,31 @@ export const resetAllQuizResults = async () => {
 
 
 
+
+
+
+export const saveQuizProgress = async (quizNumber, answers) => {
+   const db = await initDB()
+
+   const tx = db.transaction("quizzes", "readwrite")
+   const store = tx.objectStore("quizzes")
+
+   const quiz = await store.get(quizNumber)
+
+   if (!quiz) {
+      await tx.done
+      throw new Error(`Quiz ${quizNumber} not found`)
+   }
+
+   quiz.draftAnswers = answers
+   await store.put(quiz)
+
+   await tx.done
+   return true
+}
+
+
+
 export const resetQuizProgress = async (quizNumber) => {
    const db = await initDB()
 
@@ -470,12 +489,20 @@ export const resetQuizProgress = async (quizNumber) => {
       throw new Error(`Quiz ${quizNumber} not found`)
    }
 
+   let changed = false
+
    if (quiz.userAnswers) {
       delete quiz.userAnswers
-      await store.put(quiz)
+      changed = true
    }
 
-   await tx.done
+   if (quiz.draftAnswers) {
+      delete quiz.draftAnswers
+      changed = true
+   }
 
+   if (changed) await store.put(quiz)
+
+   await tx.done
    return true
 }

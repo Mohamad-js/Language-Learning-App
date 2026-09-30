@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 import Back from '@/components/backButton/back'
-import { getAllQuizzes, saveQuizResult, resetQuizProgress  } from "@/lib/db";
+import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress  } from "@/lib/db";
 import { GoArrowRight } from "react-icons/go";
 import { motion } from "framer-motion";
 import {  slideUp, fadeIn, expandParent, expandChild } from "@/lib/animations/entrance";
@@ -67,6 +67,7 @@ export default function Quiz() {
     const showQuiz = (item) => {
         if (item.quizData.multi.questions.length > 0) {
             if (!item.userAnswers) {
+                setAnswers(item.draftAnswers || {})
                 setTargetQuiz(item)
                 setToggleContent(true)
             }
@@ -80,10 +81,25 @@ export default function Quiz() {
     }
 
     const handleAnswer = (questionIndex, option) => {
-        setAnswers(prev => ({
-            ...prev,
-            [questionIndex]: option
-        }))
+        setAnswers(prev => {
+            const updated = { ...prev, [questionIndex]: option }
+
+            if (targetQuiz) {
+                saveQuizProgress(targetQuiz.quizNumber, updated)
+                    .then(() => {
+                        setQuiz(prevQuiz =>
+                            prevQuiz.map(item =>
+                                item.quizNumber === targetQuiz.quizNumber
+                                    ? { ...item, draftAnswers: updated }
+                                    : item
+                            )
+                        )
+                    })
+                    .catch(error => console.error('Failed to save progress:', error))
+            }
+
+            return updated
+        })
     }
 
 
@@ -191,11 +207,8 @@ export default function Quiz() {
             // Updating the quiz list immediately
             setQuiz(prevQuiz =>
                 prevQuiz.map(item =>
-                    item.quizNumber === targetQuiz.quizNumber
-                        ? {
-                            ...item,
-                            userAnswers: userAnswers
-                        }
+                    item.quizNumber === quizNumber
+                        ? { ...item, userAnswers: undefined, draftAnswers: undefined }
                         : item
                 )
             )
@@ -306,31 +319,79 @@ export default function Quiz() {
                                     <div className='text-sm'>{item.featuring}</div>
                                 </div>
 
+                                {/*{*/}
+                                {/*    item.userAnswers ?*/}
+
+                                {/*    <div className="flex items-center justify-end gap-3">*/}
+                                {/*        <div*/}
+                                {/*            onClick={() => retryQuiz(item.quizNumber)}*/}
+                                {/*            className='text-sm font-semibold secondary-btn'*/}
+                                {/*        >*/}
+                                {/*            Restart*/}
+                                {/*        </div>*/}
+
+                                {/*        <div*/}
+                                {/*            onClick={() => openMistake(item)}*/}
+                                {/*            className='text-sm font-semibold primary-btn'*/}
+                                {/*        >*/}
+                                {/*            Report*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+
+                                {/*    :*/}
+
+                                {/*    <div className=" flex items-center justify-end gap-3">*/}
+                                {/*        <div className='text-sm font-semibold'>Start</div>*/}
+                                {/*        <GoArrowRight />*/}
+                                {/*    </div>*/}
+                                {/*}*/}
+
                                 {
-                                    item.userAnswers ?
+                                    item.userAnswers ? (
+                                        <div className="flex items-center justify-end gap-3">
+                                            <div
+                                                onClick={() => retryQuiz(item.quizNumber)}
+                                                className='text-sm font-semibold secondary-btn'
+                                            >
+                                                Restart
+                                            </div>
 
-                                    <div className="flex items-center justify-end gap-3">
-                                        <div
-                                            onClick={() => retryQuiz(item.quizNumber)}
-                                            className='text-sm font-semibold secondary-btn'
-                                        >
-                                            Restart
+                                            <div
+                                                onClick={() => openMistake(item)}
+                                                className='text-sm font-semibold primary-btn'
+                                            >
+                                                Report
+                                            </div>
                                         </div>
+                                    ) : (
+                                        <div className='w-full flex flex-col gap-2'>
+                                            {
+                                                (() => {
+                                                    const total = item.quizData.multi.questions.length
+                                                    const answered = Object.keys(item.draftAnswers || {}).length
 
-                                        <div
-                                            onClick={() => openMistake(item)}
-                                            className='text-sm font-semibold primary-btn'
-                                        >
-                                            Report
+                                                    return total > 0 && answered > 0 ? (
+                                                        <div className='w-full flex flex-col gap-1'>
+                                                            <div className='w-full h-2 bg-black/10 dark:bg-white/10 rounded-full overflow-hidden'>
+                                                                <div
+                                                                    className='h-full bg-foreground rounded-full transition-all'
+                                                                    style={{ width: `${(answered / total) * 100}%` }}
+                                                                />
+                                                            </div>
+                                                            <div className='text-xs text-gray-700 dark:text-gray-300'>
+                                                                {answered}/{total} answered
+                                                            </div>
+                                                        </div>
+                                                    ) : null
+                                                })()
+                                            }
+
+                                            <div className="flex items-center justify-end gap-3">
+                                                <div className='text-sm font-semibold'>{item.draftAnswers ? 'Continue' : 'Start'}</div>
+                                                <GoArrowRight />
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    :
-
-                                    <div className=" flex items-center justify-end gap-3">
-                                        <div className='text-sm font-semibold'>Start</div>
-                                        <GoArrowRight />
-                                    </div>
+                                    )
                                 }
 
                             </motion.div>
@@ -344,7 +405,7 @@ export default function Quiz() {
                     <motion.div {...fadeIn}
                         className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs pt-5 gap-2'
                     >
-                        <div className='w-full flex justify-start items-center gap-2 pl-5'>
+                        <div className='w-full flex justify-start  items-center gap-2 pl-5'>
                             <div className='bg-background p-1 flex justify-center items-center rounded-full border shadow-lg'>
                                 <IoIosArrowBack size={20} onClick={closeQuiz} />
                             </div>
@@ -357,7 +418,7 @@ export default function Quiz() {
 
                         <motion.div {...slideUp}
                             onClick={(e) => e.stopPropagation()}
-                            className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-background rounded-2xl border shadow-lg'
+                            className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-[#F5EFE1] rounded-2xl border shadow-lg'
                         >
 
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
@@ -407,10 +468,10 @@ export default function Quiz() {
                                 </div>
                             </div>
 
-                            <div className='w-full bg-background pt-3'
+                            <div className='w-full bg-[#F5EFE1] pt-3'
                                  onClick={submitQuiz}
                             >
-                                <button className='secondary-btn w-full'>DONE</button>
+                                <button className='secondary-btn w-full bg-background'>DONE</button>
                             </div>
                         </motion.div>
                     </motion.div>

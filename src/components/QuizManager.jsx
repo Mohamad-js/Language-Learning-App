@@ -22,9 +22,9 @@ export default function QuizManager() {
                 for (const quiz of quizzes) {
                     const existing = await store.get(quiz.quizNumber)
 
-                    // Always sync content from quiz.json, but keep saved progress if it exists
+                    // Always sync content from quiz.json, but keep saved progress (final + in-progress) if it exists
                     const merged = existing
-                        ? { ...quiz, userAnswers: existing.userAnswers }
+                        ? { ...quiz, userAnswers: existing.userAnswers, draftAnswers: existing.draftAnswers }
                         : quiz
 
                     await store.put(merged)
