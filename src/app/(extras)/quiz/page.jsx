@@ -1,9 +1,10 @@
 'use client'
 import { useState, useEffect } from "react";
-import Image from 'next/image';
 import Back from '@/components/backButton/back'
-import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress, seedQuizzes  } from "@/lib/db";
+import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress  } from "@/lib/db";
 import { GoArrowRight } from "react-icons/go";
+import { TiTick } from "react-icons/ti";
+import { FaTimes, FaArrowCircleRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {  slideUp, fadeIn, expandParent, expandChild } from "@/lib/animations/entrance";
 import { TbFaceIdError } from "react-icons/tb";
@@ -25,6 +26,8 @@ export default function Quiz() {
     const [finalResults, setFinalResults] = useState(null)
     const [grade, setGrade] = useState(null)
     const [toggleMistake, setToggleMistake] = useState(false)
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+    const [isChecked, setIsChecked] = useState(false)
 
 
     useEffect(()=>{
@@ -39,6 +42,15 @@ export default function Quiz() {
 
         void request()
     }, [])
+
+    // Current Displaying Question's Data
+    const questions = targetQuiz?.quizData?.multi?.questions ?? []
+    const currentQuestion = questions[currentQuestionIndex]
+    const currentQuestionNumber = currentQuestion?.number
+    const selectedAnswer = answers[currentQuestionNumber]
+    const correctAnswer = targetQuiz?.quizData?.multi?.keys?.[currentQuestionNumber]
+    const isLastQuestion = currentQuestionIndex === questions.length - 1
+    const isCorrect = selectedAnswer === correctAnswer
 
 
     const retryQuiz = async (quizNumber) => {
@@ -64,7 +76,17 @@ export default function Quiz() {
     const showQuiz = (item) => {
         if (item.quizData.multi.questions.length > 0) {
             if (!item.userAnswers) {
-                setAnswers(item.draftAnswers || {})
+                // See the first unanswered question after coming back
+                const draftAnswers = item.draftAnswers || {}
+                const firstUnansweredIndex = item.quizData.multi.questions.findIndex(
+                    (question) => draftAnswers[question.number] === undefined
+                )
+
+                setAnswers(draftAnswers)
+                setCurrentQuestionIndex(
+                    firstUnansweredIndex === -1 ? 0 : firstUnansweredIndex
+                )
+                setIsChecked(false)
                 setTargetQuiz(item)
                 setToggleContent(true)
             }
@@ -78,6 +100,8 @@ export default function Quiz() {
     }
 
     const handleAnswer = (questionNumber, option) => {
+        if (isChecked) return
+
         const updated = { ...answers, [questionNumber]: option }
         setAnswers(updated)
 
@@ -96,28 +120,33 @@ export default function Quiz() {
             .catch(error => console.error('Failed to save progress:', error))
     }
 
+    const handleCheckOrNext = async () => {
+        if (!currentQuestion || !targetQuiz) return
+
+        if (!isChecked) {
+            if (selectedAnswer === undefined) {
+                toast.error('Choose an answer first.')
+                return
+            }
+
+            setIsChecked(true)
+            return
+        }
+
+        if (isLastQuestion) {
+            await submitQuiz()
+            return
+        }
+
+        setCurrentQuestionIndex((index) => index + 1)
+        setIsChecked(false)
+    }
+
 
     const submitQuiz = async () => {
         if (!targetQuiz) return
 
         const questions = targetQuiz.quizData.multi.questions
-
-        const allAnswered = questions.every(
-            (question) => answers[question.number] !== undefined
-        )
-
-        if (!allAnswered) {
-            const unansweredQuestions = targetQuiz?.quizData?.multi?.questions
-                ?.filter((question) => answers[question.number] === undefined)
-                .map((question) => question.number) || []
-
-            setErrorModal(true)
-
-            setUnansweredItems(unansweredQuestions)
-
-            return
-        }
-
 
         const quizKeys = targetQuiz.quizData.multi.keys
 
@@ -355,29 +384,33 @@ export default function Quiz() {
             {
                 toggleContent &&
                     <motion.div {...fadeIn}
-                        className='absolute inset-0 top-0 w-full h-dvh bg-background/50 flex flex-col backdrop-blur-xs pt-5 gap-2'
+                        className='absolute inset-0 top-0 w-full h-dvh bg-background flex flex-col p-5 gap-5'
                     >
-                        <div className='w-full flex justify-start flex-col items-start gap-2 px-5'>
+                        <div className='w-full flex justify-start items-center gap-2'>
                             <div className='bg-background p-1 flex justify-center items-center rounded-full border shadow-lg'>
                                 <IoIosArrowBack size={20} onClick={closeQuiz} />
                             </div>
 
+                            <div>Quiz {targetQuiz?.quizNumber}</div>
+
+                        </div>
+
+                        <motion.div
+                            {...slideUp}
+                            onClick={(e) => e.stopPropagation()}
+                            className='w-full h-full min-h-0 flex flex-col gap-10 p-5 rounded-2xl border shadow-sm'
+                        >
                             {
                                 (() => {
                                     const total = targetQuiz?.quizData?.multi?.questions?.length ?? 0
                                     const answered = Object.keys(answers).length
+                                    const currentPosition = currentQuestionIndex + 1
 
                                     return total > 0 ? (
-                                        <div className='w-full flex flex-col gap-1'>
-                                            <div className='w-full flex justify-between'>
-                                                <div className='flex gap-2 items-baseline'>
-                                                    <div>Q {targetQuiz?.quizNumber}:</div>
-                                                    <div>{targetQuiz.featuring}</div>
-                                                </div>
-
-                                                <div className='text-xs'>
-                                                    {answered} / {total}
-                                                </div>
+                                        <div className='w-full flex flex-col gap-5'>
+                                            <div className='w-full flex justify-between items-center'>
+                                                <div className='text-gray-500'>{targetQuiz.featuring}</div>
+                                                <div className='text-xs'>{currentPosition} of {total}</div>
                                             </div>
 
                                             <div className='w-full h-5 bg-foreground/10 rounded-full overflow-hidden'>
@@ -392,66 +425,102 @@ export default function Quiz() {
                                     ) : null
                                 })()
                             }
-                        </div>
 
-                        <motion.div {...slideUp}
-                            onClick={(e) => e.stopPropagation()}
-                            className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-[#F5EFE1] rounded-2xl border shadow-lg'
-                        >
+                            <div className='relative w-full h-full flex flex-col gap-3'>
+                                {currentQuestion && (
+                                    <div className='relative h-full'>
+                                        <div className='relative flex gap-3 mb-5'>
+                                            <div className='text-foreground/20 text-lg font-semibold'>
+                                                {currentQuestion.number}
+                                            </div>
 
-                            <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
+                                            <div className='text-lg font-semibold'>{currentQuestion.question}</div>
+                                        </div>
 
-                                <div className='relative w-full min-h-0 overflow-y-auto flex flex-col gap-10'>
-                                    {
-                                        targetQuiz?.quizData?.multi.questions?.map((quiz) => {
+                                        <div className='flex flex-col gap-2'>
+                                            {currentQuestion.options.map((option, optionIndex) => {
+                                                const isSelected = selectedAnswer === option
+                                                const isThisCorrectAnswer = correctAnswer === option
 
-                                            const questionNumber = quiz.number
-                                            
-                                            return (
-                                                <div key={questionNumber}
-                                                    className='w-full pb-5 flex flex-col gap-3'
-                                                >
-                                                    <div className='relative flex gap-3'>
-                                                        <div className='text-foreground/20'>{quiz.number}</div>
-                                                        <div className=''>{quiz.question}</div>
+                                                const feedbackClass = isChecked
+                                                    ? isThisCorrectAnswer
+                                                        ? 'border-green-500 bg-green-100 text-green-900'
+                                                        : isSelected
+                                                            ? 'border-red-500 bg-red-100 text-red-900'
+                                                            : ''
+                                                    : isSelected
+                                                        ? 'border-gray-100 bg-gray-100'
+                                                        : ''
+
+                                                return (
+                                                    <label
+                                                        key={optionIndex}
+                                                        className={`flex items-center gap-3 p-3 border rounded-xl ${feedbackClass}`}
+                                                    >
+                                                        <input
+                                                            className="grid size-5 appearance-none place-content-center rounded-full border border-gray-400 bg-transparent before:size-2.5 before:scale-0 before:rounded-full before:bg-gray-500 before:transition-transform checked:border-gray-500 checked:before:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500"
+                                                            type="radio"
+                                                            name={`question-${currentQuestion.number}`}
+                                                            value={option}
+                                                            checked={isSelected}
+                                                            disabled={isChecked}
+                                                            onChange={() =>
+                                                                handleAnswer(currentQuestion.number, option)
+                                                            }
+                                                        />
+
+                                                        <span className='text-md'>{option}</span>
+                                                    </label>
+                                                )
+                                            })}
+                                        </div>
+
+                                        {
+                                            isChecked &&
+                                            <div
+                                                className={`absolute bottom-0 w-full rounded-xl p-3 text-sm ${
+                                                    isCorrect
+                                                        ? 'bg-green-500 text-white'
+                                                        : 'bg-red-500 text-white'
+                                                }`}
+                                            >
+                                                {
+                                                    isCorrect ?
+                                                    <div className='w-full flex gap-2 items-center'>
+                                                        <TiTick size={35} />
+                                                        <div className='text-2xl font-bold'>CORRECT</div>
                                                     </div>
-
-                                                    <div className='flex flex-col gap-2'>
-                                                        {quiz.options.map((option, optionIndex) => (
-                                                            <label
-                                                                key={optionIndex}
-                                                                className={`flex items-center gap-3 p-3 v border rounded-xl
-                                                                ${answers[questionNumber] === option && "p-2 bg-purple-200"}`}
-                                                            >
-                                                                <input
-                                                                    className="grid size-5 appearance-none place-content-center rounded-full border border-gray-400 bg-transparent before:size-2.5 before:scale-0 before:rounded-full before:bg-purple-500 before:transition-transform checked:border-purple-500 checked:before:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500"
-                                                                    type="radio"
-                                                                    name={`question-${questionNumber}`}
-                                                                    value={option}
-                                                                    checked={answers[questionNumber] === option}
-                                                                    onChange={() => handleAnswer(questionNumber, option)}
-                                                                />
-
-                                                                <span className='text-sm'>{option}</span>
-                                                            </label>
-                                                        ))}
+                                                    :
+                                                    <div className=''>
+                                                        <div className='w-full flex gap-3 items-start flex-col'>
+                                                            <div className='flex gap-3'>
+                                                                <FaTimes size={25} />
+                                                                <div className='text-xl font-bold'>WRONG</div>
+                                                            </div>
+                                                            <div className='text-lg flex gap-3 items-center'>
+                                                                <FaArrowCircleRight size={20} />
+                                                                {currentQuestion.hint}
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
-
-
-
-                                </div>
-                            </div>
-
-                            <div className='w-full bg-[#F5EFE1] pt-3'
-                                 onClick={submitQuiz}
-                            >
-                                <button className='secondary-btn w-full bg-background'>DONE</button>
+                                                }
+                                            </div>
+                                        }
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
+
+                        <button
+                            className='primary-btn w-full'
+                            onClick={handleCheckOrNext}
+                        >
+                            {!isChecked
+                                ? 'CHECK'
+                                : isLastQuestion
+                                    ? 'FINISH'
+                                    : 'NEXT'}
+                        </button>
                     </motion.div>
             }
 
