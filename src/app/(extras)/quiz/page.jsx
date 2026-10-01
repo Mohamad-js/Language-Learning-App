@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 import Back from '@/components/backButton/back'
-import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress  } from "@/lib/db";
+import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress, seedQuizzes  } from "@/lib/db";
 import { GoArrowRight } from "react-icons/go";
 import { motion } from "framer-motion";
 import {  slideUp, fadeIn, expandParent, expandChild } from "@/lib/animations/entrance";
@@ -31,10 +31,7 @@ export default function Quiz() {
         const request = async() => {
             try {
                 const response = await getAllQuizzes()
-
                 setQuiz(response)
-                console.log('response', response) 
-
             } catch(error) {
                 console.error(error)
             }
@@ -207,8 +204,8 @@ export default function Quiz() {
             // Updating the quiz list immediately
             setQuiz(prevQuiz =>
                 prevQuiz.map(item =>
-                    item.quizNumber === quizNumber
-                        ? { ...item, userAnswers: undefined, draftAnswers: undefined }
+                    item.quizNumber === targetQuiz.quizNumber
+                        ? { ...item, userAnswers: userAnswers, draftAnswers: undefined }
                         : item
                 )
             )
@@ -325,7 +322,7 @@ export default function Quiz() {
                                         <div className='w-full flex flex-col gap-2'>
                                             {
                                                 (() => {
-                                                    const total = item.quizData.multi.questions.length
+                                                    const total = item?.quizData?.multi?.questions?.length
                                                     const answered = Object.keys(item.draftAnswers || {}).length
 
                                                     return total > 0 && answered > 0 ? (

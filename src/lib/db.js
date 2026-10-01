@@ -1,4 +1,13 @@
 import { openDB } from 'idb';
+import quizData from "@/../database/quiz.json";   // ← new
+
+const QUIZ_LIST = quizData[0].data;                // ← new
+
+const findQuizContent = (quizNumber) => {          // ← new
+   const found = QUIZ_LIST.find(q => q.quizNumber === quizNumber);
+   return found ? { ...found } : null;
+};
+
 
 export const initDB = async () => {
 
@@ -398,28 +407,56 @@ export const getAllWordsReview = async () => {
 
 
 export const getAllQuizzes = async () => {
+   await seedQuizzes()
    const db = await initDB();
    const quizzes = await db.getAll("quizzes");
-
    return quizzes.sort((a, b) => a.quizNumber - b.quizNumber);
 };
 
 
 
 
-export const saveQuizResult = async (quizNumber, userAnswers) => {
-   const db = await initDB()
 
+export const saveQuizProgress = async (quizNumber, answers) => {
+   const db = await initDB()
    const tx = db.transaction("quizzes", "readwrite")
    const store = tx.objectStore("quizzes")
 
-   const quiz = await store.get(quizNumber)
+   let quiz = await store.get(quizNumber)
 
-   if (quiz) {
-      quiz.userAnswers = userAnswers
-      delete quiz.draftAnswers
-      await store.put(quiz)
+   if (!quiz) {
+      quiz = findQuizContent(quizNumber)
+      if (!quiz) {
+         await tx.done
+         throw new Error(`Quiz ${quizNumber} not found in quiz.json`)
+      }
    }
+
+   quiz.draftAnswers = answers
+   await store.put(quiz)
+
+   await tx.done
+   return true
+}
+
+export const saveQuizResult = async (quizNumber, userAnswers) => {
+   const db = await initDB()
+   const tx = db.transaction("quizzes", "readwrite")
+   const store = tx.objectStore("quizzes")
+
+   let quiz = await store.get(quizNumber)
+
+   if (!quiz) {
+      quiz = findQuizContent(quizNumber)
+      if (!quiz) {
+         await tx.done
+         throw new Error(`Quiz ${quizNumber} not found in quiz.json`)
+      }
+   }
+
+   quiz.userAnswers = userAnswers
+   delete quiz.draftAnswers
+   await store.put(quiz)
 
    await tx.done
 }
@@ -459,32 +496,8 @@ export const resetAllQuizResults = async () => {
 
 
 
-
-export const saveQuizProgress = async (quizNumber, answers) => {
-   const db = await initDB()
-
-   const tx = db.transaction("quizzes", "readwrite")
-   const store = tx.objectStore("quizzes")
-
-   const quiz = await store.get(quizNumber)
-
-   if (!quiz) {
-      await tx.done
-      throw new Error(`Quiz ${quizNumber} not found`)
-   }
-
-   quiz.draftAnswers = answers
-   await store.put(quiz)
-
-   await tx.done
-   return true
-}
-
-
-
 export const resetQuizProgress = async (quizNumber) => {
    const db = await initDB()
-
    const tx = db.transaction("quizzes", "readwrite")
    const store = tx.objectStore("quizzes")
 
@@ -492,23 +505,51 @@ export const resetQuizProgress = async (quizNumber) => {
 
    if (!quiz) {
       await tx.done
-      throw new Error(`Quiz ${quizNumber} not found`)
+      return true
    }
 
    let changed = false
-
-   if (quiz.userAnswers) {
-      delete quiz.userAnswers
-      changed = true
-   }
-
-   if (quiz.draftAnswers) {
-      delete quiz.draftAnswers
-      changed = true
-   }
-
+   if (quiz.userAnswers) { delete quiz.userAnswers; changed = true }
+   if (quiz.draftAnswers) { delete quiz.draftAnswers; changed = true }
    if (changed) await store.put(quiz)
 
    await tx.done
    return true
 }
+
+
+
+
+
+let seedPromise = null;
+
+export const seedQuizzes = async () => {
+   if (seedPromise) return seedPromise;
+
+   seedPromise = (async () => {
+      const db = await initDB();
+      const tx = db.transaction("quizzes", "readwrite");
+      const store = tx.objectStore("quizzes");
+
+      const validNumbers = new Set(QUIZ_LIST.map(q => q.quizNumber));
+
+      for (const quiz of QUIZ_LIST) {
+         const existing = await store.get(quiz.quizNumber);
+         const merged = existing
+             ? { ...quiz, userAnswers: existing.userAnswers, draftAnswers: existing.draftAnswers }
+             : quiz;
+         await store.put(merged);
+      }
+
+      const allStored = await store.getAll();
+      for (const stored of allStored) {
+         if (!validNumbers.has(stored.quizNumber)) {
+            await store.delete(stored.quizNumber);
+         }
+      }
+
+      await tx.done;
+   })();
+
+   return seedPromise;
+};
