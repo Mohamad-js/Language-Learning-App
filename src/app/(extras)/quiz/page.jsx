@@ -45,10 +45,10 @@ export default function Quiz() {
         try {
             await resetQuizProgress(quizNumber)
 
-            setQuiz(prevQuiy =>
+            setQuiz(prevQuiz =>
                 prevQuiz.map(item =>
-                    item.quizNumber === targetQuiz.quizNumber
-                        ? { ...item, userAnswers: userAnswers, draftAnswers: undefined }
+                    item.quizNumber === quizNumber
+                        ? { ...item, userAnswers: undefined, draftAnswers: undefined }
                         : item
                 )
             )
@@ -77,26 +77,23 @@ export default function Quiz() {
         setToggleContent(false)
     }
 
-    const handleAnswer = (questionIndex, option) => {
-        setAnswers(prev => {
-            const updated = { ...prev, [questionIndex]: option }
+    const handleAnswer = (questionNumber, option) => {
+        const updated = { ...answers, [questionNumber]: option }
+        setAnswers(updated)
 
-            if (targetQuiz) {
-                saveQuizProgress(targetQuiz.quizNumber, updated)
-                    .then(() => {
-                        setQuiz(prevQuiz =>
-                            prevQuiz.map(item =>
-                                item.quizNumber === targetQuiz.quizNumber
-                                    ? { ...item, draftAnswers: updated }
-                                    : item
-                            )
-                        )
-                    })
-                    .catch(error => console.error('Failed to save progress:', error))
-            }
+        if (!targetQuiz) return
 
-            return updated
-        })
+        saveQuizProgress(targetQuiz.quizNumber, updated)
+            .then(() => {
+                setQuiz(prevQuiz =>
+                    prevQuiz.map(item =>
+                        item.quizNumber === targetQuiz.quizNumber
+                            ? { ...item, draftAnswers: updated }
+                            : item
+                    )
+                )
+            })
+            .catch(error => console.error('Failed to save progress:', error))
     }
 
 
@@ -358,44 +355,49 @@ export default function Quiz() {
             {
                 toggleContent &&
                     <motion.div {...fadeIn}
-                        className='absolute inset-0 top-0 w-full h-dvh bg-background/10 flex flex-col backdrop-blur-xs pt-5 gap-2'
+                        className='absolute inset-0 top-0 w-full h-dvh bg-background/50 flex flex-col backdrop-blur-xs pt-5 gap-2'
                     >
-                        <div className='w-full flex justify-start  items-center gap-2 pl-5'>
+                        <div className='w-full flex justify-start flex-col items-start gap-2 px-5'>
                             <div className='bg-background p-1 flex justify-center items-center rounded-full border shadow-lg'>
                                 <IoIosArrowBack size={20} onClick={closeQuiz} />
                             </div>
 
-                            <div className='flex gap-2 items-baseline'>
-                                <div>Q {targetQuiz?.quizNumber}:</div>
-                                <div>{targetQuiz.featuring}</div>
-                            </div>
+                            {
+                                (() => {
+                                    const total = targetQuiz?.quizData?.multi?.questions?.length ?? 0
+                                    const answered = Object.keys(answers).length
+
+                                    return total > 0 ? (
+                                        <div className='w-full flex flex-col gap-1'>
+                                            <div className='w-full flex justify-between'>
+                                                <div className='flex gap-2 items-baseline'>
+                                                    <div>Q {targetQuiz?.quizNumber}:</div>
+                                                    <div>{targetQuiz.featuring}</div>
+                                                </div>
+
+                                                <div className='text-xs'>
+                                                    {answered} / {total}
+                                                </div>
+                                            </div>
+
+                                            <div className='w-full h-5 bg-foreground/10 rounded-full overflow-hidden'>
+                                                <motion.div
+                                                    className='h-full bg-foreground rounded-full transition-all'
+                                                    initial={false}
+                                                    animate={{ width: `${(answered / total) * 100}%` }}
+                                                    transition={{ duration: 0.45, ease: 'easeOut' }}
+                                                />
+                                            </div>
+                                        </div>
+                                    ) : null
+                                })()
+                            }
                         </div>
 
                         <motion.div {...slideUp}
                             onClick={(e) => e.stopPropagation()}
                             className='w-full h-full min-h-0 flex flex-col gap-5 p-5 bg-[#F5EFE1] rounded-2xl border shadow-lg'
                         >
-
-                            {/*{*/}
-                            {/*    (() => {*/}
-                            {/*        const total = targetQuiz.quizData.multi.questions.length*/}
-                            {/*        const answered = Object.keys(targetQuiz.draftAnswers || {}).length*/}
-
-                            {/*        return total > 0 && answered > 0 ? (*/}
-                            {/*            <div className='w-full flex flex-col gap-1'>*/}
-                            {/*                <div className='w-full h-0.5 bg-foreground/10 rounded-full overflow-hidden'>*/}
-                            {/*                    <div*/}
-                            {/*                        className='h-full bg-foreground rounded-full transition-all'*/}
-                            {/*                        style={{ width: `${(answered / total) * 100}%` }}*/}
-                            {/*                    />*/}
-                            {/*                </div>*/}
-                            {/*                <div className='text-xs text-gray-700 dark:text-gray-300'>*/}
-                            {/*                    {answered} /{total} answered*/}
-                            {/*                </div>*/}
-                            {/*            </div>*/}
-                            {/*        ) : null*/}
-                            {/*    })()*/}
-                            {/*}*/}
 
                             <div className='relative w-full flex-1 min-h-0 overflow-hidden flex flex-col gap-3 items-center'>
 
