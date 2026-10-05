@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
 import { NavigationProvider } from './context/NavigationProvider';
 import { SettingsProvider } from './context/SettingsProvider';
+import { AuthProvider } from './context/AuthProvider';
 import { Toaster } from 'sonner';
 
 
@@ -67,15 +68,17 @@ export default function RootLayout({ children }) {
          <ServiceWorkerRegistrar />
 
          <SettingsProvider>
-            <ThemeProvider>
-               <LoadingProvider>
-                  <Ham />
-                  <NavigationProvider>
-                     {children}
-                     <Toaster position='top' theme='system' richColors />
-                  </NavigationProvider>
-               </LoadingProvider>
-            </ThemeProvider>
+            <AuthProvider>
+               <ThemeProvider>
+                  <LoadingProvider>
+                     <Ham />
+                     <NavigationProvider>
+                        {children}
+                        <Toaster position='top' theme='system' richColors />
+                     </NavigationProvider>
+                  </LoadingProvider>
+               </ThemeProvider>
+            </AuthProvider>
          </SettingsProvider>
       </body>
     </html>

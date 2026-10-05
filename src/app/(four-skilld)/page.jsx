@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 import { slideUp, fadeIn, fadeRight, expandParent, expandChild } from "@/lib/animations/entrance";
 import { toast } from "sonner";
 import NotificationButton from "@/components/NotifBtn/NotificationButton";
+import AccountPanel from "@/components/auth/AccountPanel";
 
 
 
@@ -185,6 +186,9 @@ const Home = () => {
          <QuizManager />
 
          <div className="absolute top-0 w-full h-65 bg-linear-to-r from-violet-200 to-pink-200 p-7 dark:bg-linear-to-r dark:from-violet-900 dark:to-rose-800">
+
+            <AccountPanel compact />
+
             <motion.div {...fadeRight} 
                className='h-full flex flex-col justify-center gap-2'
                onClick={toggleIdiomCard}

@@ -10,7 +10,7 @@ import { RiRepeat2Fill } from "react-icons/ri";
 import { GoHomeFill } from "react-icons/go";
 import { VscDebugDisconnect } from "react-icons/vsc";
 import { PiUserSoundFill, PiTreeStructureLight } from "react-icons/pi";
-import { IoBook, IoReader, IoSettings, IoSave  } from "react-icons/io5";
+import { IoBook, IoReader, IoSettings, IoSave, IoPersonAddOutline } from "react-icons/io5";
 import { ImHeadphones } from "react-icons/im";
 import { VscWholeWord } from "react-icons/vsc";
 import { LuGroup } from "react-icons/lu";
@@ -79,7 +79,8 @@ function Ham(){
          patterns: '/patterns',
          phrasal: '/phrasal',
          about: '/about',
-         quiz: '/quiz'
+         quiz: '/quiz',
+         signup: '/sign-up'
       };
 
       const target = routes[msg];
@@ -348,6 +349,13 @@ function Ham(){
                            <TbDeviceMobileQuestion />
                         </div>
                         <div>Quiz</div>
+                     </div>
+
+                     <div className={`ham-styles ${activeTab('/sign-up')}`} onClick={() => navFromHam('signup')}>
+                        <div className="ham-icons">
+                           <IoPersonAddOutline />
+                        </div>
+                        <div>Account</div>
                      </div>
 
                   </div>

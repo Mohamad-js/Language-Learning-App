@@ -2880,7 +2880,7 @@
                         "number": 2,
                         "hint": "",
                         "question": "___ she have a brother?",
-                        "options": [
+                        "op                                                                                                                                                                                                                                                                                                                                                                                    tions": [
                            "Is",
                            "Does",
                            "Do"
@@ -3985,7 +3985,7 @@
                   "questions": [
                      {
                         "number": 1,
-                        "hint": "",
+                        "hint": "Does she",
                         "question": "Which shoes ___ she want?",
                         "options": [
                            "do",
@@ -3995,7 +3995,7 @@
                      },
                      {
                         "number": 2,
-                        "hint": "",
+                        "hint": "Who are",
                         "question": "Who ___ your friends?",
                         "options": [
                            "do",
@@ -4005,17 +4005,17 @@
                      },
                      {
                         "number": 3,
-                        "hint": "",
+                        "hint": "This sentence has no subjects.",
                         "question": "What ___ in the sea?",
                         "options": [
                            "lives",
-                           "live",
-                           "living"
+                           "does live",
+                           "do live"
                         ]
                      },
                      {
                         "number": 4,
-                        "hint": "",
+                        "hint": "Does he",
                         "question": "How many brothers ___ he have?",
                         "options": [
                            "is",
@@ -4025,7 +4025,7 @@
                      },
                      {
                         "number": 5,
-                        "hint": "",
+                        "hint": "Who is",
                         "question": "Who ___ that man?",
                         "options": [
                            "does",
@@ -4035,53 +4035,57 @@
                      },
                      {
                         "number": 6,
-                        "hint": "",
+                        "hint": "The plural form of fish is 'fish'.",
                         "question": "What is the right answer to \"What lives in the sea?\"",
                         "options": [
-                           "Fish live in the sea.",
-                           "Fish lives in the sea.",
-                           "Fish does live in the sea."
+                           "Fish",
+                           "Fishes",
+                           "Fishs"
                         ]
                      },
                      {
                         "number": 7,
-                        "hint": "",
+                        "hint": "This sentence has no subjects.",
                         "question": "Who ___ pizza in your family?",
                         "options": [
-                           "liking",
+                           "likes",
                            "like",
-                           "likes"
+                           "does like"
                         ]
                      },
                      {
                         "number": 8,
+                        "hint": "Does she",
                         "question": "Which question is correct?",
                         "options": [
                            "Where do she study?",
-                           "Where does she study?",
-                           "Where she studies?"
+                           "Where studies she?",
+                           "Where does she studies?"
                         ]
                      },
                      {
                         "number": 9,
+                        "hint": "This sentence has no subjects.",
                         "question": "Who ___ English well?",
                         "options": [
+                           "do speak",
                            "speaks",
-                           "speak",
-                           "speaking"
+                           "does speak"
                         ]
                      },
                      {
                         "number": 10,
+                        "hint": "'When' asks about the time.",
                         "question": "What is the right answer to \"When does the shop close?\"",
                         "options": [
-                           "It close at nine.",
-                           "It does at nine.",
-                           "It closes at nine."
+                           "It is at nine.",
+                           "It is on the street.",
+                           "It is late."
                         ]
                      },
                      {
                         "number": 11,
+                        "hint": "Does he",
                         "question": "Which question is correct?",
                         "options": [
                            "What he needs?",
@@ -4091,6 +4095,7 @@
                      },
                      {
                         "number": 12,
+                        "hint": "Do you",
                         "question": "Whose pen ___ you use?",
                         "options": [
                            "do",
@@ -4100,34 +4105,38 @@
                      },
                      {
                         "number": 13,
-                        "question": "Which question asks about the object? (Ann likes Tom. Ask about Tom.)",
+                        "hint": "This sentence has no subjects.",
+                        "question": "Which question is correct?",
                         "options": [
                            "Who likes Ann?",
-                           "Who Ann likes?",
+                           "Who does Ann likes?",
                            "Who does Ann like?"
                         ]
                      },
                      {
                         "number": 14,
+                        "hint": "Are there",
                         "question": "How many ___ there?",
                         "options": [
-                           "do",
-                           "are",
-                           "is"
+                           "cars do",
+                           "cars are",
+                           "car is"
                         ]
                      },
                      {
                         "number": 15,
-                        "question": "Which question asks about the subject? (Ann likes Tom. Ask about Ann.)",
+                        "hint": "Does Tom",
+                        "question": "Which one is correct?",
                         "options": [
-                           "Who likes Tom?",
+                           "Who like Tom?",
                            "Who does Tom like?",
                            "Who do likes Tom?"
                         ]
                      },
                      {
                         "number": 16,
-                        "question": "What is the right answer to \"Who are they?\"",
+                        "hint": "They are",
+                        "question": "Who are they?",
                         "options": [
                            "They is my cousins.",
                            "They do my cousins.",
@@ -4136,6 +4145,7 @@
                      },
                      {
                         "number": 17,
+                        "hint": "Does she",
                         "question": "How much sugar ___ she want?",
                         "options": [
                            "is",
@@ -4145,6 +4155,7 @@
                      },
                      {
                         "number": 18,
+                        "hint": "Is it",
                         "question": "What day ___ it today?",
                         "options": [
                            "is",
@@ -4154,6 +4165,7 @@
                      },
                      {
                         "number": 19,
+                        "hint": "Do you",
                         "question": "How much water ___ you drink?",
                         "options": [
                            "does",
@@ -4163,6 +4175,7 @@
                      },
                      {
                         "number": 20,
+                        "hint": "Is this",
                         "question": "What ___ this?",
                         "options": [
                            "do",
@@ -4172,6 +4185,7 @@
                      },
                      {
                         "number": 21,
+                        "hint": "Does she",
                         "question": "How many ___ she want?",
                         "options": [
                            "does",
@@ -4181,6 +4195,7 @@
                      },
                      {
                         "number": 22,
+                        "hint": "Do they",
                         "question": "Which question is correct?",
                         "options": [
                            "What food does they eat?",
@@ -4190,6 +4205,7 @@
                      },
                      {
                         "number": 23,
+                        "hint": "Does it",
                         "question": "How much ___ it cost?",
                         "options": [
                            "do",
@@ -4199,6 +4215,7 @@
                      },
                      {
                         "number": 24,
+                        "hint": "This sentence has no subjects.",
                         "question": "Which student ___ French?",
                         "options": [
                            "speaks",
@@ -4208,6 +4225,7 @@
                      },
                      {
                         "number": 25,
+                        "hint": "Is your mother",
                         "question": "How ___ your mother?",
                         "options": [
                            "does",
@@ -4217,6 +4235,7 @@
                      },
                      {
                         "number": 26,
+                        "hint": "Do you",
                         "question": "Who ___ you like?",
                         "options": [
                            "is",
@@ -4226,15 +4245,17 @@
                      },
                      {
                         "number": 27,
-                        "question": "What is the right question for: \"Her bike is RED.\"?",
+                        "hint": "What color is",
+                        "question": "Which one is correct?",
                         "options": [
                            "What color is her bike?",
-                           "What color does her bike?",
+                           "What is color her bike?",
                            "What color her bike is?"
                         ]
                      },
                      {
                         "number": 28,
+                        "hint": "Do you",
                         "question": "How much ___ you want?",
                         "options": [
                            "does",
@@ -4244,7 +4265,8 @@
                      },
                      {
                         "number": 29,
-                        "question": "What is the right answer to \"How old are you?\"",
+                        "hint": "We use 'to be' for age.",
+                        "question": "How old are you?",
                         "options": [
                            "I have ten.",
                            "I am ten.",
@@ -4253,6 +4275,7 @@
                      },
                      {
                         "number": 30,
+                        "hint": "Is your keys",
                         "question": "Where ___ your keys?",
                         "options": [
                            "are",
@@ -4262,6 +4285,7 @@
                      },
                      {
                         "number": 31,
+                        "hint": "Do you",
                         "question": "When ___ you have lunch?",
                         "options": [
                            "does",
@@ -4271,6 +4295,7 @@
                      },
                      {
                         "number": 32,
+                        "hint": "Is in",
                         "question": "What ___ in your bag?",
                         "options": [
                            "do",
@@ -4280,6 +4305,7 @@
                      },
                      {
                         "number": 33,
+                        "hint": "Does Tom",
                         "question": "Where ___ Tom work?",
                         "options": [
                            "does",
@@ -4289,6 +4315,7 @@
                      },
                      {
                         "number": 34,
+                        "hint": "Is this",
                         "question": "How much ___ this?",
                         "options": [
                            "does",
@@ -4298,7 +4325,8 @@
                      },
                      {
                         "number": 35,
-                        "question": "What is the right question for: \"The cat drinks MILK.\"?",
+                        "hint": "What does the cat",
+                        "question": "Make question: \"The cat drinks MILK.\"?",
                         "options": [
                            "What the cat drinks?",
                            "What does the cat drink?",
@@ -4307,6 +4335,7 @@
                      },
                      {
                         "number": 36,
+                        "hint": "Live in",
                         "question": "How many people ___ in this house?",
                         "options": [
                            "live",
@@ -4316,7 +4345,8 @@
                      },
                      {
                         "number": 37,
-                        "question": "Which words are missing: \"___ juice do you drink?\"",
+                        "hint": "How much juice",
+                        "question": "___ juice do you drink?",
                         "options": [
                            "How many",
                            "How old",
@@ -4325,6 +4355,7 @@
                      },
                      {
                         "number": 38,
+                        "hint": "Are in",
                         "question": "How many students ___ in your class?",
                         "options": [
                            "do",
@@ -4334,7 +4365,8 @@
                      },
                      {
                         "number": 39,
-                        "question": "What is the right answer to \"How much is this pen?\"",
+                        "hint": "We use 'is' for price.",
+                        "question": "How much is this pen?",
                         "options": [
                            "It is two dollars.",
                            "It are two dollars.",
@@ -4343,6 +4375,7 @@
                      },
                      {
                         "number": 40,
+                        "hint": "Does Tom",
                         "question": "How ___ Tom get to work?",
                         "options": [
                            "is",
@@ -4352,7 +4385,8 @@
                      },
                      {
                         "number": 41,
-                        "question": "Which answer is right for \"How many do you want?\"",
+                        "hint": "I want",
+                        "question": "How many balls do you want?",
                         "options": [
                            "I wants two.",
                            "I want two.",
@@ -4361,6 +4395,7 @@
                      },
                      {
                         "number": 42,
+                        "hint": "Do you",
                         "question": "What ___ you like?",
                         "options": [
                            "do",
@@ -4370,7 +4405,8 @@
                      },
                      {
                         "number": 43,
-                        "question": "Which words are missing: \"___ books do you have?\"",
+                        "hint": "How many books",
+                        "question": "___ books do you have?",
                         "options": [
                            "How much",
                            "How old",
@@ -4379,6 +4415,7 @@
                      },
                      {
                         "number": 44,
+                        "hint": "Is your birthday",
                         "question": "When ___ your birthday?",
                         "options": [
                            "do",
@@ -4388,6 +4425,7 @@
                      },
                      {
                         "number": 45,
+                        "hint": "Do you",
                         "question": "Which bag ___ you like?",
                         "options": [
                            "do",
@@ -4397,6 +4435,7 @@
                      },
                      {
                         "number": 46,
+                        "hint": "Are these",
                         "question": "Whose shoes ___ these?",
                         "options": [
                            "is",
@@ -4406,6 +4445,7 @@
                      },
                      {
                         "number": 47,
+                        "hint": "Do ... sisters",
                         "question": "What sport ___ your sisters play?",
                         "options": [
                            "does",
@@ -4415,7 +4455,8 @@
                      },
                      {
                         "number": 48,
-                        "question": "Which question is correct? (Tom likes pizza. Ask about Tom.)",
+                        "hint": "Who likes",
+                        "question": "Which one is correct?",
                         "options": [
                            "Who likes pizza?",
                            "Who like pizza?",
@@ -4424,7 +4465,8 @@
                      },
                      {
                         "number": 49,
-                        "question": "What is the right answer to \"What do you eat for breakfast?\"",
+                        "hint": "I eat",
+                        "question": "What do you eat for breakfast?",
                         "options": [
                            "I eats bread.",
                            "I does eat bread.",
@@ -4433,6 +4475,7 @@
                      },
                      {
                         "number": 50,
+                        "hint": "Does she",
                         "question": "Who ___ she meet on Fridays?",
                         "options": [
                            "do",
@@ -4442,15 +4485,17 @@
                      },
                      {
                         "number": 51,
+                        "hint": "This sentence has no subjects.",
                         "question": "What ___ in the garden?",
                         "options": [
                            "grows",
-                           "grow",
+                           "does grow",
                            "growing"
                         ]
                      },
                      {
                         "number": 52,
+                        "hint": "Does your teacher",
                         "question": "Who ___ your teacher help after class?",
                         "options": [
                            "do",
@@ -4460,7 +4505,8 @@
                      },
                      {
                         "number": 53,
-                        "question": "What is the right answer to \"Where is the bank?\"",
+                        "hint": "It is",
+                        "question": "Where is the bank?",
                         "options": [
                            "It are next to the park.",
                            "It is next to the park.",
@@ -4469,6 +4515,7 @@
                      },
                      {
                         "number": 54,
+                        "hint": "Do you",
                         "question": "Why ___ you like cats?",
                         "options": [
                            "do",
@@ -4478,6 +4525,7 @@
                      },
                      {
                         "number": 55,
+                        "hint": "Is this",
                         "question": "Whose bag ___ this?",
                         "options": [
                            "does",
@@ -4487,6 +4535,7 @@
                      },
                      {
                         "number": 56,
+                        "hint": "Does he",
                         "question": "What car ___ he like?",
                         "options": [
                            "is",
@@ -4496,6 +4545,7 @@
                      },
                      {
                         "number": 57,
+                        "hint": "This sentence has no subjects.",
                         "question": "How much ___ these shoes?",
                         "options": [
                            "are",
@@ -4505,6 +4555,7 @@
                      },
                      {
                         "number": 58,
+                        "hint": "Does she",
                         "question": "What ___ she do on Sundays?",
                         "options": [
                            "is",
@@ -4514,6 +4565,7 @@
                      },
                      {
                         "number": 59,
+                        "hint": "Is she",
                         "question": "Why ___ she sad today?",
                         "options": [
                            "does",
@@ -4523,6 +4575,7 @@
                      },
                      {
                         "number": 60,
+                        "hint": "Do you",
                         "question": "How many books ___ you have?",
                         "options": [
                            "do",
@@ -4532,7 +4585,8 @@
                      },
                      {
                         "number": 61,
-                        "question": "What is the right question for: \"They need FIVE.\"?",
+                        "hint": "Five: 'How many'",
+                        "question": "Make question: \"They need FIVE.\"?",
                         "options": [
                            "How much do they need?",
                            "How many does they need?",
@@ -4541,6 +4595,7 @@
                      },
                      {
                         "number": 62,
+                        "hint": "Do they",
                         "question": "How often ___ they play tennis?",
                         "options": [
                            "are",
@@ -4550,16 +4605,18 @@
                      },
                      {
                         "number": 63,
-                        "question": "What is the right question for: \"MARIA works here.\"?",
+                        "hint": "This sentence has no subjects.",
+                        "question": "Make question: \"MARIA works here.\"?",
                         "options": [
                            "Who works here?",
                            "Who is work here?",
-                           "Who work here?"
+                           "Who does work here?"
                         ]
                      },
                      {
                         "number": 64,
-                        "question": "How many ___ you need?",
+                        "hint": "Do you",
+                        "question": "How many pens ___ you need?",
                         "options": [
                            "is",
                            "does",
@@ -4568,16 +4625,18 @@
                      },
                      {
                         "number": 65,
-                        "question": "What is the right question for: \"She drinks TEA.\"?",
+                        "hint": "Does she",
+                        "question": "Make question: \"She drinks TEA.\"?",
                         "options": [
                            "What is she drink?",
                            "What does she drink?",
-                           "What she drinks?"
+                           "What do she drinks?"
                         ]
                      },
                      {
                         "number": 66,
-                        "question": "Who ___ Tom see every day?",
+                        "hint": "Does Steve",
+                        "question": "Who ___ Steve see every day?",
                         "options": [
                            "does",
                            "is",
@@ -4586,7 +4645,8 @@
                      },
                      {
                         "number": 67,
-                        "question": "What is the right answer to \"Who lives here?\"",
+                        "hint": "Tom lives",
+                        "question": "Who lives here?",
                         "options": [
                            "Tom live here.",
                            "Tom is live here.",
@@ -4595,6 +4655,7 @@
                      },
                      {
                         "number": 68,
+                        "hint": "Who has",
                         "question": "Who ___ a cat in your class?",
                         "options": [
                            "haves",
@@ -4604,6 +4665,7 @@
                      },
                      {
                         "number": 69,
+                        "hint": "Are those",
                         "question": "What ___ those?",
                         "options": [
                            "are",
@@ -4613,6 +4675,7 @@
                      },
                      {
                         "number": 70,
+                        "hint": "This sentence has no subjects.",
                         "question": "Who ___ to school by bus?",
                         "options": [
                            "going",
@@ -4622,6 +4685,7 @@
                      },
                      {
                         "number": 71,
+                        "hint": "Does your brother",
                         "question": "What ___ your brother eat for lunch?",
                         "options": [
                            "is",
@@ -4631,7 +4695,8 @@
                      },
                      {
                         "number": 72,
-                        "question": "Which question is correct? (The dog eats meat. Ask about the dog.)",
+                        "hint": "",
+                        "question": "Which one is correct?",
                         "options": [
                            "What eats meat?",
                            "What does eats meat?",
@@ -4640,7 +4705,8 @@
                      },
                      {
                         "number": 73,
-                        "question": "What is the right answer to \"Why do you like summer?\"",
+                        "hint": "It is",
+                        "question": "Why do you like summer?",
                         "options": [
                            "Because it does hot.",
                            "Because it hot.",
@@ -4649,6 +4715,7 @@
                      },
                      {
                         "number": 74,
+                        "hint": "Do you",
                         "question": "How ___ you go to school?",
                         "options": [
                            "are",
@@ -4658,6 +4725,7 @@
                      },
                      {
                         "number": 75,
+                        "hint": "Plays the piano",
                         "question": "Who ___ the piano?",
                         "options": [
                            "plays",
@@ -4667,7 +4735,8 @@
                      },
                      {
                         "number": 76,
-                        "question": "What is the right answer to \"Who do you live with?\"",
+                        "hint": "I live",
+                        "question": "Who do you live with?",
                         "options": [
                            "I does live with my aunt.",
                            "I lives with my aunt.",
@@ -4676,6 +4745,7 @@
                      },
                      {
                         "number": 77,
+                        "hint": "Do they",
                         "question": "Which question is correct?",
                         "options": [
                            "Why they go home?",
@@ -4685,6 +4755,7 @@
                      },
                      {
                         "number": 78,
+                        "hint": "",
                         "question": "Whose dog ___ at night?",
                         "options": [
                            "barks",
@@ -4694,6 +4765,7 @@
                      },
                      {
                         "number": 79,
+                        "hint": "",
                         "question": "What animals ___ you like?",
                         "options": [
                            "does",
@@ -4703,6 +4775,7 @@
                      },
                      {
                         "number": 80,
+                        "hint": "",
                         "question": "Which question is correct?",
                         "options": [
                            "How many cat do you have?",
@@ -4712,6 +4785,7 @@
                      },
                      {
                         "number": 81,
+                        "hint": "",
                         "question": "What ___ they want?",
                         "options": [
                            "do",
@@ -4721,6 +4795,7 @@
                      },
                      {
                         "number": 82,
+                        "hint": "",
                         "question": "What is the right answer to \"What time does the film start?\"",
                         "options": [
                            "It does at eight.",
@@ -4730,6 +4805,7 @@
                      },
                      {
                         "number": 83,
+                        "hint": "",
                         "question": "How old ___ your sister?",
                         "options": [
                            "do",
@@ -4739,6 +4815,7 @@
                      },
                      {
                         "number": 84,
+                        "hint": "",
                         "question": "Why ___ your brother run every morning?",
                         "options": [
                            "does",
@@ -4748,7 +4825,8 @@
                      },
                      {
                         "number": 85,
-                        "question": "What is the right question for: \"They play at FOUR.\"?",
+                        "hint": "",
+                        "question": "Make question: \"They play at FOUR.\"?",
                         "options": [
                            "When they play?",
                            "When does they play?",
@@ -4757,6 +4835,7 @@
                      },
                      {
                         "number": 86,
+                        "hint": "",
                         "question": "How much money ___ he have?",
                         "options": [
                            "do",
@@ -4766,6 +4845,7 @@
                      },
                      {
                         "number": 87,
+                        "hint": "",
                         "question": "What color ___ your bag?",
                         "options": [
                            "is",
@@ -4775,6 +4855,7 @@
                      },
                      {
                         "number": 88,
+                        "hint": "",
                         "question": "How many eggs ___ she eat?",
                         "options": [
                            "do",
@@ -4784,6 +4865,7 @@
                      },
                      {
                         "number": 89,
+                        "hint": "",
                         "question": "Who ___ the answer?",
                         "options": [
                            "knowing",
@@ -4793,6 +4875,7 @@
                      },
                      {
                         "number": 90,
+                        "hint": "",
                         "question": "Which question is correct?",
                         "options": [
                            "How much rice do they eat?",
@@ -4802,6 +4885,7 @@
                      },
                      {
                         "number": 91,
+                        "hint": "",
                         "question": "Where ___ the children play after school?",
                         "options": [
                            "is",
@@ -4811,6 +4895,7 @@
                      },
                      {
                         "number": 92,
+                        "hint": "",
                         "question": "How much milk ___ in the fridge?",
                         "options": [
                            "does",
@@ -4820,6 +4905,7 @@
                      },
                      {
                         "number": 93,
+                        "hint": "",
                         "question": "What time ___ you get up?",
                         "options": [
                            "do",
@@ -4829,6 +4915,7 @@
                      },
                      {
                         "number": 94,
+                        "hint": "",
                         "question": "How many students ___ football?",
                         "options": [
                            "playing",
@@ -4838,6 +4925,7 @@
                      },
                      {
                         "number": 95,
+                        "hint": "",
                         "question": "Which color ___ your shirt?",
                         "options": [
                            "do",
@@ -4847,6 +4935,7 @@
                      },
                      {
                         "number": 96,
+                        "hint": "",
                         "question": "Where ___ you live?",
                         "options": [
                            "do",
@@ -4856,6 +4945,7 @@
                      },
                      {
                         "number": 97,
+                        "hint": "",
                         "question": "Who ___ in this house?",
                         "options": [
                            "live",
@@ -4865,6 +4955,7 @@
                      },
                      {
                         "number": 98,
+                        "hint": "",
                         "question": "When ___ your class start?",
                         "options": [
                            "do",
@@ -4874,6 +4965,7 @@
                      },
                      {
                         "number": 99,
+                        "hint": "",
                         "question": "Which question is correct?",
                         "options": [
                            "Which bus goes to the park?",
@@ -4883,6 +4975,7 @@
                      },
                      {
                         "number": 100,
+                        "hint": "",
                         "question": "What language ___ Maria speak?",
                         "options": [
                            "is",
@@ -4905,7 +4998,7 @@
                      "10": "It closes at nine.",
                      "11": "What does he need?",
                      "12": "do",
-                     "13": "Who does Ann like?",
+                     "13": "Who likes Ann?",
                      "14": "are",
                      "15": "Who likes Tom?",
                      "16": "They are my cousins.",
