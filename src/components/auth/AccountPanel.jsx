@@ -55,9 +55,14 @@ export default function AccountPanel({ compact = false }) {
         return (
             <Link
                 href="/sign-up"
-                className="self-start rounded-full border border-foreground/15 bg-background/70 px-3 py-1.5 text-xs font-medium backdrop-blur-sm active:bg-foreground/10"
+                className="rounded-full bg-background/40 px-3 py-1.5 text-xs font-medium backdrop-blur-sm"
             >
-                {isLoadingAuth ? 'Loading…' : user ? user.user_metadata?.username || user.email : 'Sign in / Sign up'}
+                {
+                    isLoadingAuth ? 'Loading…' : user ?
+                        profile?.full_name || user.user_metadata?.full_name || "Complete Profile"
+
+                        : 'Sign in / Sign up'
+                }
             </Link>
         );
     }
@@ -174,7 +179,7 @@ export default function AccountPanel({ compact = false }) {
                 </div>
 
                 <dl className="flex flex-col divide-y divide-foreground/10 rounded-2xl border border-foreground/10 text-sm">
-                    <div className="flex items-center justify-between gap-4 px-4 py-3">
+                    <div className="flex flex-col items-center justify-between gap-1 px-4 py-3">
                         <dt className="text-foreground/60">Email</dt>
                         <dd className="break-all text-right">{displayEmail}</dd>
                     </div>
@@ -183,12 +188,12 @@ export default function AccountPanel({ compact = false }) {
                         <dd>{isProfileLoading ? '…' : displayUsername ? `@${displayUsername}` : '—'}</dd>
                     </div>
                     <div className="flex items-center justify-between gap-4 px-4 py-3">
-                        <dt className="text-foreground/60">Signed in with</dt>
+                        <dt className="text-foreground/60">Sign in Method</dt>
                         <dd>{provider}</dd>
                     </div>
                     {memberSince && (
                         <div className="flex items-center justify-between gap-4 px-4 py-3">
-                            <dt className="text-foreground/60">Member since</dt>
+                            <dt className="text-foreground/60">Since</dt>
                             <dd>{memberSince}</dd>
                         </div>
                     )}
@@ -252,6 +257,23 @@ export default function AccountPanel({ compact = false }) {
                     {isSubmitting ? 'Please wait…' : mode === 'signup' ? 'Create account' : 'Sign in'}
                 </button>
             </form>
+
+            {
+                warning &&
+                <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>
+                    <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>
+                        <div className='w-full flex flex-col justify-center items-center'>
+                            <div className='text-lg'>All progress will be lost.</div>
+                            <div className='text-sm'>Are you sure to reset {part}?</div>
+                        </div>
+
+                        <div className='w-full flex justify-center gap-5'>
+                            <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>
+                            <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetApp}>Yes</button>
+                        </div>
+                    </div>
+                </div>
+            }
         </section>
     );
 }
