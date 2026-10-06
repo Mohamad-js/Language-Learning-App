@@ -74,7 +74,7 @@ export default function SignUpPage() {
 
     // Default: show AccountPanel (sign up / sign in form)
     return (
-        <main className="w-full p-5 min-h-dvh bg-foreground/5 flex items-center">
+        <main className="w-full min-h-dvh bg-foreground/5 flex items-center">
             <AccountPanel />
         </main>
     );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { getSupabaseBrowserClient } from '@/lib/supabaseClient';
 import { useAuth } from '@/app/context/AuthProvider';
@@ -14,6 +14,218 @@ const formatDate = (value) =>
         minute: '2-digit',
     });
 
+/* ---------- Small building blocks ---------- */
+
+// The pop-up window. Closes on outside click or the Escape key.
+function Modal({ onClose, children }) {
+    useEffect(() => {
+        const onKey = (e) => {
+            if (e.key === 'Escape') onClose();
+        };
+        window.addEventListener('keydown', onKey);
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden'; // stop the page behind from scrolling
+
+        return () => {
+            window.removeEventListener('keydown', onKey);
+            document.body.style.overflow = previousOverflow;
+        };
+    }, [onClose]);
+
+    return (
+        <div
+            onClick={onClose}
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 sm:items-center sm:p-5"
+        >
+            <div
+                onClick={(e) => e.stopPropagation()}
+                className="flex max-h-[90dvh] w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border border-foreground/10 bg-background shadow-xl sm:rounded-3xl"
+            >
+                {children}
+            </div>
+        </div>
+    );
+}
+
+// The top bar of the window (title, optional Back button, Close button)
+function ModalBar({ title, onBack, onClose }) {
+    return (
+        <div className="flex items-center justify-between gap-3 border-b border-foreground/10 px-5 py-4">
+            <div className="flex min-w-0 items-center gap-2">
+                {onBack && (
+                    <button
+                        type="button"
+                        onClick={onBack}
+                        className="shrink-0 rounded-full border border-foreground/15 px-3 py-1 text-xs"
+                    >
+                        ← Back
+                    </button>
+                )}
+                <div className="truncate text-sm font-semibold">{title}</div>
+            </div>
+
+            <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close"
+                className="shrink-0 rounded-full border border-foreground/15 px-3 py-1 text-xs"
+            >
+                ✕
+            </button>
+        </div>
+    );
+}
+
+function Row({ label, children }) {
+    return (
+        <div className="flex items-center justify-between gap-4 px-4 py-3">
+            <dt className="text-foreground/60">{label}</dt>
+            <dd className="text-right">{children}</dd>
+        </div>
+    );
+}
+
+// List of finished quizzes. Clicking one calls onOpen(attemptId).
+function AttemptsList({ attempts, onOpen }) {
+    if (attempts.length === 0) {
+        return (
+            <div className="rounded-2xl border border-foreground/10 p-4 text-sm text-foreground/60">
+                No quizzes finished yet.
+            </div>
+        );
+    }
+
+    return (
+        <div className="flex flex-col gap-2">
+            {attempts.map((r) => (
+                <button
+                    key={r.id}
+                    type="button"
+                    onClick={() => onOpen(r.id)}
+                    className="flex w-full items-center justify-between gap-3 rounded-2xl border border-foreground/10 p-4 text-left active:bg-foreground/5"
+                >
+                    <div className="min-w-0">
+                        <div className="truncate text-sm font-medium">
+                            Quiz {r.quiz_number}
+                            {r.topic ? ` · ${r.topic}` : ''}
+                        </div>
+                        <div className="text-xs text-foreground/60">
+                            {r.quiz_level ? `${r.quiz_level} · ` : ''}
+                            {formatDate(r.taken_at)}
+                        </div>
+                        {r.wrong > 0 ? (
+                            <div className="mt-1 text-xs text-red-500">{r.wrong} wrong</div>
+                        ) : (
+                            <div className="mt-1 text-xs text-green-500">No mistakes</div>
+                        )}
+                    </div>
+
+                    <div className="text-right">
+                        <div className="text-lg font-semibold">{Number(r.score)}</div>
+                        <div className="text-xs text-foreground/60">
+                            Grade {r.grade} · {r.correct}/{r.total}
+                        </div>
+                    </div>
+                </button>
+            ))}
+        </div>
+    );
+}
+
+// Everything saved about one finished quiz, including the wrong questions
+function AttemptDetail({ attempt }) {
+    const failed = Array.isArray(attempt.failed_questions) ? attempt.failed_questions : [];
+
+    return (
+        <div className="flex flex-col gap-5">
+            <div>
+                <div className="text-lg font-semibold">Quiz {attempt.quiz_number}</div>
+                {attempt.topic && <div className="text-sm text-foreground/60">{attempt.topic}</div>}
+            </div>
+
+            <dl className="flex flex-col divide-y divide-foreground/10 rounded-2xl border border-foreground/10 text-sm">
+                <Row label="Date">{formatDate(attempt.taken_at)}</Row>
+                {attempt.quiz_level && <Row label="Level">{attempt.quiz_level}</Row>}
+                <Row label="Score">{Number(attempt.score)} / 20</Row>
+                <Row label="Grade">{attempt.grade}</Row>
+                <Row label="Correct">
+                    <span className="text-green-500">{attempt.correct}</span>
+                </Row>
+                <Row label="Wrong">
+                    <span className="text-red-500">{attempt.wrong}</span>
+                </Row>
+                <Row label="Total questions">{attempt.total}</Row>
+            </dl>
+
+            <div className="flex flex-col gap-3">
+                <h3 className="text-sm font-semibold text-foreground/70">
+                    Wrong answers ({failed.length})
+                </h3>
+
+                {failed.length === 0 ? (
+                    <div className="rounded-2xl border border-foreground/10 p-4 text-sm text-green-500">
+                        No mistakes in this quiz.
+                    </div>
+                ) : (
+                    failed.map((q, index) => (
+                        <div
+                            key={`${q.number}-${index}`}
+                            className="rounded-2xl border border-foreground/10 p-4"
+                        >
+                            <div className="flex gap-3 text-sm">
+                                <span className="text-foreground/30">{q.number}</span>
+                                <span className="font-medium">{q.question}</span>
+                            </div>
+
+                            {Array.isArray(q.options) && (
+                                <div className="mt-3 flex flex-col gap-1.5">
+                                    {q.options.map((option, i) => {
+                                        const isCorrect = option === q.correct;
+                                        const isGiven = option === q.given;
+
+                                        return (
+                                            <div
+                                                key={i}
+                                                className={`flex items-center justify-between gap-3 rounded-xl border px-3 py-2 text-xs ${
+                                                    isCorrect
+                                                        ? 'border-green-500 bg-green-500/10 text-green-700 dark:text-green-400'
+                                                        : isGiven
+                                                            ? 'border-red-500 bg-red-500/10 text-red-700 dark:text-red-400'
+                                                            : 'border-foreground/10 text-foreground/70'
+                                                }`}
+                                            >
+                                                <span>{option}</span>
+                                                {isCorrect && (
+                                                    <span className="shrink-0 font-semibold">Correct</span>
+                                                )}
+                                                {isGiven && !isCorrect && (
+                                                    <span className="shrink-0 font-semibold">Their answer</span>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            )}
+
+                            <div className="mt-3 text-xs">
+                                <span className="text-foreground/60">Answered: </span>
+                                <span className="text-red-500">{q.given ?? 'No answer'}</span>
+                            </div>
+                            <div className="text-xs">
+                                <span className="text-foreground/60">Correct answer: </span>
+                                <span className="text-green-500">{q.correct}</span>
+                            </div>
+                        </div>
+                    ))
+                )}
+            </div>
+        </div>
+    );
+}
+
+/* ---------- The page ---------- */
+
 export default function ProgressPage() {
     const { user, isLoadingAuth } = useAuth();
     const userId = user?.id;
@@ -23,8 +235,13 @@ export default function ProgressPage() {
     const [isAdmin, setIsAdmin] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
-    const [selectedUserId, setSelectedUserId] = useState(null);
-    const [openAttemptId, setOpenAttemptId] = useState(null);
+    const [selectedUserId, setSelectedUserId] = useState(null); // which user's window is open
+    const [openAttemptId, setOpenAttemptId] = useState(null);   // which quiz's details are open
+
+    const closeModal = useCallback(() => {
+        setSelectedUserId(null);
+        setOpenAttemptId(null);
+    }, []);
 
     useEffect(() => {
         if (isLoadingAuth) return;
@@ -78,8 +295,7 @@ export default function ProgressPage() {
         };
     }, [userId, isLoadingAuth]);
 
-    // One summary row per user
-// One row per user
+    // One row per user
     const users = useMemo(() => {
         // Quiz stats per user (only users with attempts have an entry)
         const stats = new Map();
@@ -113,10 +329,6 @@ export default function ProgressPage() {
             .sort((a, b) => b.sortKey.localeCompare(a.sortKey));
     }, [results, profiles, isAdmin]);
 
-    const visibleResults = selectedUserId
-        ? results.filter((r) => r.user_id === selectedUserId)
-        : results;
-
     const overallAvg = results.length
         ? (results.reduce((sum, r) => sum + Number(r.score), 0) / results.length).toFixed(2)
         : '—';
@@ -126,15 +338,22 @@ export default function ProgressPage() {
         return p?.username ? `@${p.username}` : 'Unknown user';
     };
 
+    // Data for the windows
+    const selectedUser = users.find((u) => u.userId === selectedUserId);
+    const selectedAttempts = results.filter((r) => r.user_id === selectedUserId);
+    const openAttempt = results.find((r) => r.id === openAttemptId);
+
     if (isLoadingAuth || isLoading) {
         return <div className="px-5 py-24 text-center text-foreground/60">Loading...</div>;
     }
 
     if (!user) {
         return (
-            <main className="px-5 py-24 text-center">
+            <main className="absolute w-full min-h-dvh flex flex-col gap-5 items-center justify-center">
                 <p className="text-foreground/70">Sign in to see your progress.</p>
-                <Link href="/sign-up" className="primary-btn mt-4 inline-block">Sign in</Link>
+                <Link href="/sign-up">
+                    <button className='primary-btn'>Sign in</button>
+                </Link>
             </main>
         );
     }
@@ -149,12 +368,10 @@ export default function ProgressPage() {
                 <h1 className="text-2xl font-semibold">
                     {isAdmin ? 'All users progress' : 'My progress'}
                 </h1>
-                <p className="mt-1 text-sm text-foreground/60">
-                    Scores are out of 20.
-                </p>
+                <p className="mt-1 text-sm text-foreground/60">Scores are out of 20.</p>
             </header>
 
-            {/* Overall stats for normal users */}
+            {/* Overall stats */}
             <section className={`grid gap-3 text-center ${isAdmin ? 'grid-cols-3' : 'grid-cols-2'}`}>
                 <div className="rounded-2xl border border-foreground/10 p-4">
                     <div className="text-2xl font-semibold">{results.length}</div>
@@ -172,24 +389,14 @@ export default function ProgressPage() {
                 )}
             </section>
 
-            {/* Admin only: per-user summary */}
+            {/* ADMIN: only the list of users */}
             {isAdmin && (
-                <section className="flex flex-col gap-2">
+                <section className="relative flex flex-col gap-2">
                     <h2 className="text-sm font-semibold text-foreground/70">Users</h2>
-
-                    {selectedUserId && (
-                        <button
-                            type="button"
-                            onClick={() => setSelectedUserId(null)}
-                            className="self-start text-xs underline text-foreground/60"
-                        >
-                            Show all users
-                        </button>
-                    )}
 
                     <div className="flex flex-col divide-y divide-foreground/10 rounded-2xl border border-foreground/10">
                         {users.length === 0 && (
-                            <div className="p-4 text-sm text-foreground/60">No results yet.</div>
+                            <div className="p-4 text-sm text-foreground/60">No users yet.</div>
                         )}
 
                         {users.map((u) => (
@@ -197,9 +404,7 @@ export default function ProgressPage() {
                                 key={u.userId}
                                 type="button"
                                 onClick={() => setSelectedUserId(u.userId)}
-                                className={`flex items-center gap-3 p-3 text-left ${
-                                    selectedUserId === u.userId ? 'bg-foreground/5' : ''
-                                }`}
+                                className="flex items-center gap-3 p-3 text-left active:bg-foreground/5"
                             >
                                 <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
                                     {u.profile?.profile_image_url && (
@@ -231,7 +436,9 @@ export default function ProgressPage() {
                                         </>
                                     ) : (
                                         u.profile?.created_at && (
-                                            <div className="text-foreground/50">Joined {formatDate(u.profile.created_at)}</div>
+                                            <div className="text-foreground/50">
+                                                Joined {formatDate(u.profile.created_at)}
+                                            </div>
                                         )
                                     )}
                                 </div>
@@ -241,81 +448,97 @@ export default function ProgressPage() {
                 </section>
             )}
 
-            {/* Attempts */}
-            <section className="flex flex-col gap-2">
-                <h2 className="text-sm font-semibold text-foreground/70">
-                    Attempts{selectedUserId ? ` · ${nameOf(selectedUserId)}` : ''}
-                </h2>
+            {/* REGULAR USER: their own quizzes */}
+            {!isAdmin && (
+                <section className="flex flex-col gap-2">
+                    <h2 className="text-sm font-semibold text-foreground/70">My quizzes</h2>
+                    <AttemptsList attempts={results} onOpen={setOpenAttemptId} />
+                </section>
+            )}
 
-                {visibleResults.length === 0 && (
-                    <div className="rounded-2xl border border-foreground/10 p-4 text-sm text-foreground/60">
-                        No quiz results yet.
+            {results.length >= 1000 && (
+                <p className="text-xs text-foreground/50">Showing the latest 1000 attempts.</p>
+            )}
+
+            {/* ADMIN window: one user's quizzes, then one quiz's details */}
+            {isAdmin && selectedUserId && (
+                <Modal onClose={closeModal}>
+                    {openAttempt ? (
+                        <>
+                            <ModalBar
+                                title={selectedUser?.profile?.full_name || nameOf(selectedUserId)}
+                                onBack={() => setOpenAttemptId(null)}
+                                onClose={closeModal}
+                            />
+                            <div className="overflow-y-auto p-5">
+                                <AttemptDetail attempt={openAttempt} />
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <ModalBar title="User progress" onClose={closeModal} />
+                            <div className="flex flex-col gap-5 overflow-y-auto p-5">
+                                <div className="flex items-center gap-3">
+                                    <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
+                                        {selectedUser?.profile?.profile_image_url && (
+                                            // eslint-disable-next-line @next/next/no-img-element
+                                            <img
+                                                src={selectedUser.profile.profile_image_url}
+                                                alt=""
+                                                className="h-full w-full object-cover"
+                                                referrerPolicy="no-referrer"
+                                            />
+                                        )}
+                                    </div>
+                                    <div className="min-w-0">
+                                        <div className="truncate font-semibold">
+                                            {selectedUser?.profile?.full_name || nameOf(selectedUserId)}
+                                        </div>
+                                        <div className="truncate text-xs text-foreground/60">
+                                            {nameOf(selectedUserId)}
+                                        </div>
+                                        <div className="truncate text-xs text-foreground/60">
+                                            {selectedUser?.profile?.email ?? ''}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-3 gap-2 text-center">
+                                    <div className="rounded-2xl border border-foreground/10 p-3">
+                                        <div className="text-lg font-semibold">{selectedUser?.attempts ?? 0}</div>
+                                        <div className="text-xs text-foreground/60">Attempts</div>
+                                    </div>
+                                    <div className="rounded-2xl border border-foreground/10 p-3">
+                                        <div className="text-lg font-semibold">
+                                            {selectedUser?.avg != null ? selectedUser.avg.toFixed(2) : '—'}
+                                        </div>
+                                        <div className="text-xs text-foreground/60">Average</div>
+                                    </div>
+                                    <div className="rounded-2xl border border-foreground/10 p-3">
+                                        <div className="text-lg font-semibold">{selectedUser?.best ?? '—'}</div>
+                                        <div className="text-xs text-foreground/60">Best</div>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col gap-2">
+                                    <h3 className="text-sm font-semibold text-foreground/70">Quizzes done</h3>
+                                    <AttemptsList attempts={selectedAttempts} onOpen={setOpenAttemptId} />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                </Modal>
+            )}
+
+            {/* REGULAR USER window: one quiz's details */}
+            {!isAdmin && openAttempt && (
+                <Modal onClose={closeModal}>
+                    <ModalBar title="Quiz details" onClose={closeModal} />
+                    <div className="overflow-y-auto p-5">
+                        <AttemptDetail attempt={openAttempt} />
                     </div>
-                )}
-
-                {visibleResults.map((r) => {
-                    const isOpen = openAttemptId === r.id;
-                    const failed = Array.isArray(r.failed_questions) ? r.failed_questions : [];
-
-                    return (
-                        <div key={r.id} className="rounded-2xl border border-foreground/10">
-                            <button
-                                type="button"
-                                onClick={() => setOpenAttemptId(isOpen ? null : r.id)}
-                                className="flex w-full items-center justify-between gap-3 p-4 text-left"
-                            >
-                                <div className="min-w-0">
-                                    <div className="truncate text-sm font-medium">
-                                        Quiz {r.quiz_number}
-                                        {r.topic ? ` · ${r.topic}` : ''}
-                                    </div>
-                                    <div className="text-xs text-foreground/60">
-                                        {isAdmin && !selectedUserId ? `${nameOf(r.user_id)} · ` : ''}
-                                        {r.quiz_level ? `${r.quiz_level} · ` : ''}
-                                        {formatDate(r.taken_at)}
-                                    </div>
-                                </div>
-
-                                <div className="text-right">
-                                    <div className="text-lg font-semibold">{Number(r.score)}</div>
-                                    <div className="text-xs text-foreground/60">
-                                        Grade {r.grade} · {r.correct}/{r.total}
-                                    </div>
-                                </div>
-                            </button>
-
-                            {isOpen && (
-                                <div className="flex flex-col gap-3 border-t border-foreground/10 p-4 text-sm">
-                                    {failed.length === 0 ? (
-                                        <div className="text-green-500">No mistakes in this attempt.</div>
-                                    ) : (
-                                        failed.map((q) => (
-                                            <div key={q.number}>
-                                                <div>
-                                                    <span className="text-foreground/30">{q.number}</span>{' '}
-                                                    {q.question}
-                                                </div>
-                                                <div className="text-xs">
-                                                    <span className="text-foreground/60">Answered: </span>
-                                                    <span className="text-red-500">{q.given ?? 'No answer'}</span>
-                                                </div>
-                                                <div className="text-xs">
-                                                    <span className="text-foreground/60">Correct: </span>
-                                                    <span className="text-green-500">{q.correct}</span>
-                                                </div>
-                                            </div>
-                                        ))
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    );
-                })}
-
-                {results.length >= 1000 && (
-                    <p className="text-xs text-foreground/50">Showing the latest 1000 attempts.</p>
-                )}
-            </section>
+                </Modal>
+            )}
         </main>
     );
 }

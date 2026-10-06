@@ -11,6 +11,7 @@ export default function AccountPanel({ compact = false }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [warning, setWarning] = useState(false)
     const [fullName, setFullName] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { user, isLoadingAuth } = useAuth();
@@ -148,8 +149,15 @@ export default function AccountPanel({ compact = false }) {
             : null;
         const provider = user.app_metadata?.provider === 'google' ? 'Google' : 'Email';
 
+        const cancelSignOut = () => {
+            setWarning(false)
+        }
+
+        console.log('warning', warning)
+        
+        
         return (
-            <section className="relative flex w-full h-full flex-col justify-between gap-10 rounded-3xl border border-foreground/10 bg-background p-5 shadow-xl">
+            <section className="relative flex w-full min-h-dvh flex-col justify-between gap-10 rounded-3xl border border-foreground/10 bg-background p-5 shadow-xl">
                 <div className='w-full text-gray-500 font-semibold text-center'>Account Information</div>
                 <div className="flex flex-col items-center gap-3 text-center">
                     <div className="h-28 w-28 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
@@ -199,12 +207,30 @@ export default function AccountPanel({ compact = false }) {
                     )}
                 </dl>
 
-                <button className="secondary-btn mt-auto" onClick={handleSignOut}>Sign out</button>
+                <button className="bg-red-400 rounded-xl p-3 text-black" onClick={() => setWarning(true)}>Sign Out</button>
+
+                {
+                    warning &&
+                    <div className='absolute top-0 p-7 left-0 w-full h-full bg-background/20 backdrop-blur-sm flex items-center justify-center' onClick={cancelSignOut}>
+                        <div className='w-full px-6 py-10 text-center bg-background border rounded-2xl flex flex-col justify-between items-center gap-10'>
+                            <div className='w-full flex gap-3 flex-col justify-center items-center'>
+                                <div className='text-lg text-red-500'>All progress will be lost.</div>
+                                <div className='text-sm'>Are you sure to sign out?</div>
+                            </div>
+
+                            <div className='w-full flex justify-center gap-5'>
+                                <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelSignOut}>No</button>
+
+                                <button className='w-20 py-2 rounded-2xl bg-red-500 active:bg-black/10' onClick={handleSignOut}>Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                }
             </section>
         );
     }
     return (
-        <section className="relative mx-auto w-full max-w-md rounded-3xl border border-foreground/10 bg-background p-7 shadow-xl">
+        <section className="relative w-full min-h-dvh flex flex-col justify-center bg-background p-7">
             <div className="mb-6 flex rounded-2xl bg-foreground/5 p-1">
                 <button
                     className={`flex-1 rounded-xl px-3 py-2 text-sm ${mode === 'signup' ? 'bg-background shadow-sm' : 'text-foreground/60'}`}
@@ -236,44 +262,37 @@ export default function AccountPanel({ compact = false }) {
                 Continue with Google
             </button>
 
-            <div className="my-5 flex items-center gap-3 text-xs text-foreground/45"><span className="h-px flex-1 bg-foreground/10" />or<span className="h-px flex-1 bg-foreground/10" /></div>
+            <div className="my-5 flex items-center  gap-3 text-xs text-foreground/45"><span className="h-px flex-1 bg-foreground/10" />or<span className="h-px flex-1 bg-foreground/10" /></div>
 
             <form className="flex flex-col gap-3" onSubmit={handleEmailAuth}>
-                {mode === 'signup' && (
-                    <>
+                {
+                    mode === 'signup' && (
+                        <>
 
-                        <input className="rounded-xl border border-foreground/15 bg-transparent px-3 py-2.5" type="text" value={fullName} onChange={(event) => setFullName(event.target.value)} required placeholder={'Full name'} />
+                            <input className="rounded-xl border border-foreground/15 bg-transparent px-3 py-2.5" type="text" value={fullName} onChange={(event) => setFullName(event.target.value)} required placeholder={'Full name'} />
 
 
-                        <input className="rounded-xl border border-foreground/15 bg-transparent px-3 py-2.5" value={username} onChange={(event) => setUsername(event.target.value)} minLength={3} maxLength={30} required placeholder={'Username'} />
-                    </>
-                )}
+                            <input className="rounded-xl border border-foreground/15 bg-transparent px-3 py-2.5" value={username} onChange={(event) => setUsername(event.target.value)} minLength={3} maxLength={30} required placeholder={'Username'} />
+                        </>
+                    )
+                }
 
                 <input className="rounded-xl border border-foreground/15 bg-transparent px-3 py-2.5" type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} required placeholder='Email' />
 
                 <input className="rounded-xl border border-foreground/15 bg-transparent px-3 py-2.5" type="password" autoComplete={mode === 'signup' ? 'new-password' : 'current-password'} value={password} onChange={(event) => setPassword(event.target.value)} minLength={6} required placeholder='Password' />
 
                 <button className="primary-btn mt-2 disabled:opacity-60" disabled={isSubmitting}>
-                    {isSubmitting ? 'Please wait…' : mode === 'signup' ? 'Create account' : 'Sign in'}
+                    {
+                        isSubmitting ? 'Please wait…'
+                            :
+                        mode === 'signup'
+                            ?
+                        'Create account'
+                            :
+                        'Sign in'
+                    }
                 </button>
             </form>
-
-            {/*{*/}
-            {/*    warning &&*/}
-            {/*    <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>*/}
-            {/*        <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>*/}
-            {/*            <div className='w-full flex flex-col justify-center items-center'>*/}
-            {/*                <div className='text-lg'>All progress will be lost.</div>*/}
-            {/*                <div className='text-sm'>Are you sure to reset {part}?</div>*/}
-            {/*            </div>*/}
-
-            {/*            <div className='w-full flex justify-center gap-5'>*/}
-            {/*                <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>*/}
-            {/*                <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetApp}>Yes</button>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*}*/}
         </section>
     );
 }
