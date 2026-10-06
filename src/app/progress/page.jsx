@@ -55,7 +55,7 @@ export default function ProgressPage() {
                         .limit(1000),
                     supabase
                         .from('profiles')
-                        .select('id, username, full_name, email, profile_image_url'),
+                        .select('id, username, full_name, email, profile_image_url, created_at'),
                 ]);
 
                 if (resultsRes.error) throw resultsRes.error;
@@ -79,26 +79,39 @@ export default function ProgressPage() {
     }, [userId, isLoadingAuth]);
 
     // One summary row per user
+// One row per user
     const users = useMemo(() => {
-        const map = new Map();
+        // Quiz stats per user (only users with attempts have an entry)
+        const stats = new Map();
         for (const r of results) {
-            const s = map.get(r.user_id) ?? {
-                userId: r.user_id,
-                attempts: 0,
-                sum: 0,
-                best: 0,
-                last: r.taken_at,
-            };
+            const s = stats.get(r.user_id) ?? { attempts: 0, sum: 0, best: 0, last: r.taken_at };
             s.attempts += 1;
             s.sum += Number(r.score);
             s.best = Math.max(s.best, Number(r.score));
             if (r.taken_at > s.last) s.last = r.taken_at;
-            map.set(r.user_id, s);
+            stats.set(r.user_id, s);
         }
-        return [...map.values()]
-            .map((s) => ({ ...s, avg: s.sum / s.attempts, profile: profiles[s.userId] }))
-            .sort((a, b) => b.last.localeCompare(a.last));
-    }, [results, profiles]);
+
+        // Admin: list every profile, even with zero attempts
+        const ids = new Set(stats.keys());
+        if (isAdmin) Object.keys(profiles).forEach((id) => ids.add(id));
+
+        return [...ids]
+            .map((id) => {
+                const s = stats.get(id);
+                const profile = profiles[id];
+                return {
+                    userId: id,
+                    profile,
+                    attempts: s?.attempts ?? 0,
+                    avg: s ? s.sum / s.attempts : null,
+                    best: s?.best ?? null,
+                    last: s?.last ?? null,
+                    sortKey: s?.last ?? profile?.created_at ?? '',
+                };
+            })
+            .sort((a, b) => b.sortKey.localeCompare(a.sortKey));
+    }, [results, profiles, isAdmin]);
 
     const visibleResults = selectedUserId
         ? results.filter((r) => r.user_id === selectedUserId)
@@ -211,8 +224,16 @@ export default function ProgressPage() {
 
                                 <div className="text-right text-xs text-foreground/70">
                                     <div>{u.attempts} attempts</div>
-                                    <div>avg {u.avg.toFixed(2)} · best {u.best}</div>
-                                    <div className="text-foreground/50">{formatDate(u.last)}</div>
+                                    {u.attempts > 0 ? (
+                                        <>
+                                            <div>avg {u.avg.toFixed(2)} · best {u.best}</div>
+                                            <div className="text-foreground/50">{formatDate(u.last)}</div>
+                                        </>
+                                    ) : (
+                                        u.profile?.created_at && (
+                                            <div className="text-foreground/50">Joined {formatDate(u.profile.created_at)}</div>
+                                        )
+                                    )}
                                 </div>
                             </button>
                         ))}
