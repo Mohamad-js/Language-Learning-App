@@ -363,7 +363,7 @@ export default function ProgressPage() {
     }
 
     return (
-        <main className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-5 py-16">
+        <main className="fixed inset-0 mx-auto flex h-dvh w-full max-w-3xl flex-col gap-6 overflow-hidden px-5 py-7">
             <header>
                 <h1 className="text-2xl font-semibold">
                     {isAdmin ? 'All users progress' : 'My progress'}
@@ -391,59 +391,60 @@ export default function ProgressPage() {
 
             {/* ADMIN: only the list of users */}
             {isAdmin && (
-                <section className="relative flex flex-col gap-2">
-                    <h2 className="text-sm font-semibold text-foreground/70">Users</h2>
+                <section className="flex min-h-0 flex-1 flex-col gap-2">
+                    <h2 className="shrink-0 text-sm font-semibold text-foreground/70">
+                        Users
+                    </h2>
 
-                    <div className="flex flex-col divide-y divide-foreground/10 rounded-2xl border border-foreground/10">
-                        {users.length === 0 && (
-                            <div className="p-4 text-sm text-foreground/60">No users yet.</div>
-                        )}
-
-                        {users.map((u) => (
-                            <button
-                                key={u.userId}
-                                type="button"
-                                onClick={() => setSelectedUserId(u.userId)}
-                                className="flex items-center gap-3 p-3 text-left active:bg-foreground/5"
-                            >
-                                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
-                                    {u.profile?.profile_image_url && (
-                                        // eslint-disable-next-line @next/next/no-img-element
-                                        <img
-                                            src={u.profile.profile_image_url}
-                                            alt=""
-                                            className="h-full w-full object-cover"
-                                            referrerPolicy="no-referrer"
-                                        />
-                                    )}
+                    <div className="min-h-0 flex-1 overflow-y-auto rounded-2xl border border-foreground/10">
+                        <div className="flex flex-col divide-y divide-foreground/10">
+                            {users.length === 0 && (
+                                <div className="p-4 text-sm text-foreground/60">
+                                    No users yet.
                                 </div>
+                            )}
 
-                                <div className="min-w-0 flex-1">
-                                    <div className="truncate text-sm font-medium">
-                                        {u.profile?.full_name || nameOf(u.userId)}
+                            {
+                                users.map((u) => (
+                                <div
+                                    key={u.userId}
+                                    className="flex h-20 w-full cursor-pointer items-center gap-3 p-3 text-left"
+                                >
+                                    <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
+                                        {u.profile?.profile_image_url && (
+                                            // eslint-disable-next-line @next/next/no-img-element
+                                            <img
+                                                src={u.profile.profile_image_url}
+                                                alt=""
+                                                className="h-full w-full object-cover"
+                                                referrerPolicy="no-referrer"
+                                            />
+                                        )}
                                     </div>
-                                    <div className="truncate text-xs text-foreground/60">
-                                        {nameOf(u.userId)} · {u.profile?.email ?? ''}
-                                    </div>
-                                </div>
 
-                                <div className="text-right text-xs text-foreground/70">
-                                    <div>{u.attempts} attempts</div>
-                                    {u.attempts > 0 ? (
-                                        <>
-                                            <div>avg {u.avg.toFixed(2)} · best {u.best}</div>
-                                            <div className="text-foreground/50">{formatDate(u.last)}</div>
-                                        </>
-                                    ) : (
-                                        u.profile?.created_at && (
-                                            <div className="text-foreground/50">
-                                                Joined {formatDate(u.profile.created_at)}
-                                            </div>
-                                        )
-                                    )}
+                                    <div className="min-w-0 flex-1">
+                                        <div className="truncate text-sm">
+                                            {u.profile?.full_name || nameOf(u.userId)}
+                                        </div>
+
+                                        <div className="truncate text-xs text-foreground/60">
+                                            {nameOf(u.userId)}
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setSelectedUserId(u.userId);
+                                        }}
+                                        className="secondary-btn shrink-0 text-xs"
+                                    >
+                                        Details
+                                    </button>
                                 </div>
-                            </button>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </section>
             )}
@@ -461,9 +462,11 @@ export default function ProgressPage() {
             )}
 
             {/* ADMIN window: one user's quizzes, then one quiz's details */}
-            {isAdmin && selectedUserId && (
+            {
+                isAdmin && selectedUserId && (
                 <Modal onClose={closeModal}>
-                    {openAttempt ? (
+                    {
+                        openAttempt ? (
                         <>
                             <ModalBar
                                 title={selectedUser?.profile?.full_name || nameOf(selectedUserId)}
@@ -476,10 +479,10 @@ export default function ProgressPage() {
                         </>
                     ) : (
                         <>
-                            <ModalBar title="User progress" onClose={closeModal} />
+                            <ModalBar title="User Progress" onClose={closeModal} />
                             <div className="flex flex-col gap-5 overflow-y-auto p-5">
-                                <div className="flex items-center gap-3">
-                                    <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
+                                <div className="flex h-20 items-center gap-3">
+                                    <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
                                         {selectedUser?.profile?.profile_image_url && (
                                             // eslint-disable-next-line @next/next/no-img-element
                                             <img
@@ -490,7 +493,7 @@ export default function ProgressPage() {
                                             />
                                         )}
                                     </div>
-                                    <div className="min-w-0">
+                                    <div className="min-w-0 min-h-full flex flex-col justify-between">
                                         <div className="truncate font-semibold">
                                             {selectedUser?.profile?.full_name || nameOf(selectedUserId)}
                                         </div>

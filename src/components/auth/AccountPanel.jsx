@@ -84,6 +84,25 @@ export default function AccountPanel({ compact = false }) {
         if (!supabase) return;
 
         setIsSubmitting(true);
+
+        if (mode === 'signup') {
+            const { data: available, error: checkError } = await supabase.rpc('username_available', {
+                name: username.trim(),
+            });
+
+            if (checkError || available === null) {
+                setIsSubmitting(false);
+                toast.error('Error. Please try again.');
+                return;
+            }
+
+            if (!available) {
+                setIsSubmitting(false);
+                toast.error('This username is already taken.');
+                return;
+            }
+        }
+
         const result = mode === 'signup'
             ? await supabase.auth.signUp({
                 email,
@@ -94,7 +113,25 @@ export default function AccountPanel({ compact = false }) {
         setIsSubmitting(false);
 
         if (result.error) {
-            toast.error(result.error.message);
+            const code = result.error.code;
+            const message = result.error.message?.toLowerCase() ?? '';
+
+            if (mode === 'signup' && (code === 'user_already_exists' || message.includes('already registered'))) {
+                toast.error('The email already exists.');
+            } else if (mode === 'signin' && (code === 'invalid_credentials' || message.includes('invalid login credentials'))) {
+                toast.error('Incorrect email or password.');
+            } else if (code === 'email_not_confirmed') {
+                toast.error('Please confirm your email first.');
+            } else {
+                toast.error(result.error.message);
+            }
+            return;
+        }
+
+        // Supabase hides "this email already exists" on sign up:
+        // it returns a fake user with an empty identities list and sends no email.
+        if (mode === 'signup' && result.data.user?.identities?.length === 0) {
+            toast.error('This email is already registered. Sign in instead, or use Continue with Google.');
             return;
         }
 
@@ -107,6 +144,7 @@ export default function AccountPanel({ compact = false }) {
             mode === 'signup' ? 'Account created. One last step: complete your profile.' : 'Signed in.'
         );
     };
+
 
     const handleGoogleAuth = async () => {
         const supabase = getClient();
@@ -157,8 +195,8 @@ export default function AccountPanel({ compact = false }) {
         
         
         return (
-            <section className="relative flex w-full min-h-dvh flex-col justify-between gap-10 rounded-3xl border border-foreground/10 bg-background p-5 shadow-xl">
-                <div className='w-full text-gray-500 font-semibold text-center'>Account Information</div>
+            <section className="relative flex w-full min-h-dvh flex-col justify-between gap-10 rounded-3xl bg-background p-5 shadow-xl">
+                <div className='w-full text-gray-500 font-semibold text-start'>Account Information</div>
                 <div className="flex flex-col items-center gap-3 text-center">
                     <div className="h-28 w-28 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
                         {
