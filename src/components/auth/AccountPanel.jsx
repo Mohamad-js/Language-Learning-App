@@ -258,22 +258,22 @@ export default function AccountPanel({ compact = false }) {
                 </button>
             </form>
 
-            {
-                warning &&
-                <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>
-                    <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>
-                        <div className='w-full flex flex-col justify-center items-center'>
-                            <div className='text-lg'>All progress will be lost.</div>
-                            <div className='text-sm'>Are you sure to reset {part}?</div>
-                        </div>
+            {/*{*/}
+            {/*    warning &&*/}
+            {/*    <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>*/}
+            {/*        <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>*/}
+            {/*            <div className='w-full flex flex-col justify-center items-center'>*/}
+            {/*                <div className='text-lg'>All progress will be lost.</div>*/}
+            {/*                <div className='text-sm'>Are you sure to reset {part}?</div>*/}
+            {/*            </div>*/}
 
-                        <div className='w-full flex justify-center gap-5'>
-                            <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>
-                            <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetApp}>Yes</button>
-                        </div>
-                    </div>
-                </div>
-            }
+            {/*            <div className='w-full flex justify-center gap-5'>*/}
+            {/*                <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>*/}
+            {/*                <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetApp}>Yes</button>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*}*/}
         </section>
     );
 }
