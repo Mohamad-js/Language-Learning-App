@@ -145,7 +145,7 @@ export default function AccountPanel({ compact = false }) {
 
         return (
             <section className="relative flex w-full h-full flex-col justify-between gap-10 rounded-3xl border border-foreground/10 bg-background p-5 shadow-xl">
-                <div className='w-full font-bold text-start'>My Account</div>
+                <div className='w-full text-gray-500 font-semibold text-center'>Account Information</div>
                 <div className="flex flex-col items-center gap-3 text-center">
                     <div className="h-28 w-28 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
                         {

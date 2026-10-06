@@ -64,7 +64,7 @@ function Ham(){
       const routes = {
          home: '/',
          saved: '/saved',
-         statistics: '/statistics',
+         progress: '/progress',
          review: '/review',
          words: '/words',
          grammar: '/grammar',
@@ -316,7 +316,7 @@ function Ham(){
                         <div>Saved</div>
                      </div>
 
-                     <div className={`ham-styles ${activeTab('/statistics')}`} onClick={() => underDev('Statistics')}>
+                     <div className={`ham-styles ${activeTab('/statistics')}`} onClick={() => navFromHam('progress')}>
                         <div className="ham-icons">
                            <MdInsertChartOutlined />
                         </div>

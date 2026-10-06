@@ -1,6 +1,9 @@
 'use client'
 import { useState, useEffect } from "react";
+import { useAuth } from '@/app/context/AuthProvider';
+import { ensureQuizOwner } from '@/lib/quizSync';
 import Back from '@/components/backButton/back'
+import { syncQuizResult } from "@/lib/quizResults";
 import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress  } from "@/lib/db";
 import { GoArrowRight } from "react-icons/go";
 import { TiTick } from "react-icons/ti";
@@ -16,6 +19,8 @@ import { toast } from 'sonner';
 
 
 export default function Quiz() {
+    const { user, isLoadingAuth } = useAuth()
+    const userId = user?.id
     const [quiz, setQuiz] = useState(null)
     const [toggleContent, setToggleContent] = useState(false)
     const [targetQuiz, setTargetQuiz] = useState(null)
@@ -30,18 +35,36 @@ export default function Quiz() {
     const [isChecked, setIsChecked] = useState(false)
 
 
-    useEffect(()=>{
-        const request = async() => {
+    useEffect(() => {
+        // Wait until the app knows who is signed in. Without this, a signed-in
+        // user would look like a guest for a moment and lose their local data.
+        if (isLoadingAuth) return
+
+        let cancelled = false
+
+        const request = async () => {
+            // First make sure the notebook belongs to the current user
+            try {
+                await ensureQuizOwner(userId)
+            } catch (error) {
+                console.error('Quiz sync failed:', error)
+            }
+
+            // Then load the quizzes as before
             try {
                 const response = await getAllQuizzes()
-                setQuiz(response)
-            } catch(error) {
+                if (!cancelled) setQuiz(response)
+            } catch (error) {
                 console.error(error)
             }
         }
 
         void request()
-    }, [])
+
+        return () => {
+            cancelled = true
+        }
+    }, [userId, isLoadingAuth])
 
     // Current Displaying Question's Data
     const questions = targetQuiz?.quizData?.multi?.questions ?? []
@@ -51,6 +74,32 @@ export default function Quiz() {
     const correctAnswer = targetQuiz?.quizData?.multi?.keys?.[currentQuestionNumber]
     const isLastQuestion = currentQuestionIndex === questions.length - 1
     const isCorrect = selectedAnswer === correctAnswer
+
+
+    useEffect(() => {
+        if (!toggleContent) return
+
+        const handleKeyDown = (e) => {
+            if (e.key !== 'Enter') return
+
+            e.preventDefault()
+            e.stopPropagation()
+
+            void handleCheckOrNext()
+        }
+
+        window.addEventListener('keydown', handleKeyDown, true)
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown, true)
+        }
+    }, [
+        toggleContent,
+        isChecked,
+        currentQuestionIndex,
+        selectedAnswer,
+        targetQuiz
+    ])
 
 
     const retryQuiz = async (quizNumber) => {
@@ -227,6 +276,10 @@ export default function Quiz() {
         try {
             await saveQuizResult(targetQuiz.quizNumber, userAnswers)
 
+            // Save in Supabase
+            syncQuizResult(targetQuiz.quizNumber, userAnswers)
+                .catch((error) => console.error('Supabase sync failed:', error))
+
             // Updating the quiz list immediately
             setQuiz(prevQuiz =>
                 prevQuiz.map(item =>
@@ -383,7 +436,8 @@ export default function Quiz() {
 
             {
                 toggleContent &&
-                    <motion.div {...fadeIn}
+                    <motion.div
+                        {...fadeIn}
                         className='absolute inset-0 top-0 w-full h-dvh bg-background flex flex-col p-5 gap-5'
                     >
                         <div className='w-full flex justify-start items-center gap-2'>
@@ -458,7 +512,7 @@ export default function Quiz() {
                                                         className={`flex items-center gap-3 p-3 border rounded-xl ${feedbackClass}`}
                                                     >
                                                         <input
-                                                            className="grid size-5 appearance-none place-content-center rounded-full border border-gray-400 bg-transparent before:size-2.5 before:scale-0 before:rounded-full before:bg-gray-500 before:transition-transform checked:border-gray-500 checked:before:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500"
+                                                            className="grid size-5 appearance-none place-content-center rounded-full border border-gray-400 bg-transparent before:size-2.5 before:scale-0 before:rounded-full before:bg-gray-500 before:transition-transform checked:border-gray-500 checked:before:scale-100 dark:checked:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500"
                                                             type="radio"
                                                             name={`question-${currentQuestion.number}`}
                                                             value={option}
@@ -469,7 +523,7 @@ export default function Quiz() {
                                                             }
                                                         />
 
-                                                        <span className='text-md'>{option}</span>
+                                                        <span className={`text-md ${isSelected ? 'text-black dark:text-black' : ''}`}>{option}</span>
                                                     </label>
                                                 )
                                             })}

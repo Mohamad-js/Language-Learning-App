@@ -15,7 +15,6 @@ export default function CompleteProfile() {
     const [imageFile, setImageFile] = useState(null);     // file chosen by the user
     const [previewUrl, setPreviewUrl] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
     const fileInputRef = useRef(null);
     const { user } = useAuth();
 
@@ -141,10 +140,6 @@ export default function CompleteProfile() {
             setIsSubmitting(false);
         }
     };
-
-    if (isLoading) {
-        return <div className="text-center py-8">Loading...</div>;
-    }
 
     const displayedImage = previewUrl || googleImage;
 
