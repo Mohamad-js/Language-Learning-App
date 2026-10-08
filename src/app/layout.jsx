@@ -15,16 +15,31 @@ import { Toaster } from 'sonner';
 
 
 export const metadata = {
-   title: "iGhazal App",
-   description: "Powered by Mohamad Gomar",
+   metadataBase: new URL("https://ghazal-english-app.vercel.app"),
+   title: {
+      default: "Selenophile – Learn <language> Through the Proven Strategies.",
+      template: "%s | Selenophile",
+   },
+   description: "A Language App Powered by Mohamad Gomar.",
    manifest: "/manifest.json",
+   alternates: { canonical: "/" },
+   openGraph: {
+      type: "website",
+      siteName: "Selenophile",
+      title: "Selenophile – Learn <language> with quizzes",
+      description: "Practice vocabulary and track your progress.",
+      url: "/",
+      images: ["/og-image.png"], // 1200x630
+   },
+   twitter: { card: "summary_large_image" },
+   appleWebApp: { statusBarStyle: "black" },
+   other: { "mobile-web-app-capable": "yes" },
 };
 
 export const viewport = {
-   width: 'device-width',
-   initialScale: 1.0,
-   maximumScale: 1.0,
-   userScalable: false,
+   width: "device-width",
+   initialScale: 1,
+   themeColor: "#000000",
 };
 
 
@@ -54,7 +69,7 @@ export default function RootLayout({ children }) {
    
 
   return (
-    <html suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <head>
          <link rel="manifest" href="/manifest.json" />
          <meta name="theme-color" content="#000000" />

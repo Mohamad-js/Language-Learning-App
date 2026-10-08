@@ -4698,9 +4698,9 @@
                         "hint": "",
                         "question": "Which one is correct?",
                         "options": [
-                           "What eats meat?",
-                           "What does eats meat?",
-                           "What eat meat?"
+                           "What does you eat?",
+                           "What does he eats?",
+                           "What do he like?"
                         ]
                      },
                      {
@@ -4725,7 +4725,7 @@
                      },
                      {
                         "number": 75,
-                        "hint": "Plays the piano",
+                        "hint": "Who plays",
                         "question": "Who ___ the piano?",
                         "options": [
                            "plays",
@@ -4755,7 +4755,7 @@
                      },
                      {
                         "number": 78,
-                        "hint": "",
+                        "hint": "Dog barks",
                         "question": "Whose dog ___ at night?",
                         "options": [
                            "barks",
@@ -4765,7 +4765,7 @@
                      },
                      {
                         "number": 79,
-                        "hint": "",
+                        "hint": "Do you",
                         "question": "What animals ___ you like?",
                         "options": [
                            "does",
@@ -4775,12 +4775,12 @@
                      },
                      {
                         "number": 80,
-                        "hint": "",
+                        "hint": "How many + Plural Noun",
                         "question": "Which question is correct?",
                         "options": [
                            "How many cat do you have?",
                            "How many cats do you have?",
-                           "How many cats does you have?"
+                           "How many cat does you have?"
                         ]
                      },
                      {

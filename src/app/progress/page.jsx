@@ -59,7 +59,7 @@ function ModalBar({ title, onBack, onClose }) {
                         onClick={onBack}
                         className="shrink-0 rounded-full border border-foreground/15 px-3 py-1 text-xs"
                     >
-                        ← Back
+                        ←
                     </button>
                 )}
                 <div className="truncate text-sm font-semibold">{title}</div>
@@ -200,7 +200,7 @@ function AttemptDetail({ attempt }) {
                                                     <span className="shrink-0 font-semibold">Correct</span>
                                                 )}
                                                 {isGiven && !isCorrect && (
-                                                    <span className="shrink-0 font-semibold">Their answer</span>
+                                                    <span className="shrink-0 font-semibold">Given</span>
                                                 )}
                                             </div>
                                         );
@@ -208,14 +208,6 @@ function AttemptDetail({ attempt }) {
                                 </div>
                             )}
 
-                            <div className="mt-3 text-xs">
-                                <span className="text-foreground/60">Answered: </span>
-                                <span className="text-red-500">{q.given ?? 'No answer'}</span>
-                            </div>
-                            <div className="text-xs">
-                                <span className="text-foreground/60">Correct answer: </span>
-                                <span className="text-green-500">{q.correct}</span>
-                            </div>
                         </div>
                     ))
                 )}
@@ -277,12 +269,21 @@ export default function ProgressPage() {
 
                 if (resultsRes.error) throw resultsRes.error;
 
+                const admin = Boolean(adminRes.data);
+                let directory = profilesRes.data ?? [];
+
+// Admin: also include people who signed in but never completed their profile
+                if (admin) {
+                    const { data: everyone, error: everyoneError } = await supabase.rpc('admin_users');
+                    if (everyoneError) throw everyoneError;
+                    directory = everyone ?? [];
+                }
+
                 if (cancelled) return;
-                setIsAdmin(Boolean(adminRes.data));
+                setIsAdmin(admin);
                 setResults(resultsRes.data ?? []);
-                setProfiles(
-                    Object.fromEntries((profilesRes.data ?? []).map((p) => [p.id, p]))
-                );
+                setProfiles(Object.fromEntries(directory.map((p) => [p.id, p])));
+
             } catch (err) {
                 if (!cancelled) setError(err.message || 'Could not load progress');
             } finally {
@@ -335,7 +336,9 @@ export default function ProgressPage() {
 
     const nameOf = (id) => {
         const p = profiles[id];
-        return p?.username ? `@${p.username}` : 'Unknown user';
+        if (p?.username) return `@${p.username}`;
+        if (p?.email) return p.email;
+        return 'Unknown User';
     };
 
     // Data for the windows
@@ -480,6 +483,12 @@ export default function ProgressPage() {
                     ) : (
                         <>
                             <ModalBar title="User Progress" onClose={closeModal} />
+                            {
+                                selectedUser?.profile?.has_profile === false && (
+                                    <div className="pl-5 text-xs text-amber-500">Profile not completed</div>
+                                )
+                            }
+
                             <div className="flex flex-col gap-5 overflow-y-auto p-5">
                                 <div className="flex h-20 items-center gap-3">
                                     <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-foreground/5">
@@ -497,11 +506,13 @@ export default function ProgressPage() {
                                         <div className="truncate font-semibold">
                                             {selectedUser?.profile?.full_name || nameOf(selectedUserId)}
                                         </div>
-                                        <div className="truncate text-xs text-foreground/60">
-                                            {nameOf(selectedUserId)}
-                                        </div>
-                                        <div className="truncate text-xs text-foreground/60">
-                                            {selectedUser?.profile?.email ?? ''}
+                                        <div className=''>
+                                            <div className="truncate text-xs text-foreground/60">
+                                                {nameOf(selectedUserId)}
+                                            </div>
+                                            <div className="truncate text-xs text-foreground/60">
+                                                {selectedUser?.profile?.email ?? ''}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
