@@ -55,7 +55,7 @@ export default function ResetPasswordPage() {
     }
 
     return (
-        <main className="flex min-h-dvh items-center justify-center px-5">
+        <main className="absolute top-0 left-0 w-full min-h-dvh flex items-center justify-center px-5">
             <form onSubmit={handleSubmit} className="flex w-full max-w-sm flex-col gap-3">
                 <h1 className="text-center text-2xl font-semibold">Choose a new password</h1>
                 <input
