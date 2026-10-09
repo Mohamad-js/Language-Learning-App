@@ -2878,9 +2878,9 @@
                      },
                      {
                         "number": 2,
-                        "hint": "",
+                        "hint": "Does she have",
                         "question": "___ she have a brother?",
-                        "op                                                                                                                                                                                                                                                                                                                                                                                    tions": [
+                        "options": [
                            "Is",
                            "Does",
                            "Do"
@@ -2888,7 +2888,7 @@
                      },
                      {
                         "number": 3,
-                        "hint": "",
+                        "hint": "Is your mother",
                         "question": "___ your mother a teacher?",
                         "options": [
                            "Is",
@@ -2898,7 +2898,7 @@
                      },
                      {
                         "number": 4,
-                        "hint": "",
+                        "hint": "Are they at",
                         "question": "___ they at home?",
                         "options": [
                            "Do",
@@ -2908,7 +2908,7 @@
                      },
                      {
                         "number": 5,
-                        "hint": "",
+                        "hint": "Do they",
                         "question": "___ he play football?",
                         "options": [
                            "Are",
@@ -2918,7 +2918,7 @@
                      },
                      {
                         "number": 6,
-                        "hint": "",
+                        "hint": "Am I",
                         "question": "___ I late?",
                         "options": [
                            "Am",
@@ -2928,7 +2928,7 @@
                      },
                      {
                         "number": 7,
-                        "hint": "",
+                        "hint": "Are the children in",
                         "question": "___ the children in the garden?",
                         "options": [
                            "Do",
@@ -2938,7 +2938,7 @@
                      },
                      {
                         "number": 8,
-                        "hint": "",
+                        "hint": "Does the us stop",
                         "question": "___ the bus stop near your house?",
                         "options": [
                            "Are",
@@ -2948,7 +2948,7 @@
                      },
                      {
                         "number": 9,
-                        "hint": "",
+                        "hint": "Do you live",
                         "question": "___ you live in a big city?",
                         "options": [
                            "Do",
@@ -2958,7 +2958,7 @@
                      },
                      {
                         "number": 10,
-                        "hint": "",
+                        "hint": "Is your sister ten",
                         "question": "___ your sister ten years old?",
                         "options": [
                            "Does",
@@ -2968,7 +2968,7 @@
                      },
                      {
                         "number": 11,
-                        "hint": "",
+                        "hint": "Is he tired",
                         "question": "___ he tired after school?",
                         "options": [
                            "Do",
@@ -2978,7 +2978,7 @@
                      },
                      {
                         "number": 12,
-                        "hint": "",
+                        "hint": "Do they eat",
                         "question": "___ they eat eggs for breakfast?",
                         "options": [
                            "Do",
@@ -2988,7 +2988,7 @@
                      },
                      {
                         "number": 13,
-                        "hint": "",
+                        "hint": "Does your dog like",
                         "question": "___ your dog like milk?",
                         "options": [
                            "Do",
@@ -2998,7 +2998,7 @@
                      },
                      {
                         "number": 14,
-                        "hint": "",
+                        "hint": "Is your teacher",
                         "question": "___ your teacher kind?",
                         "options": [
                            "Do",
@@ -3008,7 +3008,7 @@
                      },
                      {
                         "number": 15,
-                        "hint": "",
+                        "hint": "Does Tom work",
                         "question": "___ Tom work in a hospital?",
                         "options": [
                            "Does",
@@ -3018,7 +3018,7 @@
                      },
                      {
                         "number": 16,
-                        "hint": "",
+                        "hint": "Are we in",
                         "question": "___ we in the same class?",
                         "options": [
                            "Do",
@@ -3028,7 +3028,7 @@
                      },
                      {
                         "number": 17,
-                        "hint": "",
+                        "hint": "Do your brothers play",
                         "question": "___ your brothers play basketball?",
                         "options": [
                            "Are",
@@ -3038,7 +3038,7 @@
                      },
                      {
                         "number": 18,
-                        "hint": "",
+                        "hint": "Is it cold",
                         "question": "___ it cold today?",
                         "options": [
                            "Is",
@@ -3048,7 +3048,7 @@
                      },
                      {
                         "number": 19,
-                        "hint": "",
+                        "hint": "Does your school start",
                         "question": "___ your school start at eight?",
                         "options": [
                            "Is",
@@ -3058,7 +3058,7 @@
                      },
                      {
                         "number": 20,
-                        "hint": "",
+                        "hint": "Is your name",
                         "question": "___ your name Anna?",
                         "options": [
                            "Are",
@@ -3068,7 +3068,7 @@
                      },
                      {
                         "number": 21,
-                        "hint": "",
+                        "hint": "Does she",
                         "question": "Does ___ like coffee?",
                         "options": [
                            "she",
@@ -3078,7 +3078,7 @@
                      },
                      {
                         "number": 22,
-                        "hint": "",
+                        "hint": "Do they",
                         "question": "Do ___ live in London?",
                         "options": [
                            "he",
@@ -3088,7 +3088,7 @@
                      },
                      {
                         "number": 23,
-                        "hint": "",
+                        "hint": "Is he",
                         "question": "Is ___ a doctor?",
                         "options": [
                            "we",
@@ -3098,7 +3098,7 @@
                      },
                      {
                         "number": 24,
-                        "hint": "",
+                        "hint": "Are they",
                         "question": "Are ___ students?",
                         "options": [
                            "they",
@@ -3108,7 +3108,7 @@
                      },
                      {
                         "number": 25,
-                        "hint": "",
+                        "hint": "Does my father",
                         "question": "Does ___ work in a bank?",
                         "options": [
                            "my parents",
@@ -3118,7 +3118,7 @@
                      },
                      {
                         "number": 26,
-                        "hint": "",
+                        "hint": "Do my friends",
                         "question": "Do ___ play tennis on Sundays?",
                         "options": [
                            "Anna",
@@ -3128,7 +3128,7 @@
                      },
                      {
                         "number": 27,
-                        "hint": "",
+                        "hint": "Am I",
                         "question": "Am ___ in the right room?",
                         "options": [
                            "I",
@@ -3138,7 +3138,7 @@
                      },
                      {
                         "number": 28,
-                        "hint": "",
+                        "hint": "Is the shop",
                         "question": "Is ___ open on Sunday?",
                         "options": [
                            "the shops",
@@ -3148,7 +3148,7 @@
                      },
                      {
                         "number": 29,
-                        "hint": "",
+                        "hint": "Are Maria and Juan",
                         "question": "Are ___ from Spain?",
                         "options": [
                            "my brother",
@@ -3158,7 +3158,7 @@
                      },
                      {
                         "number": 30,
-                        "hint": "",
+                        "hint": "Does your teacher",
                         "question": "Does ___ speak English?",
                         "options": [
                            "your teacher",
@@ -3168,7 +3168,7 @@
                      },
                      {
                         "number": 31,
-                        "hint": "",
+                        "hint": "Do they",
                         "question": "Do ___ have a car?",
                         "options": [
                            "he",
@@ -3178,7 +3178,7 @@
                      },
                      {
                         "number": 32,
-                        "hint": "",
+                        "hint": "Is this",
                         "question": "Is ___ your bag?",
                         "options": [
                            "they",
@@ -3188,7 +3188,7 @@
                      },
                      {
                         "number": 33,
-                        "hint": "",
+                        "hint": "Are these",
                         "question": "Are ___ your shoes?",
                         "options": [
                            "these",
@@ -3198,7 +3198,7 @@
                      },
                      {
                         "number": 34,
-                        "hint": "",
+                        "hint": "Does the baby",
                         "question": "Does ___ sleep a lot?",
                         "options": [
                            "the babies",
@@ -3208,7 +3208,7 @@
                      },
                      {
                         "number": 35,
-                        "hint": "",
+                        "hint": "Do the boys",
                         "question": "Do ___ go to school by bus?",
                         "options": [
                            "he",
@@ -3218,7 +3218,7 @@
                      },
                      {
                         "number": 36,
-                        "hint": "",
+                        "hint": "Does Tom",
                         "question": "Does ___ live in Rome?",
                         "options": [
                            "Tom",
@@ -3228,7 +3228,7 @@
                      },
                      {
                         "number": 37,
-                        "hint": "",
+                        "hint": "Do we",
                         "question": "Do ___ eat lunch at school?",
                         "options": [
                            "she",
@@ -3238,7 +3238,7 @@
                      },
                      {
                         "number": 38,
-                        "hint": "",
+                        "hint": "Is your mother",
                         "question": "Is ___ ready for school?",
                         "options": [
                            "we",
@@ -3248,7 +3248,7 @@
                      },
                      {
                         "number": 39,
-                        "hint": "",
+                        "hint": "Are they",
                         "question": "Are ___ your teachers?",
                         "options": [
                            "they",
@@ -3258,7 +3258,7 @@
                      },
                      {
                         "number": 40,
-                        "hint": "",
+                        "hint": "Does the film",
                         "question": "Does ___ start at ten?",
                         "options": [
                            "the films",
@@ -3268,7 +3268,7 @@
                      },
                      {
                         "number": 41,
-                        "hint": "",
+                        "hint": "Does she like",
                         "question": "Make a question: \"She likes tea.\"",
                         "options": [
                            "Do she like tea?",
@@ -3278,7 +3278,7 @@
                      },
                      {
                         "number": 42,
-                        "hint": "",
+                        "hint": "Are they",
                         "question": "Make a question: \"They are happy.\"",
                         "options": [
                            "Are they happy?",
@@ -3288,7 +3288,7 @@
                      },
                      {
                         "number": 43,
-                        "hint": "",
+                        "hint": "Do you",
                         "question": "Make a question: \"You play chess.\"",
                         "options": [
                            "Does you play chess?",
@@ -3298,7 +3298,7 @@
                      },
                      {
                         "number": 44,
-                        "hint": "",
+                        "hint": "Is he",
                         "question": "Make a question: \"He is a driver.\"",
                         "options": [
                            "Are he a driver?",
@@ -3308,7 +3308,7 @@
                      },
                      {
                         "number": 45,
-                        "hint": "",
+                        "hint": "Am I",
                         "question": "Make a question: \"I am late.\"",
                         "options": [
                            "Am I late?",
@@ -3318,7 +3318,7 @@
                      },
                      {
                         "number": 46,
-                        "hint": "",
+                        "hint": "does the dog",
                         "question": "Make a question: \"The dog eats meat.\"",
                         "options": [
                            "Do the dog eat meat?",
@@ -3328,7 +3328,7 @@
                      },
                      {
                         "number": 47,
-                        "hint": "",
+                        "hint": "Are we",
                         "question": "Make a question: \"We are ready.\"",
                         "options": [
                            "Is we ready?",
@@ -3338,7 +3338,7 @@
                      },
                      {
                         "number": 48,
-                        "hint": "",
+                        "hint": "Do my parents",
                         "question": "Make a question: \"My parents work here.\"",
                         "options": [
                            "Do my parents work here?",
@@ -3348,7 +3348,7 @@
                      },
                      {
                         "number": 49,
-                        "hint": "",
+                        "hint": "Is it",
                         "question": "Make a question: \"It is hot.\"",
                         "options": [
                            "Does it hot?",
@@ -3358,7 +3358,7 @@
                      },
                      {
                         "number": 50,
-                        "hint": "",
+                        "hint": "Does Anna have",
                         "question": "Make a question: \"Anna has a cat.\"",
                         "options": [
                            "Do Anna have a cat?",
@@ -3368,7 +3368,7 @@
                      },
                      {
                         "number": 51,
-                        "hint": "",
+                        "hint": "Are you",
                         "question": "Make a question: \"You are tired.\"",
                         "options": [
                            "Are you tired?",
@@ -3378,7 +3378,7 @@
                      },
                      {
                         "number": 52,
-                        "hint": "",
+                        "hint": "Do the shops",
                         "question": "Make a question: \"The shops open at nine.\"",
                         "options": [
                            "Does the shops open at nine?",
@@ -3388,7 +3388,7 @@
                      },
                      {
                         "number": 53,
-                        "hint": "",
+                        "hint": "Are Tom and Sam",
                         "question": "Make a question: \"Tom and Sam are brothers.\"",
                         "options": [
                            "Do Tom and Sam brothers?",
@@ -3398,7 +3398,7 @@
                      },
                      {
                         "number": 54,
-                        "hint": "",
+                        "hint": "Does she go",
                         "question": "Make a question: \"She goes to school.\"",
                         "options": [
                            "Does she go to school?",
@@ -3408,7 +3408,7 @@
                      },
                      {
                         "number": 55,
-                        "hint": "",
+                        "hint": "Is the bus",
                         "question": "Make a question: \"The bus is late.\"",
                         "options": [
                            "Does the bus late?",
@@ -3418,7 +3418,7 @@
                      },
                      {
                         "number": 56,
-                        "hint": "",
+                        "hint": "Do you like",
                         "question": "Make a question: \"You like cats.\"",
                         "options": [
                            "Are you like cats?",
@@ -3428,7 +3428,7 @@
                      },
                      {
                         "number": 57,
-                        "hint": "",
+                        "hint": "Is my sister",
                         "question": "Make a question: \"My sister is a nurse.\"",
                         "options": [
                            "Is my sister a nurse?",
@@ -3438,7 +3438,7 @@
                      },
                      {
                         "number": 58,
-                        "hint": "",
+                        "hint": "Do the birds",
                         "question": "Make a question: \"The birds sing in the morning.\"",
                         "options": [
                            "Does the birds sing in the morning?",
@@ -3448,7 +3448,7 @@
                      },
                      {
                         "number": 59,
-                        "hint": "",
+                        "hint": "Am I",
                         "question": "Make a question: \"I am in the right place.\"",
                         "options": [
                            "Is I in the right place?",
@@ -3458,7 +3458,7 @@
                      },
                      {
                         "number": 60,
-                        "hint": "",
+                        "hint": "Does your friend",
                         "question": "Make a question: \"Your friend plays the guitar.\"",
                         "options": [
                            "Does your friend play the guitar?",
@@ -3468,7 +3468,7 @@
                      },
                      {
                         "number": 61,
-                        "hint": "",
+                        "hint": "Do you like",
                         "question": "Choose the correct question.",
                         "options": [
                            "Does you like music?",
@@ -3478,7 +3478,7 @@
                      },
                      {
                         "number": 62,
-                        "hint": "",
+                        "hint": "Does he have",
                         "question": "Pick the right question.",
                         "options": [
                            "Is he have a pen?",
@@ -3488,7 +3488,7 @@
                      },
                      {
                         "number": 63,
-                        "hint": "",
+                        "hint": "Are they at",
                         "question": "Select the good question.",
                         "options": [
                            "Are they at school?",
@@ -3498,7 +3498,7 @@
                      },
                      {
                         "number": 64,
-                        "hint": "",
+                        "hint": "Do you live",
                         "question": "Choose the correct question.",
                         "options": [
                            "Does you live near the school?",
@@ -3508,7 +3508,7 @@
                      },
                      {
                         "number": 65,
-                        "hint": "",
+                        "hint": "Is she",
                         "question": "Pick the right question.",
                         "options": [
                            "Are she your sister?",
@@ -3518,7 +3518,7 @@
                      },
                      {
                         "number": 66,
-                        "hint": "",
+                        "hint": "Does your father work",
                         "question": "Select the good question.",
                         "options": [
                            "Does your father work in a bank?",
@@ -3528,7 +3528,7 @@
                      },
                      {
                         "number": 67,
-                        "hint": "",
+                        "hint": "Do you go",
                         "question": "Choose the correct question.",
                         "options": [
                            "Does you go to school by bus?",
@@ -3538,7 +3538,7 @@
                      },
                      {
                         "number": 68,
-                        "hint": "",
+                        "hint": "Does the cat drink",
                         "question": "Pick the right question.",
                         "options": [
                            "Does the cat drinks milk?",
@@ -3548,7 +3548,7 @@
                      },
                      {
                         "number": 69,
-                        "hint": "",
+                        "hint": "Am I",
                         "question": "Select the good question.",
                         "options": [
                            "Am I right?",
@@ -3558,7 +3558,7 @@
                      },
                      {
                         "number": 70,
-                        "hint": "",
+                        "hint": "Is your best friend",
                         "question": "Choose the correct question.",
                         "options": [
                            "Does your best friend nice?",
@@ -3568,7 +3568,7 @@
                      },
                      {
                         "number": 71,
-                        "hint": "",
+                        "hint": "Do we have",
                         "question": "Pick the right question.",
                         "options": [
                            "Are we have English today?",
@@ -3578,7 +3578,7 @@
                      },
                      {
                         "number": 72,
-                        "hint": "",
+                        "hint": "Are you sad",
                         "question": "Select the good question.",
                         "options": [
                            "Are you sad today?",
@@ -3588,7 +3588,7 @@
                      },
                      {
                         "number": 73,
-                        "hint": "",
+                        "hint": "Does the class start",
                         "question": "Choose the correct question.",
                         "options": [
                            "Do the class start at nine?",
@@ -3598,7 +3598,7 @@
                      },
                      {
                         "number": 74,
-                        "hint": "",
+                        "hint": "Do your friends live",
                         "question": "Pick the right question.",
                         "options": [
                            "Are your friends live near here?",
@@ -3608,7 +3608,7 @@
                      },
                      {
                         "number": 75,
-                        "hint": "",
+                        "hint": "Is it",
                         "question": "Select the good question.",
                         "options": [
                            "Is it your book?",
@@ -3618,7 +3618,7 @@
                      },
                      {
                         "number": 76,
-                        "hint": "",
+                        "hint": "Does she have",
                         "question": "Choose the correct question.",
                         "options": [
                            "Do she have two children?",
@@ -3628,7 +3628,7 @@
                      },
                      {
                         "number": 77,
-                        "hint": "",
+                        "hint": "Is my phone",
                         "question": "Pick the right question.",
                         "options": [
                            "Are my phone on the table?",
@@ -3638,7 +3638,7 @@
                      },
                      {
                         "number": 78,
-                        "hint": "",
+                        "hint": "Does Maria Speak",
                         "question": "Select the good question.",
                         "options": [
                            "Does Maria speak Spanish?",
@@ -3648,7 +3648,7 @@
                      },
                      {
                         "number": 79,
-                        "hint": "",
+                        "hint": "Do you want",
                         "question": "Choose the correct question.",
                         "options": [
                            "Does you want some water?",
@@ -3658,7 +3658,7 @@
                      },
                      {
                         "number": 80,
-                        "hint": "",
+                        "hint": "Are you a",
                         "question": "Pick the right question.",
                         "options": [
                            "Is you a student?",
@@ -3668,7 +3668,7 @@
                      },
                      {
                         "number": 81,
-                        "hint": "",
+                        "hint": "Ask by 'do' = Answer by 'do'.",
                         "question": "Choose the right answer: \"Do you like apples?\"",
                         "options": [
                            "Yes, I do.",
@@ -3678,7 +3678,7 @@
                      },
                      {
                         "number": 82,
-                        "hint": "",
+                        "hint": "Ask by 'does' = Answer by 'does'.",
                         "question": "Choose the right answer: \"Does she play tennis?\"",
                         "options": [
                            "No, she don't.",
@@ -3688,7 +3688,7 @@
                      },
                      {
                         "number": 83,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Are you happy?\"",
                         "options": [
                            "Yes, I are.",
@@ -3698,7 +3698,7 @@
                      },
                      {
                         "number": 84,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Is he a teacher?\"",
                         "options": [
                            "Yes, he is.",
@@ -3708,7 +3708,7 @@
                      },
                      {
                         "number": 85,
-                        "hint": "",
+                        "hint": "Ask by 'do' = Answer by 'do'.",
                         "question": "Choose the right answer: \"Do they live here?\"",
                         "options": [
                            "No, they doesn't.",
@@ -3718,7 +3718,7 @@
                      },
                      {
                         "number": 86,
-                        "hint": "",
+                        "hint": "Ask by 'does' = Answer by 'does'.",
                         "question": "Choose the right answer: \"Does your dog like fish?\"",
                         "options": [
                            "Yes, it is.",
@@ -3728,7 +3728,7 @@
                      },
                      {
                         "number": 87,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Are they your friends?\"",
                         "options": [
                            "Yes, they are.",
@@ -3738,7 +3738,7 @@
                      },
                      {
                         "number": 88,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Am I late?\"",
                         "options": [
                            "No, you don't.",
@@ -3748,7 +3748,7 @@
                      },
                      {
                         "number": 89,
-                        "hint": "",
+                        "hint": "Ask by 'do' = Answer by 'do'.",
                         "question": "Choose the right answer: \"Do you live in a house?\"",
                         "options": [
                            "No, I'm not.",
@@ -3758,7 +3758,7 @@
                      },
                      {
                         "number": 90,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Is your name Ben?\"",
                         "options": [
                            "Yes, it is.",
@@ -3768,7 +3768,7 @@
                      },
                      {
                         "number": 91,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Is your brother twelve?\"",
                         "options": [
                            "No, he doesn't.",
@@ -3778,7 +3778,7 @@
                      },
                      {
                         "number": 92,
-                        "hint": "",
+                        "hint": "Ask by 'does' = Answer by 'does'.",
                         "question": "Choose the right answer: \"Does she eat bread?\"",
                         "options": [
                            "Yes, she is.",
@@ -3788,7 +3788,7 @@
                      },
                      {
                         "number": 93,
-                        "hint": "",
+                        "hint": "Ask by 'do' = Answer by 'do'.",
                         "question": "Choose the right answer: \"Do you have a pen?\"",
                         "options": [
                            "No, I don't.",
@@ -3798,7 +3798,7 @@
                      },
                      {
                         "number": 94,
-                        "hint": "",
+                        "hint": "Ask by 'does' = Answer by 'does'.",
                         "question": "Choose the right answer: \"Does he work here?\"",
                         "options": [
                            "Yes, he do.",
@@ -3808,7 +3808,7 @@
                      },
                      {
                         "number": 95,
-                        "hint": "",
+                        "hint": "Ask by 'does' = Answer by 'does'.",
                         "question": "Choose the right answer: \"Does Tom work in a shop?\"",
                         "options": [
                            "No, he isn't.",
@@ -3818,7 +3818,7 @@
                      },
                      {
                         "number": 96,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Is that woman your aunt?\"",
                         "options": [
                            "Yes, she is.",
@@ -3828,7 +3828,7 @@
                      },
                      {
                         "number": 97,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Are the boys at school?\"",
                         "options": [
                            "No, they don't.",
@@ -3838,7 +3838,7 @@
                      },
                      {
                         "number": 98,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Are we late?\"",
                         "options": [
                            "Yes, we is.",
@@ -3848,7 +3848,7 @@
                      },
                      {
                         "number": 99,
-                        "hint": "",
+                        "hint": "Ask by 'to be' = Answer by 'to be'.",
                         "question": "Choose the right answer: \"Is it cold?\"",
                         "options": [
                            "No, it isn't.",
@@ -3858,7 +3858,7 @@
                      },
                      {
                         "number": 100,
-                        "hint": "",
+                        "hint": "Ask by 'do' = Answer by 'do'.",
                         "question": "Choose the right answer: \"Do your parents work?\"",
                         "options": [
                            "Yes, they does.",
@@ -4785,7 +4785,7 @@
                      },
                      {
                         "number": 81,
-                        "hint": "",
+                        "hint": "Do they",
                         "question": "What ___ they want?",
                         "options": [
                            "do",
@@ -4795,8 +4795,8 @@
                      },
                      {
                         "number": 82,
-                        "hint": "",
-                        "question": "What is the right answer to \"What time does the film start?\"",
+                        "hint": "It starts",
+                        "question": "What time does the film start?",
                         "options": [
                            "It does at eight.",
                            "It start at eight.",
@@ -4805,7 +4805,7 @@
                      },
                      {
                         "number": 83,
-                        "hint": "",
+                        "hint": "Is your sister",
                         "question": "How old ___ your sister?",
                         "options": [
                            "do",
@@ -4815,7 +4815,7 @@
                      },
                      {
                         "number": 84,
-                        "hint": "",
+                        "hint": "Does your brother",
                         "question": "Why ___ your brother run every morning?",
                         "options": [
                            "does",
@@ -4825,8 +4825,8 @@
                      },
                      {
                         "number": 85,
-                        "hint": "",
-                        "question": "Make question: \"They play at FOUR.\"?",
+                        "hint": "Do they",
+                        "question": "Make question: \"They play at 4.\"?",
                         "options": [
                            "When they play?",
                            "When does they play?",
@@ -4835,7 +4835,7 @@
                      },
                      {
                         "number": 86,
-                        "hint": "",
+                        "hint": "Does he",
                         "question": "How much money ___ he have?",
                         "options": [
                            "do",
@@ -4845,7 +4845,7 @@
                      },
                      {
                         "number": 87,
-                        "hint": "",
+                        "hint": "Is your bad",
                         "question": "What color ___ your bag?",
                         "options": [
                            "is",
@@ -4855,7 +4855,7 @@
                      },
                      {
                         "number": 88,
-                        "hint": "",
+                        "hint": "Does she",
                         "question": "How many eggs ___ she eat?",
                         "options": [
                            "do",
@@ -4865,17 +4865,17 @@
                      },
                      {
                         "number": 89,
-                        "hint": "",
+                        "hint": "Who knows",
                         "question": "Who ___ the answer?",
                         "options": [
-                           "knowing",
-                           "knows",
+                           "do know",
+                           "does know",
                            "know"
                         ]
                      },
                      {
                         "number": 90,
-                        "hint": "",
+                        "hint": "Do they",
                         "question": "Which question is correct?",
                         "options": [
                            "How much rice do they eat?",
@@ -4885,7 +4885,7 @@
                      },
                      {
                         "number": 91,
-                        "hint": "",
+                        "hint": "Do the children",
                         "question": "Where ___ the children play after school?",
                         "options": [
                            "is",
@@ -4895,7 +4895,7 @@
                      },
                      {
                         "number": 92,
-                        "hint": "",
+                        "hint": "Is in the fridge",
                         "question": "How much milk ___ in the fridge?",
                         "options": [
                            "does",
@@ -4905,7 +4905,7 @@
                      },
                      {
                         "number": 93,
-                        "hint": "",
+                        "hint": "Do you",
                         "question": "What time ___ you get up?",
                         "options": [
                            "do",
@@ -4915,17 +4915,17 @@
                      },
                      {
                         "number": 94,
-                        "hint": "",
+                        "hint": "Play football",
                         "question": "How many students ___ football?",
                         "options": [
-                           "playing",
-                           "plays",
+                           "does play",
+                           "do play",
                            "play"
                         ]
                      },
                      {
                         "number": 95,
-                        "hint": "",
+                        "hint": "Is your shirt",
                         "question": "Which color ___ your shirt?",
                         "options": [
                            "do",
@@ -4935,7 +4935,7 @@
                      },
                      {
                         "number": 96,
-                        "hint": "",
+                        "hint": "Do you",
                         "question": "Where ___ you live?",
                         "options": [
                            "do",
@@ -4945,17 +4945,17 @@
                      },
                      {
                         "number": 97,
-                        "hint": "",
+                        "hint": "Who lives",
                         "question": "Who ___ in this house?",
                         "options": [
                            "live",
-                           "living",
-                           "lives"
+                           "do live",
+                           "does live"
                         ]
                      },
                      {
                         "number": 98,
-                        "hint": "",
+                        "hint": "Does your class",
                         "question": "When ___ your class start?",
                         "options": [
                            "do",
@@ -4965,17 +4965,17 @@
                      },
                      {
                         "number": 99,
-                        "hint": "",
+                        "hint": "Bus goes to",
                         "question": "Which question is correct?",
                         "options": [
                            "Which bus goes to the park?",
-                           "Which bus go to the park?",
-                           "Which bus does goes to the park?"
+                           "Which bus do go to the park?",
+                           "Which bus does go to the park?"
                         ]
                      },
                      {
                         "number": 100,
-                        "hint": "",
+                        "hint": "Does Maria speak",
                         "question": "What language ___ Maria speak?",
                         "options": [
                            "is",
@@ -5102,7 +5102,8 @@
                   "questions": [
                      {
                         "number": 1,
-                        "question": "Do you know when ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I don't know when ___.",
                         "options": [
                            "does he go to school",
                            "he goes to school",
@@ -5111,6 +5112,7 @@
                      },
                      {
                         "number": 2,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder why ___.",
                         "options": [
                            "does he need help",
@@ -5120,7 +5122,8 @@
                      },
                      {
                         "number": 3,
-                        "question": "Do you know what ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "They know what ___.",
                         "options": [
                            "does he eat for lunch",
                            "he eats for lunch",
@@ -5129,7 +5132,8 @@
                      },
                      {
                         "number": 4,
-                        "question": "Do you know why ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I don't know why ___.",
                         "options": [
                            "does he go to bed early",
                            "he goes to bed early",
@@ -5138,7 +5142,8 @@
                      },
                      {
                         "number": 5,
-                        "question": "Do you know how ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I know how ___.",
                         "options": [
                            "does he go to school",
                            "he goes to school",
@@ -5147,6 +5152,7 @@
                      },
                      {
                         "number": 6,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder who ___.",
                         "options": [
                            "does he go to school with",
@@ -5156,7 +5162,8 @@
                      },
                      {
                         "number": 7,
-                        "question": "Do you know if ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Hide it if ___.",
                         "options": [
                            "does he have a car",
                            "he has a car",
@@ -5165,15 +5172,17 @@
                      },
                      {
                         "number": 8,
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
                         "question": "Do you know where ___.",
                         "options": [
                            "does he live",
-                           "he lives",
-                           "lives he"
+                           "he lives?",
+                           "he lives."
                         ]
                      },
                      {
                         "number": 9,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "Do you know who ___.",
                         "options": [
                            "does he live with",
@@ -5183,6 +5192,7 @@
                      },
                      {
                         "number": 10,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I don't know what ___.",
                         "options": [
                            "does he need",
@@ -5192,6 +5202,7 @@
                      },
                      {
                         "number": 11,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder if ___.",
                         "options": [
                            "does he need help",
@@ -5201,6 +5212,7 @@
                      },
                      {
                         "number": 12,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder when ___.",
                         "options": [
                            "does he sleep",
@@ -5210,7 +5222,8 @@
                      },
                      {
                         "number": 13,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I like to know ___.",
                         "options": [
                            "how does he go to school",
                            "how he goes to school",
@@ -5219,7 +5232,8 @@
                      },
                      {
                         "number": 14,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Tell me ___.",
                         "options": [
                            "how does she come to work",
                            "how she comes to work",
@@ -5228,6 +5242,7 @@
                      },
                      {
                         "number": 15,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "how does the cat drink water",
@@ -5237,7 +5252,8 @@
                      },
                      {
                         "number": 16,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "She checks ___.",
                         "options": [
                            "how do the children go to school",
                            "how the children go to school",
@@ -5246,6 +5262,7 @@
                      },
                      {
                         "number": 17,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "how do they go home",
@@ -5255,7 +5272,8 @@
                      },
                      {
                         "number": 18,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I know ___.",
                         "options": [
                            "if does he have a car",
                            "if he has a car",
@@ -5264,6 +5282,7 @@
                      },
                      {
                         "number": 19,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "if does he need help",
@@ -5273,6 +5292,7 @@
                      },
                      {
                         "number": 20,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I wonder ___.",
                         "options": [
                            "if do people like this food",
@@ -5282,7 +5302,8 @@
                      },
                      {
                         "number": 21,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Tell me ___.",
                         "options": [
                            "if does she drink coffee",
                            "if she drinks coffee",
@@ -5291,7 +5312,8 @@
                      },
                      {
                         "number": 22,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
+                        "question": "I know ___.",
                         "options": [
                            "if is the advice good",
                            "if the advice is good",
@@ -5300,6 +5322,7 @@
                      },
                      {
                         "number": 23,
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
                         "question": "I don't know ___.",
                         "options": [
                            "if is the bread fresh",
@@ -5309,7 +5332,8 @@
                      },
                      {
                         "number": 24,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "They may check ___.",
                         "options": [
                            "if do the children like school",
                            "if the children like school",
@@ -5318,7 +5342,8 @@
                      },
                      {
                         "number": 25,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "You must check ___.",
                         "options": [
                            "if do the deer live here",
                            "if the deer live here",
@@ -5327,15 +5352,17 @@
                      },
                      {
                         "number": 26,
+                        "hint": "This is an indirect question inside a real question. Make it 'Sub + Verb' but keep the '?'.",
                         "question": "Can you tell me ___.",
                         "options": [
-                           "if is the furniture new",
-                           "if the furniture is new",
-                           "if the furniture are new"
+                           "if is the house new",
+                           "if the house is new?",
+                           "if the house is new."
                         ]
                      },
                      {
                         "number": 27,
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
                         "question": "I wonder ___.",
                         "options": [
                            "if is the homework easy",
@@ -5345,6 +5372,7 @@
                      },
                      {
                         "number": 28,
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
                         "question": "I don't know ___.",
                         "options": [
                            "if is the information correct",
@@ -5354,7 +5382,8 @@
                      },
                      {
                         "number": 29,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "I check ___.",
                         "options": [
                            "if do the mice live here",
                            "if the mice live here",
@@ -5363,7 +5392,8 @@
                      },
                      {
                         "number": 30,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
+                        "question": "I don't know ___.",
                         "options": [
                            "if is the news good",
                            "if the news is good",
@@ -5372,7 +5402,8 @@
                      },
                      {
                         "number": 31,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "I have doubtful ___.",
                         "options": [
                            "if do the sheep eat grass",
                            "if the sheep eat grass",
@@ -5381,6 +5412,7 @@
                      },
                      {
                         "number": 32,
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
                         "question": "I don't know ___.",
                         "options": [
                            "if is the water clean",
@@ -5390,7 +5422,8 @@
                      },
                      {
                         "number": 33,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "Call me ___.",
                         "options": [
                            "if do the women have a car",
                            "if the women have a car",
@@ -5399,6 +5432,7 @@
                      },
                      {
                         "number": 34,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "if do they go to school",
@@ -5408,6 +5442,7 @@
                      },
                      {
                         "number": 35,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I wonder what ___.",
                         "options": [
                            "do people eat here",
@@ -5417,7 +5452,8 @@
                      },
                      {
                         "number": 36,
-                        "question": "Can you tell me how ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Check how ___.",
                         "options": [
                            "does she come to work",
                            "she comes to work",
@@ -5426,7 +5462,8 @@
                      },
                      {
                         "number": 37,
-                        "question": "Do you know what ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Check what ___ after gym.",
                         "options": [
                            "does she drink",
                            "she drinks",
@@ -5435,7 +5472,8 @@
                      },
                      {
                         "number": 38,
-                        "question": "Can you tell me if ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Tell me if ___.",
                         "options": [
                            "does she drink coffee",
                            "she drinks coffee",
@@ -5444,7 +5482,8 @@
                      },
                      {
                         "number": 39,
-                        "question": "Can you tell me when ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "They don't know when ___.",
                         "options": [
                            "does she eat lunch",
                            "she eats lunch",
@@ -5453,7 +5492,8 @@
                      },
                      {
                         "number": 40,
-                        "question": "Do you know where ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "We know where ___.",
                         "options": [
                            "does she go after school",
                            "she goes after school",
@@ -5462,7 +5502,8 @@
                      },
                      {
                         "number": 41,
-                        "question": "Do you know why ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I must know why ___.",
                         "options": [
                            "does she go to the gym",
                            "she goes to the gym",
@@ -5471,7 +5512,8 @@
                      },
                      {
                         "number": 42,
-                        "question": "Can you tell me whether ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I need to know whether ___.",
                         "options": [
                            "does she have a dog",
                            "she has a dog",
@@ -5480,16 +5522,18 @@
                      },
                      {
                         "number": 43,
-                        "question": "Do you know when ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Do you know when ___",
                         "options": [
-                           "does she have breakfast",
-                           "she has breakfast",
-                           "has she breakfast"
+                           "she has breakfast?",
+                           "does she have breakfast?",
+                           "she has breakfast."
                         ]
                      },
                      {
                         "number": 44,
-                        "question": "Can you tell me what ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Tell me what ___.",
                         "options": [
                            "does she like",
                            "she likes",
@@ -5498,7 +5542,8 @@
                      },
                      {
                         "number": 45,
-                        "question": "Can you tell me why ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Tell me why ___.",
                         "options": [
                            "does she like tea",
                            "she likes tea",
@@ -5507,7 +5552,8 @@
                      },
                      {
                         "number": 46,
-                        "question": "Can you tell me where ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Inform me where ___.",
                         "options": [
                            "does she work",
                            "she works",
@@ -5516,7 +5562,8 @@
                      },
                      {
                         "number": 47,
-                        "question": "Can you tell me who ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Tell me who ___.",
                         "options": [
                            "does she work with",
                            "she works with",
@@ -5525,7 +5572,8 @@
                      },
                      {
                         "number": 48,
-                        "question": "Do you know if ___.",
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
+                        "question": "I like to know if ___.",
                         "options": [
                            "is the bread fresh",
                            "the bread is fresh",
@@ -5534,6 +5582,7 @@
                      },
                      {
                         "number": 49,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder how ___.",
                         "options": [
                            "does the cat drink water",
@@ -5543,6 +5592,7 @@
                      },
                      {
                         "number": 50,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder where ___.",
                         "options": [
                            "does the cat sleep",
@@ -5552,7 +5602,8 @@
                      },
                      {
                         "number": 51,
-                        "question": "Do you know how ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "I know how ___.",
                         "options": [
                            "do the children go to school",
                            "the children go to school",
@@ -5561,6 +5612,7 @@
                      },
                      {
                         "number": 52,
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
                         "question": "I wonder whether ___.",
                         "options": [
                            "is the homework easy",
@@ -5570,7 +5622,8 @@
                      },
                      {
                         "number": 53,
-                        "question": "Can you tell me where ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "Tell me where ___.",
                         "options": [
                            "do the men work",
                            "the men work",
@@ -5579,7 +5632,8 @@
                      },
                      {
                         "number": 54,
-                        "question": "Do you know if ___.",
+                        "hint": "Indirect question is not a question. Make it 'Sub + Verb'.",
+                        "question": "You must know if ___.",
                         "options": [
                            "is the news good",
                            "the news is good",
@@ -5588,6 +5642,7 @@
                      },
                      {
                         "number": 55,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know whether ___.",
                         "options": [
                            "do the police work here",
@@ -5597,6 +5652,7 @@
                      },
                      {
                         "number": 56,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know when ___.",
                         "options": [
                            "do they come home",
@@ -5606,15 +5662,17 @@
                      },
                      {
                         "number": 57,
-                        "question": "Can you tell me what ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Can you tell me what ___",
                         "options": [
-                           "do they eat",
-                           "they eat",
-                           "eat they"
+                           "do they eat?",
+                           "they eat?",
+                           "they eat."
                         ]
                      },
                      {
                         "number": 58,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know why ___.",
                         "options": [
                            "do they eat at home",
@@ -5624,6 +5682,7 @@
                      },
                      {
                         "number": 59,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know who ___.",
                         "options": [
                            "do they eat with",
@@ -5633,7 +5692,8 @@
                      },
                      {
                         "number": 60,
-                        "question": "I don't know how ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "I want to know how ___.",
                         "options": [
                            "do they go home",
                            "they go home",
@@ -5642,6 +5702,7 @@
                      },
                      {
                         "number": 61,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know if ___.",
                         "options": [
                            "do they go to school",
@@ -5651,6 +5712,7 @@
                      },
                      {
                         "number": 62,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know where ___.",
                         "options": [
                            "do they live",
@@ -5660,7 +5722,8 @@
                      },
                      {
                         "number": 63,
-                        "question": "I don't know ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I know ___.",
                         "options": [
                            "what does he eat for lunch",
                            "what he eats for lunch",
@@ -5669,6 +5732,7 @@
                      },
                      {
                         "number": 64,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "what does he need",
@@ -5678,6 +5742,7 @@
                      },
                      {
                         "number": 65,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I wonder ___.",
                         "options": [
                            "what do people eat here",
@@ -5687,7 +5752,8 @@
                      },
                      {
                         "number": 66,
-                        "question": "Do you know ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "I like to know ___.",
                         "options": [
                            "what does she drink",
                            "what she drinks",
@@ -5696,6 +5762,7 @@
                      },
                      {
                         "number": 67,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "what does she have for breakfast",
@@ -5705,7 +5772,8 @@
                      },
                      {
                         "number": 68,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Tell me ___.",
                         "options": [
                            "what does she like",
                            "what she likes",
@@ -5714,33 +5782,37 @@
                      },
                      {
                         "number": 69,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "what do the children drink",
-                           "what the children drink",
-                           "what drink the children"
+                           "what do the children drink?",
+                           "what the children drink.",
+                           "what the children drink?"
                         ]
                      },
                      {
                         "number": 70,
-                        "question": "Can you tell me ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "what do they eat",
-                           "what they eat",
-                           "what eat they"
+                           "what do they eat?",
+                           "what they eat.",
+                           "what they eat?"
                         ]
                      },
                      {
                         "number": 71,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "when does he go to school",
-                           "when he goes to school",
-                           "when goes he to school"
+                           "when does he go to school?",
+                           "when he goes to school?",
+                           "when he goes to school."
                         ]
                      },
                      {
                         "number": 72,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "when does he sleep",
@@ -5750,33 +5822,37 @@
                      },
                      {
                         "number": 73,
-                        "question": "Can you tell me ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "when does she eat lunch",
-                           "when she eats lunch",
-                           "when eats she lunch"
+                           "when she eats lunch?",
+                           "when does she eat lunch.",
+                           "when she eats lunch."
                         ]
                      },
                      {
                         "number": 74,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "when does she have breakfast",
-                           "when she has breakfast",
-                           "when has she breakfast"
+                           "when she has breakfast?",
+                           "when does she have breakfast.",
+                           "when she has breakfast."
                         ]
                      },
                      {
                         "number": 75,
-                        "question": "Can you tell me ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "when do the children go to bed",
-                           "when the children go to bed",
-                           "when go the children to bed"
+                           "when the children go to bed?",
+                           "when do the children go to bed.",
+                           "when the children go to bed."
                         ]
                      },
                      {
                         "number": 76,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "when do they come home",
@@ -5786,6 +5862,7 @@
                      },
                      {
                         "number": 77,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "where does he go",
@@ -5795,33 +5872,37 @@
                      },
                      {
                         "number": 78,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "where does he live",
-                           "where he lives",
-                           "where lives he"
+                           "where he lives?",
+                           "where does he live.",
+                           "where he lives."
                         ]
                      },
                      {
                         "number": 79,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "where does she go after school",
-                           "where she goes after school",
-                           "where goes she after school"
+                           "where she goes after school?",
+                           "where does she go after school?",
+                           "where she goes after school."
                         ]
                      },
                      {
                         "number": 80,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "where does she work",
-                           "where she works",
-                           "where works she"
+                           "where does she work?",
+                           "where she works.",
+                           "where she works?"
                         ]
                      },
                      {
                         "number": 81,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "where does the cat sleep",
@@ -5831,15 +5912,17 @@
                      },
                      {
                         "number": 82,
-                        "question": "Can you tell me ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "where do the children play",
-                           "where the children play",
-                           "where play the children"
+                           "where do the children play?",
+                           "where the children play?",
+                           "where the children play."
                         ]
                      },
                      {
                         "number": 83,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "where do the men work",
@@ -5849,6 +5932,7 @@
                      },
                      {
                         "number": 84,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "where do they live",
@@ -5858,6 +5942,7 @@
                      },
                      {
                         "number": 85,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "whether does she have a dog",
@@ -5867,6 +5952,7 @@
                      },
                      {
                         "number": 86,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "whether do the children go to bed early",
@@ -5876,15 +5962,17 @@
                      },
                      {
                         "number": 87,
-                        "question": "Can you tell me ___.",
+                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "whether do the men need help",
-                           "whether the men need help",
-                           "whether the men needs help"
+                           "whether do the men need help?",
+                           "whether the men need help.",
+                           "whether the men need help?"
                         ]
                      },
                      {
                         "number": 88,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "whether is the music loud",
@@ -5894,15 +5982,17 @@
                      },
                      {
                         "number": 89,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "whether do the police work here",
-                           "whether the police work here",
-                           "whether the police works here"
+                           "whether do the police work here?",
+                           "whether the police work here?",
+                           "whether the police works here."
                         ]
                      },
                      {
                         "number": 90,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "whether do the women speak English",
@@ -5912,6 +6002,7 @@
                      },
                      {
                         "number": 91,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "who does he go to school with",
@@ -5921,24 +6012,27 @@
                      },
                      {
                         "number": 92,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "who does he live with",
-                           "who he lives with",
-                           "who lives he with"
+                           "who does he live with?",
+                           "who he lives with?",
+                           "who he lives he with."
                         ]
                      },
                      {
                         "number": 93,
-                        "question": "Can you tell me ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "who does she work with",
-                           "who she works with",
-                           "who works she with"
+                           "who does she work with?",
+                           "who she works with?",
+                           "who she works with."
                         ]
                      },
                      {
                         "number": 94,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "who do they eat with",
@@ -5948,15 +6042,17 @@
                      },
                      {
                         "number": 95,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "why does he go to bed early",
-                           "why he goes to bed early",
-                           "why goes he to bed early"
+                           "why does he go to bed early?",
+                           "why he goes to bed early?",
+                           "why he goes to bed early."
                         ]
                      },
                      {
                         "number": 96,
+                        "hint": "Indirect question is not a question. Remove 'does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "why does he need help",
@@ -5966,33 +6062,37 @@
                      },
                      {
                         "number": 97,
-                        "question": "Do you know ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Do you know ___",
                         "options": [
-                           "why does she go to the gym",
-                           "why she goes to the gym",
-                           "why goes she to the gym"
+                           "why does she go to the gym.",
+                           "why she goes to the gym?",
+                           "why she goes to the gym."
                         ]
                      },
                      {
                         "number": 98,
-                        "question": "Can you tell me ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "why does she like tea",
-                           "why she likes tea",
-                           "why likes she tea"
+                           "why does she like tea?",
+                           "why she likes tea?",
+                           "why she likes tea."
                         ]
                      },
                      {
                         "number": 99,
-                        "question": "Can you tell me ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "question": "Can you tell me ___",
                         "options": [
-                           "why do the children drink milk",
-                           "why the children drink milk",
-                           "why drink the children milk"
+                           "why do the children drink milk?",
+                           "why the children drink milk?",
+                           "why the children drink milk."
                         ]
                      },
                      {
                         "number": 100,
+                        "hint": "Indirect question is not a question. Remove 'do'.",
                         "question": "I don't know ___.",
                         "options": [
                            "why do they eat at home",
@@ -6010,7 +6110,7 @@
                      "5": "he goes to school",
                      "6": "he goes to school with",
                      "7": "he has a car",
-                     "8": "he lives",
+                     "8": "he lives?",
                      "9": "he lives with",
                      "10": "he needs",
                      "11": "he needs help",
@@ -6028,7 +6128,7 @@
                      "23": "if the bread is fresh",
                      "24": "if the children like school",
                      "25": "if the deer live here",
-                     "26": "if the furniture is new",
+                     "26": "if the house is new?",
                      "27": "if the homework is easy",
                      "28": "if the information is correct",
                      "29": "if the mice live here",
@@ -6045,7 +6145,7 @@
                      "40": "she goes after school",
                      "41": "she goes to the gym",
                      "42": "she has a dog",
-                     "43": "she has breakfast",
+                     "43": "she has breakfast?",
                      "44": "she likes",
                      "45": "she likes tea",
                      "46": "she works",
@@ -6059,7 +6159,7 @@
                      "54": "the news is good",
                      "55": "the police work here",
                      "56": "they come home",
-                     "57": "they eat",
+                     "57": "they eat?",
                      "58": "they eat at home",
                      "59": "they eat with",
                      "60": "they go home",
@@ -6071,37 +6171,37 @@
                      "66": "what she drinks",
                      "67": "what she has for breakfast",
                      "68": "what she likes",
-                     "69": "what the children drink",
-                     "70": "what they eat",
-                     "71": "when he goes to school",
+                     "69": "what the children drink?",
+                     "70": "what they eat?",
+                     "71": "when he goes to school?",
                      "72": "when he sleeps",
-                     "73": "when she eats lunch",
-                     "74": "when she has breakfast",
-                     "75": "when the children go to bed",
+                     "73": "when she eats lunch?",
+                     "74": "when she has breakfast?",
+                     "75": "when the children go to bed?",
                      "76": "when they come home",
                      "77": "where he goes",
-                     "78": "where he lives",
-                     "79": "where she goes after school",
-                     "80": "where she works",
+                     "78": "where he lives?",
+                     "79": "where she goes after school?",
+                     "80": "where she works?",
                      "81": "where the cat sleeps",
-                     "82": "where the children play",
+                     "82": "where the children play?",
                      "83": "where the men work",
                      "84": "where they live",
                      "85": "whether she has a dog",
                      "86": "whether the children go to bed early",
-                     "87": "whether the men need help",
+                     "87": "whether the men need help?",
                      "88": "whether the music is loud",
-                     "89": "whether the police work here",
+                     "89": "whether the police work here?",
                      "90": "whether the women speak English",
                      "91": "who he goes to school with",
-                     "92": "who he lives with",
-                     "93": "who she works with",
+                     "92": "who he lives with?",
+                     "93": "who she works with?",
                      "94": "who they eat with",
-                     "95": "why he goes to bed early",
+                     "95": "why he goes to bed early?",
                      "96": "why he needs help",
-                     "97": "why she goes to the gym",
-                     "98": "why she likes tea",
-                     "99": "why the children drink milk",
+                     "97": "why she goes to the gym?",
+                     "98": "why she likes tea?",
+                     "99": "why the children drink milk?",
                      "100": "why they eat at home"
                      
                   }
