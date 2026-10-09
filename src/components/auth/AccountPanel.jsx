@@ -19,6 +19,8 @@ export default function AccountPanel({ compact = false }) {
     const [isProfileLoading, setIsProfileLoading] = useState(false);
     const userId = user?.id;
 
+
+
     useEffect(() => {
         if (!userId) {
             setProfile(null);
@@ -155,9 +157,29 @@ export default function AccountPanel({ compact = false }) {
             provider: 'google',
             options: { redirectTo: `${window.location.origin}/sign-up` },
         });
+
         setIsSubmitting(false);
         if (error) toast.error(error.message);
     };
+
+
+    const handleForgotPassword = async () => {
+        if (!email) {
+            toast.error('Enter your email first.');
+            return;
+        }
+
+        const supabase = getClient();
+        if (!supabase) return;
+
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: `${window.location.origin}/reset-password`,
+        });
+
+        if (error) toast.error(error.message);
+        else toast.success('Check your Gmail for the reset password link.');
+    };
+
 
     const handleSignOut = async () => {
         const supabase = getClient();
@@ -330,6 +352,18 @@ export default function AccountPanel({ compact = false }) {
                         'Sign in'
                     }
                 </button>
+
+                {
+                    mode === 'signin' && (
+                        <button
+                            type="button"
+                            onClick={handleForgotPassword}
+                            className="self-end text-xs text-foreground/60 underline"
+                        >
+                            Forgot password?
+                        </button>
+                    )
+                }
             </form>
         </section>
     );
