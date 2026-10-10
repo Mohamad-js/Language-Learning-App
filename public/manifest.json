@@ -1,7 +1,7 @@
 {
-  "name": "iGhazal App",
-  "short_name": "iGhazal",
-  "description": "A Progressive English Learning App for Ghazalim",
+  "name": "Selenophile",
+  "short_name": "Seleno",
+  "description": "A Progressive English Learning App",
   "start_url": "/?v=1.0.0",
   "display": "standalone",
   "background_color": "#ffffff",
