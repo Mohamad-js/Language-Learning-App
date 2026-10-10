@@ -17,7 +17,7 @@ import { Toaster } from 'sonner';
 export const metadata = {
    metadataBase: new URL("https://ghazal-english-app.vercel.app"),
    title: {
-      default: "Selenophile – Learn <language> Through the Proven Strategies.",
+      default: "Selenophile – Learn English Through the Proven Strategies.",
       template: "%s | Selenophile",
    },
    description: "A Language App Powered by Mohamad Gomar.",
@@ -26,7 +26,7 @@ export const metadata = {
    openGraph: {
       type: "website",
       siteName: "Selenophile",
-      title: "Selenophile – Learn <language> with quizzes",
+      title: "Selenophile – Learn English with quizzes",
       description: "Practice vocabulary and track your progress.",
       url: "/",
       images: ["/og-image.png"], // 1200x630
