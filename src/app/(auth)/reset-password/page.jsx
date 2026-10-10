@@ -47,7 +47,7 @@ export default function ResetPasswordPage() {
 
     if (done) {
         return (
-            <main className="flex min-h-dvh flex-col items-center justify-center gap-4 px-5 text-center">
+            <main className="absolute w-full top-0 left-0 flex min-h-dvh flex-col items-center justify-center gap-4 px-5 text-center">
                 <p>Your password was changed.</p>
                 <Link href="/" className="primary-btn">Continue</Link>
             </main>
