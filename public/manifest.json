@@ -11,6 +11,6 @@
     { "src": "/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "/logo-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
     { "src": "/logo-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
-  ]q
+  ],
   "version": "1.0.0"
 }
