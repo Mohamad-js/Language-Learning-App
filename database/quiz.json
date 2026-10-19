@@ -8371,9 +8371,710 @@
             "quizLevel": "Elementary",
             "quizData": {
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"Possessive adjective + noun; I / me",
+                        "question":"I am Emma. ___ schoolbag is pink.",
+                        "options":["mine","your","my","our"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I have a blue pen. This blue pen is ___.",
+                        "options":["mine","my","ours","hers"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"Possessive adjective + noun; you",
+                        "question":"You have a dog. ___ dog is very friendly.",
+                        "options":["my","yours","their","your"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"Possessive pronoun (no noun after it); you",
+                        "question":"You have two notebooks. The green notebook is ___.",
+                        "options":["theirs","yours","his","your"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"Possessive adjective + noun; he / him",
+                        "question":"Leo has a bike. ___ bike is black.",
+                        "options":["he","his","their","hers"]
+                     },
+                     {
+                        "number":6,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"This jacket belongs to Leo. It is ___.",
+                        "options":["hers","he","ours","his"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"Mia has a sister. ___ sister is eight.",
+                        "options":["her","hers","their","his"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"This is Anna's hat. The hat is ___.",
+                        "options":["his","her","hers","theirs"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"Possessive adjective + noun; we / us",
+                        "question":"We have a small house. ___ house has two bedrooms.",
+                        "options":["my","ours","their","our"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"We own this house. It is ___.",
+                        "options":["mine","theirs","ours","our"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"Sam and Tim have a football. ___ football is new.",
+                        "options":["our","their","your","theirs"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"Those books belong to the girls. They are ___.",
+                        "options":["theirs","yours","ours","their"]
+                     },
+                     {
+                        "number":13,
+                        "hint":"Possessive adjective + noun; it",
+                        "question":"The bird sits in a tree. ___ wings are blue.",
+                        "options":["its","it","theirs","it's"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I keep my lunch in this box. The lunch is ___.",
+                        "options":["hers","mine","my","ours"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"Possessive adjective + noun; he / him",
+                        "question":"Ben has a cat. ___ cat sleeps on the sofa.",
+                        "options":["their","he","hers","his"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"My sister and I share this room. The room is ___.",
+                        "options":["theirs","our","ours","mine"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"Ella has a red dress. ___ dress is beautiful.",
+                        "options":["his","their","her","hers"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"Possessive pronoun (no noun after it); you",
+                        "question":"You own that yellow bike. It is ___.",
+                        "options":["your","theirs","his","yours"]
+                     },
+                     {
+                        "number":19,
+                        "hint":"Possessive adjective + noun; we / us",
+                        "question":"We have two teachers. ___ teachers are kind.",
+                        "options":["my","our","ours","their"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"The boys have a new tent. The tent is ___.",
+                        "options":["theirs","ours","their","yours"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"The twins have blue coats. ___ coats are on the chairs.",
+                        "options":["your","their","our","theirs"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"This umbrella belongs to my mum. It is ___.",
+                        "options":["hers","her","his","theirs"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"My aunt has a garden. ___ garden is full of flowers.",
+                        "options":["his","their","her","hers"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I have a warm coat. This coat is ___.",
+                        "options":["hers","my","ours","mine"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"Possessive adjective + noun; you",
+                        "question":"You have an English book. ___ book is on the table.",
+                        "options":["their","yours","my","your"]
+                     },
+                     {
+                        "number":26,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"My brother and I have a ball. The ball is ___.",
+                        "options":["mine","ours","theirs","our"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"Possessive adjective + noun; I / me",
+                        "question":"I love music. ___ favourite song is short.",
+                        "options":["my","your","mine","our"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"This football belongs to Jack. It is ___.",
+                        "options":["he","ours","his","hers"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"Possessive adjective + noun; it",
+                        "question":"The school is big. ___ playground is new.",
+                        "options":["its","it","theirs","it's"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"The twins own these bicycles. They are ___.",
+                        "options":["ours","their","theirs","yours"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"Possessive adjective + noun; he / him",
+                        "question":"Omar has a little brother. ___ brother is five.",
+                        "options":["he","hers","their","his"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"Possessive pronoun (no noun after it); you",
+                        "question":"You bring a snack to school every day. This snack is ___.",
+                        "options":["his","yours","your","theirs"]
+                     },
+                     {
+                        "number":33,
+                        "hint":"Possessive adjective + noun; we / us",
+                        "question":"We study in this room. ___ classroom is bright.",
+                        "options":["ours","our","their","my"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I have a purple pencil case. It is ___.",
+                        "options":["ours","hers","mine","my"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"The students have an exam today. ___ teacher helps them.",
+                        "options":["their","theirs","our","your"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"This is Mark's desk. The desk is ___.",
+                        "options":["ours","he","hers","his"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"Lucy has a rabbit. ___ rabbit eats carrots.",
+                        "options":["his","their","hers","her"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"We have two tickets. Both tickets are ___.",
+                        "options":["ours","our","theirs","mine"]
+                     },
+                     {
+                        "number":39,
+                        "hint":"Possessive adjective + noun; I / me",
+                        "question":"I have a little brother. ___ brother is ten.",
+                        "options":["mine","my","our","your"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"Nina has a red bag. This red bag is ___.",
+                        "options":["theirs","his","hers","her"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"Possessive adjective + noun; you",
+                        "question":"You have a new phone. ___ phone is on the sofa.",
+                        "options":["yours","their","your","my"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"The girls have three dolls. The dolls are ___.",
+                        "options":["yours","theirs","ours","their"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"Possessive adjective + noun; he / him",
+                        "question":"David has a small shop. ___ shop opens at nine.",
+                        "options":["their","hers","he","his"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I own these shoes. They are ___.",
+                        "options":["mine","my","hers","ours"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"Possessive adjective + noun; it",
+                        "question":"The elephant is big. ___ ears are big too.",
+                        "options":["its","theirs","it","it's"]
+                     },
+                     {
+                        "number":46,
+                        "hint":"Possessive pronoun (no noun after it); you",
+                        "question":"This is your desk. The desk is ___.",
+                        "options":["theirs","your","his","yours"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"Possessive adjective + noun; we / us",
+                        "question":"We go to school together. ___ school is near the park.",
+                        "options":["their","ours","our","my"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"This blue cap belongs to my dad. It is ___.",
+                        "options":["hers","his","ours","he"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"My parents have a car. ___ car is white.",
+                        "options":["our","your","theirs","their"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"That notebook belongs to Sarah. It is ___.",
+                        "options":["her","hers","theirs","his"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"My teacher has a bike. She rides ___ bike to school.",
+                        "options":["their","his","her","hers"]
+                     },
+                     {
+                        "number":52,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"My friends and I have a team. This team is ___.",
+                        "options":["ours","mine","our","theirs"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"Possessive adjective + noun; I / me",
+                        "question":"I have an apple. ___ apple is green.",
+                        "options":["mine","my","our","your"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"Those bags belong to the boys. They are ___.",
+                        "options":["theirs","their","yours","ours"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"Possessive adjective + noun; it",
+                        "question":"The robot has two eyes. ___ eyes are green.",
+                        "options":["it's","theirs","it","its"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I buy bread at this shop. The bread in my bag is ___.",
+                        "options":["ours","my","mine","hers"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"Possessive adjective + noun; you",
+                        "question":"You have a new chair. ___ chair is next to the window.",
+                        "options":["my","yours","your","their"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"That red kite belongs to Peter. It is ___.",
+                        "options":["hers","he","ours","his"]
+                     },
+                     {
+                        "number":59,
+                        "hint":"Possessive adjective + noun; he / him",
+                        "question":"My grandpa has a dog. ___ dog likes apples.",
+                        "options":["his","hers","he","their"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"We have a family photo. That photo is ___.",
+                        "options":["mine","ours","theirs","our"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"The teachers have a room. ___ room is upstairs.",
+                        "options":["their","our","theirs","your"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"Possessive pronoun (no noun after it); you",
+                        "question":"You own these glasses. They are ___.",
+                        "options":["his","your","yours","theirs"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"Possessive adjective + noun; we / us",
+                        "question":"We have a dog. ___ dog runs in the park.",
+                        "options":["my","our","ours","their"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"This pencil case belongs to Bella. It is ___.",
+                        "options":["her","his","theirs","hers"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"Zoe has a baby sister. ___ sister sleeps a lot.",
+                        "options":["their","her","his","hers"]
+                     },
+                     {
+                        "number":66,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I have a computer. The computer on this desk is ___.",
+                        "options":["ours","hers","my","mine"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"Possessive adjective + noun; it",
+                        "question":"The house has a blue door. ___ door is very old.",
+                        "options":["it","it's","its","theirs"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"The students share three tables. The tables are ___.",
+                        "options":["theirs","yours","their","ours"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"Possessive adjective + noun; I / me",
+                        "question":"I wear glasses. ___ glasses are black.",
+                        "options":["your","mine","our","my"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"This sandwich belongs to Adam. It is ___.",
+                        "options":["ours","he","his","hers"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"Possessive adjective + noun; you",
+                        "question":"You have a brother. ___ brother plays tennis.",
+                        "options":["your","their","my","yours"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"We own the little boat. It is ___.",
+                        "options":["mine","ours","our","theirs"]
+                     },
+                     {
+                        "number":73,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"Amy and Jane have a cat. ___ cat is white.",
+                        "options":["their","theirs","your","our"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"The pink scarf belongs to my sister. It is ___.",
+                        "options":["her","hers","theirs","his"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"Lisa has a book. ___ book has ten pictures.",
+                        "options":["hers","his","her","their"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"This is my water bottle. The bottle is ___.",
+                        "options":["hers","my","ours","mine"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"Possessive adjective + noun; we / us",
+                        "question":"We have a big kitchen. ___ kitchen has a long table.",
+                        "options":["their","my","our","ours"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"Possessive pronoun (no noun after it); you",
+                        "question":"These are your keys. They are ___.",
+                        "options":["yours","your","theirs","his"]
+                     },
+                     {
+                        "number":79,
+                        "hint":"Possessive adjective + noun; he / him",
+                        "question":"Harry has a new watch. ___ watch is blue.",
+                        "options":["their","his","hers","he"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"The children own this game. It is ___.",
+                        "options":["ours","their","yours","theirs"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"Possessive adjective + noun; it",
+                        "question":"The cat drinks water. ___ bowl is in the kitchen.",
+                        "options":["theirs","its","it","it's"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"This toy belongs to my little brother. It is ___.",
+                        "options":["hers","ours","his","he"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"Possessive adjective + noun; I / me",
+                        "question":"I like my new room. ___ bed is near the door.",
+                        "options":["your","our","mine","my"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"We own a yellow taxi. The taxi is ___.",
+                        "options":["ours","theirs","our","mine"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"The birds have a nest. ___ nest is in that tree.",
+                        "options":["theirs","your","our","their"]
+                     },
+                     {
+                        "number":86,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"My grandmother owns this garden. The garden is ___.",
+                        "options":["hers","his","theirs","her"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"Possessive adjective + noun; you",
+                        "question":"You have two sisters. ___ sisters go to my school.",
+                        "options":["their","my","your","yours"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"The boys share this computer. It is ___.",
+                        "options":["yours","theirs","their","ours"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"Possessive adjective + noun; she / her",
+                        "question":"Kate has a cat. ___ cat is very quiet.",
+                        "options":["hers","their","her","his"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"Possessive pronoun (no noun after it); he / him",
+                        "question":"John has a green lunchbox. The lunchbox is ___.",
+                        "options":["hers","his","he","ours"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"Possessive adjective + noun; we / us",
+                        "question":"We wear blue uniforms. ___ uniforms are clean.",
+                        "options":["our","their","ours","my"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"Possessive pronoun (no noun after it); I / me",
+                        "question":"I have a red coat. This coat is ___.",
+                        "options":["my","hers","ours","mine"]
+                     },
+                     {
+                        "number":93,
+                        "hint":"Possessive adjective + noun; it",
+                        "question":"The bus is old. ___ seats are brown.",
+                        "options":["its","theirs","it's","it"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"Possessive pronoun (no noun after it); you",
+                        "question":"You have a toy car. The toy car is ___.",
+                        "options":["your","theirs","his","yours"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"Possessive adjective + noun; he / him",
+                        "question":"My uncle has a bakery. ___ bakery sells bread.",
+                        "options":["their","his","hers","he"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"Possessive pronoun (no noun after it); they / them",
+                        "question":"The women have two bags. The bags are ___.",
+                        "options":["yours","ours","theirs","their"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"Possessive adjective + noun; I / me",
+                        "question":"I have a small room. ___ room has one window.",
+                        "options":["our","my","mine","your"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"Possessive pronoun (no noun after it); we / us",
+                        "question":"We share one bicycle. The bicycle is ___.",
+                        "options":["ours","theirs","mine","our"]
+                     },
+                     {
+                        "number":99,
+                        "hint":"Possessive adjective + noun; they / them",
+                        "question":"The girls have new shoes. ___ shoes are white.",
+                        "options":["our","theirs","your","their"]
+                     },
+                     {
+                        "number":100,
+                        "hint":"Possessive pronoun (no noun after it); she / her",
+                        "question":"This is my mum's phone. It is ___.",
+                        "options":["her","theirs","hers","his"]}
+                  ],
                   
-                  "keys": {}
+                  "keys": {
+                     "1": "my",
+                     "2": "mine",
+                     "3": "your",
+                     "4": "yours",
+                     "5": "his",
+                     "6": "his",
+                     "7": "her",
+                     "8": "hers",
+                     "9": "our",
+                     "10": "ours",
+                     "11": "their",
+                     "12": "theirs",
+                     "13": "its",
+                     "14": "mine",
+                     "15": "his",
+                     "16": "ours",
+                     "17": "her",
+                     "18": "yours",
+                     "19": "our",
+                     "20": "theirs",
+                     "21": "their",
+                     "22": "hers",
+                     "23": "her",
+                     "24": "mine",
+                     "25": "your",
+                     "26": "ours",
+                     "27": "my",
+                     "28": "his",
+                     "29": "its",
+                     "30": "theirs",
+                     "31": "his",
+                     "32": "yours",
+                     "33": "our",
+                     "34": "mine",
+                     "35": "their",
+                     "36": "his",
+                     "37": "her",
+                     "38": "ours",
+                     "39": "my",
+                     "40": "hers",
+                     "41": "your",
+                     "42": "theirs",
+                     "43": "his",
+                     "44": "mine",
+                     "45": "its",
+                     "46": "yours",
+                     "47": "our",
+                     "48": "his",
+                     "49": "their",
+                     "50": "hers",
+                     "51": "her",
+                     "52": "ours",
+                     "53": "my",
+                     "54": "theirs",
+                     "55": "its",
+                     "56": "mine",
+                     "57": "your",
+                     "58": "his",
+                     "59": "his",
+                     "60": "ours",
+                     "61": "their",
+                     "62": "yours",
+                     "63": "our",
+                     "64": "hers",
+                     "65": "her",
+                     "66": "mine",
+                     "67": "its",
+                     "68": "theirs",
+                     "69": "my",
+                     "70": "his",
+                     "71": "your",
+                     "72": "ours",
+                     "73": "their",
+                     "74": "hers",
+                     "75": "her",
+                     "76": "mine",
+                     "77": "our",
+                     "78": "yours",
+                     "79": "his",
+                     "80": "theirs",
+                     "81": "its",
+                     "82": "his",
+                     "83": "my",
+                     "84": "ours",
+                     "85": "their",
+                     "86": "hers",
+                     "87": "your",
+                     "88": "theirs",
+                     "89": "her",
+                     "90": "his",
+                     "91": "our",
+                     "92": "mine",
+                     "93": "its",
+                     "94": "yours",
+                     "95": "his",
+                     "96": "theirs",
+                     "97": "my",
+                     "98": "ours",
+                     "99": "their",
+                     "100": "hers"
+                  }
                }
             }
          },
@@ -8386,9 +9087,710 @@
             "quizLevel": "Elementary",
             "quizData": {
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"An unknown person in a positive sentence",
+                        "question":"___ stands at the door. I see one person, but I don't know the name.",
+                        "options":["Everyone","Nothing","Someone","No one"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"An unknown person in a positive sentence",
+                        "question":"___ calls my mum every evening, but she doesn't know the person's name.",
+                        "options":["Somebody","Everybody","Nothing","Nobody"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"An unknown person in a positive sentence",
+                        "question":"___ sings in the kitchen. I hear a person's voice, but I don't know who it is.",
+                        "options":["Everything","Nobody","Everybody","Someone"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"A person in a positive sentence",
+                        "question":"I need ___ to help me with this big box.",
+                        "options":["nothing","somebody","everything","no one"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"An unknown person in a positive sentence",
+                        "question":"___ leaves one red bag in our room. I don't know who owns it.",
+                        "options":["Nobody","Someone","Nothing","Everyone"]
+                     },
+                     {
+                        "number":6,
+                        "hint":"An unknown person in a positive sentence",
+                        "question":"___ knocks on the window. I see one person outside.",
+                        "options":["Nothing","Nobody","Everything","Somebody"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"An unknown person in a positive sentence",
+                        "question":"My phone rings. ___ wants to speak to me, but I don't know who.",
+                        "options":["Someone","Nothing","Everyone","No one"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"An unknown person in a positive sentence",
+                        "question":"___ waits outside for you. I see one person near the gate.",
+                        "options":["Nothing","Nobody","Somebody","Everything"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"An unknown thing in a positive sentence",
+                        "question":"There is ___ in my shoe. It hurts my foot.",
+                        "options":["nobody","nothing","everyone","something"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"An unknown thing in a positive sentence",
+                        "question":"I smell ___ nice in the kitchen, but I don't know what it is.",
+                        "options":["nothing","something","someone","nobody"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"An unknown thing in a positive sentence",
+                        "question":"The box is not empty. There is ___ inside.",
+                        "options":["nothing","nobody","something","everyone"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"An unknown thing in a positive sentence",
+                        "question":"I hear ___ strange in the garden, but I don't know what it is.",
+                        "options":["something","nothing","somebody","no one"]
+                     },
+                     {
+                        "number":13,
+                        "hint":"A thing in a positive sentence",
+                        "question":"I need ___ to drink. I am thirsty.",
+                        "options":["something","nothing","everyone","nobody"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"An unknown thing in a positive sentence",
+                        "question":"There is ___ on your shirt. It is a small green mark.",
+                        "options":["nobody","nothing","something","everyone"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"An unknown thing in a positive sentence",
+                        "question":"This bag is heavy. There is ___ inside.",
+                        "options":["nothing","something","anyone","nobody"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"An unknown thing in a positive sentence",
+                        "question":"I see ___ yellow under the bed, but I don't know what it is.",
+                        "options":["nothing","someone","everyone","something"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"A person in a negative sentence",
+                        "question":"I don't know ___ in this town. I know zero people here.",
+                        "options":["everything","everyone","anyone","nothing"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"A person in a question",
+                        "question":"Do you see ___ at the empty bus stop?",
+                        "options":["nothing","something","everything","anybody"]
+                     },
+                     {
+                        "number":19,
+                        "hint":"A person in a negative sentence",
+                        "question":"There isn't ___ in the classroom. All the students are outside.",
+                        "options":["nothing","anyone","everything","no one"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"A person in a question",
+                        "question":"Does ___ here know my name? I am new to this class.",
+                        "options":["anybody","nothing","anything","everything"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"A person in a negative sentence",
+                        "question":"I don't talk to ___ on the train. I read my book.",
+                        "options":["nothing","everything","anyone","nobody"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"A person in a question",
+                        "question":"Does your sister know ___ at this school? She is new here.",
+                        "options":["anybody","everything","nothing","no one"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"A person in a negative sentence",
+                        "question":"I don't see ___ in the playground. All the children are inside.",
+                        "options":["something","everything","nobody","anyone"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"A person in a negative sentence",
+                        "question":"I don't hear ___ in the hallway. No people are there.",
+                        "options":["something","anybody","nothing","everyone"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"A thing in a negative sentence",
+                        "question":"I don't have ___ in my pockets. They are empty.",
+                        "options":["everyone","anything","nothing","nobody"]
+                     },
+                     {
+                        "number":26,
+                        "hint":"A thing in a question",
+                        "question":"Do you need ___ from the shop at all?",
+                        "options":["nobody","someone","no one","anything"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"A thing in a negative sentence",
+                        "question":"There isn't ___ in this drawer. It is empty.",
+                        "options":["anything","nothing","everybody","no one"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"A thing in a negative sentence",
+                        "question":"I don't find ___ in my bag because it is empty.",
+                        "options":["nobody","nothing","anything","everyone"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"A thing in a negative sentence",
+                        "question":"I don't want ___ to eat. I am full.",
+                        "options":["nobody","nothing","no one","anything"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"A thing in a question",
+                        "question":"Do you hear ___? I hear no sound.",
+                        "options":["no one","anything","nobody","everyone"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"A thing in a negative sentence",
+                        "question":"The baby doesn't eat ___ in the morning. He only drinks milk.",
+                        "options":["nobody","nothing","anything","everyone"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"A thing in a negative sentence",
+                        "question":"We don't buy ___ at this shop. We only look.",
+                        "options":["anything","nobody","nothing","no one"]
+                     },
+                     {
+                        "number":33,
+                        "hint":"All people in a group",
+                        "question":"___ in our class wears a blue shirt. All twenty students have one.",
+                        "options":["Everyone","Nothing","Nobody","Someone"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"All people in a group",
+                        "question":"___ at my house likes pizza. My mum, dad, and I all eat it.",
+                        "options":["Nothing","Nobody","Everybody","Someone"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"All people in a group",
+                        "question":"___ is here. All the students sit in their chairs.",
+                        "options":["Nobody","Everyone","Nothing","Someone"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"All people in a group",
+                        "question":"___ in my family speaks English. All five people use it.",
+                        "options":["Nothing","Nobody","Someone","Everybody"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"All people in a group",
+                        "question":"___ at the party smiles. No person is sad.",
+                        "options":["Nothing","Nobody","Everyone","Someone"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"All people in a group",
+                        "question":"___ in the team has a red shirt. All eleven players wear one.",
+                        "options":["Nobody","Nothing","Someone","Everybody"]
+                     },
+                     {
+                        "number":39,
+                        "hint":"All people in a group",
+                        "question":"___ knows this song. All the children sing it.",
+                        "options":["Nobody","Everyone","Nothing","Someone"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"All people in a group",
+                        "question":"___ has a ticket. All the people have one.",
+                        "options":["Everybody","Nobody","Nothing","Someone"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"All things in a group",
+                        "question":"___ in my bag is blue: my books, pens, and pencil case.",
+                        "options":["Everyone","Nobody","Everything","Nothing"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"All things in a group",
+                        "question":"___ on the menu costs five dollars. All the food has the same price.",
+                        "options":["Everything","Everyone","Nobody","Nothing"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"All things in a group",
+                        "question":"___ in this room is clean. Even the floor and windows look good.",
+                        "options":["Everyone","Nobody","Nothing","Everything"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"All things in a group",
+                        "question":"___ on the table belongs to Mia. All the books and pens are hers.",
+                        "options":["Everyone","Everything","Nobody","Nothing"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"All things in a group",
+                        "question":"___ in the shop is small. The bags, shoes, and hats are all small.",
+                        "options":["Everyone","Everything","Nobody","Nothing"]
+                     },
+                     {
+                        "number":46,
+                        "hint":"All things in a group",
+                        "question":"___ in this picture is green. Even the trees and houses are green.",
+                        "options":["Everyone","Nobody","Nothing","Everything"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"All things in a group",
+                        "question":"___ in this box is paper. All the things inside are paper.",
+                        "options":["Everything","Everyone","Nobody","Nothing"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"All things in a group",
+                        "question":"___ is ready for the picnic: the food, drinks, and bags.",
+                        "options":["Everyone","Nobody","Everything","Nothing"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"No people in a place",
+                        "question":"The bus has no passengers. ___ sits on it.",
+                        "options":["Everything","Someone","Everyone","Nobody"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"No person does the action",
+                        "question":"___ answers the phone. It rings and rings, and no person picks it up.",
+                        "options":["Everyone","No one","Something","Someone"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"No people in a group",
+                        "question":"___ in our class is absent. All the students are here today.",
+                        "options":["Someone","Everyone","Nobody","Nothing"]
+                     },
+                     {
+                        "number":52,
+                        "hint":"No people in a place",
+                        "question":"The shop has no workers today. ___ works there.",
+                        "options":["No one","Everyone","Something","Someone"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"No people in a place",
+                        "question":"The playground is empty. ___ plays there.",
+                        "options":["Nobody","Everyone","Something","Someone"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"No person knows",
+                        "question":"___ knows my secret. I never tell any person.",
+                        "options":["Someone","Everyone","No one","Something"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"No people in a place",
+                        "question":"The bus stop is empty. ___ waits there.",
+                        "options":["Everyone","Nobody","Something","Someone"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"No people in a place",
+                        "question":"All the chairs are empty. ___ sits at the table.",
+                        "options":["Someone","Everyone","Something","No one"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"No things inside a container",
+                        "question":"I open my lunchbox. It is empty. There is ___ inside.",
+                        "options":["something","someone","nothing","everything"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"No thing available",
+                        "question":"My bottle is empty and there are no drinks. I have ___ to drink.",
+                        "options":["something","everyone","everything","nothing"]
+                     },
+                     {
+                        "number":59,
+                        "hint":"No thing in a place",
+                        "question":"The floor under the bed is empty. There is ___ there.",
+                        "options":["someone","nothing","something","everything"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"No thing bought",
+                        "question":"The shop is closed, so I buy ___ there.",
+                        "options":["nothing","something","everyone","everything"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"No thing seen",
+                        "question":"I look in my empty bag, but I see ___.",
+                        "options":["something","everyone","nothing","everything"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"No things on a surface",
+                        "question":"The desk is completely empty. ___ is on it.",
+                        "options":["Nothing","Something","Everyone","Everything"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"No thing to eat",
+                        "question":"My plate is empty. I eat ___ from it.",
+                        "options":["something","everybody","everything","nothing"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"No things on a shelf",
+                        "question":"All the books are in boxes. There is ___ on the shelf.",
+                        "options":["something","nothing","anybody","everything"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"Both of two people",
+                        "question":"I have two brothers. ___ play basketball.",
+                        "options":["Neither","Both","Either","Each"]
+                     },
+                     {
+                        "number":66,
+                        "hint":"Both of two things",
+                        "question":"These two cups are dirty. ___ need washing.",
+                        "options":["Either","Neither","Each","Both"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"Both of two people",
+                        "question":"Anna and Leo love cats. ___ have a cat at home.",
+                        "options":["Both","Neither","Either","Each"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"Both of two people",
+                        "question":"My mum and my dad work at the hospital. ___ are doctors.",
+                        "options":["Either","Neither","Both","Each"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"Either of two choices",
+                        "question":"There are two doors. ___ leads to the garden, so I choose one.",
+                        "options":["Both","Neither","All","Either"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"Either of two choices",
+                        "question":"There are two chairs. ___ is fine for me. Both chairs are free.",
+                        "options":["Both","Either","Neither","All"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"Either of two choices",
+                        "question":"There are two pencils. ___ is OK for my homework. I only need one.",
+                        "options":["Both","Neither","Either","All"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"Either of two choices",
+                        "question":"There are two books. ___ looks interesting. I choose one.",
+                        "options":["Either","Both","Neither","All"]
+                     },
+                     {
+                        "number":73,
+                        "hint":"Neither of two things",
+                        "question":"I have two red pens. ___ works. Both are broken.",
+                        "options":["Neither","Either","Both","All"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"Neither of two things",
+                        "question":"There are two doors. ___ is open. Both are closed.",
+                        "options":["Either","Both","Neither","All"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"Neither of two people",
+                        "question":"I have two brothers. ___ is at school today. Both are at home.",
+                        "options":["Either","Neither","Both","All"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"Neither of two things",
+                        "question":"I have two cups. ___ is clean. Both are dirty.",
+                        "options":["Either","Both","All","Neither"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"Each person separately",
+                        "question":"Five children sit at the table. ___ has a glass of water.",
+                        "options":["Both","None","Each","Others"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"Each person separately",
+                        "question":"Four players stand in a line. ___ wears a green shirt.",
+                        "options":["Both","None","Others","Each"]
+                     },
+                     {
+                        "number":79,
+                        "hint":"Each person separately",
+                        "question":"The three sisters have bikes. ___ rides a different bike.",
+                        "options":["Both","Each","None","Others"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"Each person separately",
+                        "question":"Five students sit in a room. ___ reads a different book.",
+                        "options":["Each","Both","None","Others"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"One of several things",
+                        "question":"I have four cookies. ___ is chocolate, and the other three are plain.",
+                        "options":["Both","All","One","None"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"One of several things",
+                        "question":"There are three bags. ___ is red and the other two are blue.",
+                        "options":["One","Both","All","None"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"One of two things",
+                        "question":"I have two cats. ___ is black, and the other is white.",
+                        "options":["Both","All","None","One"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"One of several things",
+                        "question":"I see five birds. ___ sits on the roof, and the others sit in the tree.",
+                        "options":["Both","One","All","None"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"One more or a different one",
+                        "question":"This pencil is too short. I need ___.",
+                        "options":["both","another","all","nothing"]
+                     },
+                     {
+                        "number":86,
+                        "hint":"One more or a different one",
+                        "question":"I don't like this red shirt. I want ___.",
+                        "options":["both","all","nothing","another"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"One more or a different one",
+                        "question":"This chair is broken. I need ___.",
+                        "options":["another","both","all","nothing"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"One more or a different one",
+                        "question":"This apple is small. I want ___.",
+                        "options":["both","all","another","nothing"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"Part of a group",
+                        "question":"There are eight oranges. ___ are sweet, but the others are not.",
+                        "options":["All","None","Both","Some"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"Part of a group",
+                        "question":"I have ten books. ___ are English books, but not all.",
+                        "options":["All","Some","None","Both"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"Part of a group",
+                        "question":"There are twelve chairs. ___ are blue, and the rest are brown.",
+                        "options":["All","None","Some","Both"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"Part of a group",
+                        "question":"The children have crayons. ___ are red, and the others are green.",
+                        "options":["Some","All","None","Both"]
+                     },
+                     {
+                        "number":93,
+                        "hint":"Not one from a group",
+                        "question":"We have five apples, but ___ are green. They are all red.",
+                        "options":["none","some","all","both"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"Not one from a group",
+                        "question":"___ of my three pets is a dog. They are all cats.",
+                        "options":["Some","All","None","Both"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"Not one from a group",
+                        "question":"There are ten students, but ___ of them has a bike. They all walk.",
+                        "options":["some","none","all","both"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"Not one from a group",
+                        "question":"I look at three boxes. ___ is empty; they all have books.",
+                        "options":["Some","All","Both","None"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"All of a group",
+                        "question":"There are six plates. Every plate is clean. ___ are clean.",
+                        "options":["Neither","Either","All","None"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"All of a group",
+                        "question":"There are ten children. Every child wants lunch. ___ want lunch.",
+                        "options":["Neither","Either","None","All"]
+                     },
+                     {
+                        "number":99,
+                        "hint":"All of a group",
+                        "question":"I have four socks. Every sock is white. ___ are white.",
+                        "options":["Neither","All","Either","None"]
+                     },
+                     {
+                        "number":100,
+                        "hint":"All of a group",
+                        "question":"There are five dogs. Every dog barks at the car. ___ bark.",
+                        "options":["All","Neither","Either","None"]}
+                  ],
                   
-                  "keys": {}
+                  "keys": {
+                     "1": "Someone",
+                     "2": "Somebody",
+                     "3": "Someone",
+                     "4": "somebody",
+                     "5": "Someone",
+                     "6": "Somebody",
+                     "7": "Someone",
+                     "8": "Somebody",
+                     "9": "something",
+                     "10": "something",
+                     "11": "something",
+                     "12": "something",
+                     "13": "something",
+                     "14": "something",
+                     "15": "something",
+                     "16": "something",
+                     "17": "anyone",
+                     "18": "anybody",
+                     "19": "anyone",
+                     "20": "anybody",
+                     "21": "anyone",
+                     "22": "anybody",
+                     "23": "anyone",
+                     "24": "anybody",
+                     "25": "anything",
+                     "26": "anything",
+                     "27": "anything",
+                     "28": "anything",
+                     "29": "anything",
+                     "30": "anything",
+                     "31": "anything",
+                     "32": "anything",
+                     "33": "Everyone",
+                     "34": "Everybody",
+                     "35": "Everyone",
+                     "36": "Everybody",
+                     "37": "Everyone",
+                     "38": "Everybody",
+                     "39": "Everyone",
+                     "40": "Everybody",
+                     "41": "Everything",
+                     "42": "Everything",
+                     "43": "Everything",
+                     "44": "Everything",
+                     "45": "Everything",
+                     "46": "Everything",
+                     "47": "Everything",
+                     "48": "Everything",
+                     "49": "Nobody",
+                     "50": "No one",
+                     "51": "Nobody",
+                     "52": "No one",
+                     "53": "Nobody",
+                     "54": "No one",
+                     "55": "Nobody",
+                     "56": "No one",
+                     "57": "nothing",
+                     "58": "nothing",
+                     "59": "nothing",
+                     "60": "nothing",
+                     "61": "nothing",
+                     "62": "Nothing",
+                     "63": "nothing",
+                     "64": "nothing",
+                     "65": "Both",
+                     "66": "Both",
+                     "67": "Both",
+                     "68": "Both",
+                     "69": "Either",
+                     "70": "Either",
+                     "71": "Either",
+                     "72": "Either",
+                     "73": "Neither",
+                     "74": "Neither",
+                     "75": "Neither",
+                     "76": "Neither",
+                     "77": "Each",
+                     "78": "Each",
+                     "79": "Each",
+                     "80": "Each",
+                     "81": "One",
+                     "82": "One",
+                     "83": "One",
+                     "84": "One",
+                     "85": "another",
+                     "86": "another",
+                     "87": "another",
+                     "88": "another",
+                     "89": "Some",
+                     "90": "Some",
+                     "91": "Some",
+                     "92": "Some",
+                     "93": "none",
+                     "94": "None",
+                     "95": "none",
+                     "96": "None",
+                     "97": "All",
+                     "98": "All",
+                     "99": "All",
+                     "100": "All"
+                  }
                }
             }
          },
@@ -8401,9 +9803,711 @@
             "quizLevel": "Elementary",
             "quizData": {
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"By + reflexive: alone",
+                        "question":"I live by ___.",
+                        "options":["yourself","themselves","itself","myself"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"Emphasis: without help",
+                        "question":"I do this puzzle ___.",
+                        "options":["themselves","yourselves","myself","ourselves"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"You (more than one person): without help",
+                        "question":"Students, you learn the words by ___.",
+                        "options":["ourselves","himself","themselves","yourselves"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"Enjoy + reflexive pronoun",
+                        "question":"Nina, you enjoy ___ at the park.",
+                        "options":["itself","themselves","himself","yourself"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"Emphasis: without help",
+                        "question":"Ben, you solve this problem ___.",
+                        "options":["yourselves","themselves","yourself","herself"]
+                     },
+                     {
+                        "number":6,
+                        "hint":"Something acts on itself",
+                        "question":"The puppy washes ___ with its tongue.",
+                        "options":["itself","yourself","yourselves","herself"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"Emphasis: without help",
+                        "question":"Emma, you brush your hair ___.",
+                        "options":["myself","themselves","yourself","ourselves"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"Teaching the same person",
+                        "question":"Ben, you teach ___ English with videos.",
+                        "options":["ourselves","yourself","yourselves","itself"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"You (more than one person)",
+                        "question":"Kate and Leo, you buy ___ fruit after school.",
+                        "options":["yourself","herself","yourselves","myself"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"By + reflexive: alone",
+                        "question":"The toy kitten sleeps by ___ on the shelf.",
+                        "options":["themselves","itself","herself","myself"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"Buying something for the same people",
+                        "question":"My sisters buy ___ warm drinks in winter.",
+                        "options":["themselves","myself","yourselves","ourselves"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"An animal sees itself",
+                        "question":"The parrot looks at ___ in the mirror and moves its head.",
+                        "options":["myself","itself","himself","yourselves"]
+                     },
+                     {
+                        "number":13,
+                        "hint":"Introducing the same person",
+                        "question":"The new boy introduces ___ to the teacher.",
+                        "options":["themselves","yourselves","herself","himself"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"Emphasis: without help",
+                        "question":"The little robot opens the door ___.",
+                        "options":["itself","myself","himself","yourself"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"Talking to the same person",
+                        "question":"I talk to ___ when I think.",
+                        "options":["themselves","myself","yourselves","ourselves"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"Same person does and receives the action",
+                        "question":"Jane sometimes cuts ___ when she uses scissors.",
+                        "options":["yourselves","ourselves","herself","yourself"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"Something acts on itself",
+                        "question":"The machine switches ___ off after ten minutes.",
+                        "options":["itself","himself","myself","yourself"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"Proud of the same person",
+                        "question":"Tom is proud of ___ when he does his homework.",
+                        "options":["myself","itself","herself","himself"]
+                     },
+                     {
+                        "number":19,
+                        "hint":"Buying something for the same person",
+                        "question":"I buy ___ a small gift every year.",
+                        "options":["herself","yourself","itself","myself"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"Emphasis: without help",
+                        "question":"My sister cooks dinner ___.",
+                        "options":["yourselves","herself","ourselves","myself"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"Buying something for the same people",
+                        "question":"We buy ___ ice cream after school.",
+                        "options":["herself","ourselves","themselves","yourselves"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"Same people do and receive the action",
+                        "question":"We wash ___ before bedtime.",
+                        "options":["himself","yourselves","ourselves","yourself"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"Same person does and receives the action",
+                        "question":"My mum dries ___ after a shower.",
+                        "options":["himself","herself","ourselves","yourselves"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"Talking to the same person",
+                        "question":"My mother sometimes talks to ___ in the kitchen.",
+                        "options":["himself","ourselves","itself","herself"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"By + reflexive: alone",
+                        "question":"My aunt lives by ___.",
+                        "options":["yourself","herself","ourselves","myself"]
+                     },
+                     {
+                        "number":26,
+                        "hint":"Reminding the same people",
+                        "question":"We remind ___ to drink water.",
+                        "options":["itself","yourselves","themselves","ourselves"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"Emphasis: without help",
+                        "question":"Grandpa fixes his bike ___.",
+                        "options":["themselves","yourselves","himself","myself"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"Proud of the same people",
+                        "question":"The girls are proud of ___ when they win.",
+                        "options":["themselves","itself","myself","yourselves"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"Buying something for the same person",
+                        "question":"Grandpa buys ___ fresh bread every morning.",
+                        "options":["myself","yourself","ourselves","himself"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"Teaching the same person",
+                        "question":"I teach ___ English with books.",
+                        "options":["themselves","ourselves","yourselves","myself"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"Same person does and receives the action",
+                        "question":"My brother hurts ___ when he plays football.",
+                        "options":["ourselves","herself","himself","yourselves"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"Taking care of the same people",
+                        "question":"We take care of ___ when we are tired.",
+                        "options":["yourself","ourselves","themselves","myself"]
+                     },
+                     {
+                        "number":33,
+                        "hint":"By + reflexive: without help",
+                        "question":"Our toy robot moves by ___.",
+                        "options":["yourselves","myself","yourself","itself"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"Same people do and receive the action",
+                        "question":"We dry ___ after swimming.",
+                        "options":["itself","yourself","myself","ourselves"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"Introducing the same people",
+                        "question":"We introduce ___ to our new neighbours.",
+                        "options":["ourselves","itself","myself","herself"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"Introducing the same person",
+                        "question":"The new girl introduces ___ to the teacher.",
+                        "options":["himself","ourselves","itself","herself"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"Emphasis: without help",
+                        "question":"Dad makes the cake ___.",
+                        "options":["herself","himself","itself","yourself"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"You (more than one person)",
+                        "question":"Tim and Lucy, you sometimes hurt ___ at the park.",
+                        "options":["yourselves","herself","himself","ourselves"]
+                     },
+                     {
+                        "number":39,
+                        "hint":"By + reflexive: without help",
+                        "question":"The toy moves by ___ when I press its button.",
+                        "options":["itself","herself","yourselves","ourselves"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"By + reflexive: without help",
+                        "question":"The children learn to swim by ___.",
+                        "options":["themselves","yourself","myself","yourselves"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"The subject sees the same person",
+                        "question":"I see ___ in the mirror every morning.",
+                        "options":["ourselves","itself","myself","yourselves"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"Emphasis: without help",
+                        "question":"We clean our classroom ___.",
+                        "options":["herself","ourselves","yourself","itself"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"Introducing the same person",
+                        "question":"Anna, you introduce ___ to the class.",
+                        "options":["itself","ourselves","yourself","herself"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"You (more than one person)",
+                        "question":"Sam and Ann, you introduce ___ to new classmates.",
+                        "options":["yourselves","ourselves","yourself","herself"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"You (more than one person)",
+                        "question":"Sam and Mia, you dress ___ every morning.",
+                        "options":["themselves","myself","yourselves","ourselves"]
+                     },
+                     {
+                        "number":46,
+                        "hint":"Introducing the same person",
+                        "question":"I introduce ___ to new students.",
+                        "options":["yourselves","herself","myself","himself"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"Emphasis: without help",
+                        "question":"My friends make their costumes ___.",
+                        "options":["itself","themselves","ourselves","himself"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"By + reflexive: without help",
+                        "question":"The twins walk to school by ___.",
+                        "options":["ourselves","itself","herself","themselves"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"Proud of the same person",
+                        "question":"Sara, you are proud of ___ when you get good marks.",
+                        "options":["himself","yourself","ourselves","myself"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"By + reflexive: without help",
+                        "question":"The girls get ready by ___ before school.",
+                        "options":["ourselves","yourselves","themselves","herself"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"By + reflexive: without help",
+                        "question":"We learn new songs by ___.",
+                        "options":["herself","himself","ourselves","yourselves"]
+                     },
+                     {
+                        "number":52,
+                        "hint":"Something acts on itself",
+                        "question":"The phone turns ___ off at night.",
+                        "options":["itself","yourself","ourselves","yourselves"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"You (more than one person): without help",
+                        "question":"Tom and Lily, you make breakfast ___.",
+                        "options":["himself","yourselves","themselves","myself"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"Emphasis: without help",
+                        "question":"Alex, you make your bed ___.",
+                        "options":["yourself","itself","herself","ourselves"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"You (more than one person): alone",
+                        "question":"Mia and Sam, you play by ___.",
+                        "options":["himself","themselves","itself","yourselves"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"Taking care of the same person",
+                        "question":"My sister takes care of ___ after school.",
+                        "options":["herself","yourselves","itself","myself"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"Emphasis: without help",
+                        "question":"I make my lunch ___.",
+                        "options":["himself","herself","myself","yourselves"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"The subject sees the same person",
+                        "question":"Leo looks at ___ in the mirror.",
+                        "options":["himself","ourselves","yourself","itself"]
+                     },
+                     {
+                        "number":59,
+                        "hint":"Talking to the same person",
+                        "question":"Ellie, you sometimes talk to ___ when you study.",
+                        "options":["yourself","ourselves","itself","themselves"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"An animal acts on its own body",
+                        "question":"The dog scratches ___ with its back foot.",
+                        "options":["yourself","themselves","herself","itself"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"Buying something for the same person",
+                        "question":"Kate, you buy ___ a new book every month.",
+                        "options":["myself","itself","yourself","herself"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"Introducing the same people",
+                        "question":"The players introduce ___ to the coach.",
+                        "options":["itself","themselves","ourselves","herself"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"Emphasis: without help",
+                        "question":"Lucy makes her dress ___.",
+                        "options":["yourself","herself","themselves","ourselves"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"You (more than one person): without help",
+                        "question":"You and your brother do your homework ___.",
+                        "options":["itself","herself","yourselves","ourselves"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"By + reflexive: without others",
+                        "question":"We travel by ___.",
+                        "options":["yourselves","ourselves","herself","themselves"]
+                     },
+                     {
+                        "number":66,
+                        "hint":"Same people do and receive the action",
+                        "question":"Children sometimes hurt ___ on the playground.",
+                        "options":["themselves","itself","yourselves","yourself"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"Proud of the same person",
+                        "question":"I am proud of ___ when I work hard.",
+                        "options":["themselves","itself","yourself","myself"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"Emphasis: without help",
+                        "question":"We build this shelf ___.",
+                        "options":["itself","ourselves","myself","himself"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"The subject sees the same people",
+                        "question":"The children look at ___ in the mirror.",
+                        "options":["himself","themselves","herself","yourselves"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"Same person does and receives the action",
+                        "question":"I hurt ___ when I fall.",
+                        "options":["itself","themselves","myself","herself"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"You (more than one person)",
+                        "question":"John and Max, you look at ___ in the big mirror.",
+                        "options":["yourselves","himself","myself","herself"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"Taking care of the same person",
+                        "question":"I take care of ___ every day.",
+                        "options":["himself","myself","ourselves","themselves"]
+                     },
+                     {
+                        "number":73,
+                        "hint":"An animal sees itself",
+                        "question":"The dog sees ___ in the glass door and moves its head.",
+                        "options":["myself","itself","himself","ourselves"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"Taking care of the same person",
+                        "question":"Megan, you take care of ___ when you feel sick.",
+                        "options":["yourself","itself","yourselves","ourselves"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"Proud of the same person",
+                        "question":"Ella is proud of ___ when she helps other people.",
+                        "options":["yourself","itself","herself","himself"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"Same person does and receives the action",
+                        "question":"My dad shaves ___ every morning.",
+                        "options":["himself","ourselves","yourselves","myself"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"Talking to the same person",
+                        "question":"My father talks to ___ when he is nervous.",
+                        "options":["themselves","itself","herself","himself"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"An animal cleans its own body",
+                        "question":"The cat cleans ___ with its tongue after breakfast.",
+                        "options":["themselves","ourselves","myself","itself"]
+                     },
+                     {
+                        "number":79,
+                        "hint":"Same people do and receive the action",
+                        "question":"We sometimes hurt ___ when we play.",
+                        "options":["myself","yourself","itself","ourselves"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"Teaching the same person",
+                        "question":"Tim teaches ___ to draw.",
+                        "options":["itself","ourselves","yourselves","himself"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"Taking care of the same person",
+                        "question":"My brother takes care of ___ when our parents work.",
+                        "options":["myself","ourselves","yourselves","himself"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"Enjoy + reflexive pronoun",
+                        "question":"I enjoy ___ at the swimming pool.",
+                        "options":["yourself","ourselves","myself","herself"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"You (more than one person)",
+                        "question":"Boys, you are proud of ___ after a good game.",
+                        "options":["myself","herself","himself","yourselves"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"Teaching the same person",
+                        "question":"Anna teaches ___ to play the piano.",
+                        "options":["ourselves","himself","herself","yourselves"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"Emphasis: without help",
+                        "question":"The two boys make sandwiches ___.",
+                        "options":["ourselves","himself","itself","themselves"]
+                     },
+                     {
+                        "number":86,
+                        "hint":"You (more than one person): without help",
+                        "question":"You and your sister paint your room ___.",
+                        "options":["themselves","herself","yourselves","himself"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"Taking care of the same people",
+                        "question":"The boys take care of ___ after school.",
+                        "options":["yourself","themselves","himself","itself"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"By + reflexive: alone",
+                        "question":"My uncle lives by ___.",
+                        "options":["itself","herself","ourselves","himself"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"By + reflexive: alone",
+                        "question":"Tom, you live by ___.",
+                        "options":["myself","yourself","ourselves","yourselves"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"Enjoy + reflexive pronoun",
+                        "question":"The children enjoy ___ at the party.",
+                        "options":["itself","themselves","ourselves","yourself"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"Enjoy + reflexive pronoun",
+                        "question":"Dad enjoys ___ at the football match.",
+                        "options":["themselves","yourselves","himself","myself"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"Same person does and receives the action",
+                        "question":"I wash ___ after football.",
+                        "options":["myself","itself","themselves","yourself"]
+                     },
+                     {
+                        "number":93,
+                        "hint":"An animal cleans its own body",
+                        "question":"The bird cleans ___ with its beak.",
+                        "options":["herself","yourself","itself","themselves"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"The subject sees the same person",
+                        "question":"Nina looks at ___ in the mirror.",
+                        "options":["herself","yourselves","itself","themselves"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"Emphasis: without help",
+                        "question":"My parents paint the room ___.",
+                        "options":["themselves","itself","yourself","myself"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"You (more than one person)",
+                        "question":"You and your friends take care of ___ at camp.",
+                        "options":["themselves","himself","yourselves","myself"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"Same person does and receives the action",
+                        "question":"Zoe, you sometimes hurt ___ when you run.",
+                        "options":["myself","yourself","herself","yourselves"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"Taking care of the same person",
+                        "question":"Sara, you need to look after ___.",
+                        "options":["yourself","myself","himself","herself"]
+                     },
+                     {
+                        "number":99,
+                        "hint":"Proud of the same people",
+                        "question":"We are proud of ___ when we finish our work.",
+                        "options":["ourselves","yourselves","themselves","yourself"]
+                     },
+                     {
+                        "number":100,
+                        "hint":"Buying something for the same person",
+                        "question":"My aunt buys ___ flowers every Friday.",
+                        "options":["herself","yourself","themselves","himself"]
+                     }
+                  ],
                   
-                  "keys": {}
+                  "keys": {
+                     "1": "myself",
+                     "2": "myself",
+                     "3": "yourselves",
+                     "4": "yourself",
+                     "5": "yourself",
+                     "6": "itself",
+                     "7": "yourself",
+                     "8": "yourself",
+                     "9": "yourselves",
+                     "10": "itself",
+                     "11": "themselves",
+                     "12": "itself",
+                     "13": "himself",
+                     "14": "itself",
+                     "15": "myself",
+                     "16": "herself",
+                     "17": "itself",
+                     "18": "himself",
+                     "19": "myself",
+                     "20": "herself",
+                     "21": "ourselves",
+                     "22": "ourselves",
+                     "23": "herself",
+                     "24": "herself",
+                     "25": "herself",
+                     "26": "ourselves",
+                     "27": "himself",
+                     "28": "themselves",
+                     "29": "himself",
+                     "30": "myself",
+                     "31": "himself",
+                     "32": "ourselves",
+                     "33": "itself",
+                     "34": "ourselves",
+                     "35": "ourselves",
+                     "36": "herself",
+                     "37": "himself",
+                     "38": "yourselves",
+                     "39": "itself",
+                     "40": "themselves",
+                     "41": "myself",
+                     "42": "ourselves",
+                     "43": "yourself",
+                     "44": "yourselves",
+                     "45": "yourselves",
+                     "46": "myself",
+                     "47": "themselves",
+                     "48": "themselves",
+                     "49": "yourself",
+                     "50": "themselves",
+                     "51": "ourselves",
+                     "52": "itself",
+                     "53": "yourselves",
+                     "54": "yourself",
+                     "55": "yourselves",
+                     "56": "herself",
+                     "57": "myself",
+                     "58": "himself",
+                     "59": "yourself",
+                     "60": "itself",
+                     "61": "yourself",
+                     "62": "themselves",
+                     "63": "herself",
+                     "64": "yourselves",
+                     "65": "ourselves",
+                     "66": "themselves",
+                     "67": "myself",
+                     "68": "ourselves",
+                     "69": "themselves",
+                     "70": "myself",
+                     "71": "yourselves",
+                     "72": "myself",
+                     "73": "itself",
+                     "74": "yourself",
+                     "75": "herself",
+                     "76": "himself",
+                     "77": "himself",
+                     "78": "itself",
+                     "79": "ourselves",
+                     "80": "himself",
+                     "81": "himself",
+                     "82": "myself",
+                     "83": "yourselves",
+                     "84": "herself",
+                     "85": "themselves",
+                     "86": "yourselves",
+                     "87": "themselves",
+                     "88": "himself",
+                     "89": "yourself",
+                     "90": "themselves",
+                     "91": "himself",
+                     "92": "myself",
+                     "93": "itself",
+                     "94": "herself",
+                     "95": "themselves",
+                     "96": "yourselves",
+                     "97": "yourself",
+                     "98": "yourself",
+                     "99": "ourselves",
+                     "100": "herself"
+                  }
                }
             }
          },
@@ -8416,9 +10520,711 @@
             "quizLevel": "Elementary",
             "quizData": {
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"Strong obligation: law",
+                        "question":"You ___ wear a seat belt in the car. It is the law.",
+                        "options":["might","can","would","must"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"Giving advice: health",
+                        "question":"You have a headache. You ___ drink some water. That is my advice.",
+                        "options":["can","will","should","might"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"Polite request: would like",
+                        "question":"I ___ like a glass of milk, please.",
+                        "options":["would","can","may","must"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"Ability: know how",
+                        "question":"I ___ swim. I know how.",
+                        "options":["will","would","must","can"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"Definite future: schedule",
+                        "question":"Our train ___ leave at nine tomorrow. The time is on our tickets.",
+                        "options":["would","can","might","will"]
+                     },
+                     {
+                        "number":6,
+                        "hint":"Might + base verb: possibility",
+                        "question":"She might ___ late today. She is not sure.",
+                        "options":["arriving","to arrive","arrives","arrive"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"Formal request for permission",
+                        "question":"___ I use your pencil, please?",
+                        "options":["will","should","must","may"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"Uncertain possibility: weather",
+                        "question":"The sky is dark. It ___ rain later. I am not sure.",
+                        "options":["might","would","must","will"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"Strong obligation: law",
+                        "question":"We ___ stop at red traffic lights. It is the law.",
+                        "options":["would","can","might","must"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"Giving advice: rest",
+                        "question":"You feel tired. You ___ go to bed early. It is a good idea.",
+                        "options":["might","will","can","should"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"Polite offer: would like",
+                        "question":"___ you like some tea?",
+                        "options":["may","must","would","can"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"May + base verb: permission",
+                        "question":"May I ___ your ruler, please?",
+                        "options":["borrowing","to borrow","borrows","borrow"]
+                     },
+                     {
+                        "number":13,
+                        "hint":"Ability: reading",
+                        "question":"My sister ___ read simple English books. She knows all the words.",
+                        "options":["can","would","must","will"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"Promise about the future",
+                        "question":"I ___ call you tomorrow. I promise.",
+                        "options":["would","might","can","will"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"Permission: teacher allows it",
+                        "question":"You ___ leave the room now. The teacher says it is OK.",
+                        "options":["must","will","may","should"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"Uncertain possibility: location",
+                        "question":"Anna is not at school. She ___ be at home, but I do not know.",
+                        "options":["might","must","will","would"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"Strong obligation: school rule",
+                        "question":"Students ___ bring their school cards. The school requires them.",
+                        "options":["can","must","might","would"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"Modal + base verb: advice",
+                        "question":"You should ___ kind to your classmates.",
+                        "options":["be","to be","being","is"]
+                     },
+                     {
+                        "number":19,
+                        "hint":"Giving advice: clothing",
+                        "question":"It is cold outside. You ___ wear a coat. That is my advice.",
+                        "options":["should","will","can","might"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"Preference: would rather",
+                        "question":"I ___ rather stay at home than go out.",
+                        "options":["may","can","would","must"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"Ability: speaking",
+                        "question":"___ you speak French? I want to know about your language skills.",
+                        "options":["would","will","can","must"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"Definite future: schedule",
+                        "question":"The film ___ start at seven tonight. It is on the ticket.",
+                        "options":["would","might","will","can"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"Formal request for permission",
+                        "question":"___ I open the window, please?",
+                        "options":["may","should","must","will"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"Would + base verb: polite wish",
+                        "question":"I would ___ a glass of water, please.",
+                        "options":["likes","like","liking","to like"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"Uncertain possibility: location",
+                        "question":"My keys are not on the desk. They ___ be in my bag. I am not sure.",
+                        "options":["must","might","will","would"]
+                     },
+                     {
+                        "number":26,
+                        "hint":"Strong obligation: kitchen rule",
+                        "question":"You ___ wash your hands before work. It is a kitchen rule.",
+                        "options":["must","might","would","can"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"Giving advice: healthy food",
+                        "question":"You ___ eat fruit every day. It is healthy advice.",
+                        "options":["should","can","might","will"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"Polite request: would you mind",
+                        "question":"___ you mind closing the window, please?",
+                        "options":["can","must","may","would"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"Ability: animals",
+                        "question":"Most birds ___ fly. They have wings.",
+                        "options":["can","would","must","will"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"Might + base verb: possibility",
+                        "question":"It might ___ tomorrow.",
+                        "options":["to rain","rain","rains","raining"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"Definite future: plan",
+                        "question":"She ___ visit us on Saturday. That is her plan.",
+                        "options":["might","would","can","will"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"Permission: a rule allows it",
+                        "question":"Students ___ use dictionaries in this test. The rules allow it.",
+                        "options":["must","will","may","should"]
+                     },
+                     {
+                        "number":33,
+                        "hint":"Uncertain possibility: plans",
+                        "question":"Ben ___ come to the party, but he is not sure yet.",
+                        "options":["will","would","must","might"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"Strong obligation: library rule",
+                        "question":"We ___ be quiet in the library. It is a rule.",
+                        "options":["must","would","can","might"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"Negative advice",
+                        "question":"You ___ not eat too much candy. That is my advice.",
+                        "options":["can","will","should","might"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"May + base verb: permission",
+                        "question":"You may ___ here. The teacher gives permission.",
+                        "options":["to sit","sit","sits","sitting"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"Polite request: would like",
+                        "question":"We ___ like two tickets, please.",
+                        "options":["would","may","can","must"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"Ability: cooking",
+                        "question":"My dad ___ cook very well. He makes great meals.",
+                        "options":["will","must","can","would"]
+                     },
+                     {
+                        "number":39,
+                        "hint":"Promise about the future",
+                        "question":"I ___ help you after school. I promise.",
+                        "options":["can","might","will","would"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"Formal request for permission",
+                        "question":"___ I sit here, please?",
+                        "options":["will","may","should","must"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"Uncertain possibility: plans",
+                        "question":"We ___ go to the park today, but we are not sure yet.",
+                        "options":["will","might","must","would"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"Modal + base verb: obligation",
+                        "question":"Drivers must ___ at red traffic lights.",
+                        "options":["stopping","stop","stops","to stop"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"Strong obligation: ticket rule",
+                        "question":"Visitors ___ show their tickets before they enter. The sign says so.",
+                        "options":["must","can","might","would"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"Giving advice: cleaning",
+                        "question":"Your room is untidy. You ___ clean it. I think it is a good idea.",
+                        "options":["will","can","should","might"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"Polite wish: would like",
+                        "question":"My sister ___ like to join the club.",
+                        "options":["would","can","must","may"]
+                     },
+                     {
+                        "number":46,
+                        "hint":"Ability: riding a bike",
+                        "question":"___ your brother ride a bike? Does he know how?",
+                        "options":["can","must","would","will"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"Definite future: confirmed plan",
+                        "question":"They ___ come to the party tomorrow. They say yes.",
+                        "options":["might","would","will","can"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"Modal + base verb: obligation",
+                        "question":"At school, we must ___ our names on our papers.",
+                        "options":["write","writing","writes","to write"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"Permission: parent allows it",
+                        "question":"You ___ take one cookie. Mum says yes.",
+                        "options":["will","may","should","must"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"Uncertain possibility: travel",
+                        "question":"The bus ___ be late. The road is busy, but I am not sure.",
+                        "options":["might","will","must","would"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"Strong prohibition: must not",
+                        "question":"You ___ not touch the hot oven. Mum says it is forbidden.",
+                        "options":["might","must","can","would"]
+                     },
+                     {
+                        "number":52,
+                        "hint":"Giving advice: studying",
+                        "question":"You ___ study a little every day. That is my advice.",
+                        "options":["can","will","should","might"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"Polite offer: would like",
+                        "question":"___ you like to sit here?",
+                        "options":["must","would","can","may"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"Can + base verb: ability",
+                        "question":"Can you ___ this word?",
+                        "options":["spells","spell","spelling","to spell"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"Ability: counting",
+                        "question":"My little sister ___ count to twenty. She knows all the numbers.",
+                        "options":["must","will","would","can"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"Future fact: birthday",
+                        "question":"My brother ___ turn ten next month.",
+                        "options":["might","can","will","would"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"Formal request for permission",
+                        "question":"___ I ask a question, please?",
+                        "options":["should","will","must","may"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"Uncertain possibility: contents",
+                        "question":"This box ___ contain toys, but I cannot see inside.",
+                        "options":["will","would","must","might"]
+                     },
+                     {
+                        "number":59,
+                        "hint":"Strong obligation: game rules",
+                        "question":"Players ___ follow the game rules. It is required.",
+                        "options":["must","might","would","can"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"Modal + base verb: advice",
+                        "question":"We should ___ our rooms every week.",
+                        "options":["cleaning","to clean","clean","cleans"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"Giving advice: helping a friend",
+                        "question":"Your friend is sad. You ___ talk to her. It is kind.",
+                        "options":["might","will","can","should"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"Polite request: would like",
+                        "question":"I ___ like to ask a question, please.",
+                        "options":["can","may","must","would"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"Ability: music",
+                        "question":"He ___ play the guitar. He practices every day.",
+                        "options":["must","would","can","will"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"Definite future: sign",
+                        "question":"The shop ___ open at ten tomorrow. It says so on the sign.",
+                        "options":["will","might","can","would"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"Permission: museum rule",
+                        "question":"Visitors ___ take photos here. The museum allows it.",
+                        "options":["must","will","should","may"]
+                     },
+                     {
+                        "number":66,
+                        "hint":"Can + base verb: ability",
+                        "question":"My brother can ___ very fast.",
+                        "options":["to run","run","running","runs"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"Uncertain possibility: need",
+                        "question":"I ___ need a coat today. The weather changes a lot.",
+                        "options":["must","might","would","will"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"Strong obligation: house rule",
+                        "question":"You ___ take off your shoes before you enter. That is our house rule.",
+                        "options":["would","must","can","might"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"Giving advice: taking a rest",
+                        "question":"You ___ take a break when you feel tired. That is my advice.",
+                        "options":["will","should","might","can"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"Preference: would prefer",
+                        "question":"My parents ___ prefer to eat at home.",
+                        "options":["can","may","would","must"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"Ability: hearing",
+                        "question":"___ you hear the music? It is very loud.",
+                        "options":["must","can","would","will"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"Would + base verb: polite offer",
+                        "question":"Would you ___ some orange juice?",
+                        "options":["likes","to like","liking","like"]
+                     },
+                     {
+                        "number":73,
+                        "hint":"Definite future: agreed plan",
+                        "question":"We ___ meet at the library next week. This is our plan.",
+                        "options":["can","would","will","might"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"Formal request for permission",
+                        "question":"___ I have some water, please?",
+                        "options":["will","may","must","should"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"Uncertain possibility: plans",
+                        "question":"My sister ___ join us later. She does not know yet.",
+                        "options":["must","might","will","would"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"Strong obligation: safety rule",
+                        "question":"Children ___ wear helmets on this bike trip. The teacher requires it.",
+                        "options":["must","would","can","might"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"Giving advice: learning",
+                        "question":"You ___ ask the teacher when you do not understand. It is a good idea.",
+                        "options":["will","might","can","should"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"Modal + base verb: advice",
+                        "question":"You should ___ water on hot days.",
+                        "options":["drinks","drinking","drink","to drink"]
+                     },
+                     {
+                        "number":79,
+                        "hint":"Polite offer: would like",
+                        "question":"___ you like some water with your meal?",
+                        "options":["would","can","may","must"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"Ability: lifting",
+                        "question":"I ___ carry this small bag. It is light.",
+                        "options":["would","must","will","can"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"Future fact: birthday",
+                        "question":"I ___ be sixteen next year.",
+                        "options":["will","might","can","would"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"Permission: teacher allows it",
+                        "question":"We ___ go outside now. Our teacher gives us permission.",
+                        "options":["must","may","should","will"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"Uncertain possibility: school",
+                        "question":"The teacher ___ give us a short quiz today, but nobody knows.",
+                        "options":["must","might","would","will"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"Modal + base verb: obligation",
+                        "question":"You must ___ your hands before lunch.",
+                        "options":["washes","washing","wash","to wash"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"Strong obligation: test rule",
+                        "question":"You ___ finish the test in 30 minutes. That is the rule.",
+                        "options":["would","might","must","can"]
+                     },
+                     {
+                        "number":86,
+                        "hint":"Giving advice: keeping things clean",
+                        "question":"Your shoes are dirty. You ___ clean them. That is my advice.",
+                        "options":["can","will","should","might"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"Preference: would rather",
+                        "question":"He ___ rather walk than take a bus.",
+                        "options":["must","can","would","may"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"Ability: driving",
+                        "question":"___ your mum drive a car? Does she know how?",
+                        "options":["would","must","will","can"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"Definite future: timetable",
+                        "question":"The test ___ begin at nine tomorrow. It is on the schedule.",
+                        "options":["can","would","might","will"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"Will + base verb: promise",
+                        "question":"I will ___ you tomorrow. I promise.",
+                        "options":["calls","to call","calling","call"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"Formal request for permission",
+                        "question":"___ I borrow this book, please?",
+                        "options":["may","should","will","must"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"Uncertain possibility: weather",
+                        "question":"It ___ snow in the mountains tonight. The forecast is not certain.",
+                        "options":["would","might","must","will"]
+                     },
+                     {
+                        "number":93,
+                        "hint":"Strong obligation: sign",
+                        "question":"We ___ leave our bags outside this room. The sign requires it.",
+                        "options":["would","must","might","can"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"Giving advice: saving money",
+                        "question":"You ___ save some money every week. I think it is a good idea.",
+                        "options":["should","might","will","can"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"Polite request: would like",
+                        "question":"I ___ like to try this blue shirt, please.",
+                        "options":["may","must","would","can"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"Will + base verb: future",
+                        "question":"The bus will ___ at seven tomorrow.",
+                        "options":["arriving","arrive","arrives","to arrive"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"Ability: drawing",
+                        "question":"My friend ___ draw animals very well. Her pictures look great.",
+                        "options":["would","will","can","must"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"Promise about the future",
+                        "question":"I ___ bring your book tomorrow. I promise.",
+                        "options":["might","will","would","can"]
+                     },
+                     {
+                        "number":99,
+                        "hint":"Permission: school rule",
+                        "question":"Students ___ enter this room with a teacher. School rules allow it.",
+                        "options":["may","must","will","should"]
+                     },
+                     {
+                        "number":100,
+                        "hint":"Uncertain possibility: location",
+                        "question":"Our dog ___ be under the bed, but I cannot see it.",
+                        "options":["would","will","must","might"]
+                     }
+                  ],
                   
-                  "keys": {}
+                  "keys": {
+                     "1": "must",
+                     "2": "should",
+                     "3": "would",
+                     "4": "can",
+                     "5": "will",
+                     "6": "arrive",
+                     "7": "may",
+                     "8": "might",
+                     "9": "must",
+                     "10": "should",
+                     "11": "would",
+                     "12": "borrow",
+                     "13": "can",
+                     "14": "will",
+                     "15": "may",
+                     "16": "might",
+                     "17": "must",
+                     "18": "be",
+                     "19": "should",
+                     "20": "would",
+                     "21": "can",
+                     "22": "will",
+                     "23": "may",
+                     "24": "like",
+                     "25": "might",
+                     "26": "must",
+                     "27": "should",
+                     "28": "would",
+                     "29": "can",
+                     "30": "rain",
+                     "31": "will",
+                     "32": "may",
+                     "33": "might",
+                     "34": "must",
+                     "35": "should",
+                     "36": "sit",
+                     "37": "would",
+                     "38": "can",
+                     "39": "will",
+                     "40": "may",
+                     "41": "might",
+                     "42": "stop",
+                     "43": "must",
+                     "44": "should",
+                     "45": "would",
+                     "46": "can",
+                     "47": "will",
+                     "48": "write",
+                     "49": "may",
+                     "50": "might",
+                     "51": "must",
+                     "52": "should",
+                     "53": "would",
+                     "54": "spell",
+                     "55": "can",
+                     "56": "will",
+                     "57": "may",
+                     "58": "might",
+                     "59": "must",
+                     "60": "clean",
+                     "61": "should",
+                     "62": "would",
+                     "63": "can",
+                     "64": "will",
+                     "65": "may",
+                     "66": "run",
+                     "67": "might",
+                     "68": "must",
+                     "69": "should",
+                     "70": "would",
+                     "71": "can",
+                     "72": "like",
+                     "73": "will",
+                     "74": "may",
+                     "75": "might",
+                     "76": "must",
+                     "77": "should",
+                     "78": "drink",
+                     "79": "would",
+                     "80": "can",
+                     "81": "will",
+                     "82": "may",
+                     "83": "might",
+                     "84": "wash",
+                     "85": "must",
+                     "86": "should",
+                     "87": "would",
+                     "88": "can",
+                     "89": "will",
+                     "90": "call",
+                     "91": "may",
+                     "92": "might",
+                     "93": "must",
+                     "94": "should",
+                     "95": "would",
+                     "96": "arrive",
+                     "97": "can",
+                     "98": "will",
+                     "99": "may",
+                     "100": "might"
+                  }
                }
             }
          },
@@ -8430,10 +11236,712 @@
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
+
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"give — person first",
+                        "question":"I give my sister ___ a book every Sunday.",
+                        "options":["to","for","___","in"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"give — thing first",
+                        "question":"I give a book ___ my sister every Sunday.",
+                        "options":["___","for","to","on"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"send — thing first",
+                        "question":"Emma sends a postcard ___ her cousin each month.",
+                        "options":["on","to","___","for"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"send — person first",
+                        "question":"Does Emma send her cousin ___ a postcard each month?",
+                        "options":["to","___","for","in"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"show — person first",
+                        "question":"The teacher shows the class ___ a picture in the lesson.",
+                        "options":["for","to","at","___"]
+                     },
+                     {
+                        "number":6,
+                        "hint":"show — thing first",
+                        "question":"The teacher shows a picture ___ the class in the lesson.",
+                        "options":["for","to","on","___"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"tell — person first",
+                        "question":"My dad tells me ___ a story at bedtime.",
+                        "options":["___","on","for","to"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"tell — thing first",
+                        "question":"Does my dad tell a story ___ me at bedtime?",
+                        "options":["at","to","for","___"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"lend — person first",
+                        "question":"We lend our friends ___ a ball after school.",
+                        "options":["at","___","for","to"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"lend — thing first",
+                        "question":"We lend a ball ___ our friends after school.",
+                        "options":["at","___","for","to"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"pass — thing first",
+                        "question":"Leo passes the salt ___ his mum at dinner.",
+                        "options":["to","on","for","___"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"pass — person first",
+                        "question":"Does Leo pass his mum ___ the salt at dinner?",
+                        "options":["at","for","___","to"]
+                     },
+                     {
+                        "number":13,
+                        "hint":"teach — person first",
+                        "question":"I teach my brother ___ English at home.",
+                        "options":["for","to","___","in"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"teach — thing first",
+                        "question":"I teach English ___ my brother at home.",
+                        "options":["to","at","___","for"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"offer — person first",
+                        "question":"The shop assistant offers the customer ___ a bag at the shop.",
+                        "options":["in","___","for","to"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"offer — thing first",
+                        "question":"Does the shop assistant offer a bag ___ the customer at the shop?",
+                        "options":["___","for","to","at"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"hand — person first",
+                        "question":"Sara hands her friend ___ a pencil in class.",
+                        "options":["to","___","for","in"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"hand — thing first",
+                        "question":"Sara hands a pencil ___ her friend in class.",
+                        "options":["___","on","for","to"]
+                     },
+                     {
+                        "number":19,
+                        "hint":"write — thing first",
+                        "question":"The boys write a letter ___ their grandma every month.",
+                        "options":["to","___","on","for"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"write — person first",
+                        "question":"Do the boys write their grandma ___ a letter every month?",
+                        "options":["___","for","to","at"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"read — person first",
+                        "question":"Mum reads the children ___ a story at night.",
+                        "options":["to","___","at","for"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"read — thing first",
+                        "question":"Mum reads a story ___ the children at night.",
+                        "options":["___","for","in","to"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"bring — person first",
+                        "question":"The waiter brings us ___ the menu at the restaurant.",
+                        "options":["___","to","for","at"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"bring — thing first",
+                        "question":"Does the waiter bring the menu ___ us at the restaurant?",
+                        "options":["for","to","in","___"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"give — person first",
+                        "question":"Dad gives the children ___ some fruit after school.",
+                        "options":["___","to","for","in"]
+                     },
+                     {
+                        "number":26,
+                        "hint":"give — thing first",
+                        "question":"Dad gives some fruit ___ the children after school.",
+                        "options":["on","___","to","for"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"send — thing first",
+                        "question":"Jack sends a message ___ his father every Friday.",
+                        "options":["at","to","for","___"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"send — person first",
+                        "question":"Does Jack send his father ___ a message every Friday?",
+                        "options":["on","for","to","___"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"show — person first",
+                        "question":"The guide shows the visitors ___ a map at the museum.",
+                        "options":["to","for","in","___"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"show — thing first",
+                        "question":"The guide shows a map ___ the visitors at the museum.",
+                        "options":["to","___","for","in"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"tell — person first",
+                        "question":"Sam tells his little sister ___ a joke on Saturdays.",
+                        "options":["for","at","___","to"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"tell — thing first",
+                        "question":"Does Sam tell a joke ___ his little sister on Saturdays?",
+                        "options":["to","___","for","in"]
+                     },
+                     {
+                        "number":33,
+                        "hint":"lend — person first",
+                        "question":"We lend our neighbour ___ a chair when she visits.",
+                        "options":["to","at","for","___"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"lend — thing first",
+                        "question":"We lend a chair ___ our neighbour when she visits.",
+                        "options":["___","at","to","for"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"pass — thing first",
+                        "question":"Nina passes a note ___ her friend during class.",
+                        "options":["___","in","to","for"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"pass — person first",
+                        "question":"Does Nina pass her friend ___ a note during class?",
+                        "options":["on","to","for","___"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"teach — person first",
+                        "question":"Dad teaches me ___ maths after dinner.",
+                        "options":["___","for","to","in"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"teach — thing first",
+                        "question":"Dad teaches maths ___ me after dinner.",
+                        "options":["___","on","for","to"]
+                     },
+                     {
+                        "number":39,
+                        "hint":"offer — person first",
+                        "question":"The host offers the guests ___ some water when they arrive.",
+                        "options":["___","in","for","to"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"offer — thing first",
+                        "question":"Does the host offer some water ___ the guests when they arrive?",
+                        "options":["in","___","for","to"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"hand — person first",
+                        "question":"Tom hands his teacher ___ his homework on Mondays.",
+                        "options":["___","to","on","for"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"hand — thing first",
+                        "question":"Tom hands his homework ___ his teacher on Mondays.",
+                        "options":["to","in","___","for"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"write — thing first",
+                        "question":"My aunt writes a short email ___ me every week.",
+                        "options":["in","to","for","___"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"write — person first",
+                        "question":"Does my aunt write me ___ a short email every week?",
+                        "options":["to","for","___","on"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"read — person first",
+                        "question":"We read our baby ___ a book before bed.",
+                        "options":["to","at","for","___"]
+                     },
+                     {
+                        "number":46,
+                        "hint":"read — thing first",
+                        "question":"We read a book ___ our baby before bed.",
+                        "options":["for","___","to","on"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"bring — person first",
+                        "question":"The boy brings his teacher ___ his notebook every morning.",
+                        "options":["to","in","for","___"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"bring — thing first",
+                        "question":"Does the boy bring his notebook ___ his teacher every morning?",
+                        "options":["___","for","on","to"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"sell — person first",
+                        "question":"The farmer sells us ___ fresh eggs on Fridays.",
+                        "options":["at","___","for","to"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"sell — thing first",
+                        "question":"The farmer sells fresh eggs ___ us on Fridays.",
+                        "options":["___","for","to","at"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"buy — thing first",
+                        "question":"You buy a flower ___ your mum on Sundays.",
+                        "options":["for","in","to","___"]
+                     },
+                     {
+                        "number":52,
+                        "hint":"buy — person first",
+                        "question":"Do you buy your mum ___ a flower on Sundays?",
+                        "options":["to","in","for","___"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"make — person first",
+                        "question":"The children make their friend ___ a cake on birthdays.",
+                        "options":["___","to","for","on"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"make — thing first",
+                        "question":"The children make a cake ___ their friend on birthdays.",
+                        "options":["___","for","in","to"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"cook — person first",
+                        "question":"Sara cooks her brother ___ lunch every Saturday.",
+                        "options":["to","for","___","in"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"cook — thing first",
+                        "question":"Does Sara cook lunch ___ her brother every Saturday?",
+                        "options":["for","on","to","___"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"get — person first",
+                        "question":"Dad gets me ___ a glass of milk at breakfast.",
+                        "options":["___","for","to","at"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"get — thing first",
+                        "question":"Dad gets a glass of milk ___ me at breakfast.",
+                        "options":["to","at","for","___"]
+                     },
+                     {
+                        "number":59,
+                        "hint":"find — thing first",
+                        "question":"The woman finds a seat ___ her sister on the bus.",
+                        "options":["to","on","for","___"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"find — person first",
+                        "question":"Does the woman find her sister ___ a seat on the bus?",
+                        "options":["at","for","to","___"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"bake — person first",
+                        "question":"We bake our teacher ___ some cookies on Fridays.",
+                        "options":["to","for","___","in"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"bake — thing first",
+                        "question":"We bake some cookies ___ our teacher on Fridays.",
+                        "options":["for","___","at","to"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"draw — person first",
+                        "question":"Anna draws her brother ___ a picture after school.",
+                        "options":["to","___","for","in"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"draw — thing first",
+                        "question":"Does Anna draw a picture ___ her brother after school?",
+                        "options":["to","___","at","for"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"make — person first",
+                        "question":"Mum makes us ___ sandwiches every morning.",
+                        "options":["on","for","___","to"]
+                     },
+                     {
+                        "number":66,
+                        "hint":"make — thing first",
+                        "question":"Mum makes sandwiches ___ us every morning.",
+                        "options":["___","for","to","at"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"save — thing first",
+                        "question":"Grandma saves a seat ___ me at dinner.",
+                        "options":["to","___","on","for"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"save — person first",
+                        "question":"Does Grandma save me ___ a seat at dinner?",
+                        "options":["to","___","for","in"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"buy — person first",
+                        "question":"Sam buys his friend ___ a notebook at the bookshop.",
+                        "options":["___","for","in","to"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"buy — thing first",
+                        "question":"Sam buys a notebook ___ his friend at the bookshop.",
+                        "options":["for","to","in","___"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"cook — person first",
+                        "question":"You cook your dad ___ breakfast on Sundays.",
+                        "options":["to","___","in","for"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"cook — thing first",
+                        "question":"Do you cook breakfast ___ your dad on Sundays?",
+                        "options":["___","at","for","to"]
+                     },
+                     {
+                        "number":73,
+                        "hint":"make — person first",
+                        "question":"Leo makes his sister ___ a card on her birthday.",
+                        "options":["to","on","for","___"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"make — thing first",
+                        "question":"Leo makes a card ___ his sister on her birthday.",
+                        "options":["___","to","for","in"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"get — thing first",
+                        "question":"The parents get a new toy ___ their son at the toy shop.",
+                        "options":["for","___","to","on"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"get — person first",
+                        "question":"Do the parents get their son ___ a new toy at the toy shop?",
+                        "options":["in","___","for","to"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"find — person first",
+                        "question":"We find our teacher ___ a chair before class.",
+                        "options":["___","for","to","in"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"find — thing first",
+                        "question":"We find a chair ___ our teacher before class.",
+                        "options":["___","in","to","for"]
+                     },
+                     {
+                        "number":79,
+                        "hint":"bake — person first",
+                        "question":"Anna bakes her dad ___ a cake every year.",
+                        "options":["to","on","___","for"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"bake — thing first",
+                        "question":"Does Anna bake a cake ___ her dad every year?",
+                        "options":["___","in","to","for"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"buy — person first",
+                        "question":"My brother buys me ___ an ice cream in summer.",
+                        "options":["___","to","on","for"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"buy — thing first",
+                        "question":"My brother buys an ice cream ___ me in summer.",
+                        "options":["___","for","in","to"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"make — thing first",
+                        "question":"Dad makes a kite ___ my little sister in spring.",
+                        "options":["for","to","___","in"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"make — person first",
+                        "question":"Does Dad make my little sister ___ a kite in spring?",
+                        "options":["___","for","to","on"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"cook — person first",
+                        "question":"My mum cooks us ___ dinner every evening.",
+                        "options":["to","for","___","in"]
+                     },
+                     {
+                        "number":86,
+                        "hint":"cook — thing first",
+                        "question":"My mum cooks dinner ___ us every evening.",
+                        "options":["on","to","___","for"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"get — person first",
+                        "question":"You get your friend ___ a cup of tea after school.",
+                        "options":["for","___","to","at"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"get — thing first",
+                        "question":"Do you get a cup of tea ___ your friend after school?",
+                        "options":["___","for","at","to"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"find — person first",
+                        "question":"The students find their teacher ___ a chair before the lesson.",
+                        "options":["in","for","to","___"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"find — thing first",
+                        "question":"The students find a chair ___ their teacher before the lesson.",
+                        "options":["in","___","for","to"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"bake — thing first",
+                        "question":"Mary bakes bread ___ her friend every week.",
+                        "options":["___","to","for","at"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"bake — person first",
+                        "question":"Does Mary bake her friend ___ bread every week?",
+                        "options":["for","___","to","on"]
+                     },
+                     {
+                        "number":93,
+                        "hint":"buy — person first",
+                        "question":"We buy our parents ___ gifts at Christmas.",
+                        "options":["to","for","___","at"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"buy — thing first",
+                        "question":"We buy gifts ___ our parents at Christmas.",
+                        "options":["on","___","to","for"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"draw — person first",
+                        "question":"My sister draws her friend ___ a cat after school.",
+                        "options":["for","to","at","___"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"draw — thing first",
+                        "question":"Does my sister draw a cat ___ her friend after school?",
+                        "options":["to","in","___","for"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"cook — person first",
+                        "question":"Grandpa cooks the children ___ soup in winter.",
+                        "options":["at","___","for","to"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"cook — thing first",
+                        "question":"Grandpa cooks soup ___ the children in winter.",
+                        "options":["___","for","to","on"]
+                     },
+                     {
+                        "number":99,
+                        "hint":"get — thing first",
+                        "question":"My dad gets a taxi ___ my aunt when she visits.",
+                        "options":["at","for","to","___"]
+                     },
+                     {
+                        "number":100,"hint":"get — person first",
+                        "question":"Does my dad get my aunt ___ a taxi when she visits?",
+                        "options":["to","for","___","at"]
+                     }
+                  ],
                   
-                  "keys": {}
+                  "keys": {
+                     "1":"___",
+                     "2":"to",
+                     "3":"to",
+                     "4":"___",
+                     "5":"___",
+                     "6":"to",
+                     "7":"___",
+                     "8":"to",
+                     "9":"___",
+                     "10":"to",
+                     "11":"to",
+                     "12":"___",
+                     "13":"___",
+                     "14":"to",
+                     "15":"___",
+                     "16":"to",
+                     "17":"___",
+                     "18":"to",
+                     "19":"to",
+                     "20":"___",
+                     "21":"___",
+                     "22":"to",
+                     "23":"___",
+                     "24":"to",
+                     "25":"___",
+                     "26":"to",
+                     "27":"to",
+                     "28":"___",
+                     "29":"___",
+                     "30":"to",
+                     "31":"___",
+                     "32":"to",
+                     "33":"___",
+                     "34":"to",
+                     "35":"to",
+                     "36":"___",
+                     "37":"___",
+                     "38":"to",
+                     "39":"___",
+                     "40":"to",
+                     "41":"___",
+                     "42":"to",
+                     "43":"to",
+                     "44":"___",
+                     "45":"___",
+                     "46":"to",
+                     "47":"___",
+                     "48":"to",
+                     "49":"___",
+                     "50":"to",
+                     "51":"for",
+                     "52":"___",
+                     "53":"___",
+                     "54":"for",
+                     "55":"___",
+                     "56":"for",
+                     "57":"___",
+                     "58":"for",
+                     "59":"for",
+                     "60":"___",
+                     "61":"___",
+                     "62":"for",
+                     "63":"___",
+                     "64":"for",
+                     "65":"___",
+                     "66":"for",
+                     "67":"for",
+                     "68":"___",
+                     "69":"___",
+                     "70":"for",
+                     "71":"___",
+                     "72":"for",
+                     "73":"___",
+                     "74":"for",
+                     "75":"for",
+                     "76":"___",
+                     "77":"___",
+                     "78":"for",
+                     "79":"___",
+                     "80":"for",
+                     "81":"___",
+                     "82":"for",
+                     "83":"for",
+                     "84":"___",
+                     "85":"___",
+                     "86":"for",
+                     "87":"___",
+                     "88":"for",
+                     "89":"___",
+                     "90":"for",
+                     "91":"for",
+                     "92":"___",
+                     "93":"___",
+                     "94":"for",
+                     "95":"___",
+                     "96":"for",
+                     "97":"___",
+                     "98":"for",
+                     "99":"for",
+                     "100":"___"
+                  }
                }
             }
          },
