@@ -23,6 +23,14 @@ export const metadata = {
    },
    description: "A Language App Powered by Mohamad Gomar.",
    manifest: "/manifest.json",
+   icons: {
+      icon: [
+         { url: "/favicon.ico", type: "image/x-icon", sizes: "16x16 32x32 48x48" },
+         { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+         { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      ],
+      shortcut: "/favicon.ico",
+   },
    alternates: { canonical: "/" },
    openGraph: {
       type: "website",
