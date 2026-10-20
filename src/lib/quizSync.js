@@ -1,5 +1,5 @@
 import { getSupabaseBrowserClient } from '@/lib/supabaseClient';
-import { getAllQuizzes, resetQuizProgress, saveQuizResult, queueQuizResult } from '@/lib/db';
+import { getAllQuizzes, resetQuizProgress, restoreQuizResult, queueQuizResult } from '@/lib/db';
 import { syncPendingQuizResults } from '@/lib/quizResults';
 
 const OWNER_KEY = 'quizDataOwner';
@@ -80,7 +80,7 @@ async function restoreQuizzes(userId) {
         // An unsent, newer attempt should survive restoration of an older one.
         if (localIsNewer) continue;
 
-        await saveQuizResult(quiz.quizNumber, {
+        await restoreQuizResult(quiz.quizNumber, {
             date: row.taken_at,
             topic: row.topic,
             quizLabel: row.quiz_label,

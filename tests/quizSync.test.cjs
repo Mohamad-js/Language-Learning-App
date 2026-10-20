@@ -21,7 +21,7 @@ function state() {
     return {
         user: 'alice', storage: new Map(), rows: [], inserts: 0, reads: 0,
         readError: false, insertError: false, loseResponse: false,
-        stores: { quizzes: new Map(), quizResults: new Map() }, transactions: [],
+        stores: { quizzes: new Map(), quizResults: new Map(), levels: new Map() }, transactions: [],
     };
 }
 
@@ -68,7 +68,7 @@ async function runtime(s = state()) {
                     }
                     return { error: null };
                 },
-                then: (resolve, reject) => Promise.resolve().then(() => {
+                then: (resolve, reject) => Promise.resolve().then(async () => {
                     s.reads++;
                     if (s.readError) return { error: new Error('Offline') };
                     const rows = s.rows.filter(r => filters.every(([key, value]) => String(r[key]) === String(value)));
@@ -79,7 +79,9 @@ async function runtime(s = state()) {
                         }
                         return 0;
                     });
-                    return { data: clone(rows.slice(start, end + 1)), error: null };
+                    const data = clone(rows.slice(start, end + 1));
+                    if (s.onRead) await s.onRead();
+                    return { data, error: null };
                 }).then(resolve, reject),
             };
             return query;
@@ -88,8 +90,11 @@ async function runtime(s = state()) {
     const context = vm.createContext({
         console, crypto: webcrypto,
         localStorage: {
+            get length() { return s.storage.size; },
+            key: index => [...s.storage.keys()][index] ?? null,
             getItem: key => s.storage.get(key) ?? null,
             setItem: (key, value) => s.storage.set(key, value),
+            removeItem: key => s.storage.delete(key),
         },
     });
     const modules = new Map();
@@ -110,8 +115,11 @@ async function runtime(s = state()) {
     }
     const sync = await load('@/lib/quizSync');
     await sync.evaluate();
+    const settingsStorage = await load('@/lib/settingsStorage');
+    await settingsStorage.evaluate();
     return {
         s, sync: sync.namespace, uploads: modules.get('@/lib/quizResults').namespace,
+        settingsStorage: settingsStorage.namespace,
         db: modules.get('@/lib/db').namespace,
         quiz: number => s.stores.quizzes.get(number),
     };
@@ -274,4 +282,104 @@ test('restoration preserves retake drafts and a newer unsent local attempt', asy
     assert.ok(app.quiz(1).draftAnswers);
     assert.equal(app.quiz(2).userAnswers.score, 18);
     assert.equal(app.s.inserts, 1);
+});
+
+test('restarting one quiz keeps the empty retake across reloads and preserves other drafts and history', async () => {
+    const app = await runtime();
+    app.s.rows = [row(1), row(3)];
+    await app.sync.ensureQuizOwner('alice');
+    await app.db.saveQuizProgress(2, { 1: 'am', 2: 'is' });
+
+    await app.db.restartQuizProgress(1);
+    assert.equal(app.quiz(1).userAnswers, undefined);
+    assert.equal(Object.keys(app.quiz(1).draftAnswers).length, 0);
+    assert.equal(app.quiz(2).draftAnswers[1], 'am');
+    assert.equal(app.quiz(3).userAnswers.score, 20);
+
+    const reopened = await runtime(app.s);
+    await reopened.sync.ensureQuizOwner('alice');
+    assert.equal(reopened.quiz(1).userAnswers, undefined);
+    assert.equal(Object.keys(reopened.quiz(1).draftAnswers).length, 0);
+    assert.equal(reopened.quiz(2).draftAnswers[2], 'is');
+    assert.equal(app.s.rows.length, 2);
+    assert.equal(app.s.inserts, 0);
+});
+
+test('a retake started during a server download remains in progress', async () => {
+    const app = await runtime();
+    app.s.storage.set('quizDataOwner', 'alice');
+    app.s.rows = [row(1)];
+    await app.db.saveQuizResult(1, result());
+    app.s.onRead = async () => {
+        app.s.onRead = null;
+        await app.db.restartQuizProgress(1);
+        await app.db.saveQuizProgress(1, { 1: 'am' });
+    };
+    await app.sync.ensureQuizOwner('alice');
+    assert.equal(app.quiz(1).userAnswers, undefined);
+    assert.equal(app.quiz(1).draftAnswers[1], 'am');
+});
+
+test('a stale restoration write cannot overwrite a draft or a newly completed result', async () => {
+    const app = await runtime();
+    await app.db.restartQuizProgress(1);
+    assert.equal(await app.db.restoreQuizResult(1, result()), false);
+    await app.db.saveQuizProgress(1, { 1: 'am', 2: 'are' });
+    assert.equal(await app.db.restoreQuizResult(1, result()), false);
+    assert.equal(app.quiz(1).draftAnswers[2], 'are');
+
+    await app.db.saveQuizResult(1, result(18, '2026-10-20T10:00:00.000Z'), 'alice');
+    assert.equal(await app.db.restoreQuizResult(1, result()), false);
+    assert.equal(app.quiz(1).userAnswers.score, 18);
+    assert.equal(app.quiz(1).draftAnswers, undefined);
+    assert.equal(app.s.stores.quizResults.size, 1);
+});
+
+test('answers resume after refresh and a completed retake becomes the latest server result', async () => {
+    const app = await runtime();
+    app.s.rows = [row(1)];
+    await app.sync.ensureQuizOwner('alice');
+    await app.db.restartQuizProgress(1);
+    await app.db.saveQuizProgress(1, { 1: 'am', 2: 'are' });
+
+    const resumed = await runtime(app.s);
+    await resumed.sync.ensureQuizOwner('alice');
+    assert.equal(resumed.quiz(1).draftAnswers[1], 'am');
+    assert.equal(resumed.quiz(1).draftAnswers[2], 'are');
+    assert.equal(resumed.quiz(1).userAnswers, undefined);
+
+    await resumed.db.saveQuizResult(1, result(18, '2026-10-20T10:00:00.000Z'), 'alice');
+    await resumed.uploads.syncPendingQuizResults('alice');
+    const completed = await runtime(app.s);
+    await completed.sync.ensureQuizOwner('alice');
+    assert.equal(completed.quiz(1).userAnswers.score, 18);
+    assert.equal(completed.quiz(1).draftAnswers, undefined);
+    assert.equal(app.s.rows.length, 2);
+});
+
+test('resetting app preferences and vocabulary preserves quiz ownership, drafts, uploads, and sign-in', async () => {
+    const app = await runtime();
+    app.s.storage.set('quizDataOwner', 'alice');
+    app.s.storage.set('sb-project-auth-token', 'session');
+    app.s.storage.set('Settings', 'preferences');
+    app.s.storage.set('knownWords-1-A2', 'words');
+    app.s.storage.set('savedB1Vocabs-2-B1', 'words');
+    app.s.storage.set('wordsCount-A2', '5');
+    await app.db.saveQuizResult(1, result(), 'alice');
+    await app.db.restartQuizProgress(1);
+    await app.db.saveQuizProgress(2, { 1: 'am' });
+
+    await app.db.resetAllProgress();
+    app.settingsStorage.resetAppStorage();
+
+    assert.equal(app.s.storage.get('quizDataOwner'), 'alice');
+    assert.equal(app.s.storage.get('sb-project-auth-token'), 'session');
+    assert.equal(app.s.storage.has('Settings'), false);
+    assert.equal(app.s.storage.has('knownWords-1-A2'), false);
+    assert.equal(app.s.storage.has('savedB1Vocabs-2-B1'), false);
+    assert.equal(app.s.storage.has('wordsCount-A2'), false);
+    assert.ok(app.quiz(1).draftAnswers);
+    assert.equal(app.quiz(1).userAnswers, undefined);
+    assert.equal(app.quiz(2).draftAnswers[1], 'am');
+    assert.equal(app.s.stores.quizResults.size, 1);
 });

@@ -4,7 +4,7 @@ import { useAuth } from '@/app/context/AuthProvider';
 import { ensureQuizOwner } from '@/lib/quizSync';
 import Back from '@/components/backButton/back'
 import { syncPendingQuizResults } from "@/lib/quizResults";
-import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress  } from "@/lib/db";
+import { getAllQuizzes, saveQuizResult, restartQuizProgress, saveQuizProgress  } from "@/lib/db";
 import { GoArrowRight } from "react-icons/go";
 import { TiTick } from "react-icons/ti";
 import { FaTimes, FaArrowCircleRight } from "react-icons/fa";
@@ -93,9 +93,7 @@ function QuizContent({ userId }) {
 
     const retryQuiz = async (quizNumber) => {
         try {
-            await resetQuizProgress(quizNumber)
-            // Keep an explicit draft so restoring history does not cancel a retake.
-            await saveQuizProgress(quizNumber, {})
+            await restartQuizProgress(quizNumber)
 
             setQuiz(prevQuiz =>
                 prevQuiz.map(item =>

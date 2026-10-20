@@ -491,30 +491,39 @@ export const removePendingQuizResult = async (attemptId) => {
 
 
 
-export const resetAllQuizResults = async () => {
+// Start a retake in one transaction; there must be no moment when server
+// restoration can mistake the quiz for an empty cache and mark it done again.
+export const restartQuizProgress = async (quizNumber) => {
    const db = await initDB()
-   const transaction = db.transaction("quizzes", "readwrite")
-   const store = transaction.objectStore("quizzes")
-   const quizzes = await store.getAll()
+   const tx = db.transaction("quizzes", "readwrite")
+   const store = tx.objectStore("quizzes")
+   const quiz = await store.get(quizNumber) ?? findQuizContent(quizNumber)
+   if (!quiz) throw new Error(`Quiz ${quizNumber} not found in quiz.json`)
 
-   for (const quiz of quizzes) {
-      let changed = false
+   delete quiz.userAnswers
+   quiz.draftAnswers = {}
+   await store.put(quiz)
+   await tx.done
+}
 
-      if (quiz.userAnswers) {
-         delete quiz.userAnswers
-         changed = true
-      }
+// Recheck progress inside the write transaction, after any answer/restart
+// already saved on this device. Downloaded history must never finalize a draft.
+export const restoreQuizResult = async (quizNumber, userAnswers) => {
+   const db = await initDB()
+   const tx = db.transaction("quizzes", "readwrite")
+   const store = tx.objectStore("quizzes")
+   const quiz = await store.get(quizNumber) ?? findQuizContent(quizNumber)
+   if (!quiz) throw new Error(`Quiz ${quizNumber} not found in quiz.json`)
 
-      if (quiz.draftAnswers) {
-         delete quiz.draftAnswers
-         changed = true
-      }
-
-      if (changed) {
-         await store.put(quiz)
-      }
+   if (quiz.draftAnswers || (quiz.userAnswers && new Date(quiz.userAnswers.date) > new Date(userAnswers.date))) {
+      await tx.done
+      return false
    }
-   await transaction.done
+
+   quiz.userAnswers = userAnswers
+   await store.put(quiz)
+   await tx.done
+   return true
 }
 
 

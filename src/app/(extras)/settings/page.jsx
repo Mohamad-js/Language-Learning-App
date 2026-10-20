@@ -1,8 +1,8 @@
 'use client'
-import Switch from "@/components/switch/switch";
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
-import { resetAllProgress, resetLevelProgress, resetAllQuizResults } from "@/lib/db";
+import { resetAllProgress, resetLevelProgress } from "@/lib/db";
+import { resetAppStorage } from "@/lib/settingsStorage";
 import { toast } from "sonner";
 import ThemeToggle from "@/components/themeSwitch/themeToggle";
 import {
@@ -39,7 +39,7 @@ function Settings(){
          await resetAllProgress()
          toast.info('The App Restarted')
          setWarning(false)
-         localStorage.clear()
+         resetAppStorage()
          window.location.href = '/';
          
       } catch (error){
@@ -58,19 +58,9 @@ function Settings(){
       }
    }
 
-   const resetQuiz = async () => {
-      try {
-         await resetAllQuizResults()
-         setWarning(false)
-         toast.info(`Quizzes Restarted`)
-
-      } catch (error){
-         console.error('Error Restarting:', error)
-      }
-   }
-
    const resetSettings = () => {
-      localStorage.clear()
+      localStorage.removeItem('Settings')
+      setWarning(false)
       
       setSettings({
          discoveryMode: false,
@@ -243,7 +233,6 @@ function Settings(){
                   <DropdownMenuItem>Writing</DropdownMenuItem>
                   <DropdownMenuItem>Reading</DropdownMenuItem>
                   <DropdownMenuItem>Writing</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => showWarning('quiz')}>Quiz</DropdownMenuItem>
                   </DropdownMenuContent>
                </DropdownMenu>
             </div>
@@ -259,25 +248,7 @@ function Settings(){
             <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>
                <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>
                   <div className='w-full flex flex-col justify-center items-center'>
-                     <div className='text-lg'>All progress will be lost.</div>
-                     <div className='text-sm'>Are you sure to reset {part}?</div>
-                  </div>
-                  <div className='w-full flex justify-center gap-5'>
-                     <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={cancelReset}>No</button>
-                     {
-                        <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetAction}>Yes</button>
-                     }
-                  </div>
-               </div>
-            </div>
-         }
-
-         {
-            warning &&
-            <div className='absolute top-0 left-0 w-full min-h-dvh bg-background/20 backdrop-blur-sm flex items-center justify-center p-10 z-1' onClick={cancelReset}>
-               <div className='w-full h-40 p-6 text-center bg-background border rounded-2xl flex flex-col justify-between items-center'>
-                  <div className='w-full flex flex-col justify-center items-center'>
-                     <div className='text-lg'>All progress will be lost.</div>
+                     <div className='text-lg'>{part === 'settings' ? 'App preferences will be reset.' : 'Vocabulary progress will be reset.'}</div>
                      <div className='text-sm'>Are you sure to reset {part}?</div>
                   </div>
                   
@@ -295,10 +266,6 @@ function Settings(){
                      :   part === 'A1' ?
 
                         <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetAction}>Yes</button>
-
-                     :   part === 'quiz' ?
-
-                         <button className='w-20 py-2 rounded-2xl border border-gray-400 active:bg-black/10' onClick={resetQuiz}>Yes</button>
 
                      : null
                      }
