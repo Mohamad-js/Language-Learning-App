@@ -17,11 +17,14 @@ import { LuGroup } from "react-icons/lu";
 import { useLoading } from '../LoadingProvider';
 import { toast } from 'sonner';
 import Image from "next/image";
+import { useAuth } from '@/app/context/AuthProvider';
 
 
 
 function Ham(){
 
+   const { user } = useAuth();
+   const isAdminAccount = user?.email?.toLowerCase() === 'mohamadgomar1997@gmail.com';
    const { startLoading } = useLoading();
    const [subMenu1, setSubMenu1] = useState(false)
    const [subMenu2, setSubMenu2] = useState(false)
@@ -316,11 +319,11 @@ function Ham(){
                         <div>Saved</div>
                      </div>
 
-                     <div className={`ham-styles ${activeTab('/statistics')}`} onClick={() => navFromHam('progress')}>
+                     <div className={`ham-styles ${activeTab('/progress')}`} onClick={() => navFromHam('progress')}>
                         <div className="ham-icons">
                            <MdInsertChartOutlined />
                         </div>
-                        <div>Statistics</div>
+                        <div>{isAdminAccount ? 'Users' : 'Statistics'}</div>
                      </div>
 
                      <div className={`ham-styles ${activeTab('/review')}`} onClick={() => underDev('Review')}>
