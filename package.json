@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint . --cache --cache-location .next/cache/eslint/"
+    "lint": "eslint . --cache --cache-location .next/cache/eslint/",
+    "test:quiz": "node --experimental-vm-modules --test tests/quizSync.test.cjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

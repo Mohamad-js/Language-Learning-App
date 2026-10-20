@@ -1,9 +1,9 @@
 'use client'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAuth } from '@/app/context/AuthProvider';
 import { ensureQuizOwner } from '@/lib/quizSync';
 import Back from '@/components/backButton/back'
-import { syncQuizResult } from "@/lib/quizResults";
+import { syncPendingQuizResults } from "@/lib/quizResults";
 import { getAllQuizzes, saveQuizResult, resetQuizProgress, saveQuizProgress  } from "@/lib/db";
 import { GoArrowRight } from "react-icons/go";
 import { TiTick } from "react-icons/ti";
@@ -20,7 +20,14 @@ import { toast } from 'sonner';
 
 export default function Quiz() {
     const { user, isLoadingAuth } = useAuth()
-    const userId = user?.id
+    if (isLoadingAuth) {
+        return <div className='fixed w-full h-dvh bg-background p-5 pt-15'><Back /><p role='status'>Loading your quizzes…</p></div>
+    }
+    // Account changes remount the page state, including any open quiz/report.
+    return <QuizContent key={user?.id ?? 'guest'} userId={user?.id} />
+}
+
+function QuizContent({ userId }) {
     const [quiz, setQuiz] = useState(null)
     const [toggleContent, setToggleContent] = useState(false)
     const [targetQuiz, setTargetQuiz] = useState(null)
@@ -33,38 +40,46 @@ export default function Quiz() {
     const [toggleMistake, setToggleMistake] = useState(false)
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const [isChecked, setIsChecked] = useState(false)
+    const [syncError, setSyncError] = useState('')
+    const [reload, setReload] = useState(0)
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const submitting = useRef(false)
 
 
     useEffect(() => {
-        // Wait until the app knows who is signed in. Without this, a signed-in
-        // user would look like a guest for a moment and lose their local data.
-        if (isLoadingAuth) return
-
         let cancelled = false
+        let refreshing = false
 
         const request = async () => {
-            // First make sure the notebook belongs to the current user
+            if (refreshing) return
+            refreshing = true
             try {
                 await ensureQuizOwner(userId)
+                if (!cancelled) setSyncError('')
             } catch (error) {
                 console.error('Quiz sync failed:', error)
+                if (!cancelled) setSyncError('Could not sync your quiz history. Saved quizzes on this device are still available.')
             }
 
-            // Then load the quizzes as before
             try {
                 const response = await getAllQuizzes()
                 if (!cancelled) setQuiz(response)
             } catch (error) {
                 console.error(error)
+                if (!cancelled) setSyncError('Could not load your quizzes. Please try again.')
+            } finally {
+                refreshing = false
             }
         }
 
         void request()
+        window.addEventListener('online', request)
 
         return () => {
             cancelled = true
+            window.removeEventListener('online', request)
         }
-    }, [userId, isLoadingAuth])
+    }, [userId, reload])
 
     // Current Displaying Question's Data
     const questions = targetQuiz?.quizData?.multi?.questions ?? []
@@ -76,40 +91,16 @@ export default function Quiz() {
     const isCorrect = selectedAnswer === correctAnswer
 
 
-    useEffect(() => {
-        if (!toggleContent) return
-
-        const handleKeyDown = (e) => {
-            if (e.key !== 'Enter') return
-
-            e.preventDefault()
-            e.stopPropagation()
-
-            void handleCheckOrNext()
-        }
-
-        window.addEventListener('keydown', handleKeyDown, true)
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown, true)
-        }
-    }, [
-        toggleContent,
-        isChecked,
-        currentQuestionIndex,
-        selectedAnswer,
-        targetQuiz
-    ])
-
-
     const retryQuiz = async (quizNumber) => {
         try {
             await resetQuizProgress(quizNumber)
+            // Keep an explicit draft so restoring history does not cancel a retake.
+            await saveQuizProgress(quizNumber, {})
 
             setQuiz(prevQuiz =>
                 prevQuiz.map(item =>
                     item.quizNumber === quizNumber
-                        ? { ...item, userAnswers: undefined, draftAnswers: undefined }
+                        ? { ...item, userAnswers: undefined, draftAnswers: {} }
                         : item
                 )
             )
@@ -170,7 +161,7 @@ export default function Quiz() {
     }
 
     const handleCheckOrNext = async () => {
-        if (!currentQuestion || !targetQuiz) return
+        if (!currentQuestion || !targetQuiz || submitting.current) return
 
         if (!isChecked) {
             if (selectedAnswer === undefined) {
@@ -193,7 +184,9 @@ export default function Quiz() {
 
 
     const submitQuiz = async () => {
-        if (!targetQuiz) return
+        if (!targetQuiz || submitting.current) return
+        submitting.current = true
+        setIsSubmitting(true)
 
         const questions = targetQuiz.quizData.multi.questions
 
@@ -250,16 +243,8 @@ export default function Quiz() {
 
         setGrade(grade)
 
-        const now = new Date()
-
-        const localDate = new Date(
-            now.getTime() - now.getTimezoneOffset() * 60000
-        )
-            .toISOString()
-            .slice(0, 19)
-
         const userAnswers = {
-            date: localDate,
+            date: new Date().toISOString(),
             topic: targetQuiz.featuring,
             quizLabel: targetQuiz.quizLabel,
             quizLevel: targetQuiz.quizLevel,
@@ -271,14 +256,8 @@ export default function Quiz() {
             failedQuestions: failedQuestions
         }
 
-        console.log('failedQuestions', userAnswers.failedQuestions)
-
         try {
-            await saveQuizResult(targetQuiz.quizNumber, userAnswers)
-
-            // Save in Supabase
-            syncQuizResult(targetQuiz.quizNumber, userAnswers)
-                .catch((error) => console.error('Supabase sync failed:', error))
+            await saveQuizResult(targetQuiz.quizNumber, userAnswers, userId)
 
             // Updating the quiz list immediately
             setQuiz(prevQuiz =>
@@ -299,13 +278,24 @@ export default function Quiz() {
                     : prev
             )
 
-            toast.success('Progress Saved')
             setFinalWindow(true)
             setFinalResults(userAnswers)
+
+            try {
+                const { synced } = await syncPendingQuizResults(userId)
+                if (userId && !synced) throw new Error('Account changed before upload')
+                toast.success('Progress Saved')
+            } catch (error) {
+                console.error('Supabase sync failed:', error)
+                toast.warning('Saved on this device. Your result will sync to your account when the connection is restored.')
+            }
 
         } catch (error) {
             toast.error('Error in Saving the Answers')
             console.error("Failed to save quiz result:", error)
+        } finally {
+            submitting.current = false
+            setIsSubmitting(false)
         }
     }
     
@@ -331,6 +321,20 @@ export default function Quiz() {
         setToggleContent(false)
     }
 
+    useEffect(() => {
+        if (!toggleContent) return
+
+        const handleKeyDown = (e) => {
+            if (e.key !== 'Enter') return
+            e.preventDefault()
+            e.stopPropagation()
+            void handleCheckOrNext()
+        }
+
+        window.addEventListener('keydown', handleKeyDown, true)
+        return () => window.removeEventListener('keydown', handleKeyDown, true)
+    })
+
 
     return (
         <div className='fixed w-full h-dvh bg-background flex flex-col'>
@@ -339,6 +343,14 @@ export default function Quiz() {
 
             <div className='w-full min-h-0 overflow-auto px-5 pt-15 pb-0 flex-1 relative flex flex-col gap-5'>
                 <div className='w-full h-10 text-xl font-bold text-foreground'>Quiz Time</div>
+
+                {syncError && (
+                    <div role='status' className='rounded-xl border p-3 text-sm'>
+                        <p>{syncError}</p>
+                        <button className='mt-2 underline' onClick={() => setReload(value => value + 1)}>Try again</button>
+                    </div>
+                )}
+                {!quiz && !syncError && <p role='status'>Loading your quizzes…</p>}
 
                 <motion.div
                     variants={expandParent}
@@ -568,6 +580,7 @@ export default function Quiz() {
                         <button
                             className='primary-btn w-full'
                             onClick={handleCheckOrNext}
+                            disabled={isSubmitting}
                         >
                             {!isChecked
                                 ? 'CHECK'

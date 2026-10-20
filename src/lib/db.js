@@ -439,9 +439,9 @@ export const saveQuizProgress = async (quizNumber, answers) => {
    return true
 }
 
-export const saveQuizResult = async (quizNumber, userAnswers) => {
+export const saveQuizResult = async (quizNumber, userAnswers, userId = null) => {
    const db = await initDB()
-   const tx = db.transaction("quizzes", "readwrite")
+   const tx = db.transaction(userId ? ["quizzes", "quizResults"] : ["quizzes"], "readwrite")
    const store = tx.objectStore("quizzes")
 
    let quiz = await store.get(quizNumber)
@@ -458,7 +458,32 @@ export const saveQuizResult = async (quizNumber, userAnswers) => {
    delete quiz.draftAnswers
    await store.put(quiz)
 
+   // Commit the result and its upload together so closing the PWA cannot lose it.
+   if (userId) {
+      const attemptId = crypto.randomUUID()
+      await tx.objectStore("quizResults").put({
+         attemptId, userId, quizNumber, result: userAnswers,
+      }, attemptId)
+   }
+
    await tx.done
+}
+
+export const queueQuizResult = async (quizNumber, result, userId) => {
+   const db = await initDB()
+   const attemptId = crypto.randomUUID()
+   await db.put("quizResults", { attemptId, userId, quizNumber, result }, attemptId)
+}
+
+export const getPendingQuizResults = async (userId) => {
+   const db = await initDB()
+   const attempts = await db.getAll("quizResults")
+   return attempts.filter(attempt => attempt.userId === userId)
+}
+
+export const removePendingQuizResult = async (attemptId) => {
+   const db = await initDB()
+   await db.delete("quizResults", attemptId)
 }
 
 

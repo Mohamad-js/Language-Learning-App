@@ -13388,9 +13388,711 @@
             "quizLevel": "Elementary",
             "quizData": {
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"always = every time",
+                        "question":"Rosa eats breakfast every time. She ___ eats breakfast.",
+                        "options":["always","never","sometimes","rarely"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"never = zero times",
+                        "question":"Max drinks no coffee at all. He ___ drinks coffee.",
+                        "options":["usually","often","always","never"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"sometimes = on some days",
+                        "question":"Kim plays chess two days in a month. She ___ plays chess.",
+                        "options":["usually","sometimes","always","never"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ do you visit your grandparents? — Once a week.",
+                        "options":["How old","How long","How often","How far"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"usually = on most days",
+                        "question":"Lina takes the bus on six days out of seven. She ___ takes the bus.",
+                        "options":["usually","never","always","hardly ever"]
+                     },
+                     {
+                        "number":6,
+                        "hint":"often = many times",
+                        "question":"Ben goes swimming five days a week. He ___ goes swimming.",
+                        "options":["hardly ever","rarely","never","often"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"rarely = not often",
+                        "question":"I eat pizza only once every two months. I ___ eat pizza.",
+                        "options":["usually","often","rarely","always"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"always = every time",
+                        "question":"Does your dad ___ work on Saturdays? — Yes, every Saturday.",
+                        "options":["rarely","always","never","hardly ever"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"hardly ever = almost never",
+                        "question":"Ella goes skiing only once a year. She ___ goes skiing.",
+                        "options":["usually","hardly ever","often","always"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"always = every time",
+                        "question":"Tom brushes his teeth before bed every night. He ___ brushes his teeth before bed.",
+                        "options":["never","rarely","sometimes","always"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"never = zero times",
+                        "question":"Our cat does not go outside on any day. It ___ goes outside.",
+                        "options":["never","usually","always","often"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"often = many times",
+                        "question":"Does your mother ___ read after dinner? — Yes, on five evenings a week.",
+                        "options":["rarely","hardly ever","often","never"]
+                     },
+                     {
+                        "number":13,
+                        "hint":"sometimes = on some days",
+                        "question":"We eat lunch in the garden on three days each month. We ___ eat there.",
+                        "options":["never","always","usually","sometimes"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"usually = on most days",
+                        "question":"Mia walks to school on four out of five school days. She ___ walks to school.",
+                        "options":["usually","always","rarely","never"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"rarely = not often",
+                        "question":"Sam eats at a restaurant only once a month. He ___ eats at a restaurant.",
+                        "options":["always","often","rarely","usually"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ does your sister visit the zoo? — Twice a year.",
+                        "options":["How old","How often","How big","How long"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"often = many times",
+                        "question":"Dad cooks dinner on five evenings each week. He ___ cooks dinner.",
+                        "options":["never","rarely","often","hardly ever"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"hardly ever = almost never",
+                        "question":"The family goes to the beach only once a year. They ___ go to the beach.",
+                        "options":["hardly ever","usually","always","often"]
+                     },
+                     {
+                        "number":19,
+                        "hint":"never = zero times",
+                        "question":"Nina eats no meat at all. She ___ eats meat.",
+                        "options":["always","never","usually","often"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"how often = asking about frequency",
+                        "question":"How ___ do you visit the library? — Twice a month.",
+                        "options":["far","big","old","often"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"always = every time",
+                        "question":"The bus arrives on time every day. It ___ arrives on time.",
+                        "options":["sometimes","always","never","rarely"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"rarely = not often",
+                        "question":"I drink cola only once every three months. I ___ drink cola.",
+                        "options":["rarely","often","usually","always"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"sometimes = on some days",
+                        "question":"We visit the museum twice a year. We ___ visit the museum.",
+                        "options":["never","usually","always","sometimes"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ does your teacher give tests? — Every Friday.",
+                        "options":["How much","How far","How often","How old"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"usually = on most days",
+                        "question":"Ali eats breakfast at home six days a week. He ___ eats breakfast at home.",
+                        "options":["hardly ever","usually","always","never"]
+                     },
+                     {
+                        "number":26,
+                        "hint":"never = zero times",
+                        "question":"Jill does not play computer games on any day. She ___ plays them.",
+                        "options":["often","always","usually","never"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"often = many times",
+                        "question":"My friends play football five days a week. They ___ play football.",
+                        "options":["often","rarely","never","hardly ever"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ does Sara eat lunch at school? — Never. She eats at home.",
+                        "options":["How far","How old","How often","How tall"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"sometimes = on some days",
+                        "question":"We watch a film at home on two Saturdays each month. We ___ watch films at home.",
+                        "options":["always","never","usually","sometimes"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"rarely = not often",
+                        "question":"The boys go camping only once a year. They ___ go camping.",
+                        "options":["often","always","rarely","usually"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"always = every time",
+                        "question":"Lucy feeds her fish every morning. She ___ feeds her fish in the morning.",
+                        "options":["sometimes","always","never","rarely"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"correct word order in a question",
+                        "question":"Which question uses 'usually' correctly?",
+                        "options":["Does he usually eat lunch at one?","Usually does he eat lunch at one?","Does he eat usually lunch at one?","Does usually he eat lunch at one?"]
+                     },
+                     {
+                        "number":33,
+                        "hint":"hardly ever = almost never",
+                        "question":"My uncle takes a taxi only once a year. He ___ takes a taxi.",
+                        "options":["usually","always","hardly ever","often"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"usually = on most days",
+                        "question":"Eva reads before bed on six nights a week. She ___ reads before bed.",
+                        "options":["usually","always","hardly ever","never"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"sometimes = on some days",
+                        "question":"I buy fruit at the market twice a month. I ___ buy fruit there.",
+                        "options":["usually","never","always","sometimes"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"how often = asking about frequency",
+                        "question":"How ___ do you have art class? — Twice a week.",
+                        "options":["old","often","long","far"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"often = many times",
+                        "question":"Zoe calls her aunt five days a week. She ___ calls her aunt.",
+                        "options":["never","rarely","hardly ever","often"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"never = zero times",
+                        "question":"Peter does not eat fish on any day. He ___ eats fish.",
+                        "options":["always","usually","never","often"]
+                     },
+                     {
+                        "number":39,
+                        "hint":"usually = on most days",
+                        "question":"The children play outside on six days each week. They ___ play outside.",
+                        "options":["usually","never","hardly ever","always"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"correct word order in a question",
+                        "question":"Which question uses 'often' correctly?",
+                        "options":["Is she often walk to school?","Does she often walk to school?","Does often she walk to school?","Does she walks often to school?"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"after be: is never",
+                        "question":"Our teacher ___ late. She arrives on time every day.",
+                        "options":["is never","are never","does never","never"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"before the main verb: always play",
+                        "question":"The boys ___ football every Sunday.",
+                        "options":["are always play","always plays","play always","always play"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"after be: is usually",
+                        "question":"My sister ___ hungry at lunchtime.",
+                        "options":["usually","are usually","is usually","does usually"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"Do + plural subject",
+                        "question":"___ your parents often cook at home?",
+                        "options":["Are","Do","Does","Is"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"after be: are never",
+                        "question":"The boys ___ late for school. They arrive on time every day.",
+                        "options":["do never","are never","never","is never"]
+                     },
+                     {
+                        "number":46,
+                        "hint":"before the main verb: always clean",
+                        "question":"I ___ my room every Saturday.",
+                        "options":["always clean","clean always my","always cleans","am always clean"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"after be: is usually",
+                        "question":"Sara ___ hungry after school.",
+                        "options":["does usually","are usually","is usually","usually"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"Does + subject + usually + base verb",
+                        "question":"Does Sam ___ walk to school on Mondays?",
+                        "options":["usually to","usual","is usually","usually"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"before the main verb: often eat",
+                        "question":"My parents ___ dinner at home.",
+                        "options":["often eats","eat often dinner","often eat","are often eat"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"after be: are sometimes",
+                        "question":"We are ___ tired after a long walk.",
+                        "options":["sometimes are","sometimes","some time","are sometimes"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"before the main verb: hardly ever loses",
+                        "question":"My brother ___ his keys.",
+                        "options":["hardly ever lose","loses hardly ever","is hardly ever lose","hardly ever loses"]
+                     },
+                     {
+                        "number":52,
+                        "hint":"Do + plural subject",
+                        "question":"___ you usually walk to school?",
+                        "options":["Do","Does","Are","Is"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"after be: is usually",
+                        "question":"The library ___ on Sundays. It closes only on Mondays.",
+                        "options":["are usually open","usually open","is usually open","is usually opens"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"before the main verb: never drinks",
+                        "question":"He ___ tea before bed.",
+                        "options":["never drinks","never drink","drinks never","is never drink"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"before the main verb: sometimes play",
+                        "question":"My friends ___ online games after school.",
+                        "options":["are sometimes play","sometimes play","sometimes plays","sometimes playing"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"Does + subject + often + base verb",
+                        "question":"Does your teacher ___ give homework?",
+                        "options":["often to","oftens","is often","often"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"before the main verb: always reads",
+                        "question":"My mother ___ on Sunday mornings.",
+                        "options":["is always read","always read","reads always","always reads"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"after be: is often",
+                        "question":"My dad ___ at home on Friday nights.",
+                        "options":["often","is often","does often","are often"]
+                     },
+                     {
+                        "number":59,
+                        "hint":"before the main verb: usually have",
+                        "question":"I ___ lunch at school.",
+                        "options":["usually has","have usually lunch","usually have","am usually have"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"correct adverb position in a question",
+                        "question":"Which question uses 'usually' correctly?",
+                        "options":["Does she usually walk home?","Does usually she walk home?","Does she walks usually home?","Is she usually walk home?"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"after be: are always",
+                        "question":"They ___ happy when they play together.",
+                        "options":["do always","are always","always","is always"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"before the main verb: often sleeps",
+                        "question":"The cat ___ on the sofa.",
+                        "options":["often sleep","is often sleep","often sleeps","sleeps often on"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"before the main verb: sometimes watch",
+                        "question":"We ___ TV after dinner.",
+                        "options":["are sometimes watch","watch sometimes TV","sometimes watches","sometimes watch"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"Does + singular subject",
+                        "question":"___ your sister always get up early?",
+                        "options":["Does","Do","Is","Are"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"after be: am usually",
+                        "question":"I am ___ at home on Friday nights.",
+                        "options":["usually am","usually","am usually","usual"]
+                     },
+                     {
+                        "number":66,
+                        "hint":"once a week = one time each week",
+                        "question":"I visit my uncle ___.",
+                        "options":["once a week","one a week","one time week","once week"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"twice a month = two times each month",
+                        "question":"Mia plays tennis ___.",
+                        "options":["two times month","two a month","twice month","twice a month"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ do you go swimming? — Once a week.",
+                        "options":["How far","How old","How often","How long"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"three times a week = 3 times each week",
+                        "question":"We have English class ___.",
+                        "options":["three times week","three times on week","three time a week","three times a week"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"every evening = each evening",
+                        "question":"Dad calls Grandma ___.",
+                        "options":["every evening","each evenings","every on evening","every evenings"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"once a month = one time each month",
+                        "question":"My brother plays chess ___.",
+                        "options":["one a month","once of month","once a month","once month"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ do your cousins visit you? — Twice a year.",
+                        "options":["How far","How often","How old","How many"]
+                     },
+                     {
+                        "number":73,
+                        "hint":"every ten minutes = regular intervals",
+                        "question":"The bus comes ___.",
+                        "options":["every ten minutes","each ten minute","every ten minute","every of ten minutes"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"every afternoon = each afternoon",
+                        "question":"I do my homework ___.",
+                        "options":["every afternoons","each afternoons","every on afternoon","every afternoon"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"once a week = one time each week",
+                        "question":"Our class goes to the library ___.",
+                        "options":["once at week","one a week","once a week","once in week"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ does the team practise? — Three times a week.",
+                        "options":["How far","How often","How many","How long"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"twice a week = two times each week",
+                        "question":"My mum goes shopping ___.",
+                        "options":["twice a week","twice at week","two a week","twice week"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"every Sunday = each Sunday",
+                        "question":"We visit our grandparents ___.",
+                        "options":["every on Sunday","every Sunday","each Sundays","every Sundays"]
+                     },
+                     {
+                        "number":79,
+                        "hint":"once a day = one time each day",
+                        "question":"I clean my desk ___.",
+                        "options":["once in day","one a day","once day","once a day"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ does Lucy read at home? — Every night.",
+                        "options":["How far","How old","How often","How much"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"every night = each night",
+                        "question":"The shop assistant checks the doors ___.",
+                        "options":["every nights","every night","each nights","every on night"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"twice a day = two times each day",
+                        "question":"I brush my teeth ___.",
+                        "options":["two a day","twice day","twice in day","twice a day"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"once a week = one time each week",
+                        "question":"Our teacher reads us a story ___.",
+                        "options":["once week","one a week","once a week","once to week"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"how often = asking about frequency",
+                        "question":"___ does your father go fishing? — Once a month.",
+                        "options":["How often","How old","How far","How long"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"twice a week = two times each week",
+                        "question":"We have music lessons ___.",
+                        "options":["twice on week","twice week","twice a week","two a week"]
+                     },
+                     {
+                        "number":86,
+                        "hint":"hardly ever = almost never",
+                        "question":"David eats out only twice a year. He ___ eats out.",
+                        "options":["usually","hardly ever","always","often"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"never = no times",
+                        "question":"No buses come to this village on Sundays. A bus ___ comes on Sunday.",
+                        "options":["never","often","always","usually"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"Do + plural subject",
+                        "question":"___ your parents usually eat together on Sundays?",
+                        "options":["Are","Does","Is","Do"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"usually = on most days",
+                        "question":"My sister goes to the gym on six days each week. She ___ goes to the gym.",
+                        "options":["never","hardly ever","usually","always"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"after be: is never",
+                        "question":"Dan ___ late. He is on time every day.",
+                        "options":["is never","never","are never","does never"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"usually = on most days",
+                        "question":"We are ___ hungry after school. We eat a snack on most school days.",
+                        "options":["never","hardly ever","rarely","usually"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"correct adverb position in a question",
+                        "question":"Which question uses 'always' correctly?",
+                        "options":["Does Ben helps always at home?","Does Ben always help at home?","Is Ben always help at home?","Does always Ben help at home?"]
+                     },
+                     {
+                        "number":93,
+                        "hint":"negative present simple + usually",
+                        "question":"I don't ___ eat breakfast at home.",
+                        "options":["usually am","usually","usually to","usual"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"after be: are always",
+                        "question":"We ___ on time for class. We are never late.",
+                        "options":["do always","is always","always","are always"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"usually = on most weekends",
+                        "question":"My brother helps me on almost every Saturday. He ___ helps me on Saturdays.",
+                        "options":["hardly ever","never","usually","always"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"Does + singular subject + often",
+                        "question":"Does Lisa ___ visit her grandparents?",
+                        "options":["often","often visiting","is often","often visits"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"never + base form with I",
+                        "question":"I never ___ cartoons before school.",
+                        "options":["watching","watches","to watch","watch"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"after be: are sometimes",
+                        "question":"My classmates ___ late on Fridays.",
+                        "options":["do sometimes","sometimes","are sometimes","is sometimes"]
+                     },
+                     {
+                        "number":99,
+                        "hint":"always = every time",
+                        "question":"My dog sleeps near my bed every night. It ___ sleeps there.",
+                        "options":["sometimes","always","never","rarely"]
+                     },
+                     {
+                        "number":100,
+                        "hint":"how often = asking about frequency",
+                        "question":"How ___ does your mum go to the market? — Once a week.",
+                        "options":["often","much","far","long"]
+                     }
+                  ],
                   
-                  "keys":  []
+                  "keys": {
+                     "1": "always",
+                     "2": "never",
+                     "3": "sometimes",
+                     "4": "How often",
+                     "5": "usually",
+                     "6": "often",
+                     "7": "rarely",
+                     "8": "always",
+                     "9": "hardly ever",
+                     "10": "always",
+                     "11": "never",
+                     "12": "often",
+                     "13": "sometimes",
+                     "14": "usually",
+                     "15": "rarely",
+                     "16": "How often",
+                     "17": "often",
+                     "18": "hardly ever",
+                     "19": "never",
+                     "20": "often",
+                     "21": "always",
+                     "22": "rarely",
+                     "23": "sometimes",
+                     "24": "How often",
+                     "25": "usually",
+                     "26": "never",
+                     "27": "often",
+                     "28": "How often",
+                     "29": "sometimes",
+                     "30": "rarely",
+                     "31": "always",
+                     "32": "Does he usually eat lunch at one?",
+                     "33": "hardly ever",
+                     "34": "usually",
+                     "35": "sometimes",
+                     "36": "often",
+                     "37": "often",
+                     "38": "never",
+                     "39": "usually",
+                     "40": "Does she often walk to school?",
+                     "41": "is never",
+                     "42": "always play",
+                     "43": "is usually",
+                     "44": "Do",
+                     "45": "are never",
+                     "46": "always clean",
+                     "47": "is usually",
+                     "48": "usually",
+                     "49": "often eat",
+                     "50": "sometimes",
+                     "51": "hardly ever loses",
+                     "52": "Do",
+                     "53": "is usually open",
+                     "54": "never drinks",
+                     "55": "sometimes play",
+                     "56": "often",
+                     "57": "always reads",
+                     "58": "is often",
+                     "59": "usually have",
+                     "60": "Does she usually walk home?",
+                     "61": "are always",
+                     "62": "often sleeps",
+                     "63": "sometimes watch",
+                     "64": "Does",
+                     "65": "usually",
+                     "66": "once a week",
+                     "67": "twice a month",
+                     "68": "How often",
+                     "69": "three times a week",
+                     "70": "every evening",
+                     "71": "once a month",
+                     "72": "How often",
+                     "73": "every ten minutes",
+                     "74": "every afternoon",
+                     "75": "once a week",
+                     "76": "How often",
+                     "77": "twice a week",
+                     "78": "every Sunday",
+                     "79": "once a day",
+                     "80": "How often",
+                     "81": "every night",
+                     "82": "twice a day",
+                     "83": "once a week",
+                     "84": "How often",
+                     "85": "twice a week",
+                     "86": "hardly ever",
+                     "87": "never",
+                     "88": "Do",
+                     "89": "usually",
+                     "90": "is never",
+                     "91": "usually",
+                     "92": "Does Ben always help at home?",
+                     "93": "usually",
+                     "94": "are always",
+                     "95": "usually",
+                     "96": "often",
+                     "97": "watch",
+                     "98": "are sometimes",
+                     "99": "always",
+                     "100": "often"
+                  }
                }
             }
          },
@@ -13403,9 +14105,711 @@
             "quizLevel": "Elementary",
             "quizData": {
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"good → well",
+                        "question":"Anna sings ___ at school. Her voice sounds beautiful.",
+                        "options":["well","good","goodly","goodness"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"fast (NOT fastly)",
+                        "question":"Leo runs ___. He is a very quick runner.",
+                        "options":["fasts","fastness","fast","fastly"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"careful → carefully",
+                        "question":"Mum cuts the vegetables ___. She does not want to hurt her hand.",
+                        "options":["carefully","carefulness","careful","care"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"slow → slowly",
+                        "question":"The old dog walks ___ because its legs hurt.",
+                        "options":["slows","slow","slowly","slowness"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"Position: after the object",
+                        "question":"The correct word order with 'neatly' is ___.",
+                        "options":["Sara her name writes neatly.","Sara writes her neatly name.","Sara writes her name neatly.","Sara writes neatly her name."]
+                     },
+                     {
+                        "number":6,
+                        "hint":"polite → politely",
+                        "question":"The children speak ___ to their teacher. They always say please.",
+                        "options":["polites","polite","politeness","politely"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"loud → loudly",
+                        "question":"The children shout ___ in the playground. We hear them from our classroom.",
+                        "options":["loudness","loudly","loud","loudlyly"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"quiet → quietly",
+                        "question":"The baby sleeps ___. We do not hear any sound.",
+                        "options":["quiet","quietly","quietness","quiets"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"hard vs. hardly",
+                        "question":"I study ___ every evening because I want good marks.",
+                        "options":["hardly ever","hardness","hard","hardly"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"happy → happily",
+                        "question":"The girls dance ___. They smile all the time.",
+                        "options":["happys","happy","happily","happiness"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"easy → easily",
+                        "question":"Tom opens the small box ___. It is not difficult for him.",
+                        "options":["ease","easily","easiness","easy"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"Position: after an intransitive verb",
+                        "question":"The correct word order with 'slowly' is ___.",
+                        "options":["The walks turtle slowly.","The turtle walks slowly.","The turtle walks slowly the.","The turtle walks the slowly."]
+                     },
+                     {
+                        "number":13,
+                        "hint":"bad → badly",
+                        "question":"I play the piano ___. I make many mistakes.",
+                        "options":["bad","badly","bads","badness"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"late vs. lately",
+                        "question":"The bus arrives ___ every day. It comes after its usual time.",
+                        "options":["lateness","late","latest","lately"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"early (NOT earlyly)",
+                        "question":"I get up ___ every morning, before six o'clock.",
+                        "options":["earlyly","early","earliness","earlys"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"clear → clearly",
+                        "question":"Our teacher speaks ___, so we understand every word.",
+                        "options":["clearness","clear","clearly","clears"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"safe → safely",
+                        "question":"Dad drives ___. He follows all the road rules.",
+                        "options":["safes","safe","safely","safety"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"Position: after the object",
+                        "question":"The correct word order with 'carefully' is ___.",
+                        "options":["Mia opens the box carefully.","Mia opens the carefully box.","Mia opens carefully the box.","Mia the box opens carefully."]
+                     },
+                     {
+                        "number":19,
+                        "hint":"angry → angrily",
+                        "question":"The boy speaks ___ when he is very angry.",
+                        "options":["angriness","angrily","angry","anger"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"soft → softly",
+                        "question":"Mum sings ___ to the baby. Her voice is not loud.",
+                        "options":["softs","soft","softly","softness"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"beautiful → beautifully",
+                        "question":"Emma dances ___ at the school show. Her dancing looks lovely.",
+                        "options":["beautifuls","beautiful","beauty","beautifully"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"quick → quickly",
+                        "question":"My sister gets dressed ___ because she has only five minutes.",
+                        "options":["quickly","quick","quicks","quickness"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"gentle → gently",
+                        "question":"The girl holds the baby ___. She does not hurt him.",
+                        "options":["gentles","gentle","gentleness","gently"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"nice → nicely",
+                        "question":"My brother speaks ___ to our guests. He is kind and polite.",
+                        "options":["nicely","niceness","nice","nices"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"Position: negative sentence",
+                        "question":"The correct word order with 'loudly' is ___.",
+                        "options":["The baby doesn't loudly crys.","The baby cry doesn't loudly.","The baby doesn't cry loudly.","The baby doesn't loud cry."]
+                     },
+                     {
+                        "number":26,
+                        "hint":"good → well (negative)",
+                        "question":"I don't sing ___. I often sing the wrong notes.",
+                        "options":["well","goodness","good","goodly"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"fast (no -ly)",
+                        "question":"The cars move ___ on this road. They do not move slowly.",
+                        "options":["fast","fasts","fastness","fastly"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"hard vs. hardly",
+                        "question":"My parents work ___ every day. They do a lot of work.",
+                        "options":["hardly","hard","hardly ever","hardness"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"straight (NOT straightly)",
+                        "question":"The road goes ___ to the station. It does not turn left or right.",
+                        "options":["straightness","straightly","straighten","straight"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"slow → slowly",
+                        "question":"Our teacher talks ___ when we learn new words. We have time to listen.",
+                        "options":["slows","slowness","slow","slowly"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"polite → politely",
+                        "question":"The waiter answers the customers ___. He is polite to everyone.",
+                        "options":["politely","polite","polites","politeness"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"Position: negative sentence",
+                        "question":"The correct word order with 'well' is ___.",
+                        "options":["She doesn't play well the piano.","She doesn't play the well piano.","She doesn't the piano play well.","She doesn't play the piano well."]
+                     },
+                     {
+                        "number":33,
+                        "hint":"easy → easily",
+                        "question":"I do this easy puzzle ___. It takes only one minute.",
+                        "options":["easiness","ease","easily","easy"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"quiet → quietly",
+                        "question":"We close the door ___ because the baby sleeps.",
+                        "options":["quiet","quietly","quietness","quiets"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"clear → clearly",
+                        "question":"The student writes the number ___. We can read the number easily.",
+                        "options":["clearness","clears","clearly","clear"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"happy → happily",
+                        "question":"My grandparents smile ___ when they see us.",
+                        "options":["happiness","happys","happily","happy"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"careful → carefully",
+                        "question":"The children cross the road ___. They look left and right.",
+                        "options":["carefully","careful","carefulness","care"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"Position: after the object",
+                        "question":"The correct word order with 'angrily' is ___.",
+                        "options":["The boy answers his brother angrily.","The boy answers his angrily brother.","The boy answers angrily his brother.","The boy his brother answers angrily."]
+                     },
+                     {
+                        "number":39,
+                        "hint":"bad → badly",
+                        "question":"He spells these words ___. Almost every word has a mistake.",
+                        "options":["bads","badly","bad","badness"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"early (NOT earlyly)",
+                        "question":"My mum arrives ___ at work. The office opens at nine, but she arrives at eight.",
+                        "options":["earlyly","earlys","earliness","early"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"late vs. lately",
+                        "question":"I arrive ___ for class on Mondays. The lesson starts before I get there.",
+                        "options":["lateness","latest","lately","late"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"safe → safely",
+                        "question":"The children ride their bikes ___. They wear helmets and follow the rules.",
+                        "options":["safely","safety","safes","safe"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"quick → quickly",
+                        "question":"The mouse runs ___ and hides under the table.",
+                        "options":["quickly","quick","quickness","quicks"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"loud → loudly",
+                        "question":"My brother laughs ___. We hear him in the next room.",
+                        "options":["loud","loudly","loudness","loudlyly"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"Position: fast, not fastly",
+                        "question":"The correct word order with 'fast' is ___.",
+                        "options":["My runs brother fast.","My brother runs fastly.","My brother fast runsly.","My brother runs fast."]
+                     },
+                     {
+                        "number":46,
+                        "hint":"quiet → quietly",
+                        "question":"I speak ___ in the library. I do not disturb other people.",
+                        "options":["quietly","quietness","quiets","quiet"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"neat → neatly",
+                        "question":"Lisa puts her books ___ on the shelf. They are in a straight line.",
+                        "options":["neatly","neat","neats","neatness"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"easy → easily",
+                        "question":"The girl reads the short story ___. She knows all the words.",
+                        "options":["ease","easy","easily","easiness"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"careful → carefully",
+                        "question":"My dad carries the glass ___ because it breaks easily.",
+                        "options":["carefully","care","carefulness","careful"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"kind → kindly",
+                        "question":"The nurse talks ___ to the small child. She is gentle and friendly.",
+                        "options":["kinds","kind","kindness","kindly"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"Position: after the object",
+                        "question":"The correct word order with 'gently' is ___.",
+                        "options":["The girl holds gently the kitten.","The girl holds the gently kitten.","The girl holds the kitten gently.","The girl the kitten holds gently."]
+                     },
+                     {
+                        "number":52,
+                        "hint":"good → well",
+                        "question":"Ben plays football ___. He scores many goals.",
+                        "options":["good","goodly","well","goodness"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"hard vs. hardly",
+                        "question":"I work ___ on my English homework. I spend a lot of time on it.",
+                        "options":["hardly","hardly ever","hard","hardness"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"slow → slowly",
+                        "question":"The train moves ___ near the station. It does not move fast.",
+                        "options":["slowly","slow","slows","slowness"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"straight (no -ly)",
+                        "question":"The girl walks ___ down the path. She does not turn.",
+                        "options":["straightly","straighten","straightness","straight"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"loud → loudly",
+                        "question":"The teacher speaks ___ because the classroom is noisy.",
+                        "options":["loudlyly","loudness","loudly","loud"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"polite → politely",
+                        "question":"I ask for help ___. I always say 'please'.",
+                        "options":["politeness","polite","polites","politely"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"Position: after the object",
+                        "question":"The correct word order with 'easily' is ___.",
+                        "options":["Sam opens easily the jar.","Sam opens the easily jar.","Sam opens the jar easily.","Sam the jar opens easily."]
+                     },
+                     {
+                        "number":59,
+                        "hint":"beautiful → beautifully",
+                        "question":"My sister draws ___. Her pictures look very nice.",
+                        "options":["beautifully","beauty","beautifuls","beautiful"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"quick → quickly",
+                        "question":"We finish our work ___ because the task is easy.",
+                        "options":["quick","quicks","quickly","quickness"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"bad → badly",
+                        "question":"She dances ___ because she does not know the steps.",
+                        "options":["bad","bads","badly","badness"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"early (no -ly)",
+                        "question":"The family leaves home ___, before seven o'clock.",
+                        "options":["earlyly","earlys","earliness","early"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"late vs. lately",
+                        "question":"The shop opens ___ on Sundays. Its usual time is nine, but it opens at ten.",
+                        "options":["late","latest","lateness","lately"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"careful → carefully",
+                        "question":"I wash the new plates ___. I do not want to break them.",
+                        "options":["carefully","careful","carefulness","care"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"Position: after the object",
+                        "question":"The correct word order with 'safely' is ___.",
+                        "options":["Dad the car drives safely.","Dad drives safely the car.","Dad drives the car safely.","Dad drives the safely car."]
+                     },
+                     {
+                        "number":66,
+                        "hint":"good → well",
+                        "question":"My aunt cooks ___. Her food tastes great.",
+                        "options":["goodness","goodly","good","well"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"hard vs. hardly",
+                        "question":"The children practise ___ for the school show. They spend hours on it.",
+                        "options":["hardly","hard","hardness","hardly ever"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"fast (NOT fastly)",
+                        "question":"My little brother types ___ on his computer. He writes many words in one minute.",
+                        "options":["fast","fastness","fasts","fastly"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"quiet → quietly",
+                        "question":"The cat walks ___ across the room. We do not hear its feet.",
+                        "options":["quietness","quiet","quiets","quietly"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"angry → angrily",
+                        "question":"Mia looks at her brother ___ because he often breaks her toys.",
+                        "options":["anger","angrily","angry","angriness"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"neat → neatly",
+                        "question":"The students write ___ in their notebooks. Their words are easy to read.",
+                        "options":["neats","neatly","neat","neatness"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"Position: hard, not hardly",
+                        "question":"The correct word order with 'hard' is ___.",
+                        "options":["Our parents work hard.","Our parents work hardly.","Our parents hard workly.","Our work parents hard."]
+                     },
+                     {
+                        "number":73,
+                        "hint":"clear → clearly",
+                        "question":"My brother says each word ___, so I understand him.",
+                        "options":["clear","clearly","clearness","clears"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"gentle → gently",
+                        "question":"The boy touches the little bird ___. He does not hurt it.",
+                        "options":["gentles","gentle","gently","gentleness"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"slow → slowly",
+                        "question":"The children eat ___ because they have lots of time.",
+                        "options":["slowness","slowly","slow","slows"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"happy → happily",
+                        "question":"The students sing ___ because they love the song.",
+                        "options":["happy","happiness","happily","happys"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"polite → politely",
+                        "question":"The children say goodbye ___ to their guests.",
+                        "options":["politeness","politely","polite","polites"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"Position: after the verb",
+                        "question":"The correct word order with 'beautifully' is ___.",
+                        "options":["Lena sings beautiful.","Lena sing beautifully.","Lena beautifully sing.","Lena sings beautifully."]
+                     },
+                     {
+                        "number":79,
+                        "hint":"bad → badly",
+                        "question":"Tom writes ___. His teacher cannot read his words.",
+                        "options":["badness","bad","bads","badly"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"straight (NOT straightly)",
+                        "question":"The river goes ___ through the town. It does not turn.",
+                        "options":["straightly","straighten","straightness","straight"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"early (NOT earlyly)",
+                        "question":"I go to bed ___ on school nights, at eight o'clock.",
+                        "options":["earliness","earlys","earlyly","early"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"safe → safely",
+                        "question":"The children play ___ in the park. They follow the rules.",
+                        "options":["safes","safely","safe","safety"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"easy → easily",
+                        "question":"My grandmother reads this book ___. The words are simple.",
+                        "options":["easiness","easily","ease","easy"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"soft → softly",
+                        "question":"The girl speaks ___ to the baby so the baby stays asleep.",
+                        "options":["soft","softness","softs","softly"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"Position: after the object",
+                        "question":"The correct word order with 'quickly' is ___.",
+                        "options":["She finishes quickly her homework.","She finishes her quickly homework.","She finishes her homework quickly.","She her homework finishes quickly."]
+                     },
+                     {
+                        "number":86,
+                        "hint":"good → well",
+                        "question":"Our teacher explains the lesson ___. We all understand it.",
+                        "options":["good","goodly","goodness","well"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"fast (NOT fastly)",
+                        "question":"The horse runs ___ across the field. It reaches the gate in a short time.",
+                        "options":["fastly","fast","fasts","fastness"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"hard vs. hardly",
+                        "question":"My sister studies ___ for her exams. She reads every evening.",
+                        "options":["hardly ever","hardly","hardness","hard"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"loud → loudly",
+                        "question":"The dog barks ___ when it sees a stranger.",
+                        "options":["loud","loudlyly","loudness","loudly"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"quiet → quietly",
+                        "question":"The children talk ___ in the museum. They do not make much noise.",
+                        "options":["quietness","quietly","quiet","quiets"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"gentle → gently",
+                        "question":"Mum puts the sleeping baby down ___. She does not wake him.",
+                        "options":["gentles","gently","gentle","gentleness"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"Position: late, not lately",
+                        "question":"The correct word order with 'late' is ___.",
+                        "options":["The train arrives late.","The train arrives lately.","The arrives train late.","The train late arrives."]
+                     },
+                     {
+                        "number":93,
+                        "hint":"careful → carefully",
+                        "question":"I open the birthday gift ___ because I do not want to tear the paper.",
+                        "options":["care","carefully","careful","carefulness"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"happy → happily",
+                        "question":"The girl smiles ___ when she sees her friends.",
+                        "options":["happiness","happily","happys","happy"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"clear → clearly",
+                        "question":"Dad explains the game ___ so the children understand the rules.",
+                        "options":["clearly","clear","clearness","clears"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"good → well",
+                        "question":"My brother doesn't swim ___. He needs swimming lessons.",
+                        "options":["goodness","good","goodly","well"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"nice → nicely",
+                        "question":"The teacher speaks ___ to the children. She is very kind.",
+                        "options":["nicely","niceness","nices","nice"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"Position: after a prepositional phrase",
+                        "question":"The correct word order with 'politely' is ___.",
+                        "options":["He to the visitors talks politely.","He talks to politely the visitors.","He talks to the visitors polite.","He talks to the visitors politely."]
+                     },
+                     {
+                        "number":99,
+                        "hint":"bad → badly",
+                        "question":"I don't write English words ___. My spelling is good.",
+                        "options":["badly","bads","badness","bad"]
+                     },
+                     {
+                        "number":100,
+                        "hint":"safe → safely",
+                        "question":"My little sister crosses the street ___. She stops and looks both ways.",
+                        "options":["safe","safes","safely","safety"]
+                     }
+                  ],
                   
-                  "keys":  []
+                  "keys": {
+                     "1":"well",
+                     "2":"fast",
+                     "3":"carefully",
+                     "4":"slowly",
+                     "5":"Sara writes her name neatly.",
+                     "6":"politely",
+                     "7":"loudly",
+                     "8":"quietly",
+                     "9":"hard",
+                     "10":"happily",
+                     "11":"easily",
+                     "12":"The turtle walks slowly.",
+                     "13":"badly",
+                     "14":"late",
+                     "15":"early",
+                     "16":"clearly",
+                     "17":"safely",
+                     "18":"Mia opens the box carefully.",
+                     "19":"angrily",
+                     "20":"softly",
+                     "21":"beautifully",
+                     "22":"quickly",
+                     "23":"gently",
+                     "24":"nicely",
+                     "25":"The baby doesn't cry loudly.",
+                     "26":"well",
+                     "27":"fast",
+                     "28":"hard",
+                     "29":"straight",
+                     "30":"slowly",
+                     "31":"politely",
+                     "32":"She doesn't play the piano well.",
+                     "33":"easily",
+                     "34":"quietly",
+                     "35":"clearly",
+                     "36":"happily",
+                     "37":"carefully",
+                     "38":"The boy answers his brother angrily.",
+                     "39":"badly",
+                     "40":"early",
+                     "41":"late",
+                     "42":"safely",
+                     "43":"quickly",
+                     "44":"loudly",
+                     "45":"My brother runs fast.",
+                     "46":"quietly",
+                     "47":"neatly",
+                     "48":"easily",
+                     "49":"carefully",
+                     "50":"kindly",
+                     "51":"The girl holds the kitten gently.",
+                     "52":"well",
+                     "53":"hard",
+                     "54":"slowly",
+                     "55":"straight",
+                     "56":"loudly",
+                     "57":"politely",
+                     "58":"Sam opens the jar easily.",
+                     "59":"beautifully",
+                     "60":"quickly",
+                     "61":"badly",
+                     "62":"early",
+                     "63":"late",
+                     "64":"carefully",
+                     "65":"Dad drives the car safely.",
+                     "66":"well",
+                     "67":"hard",
+                     "68":"fast",
+                     "69":"quietly",
+                     "70":"angrily",
+                     "71":"neatly",
+                     "72":"Our parents work hard.",
+                     "73":"clearly",
+                     "74":"gently",
+                     "75":"slowly",
+                     "76":"happily",
+                     "77":"politely",
+                     "78":"Lena sings beautifully.",
+                     "79":"badly",
+                     "80":"straight",
+                     "81":"early",
+                     "82":"safely",
+                     "83":"easily",
+                     "84":"softly",
+                     "85":"She finishes her homework quickly.",
+                     "86":"well",
+                     "87":"fast",
+                     "88":"hard",
+                     "89":"loudly",
+                     "90":"quietly",
+                     "91":"gently",
+                     "92":"The train arrives late.",
+                     "93":"carefully",
+                     "94":"happily",
+                     "95":"clearly",
+                     "96":"well",
+                     "97":"nicely",
+                     "98":"He talks to the visitors politely.",
+                     "99":"badly",
+                     "100":"safely"
+                  }
                }
             }
          },
@@ -13418,9 +14822,711 @@
             "quizLevel": "Elementary",
             "quizData": {
                "multi": {
-                  "questions": [],
+                  "questions": [
+                     {
+                        "number":1,
+                        "hint":"Facts",
+                        "question":"The sun ___ in the east.",
+                        "options":["to rise","rise","rises","rising"]
+                     },
+                     {
+                        "number":2,
+                        "hint":"Routines",
+                        "question":"I ___ my face every morning.",
+                        "options":["to wash","wash","washes","washing"]
+                     },
+                     {
+                        "number":3,
+                        "hint":"Habits",
+                        "question":"Ben usually ___ tea in the evening.",
+                        "options":["to drink","drinks","drinking","drink"]
+                     },
+                     {
+                        "number":4,
+                        "hint":"Permanent situations",
+                        "question":"My aunt ___ in Canada.",
+                        "options":["live","lives","to live","living"]
+                     },
+                     {
+                        "number":5,
+                        "hint":"Fixed public plans",
+                        "question":"The train ___ at 8:15 tomorrow.",
+                        "options":["to leave","leaves","leaving","leave"]
+                     },
+                     {
+                        "number":6,
+                        "hint":"Facts",
+                        "question":"Water ___ at 0°C.",
+                        "options":["to freeze","freezing","freezes","freeze"]
+                     },
+                     {
+                        "number":7,
+                        "hint":"Routines",
+                        "question":"She ___ breakfast at seven every school day.",
+                        "options":["eat","eats","eating","to eat"]
+                     },
+                     {
+                        "number":8,
+                        "hint":"Habits",
+                        "question":"I often ___ stories before bed.",
+                        "options":["reads","to read","reading","read"]
+                     },
+                     {
+                        "number":9,
+                        "hint":"Permanent situations",
+                        "question":"They ___ a car. They use the bus.",
+                        "options":["don't have","doesn't have","don't has","not have"]
+                     },
+                     {
+                        "number":10,
+                        "hint":"Fixed public plans",
+                        "question":"The museum ___ at 10 a.m. on Saturday.",
+                        "options":["open","opens","opening","to open"]
+                     },
+                     {
+                        "number":11,
+                        "hint":"Facts",
+                        "question":"A week ___ seven days.",
+                        "options":["have","to have","having","has"]
+                     },
+                     {
+                        "number":12,
+                        "hint":"Routines",
+                        "question":"We ___ the bus; we walk to school every day.",
+                        "options":["not take","doesn't take","don't take","don't takes"]
+                     },
+                     {
+                        "number":13,
+                        "hint":"Habits",
+                        "question":"My friends ___ chess on weekdays. They play on weekends.",
+                        "options":["don't play","don't plays","doesn't play","not play"]
+                     },
+                     {
+                        "number":14,
+                        "hint":"Permanent situations",
+                        "question":"Our school ___ near the river.",
+                        "options":["be","am","is","are"]
+                     },
+                     {
+                        "number":15,
+                        "hint":"Fixed public plans",
+                        "question":"The school show ___ at six next Friday.",
+                        "options":["starts","to start","starting","start"]
+                     },
+                     {
+                        "number":16,
+                        "hint":"Facts",
+                        "question":"Birds ___ wings.",
+                        "options":["to have","have","having","has"]
+                     },
+                     {
+                        "number":17,
+                        "hint":"Routines",
+                        "question":"My dad ___ lunch at noon on workdays.",
+                        "options":["having","to have","have","has"]
+                     },
+                     {
+                        "number":18,
+                        "hint":"Habits",
+                        "question":"She never ___ late for class.",
+                        "options":["to arrive","arrives","arriving","arrive"]
+                     },
+                     {
+                        "number":19,
+                        "hint":"Permanent situations",
+                        "question":"My dad ___ in a hospital.",
+                        "options":["working","work","works","to work"]
+                     },
+                     {
+                        "number":20,
+                        "hint":"Fixed public plans",
+                        "question":"Our bus ___ at noon tomorrow.",
+                        "options":["to arrive","arrives","arriving","arrive"]
+                     },
+                     {
+                        "number":21,
+                        "hint":"Facts",
+                        "question":"Ice ___ in hot water.",
+                        "options":["melts","to melt","melting","melt"]
+                     },
+                     {
+                        "number":22,
+                        "hint":"Routines",
+                        "question":"They ___ to school on Sundays.",
+                        "options":["don't goes","not go","doesn't go","don't go"]
+                     },
+                     {
+                        "number":23,
+                        "hint":"Habits",
+                        "question":"We usually ___ fruit after dinner.",
+                        "options":["eating","eat","to eat","eats"]
+                     },
+                     {
+                        "number":24,
+                        "hint":"Permanent situations",
+                        "question":"I ___ in a small village.",
+                        "options":["lives","to live","live","living"]
+                     },
+                     {
+                        "number":25,
+                        "hint":"Fixed public plans",
+                        "question":"The film ___ at seven tonight.",
+                        "options":["begin","beginning","to begin","begins"]
+                     },
+                     {
+                        "number":26,
+                        "hint":"Facts",
+                        "question":"The Earth ___ around the sun.",
+                        "options":["goes","going","to go","go"]
+                     },
+                     {
+                        "number":27,
+                        "hint":"Routines",
+                        "question":"Tom ___ home after school every day.",
+                        "options":["walks","walk","to walk","walking"]
+                     },
+                     {
+                        "number":28,
+                        "hint":"Habits",
+                        "question":"My brother often ___ pictures of cats.",
+                        "options":["to draw","drawing","draws","draw"]
+                     },
+                     {
+                        "number":29,
+                        "hint":"Permanent situations",
+                        "question":"Her uncle ___ a bookshop.",
+                        "options":["owns","to own","owning","own"]
+                     },
+                     {
+                        "number":30,
+                        "hint":"Fixed public plans",
+                        "question":"The library ___ on Sunday. It is closed all day.",
+                        "options":["not open","doesn't opens","don't open","doesn't open"]
+                     },
+                     {
+                        "number":31,
+                        "hint":"Facts",
+                        "question":"Fish ___ in water.",
+                        "options":["to live","living","lives","live"]
+                     },
+                     {
+                        "number":32,
+                        "hint":"Routines",
+                        "question":"I ___ a shower before breakfast.",
+                        "options":["to take","taking","take","takes"]
+                     },
+                     {
+                        "number":33,
+                        "hint":"Habits",
+                        "question":"I ___ sweets. I eat them only on my birthday.",
+                        "options":["doesn't often eat","don't often eat","not often eat","don't often eats"]
+                     },
+                     {
+                        "number":34,
+                        "hint":"Permanent situations",
+                        "question":"We ___ in Paris. We live in Lyon.",
+                        "options":["don't lives","don't live","not live","doesn't live"]
+                     },
+                     {
+                        "number":35,
+                        "hint":"Fixed public plans",
+                        "question":"The football match ___ at three next Sunday.",
+                        "options":["starting","start","starts","to start"]
+                     },
+                     {
+                        "number":36,
+                        "hint":"Facts",
+                        "question":"The sky ___ blue on a clear day.",
+                        "options":["looks","look","to look","looking"]
+                     },
+                     {
+                        "number":37,
+                        "hint":"Routines",
+                        "question":"My sister ___ her schoolbag every night.",
+                        "options":["to pack","packs","packing","pack"]
+                     },
+                     {
+                        "number":38,
+                        "hint":"Habits",
+                        "question":"He sometimes ___ his friends on Sundays.",
+                        "options":["visiting","visit","to visit","visits"]
+                     },
+                     {
+                        "number":39,
+                        "hint":"Permanent situations",
+                        "question":"Lina ___ two brothers.",
+                        "options":["having","has","have","to have"]
+                     },
+                     {
+                        "number":40,
+                        "hint":"Fixed public plans",
+                        "question":"The plane ___ at nine tomorrow morning.",
+                        "options":["land","lands","to land","landing"]
+                     },
+                     {
+                        "number":41,
+                        "hint":"Facts",
+                        "question":"Most cats ___ four legs.",
+                        "options":["having","has","to have","have"]
+                     },
+                     {
+                        "number":42,
+                        "hint":"Routines",
+                        "question":"We ___ dinner at ten; we eat at six every evening.",
+                        "options":["not eat","don't eat","don't eats","doesn't eat"]
+                     },
+                     {
+                        "number":43,
+                        "hint":"Habits",
+                        "question":"They never ___ computer games at school.",
+                        "options":["to play","play","plays","playing"]
+                     },
+                     {
+                        "number":44,
+                        "hint":"Permanent situations",
+                        "question":"The library ___ on King Street.",
+                        "options":["am","is","are","be"]
+                     },
+                     {
+                        "number":45,
+                        "hint":"Fixed public plans",
+                        "question":"The concert ___ at eight this evening.",
+                        "options":["begins","beginning","to begin","begin"]
+                     },
+                     {
+                        "number":46,
+                        "hint":"Facts",
+                        "question":"Ten plus ten ___ twenty.",
+                        "options":["to equal","equals","equaling","equal"]
+                     },
+                     {
+                        "number":47,
+                        "hint":"Routines",
+                        "question":"The teacher ___ the door at nine every morning.",
+                        "options":["opens","opening","to open","open"]
+                     },
+                     {
+                        "number":48,
+                        "hint":"Habits",
+                        "question":"My mum usually ___ a book at night.",
+                        "options":["to read","read","reading","reads"]
+                     },
+                     {
+                        "number":49,
+                        "hint":"Permanent situations",
+                        "question":"My cousins ___ in the city. Their home is on a farm.",
+                        "options":["don't live","doesn't live","don't lives","not live"]
+                     },
+                     {
+                        "number":50,
+                        "hint":"Fixed public plans",
+                        "question":"The shop ___ at six tomorrow. It opens at nine.",
+                        "options":["doesn't opens","not open","doesn't open","don't open"]
+                     },
+                     {
+                        "number":51,
+                        "hint":"Facts",
+                        "question":"Milk ___ white.",
+                        "options":["be","are","am","is"]
+                     },
+                     {
+                        "number":52,
+                        "hint":"Routines",
+                        "question":"She ___ TV before school.",
+                        "options":["doesn't watches","don't watch","doesn't watch","not watch"]
+                     },
+                     {
+                        "number":53,
+                        "hint":"Habits",
+                        "question":"Ella sometimes ___ on Sundays.",
+                        "options":["swimming","swims","to swim","swim"]
+                     },
+                     {
+                        "number":54,
+                        "hint":"Permanent situations",
+                        "question":"My mother ___ a nurse.",
+                        "options":["is","be","am","are"]
+                     },
+                     {
+                        "number":55,
+                        "hint":"Fixed public plans",
+                        "question":"The next train ___ at platform two at 7:30.",
+                        "options":["arriving","to arrive","arrives","arrive"]
+                     },
+                     {
+                        "number":56,
+                        "hint":"Facts",
+                        "question":"The moon ___ around the Earth.",
+                        "options":["go","to go","goes","going"]
+                     },
+                     {
+                        "number":57,
+                        "hint":"Routines",
+                        "question":"My parents ___ to work by bus on weekdays.",
+                        "options":["go","going","goes","to go"]
+                     },
+                     {
+                        "number":58,
+                        "hint":"Habits",
+                        "question":"I always ___ thank you.",
+                        "options":["saying","say","says","to say"]
+                     },
+                     {
+                        "number":59,
+                        "hint":"Permanent situations",
+                        "question":"The city ___ an airport. The nearest airport is in another city.",
+                        "options":["don't have","isn't have","doesn't have","doesn't has"]
+                     },
+                     {
+                        "number":60,
+                        "hint":"Fixed public plans",
+                        "question":"The school term ___ next Monday.",
+                        "options":["starting","starts","to start","start"]
+                     },
+                     {
+                        "number":61,
+                        "hint":"Facts",
+                        "question":"A fish ___ legs.",
+                        "options":["not have","don't have","doesn't has","doesn't have"]
+                     },
+                     {
+                        "number":62,
+                        "hint":"Routines",
+                        "question":"He ___ his bed every morning.",
+                        "options":["makes","make","to make","making"]
+                     },
+                     {
+                        "number":63,
+                        "hint":"Habits",
+                        "question":"Sam doesn't ___ cola.",
+                        "options":["drinking","to drink","drinks","drink"]
+                     },
+                     {
+                        "number":64,
+                        "hint":"Permanent situations",
+                        "question":"Our neighbours ___ a blue car.",
+                        "options":["to have","has","have","having"]
+                     },
+                     {
+                        "number":65,
+                        "hint":"Fixed public plans",
+                        "question":"The bus ___ at this stop at seven tomorrow.",
+                        "options":["stops","stop","stopping","to stop"]
+                     },
+                     {
+                        "number":66,
+                        "hint":"Facts",
+                        "question":"Plants ___ water to grow.",
+                        "options":["needing","to need","need","needs"]
+                     },
+                     {
+                        "number":67,
+                        "hint":"Routines",
+                        "question":"I ___ to school on Saturdays.",
+                        "options":["don't goes","doesn't go","not go","don't go"]
+                     },
+                     {
+                        "number":68,
+                        "hint":"Habits",
+                        "question":"We often ___ our cousins at weekends.",
+                        "options":["see","sees","seeing","to see"]
+                     },
+                     {
+                        "number":69,
+                        "hint":"Permanent situations",
+                        "question":"Sam ___ live in London. He lives in York.",
+                        "options":["isn't","don't","doesn't","aren't"]
+                     },
+                     {
+                        "number":70,
+                        "hint":"Fixed public plans",
+                        "question":"The theatre ___ on Mondays. It opens on Tuesday.",
+                        "options":["not open","doesn't opens","don't open","doesn't open"]
+                     },
+                     {
+                        "number":71,
+                        "hint":"Facts",
+                        "question":"An elephant ___ a long nose.",
+                        "options":["has","have","to have","having"]
+                     },
+                     {
+                        "number":72,
+                        "hint":"Routines",
+                        "question":"Dad ___ the dishes after dinner every day.",
+                        "options":["washing","wash","washes","to wash"]
+                     },
+                     {
+                        "number":73,
+                        "hint":"Habits",
+                        "question":"She ___ coffee, because she doesn't like it.",
+                        "options":["don't drink","not drink","doesn't drink","doesn't drinks"]
+                     },
+                     {
+                        "number":74,
+                        "hint":"Permanent situations",
+                        "question":"I ___ a student at this school.",
+                        "options":["is","are","be","am"]
+                     },
+                     {
+                        "number":75,
+                        "hint":"Fixed public plans",
+                        "question":"Our flight ___ at eleven tomorrow morning.",
+                        "options":["to leave","leaves","leaving","leave"]
+                     },
+                     {
+                        "number":76,
+                        "hint":"Facts",
+                        "question":"Snow ___ hot.",
+                        "options":["don't be","not be","isn't","aren't"]
+                     },
+                     {
+                        "number":77,
+                        "hint":"Routines",
+                        "question":"We ___ homework after dinner on weekdays.",
+                        "options":["do","doing","does","to do"]
+                     },
+                     {
+                        "number":78,
+                        "hint":"Habits",
+                        "question":"The children usually ___ outside after lunch.",
+                        "options":["to play","playing","plays","play"]
+                     },
+                     {
+                        "number":79,
+                        "hint":"Permanent situations",
+                        "question":"My sister ___ at the town bank.",
+                        "options":["to work","work","works","working"]
+                     },
+                     {
+                        "number":80,
+                        "hint":"Fixed public plans",
+                        "question":"The class ___ at 9:00 next Tuesday.",
+                        "options":["starts","to start","starting","start"]
+                     },
+                     {
+                        "number":81,
+                        "hint":"Facts",
+                        "question":"A triangle ___ three sides.",
+                        "options":["has","having","have","to have"]
+                     },
+                     {
+                        "number":82,
+                        "hint":"Routines",
+                        "question":"My brother ___ up at seven every morning.",
+                        "options":["get","to get","getting","gets"]
+                     },
+                     {
+                        "number":83,
+                        "hint":"Habits",
+                        "question":"Dad ___ a hat in summer; he wears one only in winter.",
+                        "options":["doesn't wears","don't wear","doesn't wear","isn't wear"]
+                     },
+                     {
+                        "number":84,
+                        "hint":"Permanent situations",
+                        "question":"We ___ a dog.",
+                        "options":["not have","don't has","don't have","doesn't have"]
+                     },
+                     {
+                        "number":85,
+                        "hint":"Fixed public plans",
+                        "question":"The public pool ___ at eight on Sunday.",
+                        "options":["opening","open","to open","opens"]
+                     },
+                     {
+                        "number":86,
+                        "hint":"Facts",
+                        "question":"A day ___ 24 hours.",
+                        "options":["has","having","to have","have"]
+                     },
+                     {
+                        "number":87,
+                        "hint":"Routines",
+                        "question":"I ___ coffee in the morning.",
+                        "options":["don't drinks","don't drink","doesn't drink","not drink"]
+                     },
+                     {
+                        "number":88,
+                        "hint":"Habits",
+                        "question":"I hardly ever ___ fast food.",
+                        "options":["to eat","eating","eats","eat"]
+                     },
+                     {
+                        "number":89,
+                        "hint":"Permanent situations",
+                        "question":"Their house ___ three bedrooms.",
+                        "options":["having","has","have","to have"]
+                     },
+                     {
+                        "number":90,
+                        "hint":"Fixed public plans",
+                        "question":"The last train ___ at midnight tonight.",
+                        "options":["to leave","leave","leaving","leaves"]
+                     },
+                     {
+                        "number":91,
+                        "hint":"Facts",
+                        "question":"The sea ___ salt.",
+                        "options":["contains","containing","contain","to contain"]
+                     },
+                     {
+                        "number":92,
+                        "hint":"Routines",
+                        "question":"We ___ to the park after school every Friday.",
+                        "options":["to walk","walking","walk","walks"]
+                     },
+                     {
+                        "number":93,
+                        "hint":"Habits",
+                        "question":"My sister doesn't often ___ video games.",
+                        "options":["plays","playing","play","to play"]
+                     },
+                     {
+                        "number":94,
+                        "hint":"Permanent situations",
+                        "question":"The museum ___ near the station. It is in the town centre.",
+                        "options":["isn't","doesn't be","not","aren't"]
+                     },
+                     {
+                        "number":95,
+                        "hint":"Fixed public plans",
+                        "question":"The sports event ___ at four tomorrow afternoon.",
+                        "options":["ending","end","to end","ends"]
+                     },
+                     {
+                        "number":96,
+                        "hint":"Facts",
+                        "question":"Summer ___ after spring.",
+                        "options":["comes","coming","to come","come"]
+                     },
+                     {
+                        "number":97,
+                        "hint":"Routines",
+                        "question":"Nina ___ her hair before school every day.",
+                        "options":["brush","to brush","brushing","brushes"]
+                     },
+                     {
+                        "number":98,
+                        "hint":"Habits",
+                        "question":"My grandparents ___ out in the evening. They prefer to stay home.",
+                        "options":["don't go","doesn't go","don't goes","not go"]
+                     },
+                     {
+                        "number":99,
+                        "hint":"Permanent situations",
+                        "question":"He ___ French and English.",
+                        "options":["to speak","speaking","speak","speaks"]
+                     },
+                     {
+                        "number":100,
+                        "hint":"Fixed public plans",
+                        "question":"The bus ___ at this stop after six on Sundays.",
+                        "options":["not stop","doesn't stops","don't stop","doesn't stop"]
+                     }
+                  ],
                   
-                  "keys":  []
+                  "keys": {
+                     "1": "rises",
+                     "2": "wash",
+                     "3": "drinks",
+                     "4": "lives",
+                     "5": "leaves",
+                     "6": "freezes",
+                     "7": "eats",
+                     "8": "read",
+                     "9": "don't have",
+                     "10": "opens",
+                     "11": "has",
+                     "12": "don't take",
+                     "13": "don't play",
+                     "14": "is",
+                     "15": "starts",
+                     "16": "have",
+                     "17": "has",
+                     "18": "arrives",
+                     "19": "works",
+                     "20": "arrives",
+                     "21": "melts",
+                     "22": "don't go",
+                     "23": "eat",
+                     "24": "live",
+                     "25": "begins",
+                     "26": "goes",
+                     "27": "walks",
+                     "28": "draws",
+                     "29": "owns",
+                     "30": "doesn't open",
+                     "31": "live",
+                     "32": "take",
+                     "33": "don't often eat",
+                     "34": "don't live",
+                     "35": "starts",
+                     "36": "looks",
+                     "37": "packs",
+                     "38": "visits",
+                     "39": "has",
+                     "40": "lands",
+                     "41": "have",
+                     "42": "don't eat",
+                     "43": "play",
+                     "44": "is",
+                     "45": "begins",
+                     "46": "equals",
+                     "47": "opens",
+                     "48": "reads",
+                     "49": "don't live",
+                     "50": "doesn't open",
+                     "51": "is",
+                     "52": "doesn't watch",
+                     "53": "swims",
+                     "54": "is",
+                     "55": "arrives",
+                     "56": "goes",
+                     "57": "go",
+                     "58": "say",
+                     "59": "doesn't have",
+                     "60": "starts",
+                     "61": "doesn't have",
+                     "62": "makes",
+                     "63": "drink",
+                     "64": "have",
+                     "65": "stops",
+                     "66": "need",
+                     "67": "don't go",
+                     "68": "see",
+                     "69": "doesn't",
+                     "70": "doesn't open",
+                     "71": "has",
+                     "72": "washes",
+                     "73": "doesn't drink",
+                     "74": "am",
+                     "75": "leaves",
+                     "76": "isn't",
+                     "77": "do",
+                     "78": "play",
+                     "79": "works",
+                     "80": "starts",
+                     "81": "has",
+                     "82": "gets",
+                     "83": "doesn't wear",
+                     "84": "don't have",
+                     "85": "opens",
+                     "86": "has",
+                     "87": "don't drink",
+                     "88": "eat",
+                     "89": "has",
+                     "90": "leaves",
+                     "91": "contains",
+                     "92": "walk",
+                     "93": "play",
+                     "94": "isn't",
+                     "95": "ends",
+                     "96": "comes",
+                     "97": "brushes",
+                     "98": "don't go",
+                     "99": "speaks",
+                     "100": "doesn't stop"
+                  }
                }
             }
          },

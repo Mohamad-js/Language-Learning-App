@@ -9,6 +9,7 @@ import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegis
 import { NavigationProvider } from './context/NavigationProvider';
 import { SettingsProvider } from './context/SettingsProvider';
 import { AuthProvider } from './context/AuthProvider';
+import QuizUploadManager from '@/components/QuizUploadManager';
 import { Toaster } from 'sonner';
 
 
@@ -84,6 +85,7 @@ export default function RootLayout({ children }) {
 
          <SettingsProvider>
             <AuthProvider>
+               <QuizUploadManager />
                <ThemeProvider>
                   <LoadingProvider>
                      <Ham />
