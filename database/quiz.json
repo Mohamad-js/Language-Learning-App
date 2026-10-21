@@ -770,7 +770,7 @@
                      },
                      {
                         "number": 5,
-                        "hint": "Tome does",
+                        "hint": "Tom does",
                         "question": "Tom ___ his homework after school.",
                         "options": [
                            "dois",
@@ -980,7 +980,7 @@
                      },
                      {
                         "number": 26,
-                        "hint": "Two chidlren",
+                        "hint": "Two children",
                         "question": "I have two ___.",
                         "options": [
                            "childrens",
@@ -1141,7 +1141,7 @@
                      {
                         "number": 42,
                         "hint": "Many cities",
-                        "question": "There are many ___ in this city.",
+                        "question": "There are many ___ in this state.",
                         "options": [
                            "cities",
                            "citys",
@@ -1290,27 +1290,27 @@
                      },
                      {
                         "number": 57,
-                        "hint": "Those men's room",
-                        "question": "Those ___ room is upstairs.",
+                        "hint": "Men's or man's",
+                        "question": "The ___ saloon is upstairs.",
                         "options": [
-                           "man's",
+                           "mans's",
                            "mans'",
                            "men's"
                         ]
                      },
                      {
                         "number": 58,
-                        "hint": "These women's shoes",
-                        "question": "They are these ___ shoes.",
+                        "hint": "Women's or woman's",
+                        "question": "They are this ___ shoes.",
                         "options": [
                            "womens'",
                            "woman's",
-                           "women's"
+                           "womens's"
                         ]
                      },
                      {
                         "number": 59,
-                        "hint": "This sister's house",
+                        "hint": "My sister's house",
                         "question": "This is my ___ house, Anna.",
                         "options": [
                            "sisters",
@@ -1330,10 +1330,10 @@
                      },
                      {
                         "number": 61,
-                        "hint": "Those my students' desks",
+                        "hint": "Students' or Student's",
                         "question": "Those are my ___ desks.",
                         "options": [
-                           "student's",
+                           "students's",
                            "students",
                            "students'"
                         ]
@@ -1350,7 +1350,7 @@
                      },
                      {
                         "number": 63,
-                        "hint": "Children's toy",
+                        "hint": "Child's toy or Children's",
                         "question": "The ___ toy is red.",
                         "options": [
                            "child's",
@@ -1410,12 +1410,12 @@
                      },
                      {
                         "number": 69,
-                        "hint": "Teachers' classroom. They",
-                        "question": "This is ___ classroom. They rest here.",
+                        "hint": "They -> teachers'",
+                        "question": "This is the ___ restroom. They rest here.",
                         "options": [
                            "teacher's",
-                           "teachers",
-                           "teachers'"
+                           "teachers'",
+                           "teachers's"
                         ]
                      },
                      {
@@ -1691,7 +1691,7 @@
                      {
                         "number": 97,
                         "hint": "Has a nurse",
-                        "question": "She is sick. She's a nurse. → 's means:",
+                        "question": "She is sick. She's got a nurse. → 's means:",
                         "options": [
                            "has",
                            "does",
@@ -1788,7 +1788,7 @@
                      "55": "girl's",
                      "56": "James's",
                      "57": "men's",
-                     "58": "women's",
+                     "58": "woman's",
                      "59": "sister's",
                      "60": "dog's",
                      "61": "students'",
@@ -2171,7 +2171,7 @@
                      },
                      {
                         "number": 37,
-                        "hint": "'Oxen' is singular.",
+                        "hint": "'Oxen' is always plural.",
                         "question": "The oxen ___ work on weekends.",
                         "options": [
                            "doesn't",
@@ -2414,7 +2414,7 @@
                      },
                      {
                         "number": 64,
-                        "hint": "'Adivce' is always singular.",
+                        "hint": "'Advice' is always singular.",
                         "question": "His advice ___ always right.",
                         "options": [
                            "isn't",
@@ -2423,7 +2423,7 @@
                      },
                      {
                         "number": 65,
-                        "hint": "'Soem fish' is plural.",
+                        "hint": "'Some fish' is plural.",
                         "question": "Some fish ___ in the bowl.",
                         "options": [
                            "isn't",
@@ -2531,7 +2531,7 @@
                      },
                      {
                         "number": 77,
-                        "hint": "'Teeth' is the plural form of 'teeth'.",
+                        "hint": "'Teeth' is the plural form of 'tooth'.",
                         "question": "My teeth ___ white.",
                         "options": [
                            "isn't",
@@ -2908,7 +2908,7 @@
                      },
                      {
                         "number": 5,
-                        "hint": "Do they",
+                        "hint": "Does he",
                         "question": "___ he play football?",
                         "options": [
                            "Are",
@@ -2938,8 +2938,8 @@
                      },
                      {
                         "number": 8,
-                        "hint": "Does the us stop",
-                        "question": "___ the bus stop near your house?",
+                        "hint": "Does the bus have",
+                        "question": "___ the bus have free seats?",
                         "options": [
                            "Are",
                            "Is",
@@ -3168,7 +3168,7 @@
                      },
                      {
                         "number": 31,
-                        "hint": "Do they",
+                        "hint": "Do you",
                         "question": "Do ___ have a car?",
                         "options": [
                            "he",
@@ -4036,7 +4036,7 @@
                      {
                         "number": 6,
                         "hint": "The plural form of fish is 'fish'.",
-                        "question": "We have ___ for the dinner.",
+                        "question": "We have ___ for dinner.",
                         "options": [
                            "Fish",
                            "Fishes",
@@ -4275,7 +4275,7 @@
                      },
                      {
                         "number": 30,
-                        "hint": "Is your keys",
+                        "hint": "Are your keys",
                         "question": "Where ___ your keys?",
                         "options": [
                            "are",
@@ -4586,11 +4586,11 @@
                      {
                         "number": 61,
                         "hint": "Five: 'How many'",
-                        "question": "Make question: \"They need FIVE.\"?",
+                        "question": "Make question: \"They need five dollars.\"?",
                         "options": [
-                           "How much do they need?",
-                           "How many does they need?",
-                           "How many do they need?"
+                           "How much money do they need?",
+                           "How many money do they need?",
+                           "How many dollars do they need?"
                         ]
                      },
                      {
@@ -4695,7 +4695,7 @@
                      },
                      {
                         "number": 72,
-                        "hint": "",
+                        "hint": "What does he",
                         "question": "Which one is correct?",
                         "options": [
                            "What does you eat?",
@@ -4845,7 +4845,7 @@
                      },
                      {
                         "number": 87,
-                        "hint": "Is your bad",
+                        "hint": "Is your bag",
                         "question": "What color ___ your bag?",
                         "options": [
                            "is",
@@ -5000,7 +5000,7 @@
                      "12": "do",
                      "13": "Who likes Ann?",
                      "14": "cars are",
-                     "15": "Who Does Tom Like?",
+                     "15": "Who does Tom Like?",
                      "16": "They are my cousins.",
                      "17": "does",
                      "18": "is",
@@ -5046,7 +5046,7 @@
                      "58": "does",
                      "59": "is",
                      "60": "do",
-                     "61": "How many do they need?",
+                     "61": "How much money do they need?",
                      "62": "do",
                      "63": "Who works here?",
                      "64": "do",
@@ -5102,7 +5102,7 @@
                   "questions": [
                      {
                         "number": 1,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know when ___.",
                         "options": [
                            "does he go to school",
@@ -5112,7 +5112,7 @@
                      },
                      {
                         "number": 2,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder why ___.",
                         "options": [
                            "does he need help",
@@ -5122,7 +5122,7 @@
                      },
                      {
                         "number": 3,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "They know what ___.",
                         "options": [
                            "does he eat for lunch",
@@ -5132,7 +5132,7 @@
                      },
                      {
                         "number": 4,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know why ___.",
                         "options": [
                            "does he go to bed early",
@@ -5142,7 +5142,7 @@
                      },
                      {
                         "number": 5,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I know how ___.",
                         "options": [
                            "does he go to school",
@@ -5152,7 +5152,7 @@
                      },
                      {
                         "number": 6,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder who ___.",
                         "options": [
                            "does he go to school with",
@@ -5162,7 +5162,7 @@
                      },
                      {
                         "number": 7,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Hide it if ___.",
                         "options": [
                            "does he have a car",
@@ -5172,8 +5172,8 @@
                      },
                      {
                         "number": 8,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
-                        "question": "Do you know where ___.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
+                        "question": "Do you know where ___",
                         "options": [
                            "does he live",
                            "he lives?",
@@ -5182,7 +5182,7 @@
                      },
                      {
                         "number": 9,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Do you know who ___.",
                         "options": [
                            "does he live with",
@@ -5192,7 +5192,7 @@
                      },
                      {
                         "number": 10,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know what ___.",
                         "options": [
                            "does he need",
@@ -5202,7 +5202,7 @@
                      },
                      {
                         "number": 11,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder if ___.",
                         "options": [
                            "does he need help",
@@ -5212,7 +5212,7 @@
                      },
                      {
                         "number": 12,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder when ___.",
                         "options": [
                            "does he sleep",
@@ -5222,7 +5222,7 @@
                      },
                      {
                         "number": 13,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I like to know ___.",
                         "options": [
                            "how does he go to school",
@@ -5232,7 +5232,7 @@
                      },
                      {
                         "number": 14,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me ___.",
                         "options": [
                            "how does she come to work",
@@ -5242,7 +5242,7 @@
                      },
                      {
                         "number": 15,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "how does the cat drink water",
@@ -5252,7 +5252,7 @@
                      },
                      {
                         "number": 16,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "She checks ___.",
                         "options": [
                            "how do the children go to school",
@@ -5262,7 +5262,7 @@
                      },
                      {
                         "number": 17,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "how do they go home",
@@ -5272,7 +5272,7 @@
                      },
                      {
                         "number": 18,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I know ___.",
                         "options": [
                            "if does he have a car",
@@ -5282,7 +5282,7 @@
                      },
                      {
                         "number": 19,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "if does he need help",
@@ -5292,7 +5292,7 @@
                      },
                      {
                         "number": 20,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "if do people like this food",
@@ -5302,7 +5302,7 @@
                      },
                      {
                         "number": 21,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me ___.",
                         "options": [
                            "if does she drink coffee",
@@ -5332,7 +5332,7 @@
                      },
                      {
                         "number": 24,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "They may check ___.",
                         "options": [
                            "if do the children like school",
@@ -5342,7 +5342,7 @@
                      },
                      {
                         "number": 25,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "You must check ___.",
                         "options": [
                            "if do the deer live here",
@@ -5353,7 +5353,7 @@
                      {
                         "number": 26,
                         "hint": "This is an indirect question inside a real question. Make it 'Sub + Verb' but keep the '?'.",
-                        "question": "Can you tell me ___.",
+                        "question": "Can you tell me ___",
                         "options": [
                            "if is the house new",
                            "if the house is new?",
@@ -5382,7 +5382,7 @@
                      },
                      {
                         "number": 29,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I check ___.",
                         "options": [
                            "if do the mice live here",
@@ -5402,12 +5402,12 @@
                      },
                      {
                         "number": 31,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
-                        "question": "I have doubtful ___.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
+                        "question": "I have doubts ___.",
                         "options": [
                            "if do the sheep eat grass",
                            "if the sheep eat grass",
-                           "if the sheep eats grass"
+                           "if does sheep eat grass"
                         ]
                      },
                      {
@@ -5422,7 +5422,7 @@
                      },
                      {
                         "number": 33,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Call me ___.",
                         "options": [
                            "if do the women have a car",
@@ -5432,7 +5432,7 @@
                      },
                      {
                         "number": 34,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "if do they go to school",
@@ -5442,7 +5442,7 @@
                      },
                      {
                         "number": 35,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder what ___.",
                         "options": [
                            "do people eat here",
@@ -5452,7 +5452,7 @@
                      },
                      {
                         "number": 36,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Check how ___.",
                         "options": [
                            "does she come to work",
@@ -5462,7 +5462,7 @@
                      },
                      {
                         "number": 37,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Check what ___ after gym.",
                         "options": [
                            "does she drink",
@@ -5472,7 +5472,7 @@
                      },
                      {
                         "number": 38,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me if ___.",
                         "options": [
                            "does she drink coffee",
@@ -5482,7 +5482,7 @@
                      },
                      {
                         "number": 39,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "They don't know when ___.",
                         "options": [
                            "does she eat lunch",
@@ -5492,7 +5492,7 @@
                      },
                      {
                         "number": 40,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "We know where ___.",
                         "options": [
                            "does she go after school",
@@ -5502,7 +5502,7 @@
                      },
                      {
                         "number": 41,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I must know why ___.",
                         "options": [
                            "does she go to the gym",
@@ -5512,7 +5512,7 @@
                      },
                      {
                         "number": 42,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I need to know whether ___.",
                         "options": [
                            "does she have a dog",
@@ -5522,7 +5522,7 @@
                      },
                      {
                         "number": 43,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know when ___",
                         "options": [
                            "she has breakfast?",
@@ -5532,7 +5532,7 @@
                      },
                      {
                         "number": 44,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me what ___.",
                         "options": [
                            "does she like",
@@ -5542,7 +5542,7 @@
                      },
                      {
                         "number": 45,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me why ___.",
                         "options": [
                            "does she like tea",
@@ -5552,7 +5552,7 @@
                      },
                      {
                         "number": 46,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Inform me where ___.",
                         "options": [
                            "does she work",
@@ -5562,7 +5562,7 @@
                      },
                      {
                         "number": 47,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me who ___.",
                         "options": [
                            "does she work with",
@@ -5582,7 +5582,7 @@
                      },
                      {
                         "number": 49,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder how ___.",
                         "options": [
                            "does the cat drink water",
@@ -5592,7 +5592,7 @@
                      },
                      {
                         "number": 50,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder where ___.",
                         "options": [
                            "does the cat sleep",
@@ -5602,7 +5602,7 @@
                      },
                      {
                         "number": 51,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I know how ___.",
                         "options": [
                            "do the children go to school",
@@ -5622,7 +5622,7 @@
                      },
                      {
                         "number": 53,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me where ___.",
                         "options": [
                            "do the men work",
@@ -5642,7 +5642,7 @@
                      },
                      {
                         "number": 55,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know whether ___.",
                         "options": [
                            "do the police work here",
@@ -5652,7 +5652,7 @@
                      },
                      {
                         "number": 56,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know when ___.",
                         "options": [
                            "do they come home",
@@ -5662,7 +5662,7 @@
                      },
                      {
                         "number": 57,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me what ___",
                         "options": [
                            "do they eat?",
@@ -5672,7 +5672,7 @@
                      },
                      {
                         "number": 58,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know why ___.",
                         "options": [
                            "do they eat at home",
@@ -5682,7 +5682,7 @@
                      },
                      {
                         "number": 59,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know who ___.",
                         "options": [
                            "do they eat with",
@@ -5692,7 +5692,7 @@
                      },
                      {
                         "number": 60,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I want to know how ___.",
                         "options": [
                            "do they go home",
@@ -5702,7 +5702,7 @@
                      },
                      {
                         "number": 61,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know if ___.",
                         "options": [
                            "do they go to school",
@@ -5712,7 +5712,7 @@
                      },
                      {
                         "number": 62,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know where ___.",
                         "options": [
                            "do they live",
@@ -5722,7 +5722,7 @@
                      },
                      {
                         "number": 63,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I know ___.",
                         "options": [
                            "what does he eat for lunch",
@@ -5732,7 +5732,7 @@
                      },
                      {
                         "number": 64,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "what does he need",
@@ -5742,7 +5742,7 @@
                      },
                      {
                         "number": 65,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "what do people eat here",
@@ -5752,7 +5752,7 @@
                      },
                      {
                         "number": 66,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I like to know ___.",
                         "options": [
                            "what does she drink",
@@ -5762,7 +5762,7 @@
                      },
                      {
                         "number": 67,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "what does she have for breakfast",
@@ -5772,7 +5772,7 @@
                      },
                      {
                         "number": 68,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Tell me ___.",
                         "options": [
                            "what does she like",
@@ -5782,7 +5782,7 @@
                      },
                      {
                         "number": 69,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "what do the children drink?",
@@ -5792,7 +5792,7 @@
                      },
                      {
                         "number": 70,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "what do they eat?",
@@ -5802,7 +5802,7 @@
                      },
                      {
                         "number": 71,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "when does he go to school?",
@@ -5812,7 +5812,7 @@
                      },
                      {
                         "number": 72,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "when does he sleep",
@@ -5822,7 +5822,7 @@
                      },
                      {
                         "number": 73,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "when she eats lunch?",
@@ -5832,7 +5832,7 @@
                      },
                      {
                         "number": 74,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "when she has breakfast?",
@@ -5842,7 +5842,7 @@
                      },
                      {
                         "number": 75,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "when the children go to bed?",
@@ -5852,7 +5852,7 @@
                      },
                      {
                         "number": 76,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "when do they come home",
@@ -5862,7 +5862,7 @@
                      },
                      {
                         "number": 77,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "where does he go",
@@ -5872,7 +5872,7 @@
                      },
                      {
                         "number": 78,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "where he lives?",
@@ -5882,7 +5882,7 @@
                      },
                      {
                         "number": 79,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "where she goes after school?",
@@ -5892,7 +5892,7 @@
                      },
                      {
                         "number": 80,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "where does she work?",
@@ -5902,7 +5902,7 @@
                      },
                      {
                         "number": 81,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "where does the cat sleep",
@@ -5912,7 +5912,7 @@
                      },
                      {
                         "number": 82,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "where do the children play?",
@@ -5922,7 +5922,7 @@
                      },
                      {
                         "number": 83,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "where do the men work",
@@ -5932,7 +5932,7 @@
                      },
                      {
                         "number": 84,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "where do they live",
@@ -5942,7 +5942,7 @@
                      },
                      {
                         "number": 85,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "whether does she have a dog",
@@ -5952,7 +5952,7 @@
                      },
                      {
                         "number": 86,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "whether do the children go to bed early",
@@ -5962,7 +5962,7 @@
                      },
                      {
                         "number": 87,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "whether do the men need help?",
@@ -5972,7 +5972,7 @@
                      },
                      {
                         "number": 88,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "whether is the music loud",
@@ -5982,7 +5982,7 @@
                      },
                      {
                         "number": 89,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "whether do the police work here?",
@@ -5992,7 +5992,7 @@
                      },
                      {
                         "number": 90,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "whether do the women speak English",
@@ -6002,7 +6002,7 @@
                      },
                      {
                         "number": 91,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "who does he go to school with",
@@ -6012,7 +6012,7 @@
                      },
                      {
                         "number": 92,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "who does he live with?",
@@ -6022,7 +6022,7 @@
                      },
                      {
                         "number": 93,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "who does she work with?",
@@ -6032,7 +6032,7 @@
                      },
                      {
                         "number": 94,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "who do they eat with",
@@ -6042,7 +6042,7 @@
                      },
                      {
                         "number": 95,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "why does he go to bed early?",
@@ -6052,7 +6052,7 @@
                      },
                      {
                         "number": 96,
-                        "hint": "Indirect question is not a question. Remove 'does'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I wonder ___.",
                         "options": [
                            "why does he need help",
@@ -6062,7 +6062,7 @@
                      },
                      {
                         "number": 97,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Do you know ___",
                         "options": [
                            "why does she go to the gym.",
@@ -6072,7 +6072,7 @@
                      },
                      {
                         "number": 98,
-                        "hint": "This is an indirect question inside a real question. Remove 'does' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "why does she like tea?",
@@ -6082,7 +6082,7 @@
                      },
                      {
                         "number": 99,
-                        "hint": "This is an indirect question inside a real question. Remove 'do' but keep the '?'.",
+                        "hint": "This is an indirect question inside a real question. Remove 'do / does' but keep the '?'.",
                         "question": "Can you tell me ___",
                         "options": [
                            "why do the children drink milk?",
@@ -6092,7 +6092,7 @@
                      },
                      {
                         "number": 100,
-                        "hint": "Indirect question is not a question. Remove 'do'.",
+                        "hint": "Indirect question is not a question. Remove 'do / does'.",
                         "question": "I don't know ___.",
                         "options": [
                            "why do they eat at home",
@@ -6220,7 +6220,7 @@
                   "questions": [
                      {
                         "number": 1,
-                        "hint": "",
+                        "hint": "'Shop' is a noun here.",
                         "question": "He works in a *shop*. 'Shop' is a Verb.",
                         "options": [
                            "True",
@@ -6229,7 +6229,7 @@
                      },
                      {
                         "number": 2,
-                        "hint":  "",
+                        "hint": "'Short' is an adjective here.",
                         "question": "She has a *short* pencil. 'Short' is an Adjective.",
                         "options": [
                            "True",
@@ -6238,7 +6238,7 @@
                      },
                      {
                         "number": 3,
-                        "hint":  "",
+                        "hint": "'Early' is an adverb here.",
                         "question": "My father wakes up *early*. 'Early' is a Verb.",
                         "options": [
                            "True",
@@ -6247,7 +6247,7 @@
                      },
                      {
                         "number": 4,
-                        "hint":  "",
+                        "hint": "'A pen' is an object here.",
                         "question": "He needs *a pen* in class. 'Pen' is an Object.",
                         "options": [
                            "True",
@@ -6256,7 +6256,7 @@
                      },
                      {
                         "number": 5,
-                        "hint":  "",
+                        "hint": "'Water' is an object here.",
                         "question": "He needs *water*. 'Water' is a Subject.",
                         "options": [
                            "True",
@@ -6265,7 +6265,7 @@
                      },
                      {
                         "number": 6,
-                        "hint":  "",
+                        "hint": "'Never' is an adverb here.",
                         "question": "She *never* goes to bed late. 'Never' is an Adverb.",
                         "options": [
                            "True",
@@ -6274,7 +6274,7 @@
                      },
                      {
                         "number": 7,
-                        "hint":  "",
+                        "hint": "'Drinks' is a verb here.",
                         "question": "She *drinks* milk every morning. 'Drinks' is a Noun.",
                         "options": [
                            "True",
@@ -6283,7 +6283,7 @@
                      },
                      {
                         "number": 8,
-                        "hint":  "",
+                        "hint": "'Clean' is an adjective here.",
                         "question": "She lives in a *clean* house. 'Clean' is an Adjective.",
                         "options": [
                            "True",
@@ -6292,7 +6292,7 @@
                      },
                      {
                         "number": 9,
-                        "hint":  "",
+                        "hint": "'Always' is an adverb here.",
                         "question": "She *always* drinks water. 'Always' is a Verb.",
                         "options": [
                            "True",
@@ -6301,7 +6301,7 @@
                      },
                      {
                         "number": 10,
-                        "hint":  "",
+                        "hint": "'Drinks' is a verb here.",
                         "question": "The cat *drinks* water. 'Drinks' is a Verb.",
                         "options": [
                            "True",
@@ -6310,7 +6310,7 @@
                      },
                      {
                         "number": 11,
-                        "hint":  "",
+                        "hint": "'House' is a noun here.",
                         "question": "She lives in a *house*. 'House' is an Adverb.",
                         "options": [
                            "True",
@@ -6319,7 +6319,7 @@
                      },
                      {
                         "number": 12,
-                        "hint":  "",
+                        "hint": "'Live' is a verb here.",
                         "question": "They *live* near the school. 'Live' is a Verb.",
                         "options": [
                            "True",
@@ -6328,7 +6328,7 @@
                      },
                      {
                         "number": 13,
-                        "hint":  "",
+                        "hint": "'My brother' is a subject here.",
                         "question": "*My brother* works in a shop. 'My brother' is a Verb.",
                         "options": [
                            "True",
@@ -6337,7 +6337,7 @@
                      },
                      {
                         "number": 14,
-                        "hint":  "",
+                        "hint": "'Play' is a verb here.",
                         "question": "The children *play* in the street. 'Play' is a Verb.",
                         "options": [
                            "True",
@@ -6346,7 +6346,7 @@
                      },
                      {
                         "number": 15,
-                        "hint":  "",
+                        "hint": "'Run' is a verb here.",
                         "question": "The children *run* in the park. 'Run' is a Noun.",
                         "options": [
                            "True",
@@ -6355,7 +6355,7 @@
                      },
                      {
                         "number": 16,
-                        "hint":  "",
+                        "hint": "'Coffee' is an object here.",
                         "question": "He drinks *coffee* every morning. 'Coffee' is an Object.",
                         "options": [
                            "True",
@@ -6364,7 +6364,7 @@
                      },
                      {
                         "number": 17,
-                        "hint":  "",
+                        "hint": "'Well' is an adverb here.",
                         "question": "She eats *well*. 'Well' is a Noun.",
                         "options": [
                            "True",
@@ -6373,7 +6373,7 @@
                      },
                      {
                         "number": 18,
-                        "hint":  "",
+                        "hint": "'Room' is a noun here.",
                         "question": "He sleeps in a *room*. 'Room' is a Noun.",
                         "options": [
                            "True",
@@ -6382,7 +6382,7 @@
                      },
                      {
                         "number": 19,
-                        "hint":  "",
+                        "hint": "'Question' is a noun here.",
                         "question": "She asks *a question*. 'Question' is a Verb.",
                         "options": [
                            "True",
@@ -6391,7 +6391,7 @@
                      },
                      {
                         "number": 20,
-                        "hint":  "",
+                        "hint": "'Garden' is a noun here.",
                         "question": "We play in the *garden*. 'Garden' is a Noun.",
                         "options": [
                            "True",
@@ -6400,7 +6400,7 @@
                      },
                      {
                         "number": 21,
-                        "hint":  "",
+                        "hint": "'New' is an adjective here.",
                         "question": "He has a *new* car. 'new' is a ___?",
                         "options": [
                            "Adverb",
@@ -6411,7 +6411,7 @@
                      },
                      {
                         "number": 22,
-                        "hint":  "",
+                        "hint": "'Together' is an adverb here.",
                         "question": "They eat *together*. 'together' is a ___?",
                         "options": [
                            "Object",
@@ -6422,7 +6422,7 @@
                      },
                      {
                         "number": 23,
-                        "hint":  "",
+                        "hint": "'Book' is a noun here.",
                         "question": "She reads *a book*. 'Book' is an Adverb.",
                         "options": [
                            "True",
@@ -6431,7 +6431,7 @@
                      },
                      {
                         "number": 24,
-                        "hint":  "",
+                        "hint": "'House' is a noun here.",
                         "question": "She lives in a *house*. 'house' is a ___?",
                         "options": [
                            "Verb",
@@ -6442,7 +6442,7 @@
                      },
                      {
                         "number": 25,
-                        "hint":  "",
+                        "hint": "'A book' is an object here.",
                         "question": "He reads *a book* every night. 'a book' is a ___?",
                         "options": [
                            "Adverb",
@@ -6453,7 +6453,7 @@
                      },
                      {
                         "number": 26,
-                        "hint":  "",
+                        "hint": "'We' is a subject here.",
                         "question": "*We* eat lunch at school. 'We' is a ___?",
                         "options": [
                            "Object",
@@ -6464,7 +6464,7 @@
                      },
                      {
                         "number": 27,
-                        "hint":  "",
+                        "hint": "'Street' is a noun here.",
                         "question": "She lives on a *street*. 'Street' is a Noun.",
                         "options": [
                            "True",
@@ -6473,7 +6473,7 @@
                      },
                      {
                         "number": 28,
-                        "hint":  "",
+                        "hint": "'Live' is a verb here.",
                         "question": "We *live* in a small house. 'live' is a ___?",
                         "options": [
                            "Adverb",
@@ -6484,7 +6484,7 @@
                      },
                      {
                         "number": 29,
-                        "hint":  "",
+                        "hint": "'Big' is an adjective here.",
                         "question": "She has a *big* house. 'big' is a ___?",
                         "options": [
                            "Noun",
@@ -6495,7 +6495,7 @@
                      },
                      {
                         "number": 30,
-                        "hint":  "",
+                        "hint": "'Every morning' is an adverb here.",
                         "question": "She drinks tea *every morning*. 'every morning' is a ___?",
                         "options": [
                            "Object",
@@ -6506,7 +6506,7 @@
                      },
                      {
                         "number": 31,
-                        "hint":  "",
+                        "hint": "'A book' is an object here.",
                         "question": "He reads *a book*. 'Book' is a Subject.",
                         "options": [
                            "True",
@@ -6515,7 +6515,7 @@
                      },
                      {
                         "number": 32,
-                        "hint":  "",
+                        "hint": "'Brother' is a noun here.",
                         "question": "My *brother* lives in London. 'brother' is a ___?",
                         "options": [
                            "Noun",
@@ -6526,7 +6526,7 @@
                      },
                      {
                         "number": 33,
-                        "hint":  "",
+                        "hint": "'Animals' is an object here.",
                         "question": "The children like *animals*. 'animals' is a ___?",
                         "options": [
                            "Verb",
@@ -6537,7 +6537,7 @@
                      },
                      {
                         "number": 34,
-                        "hint":  "",
+                        "hint": "'He' is a subject here.",
                         "question": "*He* goes to school every day. 'He' is a ___?",
                         "options": [
                            "Noun",
@@ -6548,7 +6548,7 @@
                      },
                      {
                         "number": 35,
-                        "hint":  "",
+                        "hint": "'Table' is a noun here.",
                         "question": "They eat at a *table*. 'Table' is a Noun.",
                         "options": [
                            "True",
@@ -6557,7 +6557,7 @@
                      },
                      {
                         "number": 36,
-                        "hint":  "",
+                        "hint": "'Eats' is a verb here.",
                         "question": "The dog *eats* food in the garden. 'eats' is a ___?",
                         "options": [
                            "Object",
@@ -6568,7 +6568,7 @@
                      },
                      {
                         "number": 37,
-                        "hint":  "",
+                        "hint": "'Hot' is an adjective here.",
                         "question": "She drinks *hot* tea every morning. 'hot' is a ___?",
                         "options": [
                            "Adjective",
@@ -6579,7 +6579,7 @@
                      },
                      {
                         "number": 38,
-                        "hint":  "",
+                        "hint": "'Always' is an adverb here.",
                         "question": "He *always* goes to school. 'always' is a ___?",
                         "options": [
                            "Adverb",
@@ -6590,7 +6590,7 @@
                      },
                      {
                         "number": 39,
-                        "hint":  "",
+                        "hint": "'Cooks' is a verb here.",
                         "question": "My mother *cooks* every day. 'Cooks' is an Adverb.",
                         "options": [
                            "True",
@@ -6599,7 +6599,7 @@
                      },
                      {
                         "number": 40,
-                        "hint":  "",
+                        "hint": "'Bed' is a noun here.",
                         "question": "He sleeps in a *bed*. 'bed' is a ___?",
                         "options": [
                            "Verb",
@@ -6610,7 +6610,7 @@
                      },
                      {
                         "number": 41,
-                        "hint":  "",
+                        "hint": "'A cat' is an object here.",
                         "question": "She has *a cat* at home. 'a cat' is a ___?",
                         "options": [
                            "Object",
@@ -6621,7 +6621,7 @@
                      },
                      {
                         "number": 42,
-                        "hint":  "",
+                        "hint": "'The children' is a subject here.",
                         "question": "*The children* play in the park. 'The children' is a ___?",
                         "options": [
                            "Object",
@@ -6632,7 +6632,7 @@
                      },
                      {
                         "number": 43,
-                        "hint":  "",
+                        "hint": "'We' is a subject here.",
                         "question": "*We* go to school every day. 'We' is a Subject.",
                         "options": [
                            "True",
@@ -6641,7 +6641,7 @@
                      },
                      {
                         "number": 44,
-                        "hint":  "",
+                        "hint": "'Reads' is a verb here.",
                         "question": "She *reads* a book every night. 'reads' is a ___?",
                         "options": [
                            "Noun",
@@ -6652,7 +6652,7 @@
                      },
                      {
                         "number": 45,
-                        "hint":  "",
+                        "hint": "'Good' is an adjective here.",
                         "question": "He has a *good* job. 'good' is a ___?",
                         "options": [
                            "Adverb",
@@ -6663,7 +6663,7 @@
                      },
                      {
                         "number": 46,
-                        "hint":  "",
+                        "hint": "'Early' is an adverb here.",
                         "question": "My father wakes up *early*. 'early' is a ___?",
                         "options": [
                            "Noun",
@@ -6674,7 +6674,7 @@
                      },
                      {
                         "number": 47,
-                        "hint":  "",
+                        "hint": "'Every day' is an adverb here.",
                         "question": "He goes to school *every day*. 'Every day' is an Object.",
                         "options": [
                            "True",
@@ -6683,7 +6683,7 @@
                      },
                      {
                         "number": 48,
-                        "hint":  "",
+                        "hint": "'Park' is a noun here.",
                         "question": "We play in the *park*. 'park' is a ___?",
                         "options": [
                            "Noun",
@@ -6694,7 +6694,7 @@
                      },
                      {
                         "number": 49,
-                        "hint":  "",
+                        "hint": "'Water' is an object here.",
                         "question": "We need *water* every day. 'water' is a ___?",
                         "options": [
                            "Adverb",
@@ -6705,7 +6705,7 @@
                      },
                      {
                         "number": 50,
-                        "hint":  "",
+                        "hint": "'The dog' is a subject here.",
                         "question": "*The dog* eats food in the garden. 'The dog' is a ___?",
                         "options": [
                            "Object",
@@ -6716,7 +6716,7 @@
                      },
                      {
                         "number": 51,
-                        "hint":  "",
+                        "hint": "'The dog' is a subject here.",
                         "question": "*The dog* barks at night. 'Dog' is a Subject.",
                         "options": [
                            "True",
@@ -6725,7 +6725,7 @@
                      },
                      {
                         "number": 52,
-                        "hint":  "",
+                        "hint": "'Goes' is a verb here.",
                         "question": "He *goes* to school every day. 'goes' is a ___?",
                         "options": [
                            "Adverb",
@@ -6736,7 +6736,7 @@
                      },
                      {
                         "number": 53,
-                        "hint":  "",
+                        "hint": "'Fresh' is an adjective here.",
                         "question": "The children eat *fresh* fruit. 'fresh' is a ___?",
                         "options": [
                            "Noun",
@@ -6747,7 +6747,7 @@
                      },
                      {
                         "number": 54,
-                        "hint":  "",
+                        "hint": "'Sometimes' is an adverb here.",
                         "question": "She *sometimes* eats at a restaurant. 'sometimes' is a ___?",
                         "options": [
                            "Adverb",
@@ -6758,7 +6758,7 @@
                      },
                      {
                         "number": 55,
-                        "hint":  "",
+                        "hint": "'Every day' is an adverb here.",
                         "question": "He goes to school *every day*. 'Every day' is an Adjective.",
                         "options": [
                            "True",
@@ -6767,7 +6767,7 @@
                      },
                      {
                         "number": 56,
-                        "hint":  "",
+                        "hint": "'Hospital' is a noun here.",
                         "question": "She works in a *hospital*. 'hospital' is a ___?",
                         "options": [
                            "Verb",
@@ -6778,7 +6778,7 @@
                      },
                      {
                         "number": 57,
-                        "hint":  "",
+                        "hint": "'Dinner' is an object here.",
                         "question": "My mother cooks *dinner* every day. 'dinner' is a ___?",
                         "options": [
                            "Object",
@@ -6789,7 +6789,7 @@
                      },
                      {
                         "number": 58,
-                        "hint":  "",
+                        "hint": "'They' is a subject here.",
                         "question": "*They* live in a big house. 'They' is a ___?",
                         "options": [
                            "Subject",
@@ -6800,7 +6800,7 @@
                      },
                      {
                         "number": 59,
-                        "hint":  "",
+                        "hint": "'Sometimes' is an adverb here.",
                         "question": "He *sometimes* eats at school. 'Sometimes' is an Adverb.",
                         "options": [
                            "True",
@@ -6809,7 +6809,7 @@
                      },
                      {
                         "number": 60,
-                        "hint":  "",
+                        "hint": "'Play' is a verb here.",
                         "question": "They *play* football at school. 'play' is a ___?",
                         "options": [
                            "Adverb",
@@ -6820,7 +6820,7 @@
                      },
                      {
                         "number": 61,
-                        "hint":  "",
+                        "hint": "'Cold' is an adjective here.",
                         "question": "He drinks *cold* water every day. 'cold' is a ___?",
                         "options": [
                            "Adverb",
@@ -6831,7 +6831,7 @@
                      },
                      {
                         "number": 62,
-                        "hint":  "",
+                        "hint": "'Never' is an adverb here.",
                         "question": "He *never* eats fast food. 'never' is a ___?",
                         "options": [
                            "Noun",
@@ -6842,7 +6842,7 @@
                      },
                      {
                         "number": 63,
-                        "hint":  "",
+                        "hint": "'They' is a subject here.",
                         "question": "*They* live near the school. 'They' is a Noun.",
                         "options": [
                            "True",
@@ -6851,7 +6851,7 @@
                      },
                      {
                         "number": 64,
-                        "hint":  "",
+                        "hint": "'Market' is a noun here.",
                         "question": "She drives to the *market*. 'market' is a ___?",
                         "options": [
                            "Adverb",
@@ -6862,7 +6862,7 @@
                      },
                      {
                         "number": 65,
-                        "hint":  "",
+                        "hint": "'Rice' is an object here.",
                         "question": "They eat *rice* for lunch. 'rice' is a ___?",
                         "options": [
                            "Verb",
@@ -6873,7 +6873,7 @@
                      },
                      {
                         "number": 66,
-                        "hint":  "",
+                        "hint": "'My mother' is a subject here.",
                         "question": "*My mother* cooks dinner every day. 'My mother' is a ___?",
                         "options": [
                            "Noun",
@@ -6884,7 +6884,7 @@
                      },
                      {
                         "number": 67,
-                        "hint":  "",
+                        "hint": "'Slowly' is an adverb here.",
                         "question": "She walks *slowly*. 'Slowly' is an Adverb.",
                         "options": [
                            "True",
@@ -6893,7 +6893,7 @@
                      },
                      {
                         "number": 68,
-                        "hint":  "",
+                        "hint": "'Drinks' is a verb here.",
                         "question": "She *drinks* tea in the morning. 'drinks' is a ___?",
                         "options": [
                            "Noun",
@@ -6904,7 +6904,7 @@
                      },
                      {
                         "number": 69,
-                        "hint":  "",
+                        "hint": "'Red' is an adjective here.",
                         "question": "She wears *red* shoes. 'red' is a ___?",
                         "options": [
                            "Adjective",
@@ -6915,7 +6915,7 @@
                      },
                      {
                         "number": 70,
-                        "hint":  "",
+                        "hint": "'Here' is an adverb here.",
                         "question": "They eat *here*. 'here' is a ___?",
                         "options": [
                            "Noun",
@@ -6926,7 +6926,7 @@
                      },
                      {
                         "number": 71,
-                        "hint":  "",
+                        "hint": "'Fast' is an adverb here.",
                         "question": "She runs *fast*. 'Fast' is an Adjective.",
                         "options": [
                            "True",
@@ -6935,7 +6935,7 @@
                      },
                      {
                         "number": 72,
-                        "hint":  "",
+                        "hint": "'School' is a noun here.",
                         "question": "He goes to *school* every day. 'school' is a ___?",
                         "options": [
                            "Adverb",
@@ -6946,7 +6946,7 @@
                      },
                      {
                         "number": 73,
-                        "hint":  "",
+                        "hint": "'A question' is an object here.",
                         "question": "The teacher asks *a question* in class. 'a question' is a ___?",
                         "options": [
                            "Adverb",
@@ -6957,7 +6957,7 @@
                      },
                      {
                         "number": 74,
-                        "hint":  "",
+                        "hint": "'The teacher' is a subject here.",
                         "question": "*The teacher* speaks English in class. 'The teacher' is a ___?",
                         "options": [
                            "Verb",
@@ -6968,7 +6968,7 @@
                      },
                      {
                         "number": 75,
-                        "hint":  "",
+                        "hint": "'My sister' is a subject here.",
                         "question": "*My sister* reads books at home. 'My sister' is a Subject.",
                         "options": [
                            "True",
@@ -6977,7 +6977,7 @@
                      },
                      {
                         "number": 76,
-                        "hint":  "",
+                        "hint": "'Cooks' is a verb here.",
                         "question": "My mother *cooks* every evening. 'cooks' is a ___?",
                         "options": [
                            "Verb",
@@ -6988,7 +6988,7 @@
                      },
                      {
                         "number": 77,
-                        "hint":  "",
+                        "hint": "'Long' is an adjective here.",
                         "question": "She has *long* hair. 'long' is a ___?",
                         "options": [
                            "Verb",
@@ -6999,7 +6999,7 @@
                      },
                      {
                         "number": 78,
-                        "hint":  "",
+                        "hint": "'Fast' is an adverb here.",
                         "question": "He drives *fast*. 'fast' is a ___?",
                         "options": [
                            "Verb",
@@ -7010,7 +7010,7 @@
                      },
                      {
                         "number": 79,
-                        "hint":  "",
+                        "hint": "'Carefully' is an adverb here.",
                         "question": "He drives *carefully*. 'Carefully' is an Object.",
                         "options": [
                            "True",
@@ -7019,7 +7019,7 @@
                      },
                      {
                         "number": 80,
-                        "hint":  "",
+                        "hint": "'Table' is a noun here.",
                         "question": "He eats at a *table*. 'table' is a ___?",
                         "options": [
                            "Adverb",
@@ -7030,7 +7030,7 @@
                      },
                      {
                         "number": 81,
-                        "hint":  "",
+                        "hint": "'Milk' is an object here.",
                         "question": "She drinks *milk* every morning. 'milk' is a ___?",
                         "options": [
                            "Subject",
@@ -7041,7 +7041,7 @@
                      },
                      {
                         "number": 82,
-                        "hint":  "",
+                        "hint": "'She' is a subject here.",
                         "question": "*She* drinks milk every morning. the word 'She' is a ___?",
                         "options": [
                            "Noun",
@@ -7052,7 +7052,7 @@
                      },
                      {
                         "number": 83,
-                        "hint":  "",
+                        "hint": "'A dog' is an object here.",
                         "question": "She has *a dog* at home. 'Dog' is an Object.",
                         "options": [
                            "True",
@@ -7061,7 +7061,7 @@
                      },
                      {
                         "number": 84,
-                        "hint":  "",
+                        "hint": "'Drives' is a verb here.",
                         "question": "He *drives* to work every morning. 'drives' is a ___?",
                         "options": [
                            "Verb",
@@ -7072,7 +7072,7 @@
                      },
                      {
                         "number": 85,
-                        "hint":  "",
+                        "hint": "'Young' is an adjective here.",
                         "question": "They have a *young* dog. 'young' is a ___?",
                         "options": [
                            "Noun",
@@ -7083,7 +7083,7 @@
                      },
                      {
                         "number": 86,
-                        "hint":  "",
+                        "hint": "'Quietly' is an adverb here.",
                         "question": "She speaks *quietly*. 'quietly' is a ___?",
                         "options": [
                            "Adverb",
@@ -7094,7 +7094,7 @@
                      },
                      {
                         "number": 87,
-                        "hint":  "",
+                        "hint": "'Water' is an object here.",
                         "question": "He drinks *water*. 'Water' is an Adjective.",
                         "options": [
                            "True",
@@ -7103,7 +7103,7 @@
                      },
                      {
                         "number": 88,
-                        "hint":  "",
+                        "hint": "'Sea' is a noun here.",
                         "question": "They swim in the *sea*. 'sea' is a ___?",
                         "options": [
                            "Verb",
@@ -7114,7 +7114,7 @@
                      },
                      {
                         "number": 89,
-                        "hint":  "",
+                        "hint": "'A car' is an object here.",
                         "question": "He drives *a car* to work. 'a car' is a ___?",
                         "options": [
                            "Subject",
@@ -7125,7 +7125,7 @@
                      },
                      {
                         "number": 90,
-                        "hint":  "",
+                        "hint": "'The cat' is a subject here.",
                         "question": "*The cat* sleeps on the sofa. 'The cat' is a ___?",
                         "options": [
                            "Adverb",
@@ -7136,7 +7136,7 @@
                      },
                      {
                         "number": 91,
-                        "hint":  "",
+                        "hint": "'He' is a subject here.",
                         "question": "*He* drinks water every day. 'He' is a Subject.",
                         "options": [
                            "True",
@@ -7145,7 +7145,7 @@
                      },
                      {
                         "number": 92,
-                        "hint":  "",
+                        "hint": "'Sleeps' is a verb here.",
                         "question": "The cat *sleeps* all day. 'sleeps' is a ___?",
                         "options": [
                            "Subject",
@@ -7156,7 +7156,7 @@
                      },
                      {
                         "number": 93,
-                        "hint":  "",
+                        "hint": "'Small' is an adjective here.",
                         "question": "They live in a *small* flat. 'small' is a ___?",
                         "options": [
                            "Adjective",
@@ -7167,7 +7167,7 @@
                      },
                      {
                         "number": 94,
-                        "hint":  "",
+                        "hint": "'Outside' is an adverb here.",
                         "question": "The children play *outside*. 'outside' is a ___?",
                         "options": [
                            "Verb",
@@ -7178,7 +7178,7 @@
                      },
                      {
                         "number": 95,
-                        "hint":  "",
+                        "hint": "'Quickly' is an adverb here.",
                         "question": "She eats *quickly*. 'Quickly' is a Noun.",
                         "options": [
                            "True",
@@ -7187,7 +7187,7 @@
                      },
                      {
                         "number": 96,
-                        "hint":  "",
+                        "hint": "'Street' is a noun here.",
                         "question": "They play in the *street*. 'street' is a ___?",
                         "options": [
                            "Noun",
@@ -7198,7 +7198,7 @@
                      },
                      {
                         "number": 97,
-                        "hint":  "",
+                        "hint": "'Juice' is an object here.",
                         "question": "My sister drinks *juice* in the morning. 'juice' is a ___?",
                         "options": [
                            "Subject",
@@ -7209,7 +7209,7 @@
                      },
                      {
                         "number": 98,
-                        "hint":  "",
+                        "hint": "'My father' is a subject here.",
                         "question": "*My father* reads a book at night. 'My father' is a ___?",
                         "options": [
                            "Subject",
@@ -7220,7 +7220,7 @@
                      },
                      {
                         "number": 99,
-                        "hint":  "",
+                        "hint": "'Cooks' is a verb here.",
                         "question": "My mother *cooks* dinner every night. 'cooks' is a Verb.",
                         "options": [
                            "True",
@@ -7229,7 +7229,7 @@
                      },
                      {
                         "number": 100,
-                        "hint":  "",
+                        "hint": "'Works' is a verb here.",
                         "question": "My brother *works* in a shop. 'works' is a ___?",
                         "options": [
                            "Noun",
@@ -7357,7 +7357,8 @@
                   "questions": [
                      {
                         "number": 1,
-                        "question": "My daughter is at school. I pick up ___ every afternoon.",
+                        "hint": "My daughter -> her",
+                        "question": "My daughter is at work. You should wait for ___.",
                         "options": [
                            "him",
                            "her",
@@ -7366,6 +7367,7 @@
                      },
                      {
                         "number": 2,
+                        "hint": "That boy -> him",
                         "question": "That boy is very funny. Everyone likes ___.",
                         "options": [
                            "her",
@@ -7375,15 +7377,17 @@
                      },
                      {
                         "number": 3,
-                        "question": "The doctor sees many patients. He sees ___ every Monday.",
+                        "hint": "Many patients -> them",
+                        "question": "The doctor sees many patients. They come every Monday, and he helps ___ when they are sick.",
                         "options": [
                            "her",
                            "him",
-                           "me"
+                           "them"
                         ]
                      },
                      {
                         "number": 4,
+                        "hint": "The children -> them",
                         "question": "The children are in the garden. I watch ___ from the window.",
                         "options": [
                            "them",
@@ -7393,7 +7397,8 @@
                      },
                      {
                         "number": 5,
-                        "question": "The school gives my friend and me books. They help ___.",
+                        "hint": "My friend and me -> us",
+                        "question": "The school gives my friend and me books. The teachers help ___ both read them.",
                         "options": [
                            "us",
                            "him",
@@ -7402,7 +7407,8 @@
                      },
                      {
                         "number": 6,
-                        "question": "The teacher asks all students questions. She asks ___ a question today.",
+                        "hint": "You -> you",
+                        "question": "You are the next student. The teacher asks ___ a question.",
                         "options": [
                            "him",
                            "them",
@@ -7411,6 +7417,7 @@
                      },
                      {
                         "number": 7,
+                        "hint": "My sister -> her",
                         "question": "That is my sister. I call ___ every day.",
                         "options": [
                            "him",
@@ -7420,6 +7427,7 @@
                      },
                      {
                         "number": 8,
+                        "hint": "My brother -> him",
                         "question": "My dog loves my brother. It follows ___ everywhere.",
                         "options": [
                            "her",
@@ -7429,7 +7437,8 @@
                      },
                      {
                         "number": 9,
-                        "question": "My sister eats with the family, but no one calls ___ for dinner.",
+                        "hint": "My sister -> her",
+                        "question": "My sister waits in her room for dinner. Nobody remembers to call ___ when dinner is ready.",
                         "options": [
                            "her",
                            "me",
@@ -7438,6 +7447,7 @@
                      },
                      {
                         "number": 10,
+                        "hint": "My children -> them",
                         "question": "My children go to school. I drive ___ every morning.",
                         "options": [
                            "it",
@@ -7447,7 +7457,8 @@
                      },
                      {
                         "number": 11,
-                        "question": "The doctor sees my sister and me. He helps ___.",
+                        "hint": "My sister and me -> us",
+                        "question": "My sister and I are sick. We visit the doctor, and he helps ___ both.",
                         "options": [
                            "us",
                            "them",
@@ -7456,7 +7467,8 @@
                      },
                      {
                         "number": 12,
-                        "question": "My sister knows everyone in the class, but she doesn't know ___.",
+                        "hint": "You -> you",
+                        "question": "You are new in my class. My sister has never met you, so she doesn't know ___ yet.",
                         "options": [
                            "him",
                            "you",
@@ -7465,6 +7477,7 @@
                      },
                      {
                         "number": 13,
+                        "hint": "Sara -> her",
                         "question": "Sara is in my class. I sit next to ___ every day.",
                         "options": [
                            "her",
@@ -7474,6 +7487,7 @@
                      },
                      {
                         "number": 14,
+                        "hint": "The new boy -> him",
                         "question": "The new boy in class is very quiet. I sit next to ___ every day.",
                         "options": [
                            "him",
@@ -7483,6 +7497,7 @@
                      },
                      {
                         "number": 15,
+                        "hint": "The speaker (I) -> me",
                         "question": "The dog knows everyone in the house. It follows ___ everywhere I go.",
                         "options": [
                            "him",
@@ -7492,6 +7507,7 @@
                      },
                      {
                         "number": 16,
+                        "hint": "The boys -> them",
                         "question": "The boys play football. The teacher watches ___.",
                         "options": [
                            "us",
@@ -7501,7 +7517,8 @@
                      },
                      {
                         "number": 17,
-                        "question": "My mother loves my brother and me. She cooks for ___ every day.",
+                        "hint": "My brother and me -> us",
+                        "question": "My mother cooks for my brother and me every day. She makes dinner for ___ both.",
                         "options": [
                            "us",
                            "him",
@@ -7510,7 +7527,8 @@
                      },
                      {
                         "number": 18,
-                        "question": "I call my friends every day. Today I want to call ___ first.",
+                        "hint": "You -> you",
+                        "question": "You are my new friend. I have already called my other friends. Now I want to call ___.",
                         "options": [
                            "them",
                            "you",
@@ -7519,6 +7537,7 @@
                      },
                      {
                         "number": 19,
+                        "hint": "My niece -> her",
                         "question": "My niece lives far away. I miss ___.",
                         "options": [
                            "him",
@@ -7528,6 +7547,7 @@
                      },
                      {
                         "number": 20,
+                        "hint": "The boy -> him",
                         "question": "The boy is new at school. I help ___ every day.",
                         "options": [
                            "him",
@@ -7537,7 +7557,8 @@
                      },
                      {
                         "number": 21,
-                        "question": "My teacher sees all the children at school. She sees ___ every morning too.",
+                        "hint": "I -> me",
+                        "question": "I go to school every day. My teacher sees ___ when I walk into her classroom.",
                         "options": [
                            "them",
                            "me",
@@ -7546,6 +7567,7 @@
                      },
                      {
                         "number": 22,
+                        "hint": "These apples -> them",
                         "question": "These apples are fresh. I eat ___ every day.",
                         "options": [
                            "them",
@@ -7555,7 +7577,8 @@
                      },
                      {
                         "number": 23,
-                        "question": "My brother and I are hungry. My mother cooks dinner for ___.",
+                        "hint": "My brother and I -> us",
+                        "question": "My brother and I are hungry. Our mother cooks dinner for ___ both.",
                         "options": [
                            "us",
                            "him",
@@ -7564,7 +7587,8 @@
                      },
                      {
                         "number": 24,
-                        "question": "My brother visits all his friends. He wants to visit ___ this weekend.",
+                        "hint": "You -> you",
+                        "question": "My brother hasn't seen you for a long time. He wants to visit ___ this weekend.",
                         "options": [
                            "them",
                            "you",
@@ -7573,6 +7597,7 @@
                      },
                      {
                         "number": 25,
+                        "hint": "That woman -> her",
                         "question": "That woman is very kind. Everyone likes ___.",
                         "options": [
                            "her",
@@ -7582,6 +7607,7 @@
                      },
                      {
                         "number": 26,
+                        "hint": "My son -> him",
                         "question": "My son goes to school. I pick up ___ every afternoon.",
                         "options": [
                            "her",
@@ -7591,7 +7617,8 @@
                      },
                      {
                         "number": 27,
-                        "question": "My father reads to all his children at night. Tonight he reads to ___.",
+                        "hint": "I -> me",
+                        "question": "My father reads to his children at night. Tonight I am the only child at home, so he reads to ___.",
                         "options": [
                            "me",
                            "her",
@@ -7600,6 +7627,7 @@
                      },
                      {
                         "number": 28,
+                        "hint": "The girls -> them",
                         "question": "The girls play in the park. I watch ___.",
                         "options": [
                            "her",
@@ -7609,7 +7637,8 @@
                      },
                      {
                         "number": 29,
-                        "question": "She teaches my friend and me. She knows ___ well.",
+                        "hint": "My friend and me -> us",
+                        "question": "My friend and I are in the same class. The teacher teaches ___ both.",
                         "options": [
                            "us",
                            "me",
@@ -7618,7 +7647,8 @@
                      },
                      {
                         "number": 30,
-                        "question": "The teacher helps all the students. She wants to help ___ after class.",
+                        "hint": "You -> you",
+                        "question": "You need help with your homework. The teacher wants to help ___ after class.",
                         "options": [
                            "them",
                            "him",
@@ -7627,6 +7657,7 @@
                      },
                      {
                         "number": 31,
+                        "hint": "The girl -> her",
                         "question": "The girl lives near school. I see ___ every morning.",
                         "options": [
                            "him",
@@ -7636,6 +7667,7 @@
                      },
                      {
                         "number": 32,
+                        "hint": "My brother -> him",
                         "question": "My brother plays football every day. I always watch ___ from the window.",
                         "options": [
                            "him",
@@ -7645,6 +7677,7 @@
                      },
                      {
                         "number": 33,
+                        "hint": "A bike -> it",
                         "question": "I have a bike. I ride ___ to school.",
                         "options": [
                            "it",
@@ -7654,7 +7687,8 @@
                      },
                      {
                         "number": 34,
-                        "question": "The school bus stops for all the children. Today it stops for ___ too.",
+                        "hint": "I -> me",
+                        "question": "I am waiting at the bus stop. The school bus arrives and stops for ___.",
                         "options": [
                            "him",
                            "me",
@@ -7663,6 +7697,7 @@
                      },
                      {
                         "number": 35,
+                        "hint": "My books -> them",
                         "question": "These are my books. I read ___ every night.",
                         "options": [
                            "it",
@@ -7672,7 +7707,8 @@
                      },
                      {
                         "number": 36,
-                        "question": "My neighbor knows my brother and me. She always greets ___.",
+                        "hint": "My brother and me -> us",
+                        "question": "My neighbor knows my brother and me. She always greets ___ both.",
                         "options": [
                            "him",
                            "us",
@@ -7681,7 +7717,8 @@
                      },
                      {
                         "number": 37,
-                        "question": "I see my friends at school every day. I also want to see ___ at the park.",
+                        "hint": "You -> you",
+                        "question": "I see my friends at school. You go to a different school, so I want to see ___ at the park.",
                         "options": [
                            "you",
                            "her",
@@ -7690,6 +7727,7 @@
                      },
                      {
                         "number": 38,
+                        "hint": "My sister -> her",
                         "question": "My sister needs a pen. I give ___ a pen.",
                         "options": [
                            "him",
@@ -7699,6 +7737,7 @@
                      },
                      {
                         "number": 39,
+                        "hint": "My uncle -> him",
                         "question": "My uncle lives near us. We visit ___ every Sunday.",
                         "options": [
                            "him",
@@ -7708,7 +7747,8 @@
                      },
                      {
                         "number": 40,
-                        "question": "I have a small cat. I love ___.",
+                        "hint": "A toy cat -> it",
+                        "question": "I have a small toy cat. I love ___.",
                         "options": [
                            "him",
                            "it",
@@ -7717,6 +7757,7 @@
                      },
                      {
                         "number": 41,
+                        "hint": "The speaker (I) -> me",
                         "question": "Tom helps all the students in class. Today he helps ___ with my homework.",
                         "options": [
                            "me",
@@ -7726,6 +7767,7 @@
                      },
                      {
                         "number": 42,
+                        "hint": "My friends -> them",
                         "question": "My friends live near school. I see ___ every day.",
                         "options": [
                            "him",
@@ -7735,7 +7777,8 @@
                      },
                      {
                         "number": 43,
-                        "question": "The dog knows my sister and me. It follows ___ everywhere.",
+                        "hint": "My sister and me -> us",
+                        "question": "The dog knows my sister and me. It follows ___ both everywhere.",
                         "options": [
                            "them",
                            "us",
@@ -7744,7 +7787,8 @@
                      },
                      {
                         "number": 44,
-                        "question": "I give gifts to everyone I love. I have a gift for ___ too.",
+                        "hint": "You -> you",
+                        "question": "You are my best friend. I have a gift for ___ too.",
                         "options": [
                            "you",
                            "him",
@@ -7753,6 +7797,7 @@
                      },
                      {
                         "number": 45,
+                        "hint": "My grandmother -> her",
                         "question": "My grandmother lives alone. I call ___ every week.",
                         "options": [
                            "him",
@@ -7762,6 +7807,7 @@
                      },
                      {
                         "number": 46,
+                        "hint": "The man -> him",
                         "question": "The man speaks fast. I don't understand ___.",
                         "options": [
                            "them",
@@ -7771,6 +7817,7 @@
                      },
                      {
                         "number": 47,
+                        "hint": "The food -> it",
                         "question": "The food is good. I like ___.",
                         "options": [
                            "it",
@@ -7780,7 +7827,8 @@
                      },
                      {
                         "number": 48,
-                        "question": "My friend invites everyone to her birthday party. She invites ___ too.",
+                        "hint": "I -> me",
+                        "question": "I ask my friend if I can come to her birthday party. She says yes and invites ___.",
                         "options": [
                            "me",
                            "them",
@@ -7789,6 +7837,7 @@
                      },
                      {
                         "number": 49,
+                        "hint": "Two cats -> them",
                         "question": "I have two cats. I feed ___ every morning.",
                         "options": [
                            "it",
@@ -7798,7 +7847,8 @@
                      },
                      {
                         "number": 50,
-                        "question": "My father drives my sister and me to school. He takes ___.",
+                        "hint": "My sister and me -> us",
+                        "question": "My father drives my sister and me to school. He takes ___ both in his car.",
                         "options": [
                            "us",
                            "him",
@@ -7807,7 +7857,8 @@
                      },
                      {
                         "number": 51,
-                        "question": "My father talks to everyone at work. He wants to talk to ___ today.",
+                        "hint": "You -> you",
+                        "question": "My father saw your drawing. He wants to talk to ___ about it today.",
                         "options": [
                            "you",
                            "us",
@@ -7816,6 +7867,7 @@
                      },
                      {
                         "number": 52,
+                        "hint": "My grandmother -> her",
                         "question": "My grandmother makes great food. I visit ___ every Sunday.",
                         "options": [
                            "him",
@@ -7825,6 +7877,7 @@
                      },
                      {
                         "number": 53,
+                        "hint": "Tom -> him",
                         "question": "My sister knows Tom. She sees ___ every day.",
                         "options": [
                            "her",
@@ -7834,7 +7887,8 @@
                      },
                      {
                         "number": 54,
-                        "question": "The cat is hungry. I feed ___ every morning.",
+                        "hint": "A red ball -> it",
+                        "question": "The cat has a red ball. I throw ___ to the cat every morning.",
                         "options": [
                            "it",
                            "her",
@@ -7843,7 +7897,8 @@
                      },
                      {
                         "number": 55,
-                        "question": "My mother loves all her children. She loves ___ the most.",
+                        "hint": "I -> me",
+                        "question": "I am sick today. My mother stays home and looks after ___.",
                         "options": [
                            "me",
                            "him",
@@ -7852,7 +7907,8 @@
                      },
                      {
                         "number": 56,
-                        "question": "My neighbors have a dog and a cat. I see ___ every morning.",
+                        "hint": "A dog and a cat -> them",
+                        "question": "My neighbors have a dog and a cat. I see ___ playing together every morning.",
                         "options": [
                            "us",
                            "him",
@@ -7861,7 +7917,8 @@
                      },
                      {
                         "number": 57,
-                        "question": "The teacher helps my friend and me. She helps ___ every day.",
+                        "hint": "My friend and me -> us",
+                        "question": "The teacher helps my friend and me. She helps ___ both every day.",
                         "options": [
                            "us",
                            "them",
@@ -7870,7 +7927,8 @@
                      },
                      {
                         "number": 58,
-                        "question": "My mother makes food for the family. She wants to make something special for ___ today.",
+                        "hint": "You -> you",
+                        "question": "You have a birthday today. My mother wants to make a cake for ___.",
                         "options": [
                            "you",
                            "us",
@@ -7879,6 +7937,7 @@
                      },
                      {
                         "number": 59,
+                        "hint": "The new girl -> her",
                         "question": "The new girl in class is very kind. I help ___ with homework.",
                         "options": [
                            "her",
@@ -7888,6 +7947,7 @@
                      },
                      {
                         "number": 60,
+                        "hint": "My grandfather -> him",
                         "question": "My grandfather lives far away. I miss ___ a lot.",
                         "options": [
                            "her",
@@ -7897,6 +7957,7 @@
                      },
                      {
                         "number": 61,
+                        "hint": "A new bag -> it",
                         "question": "I have a new bag. I use ___ for school.",
                         "options": [
                            "him",
@@ -7906,7 +7967,8 @@
                      },
                      {
                         "number": 62,
-                        "question": "The teacher gives homework to all the students. She gives ___ extra homework.",
+                        "hint": "I -> me",
+                        "question": "I need help with my homework. My teacher gives ___ extra practice.",
                         "options": [
                            "me",
                            "us",
@@ -7915,6 +7977,7 @@
                      },
                      {
                         "number": 63,
+                        "hint": "My students -> them",
                         "question": "My students need books. I give ___ books every week.",
                         "options": [
                            "him",
@@ -7924,7 +7987,8 @@
                      },
                      {
                         "number": 64,
-                        "question": "My friend and I need help. The teacher helps ___ every afternoon.",
+                        "hint": "My friend and I -> us",
+                        "question": "My friend and I need help. The teacher helps ___ both every afternoon.",
                         "options": [
                            "them",
                            "me",
@@ -7933,7 +7997,8 @@
                      },
                      {
                         "number": 65,
-                        "question": "My friend sends messages to everyone. She sends a message to ___ every day.",
+                        "hint": "You -> you",
+                        "question": "My friend has your phone number. She sends a message to ___ every day.",
                         "options": [
                            "you",
                            "her",
@@ -7942,6 +8007,7 @@
                      },
                      {
                         "number": 66,
+                        "hint": "My aunt -> her",
                         "question": "My aunt lives near the school. I see ___ every morning.",
                         "options": [
                            "him",
@@ -7951,6 +8017,7 @@
                      },
                      {
                         "number": 67,
+                        "hint": "My cousin (a boy) -> him",
                         "question": "My cousin is a boy. I call ___ every week.",
                         "options": [
                            "her",
@@ -7960,6 +8027,7 @@
                      },
                      {
                         "number": 68,
+                        "hint": "A nice house -> it",
                         "question": "This is a nice house. I like ___.",
                         "options": [
                            "them",
@@ -7969,7 +8037,8 @@
                      },
                      {
                         "number": 69,
-                        "question": "My grandmother calls all her grandchildren. She calls ___ every Saturday.",
+                        "hint": "I -> me",
+                        "question": "I live far away from my grandmother. She calls ___ every Saturday.",
                         "options": [
                            "him",
                            "me",
@@ -7978,6 +8047,7 @@
                      },
                      {
                         "number": 70,
+                        "hint": "My parents -> them",
                         "question": "My parents are at home. I call ___ every day.",
                         "options": [
                            "him",
@@ -7987,7 +8057,8 @@
                      },
                      {
                         "number": 71,
-                        "question": "My brother and I are at home. My father calls ___ for dinner.",
+                        "hint": "My brother and I -> us",
+                        "question": "My brother and I are at home. Our father calls ___ both for dinner.",
                         "options": [
                            "us",
                            "him",
@@ -7996,7 +8067,8 @@
                      },
                      {
                         "number": 72,
-                        "question": "I write letters to my family every month. This month I write a letter to ___.",
+                        "hint": "You -> you",
+                        "question": "You live far away. I want to write a letter to ___ this month.",
                         "options": [
                            "them",
                            "you",
@@ -8005,6 +8077,7 @@
                      },
                      {
                         "number": 73,
+                        "hint": "My mother -> her",
                         "question": "My mother works at a school. I visit ___ every Thursday.",
                         "options": [
                            "him",
@@ -8014,6 +8087,7 @@
                      },
                      {
                         "number": 74,
+                        "hint": "My father -> him",
                         "question": "My father works at a hospital. I visit ___ every Friday after school.",
                         "options": [
                            "her",
@@ -8023,6 +8097,7 @@
                      },
                      {
                         "number": 75,
+                        "hint": "The song -> it",
                         "question": "The song is beautiful. I listen to ___ every day.",
                         "options": [
                            "her",
@@ -8032,7 +8107,8 @@
                      },
                      {
                         "number": 76,
-                        "question": "My neighbor knows all the families on the street. She knows ___ very well.",
+                        "hint": "I -> me",
+                        "question": "I tell my neighbor about my day. Now she knows ___ very well.",
                         "options": [
                            "her",
                            "me",
@@ -8041,6 +8117,7 @@
                      },
                      {
                         "number": 77,
+                        "hint": "The students’ questions -> them",
                         "question": "The students ask questions. The teacher answers ___.",
                         "options": [
                            "them",
@@ -8050,7 +8127,8 @@
                      },
                      {
                         "number": 78,
-                        "question": "He sees my friend and me at school. He knows ___.",
+                        "hint": "My friend and me -> us",
+                        "question": "He sees my friend and me at school. He knows ___ both.",
                         "options": [
                            "us",
                            "him",
@@ -8059,7 +8137,8 @@
                      },
                      {
                         "number": 79,
-                        "question": "My mother bakes a cake for the family. She bakes one for ___ too.",
+                        "hint": "You -> you",
+                        "question": "You are coming to our house today. My mother bakes a cake for ___ too.",
                         "options": [
                            "you",
                            "him",
@@ -8068,6 +8147,7 @@
                      },
                      {
                         "number": 80,
+                        "hint": "Sara -> her",
                         "question": "My friend Sara is funny. I always listen to ___.",
                         "options": [
                            "him",
@@ -8077,6 +8157,7 @@
                      },
                      {
                         "number": 81,
+                        "hint": "My father -> him",
                         "question": "My father is at work. I call ___ every day.",
                         "options": [
                            "her",
@@ -8086,6 +8167,7 @@
                      },
                      {
                         "number": 82,
+                        "hint": "My phone -> it",
                         "question": "This is my phone. I use ___ every day.",
                         "options": [
                            "them",
@@ -8095,6 +8177,7 @@
                      },
                      {
                         "number": 83,
+                        "hint": "The speaker (I) -> me",
                         "question": "My brother and I live together. Sara knows my brother, but she doesn't know ___ at all.",
                         "options": [
                            "him",
@@ -8104,6 +8187,7 @@
                      },
                      {
                         "number": 84,
+                        "hint": "My sisters -> them",
                         "question": "My sisters live in London. I visit ___ every summer.",
                         "options": [
                            "her",
@@ -8113,7 +8197,8 @@
                      },
                      {
                         "number": 85,
-                        "question": "My sister and I go to the same school. The teacher knows ___ well.",
+                        "hint": "My sister and I -> us",
+                        "question": "My sister and I go to the same school. The teacher knows ___ both well.",
                         "options": [
                            "us",
                            "her",
@@ -8122,7 +8207,8 @@
                      },
                      {
                         "number": 86,
-                        "question": "She teaches many students. Next week she teaches ___.",
+                        "hint": "You -> you",
+                        "question": "You joined an English class last week. Your teacher teaches ___ every Monday.",
                         "options": [
                            "them",
                            "him",
@@ -8131,6 +8217,7 @@
                      },
                      {
                         "number": 87,
+                        "hint": "The woman -> her",
                         "question": "The woman speaks quietly. I listen to ___.",
                         "options": [
                            "her",
@@ -8140,6 +8227,7 @@
                      },
                      {
                         "number": 88,
+                        "hint": "Tom -> him",
                         "question": "Tom is my best friend. I call ___ every evening.",
                         "options": [
                            "her",
@@ -8149,6 +8237,7 @@
                      },
                      {
                         "number": 89,
+                        "hint": "A good book -> it",
                         "question": "This is a good book. I read ___ every night.",
                         "options": [
                            "him",
@@ -8158,7 +8247,8 @@
                      },
                      {
                         "number": 90,
-                        "question": "Sara visits her friends every Sunday. This Sunday she visits ___ at my house.",
+                        "hint": "I -> me",
+                        "question": "Sara is coming to my house on Sunday. I will be home alone, and she is coming to visit ___.",
                         "options": [
                            "me",
                            "him",
@@ -8167,6 +8257,7 @@
                      },
                      {
                         "number": 91,
+                        "hint": "Three dogs -> them",
                         "question": "I have three dogs. I love ___.",
                         "options": [
                            "it",
@@ -8176,7 +8267,8 @@
                      },
                      {
                         "number": 92,
-                        "question": "She sees my father and me at the market. She knows ___.",
+                        "hint": "My father and me -> us",
+                        "question": "She sees my father and me at the market. She knows ___ both.",
                         "options": [
                            "me",
                            "them",
@@ -8185,7 +8277,8 @@
                      },
                      {
                         "number": 93,
-                        "question": "I help my classmates every day. Today I want to help ___ too.",
+                        "hint": "You -> you",
+                        "question": "You are new in my class. Today I want to help ___ with your homework.",
                         "options": [
                            "them",
                            "you",
@@ -8194,6 +8287,7 @@
                      },
                      {
                         "number": 94,
+                        "hint": "My mother -> her",
                         "question": "My mother cooks dinner. I always help ___.",
                         "options": [
                            "her",
@@ -8203,6 +8297,7 @@
                      },
                      {
                         "number": 95,
+                        "hint": "My neighbor (a man) -> him",
                         "question": "My neighbor is a man. I see ___ every morning.",
                         "options": [
                            "her",
@@ -8212,6 +8307,7 @@
                      },
                      {
                         "number": 96,
+                        "hint": "The movie -> it",
                         "question": "The movie is great. I watch ___ every week.",
                         "options": [
                            "it",
@@ -8221,7 +8317,8 @@
                      },
                      {
                         "number": 97,
-                        "question": "My friend calls everyone after school. Today she calls ___ first.",
+                        "hint": "I -> me",
+                        "question": "Today is my birthday, so my friend calls ___ first.",
                         "options": [
                            "me",
                            "them",
@@ -8230,6 +8327,7 @@
                      },
                      {
                         "number": 98,
+                        "hint": "These shoes -> them",
                         "question": "These shoes are old. I don't like ___.",
                         "options": [
                            "them",
@@ -8239,7 +8337,8 @@
                      },
                      {
                         "number": 99,
-                        "question": "My sister and I play in the park. Our neighbor always watches ___.",
+                        "hint": "My sister and I -> us",
+                        "question": "My sister and I play in the park. Our neighbor watches ___ both from the window.",
                         "options": [
                            "us",
                            "them",
@@ -8248,7 +8347,8 @@
                      },
                      {
                         "number": 100,
-                        "question": "I invite all my friends to my house. I want to invite ___ too.",
+                        "hint": "You -> you",
+                        "question": "You are my new friend. I want to invite ___ to my house.",
                         "options": [
                            "you",
                            "us",
@@ -8260,13 +8360,13 @@
                   "keys": {
                      "1": "her",
                      "2": "him",
-                     "3": "me",
+                     "3": "them",
                      "4": "them",
                      "5": "us",
                      "6": "you",
                      "7": "her",
                      "8": "him",
-                     "9": "me",
+                     "9": "her",
                      "10": "them",
                      "11": "us",
                      "12": "you",
@@ -8360,6 +8460,7 @@
                      "100": "you"
                   }
                }
+               
             }
          },
          {
@@ -11949,7 +12050,7 @@
             "theme": 2,
             "quizNumber": 14,
             "quizTitle": "Where is my cat?",
-            "featuring": "Adverbs of Place",
+            "featuring": "Prepositions of Place",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -12666,7 +12767,7 @@
             "theme": 3,
             "quizNumber": 15,
             "quizTitle": "Timing is everything",
-            "featuring": "Adverbs of Time",
+            "featuring": "Prepositions of Time",
             "quizLabel": "A1",
             "quizLevel": "Elementary",
             "quizData": {
@@ -16303,7 +16404,7 @@
                "multi": {
                   "questions": [],
                   
-                  "keys":  []
+                  "keys":  {}
                }
             }
          },
