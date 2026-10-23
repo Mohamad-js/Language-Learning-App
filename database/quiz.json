@@ -4036,11 +4036,11 @@
                      {
                         "number": 6,
                         "hint": "The plural form of fish is 'fish'.",
-                        "question": "We have ___ for dinner.",
+                        "question": "Which one is correct?",
                         "options": [
-                           "Fish",
-                           "Fishes",
-                           "Fishs"
+                           "Who does he like?",
+                           "Who he likes?",
+                           "Who he does like?"
                         ]
                      },
                      {
@@ -4991,7 +4991,7 @@
                      "3": "lives",
                      "4": "does",
                      "5": "is",
-                     "6": "Fish",
+                     "6": "Who does he like?",
                      "7": "likes",
                      "8": "Where does she study?",
                      "9": "speaks",
@@ -5000,7 +5000,7 @@
                      "12": "do",
                      "13": "Who likes Ann?",
                      "14": "cars are",
-                     "15": "Who does Tom Like?",
+                     "15": "Who does Tom like?",
                      "16": "They are my cousins.",
                      "17": "does",
                      "18": "is",
@@ -7407,8 +7407,8 @@
                      },
                      {
                         "number": 6,
-                        "hint": "You -> you",
-                        "question": "You are the next student. The teacher asks ___ a question.",
+                        "hint": "He -> him",
+                        "question": "He is the next student. The teacher asks ___ a question.",
                         "options": [
                            "him",
                            "them",
@@ -8363,7 +8363,7 @@
                      "3": "them",
                      "4": "them",
                      "5": "us",
-                     "6": "you",
+                     "6": "him",
                      "7": "her",
                      "8": "him",
                      "9": "her",
@@ -8460,7 +8460,6 @@
                      "100": "you"
                   }
                }
-               
             }
          },
          {
