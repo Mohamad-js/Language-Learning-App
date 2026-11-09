@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Ham from "@/components/hamburger/ham";
 import { ThemeProvider } from '@/components/theme-provider';
 import ServiceWorkerRegistrar from "@/components/clientLayout/ServiceWorkerRegistrar";
+import PullToRefreshGuard from "@/components/clientLayout/PullToRefreshGuard";
 import { NavigationProvider } from './context/NavigationProvider';
 import { SettingsProvider } from './context/SettingsProvider';
 import { AuthProvider } from './context/AuthProvider';
@@ -90,6 +91,7 @@ export default function RootLayout({ children }) {
          <SpeedInsights />
          <Analytics />
          <ServiceWorkerRegistrar />
+         <PullToRefreshGuard />
 
          <SettingsProvider>
             <AuthProvider>

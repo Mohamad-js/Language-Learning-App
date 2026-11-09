@@ -3876,7 +3876,7 @@
                      "5": "Does",
                      "6": "Am",
                      "7": "Are",
-                     "8": "Is",
+                     "8": "Does",
                      "9": "Do",
                      "10": "Is",
                      "11": "Is",
@@ -5183,11 +5183,11 @@
                      {
                         "number": 9,
                         "hint": "Indirect question is not a question. Remove 'do / does'.",
-                        "question": "Do you know who ___.",
+                        "question": "Do you know who ___",
                         "options": [
-                           "does he live with",
-                           "he lives with",
-                           "lives he with"
+                           "does he live with?",
+                           "he lives with?",
+                           "he lives with."
                         ]
                      },
                      {
@@ -7608,7 +7608,7 @@
                      {
                         "number": 26,
                         "hint": "My son -> him",
-                        "question": "My son goes to school. I pick up ___ every afternoon.",
+                        "question": "My son goes to school. I pick ___ up every afternoon.",
                         "options": [
                            "her",
                            "him",
